@@ -3,10 +3,16 @@
 ## Overview
 
 * [My Awesome API](README.md)
-* [Hooks](hooks.md)
+
+## Instalation
+
+* [Defining Methods](methods.md)
 
 ## Services
 
 * [version](version.md)
-* [Defining Methods](methods.md)
+
+## Hooks
+
+* [Hooks](hooks.md)
 
