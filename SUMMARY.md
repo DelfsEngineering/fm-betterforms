@@ -3,6 +3,7 @@
 ## Overview
 
 * [My Awesome API](README.md)
+* [Hooks](hooks.md)
 
 ## Services
 
