@@ -4,6 +4,8 @@
 
 * [My Awesome API](README.md)
 
-## Methods
+## Services
 
+* [version](version.md)
 * [Defining Methods](methods.md)
+
