@@ -6,6 +6,7 @@
 * [Introduction](introduction.md)
 * [Authentication](authentication.md)
 * [Forms Processor](forms-processor.md)
+* [Developer Mode](developer-mode.md)
 
 ## Instalation
 
