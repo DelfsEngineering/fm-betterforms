@@ -3,21 +3,23 @@
 ## Overview
 
 * [My Awesome API](README.md)
-* [Introduction](introduction.md)
-* [Authentication](authentication.md)
+  [Introduction](introduction.md)
+  [Authentication](authentication.md)
 * [Forms Processor](forms-processor.md)
 * [Developer Mode](developer-mode.md)
 
-## Instalation
+## Installation
 
 * [Defining Methods](methods.md)
 
-## Services
+## Other Services
 
 * [callback](callback.md)
 * [version](version.md)
 
-## Hooks
+## \*Hooks
 
-* [Hooks](hooks.md)
+\*[Hooks](hooks.md)
+
+
 
