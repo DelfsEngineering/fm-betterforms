@@ -17,9 +17,7 @@
 * [callback](callback.md)
 * [version](version.md)
 
-## \*Hooks
+## Hooks
 
-\*[Hooks](hooks.md)
-
-
+H[ooks](hooks.md)
 
