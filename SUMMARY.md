@@ -3,10 +3,9 @@
 ## Overview
 
 * [My Awesome API](README.md)
-  [Introduction](introduction.md)
-  [Authentication](authentication.md)
 * [Forms Processor](forms-processor.md)
 * [Developer Mode](developer-mode.md)
+* [Form Options](form-options.md)
 
 ## Installation
 
@@ -18,6 +17,4 @@
 * [version](version.md)
 
 ## Hooks
-
-H[ooks](hooks.md)
 
