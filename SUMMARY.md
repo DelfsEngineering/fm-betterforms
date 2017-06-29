@@ -3,13 +3,13 @@
 ## Overview
 
 * [My Awesome API](README.md)
-* [Forms Processor](forms-processor.md)
 * [Developer Mode](developer-mode.md)
 * [Form Options](form-options.md)
 
 ## Installation
 
 * [Defining Methods](methods.md)
+* [Forms Processor](forms-processor.md)
 
 ## Other Services
 
