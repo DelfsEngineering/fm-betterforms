@@ -2,8 +2,8 @@
 
 ## Overview
 
-  * [Introduction](/introduction.md)
-  * [Developer Mode](developer-mode.md)
+* [Introduction](/introduction.md)
+* [Developer Mode](developer-mode.md)
 
 ## Installation
 
@@ -19,11 +19,10 @@
 
 ## Other Services
 
-  * [callback](callback.md)
-  * [version](version.md)
+* [version](version.md)
+* [callback](callback.md)
 
 ## Developer Hooks
 
 * [Overview](hooks.md)
-  
 
