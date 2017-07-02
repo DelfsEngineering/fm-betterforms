@@ -3,8 +3,7 @@ Payload Object ($payload)
 
 
 ```
-// sdfsadf
-```
+// Sample forms $payload object
 {
    "service": "formsService.onTabChange",
    "payload": {

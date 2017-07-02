@@ -2,7 +2,6 @@
 
 ## Overview
 
-* [Introduction](README.md)
 * [Introduction](/introduction.md)
 * [Developer Mode](developer-mode.md)
 
@@ -15,8 +14,8 @@
 ## Form Processor
 
 * [Forms Processor](forms-processor.md)
-* [Payload Object](payloadobject.md)
-* [Form Options](form-options.md)
+  * [Payload Object](payloadobject.md)
+  * [Form Options](form-options.md)
 
 ## Other Services
 
@@ -26,4 +25,5 @@
 ## Developer Hooks
 
 * [Overview](hooks.md)
+  
 
