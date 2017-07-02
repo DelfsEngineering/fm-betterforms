@@ -5,7 +5,7 @@
 * [README](README.md)
   [Introduction](/introduction.md)
 
-## Installation
+* ### Installation
 
 * [Requirements](requirements.md)
 * [Authentication](/authentication.md)
@@ -25,4 +25,6 @@
 ### Developer Customization
 
 * [Overview](hooks.md)
+
+
 
