@@ -3,7 +3,7 @@
 ## Overview
 
 * [README](README.md)
-* [Introduction](/introduction.md)
+  [Introduction](/introduction.md)
 
 ## Installation
 
@@ -22,9 +22,9 @@
 * [version](version.md)
 * [callback](callback.md)
 
-### Developer Hooks
+### Developer Customization
 
-* [Overview](hooks.md)
+[Overview](hooks.md)
 
 
 
