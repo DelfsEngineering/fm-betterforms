@@ -4,32 +4,28 @@ The callback service acts and a universal API endpoint that allows the Developer
 
 
 
-Post Method
+| Item | Option | Notes |
+| :--- | :--- | :--- |
+|  |  |  |
+| cURL method | POST | POST with content in body as raw, or a posted form |
+| Script | /BetterForms / Developer Hooks / Hook - callback | all callback POSTS end up here. |
+| $payload contents |  | the payload contents will contact the base $payload object. The `data` key will contain the posted data from the endpoint. |
 
-| header | headerToo  |
-| :--- | :--- |
-| method |POST with content in body as raw, or a posted form  |
-| Script | /BetterForms Developer Hooks/Hook callback |
-| $payload contents| the payload contents will contact the base $payload object. The `data` key will contain the posted data from the endpoint. |
-
-
-
-___
+---
 
 ```
-//$payloadJSON
+//$payloadJSON for typical callback endpoint POST
 {
    "service": "formsService.onTabChange",
    "data": {
       // data from your callback post
       "foo": "bar1",
       "fiz": "bang"
-   
+
    }
 
 }
-
-
-
 ```
+
+
 
