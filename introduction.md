@@ -6,9 +6,19 @@
 
 ## Features
 
-* aiwa sdfkasd;fkasdj f;sdlkjf ads asdfsd sldjf ladsjhkfaldksf alkdskdsjf ads asdkfjadsklfjadsfklhfkl gfdkl gfdkg fdg df glksdfjgkdf kdf kh
-*  Authentication
+* Authentication System
+
 * Forms Processing and workflow engine
+        * Multiple forms types including a wizard
+        * Multiple form input types including WYSIWYG editors
+        * Validation both in client and on server
+        
+  
+* Callback hook for any API needs
+1. asdfadsf
+2. sdfas
+        
+    
 
 
 
