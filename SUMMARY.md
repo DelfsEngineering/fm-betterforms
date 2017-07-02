@@ -24,7 +24,5 @@
 
 ### Developer Customization
 
-[Overview](hooks.md)
-
-
+* [Overview](hooks.md)
 
