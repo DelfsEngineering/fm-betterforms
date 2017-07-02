@@ -6,8 +6,7 @@ Payload Object ($payload)
 // Sample forms $payload object
 {
    "service": "formsService.onTabChange",
-   "payload": {
-       "form": {
+   "user": {
        ...
        },
    "model": {
