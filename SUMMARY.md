@@ -2,7 +2,7 @@
 
 ## Overview
 
-* [Introduction](README.md)
+* [README](README.md)
 * [Introduction](/introduction.md)
 
 ## Installation

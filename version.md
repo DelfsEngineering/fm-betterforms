@@ -1,13 +1,12 @@
 _version_
+
 # _version_ - Version and various data
 
-
-The version service return various 
+The version service return various
 
 ```
 # Defining Methods
 ```
-
 
     Methods allow you to smoothly display code examples in different languages.
 
@@ -37,7 +36,6 @@ The version service return various
     $ My first method
     ```
     {% endmethod %}
-
 
 
 
