@@ -8,7 +8,6 @@
 ## Installation
 
 * [Requirements](requirements.md)
-* [Defining Methods](methods.md)
 * [Authentication](/authentication.md)
 
 ## Form Processor
