@@ -2,13 +2,14 @@
 
 ## Overview
 
+* [Introduction](README.md)
 * [Introduction](/introduction.md)
-* [Developer Mode](developer-mode.md)
 
 ## Installation
 
 * [Requirements](requirements.md)
 * [Authentication](/authentication.md)
+* [Developer Mode](developer-mode.md)
 
 ## Form Processor
 
