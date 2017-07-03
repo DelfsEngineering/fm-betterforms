@@ -4,8 +4,8 @@
 
 * [README](README.md)
 * [Requirements](requirements.md)
-* Installation
-* [Delopyment](delopyment.md)
+* [Installation](installation.md)
+* [Deplopyment](delopyment.md)
 
 ## Other Services
 

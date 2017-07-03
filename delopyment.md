@@ -8,3 +8,19 @@ BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docke
 
 
 
+
+
+
+
+## Update
+
+FM BetterForms has two components that may need to be updated occasionally.
+
+### Web Server
+
+
+
+### FileMaker Connector 
+
+
+
