@@ -3,10 +3,10 @@
 ## Overview
 
 * [README](README.md)
+* [Overview](hooks.md)
 * [Requirements](requirements.md)
 * [Installation](installation.md)
 * [Deplopyment](delopyment.md)
-* [Overview](hooks.md)
 
 ## Operation
 
@@ -19,6 +19,8 @@
 * [Authentication](/authentication.md)
 
 ## Developer Customization
+
+* [Hooks](//hooks.md)
 
 
 
