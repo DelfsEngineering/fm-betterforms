@@ -2,10 +2,12 @@
 
 ## Overview
 
+* [Introduction](README.md)
 * [Introduction](introduction.md)
 * [Requirements](requirements.md)
 * [Installation](installation.md)
-* [Deplopyment](delopyment.md)
+  * [Integration](installation/integration.md)
+  * [Deplopyment](delopyment.md)
 
 ## Operation
 
