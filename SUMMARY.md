@@ -2,7 +2,6 @@
 
 ## Overview
 
-* [README](README.md)
 * [Overview](hooks.md)
 * [Requirements](requirements.md)
 * [Installation](installation.md)
