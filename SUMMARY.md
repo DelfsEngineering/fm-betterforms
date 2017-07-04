@@ -2,9 +2,9 @@
 
 ## Overview
 
+* [Introduction](introduction.md)
 * [Overview](hooks.md)
 * [Requirements](requirements.md)
-* [Introduction](introduction.md)
 * [Installation](installation.md)
 * [Deplopyment](delopyment.md)
 
@@ -21,6 +21,4 @@
 ## Developer Customization
 
 * [Hooks](//hooks.md)
-
-
 
