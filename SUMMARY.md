@@ -7,7 +7,7 @@
 * [Requirements](requirements.md)
 * [Installation](installation.md)
   * [Integration](installation/integration.md)
-  * [Deplopyment](delopyment.md)
+  * [Deplopyment](installation/delopyment.md)
 
 ## Operation
 
