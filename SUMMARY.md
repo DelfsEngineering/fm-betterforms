@@ -12,7 +12,6 @@
 ## Operation
 
 * [Developer Mode](developer-mode.md)
-* [Authentication](authentication.md)
 
 ## Other Services
 
