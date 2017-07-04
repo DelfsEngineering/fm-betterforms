@@ -3,7 +3,6 @@
 ## Overview
 
 * [Introduction](introduction.md)
-* [Overview](hooks.md)
 * [Requirements](requirements.md)
 * [Installation](installation.md)
 * [Deplopyment](delopyment.md)
@@ -11,6 +10,7 @@
 ## Operation
 
 * [Developer Mode](developer-mode.md)
+* [Authentication](authentication.md)
 
 ## Other Services
 
@@ -21,4 +21,5 @@
 ## Developer Customization
 
 * [Hooks](//hooks.md)
+* [form Options](//hooks.md)
 
