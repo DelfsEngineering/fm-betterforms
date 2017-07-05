@@ -2,29 +2,32 @@
 
 **FMBetterForms** is a high performance single page web application \(SPA\) that allows FileMaker developers easy access to highly scalable .
 
-
-
 ## Features
 
-* Authentication System
+* **Fully responsive UI **allowing desktop, tablet and phone compatible UX
+
+* Mutli-mode Authentication System 
+
+  * Authenticate via URL hash, 
+
+  * Authenticate via Username \(email\) and password
+
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
 
 * Forms Processing and workflow engine
-        * Multiple forms types including a wizard
-        * Multiple form input types including WYSIWYG editors
-        * Validation both in client and on server
-        
-  
+
+  * Multiple forms types including a wizard
+  * Multiple form input types including WYSIWYG editors
+  * Validation both in client and on server
+
 * Callback hook for any API needs
-1. asdfadsf
-2. sdfas
-        
-    
-
-
-
-
-
-
+* asdfadsf
+* sdfas
 
 
 
