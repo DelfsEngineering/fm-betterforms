@@ -25,14 +25,15 @@
   
   * In browser client JS validation for common needs
   
-  * Optional serverSide validation on page / tab change of form
+  * Optional server-side validation on page / tab change of form
 
-* Validation both in client and on server
+* **Developer Customization **
 
 * Callback hook for any API needs
 
-* asdfadsf
-* sdfas
+* **Installation and Deployment **
+
+  * asdf
 
 
 
