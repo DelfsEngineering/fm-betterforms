@@ -7,8 +7,9 @@
 * **Fully responsive UI **
 
   * allowing desktop, tablet and phone compatible UX
-
-* **Mutli-mode Authentication System**
+  
+  
+* **Mutli-mode Authentication System **
 
   * Authenticate via URL hash,
 
@@ -17,9 +18,15 @@
   * Enable web signup, account creation
 
 * **Forms Processing and workflow engine**
-  * Multiple forms types including a plain and multi-step wizard
 
-* Multiple form input types including WYSIWYG editors
+  * Multiple forms types including a plain and multi-step wizard
+  
+  * Wizard form type supports multiple pages
+  
+  * In browser client JS validation for common needs
+  
+  * Optional serverSide validation on page / tab change of form
+
 * Validation both in client and on server
 
 * Callback hook for any API needs
