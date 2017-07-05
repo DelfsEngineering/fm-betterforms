@@ -21,7 +21,7 @@
 
 ## Developer Customization
 
-* [Hooks](//hooks.md)
+* [Hooks](developer/hooks.md)
 * [form Options](developer/hooks.md)
 * [Payload Object](developer/payloadobject.md)
 
