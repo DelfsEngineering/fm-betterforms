@@ -34,7 +34,7 @@
 
   * Callback hooks for any API needs including:
 
-    * **onLogin** 
+    * **onLogin**
 
     * **onTabChange** \(form\)
 
@@ -52,7 +52,7 @@
 
   * Single FMS hosted controller file
 
-  * Web app deployed on server less hosting provider e.g. _Docker_ \(carious\) , _Zeit.co No_w etc.
+  * Web app deployed on server less hosting provider e.g. _Docker_ \(carious\) , \_Zeit.co No\_w etc.
 
 
 
