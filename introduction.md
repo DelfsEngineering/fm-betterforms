@@ -4,28 +4,26 @@
 
 ## Features
 
-* **Fully responsive UI **allowing desktop, tablet and phone compatible UX
+* **Fully responsive UI **
 
-* Mutli-mode Authentication System 
+  * allowing desktop, tablet and phone compatible UX
 
-  * Authenticate via URL hash, 
+* **Mutli-mode Authentication System**
+
+  * Authenticate via URL hash,
 
   * Authenticate via Username \(email\) and password
 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
+  * Enable web signup, account creation
 
-* Forms Processing and workflow engine
+* **Forms Processing and workflow engine**
+  * Multiple forms types including a plain and multi-step wizard
 
-  * Multiple forms types including a wizard
-  * Multiple form input types including WYSIWYG editors
-  * Validation both in client and on server
+* Multiple form input types including WYSIWYG editors
+* Validation both in client and on server
 
 * Callback hook for any API needs
+
 * asdfadsf
 * sdfas
 
