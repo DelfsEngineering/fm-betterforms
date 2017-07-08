@@ -12,7 +12,7 @@ onLogout
 
 All hooks have data that is passed into and out of them. But mutating this data you can control the user experience.  Each hook script has its own documentation relating to what data $vars are passed in.
 
-Familiarize yourself with the various object types that could be passed in and out.   d
+Familiarize yourself with the various object types that could be passed in and out.   
 
 ### onLogin
 
