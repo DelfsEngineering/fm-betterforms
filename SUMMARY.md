@@ -23,5 +23,6 @@
 
 * [Hooks](developer/hooks.md)
 * [form Options](developer/hooks.md)
+* [Form Validation](developer/form-validation.md)
 * [Payload Object](developer/payloadobject.md)
 
