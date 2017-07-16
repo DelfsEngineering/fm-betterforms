@@ -16,12 +16,70 @@ Changing nearly any aspect of the `payload object` will immediately render that 
 ```
 // $payload JSON
 {
-    "service": "onTabChange" 
-
+    "service": "serviceBeingCalled",
+    "formSchema": {
+        // see formChema  object    
+        
+    
+    },
+    "state"; {
+        //state object (tab, userid etc)
+    
+    },
+    "actions": 
+    [
+        {
+            // array of actions to be performed when server is complete
+        },
+        {
+            // another action
+        }
+    ]
 
 
 }
 ```
 
+Some services do not return all keys  the `payload object` .
 
+## _state_ Object
+
+| Key | Description |
+| :--- | :--- |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+
+
+## _state_ Object
+
+| Key | Description |
+| :--- | :--- |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+## actions Object
+
+| Key | Description |
+| :--- | :--- |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+
+
+
+
+ 
 
