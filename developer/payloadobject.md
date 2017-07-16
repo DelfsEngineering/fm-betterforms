@@ -55,7 +55,7 @@ Some services do not return all keys  the `payload object` .
 
 ## _state_ Object
 
-The state object contains meta data relating to the current state of the user. This includes the user object \(user record\) and where they are within the app or form. 
+The state object contains meta data relating to the current state of the user. This includes the user object \(user record\) and where they are within the app or form.
 
 | Key | Description |
 | :--- | :--- |
@@ -70,14 +70,31 @@ The state object contains meta data relating to the current state of the user. T
 
 Each action type has its own keys that are relevant to that action.
 
-| Key | Description |
+```
+{
+    "action":"showModal",
+    "options":{
+        
+    
+    }
+
+}
+```
+
+| action name | Description |
 | :--- | :--- |
-| action | _modal, _ |
-| value |  |
+| actions | _modal,_ |
+| options { } | object of he various options relating to the action |
 |  |  |
 |  |  |
 |  |  |
 |  |  |
+
+
+
+
+
+
 
 
 
