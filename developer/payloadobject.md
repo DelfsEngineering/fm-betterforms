@@ -55,6 +55,8 @@ Some services do not return all keys  the `payload object` .
 
 ## _state_ Object
 
+The state object contains meta data relating to the current state of the user. This includes the user object \(user record\) and where they are within the app or form. 
+
 | Key | Description |
 | :--- | :--- |
 |  |  |
