@@ -74,8 +74,9 @@ Each action type has its own keys that are relevant to that action.
 {
     "action":"showModal",
     "options":{
-        
-    
+        "type": "someTypeOfModal"
+        "body": "Text for th alert body"
+
     }
 
 }
@@ -89,12 +90,6 @@ Each action type has its own keys that are relevant to that action.
 |  |  |
 |  |  |
 |  |  |
-
-
-
-
-
-
 
 
 
