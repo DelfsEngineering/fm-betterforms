@@ -6,7 +6,7 @@ The `payload object` is the main 'package' of data and meta data that gets passe
 
 #### Things you can do:
 
-* Redirect the user to different areas
+* Redirect the user to different areas 
 * Validate data
 * Mutate data and inject data based on business logic
 * add or hide form elements
