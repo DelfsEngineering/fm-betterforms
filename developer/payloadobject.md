@@ -13,36 +13,9 @@ The `payload object` is the main 'package' of data that gets passed along the wo
 Changing nearly any aspect of the `payload object` will immediately render that change to the user.
 
 
+```
+// sdfasdf
 
-onLogin
-
-onLogout
-
-## Customization
-
-All hooks have data that is passed into and out of them. But mutating this data you can control the user experience.  Each hook script has its own documentation relating to what data $vars are passed in.
-
-Familiarize yourself with the various object types that could be passed in and out.   
-
-### onLogin
-
----
-
-### onCallback
-
-### 
-
-### Forms Specific Hooks
-
-All forms functions call the formsService Script and are then passed down to the applicable sub-service.
-
----
-
-### onTabChange
-
----
-
-### onComplete
-
+```
 
 
