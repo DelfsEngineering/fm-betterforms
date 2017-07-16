@@ -64,12 +64,14 @@ Some services do not return all keys  the `payload object` .
 |  |  |
 |  |  |
 
-## _actions_ Object
+## _actions_ Object \[array\]
+
+Each action type has its own keys that are relevant to that action.
 
 | Key | Description |
 | :--- | :--- |
-|  |  |
-|  |  |
+| action | _modal, _ |
+| value |  |
 |  |  |
 |  |  |
 |  |  |
