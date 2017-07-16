@@ -19,12 +19,12 @@ Changing nearly any aspect of the `payload object` will immediately render that 
     "service": "serviceBeingCalled",
     "formSchema": {
         // see formChema  object    
-        
-    
+
+
     },
     "state"; {
         //state object (tab, userid etc)
-    
+
     },
     "actions": 
     [
@@ -53,8 +53,6 @@ Some services do not return all keys  the `payload object` .
 |  |  |
 |  |  |
 
-
-
 ## _state_ Object
 
 | Key | Description |
@@ -66,7 +64,7 @@ Some services do not return all keys  the `payload object` .
 |  |  |
 |  |  |
 
-## actions Object
+## _actions_ Object
 
 | Key | Description |
 | :--- | :--- |
@@ -78,8 +76,4 @@ Some services do not return all keys  the `payload object` .
 |  |  |
 
 
-
-
-
- 
 
