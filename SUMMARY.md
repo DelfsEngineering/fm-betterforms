@@ -23,11 +23,14 @@
 
 * [Forms Overview](/forms/forrmsoverview.md)
 
-* * ## Developer Customization
+## Developer Customization
+
 * [Hooks](developer/hooks.md)
 
 * [Payload Object](developer/payloadobject.md)
+
 * [form Options](developer/hooks.md)
+
 * [Form Validation](developer/form-validation.md)
 
 
