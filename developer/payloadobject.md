@@ -84,7 +84,7 @@ Each action type has its own keys that are relevant to that action.
 
 | Action Name | Description |
 | :--- | :--- |
-| actions | _modal,_ |
+| actions | _modal, route, logout, _ |
 | options { } | object of the various options relating to the action |
 |  |  |
 |  |  |
