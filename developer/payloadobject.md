@@ -72,7 +72,7 @@ Each action type has its own keys that are relevant to that action.
 
 ```
 {
-    "action":"showModal",
+    "actions":"showModal",
     "options":{
         "type": "someTypeOfModal"
         "body": "Text for th alert body"
