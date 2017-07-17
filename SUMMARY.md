@@ -23,6 +23,8 @@
 
 * [Forms Overview](/forms/forrmsoverview.md)
 
+* [form Options](/forms/form-options.md)
+
 ## Developer Customization
 
 * [Hooks](developer/hooks.md)
