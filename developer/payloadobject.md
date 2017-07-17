@@ -72,7 +72,7 @@ Each action type has its own keys that are relevant to that action.
 
 ```
 {
-    "actions":"showModal",
+    "action":"showModal",
     "options":{
         "type": "someTypeOfModal"
         "body": "Text for th alert body"
@@ -82,10 +82,10 @@ Each action type has its own keys that are relevant to that action.
 }
 ```
 
-| action name | Description |
+| Action Name | Description |
 | :--- | :--- |
 | actions | _modal,_ |
-| options { } | object of he various options relating to the action |
+| options { } | object of the various options relating to the action |
 |  |  |
 |  |  |
 |  |  |
