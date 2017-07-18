@@ -1,55 +1,42 @@
 # Action Options
 
 ### showModal
+
 #### action: showModal
 
 | Key | Description |
 | :--- | :--- |
 | action | showModal |
-| options. |  |
-| options. | Applies to wizard only |
-| options. |  |
-| options. |  |
+| options.text |  |
+| options.some stuff |  |
 | options. |  |
 | options. |  |
 | options. |  |
-| options. |  |
-|  |  selected |
-| s |  |
-|  |  |
-
-
 
 ```
-// action object
+// action  object for 'showModal'
+{
+
+}
 ```
 
 ### path
+
 #### form.type: Wizard
 
 | Key | Description |
 | :--- | :--- |
 | action | showModal |
-| options. |  |
-| options. | Applies to wizard only |
-| options. |  |
-| options. |  |
-| options. |  |
-| options. |  |
-| options. |  |
-| options. |  |
-|  |  selected |
-| s |  |
+| options.path | "/" - index page |
+|  | "/form/:id - a form with id |
 |  |  |
-
-
+|  |  |
+|  |  |
+|  |  |
 
 ```
 // action object
 ```
-
-
-
 
 
 
