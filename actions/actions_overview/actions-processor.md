@@ -1,6 +1,4 @@
-# wAction Options
-
-### showModal
+# Action Options
 
 #### action: showModal
 
@@ -20,7 +18,7 @@
 }
 ```
 
-### path
+#### 
 
 #### action: path
 
