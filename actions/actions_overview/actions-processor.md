@@ -2,7 +2,7 @@
 
 ### showModal
 
-#### action: showModal 
+#### action: showModal
 
 | Key | Description |
 | :--- | :--- |
@@ -24,6 +24,8 @@
 
 #### form.type: Wizard
 
+note: _path_ must be last item \( processor does not check for subsequent ones after path \)
+
 | Key | Description |
 | :--- | :--- |
 | action | showModal |
@@ -35,6 +37,7 @@
 |  |  |
 
 ```
+
 // action object
 ```
 
