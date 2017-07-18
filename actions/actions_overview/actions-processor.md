@@ -1,4 +1,4 @@
-# Action Options
+# wAction Options
 
 ### showModal
 
@@ -22,7 +22,7 @@
 
 ### path
 
-#### form.type: Wizard
+#### action: path
 
 note: _path_ must be last item \( processor does not check for subsequent ones after path \)
 
@@ -37,7 +37,6 @@ note: _path_ must be last item \( processor does not check for subsequent ones a
 |  |  |
 
 ```
-
 // action object
 ```
 
