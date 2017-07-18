@@ -1,8 +1,7 @@
 # Action Options
 
 ### showModal
-
-### form.type: Wizard
+#### action: showModal
 
 | Key | Description |
 | :--- | :--- |
@@ -24,6 +23,33 @@
 ```
 // action object
 ```
+
+### path
+#### form.type: Wizard
+
+| Key | Description |
+| :--- | :--- |
+| action | showModal |
+| options. |  |
+| options. | Applies to wizard only |
+| options. |  |
+| options. |  |
+| options. |  |
+| options. |  |
+| options. |  |
+| options. |  |
+|  |  selected |
+| s |  |
+|  |  |
+
+
+
+```
+// action object
+```
+
+
+
 
 
 
