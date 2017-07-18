@@ -2,7 +2,7 @@
 
 ### showModal
 
-#### action: showModal
+#### action: showModal 
 
 | Key | Description |
 | :--- | :--- |
