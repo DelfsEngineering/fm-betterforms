@@ -27,9 +27,7 @@
 
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
 
-# Actions Processor
-
-
+## Actions Processor
 
 ## Developer Customization
 
