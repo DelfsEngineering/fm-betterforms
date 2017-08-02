@@ -13,7 +13,7 @@
 | Key | Description |
 | :--- | :--- |
 | form.color |  |
-| form.shape |  |
+| form.shape | Shape of wizard tabs see [Form Wizard Git](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#) |
 | form.validateOnBack | Applies to wizard only |
 | form.errorColor |  |
 | form.backButtonText |  |
@@ -31,7 +31,11 @@
 
 [Form Wizard Git](https://github.com/cristijora/vue-form-wizard)
 
+### fields.type
 
+the is the object type for this field, e.g. input, radio, dropdown etc.
+
+see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html](https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html)
 
 ### \#\# Bootstrap Columns
 
