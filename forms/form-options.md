@@ -22,10 +22,18 @@
 | form.transition |  |
 | form.shape |  |
 | state.startIndex | 0 based index of the tab the form will have selected |
-| s |  |
+|  |  |
 |  |  |
 
-## Bootstrap Columns
+## Form Design
+
+### Form Types
+
+[Form Wizard Git](https://github.com/cristijora/vue-form-wizard)
+
+
+
+### \#\# Bootstrap Columns
 
 Add custom `CSS` classes to `styleClasses`
 
@@ -33,13 +41,9 @@ Add custom `CSS` classes to `styleClasses`
 
 omit periods
 
-
-
 // e.g.:
 
-` "styleClasses": "col-md-offset-2 col-md-6"`
-
-
+`"styleClasses": "col-md-offset-2 col-md-6"`
 
 ## 
 
