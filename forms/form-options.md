@@ -31,6 +31,16 @@ Add custom `CSS` classes to `styleClasses`
 
 [https://www.w3schools.com/bootstrap/bootstrap\_grid\_examples.asp](https://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp)
 
+omit periods
+
+
+
+// e.g.:
+
+` "styleClasses": "col-md-offset-2 col-md-6"`
+
+
+
 ## 
 
 ## Sample Wizard JSON
