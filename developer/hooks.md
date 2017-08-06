@@ -19,7 +19,10 @@ Familiarize yourself with the various object types that could be passed in and o
 #### Adding a HookSet for a new form
 
 1. Duplicate the `default hookSet` folder. This folder of scripts will be used only for your new form.
-2. Edit the script `HookSet Dispatch` by adding a new section that will be 
+2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet. 
+3. In the form editor assign your form's hookSet parameter to your new hookSet name.
+
+
 
 ---
 
@@ -37,11 +40,23 @@ All forms functions call the formsService Script and are then passed down to the
 
 ---
 
-### onTabChange
+### onFieldValidationHook
+
+
+
+###  nonTabChange
 
 ---
 
 ### onComplete
+
+
+
+
+
+
+
+
 
 
 
