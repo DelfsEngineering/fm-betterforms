@@ -22,15 +22,13 @@ Familiarize yourself with the various object types that could be passed in and o
 2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet. 
 3. In the form editor assign your form's hookSet parameter to your new hookSet name.
 
+---
 
+#### onLogin
 
 ---
 
-### onLogin
-
----
-
-### onCallback
+#### onCallback
 
 ---
 
@@ -40,23 +38,17 @@ All forms functions call the formsService Script and are then passed down to the
 
 ---
 
-### onFieldValidationHook
+#### onFieldValidationHook
+
+This hook is called when a field has been assigned an `fmsHook` validator.
 
 
 
-###  nonTabChange
+#### onTabChange
 
 ---
 
-### onComplete
-
-
-
-
-
-
-
-
+#### onComplete
 
 
 
