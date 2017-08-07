@@ -8,7 +8,7 @@ onLogin
 
 onLogout
 
-Some hooks are organized in sets. **hookSets **are folders of hooks that concern a specific form.These hooks are passed data by a parent dispatch script.
+Some hooks are organized in sets within a folder. **hookSets **are folders of hooks that concern a specific form\(s\).These hooks are passed data by a parent dispatch script.
 
 ## Customization
 
