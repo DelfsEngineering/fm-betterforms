@@ -2,7 +2,7 @@
 
 ## Overview
 
-Hooks allow you to intercept various workflow processes right from within Filemaker. This give you very powerful control over all aspects of BetterForms workflow.
+Hooks allow you to intercept various workflow processes right from within Filemaker. This gives you very powerful control over all aspects of BetterForms workflow.
 
 onLogin
 
@@ -42,7 +42,15 @@ All forms functions call the formsService Script and are then passed down to the
 
 This hook is called when a field has been assigned an `fmsHook` validator.
 
+#### 
 
+#### 
+
+#### 
+
+#### 
+
+#### 
 
 #### onTabChange
 
