@@ -4,17 +4,13 @@
 
 Hooks allow you to intercept various workflow processes right from within Filemaker. This gives you very powerful control over all aspects of the BetterForms workflow.
 
-onLogin
-
-onLogout
-
 Some hooks are organized in sets within a folder. **hookSets **are folders of hooks that concern a specific form\(s\).These hooks are passed data by a parent dispatch script.
 
 ## Customization
 
 All hooks have data that is passed into and out of them. By mutating this data you can control the user experience.  Each hook script has its own documentation relating to what data $vars are passed in.
 
-Familiarize yourself with the various object types that could be passed in and out.
+Tip: Familiarize yourself with the various object types that could be passed in and out.
 
 #### Adding a HookSet for a new form
 
