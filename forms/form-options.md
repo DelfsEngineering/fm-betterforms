@@ -22,7 +22,7 @@
 | form.transition |  |
 | form.shape |  |
 | state.startIndex | 0 based index of the tab the form will have selected |
-|  |  |
+| page.visible | set to \`false\` to hide this page, default is \`true\` |
 |  |  |
 
 ## Form Design
