@@ -14,7 +14,7 @@ Tip: Familiarize yourself with the various object types that could be passed in 
 
 ### HookSets
 
-Hooksets HookSets are folders of hooks that relate
+Hooksets HookSets are folders of hooks that relate to the same use case.
 
 Adding a HookSet for a new form
 
