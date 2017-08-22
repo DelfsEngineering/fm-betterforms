@@ -26,17 +26,19 @@ Tip: Familiarize yourself with the various object types that could be passed in 
 
 This hook is called when a user logs in successfully.You can inject actions abd and have full access to the user object .
 
-
-
 #### onRegistration
 
-called when a user registers 
-
-
+Called when a user registers. You can inject actions and have acces to the user model.
 
 ---
 
 #### onCallback
+
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. 
+
+The hooks is passed header, query and body data  as well as the request type.
+
+ 
 
 ## Form Specific Hooks
 
