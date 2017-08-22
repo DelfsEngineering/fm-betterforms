@@ -12,7 +12,11 @@ All hooks have data that is passed into and out of them. By mutating this data y
 
 Tip: Familiarize yourself with the various object types that could be passed in and out.
 
-#### Adding a HookSet for a new form
+### HookSets
+
+Hooksets HookSets are folders of hooks that relate
+
+Adding a HookSet for a new form
 
 1. Duplicate the `default hookSet` folder. This folder of scripts will be used only for your new form.
 2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet. 
@@ -34,11 +38,9 @@ Called when a user registers. You can inject actions and have acces to the user 
 
 #### onCallback
 
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. 
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data.
 
 The hooks is passed header, query and body data  as well as the request type.
-
- 
 
 ## Form Specific Hooks
 
