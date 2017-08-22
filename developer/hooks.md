@@ -18,11 +18,21 @@ Tip: Familiarize yourself with the various object types that could be passed in 
 2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet. 
 3. In the form editor assign your form's hookSet parameter to your new hookSet name.
 
-## General Hooks
+## Common Hooks
 
 ---
 
 #### onLogin
+
+This hook is called when a user logs in successfully.You can inject actions abd and have full access to the user object .
+
+
+
+#### onRegistration
+
+called when a user registers 
+
+
 
 ---
 
