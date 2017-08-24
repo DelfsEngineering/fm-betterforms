@@ -10,7 +10,7 @@ Uses:
 
 * Document download endpoint
 
-* App entry point for passing data when integrating from another sistem Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This intern passes some data that launches and user cart session.
+* App entry point for passing data when integrating from another sistem. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches and user cart session._
 
 The hooks is passed header, query and body data  as well as the request type \(located in  `{params.method }`
 
@@ -18,13 +18,9 @@ Set the `$response` var to the data you want to be returned.
 
 Set the `$format` var to one of the following to return that content type.
 
-
-
 | $format var values | Content types |
 | :--- | :--- |
 | "" empty or null | JSON |
-
-
 
 ```
 // Sample inbound request 
