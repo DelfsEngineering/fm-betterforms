@@ -1,9 +1,26 @@
-#### onCallback
+#### onCallback API Endpoint
 
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. see [onCallback documentation.](/callback.md)
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. 
 
-The hooks is passed header, query and body data  as well as the request type \(located in the $params object
+This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others.
 
+Uses:
+
+* Callback for integrating carious services
+
+* Document download endpoint
+
+* App entry point for passing data when integrating from another sistem Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This intern passes some data that launches and user cart session.
+
+The hooks is passed header, query and body data  as well as the request type \(located in  `{params.method }` 
+
+Set the `$response` var to the data you want to be returned. 
+
+Set the `$format` var to one of the following to return that content type.
+
+| $format var values | Content types |
+| :--- | :--- |
+| "" empty or null | JSON |
 
 
 
@@ -36,4 +53,6 @@ The hooks is passed header, query and body data  as well as the request type \(l
     }
   }
 ```
+
+
 
