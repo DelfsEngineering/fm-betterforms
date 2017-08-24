@@ -17,6 +17,7 @@
 
 * [version](version.md)
 * [callback](callback.md)
+* [Hooks](developer/hooks.md)
 * [Authentication](/authentication.md)
 
 ## Processors
@@ -29,6 +30,5 @@
 
 ## Developer Customization
 
-* [Hooks](developer/hooks.md)
 * [Payload Object](developer/payloadobject.md)
 

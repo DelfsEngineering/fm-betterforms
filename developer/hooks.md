@@ -38,15 +38,13 @@ Called when a user registers. You can inject actions and have acces to the user 
 
 #### onCallback
 
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data.
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. see [onCallback documentation.](/callback.md)
 
-The hooks is passed header, query and body data  as well as the request type.
+
 
 ## Form Specific Hooks
 
----
-
-#### onFieldValidationHook {#onfieldvalidationhook}
+#### onFieldValidationHook
 
 This hook is called when a field has been assigned an `fmsHook` validator.
 
