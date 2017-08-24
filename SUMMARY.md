@@ -18,8 +18,8 @@
 * [version](version.md)
 * [callback](callback.md)
 * [Hooks](developer/hooks.md)
-* [Authentication](/authentication.md)
-
+* [Authentication](/other_services/authentication.md)
+* 
 ## Processors
 
 * [Forms Processor](/forms/forrmsoverview.md)
@@ -31,4 +31,6 @@
 ## Developer Customization
 
 * [Payload Object](developer/payloadobject.md)
+
+
 
