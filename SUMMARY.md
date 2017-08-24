@@ -19,19 +19,14 @@
 * [callback](callback.md)
 * [Hooks](developer/hooks.md)
 * [Authentication](/other_services/authentication.md)
-* ## Processors
+* [Processors](other_services/processors.md)
 * [Forms Processor](/forms/forrmsoverview.md)
-
   * [form Options](/forms/form-options.md)
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
-
 * [Actions Processor](/actions/actions_overview.md)
-
   * [Action Options](actions/actions_overview/actions-processor.md)
 
 ## Developer Customization
 
 * [Payload Object](developer/payloadobject.md)
-
-
 

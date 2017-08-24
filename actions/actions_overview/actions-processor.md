@@ -2,6 +2,8 @@
 
 #### action: showModal
 
+Displays a full screen modal dialogue. 
+
 | Key | Description |
 | :--- | :--- |
 | action | showModal |
@@ -21,6 +23,8 @@
 #### 
 
 #### action: path
+
+Redirects the user to a new path \(layout or form etc within the app\)
 
 note: _path_ must be last item \( processor does not check for subsequent ones after path \)
 

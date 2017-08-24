@@ -42,16 +42,7 @@ Changing nearly any aspect of the `payload object` will immediately render that 
 
 Some services do not return all keys  the `payload object` .
 
-## _state_ Object
-
-| Key | Description |
-| :--- | :--- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+## 
 
 ## _state_ Object
 
@@ -88,8 +79,12 @@ Each action type has its own keys that are relevant to that action.
 | options { } | object of the various options relating to the action |
 |  |  |
 |  |  |
-|  |  |
-|  |  |
+
+
+
+
+
+
 
 
 
