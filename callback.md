@@ -20,7 +20,7 @@ Set the `$format` var to one of the following to return that content type.
 
 | $format var values | Content types |
 | :--- | :--- |
-| "" empty or null | JSON |
+|  empty or null / unset | JSON |
 
 ```
 // Sample inbound request 
