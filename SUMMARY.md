@@ -16,7 +16,7 @@
 ## Other Services
 
 * [version](/other_services/version.md)
-* [callback](callback.md)
+* [API callback endpoint](callback.md)
 * [Hooks](developer/hooks.md)
 * [Authentication](/other_services/authentication.md)
 * [Processors](other_services/processors.md)
