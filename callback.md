@@ -1,7 +1,13 @@
+#### onCallback
+
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. see [onCallback documentation.](/callback.md)
+
+The hooks is passed header, query and body data  as well as the request type \(located in the $params object
+
+
+
+
 ```
-
-
-
 // Sample inbound request 
 
     "params": {
@@ -30,12 +36,4 @@
     }
   }
 ```
-
-#### onCallback
-
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. see [onCallback documentation.](/callback.md)
-
-The hooks is passed header, query and body data  as well as the request type \(located in the $params object
-
-
 
