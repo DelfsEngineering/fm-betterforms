@@ -46,7 +46,7 @@ Some services do not return all keys  the `payload object` .
 
 | Key | Description |
 | :--- | :--- |
-|  |  |
+| subdomain | eg: mySite1 - contains the subdomain for the site being called. used for dispatching HookSet's etc. |
 |  |  |
 |  |  |
 |  |  |
