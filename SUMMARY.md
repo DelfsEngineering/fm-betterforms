@@ -22,7 +22,7 @@
 * [Processors](other_services/processors.md)
 * [Forms Processor](/forms/forrmsoverview.md)
   * [Form Options](/forms/form-options.md)
-  * Form Components \(field Types\)
+  * [Form Components \(field Types\)](forms/form-components-field-types.md)
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
   * Addition Form Types
     * Accordion
@@ -33,6 +33,4 @@
 ## Developer Customization
 
 * [Payload Object](developer/payloadobject.md)
-
-
 
