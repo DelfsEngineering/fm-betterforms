@@ -2,6 +2,7 @@
 
 In additional to regular field type there are several custom types.
 
+![](/assets/Screen Shot 2017-09-06 at 11.39.51 PM.png)
 
 
 ## vTab - Vertical Tabs
@@ -18,5 +19,5 @@ Tabs give you the ability to contain repeating records \(tab\) of data and allow
 
 ## Accordion
 
-![](/assets/Screen Shot 2017-09-06 at 11.39.51 PM.png)
+
 
