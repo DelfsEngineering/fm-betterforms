@@ -24,9 +24,9 @@
   * [Form Options](/forms/form-options.md)
   * [Form Components \(field Types\)](forms/form-components-field-types.md)
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
-  * Addition Form Types
-    * Accordion
-    * vTab
+  * [Addition Form Types](forms/addition-form-types.md)
+    * [Accordion](forms/addition-form-types/accordion.md)
+    * [vTab](forms/addition-form-types/vtab.md)
 * [Actions Processor](/actions/actions_overview.md)
   * [Action Options](actions/actions_overview/actions-processor.md)
 

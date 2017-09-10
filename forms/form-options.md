@@ -12,15 +12,15 @@
 
 | Key | Description |
 | :--- | :--- |
-| form.color |  |
+| form.color | HTML color Color of form |
 | form.shape | Shape of wizard tabs see [Form Wizard Git](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#) |
 | form.validateOnBack | Applies to wizard only |
 | form.errorColor |  |
 | form.backButtonText |  |
 | form.nextButtonText |  |
 | form.finishButtonText |  |
-| form.transition |  |
-| form.shape |  |
+| form.transition | CSS transition used when changing tabs |
+| form.shape | Used for wizard wizard for type |
 | state.startIndex | 0 based index of the tab the form will have selected |
 | page\[ {pageNumber} \].visible | set to \`false\` to hide this page, default is \`true\` |
 |  |  |
@@ -31,11 +31,30 @@
 
 [Form Wizard Git](https://github.com/cristijora/vue-form-wizard)
 
-### fields.type
+### type
 
-the is the object type for this field, e.g. input, radio, dropdown etc.
+This is the object type for this field, e.g. input, radio, dropdown etc.
 
 see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html](https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html)
+
+Visible - boolean Boolean or string expression
+
+Field components can be hsown shown or hidden programatically. The valie valid of value of the `visible` key is evaluated and the boolean Boolean result will control fiels field visibility.
+
+```
+// example - show occupation when employed is 'yes'
+
+Model ; {
+    "isEmployed" : ""
+    },
+
+ ... "fields" : {
+    "label" : "Are you employedemployed'?",
+    ...
+    "model" : "isEmployed"
+    },
+    {
+```
 
 ### \#\# Bootstrap Columns
 
