@@ -17,7 +17,9 @@ FM Better Forms makes it easy to create high performance Web applications and fo
 [**Introducion**](/introduction.md)
 Get familiar with FM Better Forms.
 
-
+[**Contribute**]()
+FM Better Forms is currently not fully open source but you can still contribute to making this framework better. 
+Learn how you can contribute to this documentation.
 
 
 
