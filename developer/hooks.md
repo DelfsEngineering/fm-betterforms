@@ -15,11 +15,6 @@ Called when a user registers. You can inject actions and have acces to the user 
 
 ---
 
-#### onCallback
-
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data. see [onCallback documentation.](/callback.md)
-
-
 
 ## Form Specific Hooks
 
