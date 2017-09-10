@@ -15,7 +15,7 @@ Tip: Familiarize yourself with the various object types that could be passed in 
 
 Hooksets HookSets are folders of hooks that relate to the same use case.
 
-HookSets are broken down into 2 Types, `CommonHookSets` and `ScopedHookSets`
+HookSets are broken down into two types: `CommonHookSets` and `ScopedHookSets`
 
 ### CommonHookSets
 
