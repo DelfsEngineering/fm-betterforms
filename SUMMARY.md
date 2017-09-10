@@ -4,7 +4,6 @@
 
 * [ReadMe](README.md)
 * [Introduction](introduction.md)
-
 * [Installation](installation/README.md)
   * [Requirements](installation/requirements.md)
   * [Installation](installation/installation.md)
@@ -15,6 +14,9 @@
 
 * [Developer Mode](developer-mode.md)
 
+## Services
+* [version](/other_services/version.md)
+* [Authentication](/other_services/authentication.md)
 
 ## Reference
   * [Forms Processor](/forms/forrmsoverview.md)
@@ -34,16 +36,11 @@
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
 
-    
-    
   ## Actions
   * [Actions Processor](/actions/actions_overview.md)
       * [Action Options](actions/actions_overview/actions-processor.md)
   
 
-  
-## Services
-  * [version](/other_services/version.md)
-  * [Authentication](/other_services/authentication.md)
+ 
 
 
