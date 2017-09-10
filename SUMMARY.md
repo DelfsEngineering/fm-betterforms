@@ -29,17 +29,14 @@
     * [signature](forms/addition-form-types/signature.md)
 
 * [Hooks](/hooks/hooksoverview.md)
-
   * [Payload Object](hooks/payloadobject.md)
   * [Common hooks](/hooks/commonoverview.md)
   * [API callback endpoint](hooks/callback.md)
 
 * [Scoped hooks](/hooks/scopedoverview.md)
-
   * [Hooks](developer/hooks.md)
 
   ## Actions
-
 * [Actions Processor](/actions/actions_overview.md)
   * [Action Options](actions/actions_overview/actions-processor.md)
 
