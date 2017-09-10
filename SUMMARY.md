@@ -15,6 +15,10 @@
 
 * [Developer Mode](developer-mode.md)
 
+## Authentication
+* [Authentication](/other_services/authentication.md)
+
+
 ## Reference
   * [Forms Processor](/forms/forrmsoverview.md)
     * [Form Options](/forms/form-options.md)
@@ -26,12 +30,15 @@
   
   ## Hooks
   * [Hooks](/hooks/hooksoverview.md)
-    
-    * [Hooks](developer/hooks.md)
-    
+  * Common Hooks
     * [API callback endpoint](callback.md)
+  
+  *Scoped Hooks
+        * [Hooks](developer/hooks.md)
+    
 
-    * [Authentication](/other_services/authentication.md)
+
+    
     
     * [Processors](other_services/processors.md)
     
