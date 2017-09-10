@@ -2,15 +2,28 @@
 
 # FM Better Forms
 
->A loosely coupled from end web publishing framework for Filemaker databases.
+>A loosely coupled front end web publishing framework for Filemaker databases.
 
 FM Better Forms makes it easy to create high performance Web applications and forms without any knowledge of JavaScript of web technologies.
 
-# Readme
+* Mobile first responsive design
+* Publish and process forms
+* Build connected widgets
+* Publish data and tables
 
-This is the **FM BetterForms** documentation.
 
-Author
 
+
+[**Introducion**](/introduction.md)
+Get familiar with FM Better Forms.
+
+
+
+
+
+
+
+**Author**
+Charles Delfs
 cdelfs@delfsengineering.ca
 
