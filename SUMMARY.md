@@ -15,9 +15,6 @@
 
 * [Developer Mode](developer-mode.md)
 
-## Authentication
-* [Authentication](/other_services/authentication.md)
-
 
 ## Reference
   * [Forms Processor](/forms/forrmsoverview.md)
@@ -35,16 +32,14 @@
   
   *Scoped Hooks
         * [Hooks](developer/hooks.md)
-    
 
-
-    
     
     * [Processors](other_services/processors.md)
     
-    * [Actions Processor](/actions/actions_overview.md)
+    
     
   ## Actions
+  * [Actions Processor](/actions/actions_overview.md)
       * [Action Options](actions/actions_overview/actions-processor.md)
   
   ## Developer Customization
@@ -53,3 +48,6 @@
   
 ## Services
 * [version](/other_services/version.md)
+* [Authentication](/other_services/authentication.md)
+
+
