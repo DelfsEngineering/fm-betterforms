@@ -4,8 +4,9 @@
 
 * [ReadMe](README.md)
 * [Introduction](introduction.md)
-* [Requirements](/requirements.md)
+
 * [Installation](installation/README.md)
+  * [Requirements](installation/requirements.md)
   * [Installation](installation/installation.md)
   * [Integration](installation/integration.md)
   * [Deployment](installation/delopyment.md)
