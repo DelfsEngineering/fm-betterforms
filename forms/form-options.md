@@ -37,7 +37,7 @@ This is the object type for this field, e.g. input, radio, dropdown etc.
 
 see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html](https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html)
 
-Visible - boolean Boolean or string expression
+### visible - Boolean or string expression
 
 Field components can be hsown shown or hidden programatically. The valie valid of value of the `visible` key is evaluated and the boolean Boolean result will control fiels field visibility.
 
