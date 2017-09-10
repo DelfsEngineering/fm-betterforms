@@ -20,7 +20,7 @@
 
 * **Forms Processing and workflow engine**
 
-  * Multiple form types including a _plain_ and _multi-step wizard_
+  * Multiple form types including  _plain_ and _multi-step wizard_ and _Master-Detail_ base layouts.
 
   * Wizard form type supports multiple pages
 
@@ -53,6 +53,11 @@
   * Single FMS hosted controller file
 
   * Web app deployed on server less hosting provider e.g. _Docker_ \(carious\) , \_Zeit.co No\_w etc.
+  
+  
+  
+  
+ 
 
 
 
