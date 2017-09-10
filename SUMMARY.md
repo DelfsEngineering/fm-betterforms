@@ -21,11 +21,12 @@
 ## Reference
   * [Forms Processor](/forms/forrmsoverview.md)
     * [Form Options](/forms/form-options.md)
+    * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
     * [Form Components \(Field Types\)](forms/form-components-field-types.md)
     * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
-    * [Addition Form Types](forms/addition-form-types.md)
-      * [Accordion](forms/addition-form-types/accordion.md)
-      * [vTab](forms/addition-form-types/vtab.md)
+    * [Addition Form Components](forms/addition-form-types.md)
+      * [accordion](forms/addition-form-types/accordion.md)
+      * [vtab](forms/addition-form-types/vtab.md)
       * [signature](forms/addition-form-types/signature.md)
   
   ## Hooks
@@ -37,6 +38,7 @@
   
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
+    * [Scoped hooks](/hooks/scopedoverview.md)
 
   ## Actions
   * [Actions Processor](/actions/actions_overview.md)
