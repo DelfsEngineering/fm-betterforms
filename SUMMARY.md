@@ -11,7 +11,7 @@
   * [Integration](installation/integration.md)
   * [Deployment](installation/delopyment.md)
 
-## Operation
+## Operations
 
 * [Developer Mode](developer-mode.md)
 
