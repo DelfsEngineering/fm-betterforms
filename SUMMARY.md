@@ -25,7 +25,7 @@
     * [vTab](forms/addition-form-types/vtab.md)
   
   ## Hooks
-  
+  * [Hooks](/hooks/hooksoverview.md)
   * [version](/other_services/version.md)
   * [API callback endpoint](callback.md)
   * [Hooks](developer/hooks.md)
