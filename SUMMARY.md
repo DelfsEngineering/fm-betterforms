@@ -30,9 +30,8 @@
     * [Common hooks](/hooks/commonoverview.md)
     * [API callback endpoint](hooks/callback.md)
   
-  *Scoped Hooks
-    * [Scoped hooks](/hooks/scopedoverview.md)
-        * [Hooks](developer/hooks.md)
+  * [Scoped hooks](/hooks/scopedoverview.md)
+    * [Hooks](developer/hooks.md)
 
     
     * [Processors](other_services/processors.md)
