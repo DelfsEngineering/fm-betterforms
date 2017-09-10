@@ -26,11 +26,17 @@
   
   ## Hooks
   * [Hooks](/hooks/hooksoverview.md)
-    * [version](/other_services/version.md)
-    * [API callback endpoint](callback.md)
+    
+    * [Hooks](/hooks/hooksoverview.md)
+
     * [Hooks](developer/hooks.md)
+    
+    * [API callback endpoint](callback.md)
+
     * [Authentication](/other_services/authentication.md)
+    
     * [Processors](other_services/processors.md)
+    
     * [Actions Processor](/actions/actions_overview.md)
     
   ## Actions
@@ -41,4 +47,4 @@
   * [Payload Object](developer/payloadobject.md)
   
 ## Services
-
+* [version](/other_services/version.md)
