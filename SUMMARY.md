@@ -1,7 +1,6 @@
 # Summary
 
 ## Overview
-
 * [ReadMe](README.md)
 * [Introduction](introduction.md)
 * [Installation](installation/README.md)
@@ -11,16 +10,13 @@
   * [Deployment](installation/delopyment.md)
 
 ## Operation
-
 * [Developer Mode](developer-mode.md)
 
 ## Services
-
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
 
 ## Reference
-
 * [Forms Processor](/forms/forrmsoverview.md)
 
   * [Form Options](/forms/form-options.md)
@@ -31,8 +27,6 @@
     * [Accordion](forms/addition-form-types/accordion.md)
     * [vTab](forms/addition-form-types/vtab.md)
     * [signature](forms/addition-form-types/signature.md)
-
-  ## Hooks
 
 * [Hooks](/hooks/hooksoverview.md)
 
