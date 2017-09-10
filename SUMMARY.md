@@ -21,14 +21,12 @@
     * [Form Components \(field Types\)](forms/form-components-field-types.md)
     * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
     * [Addition Form Types](forms/addition-form-types.md)
-    * [Accordion](forms/addition-form-types/accordion.md)
-    * [vTab](forms/addition-form-types/vtab.md)
+        * [Accordion](forms/addition-form-types/accordion.md)
+        * [vTab](forms/addition-form-types/vtab.md)
   
   ## Hooks
   * [Hooks](/hooks/hooksoverview.md)
     
-    * [Hooks](/hooks/hooksoverview.md)
-
     * [Hooks](developer/hooks.md)
     
     * [API callback endpoint](callback.md)
