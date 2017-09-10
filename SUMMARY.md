@@ -27,10 +27,11 @@
   
   ## Hooks
   * [Hooks](/hooks/hooksoverview.md)
-  * Common Hooks
-    * [API callback endpoint](callback.md)
+    * [Common hooks](/hooks/commonoverview.md)
+    * [API callback endpoint](hooks/callback.md)
   
   *Scoped Hooks
+    * [Scoped hooks](/hooks/scopedoverview.md)
         * [Hooks](developer/hooks.md)
 
     
@@ -43,11 +44,10 @@
       * [Action Options](actions/actions_overview/actions-processor.md)
   
   ## Developer Customization
-  
   * [Payload Object](developer/payloadobject.md)
   
 ## Services
-* [version](/other_services/version.md)
-* [Authentication](/other_services/authentication.md)
+  * [version](/other_services/version.md)
+  * [Authentication](/other_services/authentication.md)
 
 
