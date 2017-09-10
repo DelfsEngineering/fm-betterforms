@@ -23,9 +23,9 @@ HookSets are broken down into two types: `CommonHookSets` and `ScopedHookSets`
 ### ScopedHookSets
 
 
-
 ### Adding a HookSet for a new form
 
 1. Duplicate the `default hookSet` folder. This folder of scripts will be used only for your new form.
 2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet.
 3. In the form editor assign your form's hookSet parameter to your new hookSet name.
+
