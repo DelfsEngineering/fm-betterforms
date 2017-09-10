@@ -27,6 +27,7 @@
   
   ## Hooks
   * [Hooks](/hooks/hooksoverview.md)
+    * [Payload Object](hooks/payloadobject.md)
     * [Common hooks](/hooks/commonoverview.md)
     * [API callback endpoint](hooks/callback.md)
   
@@ -34,16 +35,12 @@
     * [Hooks](developer/hooks.md)
 
     
-    * [Processors](other_services/processors.md)
-    
-    
     
   ## Actions
   * [Actions Processor](/actions/actions_overview.md)
       * [Action Options](actions/actions_overview/actions-processor.md)
   
-  ## Developer Customization
-  * [Payload Object](developer/payloadobject.md)
+
   
 ## Services
   * [version](/other_services/version.md)
