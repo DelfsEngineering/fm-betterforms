@@ -25,16 +25,16 @@
       * [accordion](forms/addition-form-types/accordion.md)
       * [vtab](forms/addition-form-types/vtab.md)
       * [signature](forms/addition-form-types/signature.md)
-  
+
   * [Hooks](/hooks/hooksoverview.md)
     * [Payload Object](hooks/payloadobject.md)
-  
+
   * [Common Hooks](/hooks/commonoverview.md)
     * [API Callback Endpoint](hooks/callback.md)
-  
+
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
-  
+
   * [Scoped hooks](/hooks/scopedoverview.md)
     
   * [Actions Processor](/actions/actions_overview.md)
