@@ -7,7 +7,7 @@
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | html | string |  |
-| body |   | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
+| html |   | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
 | model |  | string | raw HTML code |
 | schema | { ... } | object | the schema object follows the same construct as schema of its parent. It only needs to contain a _**fields**_ array. |
 
@@ -20,7 +20,7 @@
 // you can use either body or model or both keys for HTML source code
 
 {
-  "body": "<h1>This is some HTML</h1> It will display ahead of the model HTML",
+  "html": "<h1>This is some HTML</h1> It will display ahead of the model HTML",
   "model": "mySourceHtml",
   "type": "html"
 },
