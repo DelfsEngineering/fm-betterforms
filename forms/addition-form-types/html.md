@@ -1,6 +1,6 @@
 ## html - Custom HTML 
 
-`html` allows you to merge any HTML and inline CSS into your form layout. HTML source data can be in either \(or both\) the data `model` or the field `scmema`
+`html` Allows you to merge any HTML and inline CSS into your form layout. HTML source data can be in either \(or both\) the data `model` or the field `scmema`
 
 
 
