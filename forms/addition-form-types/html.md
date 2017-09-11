@@ -13,13 +13,18 @@
 
 ##### 
 
+
 ##### Example
 
 ```
+// you can use either body or model or both keys for HTML source code
+
 {
-  "body": "<h1>This is some HTML</h1>",
+  "body": "<h1>This is some HTML</h1> It will display ahead of the model HTML",
   "model": "mySourceHtml",
   "type": "html"
 },
+
+
 ```
 
