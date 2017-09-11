@@ -12,7 +12,7 @@
 ## Operation
 * [Developer Mode](developer-mode.md)
 
-### Reference
+#s# Reference
 * [Forms Processor](/forms/forrmsoverview.md)
   * [Form Options](/forms/form-options.md)
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
@@ -32,11 +32,10 @@
   * [Hooks](developer/hooks.md)
 
 * [Scoped hooks](/hooks/scopedoverview.md)
-  
+
 * [Actions Processor](/actions/actions_overview.md)
   * [Action Options](actions/basic_actions.md)
 
 ## Services
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
- 
