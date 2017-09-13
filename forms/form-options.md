@@ -37,9 +37,9 @@ This is the object type for this field, e.g. input, radio, dropdown etc.
 
 see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html](https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.html)
 
-### visible - Boolean or string expression
+### visible\_calc - Boolean or string expression
 
-Field components can be hsown shown or hidden programatically. The valie valid of value of the `visible` key is evaluated and the boolean Boolean result will control fiels field visibility.
+Field components can be shown or hidden programatically. The equation of the `visible_calc` key is evaluated when its referenced parameters change and the boolean Boolean result will control the field visibility.
 
 ```
 // example - show occupation when employed is 'yes'
@@ -49,11 +49,18 @@ Model ; {
     },
 
  ... "fields" : {
-    "label" : "Are you employedemployed'?",
+    "label" : "Are you employed?",
     ...
     "model" : "isEmployed"
     },
     {
+      "inputType": "text",
+      "label": "What's your occupation?",
+      "model": "occupation",
+      "type": "input",
+      "visible_calc": "this.model.isEmployed == 'yes'"
+    }
+    
 ```
 
 ### \#\# Bootstrap Columns
