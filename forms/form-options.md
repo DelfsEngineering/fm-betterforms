@@ -39,7 +39,9 @@ see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.htm
 
 ### visible\_calc - Boolean or string expression
 
-Field components can be shown or hidden programatically. The equation of the `visible_calc` key is evaluated when its referenced parameters change and the boolean Boolean result will control the field visibility.
+Field components can be shown or hidden programatically. The equation of the `visible_calc` key is evaluated when its referenced parameters change and the boolean Boolean result will control the field visibility. 
+
+When a `visible_calc` parameter is supplied, the `visible` key is ignored.
 
 ```
 // example - show occupation when employed is 'yes'
@@ -48,18 +50,19 @@ Model ; {
     "isEmployed" : ""
     },
 
- ... "fields" : {
+ ... "fields" : 
+  {
     "label" : "Are you employed?",
-    ...
+    "type": "input",
     "model" : "isEmployed"
-    },
-    {
-      "inputType": "text",
-      "label": "What's your occupation?",
-      "model": "occupation",
-      "type": "input",
-      "visible_calc": "this.model.isEmployed == 'yes'"
-    }
+  },
+  {
+    "inputType": "text",
+    "label": "What's your occupation?",
+    "model": "occupation",
+    "type": "input",
+    "visible_calc": "this.model.isEmployed == 'yes'"
+  }
     
 ```
 
