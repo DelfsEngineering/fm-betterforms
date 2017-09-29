@@ -23,13 +23,14 @@ This service can act as a universal endpoint and service multiple content types.
 #### Supported Methods
 * GET
 * POST
+* PUT
 * PATCH
-* UPDATE
-* 
+* DELETE
 
+`$params.query` will contain url query parameters
+`$body` will contain a body string if it is supported by the method
 
-
-The hooks is passed header, query and body data  as well as the request type \(located in  `{params.method }`
+The hook is passed header, query and body data  as well as the request type \(located in  `$params.method`
 
 Set the `$response` var to the data you want to be returned.
 
