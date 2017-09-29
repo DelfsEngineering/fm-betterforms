@@ -40,6 +40,11 @@ Set the `$contentType` var to one of the following to return that content type a
 | 'text' | returns $response as plain text. |
 | 'xml' | returns $response as xml with headers set accordingly |
 
+#### Suggested Design Pattern
+Keeping your API handler scripts orderly is key to stability and ease of code maintenance. 
+
+
+
 ```
 // Sample inbound request 
 
