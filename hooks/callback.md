@@ -45,6 +45,8 @@ Keeping your API handler scripts orderly is key to stability and ease of code ma
 
 The image below shows a best practice for structuring endpoints and allows for easy API versioning down the road. 
 
+The *concern* of each endpoint is generally not to 
+
 
 ![](/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png)
 
