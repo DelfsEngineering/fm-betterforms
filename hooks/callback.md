@@ -2,16 +2,12 @@
 
 #### onCallback
 
-
-TODO, needs revision
-
-
 This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data.
 
-This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others.
+This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others (see below).
 
 #### Uses:
-* Callback for integrating carious services
+* Callback for integrating various services
 * Document download endpoint
 * App entry point for passing data when integrating from another sistem. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches and user cart session._
 
