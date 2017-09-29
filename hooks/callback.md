@@ -10,13 +10,18 @@ This hook gives the developer access to a universal API endpoint. This can be us
 
 This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others.
 
-Uses:
-
+#### Uses:
 * Callback for integrating carious services
-
 * Document download endpoint
-
 * App entry point for passing data when integrating from another sistem. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches and user cart session._
+
+#### Supported Request Types
+* plain text
+* application/JSON
+* text/JSON
+
+
+
 
 The hooks is passed header, query and body data  as well as the request type \(located in  `{params.method }`
 
