@@ -15,6 +15,7 @@ This service can act as a universal endpoint and service multiple content types.
 * plain text
 * application/JSON
 * text/JSON
+* text/* - any text content type
 
 #### Supported Methods
 * GET
@@ -30,7 +31,7 @@ The hook is passed header, query and body data  as well as the request type \(lo
 
 Set the `$response` var to the data you want to be returned.
 
-Set the `$contentType` var to one of the following to return that content type.
+Set the `$contentType` var to one of the following to return that content type and set the correct headers for the outbound data.
 
 | $format var values | Content types |
 | :--- | :--- |
@@ -51,7 +52,7 @@ Set the `$contentType` var to one of the following to return that content type.
         "connection": "keep-alive",
         "content-type": "application/json",
         "cookie": "PHPSESSID=kmr6khj4nlruspai6tfiv0fcf7",
-        "host": "dev1-delfs.c9users.io",
+        "host": "mycallingdomain.com",
         "myheaderkey": "12345HEADERKEY0000",
         "postman-token": "2630f738-8f01-49af-acc6-556437a4a23b",
         "user-agent": "PostmanRuntime/6.2.5",
