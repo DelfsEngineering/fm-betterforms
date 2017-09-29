@@ -25,6 +25,7 @@ This service can act as a universal endpoint and service multiple content types.
 * POST
 * PATCH
 * UPDATE
+* 
 
 
 
