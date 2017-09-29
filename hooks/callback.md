@@ -29,6 +29,7 @@ Set the `$contentType` var to one of the following to return that content type.
 | empty or null / unset or 'json' | JSON |
 | 'html' | returns $response as html with headers set accordingly |
 | 'text' | returns $response as plain text. |
+| 'xml' | returns $response as xml with headers set accordingly |
 
 ```
 // Sample inbound request 
