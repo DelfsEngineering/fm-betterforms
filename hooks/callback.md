@@ -20,6 +20,11 @@ This service can act as a universal endpoint and service multiple content types.
 * application/JSON
 * text/JSON
 
+#### Supported Methods
+* GET
+* POST
+* PATCH
+* UPDATE
 
 
 
