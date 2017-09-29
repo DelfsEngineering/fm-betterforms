@@ -51,7 +51,7 @@ source code reference: [vue-notification](https://github.com/euvl/vue-notificati
 | Key | Description |
 | :--- | :--- |
 | action | showAlert |
-| options.path | "/" - index page |
+| options.title | The title of the alert |
 | | "/form/:id - a form with id |
 | | |
 | | |
