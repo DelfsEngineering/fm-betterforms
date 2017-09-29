@@ -42,13 +42,15 @@ note: _path_ must be last item \( processor does not check for subsequent ones a
 ```
 #### action: showAlert
 
-Redirects the user to a new path \(layout or form etc within the app\)
+Displays a 'toaster style' notification to the user. 
 
-note: _path_ must be last item \( processor does not check for subsequent ones after path \)
+source code reference: [vue-notification](https://github.com/euvl/vue-notification)
+
+
 
 | Key | Description |
 | :--- | :--- |
-| action | showModal |
+| action | showAlert |
 | options.path | "/" - index page |
 | | "/form/:id - a form with id |
 | | |
