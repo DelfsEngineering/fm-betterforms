@@ -45,12 +45,14 @@ Keeping your API handler scripts orderly is key to stability and ease of code ma
 
 The image below shows a best practice for structuring endpoints and allows for easy API versioning down the road. 
 
-The *concern* of each endpoint is generally not to do business logic but to gather required data and format the response suitable 
-
+The *concern* of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server. 
 
 ![](/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png)
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also. 
+
+#### Performance
+You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute. This is dependent on server performance also. 
 
 
 ```
@@ -84,5 +86,5 @@ Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dis
   }
 ```
 
-
-
+#### Api Best Practices
+Keep your script calls to a minimum tim if the script is expecting heave traffic and the process takes a long time. Once common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
