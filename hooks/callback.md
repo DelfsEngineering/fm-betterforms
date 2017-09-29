@@ -9,7 +9,7 @@ This service can act as a universal endpoint and service multiple content types.
 #### Uses:
 * Callback for integrating various services
 * Document download endpoint
-* App entry point for passing data when integrating from another sistem. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches and user cart session._
+* App entry point for passing data when integrating from another system. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches the user cart session._
 
 #### Supported Request Types
 * plain text
