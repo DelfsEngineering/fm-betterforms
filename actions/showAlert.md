@@ -9,7 +9,7 @@ Displays a full screen modal dialogue.
 | action | showModal |
 | options.text | Body text for alert |
 | options.title | Title text |
-| options.options | object - additional options to the parent options 
+| options.options | object - additional options to the parent options |
 
 
 showAlert supports additional parameters

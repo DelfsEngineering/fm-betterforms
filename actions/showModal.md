@@ -6,10 +6,11 @@ Displays a full screen modal dialogue.
 | :--- | :--- |
 | action | showModal |
 | options.text |  |
-| options.some stuff |  |
-| options. |  |
-| options. |  |
-| options. |  |
+| options.options | object - additional options to the parent options |
+
+showAlert supports additional parameters
+**reference:** [http://sweet-modal-vue.adepto.as](http://sweet-modal-vue.adepto.as)
+
 
 ```
 // action  object for 'showModal'
