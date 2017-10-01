@@ -1,6 +1,4 @@
-# Action Options
-
-#### action: showModal
+#Action: showModal
 
 Displays a full screen modal dialogue. 
 

@@ -15,7 +15,7 @@
 * [Developer Mode](developer-mode.md)
 
 ---
-
+## Usage
 * [Forms Processor](/forms/forrmsoverview.md)
   * [Form Options](/forms/form-options.md)
   * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
@@ -33,8 +33,8 @@
     * [Hooks](developer/hooks.md)
 * [Actions Processor](/actions/actions_overview.md)
   * [Action Options](actions/path.md)
-  * [Action Options](actions/showAlerts.md)
-  * [Action Options](actions/showModals.md)
+  * [Action Options](actions/showAlert.md)
+  * [Action Options](actions/showModal.md)
 
 
 
