@@ -23,7 +23,53 @@ Set the min and max values to the same number to permanently hide the add and de
 ```
 // typical v-tab object
 
-
+{
+  "hint": "You can set the 'max' property to limit number of records",
+  "label": "Enter Some Contacts (4 max)",
+  "max": 4,
+  "model": "address",
+  "schema": {
+    "fields": [
+      {
+        "inputType": "text",
+        "label": "First Name",
+        "model": "nameFirst",
+        "styleClasses": "col-md-6",
+        "type": "input"
+      },
+      {
+        "inputType": "text",
+        "label": "Last Name",
+        "model": "nameLast",
+        "styleClasses": "col-md-6",
+        "type": "input"
+      },
+      {
+        "inputType": "select",
+        "label": "Street 1",
+        "model": "street1",
+        "styleClasses": "col-md-12",
+        "type": "input"
+      },
+      {
+        "label": "Street 2",
+        "model": "street2",
+        "styleClasses": "col-md-12",
+        "type": "input"
+      },
+      {
+        "inputType": "text",
+        "label": "City",
+        "model": "city",
+        "styleClasses": "col-md-12",
+        "type": "input"
+      }
+    ]
+  },
+  "styleClasses": "col-md-8",
+  "tabLabelModel": "nameFirst",
+  "type": "vtabs"
+}
 
 ```
 
