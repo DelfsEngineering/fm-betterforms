@@ -25,6 +25,7 @@
     * [vtab](forms/addition-form-types/vtab.md)
     * [signature](forms/addition-form-types/signature.md)
     * [html](forms/addition-form-types/html.md)
+    * [listrows](forms/addition-form-types/listrows.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
 * [Common Hooks](/hooks/commonoverview.md)
