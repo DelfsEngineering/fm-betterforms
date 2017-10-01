@@ -6,7 +6,7 @@ In additional to regular field type there are several custom types.
 * [vtab](//other_services/authentication.md)
 * [signature](/forms/addition-form-types/signature.md) 
 * [html](/forms/addition-form-types/html.md)
-* [listrow](/list row)
+* [listrows](/forms/addition-form-types/listrows.md)
 
 
  
