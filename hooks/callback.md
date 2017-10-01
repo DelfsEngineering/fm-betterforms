@@ -55,8 +55,10 @@ Set the `$contentType` var to one of the following to return that content type a
 You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also.
 
 #### Suggested Design Pattern and Notes
-
+{% hint style='info' %}
 If you are returning JSON, make sure $response is set to a \`JSONObject\` type. For XML, and other custom serialized responses you an set $response to the string you want to return.
+{% endhint %}
+
 
 Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more than one simple task it is recommended you use the example multi-endpoint script structure.
 
