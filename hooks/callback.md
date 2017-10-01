@@ -33,15 +33,16 @@ Set the `$response` var to the data you want to be returned.
 
 Set the `$contentType` var to one of the following to return that content type and set the correct headers for the outbound data.
 
-| $format var values | Content types |
+| $contentType values | Content Type |
 | :--- | :--- |
 | empty or null / unset or 'json' | JSON |
 | 'html' | returns $response as html with headers set accordingly |
 | 'text' | returns $response as plain text. |
 | 'xml' | returns $response as xml with headers set accordingly |
 
+
 #### Suggested Design Pattern
-Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more and one simple task it is recommended you use the example multi-endpoint script structure.
+Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more than one simple task it is recommended you use the example multi-endpoint script structure.
 
 The image below shows a best practice for structuring endpoints and allows for easy API versioning down the road. 
 
@@ -52,12 +53,11 @@ The *concern* of each endpoint is generally not to do business logic but to gath
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also. 
 
 #### Performance
-You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute. This is dependent on server performance also. 
+You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also. 
 
 
 ```
 // Sample inbound request 
-
 
     "params": {
       "headers": {
@@ -87,4 +87,12 @@ You can expect finite performance from this API handler. Initial tests show abou
 ```
 
 #### Api Best Practices
-Keep your script calls to a minimum tim if the script is expecting heave traffic and the process takes a long time. Once common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
+Keep your script calls to a minimum time if the script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
+
+#### Use workflow processing queues when needed
+If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead sue up the work flow and return just the parts of the data that can be prepared quickly. 
+
+
+
+
+
