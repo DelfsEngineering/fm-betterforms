@@ -6,7 +6,7 @@
 | :--- | :--- |
 | form.title |  |
 | form.subtitle |  |
-|  |  |
+
 
 ### form.type: Wizard
 
@@ -23,7 +23,7 @@
 | form.shape | Used for wizard wizard for type |
 | state.startIndex | 0 based index of the tab the form will have selected |
 | page\[ {pageNumber} \].visible | set to \`false\` to hide this page, default is \`true\` |
-|  |  |
+
 
 ## Form Design
 

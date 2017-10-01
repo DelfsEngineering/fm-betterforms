@@ -17,7 +17,7 @@
 ---
 ## Usage
 * [Forms Processor](/forms/formsoverview.md)
-  * [Form Types](/forms/form-types.md)
+  * [Form Types](forms/formtypes/formtypesoverview.md)
   * [Form Validation](/forms/Validation/Validationoverview.md)
     * [Clientside Validation](/forms/Validation/clientside.md)
     
