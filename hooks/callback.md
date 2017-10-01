@@ -55,6 +55,14 @@ Set the `$contentType` var to one of the following to return that content type a
 | 'text' | returns $response as plain text. |
 | 'xml' | returns $response as xml with headers set accordingly |
 
+| Surfaced $vars| Description |
+| :--- | :--- |
+| empty or null / unset or 'json' | JSON |
+| $payload | the standard BetterForms Payload body object see [Payload Object](/hooks/payloadobject.md) |
+| $data | returns $response as plain text. |
+| $body | if method supports a body, this contains the serialized body string |
+| $params | object containing header, method and query objects |
+| $mehod|The method verb name|
 
 #### Performance
 You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also. 
