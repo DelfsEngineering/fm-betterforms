@@ -32,7 +32,12 @@
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
 * [Actions Processor](/actions/actions_overview.md)
+  * [Action Options](actions/path.md)
+  * [Action Options](actions/showAlerts.md)
   * [Action Options](actions/showModals.md)
+
+
+
 
 
 ## Services
