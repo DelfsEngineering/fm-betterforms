@@ -4,30 +4,31 @@
 
 This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data.
 
-This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others (see below).
+This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others \(see below\).
 
 #### Uses:
+
 * Callback for integrating various services
 * Document download endpoint
 * App entry point for passing data when integrating from another system. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches the user cart session._
 
 #### Supported Request Types
+
 * plain text
 * application/json
 * application/xml
 * text/json
-* text/* - any text content type including text/xml
+* text/\* - any text content type including text/xml
 
-#### Supported Methods (verbs)
+#### Supported Methods \(verbs\)
+
 * GET
 * POST
 * PUT
 * PATCH
 * DELETE
 
-
-
-The hook is passed all header, query and body data  as well as the request type \(located in  `$params.method`)
+The hook is passed all header, query and body data  as well as the request type \(located in  `$params.method`\)
 
 Set the `$response` var to the data you want to be returned.
 
@@ -40,29 +41,32 @@ Set the `$contentType` var to one of the following to return that content type a
 | 'text' | returns $response as plain text. |
 | 'xml' | returns $response as xml with headers set accordingly |
 
-| Surfaced $vars| Description |
+| Surfaced $vars | Description |
 | :--- | :--- |
 | empty or null / unset or 'json' | JSON |
 | $payload | the standard BetterForms Payload body object see [Payload Object](/hooks/payloadobject.md) |
 | $data | returns $response as plain text. |
 | $body | if method supports a body, this contains the serialized body string |
 | $params | object containing header, method and query objects |
-| $mehod|The method verb name|
+| $mehod | The method verb name |
 
 #### Performance
-You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also. 
 
-#### Suggested Design Pattern
+You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also.
+
+#### Suggested Design Pattern and Notes
+
+If you are returning JSON, make sure $response is set to a \`JSONObject\` type. For XML, and other custom serialized responses you an set $response to the string you want to return.
+
 Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more than one simple task it is recommended you use the example multi-endpoint script structure.
 
-The image below shows a best practice for structuring endpoints and allows for easy API versioning down the road. 
+The image below shows a best practice for structuring endpoints and allows for easy API versioning down the road.
 
-The *concern* of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server. 
+The _concern_ of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server.
 
 ![](/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png)
 
-Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also. 
-
+Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also.
 
 ```
 // Sample inbound request 
@@ -95,14 +99,12 @@ Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dis
 ```
 
 ## Api Best Practices
+
 #### Processing Time
+
 Keep your script calls to a minimum time if the script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
 
 #### Use workflow processing queues when needed
-If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead sue up the work flow and return just the parts of the data that can be prepared quickly. 
 
-
-
-
-
+If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead sue up the work flow and return just the parts of the data that can be prepared quickly.
 
