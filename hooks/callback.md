@@ -13,11 +13,12 @@ This service can act as a universal endpoint and service multiple content types.
 
 #### Supported Request Types
 * plain text
-* application/JSON
-* text/JSON
-* text/* - any text content type
+* application/json
+* application/xml
+* text/json
+* text/* - any text content type including text/xml
 
-#### Supported Methods
+#### Supported Methods (verbs)
 * GET
 * POST
 * PUT
@@ -41,6 +42,9 @@ Set the `$contentType` var to one of the following to return that content type a
 | 'xml' | returns $response as xml with headers set accordingly |
 
 
+#### Performance
+You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also. 
+
 #### Suggested Design Pattern
 Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more than one simple task it is recommended you use the example multi-endpoint script structure.
 
@@ -51,9 +55,6 @@ The *concern* of each endpoint is generally not to do business logic but to gath
 ![](/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png)
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also. 
-
-#### Performance
-You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also. 
 
 
 ```
@@ -86,7 +87,7 @@ You can expect finite performance from this API handler. Initial tests show abou
   }
 ```
 
-#### Api Best Practices
+### Api Best Practices
 Keep your script calls to a minimum time if the script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
 
 #### Use workflow processing queues when needed
