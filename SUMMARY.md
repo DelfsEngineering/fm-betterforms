@@ -23,7 +23,7 @@
     
   * [Form Components \(Field Types\)](forms/components-overview.md)
     * [accordion](forms/fieldtypes/accordion.md)
-    * [vtab](forms/forms/fieldtypes/vtab.md)
+    * [vtab](forms/fieldtypes/vtab.md)
     * [signature](forms/fieldtypes/signature.md)
     * [html](forms/fieldtypes/html.md)
     * [listrows](forms/fieldtypes/listrows.md)
