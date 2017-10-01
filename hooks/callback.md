@@ -25,6 +25,20 @@ This service can act as a universal endpoint and service multiple content types.
 * PATCH
 * DELETE
 
+{% method -%}
+## Simple method
+
+{% sample lang="js" -%}
+This text will only appear for JavaScript.
+
+{% sample lang="go" -%}
+This text will only appear for Go.
+
+{% common -%}
+This will appear for both JavaScript and Go.
+{% endmethod %}
+
+
 `$params.query` will contain url query parameters
 `$body` will contain a body string if it is supported by the method
 
