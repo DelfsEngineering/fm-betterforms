@@ -25,24 +25,9 @@ This service can act as a universal endpoint and service multiple content types.
 * PATCH
 * DELETE
 
-{% method -%}
-## Simple method
-
-{% sample lang="js" -%}
-This text will only appear for JavaScript.
-
-{% sample lang="go" -%}
-This text will only appear for Go.
-
-{% common -%}
-This will appear for both JavaScript and Go.
-{% endmethod %}
 
 
-`$params.query` will contain url query parameters
-`$body` will contain a body string if it is supported by the method
-
-The hook is passed header, query and body data  as well as the request type \(located in  `$params.method`
+The hook is passed all header, query and body data  as well as the request type \(located in  `$params.method`)
 
 Set the `$response` var to the data you want to be returned.
 
@@ -109,11 +94,13 @@ Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dis
   }
 ```
 
-### Api Best Practices
+## Api Best Practices
+#### Processing Time
 Keep your script calls to a minimum time if the script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
 
 #### Use workflow processing queues when needed
 If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead sue up the work flow and return just the parts of the data that can be prepared quickly. 
+
 
 
 
