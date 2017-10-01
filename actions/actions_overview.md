@@ -37,26 +37,6 @@ Action Options
 }
 ```
 
-####
-
-#### action: path
-
-note: _path_ must be last item \( processor does not check for subsequent ones after path \)
-
-| Key | Description |
-| :--- | :--- |
-| action | showModal |
-| options.path | "/" - index page |
-| | "/form/:id - a form with id |
-| | |
-| | |
-| | |
-| | |
-
-```
-// action object
-```
-
 
 
 
