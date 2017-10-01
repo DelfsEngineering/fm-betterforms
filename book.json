@@ -3,6 +3,7 @@
     "pluginsConfig": {
         "theme-api": {
             "theme":"dark",
+            "split": true,
             "languages": [
                     {
                       "lang": "js",          
