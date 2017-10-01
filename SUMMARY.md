@@ -18,7 +18,7 @@
 ## Usage
 * [Forms Processor](/forms/forrmsoverview.md)
   * [Form Options](/forms/form-options.md)
-  * [Form Validation](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#)
+  * [Form Validation]()
   * [Form Components \(Field Types\)](forms/form-components-field-types.md)
     * [accordion](forms/addition-form-types/accordion.md)
     * [vtab](forms/addition-form-types/vtab.md)
