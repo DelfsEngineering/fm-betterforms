@@ -27,16 +27,15 @@
     * [listrows](forms/addition-form-types/listrows.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
-* [Common Hooks](/hooks/commonoverview.md)
-  * [API Callback Endpoint](hooks/callback.md)
-* [Scoped hooks](/hooks/scopedoverview.md)
-  * [Hooks](developer/hooks.md)
-* [Scoped hooks](/hooks/scopedoverview.md)
+  * [Common Hooks](/hooks/commonoverview.md)
+    * [API Callback Endpoint](hooks/callback.md)
+  * [Scoped hooks](/hooks/scopedoverview.md)
+    * [Hooks](developer/hooks.md)
 * [Actions Processor](/actions/actions_overview.md)
   * [Action Options](actions/basic_actions.md)
 
-## Services
 
+## Services
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
 
