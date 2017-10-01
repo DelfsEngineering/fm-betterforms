@@ -18,10 +18,10 @@
 ## Usage
 * [Forms Processor](/forms/formsoverview.md)
   * [Form Types](/forms/form-types.md)
-  * [Form Options](/forms/form-options.md)
   * [Form Validation](/forms/Validation/Validationoverview.md)
     * [Clientside Validation](/forms/Validation/clientside.md)
-  * [Form Components \(Field Types\)](forms/form-components-field-types.md)
+    
+  * [Form Components \(Field Types\)](forms/components-overview.md)
     * [accordion](forms/forms/fieldtypes/accordion.md)
     * [vtab](forms/forms/fieldtypes/vtab.md)
     * [signature](forms/forms/fieldtypes/signature.md)
