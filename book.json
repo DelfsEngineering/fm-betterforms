@@ -5,15 +5,13 @@
             "theme":"dark",
             "languages": [
                 {
-                    "lang": "js",
-                    "name": "JavaScript",
-                    "json":"JSON",
-                    "filemaker": "FileMaker",
-                    "default": true
+                    "lang":"json",
+                    "Name": "JSON",
+                    "default":true
                 },
                 {
-                    "lang": "go",
-                    "name": "Go"
+                    "lang": "filemaker",
+                    "name": "FileMaker"
                 }
             ]
         }
