@@ -22,11 +22,11 @@
     * [Clientside Validation](/forms/Validation/clientside.md)
     
   * [Form Components \(Field Types\)](forms/components-overview.md)
-    * [accordion](forms/forms/fieldtypes/accordion.md)
+    * [accordion](forms/fieldtypes/accordion.md)
     * [vtab](forms/forms/fieldtypes/vtab.md)
-    * [signature](forms/forms/fieldtypes/signature.md)
-    * [html](forms/forms/fieldtypes/html.md)
-    * [listrows](forms/forms/fieldtypes/listrows.md)
+    * [signature](forms/fieldtypes/signature.md)
+    * [html](forms/fieldtypes/html.md)
+    * [listrows](forms/fieldtypes/listrows.md)
     
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
