@@ -2,10 +2,13 @@
     "plugins": [ "theme-api" , "search"],
     "pluginsConfig": {
         "theme-api": {
+            "theme":"dark",
             "languages": [
                 {
                     "lang": "js",
                     "name": "JavaScript",
+                    "json":"JSON",
+                    "filemaker": "FileMaker",
                     "default": true
                 },
                 {
