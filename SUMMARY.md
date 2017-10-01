@@ -16,16 +16,18 @@
 
 ---
 ## Usage
-* [Forms Processor](/forms/forrmsoverview.md)
+* [Forms Processor](/forms/formsoverview.md)
+  * [Form Types](/forms/form-types.md)
   * [Form Options](/forms/form-options.md)
   * [Form Validation](/forms/Validationoverview.md)
     * [Clientside Validation](/forms/Validation/clientside.md)
   * [Form Components \(Field Types\)](forms/form-components-field-types.md)
-    * [accordion](forms/addition-form-types/accordion.md)
-    * [vtab](forms/addition-form-types/vtab.md)
-    * [signature](forms/addition-form-types/signature.md)
-    * [html](forms/addition-form-types/html.md)
-    * [listrows](forms/addition-form-types/listrows.md)
+    * [accordion](forms/forms/fieldtypes/accordion.md)
+    * [vtab](forms/forms/fieldtypes/vtab.md)
+    * [signature](forms/forms/fieldtypes/signature.md)
+    * [html](forms/forms/fieldtypes/html.md)
+    * [listrows](forms/forms/fieldtypes/listrows.md)
+    
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
   * [Common Hooks](/hooks/commonoverview.md)
