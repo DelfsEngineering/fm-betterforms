@@ -12,6 +12,7 @@ showAlert supports additional parameters
 **reference:** [http://sweet-modal-vue.adepto.as](http://sweet-modal-vue.adepto.as)
 
 
+
 ```
 // action  object for 'showModal'
 {
