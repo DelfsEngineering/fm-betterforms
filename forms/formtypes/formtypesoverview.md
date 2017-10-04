@@ -69,13 +69,11 @@ Model ; {
 #### Accordions, v-Tabs and rowLists:
 These component types have thier own sub data model so `this.model` will reference theobject within the rows array.To see the entire data model you can reverence `this.options.fullModel` This allows you to look outside of your row or tab.
 
-#### JP.path
-You can also take advantage of the `jsonPath` library and quickly search arrays for matches 
+#### JSONPath Library
+You can also take advantage of the `jsonPath` library and quickly search arrays for matches. This is a very powerful function and worth reading the documentation.
+
 Documentation : [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
-```
-// jsonpath example that that finds all CampersInfo
-"visible_calc" : "jp.value(this.model, '$.CampersInfo[1].CampFirstName') !='' "
-```
+
 
 
 ### \#\# Bootstrap Columns
