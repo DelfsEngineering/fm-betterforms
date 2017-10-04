@@ -39,7 +39,7 @@ see: [https://icebob.gitbooks.io/vueformgenerator/content/fields/core-fields.htm
 
 ### visible\_calc - Boolean or string expression
 
-Field components can be shown or hidden programatically. The equation of the `visible_calc` key is evaluated when its referenced parameters change and the boolean Boolean result will control the field visibility. 
+Field components can be shown or hidden programatically. The equation of the `visible_calc` key is evaluated when it's referenced parameters change and the boolean Boolean result will control the field visibility. 
 
 When a `visible_calc` parameter is supplied, the `visible` key is ignored.
 
@@ -65,6 +65,18 @@ Model ; {
   }
     
 ```
+
+#### Accordions, v-Tabs and rowLists:
+These component types have thier own sub data model so `this.model` will reference theobject within the rows array.To see the entire data model you can reverence `this.options.fullModel` This allows you to look outside of your row or tab.
+
+#### JP.path
+You can also take advantage of the `jsonPath` library and quickly search arrays for matches 
+Documentation : [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
+```
+// jsonpath example that that finds all CampersInfo
+"visible_calc" : "jp.value(this.model, '$.CampersInfo[1].CampFirstName') !='' "
+```
+
 
 ### \#\# Bootstrap Columns
 
