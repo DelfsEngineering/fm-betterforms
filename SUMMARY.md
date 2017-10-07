@@ -12,15 +12,14 @@
 
 ## Operation
 
-* [Developer Mode](developer-mode.md)
+* [Admin Mode](developer-mode.md)
 
----
 ## Usage
+
 * [Forms Processor](/forms/formsoverview.md)
   * [Form Types](forms/formtypes/formtypesoverview.md)
   * [Form Validation](/forms/Validation/Validationoverview.md)
     * [Clientside Validation](/forms/Validation/clientside.md)
-    
   * [Form Components \(Field Types\)](forms/components-overview.md)
     * [accordion](forms/fieldtypes/accordion.md)
     * [vtab](forms/fieldtypes/vtab.md)
@@ -28,7 +27,6 @@
     * [html](forms/fieldtypes/html.md)
     * [listrows](forms/fieldtypes/listrows.md)
   * [Styling and Design](forms/misc/styling.md)
-    
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
   * [Common Hooks](/hooks/commonoverview.md)
@@ -41,10 +39,8 @@
   * [showModal](actions/showModal.md)
 * [Navigation](navigation/navigationoverview.md)
 
-
-
-
 ## Services
+
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
 

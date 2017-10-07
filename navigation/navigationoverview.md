@@ -4,7 +4,18 @@ Most of the navigation in BetterForms is handled is handled with the URL path. B
 ## Custom Navigation Menus
 You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and thier their children.
 
+### Navigtion Item Types
+
+
+
 ```
-// Navigation Object
+// Navigation Object examples
+
+```
+
+
+
+```
+// Full Navigation example
 
 ```
