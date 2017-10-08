@@ -23,8 +23,7 @@ You can define a navigation object in the site settings. This allows you to crea
 | parent menu | This is a dropdown style parent menu that will hold sub menus. BettterForms looks to see a \`subs\` key and if present will consider this the parent. |
 | actions | If a navigation item has a 'actions' key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the actions processor. Typical actions include Modals, Alerts and path navigation. |
 |  |  |
-|  |  |
-|  |  |
+
 
 ```
 // Navigation Object examples
