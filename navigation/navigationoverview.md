@@ -12,7 +12,7 @@ Ways to change user navigation:
 
 You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and thier their children.
 
-### Navigtion Item Types
+### Navigtion Item Types and Key Descriptions
 
 | Type | Description |
 | :--- | :--- |
