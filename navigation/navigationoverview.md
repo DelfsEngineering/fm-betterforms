@@ -2,6 +2,12 @@
 
 Most of the navigation in BetterForms is handled is handled with the URL path. By using actions and / or custom navigation menus,you can completely control the users movement.
 
+Ways to change user navigation:
+  * Custom navigation menus
+  * Actions passed back from hooks
+  * Actions linked to form objects
+  
+
 ## Custom Navigation Menus
 
 You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and thier their children.
@@ -11,6 +17,8 @@ You can define a navigation object in the site settings. This allows you to crea
 | Type | Description |
 | :--- | :--- |
 | navigation | this key contains an array (usually only one element) of the menu sections. |
+| sectionLabel | This label describes what the menu section context is. It is not selectable. |
+| label | This label is the text area of each menu item |
 | path | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. This can also also be accomplished with a path action |
 | parent menu | This is a dropdown style parent menu that will hold sub menus. BettterForms looks to see a \`subs\` key and if present will consider this the parent. |
 | actions | If a navigation item has a 'actions' key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the actions processor. Typical actions include Modals, Alerts and path navigation. |
