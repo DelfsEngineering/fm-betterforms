@@ -32,5 +32,7 @@ The default configuration uses `file.io` as ephemeral storage. Using additional 
 You can totally customize the dropzone component and control things like file size limits and number of files uploaded.
 
   #### Reference
+  [vue-dropzone options](https://github.com/rowanwins/vue-dropzone#props)
   
+  [http://www.dropzonejs.com/#configuration](http://www.dropzonejs.com/#configuration)
   
