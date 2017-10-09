@@ -26,6 +26,7 @@
     * [signature](forms/fieldtypes/signature.md)
     * [html](forms/fieldtypes/html.md)
     * [listrows](forms/fieldtypes/listrows.md)
+    * [dropzone](forms/fieldtypes/dropzone.md)
   * [Styling and Design](forms/misc/styling.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
