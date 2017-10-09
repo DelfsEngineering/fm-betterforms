@@ -36,6 +36,37 @@ You can totally customize the dropzone component and control things like file si
   
  [http://www.dropzonejs.com/#configuration](http://www.dropzonejs.com/#configuration)
 
+### Example data model
+```JSON
+[
+  {
+    "file": {
+      "upload": {
+        "progress": 100,
+        "total": 67666,
+        "bytesSent": 67666,
+        "filename": "1404329470648.jpeg"
+      },
+      "status": "success",
+      "previewElement": {},
+      "previewTemplate": {},
+      "_removeLink": {},
+      "accepted": true,
+      "processing": true,
+      "xhr": {},
+      "width": 450,
+      "height": 385
+    },
+    "response": {
+      "success": true,
+      "key": "RSadAH",
+      "link": "https://file.io/RSadAH",
+      "expiry": "14 days"
+    }
+  }
+]
+
+```
   
   
   
