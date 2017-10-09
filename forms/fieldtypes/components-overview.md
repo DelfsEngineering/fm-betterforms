@@ -18,6 +18,8 @@ In additional to regular field type there are several custom types.
 
 * [listrows](/forms/addition-form-types/listrows.md)
 
+* [dropzone](/forms/fieldtypes/dropzone.md)
+
 
  
 
