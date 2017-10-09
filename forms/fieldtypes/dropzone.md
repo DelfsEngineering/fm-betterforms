@@ -2,12 +2,14 @@
 
 `dropzone` Allows you to easily add a drag and drop file upload component to any form. Files are posted to any upload service such as [file.io](https://www.file.io/#one) and [uploadcare](https://uploadcare.com). The data model is passed back all relevant meta information.  
 
+The default configuration uses `file.io` as ephemeral storage. Using additional options you can adjust the length of time a file lives for (default is 2 weeks). Typically upon form submission your fileMaker hook script would insert the data from the storage location into a container etc in your database.  
+
+![](/assets/Screen Shot 2017-10-09 at 5.34.44 PM.png)
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | dropzone | string |  |
-| model |   | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
-| model |  | string | raw HTML code |
+| model |   | Array | Array of uploaded file metadata. Does not have to be predefined. |
 | options | { ... } | object | object of additional options. These will override defaults. |
 
 ##### 
@@ -25,3 +27,10 @@
   } 
 }
 ```
+
+### Additional Options
+You can totally customize the dropzone component and control things like file size limits and number of files uploaded.
+
+  #### Reference
+  
+  
