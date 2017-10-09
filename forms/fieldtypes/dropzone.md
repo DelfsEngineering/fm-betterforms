@@ -2,7 +2,7 @@
 
 `dropzone` Allows you to easily add a drag and drop file upload component to any form. Files are posted to any upload service such as [file.io](https://www.file.io/#one) and [uploadcare](https://uploadcare.com). The data model is passed back all relevant meta information.  
 
-The default configuration uses `file.io` as ephemeral storage. Using additional options you can adjust the length of time a file lives for (default is 2 weeks). Typically upon form submission your fileMaker hook script would insert the data from the storage location into a container etc in your database.  
+The default configuration uses file.io as ephemeral storage. Using additional options you can adjust the length of time a file lives for (default is 2 weeks). Typically upon form submission, your FileMaker hook script would insert the data from the storage location into a container etc in your database.  
 
 ![](/assets/Screen Shot 2017-10-09 at 5.34.44 PM.png)
 
@@ -34,5 +34,8 @@ You can totally customize the dropzone component and control things like file si
   #### Reference
   [vue-dropzone options](https://github.com/rowanwins/vue-dropzone#props)
   
-  [http://www.dropzonejs.com/#configuration](http://www.dropzonejs.com/#configuration)
+ [http://www.dropzonejs.com/#configuration](http://www.dropzonejs.com/#configuration)
+
+  
+  
   
