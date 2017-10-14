@@ -8,6 +8,12 @@ The actions processor allows you to create interactions with the user.
 
 * _**path **_**- **redirects the user to a new page** **
 
+### Usage
+Actions can be injected the following places:
+* All hooks 
+* adsf
+
+
 ### _$actions_ - Actions Array
 
 The `$actions` JSON array is surfaced in many of the developer hooks that are applicable to rendering actions.
