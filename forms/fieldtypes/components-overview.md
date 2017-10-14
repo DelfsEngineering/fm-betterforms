@@ -20,6 +20,10 @@ In additional to regular field type there are several custom types.
 
 * [dropzone](/forms/fieldtypes/dropzone.md)
 
+* [bfcheckbox1](/forms/addition-form-types/bfcheckbox1)
+
+
+
 
  
 
