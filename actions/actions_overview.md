@@ -1,17 +1,22 @@
 # Actions Processor
 
-The actions processor allows you to create interactions with the user.
+The actions processor allows you to create interactions with the user. The actions object is an array. Actions are executed sequentially. Modal actions what until the modal is closed. 
 
 ### Action Types:
 
-* _**showModal**_** **- Renders a modal dialoge
+* _**showModal**_** **- Renders a modal dialog
+
+* _**showAlert**_** **- Renders a toaster style alert
 
 * _**path **_**- **redirects the user to a new page** **
+
+* _**downloadfile**_** **- downloads a file (link) to the user 
 
 ### Usage
 Actions can be injected the following places:
 * All hooks 
-* adsf
+* Navigation Menu Items
+* Form action elements
 
 
 ### _$actions_ - Actions Array
