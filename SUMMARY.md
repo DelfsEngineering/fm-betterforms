@@ -38,6 +38,7 @@
   * [path](actions/path.md)
   * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
+  * [downloadFile](actions/downloadFile.md)
 * [Navigation](navigation/navigationoverview.md)
 
 ## Services
