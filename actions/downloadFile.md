@@ -5,7 +5,7 @@ Downloads a file to from the clients browser.
 | Key | Description |
 | :--- | :--- |
 | action | downloadFile |
-| options.url | the url of the file to be donwloaded |
+| options.url | the url of the file to be downloaded |
 
 
 ```
@@ -16,8 +16,6 @@ Downloads a file to from the clients browser.
 }
 ]
 ```
-
-
 
 
 ####FileMaker Custom Function
