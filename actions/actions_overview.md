@@ -10,7 +10,7 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**path **_**- **redirects the user to a new page** **
 
-* _**downloadfile**_** **- downloads a file (link) to the user 
+* _**downloadFile**_** **- downloads a file (link) to the user 
 
 ### Usage
 Actions can be injected the following places:
