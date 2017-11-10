@@ -12,23 +12,43 @@ When clicked, the payment workflow is initiated.
 | :--- | :--- | :--- | :--- |
 | type | paypal | string |  |
 | model |  | object | contains results of payment tansactions |
-| credentials |{}|d ||
-| options | { ... } | object | Paypal Required settings |
+| amount |  |string|model key that holds the amount|
+| invoiceNumber | 'nyInvNo' |string|model key that holds invoice number|
+| items | 'myItems' |array|model key that holds an array of items|
+| credentials |{}|d |credential object, |
+| style |{}|object |PayPal defined styling of the button|
 
 ##### 
 
 
-##### Example
+##### Reference
 
 ```
-// you can use either body or model or both keys for HTML source code
-
-{
-  "html": "<h1>This is some HTML</h1> It will display ahead of the model HTML",
-  "model": "mySourceHtml",
-  "type": "html"
-},
-
+// sample credential object
+credentials: {
+    sandbox: '<sandbox client id>',
+    production: '<production client id>'
+  }
+```
 
 ```
+// Sample Items Object
+myItems: [
+    {
+      "name": "hat",
+      "description": "Brown hat.",
+      "quantity": "1",
+      "price": "5",
+      "currency": "USD"
+      },
+      {
+      "name": "handbag",
+      "description": "Black handbag.",
+      "quantity": "1",
+      "price": "5",
+      "currency": "USD"
+      }
+  ]
+```
+
 
