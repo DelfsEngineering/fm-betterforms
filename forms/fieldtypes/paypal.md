@@ -11,17 +11,17 @@ When clicked, the payment workflow is initiated.
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | paypal | string |  |
-| model |  | object | contains results of payment tansactions |
+| model |  | object | data model key name that will contain results of payment tansactions |
 | amount |  |string|model key that holds the amount|
-| invoiceNumber | 'nyInvNo' |string|model key that holds invoice number|
-| items | 'myItems' |array|model key that holds an array of items|
-| credentials |{}|d |credential object, |
+| invoiceNumber | 'myInvNo' |string|model key that holds invoice number|
+| items | 'myItems' |array|optional - model key that holds an array of items|
+| credentials |{}|object |credential object, |
 | style |{}|object |PayPal defined styling of the button|
 
 ##### 
 
 
-##### Reference
+### Reference
 
 ```
 // sample credential object
@@ -30,6 +30,11 @@ credentials: {
     production: '<production client id>'
   }
 ```
+####Specifying Items
+
+Optionally, according to the PayPal Payments API documents, you can list out any items along with your transaction.
+
+For more information, PayPal Item List
 
 ```
 // Sample Items Object
@@ -49,6 +54,18 @@ myItems: [
       "currency": "USD"
       }
   ]
+```
+
+Button Style
+
+Cahnge the style of the button via a style object like so:
+```
+{
+    label: 'checkout',
+    size:  'responsive',    // small | medium | large | responsive
+    shape: 'pill',         // pill | rect
+    color: 'gold'         // gold | blue | silver | black
+}
 ```
 
 
