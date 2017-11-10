@@ -22,6 +22,8 @@ In additional to regular field type there are several custom types.
 
 * [bfcheckbox1](/forms/addition-form-types/bfcheckbox1)
 
+* [paypal](/forms/addition-form-types/paypal)
+
 
 
 
