@@ -1,6 +1,7 @@
 ## paypal - Paypal Payment button and processor
 
 `paypal` Allows you to securly process payments via PayPal. This component only redners the button and hands the secur transaction via the PayPal API.
+You will have to add summary information around this component so the user knows what they are paying for.
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
@@ -56,9 +57,9 @@ myItems: [
   ]
 ```
 
-Button Style
+####Button Style
 
-Cahnge the style of the button via a style object like so:
+You can change the style of the button via a style object like so:
 ```
 {
     label: 'checkout',
