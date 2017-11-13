@@ -70,4 +70,28 @@ You can change the style of the button via a style object like so:
 }
 ```
 
+####Complete Example Object
+
+```
+{
+  "label": "Paypal",
+  "model": "files",
+  "styleClasses": "col-md-8",
+  "type": "paypal",
+  "currency": "CAD",
+  "locale": "ca",
+  "dev": true,
+  "amount": "1.00",
+  "credentials": {
+    "sandbox": "AfGtki3XCbYBRxGWWY6YQlqRio82v5Jp6oPC7FJ9_0BLOlT3Z5KXLgPVmVGoCtZQTDuaYhrCM7ez3P9g",
+    "production": "AcWg3pjwEtxVCX_UNrmb8GDvh3ntnP7zeDbIfVKRvDVWHr2UkkYUM9ze0r4-H4HkhzGtBEXE21iFsmg2"
+  },
+  "style": {
+    "label": "checkout",
+    "size": "responsive",
+    "shape": "pill",
+    "color": "gold"
+  }
+}
+```
 
