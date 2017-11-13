@@ -13,10 +13,11 @@ When clicked, the payment workflow is initiated.
 | :--- | :--- | :--- | :--- |
 | type | paypal | string |  |
 | model |  | object | data model key name that will contain results of payment tansactions |
-| amount |  |string|model key that holds the amount|
+| amountKey |  |string|model key that holds the amount. |
 | currency |  |string|model key that holds the amount|
 | invoiceNumber | 'USD' |string|curency for the payment|
-| items | 'myItems' |array|optional - model key that holds an array of items|
+| dev | false |boolean|if true, use sandbox credentials |
+| itemsKey | 'myItems' |array|optional - model key that holds an array of items|
 | credentials |{}|object |credential object, |
 | style |{}|object |PayPal defined styling of the button|
 
