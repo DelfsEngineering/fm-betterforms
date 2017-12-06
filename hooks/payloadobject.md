@@ -6,9 +6,7 @@ You can prevent critical information from being saved to records by adding a `de
 * If you are saving the data model you will also have to apply a `deletePaths` function.
 * This features takes advantage of the JSON.deletePaths custom function.
 
-fdf
-d
-
+##Example
 ```
 // Supplied
 {
@@ -53,5 +51,22 @@ d
 }
 ```
 
+###Example Cleaning Function
 
-sadfasdfd
+```
+$modelCleaned = 
+Let(
+[deletePaths = JSONGetElement ( $model; "deletePaths" )
+];
+
+If ( not IsEmpty ( deletePaths ) 
+  ; JSON.DeletePaths ( $model ; deletePaths ; "***" ) 
+  ;$model 
+  )
+
+)
+
+```
+
+
+
