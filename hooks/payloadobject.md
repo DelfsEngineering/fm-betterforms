@@ -52,12 +52,13 @@ You can prevent critical information from being saved to records by adding a `de
 ```
 
 ###Example Cleaning Function
+Use this from within a hook to access the $$model or $model var (new or old hooks)
 
 ```
 $modelCleaned = 
 Let(
-[deletePaths = JSONGetElement ( $model; "deletePaths" )
-];
+[deletePaths = JSONGetElement ( $model; "deletePaths" )
+];
 
 If ( not IsEmpty ( deletePaths ) 
   ; JSON.DeletePaths ( $model ; deletePaths ; "***" ) 
