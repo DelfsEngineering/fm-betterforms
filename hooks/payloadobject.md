@@ -5,18 +5,31 @@ You can prevent critical information from being saved to records by adding a `de
 ```
 {
   "model": {
-    "cartTotal": 89.04,
-    "courseFormat": "Printed Book",
+    "deletePaths": [
+    "payment.cvv",
+    "payment.exp",
+    "payment.cardNumber"
+    ],
+    "nameFirst": "Charles ",
+    "nameLast": "Delfs",
+    "payment": {
+      "address1": "50 moore",
+      "cardNumber": "1231 11221 212121",
+      "city": "Bradford on",
+      "country": "canada",
+      "cvv": "123",
+      "exp": "11-11"
+    }
+  }
+}
+
+// results is saved data:
+{
+  "model": {
     "deletePaths": [
       "payment.cvv",
-      "payment.number",
+      "payment.exp",
       "payment.cardNumber"
-    ],
-    "email": "asd@asd.com",
-    "enrollments": [
-      {
-        "amount": 89.04
-      }
     ],
     "nameFirst": "Charles ",
     "nameLast": "Delfs",
@@ -26,13 +39,8 @@ You can prevent critical information from being saved to records by adding a `de
       "city": "Bradford on",
       "country": "canada",
       "cvv": "***",
-      "exp": "11-11",
-      "method": " Check",
-      "nameFirst": "charles",
-      "nameLast": "delfs",
-      "state": "on",
-      "zip": "l32223"
+      "exp": "***"
     }
   }
 }
-```22
+```
