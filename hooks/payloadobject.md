@@ -1,6 +1,7 @@
 ## Private information and PCI Compliance
 
 You can prevent critical information from being saved to records by adding a `deletePaths` array of data model paths you want to remove or `'***'` out from the data model.
+All hooks will have full access the re original payload data.
 
 ```
 {
