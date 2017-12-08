@@ -28,3 +28,8 @@
 
 ```
 
+## Injecting VueJS syntax
+
+## Formatting Date and Time with `Moment`
+`{{moment().format() }}`
+https://momentjs.com/docs/
