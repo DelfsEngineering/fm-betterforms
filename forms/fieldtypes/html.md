@@ -1,18 +1,15 @@
-## html - Custom HTML 
+## html - Custom HTML
 
 `html` Allows you to merge any HTML and inline CSS into your form layout. HTML source data can be in either \(or both\) the data `model` or the field `scmema`
-
-
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | html | string |  |
-| html |   | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
+| html |  | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
 | model |  | string | raw HTML code |
 | schema | { ... } | object | the schema object follows the same construct as schema of its parent. It only needs to contain a _**fields**_ array. |
 
 ##### 
-
 
 ##### Example
 
@@ -24,12 +21,22 @@
   "model": "mySourceHtml",
   "type": "html"
 },
-
-
 ```
 
-## Injecting VueJS syntax
+### Injecting VueJS syntax
 
-## Formatting Date and Time with `Moment`
-`{{moment().format() }}`
-https://momentjs.com/docs/
+### Formatting Date and Time with `Moment`
+
+`{{moment().format() }}`  
+[https://momentjs.com/docs/](https://momentjs.com/docs/)
+
+
+
+### Formatting numbers will \`numeral.js\`
+
+\```{{numeral().format() }}```
+
+http://numeraljs.com/\#format
+
+
+
