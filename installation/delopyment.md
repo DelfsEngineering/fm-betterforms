@@ -2,7 +2,7 @@
 
 After you have installed `BetterForms.fmp12` you can begin to set up a web server.
 
-BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docker bases serverless enviornment and allows for easy deployment and versioning.
+BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docker based serverless enviornment and allows for easy deployment and versioning.
 
 1. Obtain a Zeit.co account. 
 
@@ -21,7 +21,7 @@ FM BetterForms has two components that may need to be updated occasionally.
 
 
 
-##Custom Domains
+##Custom Domains[](#Custom)
 
 BetterForms deploys on Zeit's Now docker service. You can set up multiple test and production servers easily and have your custom domain point to them as needed.
 
@@ -62,7 +62,7 @@ $ now alias sales.Domain.com
 
 ```
 
-4. The domain should now function correct. If you are getting a site error check the sites section in BetterForms.fmp12. The subdomain must match the subdomain of your Custom Domain.
+4. The domain should now function correct. If you are getting a site error check the site's section in **BetterForms.fmp12**. The subdomain must match the subdomain of your Custom Domain.
 
 
 
