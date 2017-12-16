@@ -21,3 +21,14 @@ FM BetterForms has two components that may need to be updated occasionally.
 
 
 
+##Custom Domains
+
+BetterForms deploys on Zeit's Now docker service. You can set up multiple test and production servers easily and have your custom domain point to them as needed.
+
+**Commanline:**
+```
+now alias sales.Domain.com
+// will check namse rvers and prompt if not set.
+
+```
+
