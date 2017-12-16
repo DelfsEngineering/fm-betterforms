@@ -7,8 +7,6 @@ BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docke
 1. Obtain a Zeit.co account. 
 
 
-
-
 ## Update
 
 FM BetterForms has two components that may need to be updated occasionally.
