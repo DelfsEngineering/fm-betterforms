@@ -42,7 +42,6 @@ Error: Verification required: Please add the following TXT record on the externa
 ```
 
 
-
 #### GoDaddy Example
 2. add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below
 ![](/assets/Screen Shot 2017-12-16 at 4.12.10 PM.png)
