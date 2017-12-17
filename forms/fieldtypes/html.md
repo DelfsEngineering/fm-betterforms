@@ -34,7 +34,7 @@
 
 ### Formatting numbers will \`numeral.js\`
 
-\```{{numeral().format() }}```
+`{{numeral().format() }}`
 
 http://numeraljs.com/\#format
 
