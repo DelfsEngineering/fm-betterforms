@@ -23,7 +23,7 @@ FM BetterForms has two components that may need to be updated occasionally.
 
 BetterForms deploys on Zeit's Now docker service. You can set up multiple test and production servers easily and have your custom domain point to them as needed.
 
-1. Generate a TXT record access token by aliasing a deployment to your domain. This will error and give you a token to add to the Zone file.
+Step 1. Generate a TXT record access token by aliasing a deployment to your domain. This will error and give you a token to add to the Zone file.
 
 **Command line:**
 ```
@@ -43,10 +43,16 @@ Error: Verification required: Please add the following TXT record on the externa
 
 
 #### GoDaddy Example
-2. add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below
+**Step 2A.** add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below:
+
 ![](/assets/Screen Shot 2017-12-16 at 4.12.10 PM.png)
 
-3. Rerun the command line alias again:
+**Step 2B.** Add a `cname` record as follows:  
+
+![](/assets/Screen Shot 2017-12-16 at 11.35.45 PM.png)
+
+
+**Step 3.** Re-run the command line alias again:
 
 ```
 $ now alias sales.Domain.com
@@ -55,11 +61,10 @@ $ now alias sales.Domain.com
 > bf.delfsengineering.ca is a custom domain.
 > Verifying the DNS settings for bf.delfsengineering.ca (see https://zeit.world for help)
 > Verification OK!
-> Success! Alias already exists (yXG8DfFu2Lo6sJ02UZ9NokCe).
-
+> Success! ....
 ```
 
-4. The domain should now function correct. If you are getting a site error check the site's section in **BetterForms.fmp12**. The subdomain must match the subdomain of your Custom Domain.
+**Step 4.** The domain should now function correct. If you are getting a site error check the site's section in **BetterForms.fmp12**. The subdomain must match the subdomain of your Custom Domain.
 
 
 
