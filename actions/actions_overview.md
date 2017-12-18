@@ -10,43 +10,26 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**path **_**- **redirects the user to a new page** **
 
+* _**runUtilityHook**_** **- runs the `onUtility` hook passing it params 
+
 * _**downloadFile**_** **- downloads a file (link) to the user 
 
 ### Usage
 Actions can be injected the following places:
 * All hooks 
 * Navigation Menu Items
-* Form action elements
+* Form action elements (buttons)
 
 
 ### _$actions_ - Actions Array
 
-The `$actions` JSON array is surfaced in many of the developer hooks that are applicable to rendering actions.
+The `$#actions ($actions)` JSON array is surfaced in many of the developer hooks that are applicable to rendering actions.
+
+To add an action simply add the action object as an array element.
 
 Actions are executed sequentially starting at `index = 0`
 
 You should always have a `"action": "path"` when you are adding actions to the `onLogin` developer hook. If you do not, the user will be stuck at the login prompt page.
-
-#
-Action Options
-
-#### action: showModal
-
-| Key | Description |
-| :--- | :--- |
-| action | showModal |
-| options.text | |
-| options.some stuff | |
-| options. | |
-| options. | |
-| options. | |
-
-```
-// action object for 'showModal'
-{
-
-}
-```
 
 
 
