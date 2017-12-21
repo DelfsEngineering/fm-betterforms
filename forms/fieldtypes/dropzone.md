@@ -10,7 +10,7 @@ The default configuration uses file.io as ephemeral storage. Using additional op
 | :--- | :--- | :--- | :--- |
 | type | dropzone | string |  |
 | model |   | Array | Array of uploaded file metadata. Does not have to be predefined. |
-| options | { ... } | object | object of additional options. These will override defaults. |
+| options | {url } | object | object of additional options. These will override defaults. and are passed directly into drop zone.js |
 
 ##### 
 
