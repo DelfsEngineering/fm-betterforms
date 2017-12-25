@@ -14,6 +14,8 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**downloadFile**_** **- downloads a file (link) to the user 
 
+* _**actionsBeforeComplete**_** **- downloads a file (link) to the user 
+
 ### Usage
 Actions can be injected the following places:
 * All hooks 
@@ -31,6 +33,7 @@ Actions are executed sequentially starting at `index = 0`
 
 You should always have a `"action": "path"` when you are adding actions to the `onLogin` developer hook. If you do not, the user will be stuck at the login prompt page.
 
-
+Places you can use actions
+actionsBeforeComplete can be added to the schema.form object and BetterForms will run the actions array if present
 
 
