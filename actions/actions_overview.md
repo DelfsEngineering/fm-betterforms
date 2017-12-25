@@ -6,6 +6,8 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**showModal**_** **- Renders a modal dialog
 
+* _**hideModal**_** **- Hides a modal that is non-blocking
+
 * _**showAlert**_** **- Renders a toaster style alert
 
 * _**path **_**- **redirects the user to a new page** **
@@ -38,4 +40,6 @@ You should always have a `"action": "path"` when you are adding actions to the `
 ### Other places you can use actions
 **actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present
 
+### Actions Options
 
+nonBlocking - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait and want other things to run (like slow process hooks)
