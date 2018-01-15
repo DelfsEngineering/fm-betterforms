@@ -6,26 +6,22 @@ BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docke
 
 1. Obtain a Zeit.co account. 
 
-
 ## Update
 
 FM BetterForms has two components that may need to be updated occasionally.
 
 ### Web Server
 
+### FileMaker Connector
 
-
-### FileMaker Connector 
-
-
-
-##Custom Domains[](#Custom)
+## Custom Domains
 
 BetterForms deploys on Zeit's Now docker service. You can set up multiple test and production servers easily and have your custom domain point to them as needed.
 
 Step 1. Generate a TXT record access token by aliasing a deployment to your domain. This will error and give you a token to add to the Zone file.
 
 **Command line:**
+
 ```
 $ now alias sales.Domain.com
 // will take the current now deployment and connect it the sales.domain.com and yeild a token on error.
@@ -38,19 +34,17 @@ delfs:~/workspace/BetterForms (master) $ now alias bf.delfsengineering.ca
 Error: Verification required: Please add the following TXT record on the external DNS server: _now.delfsengineering.ca: 3b2701d39642e0804643b9f58ab3d20a399d142c94994e05b5f7975bd3c0a0dd
     at module.exports.EventEmitter.setupDomain.name.retry (/snapshot/now-cli/dist/now.js:859:15)
     at process._tickCallback (internal/process/next_tick.js:109:7)
-
 ```
 
+#### GoDaddy Example[\#](#) {#custom-domain-example}
 
-#### GoDaddy Example
 **Step 2A.** add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below:
 
 ![](/assets/Screen Shot 2017-12-16 at 4.12.10 PM.png)
 
-**Step 2B.** Add a `cname` record as follows:  
+**Step 2B.** Add a `cname` record as follows:
 
 ![](/assets/Screen Shot 2017-12-16 at 11.35.45 PM.png)
-
 
 **Step 3.** Re-run the command line alias again:
 
@@ -65,7 +59,4 @@ $ now alias sales.Domain.com
 ```
 
 **Step 4.** The domain should now function correct. If you are getting a site error check the site's section in **BetterForms.fmp12**. The subdomain must match the subdomain of your Custom Domain.
-
-
-
 
