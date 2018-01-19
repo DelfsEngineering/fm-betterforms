@@ -10,7 +10,7 @@ By selecting the `validator` type to `calc` and adding a calculation and error m
 ![](/assets/Screen Shot 2018-01-19 at 6.47.50 PM.png)
 
 ```
-// example JSON for element with custom validation
+// example JSON for an element with custom validation
 [
   {
     "inputType": "text",
