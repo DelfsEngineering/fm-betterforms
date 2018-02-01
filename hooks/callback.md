@@ -6,6 +6,9 @@ This hook gives the developer access to a universal API endpoint. This can be us
 
 This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others \(see below\).
 
+####Endpoint
+`/api*`
+
 #### Uses:
 
 * Callback for integrating various services
@@ -104,9 +107,9 @@ Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dis
 
 #### Processing Time
 
-Keep your script calls to a minimum time if the script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
+Keep your script calls to a minimum run time if your script is expecting to have a lot of traffic and the process takes a long time. One common technique for long process times is to queue up the process and return the caller back a token or status of `processing` etc.
 
 #### Use workflow processing queues when needed
 
-If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead sue up the work flow and return just the parts of the data that can be prepared quickly.
+If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead queue up the work flow and return just the parts of the data that can be prepared quickly.
 
