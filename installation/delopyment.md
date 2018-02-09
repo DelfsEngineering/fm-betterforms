@@ -18,7 +18,14 @@ FM BetterForms has two components that may need to be updated occasionally.
 
 BetterForms deploys on Zeit's Now docker service. You can set up multiple test and production servers easily and have your custom domain point to them as needed.
 
-Step 1. Generate a TXT record access token by aliasing a deployment to your domain. This will error and give you a token to add to the Zone file.
+
+#### GoDaddy Example[\#](#) {#custom-domain-example}
+
+**Step 1.** Add a `cname` record as follows:
+
+![](/assets/Screen Shot 2017-12-16 at 11.35.45 PM.png)
+
+**Step 2A** Generate a TXT record access token by aliasing a deployment to your domain. This will error and give you a token to add to the Zone file.
 
 **Command line:**
 
@@ -36,15 +43,10 @@ Error: Verification required: Please add the following TXT record on the externa
     at process._tickCallback (internal/process/next_tick.js:109:7)
 ```
 
-#### GoDaddy Example[\#](#) {#custom-domain-example}
-
-**Step 2A.** add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below:
+**Step 2B.** add zone record of type `TXT` with the host set to `_now` and the TXT Value set to your access token as show below:
 
 ![](/assets/Screen Shot 2017-12-16 at 4.12.10 PM.png)
 
-**Step 2B.** Add a `cname` record as follows:
-
-![](/assets/Screen Shot 2017-12-16 at 11.35.45 PM.png)
 
 **Step 3.** Re-run the command line alias again:
 
