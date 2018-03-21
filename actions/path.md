@@ -9,7 +9,7 @@
 | action | showModal |
 | options.path | "/" - index page |
 |  | "/form/:id - a form with id |
-| options.url | will open page url in a new tab  |
+| options.url | will open page url in a new tab |
 | options.sameWindow | if true, will open url replacing betterforms \(same tab\) |
 
 ```
@@ -21,6 +21,16 @@
     }
 
 
+}
+
+// This will replace the BetterForms page with the URL 'www.delfsengineering.ca'
+{
+"action" : "path",
+    "options" :
+    {
+        "sameWindow" : true,
+        "url" : "http://www.delfsengineering.ca"
+    }		
 }
 ```
 
