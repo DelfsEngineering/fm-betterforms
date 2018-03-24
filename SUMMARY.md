@@ -40,10 +40,13 @@
   * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
+  * [clipboard](actions/clipboard.md)
 * [Navigation](navigation/navigationoverview.md)
 
 ## Services
 
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
+
+
 
