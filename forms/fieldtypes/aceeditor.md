@@ -2,7 +2,7 @@
 
 `aceeditor` Allows you to merge any HTML and inline CSS into your form layout. HTML source data can be in either \(or both\) the data `model` or the field `scmema`
 
-| Key | Value\(s\) | Type | Description |
+| Key | Value\(s\) | Type | Description | 
 | :--- | :--- | :--- | :--- |
 | type | aceeditor | string |  |
 | lang |  | string  | code language options: html, javascript, markdown, plain_text, css, json |
