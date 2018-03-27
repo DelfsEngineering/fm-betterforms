@@ -5,6 +5,26 @@ The `form.namedActions` object can contain named actions.
 
 ```
 // namedAction Schema
-
+{
+  "form": {
+    
+    ...
+    
+    "namedActions": {
+      "showCantDoThat": {
+        "action": "showAlert",
+        "options": {
+          "title": "Whoooaa!!",
+          "text": "You can't do that thing you just did.",
+          "type": "warning"
+        }
+      }
+    },
+    
+   ...
+   
+   
+  }
+}
 
 ```
