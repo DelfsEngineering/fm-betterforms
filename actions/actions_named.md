@@ -28,3 +28,12 @@ The `form.namedActions` object can contain named actions.
 }
 
 ```
+
+
+### Usage
+in an HTML element type you can call the named action as follows:
+```
+
+
+
+```
