@@ -42,6 +42,8 @@
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
   * [clipboard](actions/clipboard.md)
+* [Named Actions](/actions/actions_named.md)
+
 * [Navigation](navigation/navigationoverview.md)
 
 ## Services
