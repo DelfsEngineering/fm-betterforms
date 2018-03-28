@@ -7,7 +7,7 @@
 | type | html | string |  |
 | html |  | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
 | model |  | string | raw HTML code |
-| schema | { ... } | object | the schema object follows the same construct as schema of its parent. It only needs to contain a _**fields**_ array. |
+| dataModelScope | {optional} | string |if defined, the scope of the `model` object within the html will root to this data model path. This is used when you are building things that edit other things and want live data rendering. This is used in the HTML builder page of the admin site. |
 
 ##### 
 
