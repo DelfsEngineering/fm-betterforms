@@ -37,19 +37,16 @@
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
 * [Actions Processor](/actions/actions_overview.md)
-  * [path](actions/path.md)
-  * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
+  * [showAlert](actions/showAlert.md)
+  * [path](actions/path.md)
   * [clipboard](actions/clipboard.md)
 * [Named Actions](/actions/actions_named.md)
-
 * [Navigation](navigation/navigationoverview.md)
 
 ## Services
 
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
-
-
 

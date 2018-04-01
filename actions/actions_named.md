@@ -1,5 +1,6 @@
 # Named Actions
-Named actions are predefined actions that can be called from events like HTML onClick etc. These actions consist of the same action parameters as regular actions but have a unique name associated with each one. 
+
+Named actions are predefined actions that can be called from events like HTML onClick etc. These actions consist of the same action parameters as regular actions but have a unique name associated with each one.
 
 The `form.namedActions` object can contain named actions.
 
@@ -7,9 +8,9 @@ The `form.namedActions` object can contain named actions.
 // namedAction Schema
 {
   "form": {
-    
+
     ...
-    
+
     "namedActions": {
       "showCantDoThat": {
         "action": "showAlert",
@@ -20,20 +21,21 @@ The `form.namedActions` object can contain named actions.
         }
       }
     },
-    
+
    ...
-   
-   
+
+
   }
 }
-
 ```
-
 
 ### Usage
+
 in an HTML element type you can call the named action as follows:
+
+```
+
 ```
 
 
 
-```
