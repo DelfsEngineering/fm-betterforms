@@ -29,6 +29,7 @@
     * [dropzone](forms/fieldtypes/dropzone.md)
     * [paypal](forms/fieldtypes/paypal.md)
     * [aceeditor](forms/fieldtypes/aceeditor.md)
+    * [tables2](forms/fieldtypes/tables2.md)
   * [Styling and Design](forms/misc/styling.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
