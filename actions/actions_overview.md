@@ -49,7 +49,15 @@ nonBlocking - When added to the action and try, the actions processor will not w
 
 ### Functions
 
-The actions object can also have a `function` key. If defined the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
+The actions object can also have a `function` key. If defined the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment.
 
-\*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `functinon` key evaluated. 
+\*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `functinon` key evaluated.
+
+Code run in a function can see
+
+* formGen \(entire Due FormGenerator component\) Generally should not need.
+
+* formSchema containing formSchema.model
+
+
 
