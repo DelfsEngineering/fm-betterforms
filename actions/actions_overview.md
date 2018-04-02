@@ -45,19 +45,19 @@ You should always have a `"action": "path"` when you are adding actions to the `
 
 ### Actions Options
 
-nonBlocking - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait and want other things to run \(like slow process hooks\)
+`nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait and want other things to run \(like slow process utility hooks\)
 
 ### Functions
 
 The actions object can also have a `function` key. If defined the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment.
 
-\*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `functinon` key evaluated.
+\*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `function` key evaluated.
 
-Code run in a function can see
+Code run in a function can see:
 
-* formGen \(entire Due FormGenerator component\) Generally should not need.
+* `formGen` \(entire Due FormGenerator component\) Generally should not need.
 
-* formSchema containing formSchema.model
+* `formSchema` containing `formSchema.model`
 
 
 
