@@ -6,3 +6,9 @@ The `content` key within the site object contains data related to the site look 
 
 ### Slots (`content.slots`)
 Slots are definable HTML templates that can be inserted into various areas of BetterForms. Slots can be used for customizing the header area, navigation and footer areas (footer not developed yet)
+
+```
+// content.slots
+
+
+```
