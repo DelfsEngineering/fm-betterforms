@@ -7,7 +7,8 @@
 * **Fully responsive UI **
 
   * allowing desktop, tablet and phone compatible UX
-
+  
+  
 * **Mutli-mode Authentication System **
 
   * Authenticate via URL hash,
@@ -52,7 +53,7 @@
 
   * Single FMS hosted controller file
 
-  * Web app deployed on server less hosting provider e.g. _Docker_ \(carious\) , \_Zeit.co No\_w etc.
+  * Web app deployed on server-less hosting provider e.g. _Docker_ \(various\) , \_Zeit.co No\_w etc.
   
   
   
