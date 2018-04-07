@@ -10,10 +10,6 @@
   * [Integration](installation/integration.md)
   * [Deployment](installation/delopyment.md)
 
-## Operation
-
-* [Admin Mode](developer-mode.md)
-
 ## Usage
 
 * [Site Model](site/siteoverview.md)
@@ -52,4 +48,8 @@
 
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
+
+## Operation
+
+* [Admin Mode](developer-mode.md)
 
