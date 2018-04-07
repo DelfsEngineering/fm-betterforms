@@ -5,9 +5,9 @@
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | html | string |  |
-| html |  | string | raw HTML. if both a model and body code are supplied, the body code goes first. |
-| model |  | string | raw HTML code |
-| dataModelScope | {optional} | string |if defined, the scope of the `model` object within the html will root to this data model path. This is used when you are building things that edit other things and want live data rendering. This is used in the HTML builder page of the admin site. |
+| html |  | string | raw HTML. if both a model and \`html\` code are supplied, the \`html\` code goes first. |
+| model |  | string | raw HTML \(VueJS\) code |
+| dataModelScope | {optional} | string | if defined, the scope of the `model` object within the html will root to this data model path. This is used when you are building things that edit other things and want live data rendering. This is used in the HTML builder page of the admin site. |
 
 ##### 
 
@@ -17,7 +17,7 @@
 // you can use either body or model or both keys for HTML source code
 
 {
-  "html": "<h1>This is some HTML</h1> It will display ahead of the model HTML",
+  "html": "<h1>This is some HTML!</h1> It will display ahead of the model HTML",
   "model": "mySourceHtml",
   "type": "html"
 },
@@ -25,18 +25,27 @@
 
 ### Injecting VueJS syntax
 
-### Formatting Date and Time with `Moment`
+You can harness the full power of VueJS the html rendering engine inside of BetterForms but simply adding Vue html syntax into your `HTML` code. 
 
-`{{moment().format() }}`  
-[https://momentjs.com/docs/](https://momentjs.com/docs/)
+**Things you can do using VueJS Syntax:**
 
+* Render merged data from the `data` model. Eg: ` My name is {{ modelnameFirst }}.`
+*  Build tables and other repeating data.
+* Execute all actions and pass data to those actions.
 
+### Formatting Date and Time with `MomentJS`
 
-### Formatting numbers will \`numeral.js\`
+MomentJS is a super powerful library you can access to format data and times.
+
+`{{moment().format() }}`
+
+See: [https://momentjs.com/docs/](https://momentjs.com/docs/)
+
+### Formatting numbers with \`MomentJS\`
+
+Numeral is like moment but for numbers, currency.
 
 `{{numeral().format() }}`
 
-http://numeraljs.com/\#format
-
-
+See: [http://numeraljs.com/\#format](http://numeraljs.com/#format)
 

@@ -33,18 +33,18 @@
     * [aceeditor](forms/fieldtypes/aceeditor.md)
     * [tables2](forms/fieldtypes/tables2.md)
   * [Styling and Design](forms/misc/styling.md)
-* [Hooks](/hooks/hooksoverview.md)
-  * [Payload Object](hooks/payloadobject.md)
-  * [Common Hooks](/hooks/commonoverview.md)
-    * [API Callback Endpoint](hooks/callback.md)
-  * [Scoped hooks](/hooks/scopedoverview.md)
-    * [Hooks](developer/hooks.md)
 * [Actions Processor](/actions/actions_overview.md)
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
   * [showAlert](actions/showAlert.md)
   * [path](actions/path.md)
   * [clipboard](actions/clipboard.md)
+* [Hooks](/hooks/hooksoverview.md)
+  * [Payload Object](hooks/payloadobject.md)
+  * [Common Hooks](/hooks/commonoverview.md)
+    * [API Callback Endpoint](hooks/callback.md)
+  * [Scoped hooks](/hooks/scopedoverview.md)
+    * [Hooks](developer/hooks.md)
 * [Named Actions](/actions/actions_named.md)
 * [Navigation](navigation/navigationoverview.md)
 
@@ -52,6 +52,4 @@
 
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
-
-
 
