@@ -6,7 +6,7 @@ Named actions are predefined actions that can be called from events like HTML on
 * `site.content.namedActions` These are globally scoped and can be called from anywhere.
 
 #### Priority of Execution
-* The actions processor will first try to find the named action in the current form, . If unsuccessful, the global `site.namedActions` object is checked.
+* The actions processor will first try to find the named action in the current form. If unsuccessful, the global `site.namedActions` object is checked.
 
 ### namedActions Schema
 
