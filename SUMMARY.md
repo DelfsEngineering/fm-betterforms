@@ -34,9 +34,10 @@
     * [tables2](forms/fieldtypes/tables2.md)
   * [Styling and Design](forms/misc/styling.md)
 * [Actions Processor](/actions/actions_overview.md)
+  * [Named Actions](/actions/actions_named.md)
+  * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
-  * [showAlert](actions/showAlert.md)
   * [path](actions/path.md)
   * [clipboard](actions/clipboard.md)
 * [Hooks](/hooks/hooksoverview.md)
@@ -45,7 +46,6 @@
     * [API Callback Endpoint](hooks/callback.md)
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
-* [Named Actions](/actions/actions_named.md)
 * [Navigation](navigation/navigationoverview.md)
 
 ## Services
