@@ -41,7 +41,7 @@ MomentJS is a super powerful library you can access to format data and times.
 
 See: [https://momentjs.com/docs/](https://momentjs.com/docs/)
 
-### Formatting numbers with \`MomentJS\`
+### Formatting numbers with `MomentJS`
 
 Numeral is like moment but for numbers, currency.
 
