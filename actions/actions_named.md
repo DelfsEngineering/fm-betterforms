@@ -5,6 +5,8 @@ Named actions are predefined actions that can be called from events like HTML on
 * `formSchema.form.namedActions` These are scoped to the form (page) that is current
 * `site.content.namedActions` These are globally scoped and can be called from anywhere.
 
+#### Priority
+* The actions processor will first try to find the named action in the current form, . If unsuccessful, the global named actions array is checked.
 
 ```
 // namedAction Schema
