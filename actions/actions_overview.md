@@ -58,6 +58,8 @@ Code run in a function can see:
 * `formGen` \(entire Due FormGenerator component\) Generally should not need.
 
 * `formSchema` containing `formSchema.model`
+* `action` the action object that triggered the function. 
+* `action.options` will contain a merged object from the passed in options (params) and the initial schema defined ones.
 
 
 
