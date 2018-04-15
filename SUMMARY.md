@@ -35,6 +35,7 @@
   * [showModal](actions/showModal.md)
   * [downloadFile](actions/downloadFile.md)
   * [path](actions/path.md)
+  * [runUtilityHook](actions/clipboard/runutilityhook.md)
   * [clipboard](actions/clipboard.md)
   * [setFocus](actions/setFocus.md)
 * [Hooks](/hooks/hooksoverview.md)
@@ -53,6 +54,4 @@
 ## Operation
 
 * [Admin Mode](developer-mode.md)
-
-
 
