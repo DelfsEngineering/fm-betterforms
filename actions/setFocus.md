@@ -1,4 +1,4 @@
-# Action: setFocus [\#setFocus](#setFocus) {#setfocus}
+# Action: setFocus
 
 Allows pragmatic element focusing \(set cursor to a field\)
 
@@ -7,8 +7,10 @@ Allows pragmatic element focusing \(set cursor to a field\)
 | action | setFocus |
 | elementId | The DOM element that you want the focus to direct to. |
 
+###Example action object###
+
 ```
-// action object for 'cllipboard'
+// action object for 'setFocus'
 [
   {
     "action": "setFocus",
