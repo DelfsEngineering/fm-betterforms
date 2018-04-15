@@ -36,6 +36,7 @@
   * [downloadFile](actions/downloadFile.md)
   * [path](actions/path.md)
   * [clipboard](actions/clipboard.md)
+  * [setFocus](actions/setFocus.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
   * [Common Hooks](/hooks/commonoverview.md)
@@ -52,4 +53,6 @@
 ## Operation
 
 * [Admin Mode](developer-mode.md)
+
+
 
