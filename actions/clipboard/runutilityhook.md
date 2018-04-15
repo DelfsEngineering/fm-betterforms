@@ -20,6 +20,8 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
 ]
 ```
 
+In the above example `type` is an arbitrary key used to parse multiple hook methods from the same page.
+
 You can access the entire action object under the `hookPackage` key. 
 
 
