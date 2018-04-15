@@ -26,7 +26,7 @@ Allows pragmatic element focusing \(set cursor to a field\)
 | Key | Description |
 | :--- | :--- |
 | action | setFocus |
-| elementId | TheDOM  element that you want the focus to direct to. |
+| elementId | The DOM  element that you want the focus to direct to. |
 
 ```
 // action  object for 'cllipboard'
