@@ -11,10 +11,13 @@ Slots can accept HTML and VueJs HTML.
 Slot scope for VueJS HTML will depend on the slot location. All slots can see `window.formGen` from there you can access formGen.formSchema.model .
 
 Slot locations:
-    * sidebarToggle - replaces default sidebar hamburger toggle
+    * headerBrandLeft - To the left of the logo brand block
+    * headerBrand
+    * headerSidebarTogglee - replaces default sidebar hamburger toggle
     * headerLeft
     * headerMiddle
     * headerRight
+    * leftNavFooter - left navigation menu footer area, good for logos
 
 ```
 // content.slots
