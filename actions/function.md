@@ -10,7 +10,18 @@ Allows interaction with the clipboard
 **Note: **
 The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
 
+**Contexts**
+`function` code executes with slightly different context to other Java Script in BetterForms.
+
+| To Get |Reference this |
+| :--- | :--- |
+| this |  |
+| window |  |
+| formGen | |
+| model |  |
+
 ```
+**Example**
 // action  object for 'cllipboard'
 [
   {
