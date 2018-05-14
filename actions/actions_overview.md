@@ -33,9 +33,9 @@ Actions can be injected the following places:
 * Form action elements \(buttons\)
 * Wizard tabbed forms before onCompleteHook is run
 
-### `$$BF_Actions` - Actions Array
+### \$\$BF_Actions - Actions Array
 
-The `$$#actions ($actions)` JSON array is surfaced in many of the developer hooks that are applicable to rendering actions.
+The `$$#actions ($actions)` JSON array is surfaced in all of the developer hooks that are applicable to rendering actions.
 
 To add an action simply add the action object as an array element.
 
