@@ -20,6 +20,10 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**clipboard**_** **- runs `clipboard` action allowing interaction with the clipboard
 
+* _**cookie**_** **- Allows setting of browser side cookies
+
+
+
 ### Usage
 
 Actions can be injected the following places:
@@ -29,7 +33,7 @@ Actions can be injected the following places:
 * Form action elements \(buttons\)
 * Wizard tabbed forms before onCompleteHook is run
 
-### _$actions_ - Actions Array
+### `$$BF_Actions` - Actions Array
 
 The `$$#actions ($actions)` JSON array is surfaced in many of the developer hooks that are applicable to rendering actions.
 
