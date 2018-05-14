@@ -10,7 +10,7 @@ Allows client browser cookies setting (and getting)
 | options.name | `string` Cookie name |
 | options.value | `string` Cookie value |
 
-`cookie` action is based on `vue-js-Cookie` 
+`cookie` action is based on `vue-js-Cookie` and `js-cookie`
 ####Links
 https://github.com/BlueBayTravel/vue-js-cookie
 https://github.com/js-cookie/js-cookie/
