@@ -16,9 +16,11 @@ https://github.com/BlueBayTravel/vue-js-cookie
 https://github.com/js-cookie/js-cookie/
 
 **Notes**
-`options.daysOrOptions` can take an object. See 
+`options.daysOrOptions` can take an object. See ..
 
-**Example**
+
+
+**Examples**
 ```
 // action  object for 'cookie'
 [
@@ -32,7 +34,17 @@ https://github.com/js-cookie/js-cookie/
   }
 }
 ]
+
+// cookie within an HTML that gets the days from a system app var
+@click="this.Vue.cookie.set('myCookieName', $store.state.site.content.app.cookieDays)"
+
+// show something if there is not a cookie
+v-if="!$cookie.get('myCookieName')"
+
+
+
 ```
 
 **Custom Function**
 There is no CF avail at this time.
+
