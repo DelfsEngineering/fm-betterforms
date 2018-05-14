@@ -39,7 +39,8 @@
   * [setFocus](actions/setFocus.md)
   * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
-  * function
+  * [function](actions/function.md)
+  * [cookie](actions/cookie.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
   * [Common Hooks](/hooks/commonoverview.md)
