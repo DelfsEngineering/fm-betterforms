@@ -11,6 +11,9 @@ Allows client browser cookies setting (and getting)
 | options.value | `string` Cookie value |
 
 `cookie` action is based on `vue-js-Cookie` 
+####Links
+https://github.com/BlueBayTravel/vue-js-cookie
+https://github.com/js-cookie/js-cookie/
 
 **Notes**
 `options.daysOrOptions` can take an object. See 
