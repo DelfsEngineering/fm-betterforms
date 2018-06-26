@@ -1,5 +1,7 @@
 # Deployment
 
+# *This information has changed and is now out of date TODO *
+
 After you have installed `BetterForms.fmp12` you can begin to set up a web server.
 
 BetterForms run on [Zeit.co's Now](https://zeit.co/now) service. This is a docker based serverless enviornment and allows for easy deployment and versioning.
