@@ -4,7 +4,6 @@ Allows interaction with the clipboard
 
 | Key | Description |
 | :--- | :--- |
-| action | clipboard |
 | function | `string` javascript to be run. This JS is converted into a function and executed |
 
 **Note: **
@@ -15,18 +14,17 @@ The `function` key can also be used in any other action that originates from the
 
 | To Get |Reference this |
 | :--- | :--- |
-| this |  |
-| window |  |
-| formGen | |
-| model |  |
+| window | `window. `  |
+| formSchema | `formSchema` |
+| model |  `formSchema.model` |
 
 ```
 **Example**
-// action  object for 'cllipboard'
+// This will hcange the nameFirst to Jerome
 [
   {
-    "action": "clipboard",
-    "function": "debugger; model.showSomething = true;"
+    "action": "function",
+    "function": "debugger; formSchema.model.nameFirst = 'Jerome' "
     "options": {
     }
   }
