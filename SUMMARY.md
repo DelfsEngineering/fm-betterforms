@@ -9,6 +9,7 @@
   * [Installation](installation/installation.md)
   * [Integration](installation/integration.md)
   * [Deployment](installation/delopyment.md)
+* $$BF\_&lt;Globals&gt;
 
 ## Usage
 
@@ -43,6 +44,7 @@
   * [cookie](actions/cookie.md)
 * [Hooks](/hooks/hooksoverview.md)
   * [Payload Object](hooks/payloadobject.md)
+  * [Environmental Globals](hooks/env_vars.md)
   * [Common Hooks](/hooks/commonoverview.md)
     * [API Callback Endpoint](hooks/callback.md)
   * [Scoped hooks](/hooks/scopedoverview.md)
@@ -57,4 +59,6 @@
 ## Operation
 
 * [Admin Mode](developer-mode.md)
+
+
 
