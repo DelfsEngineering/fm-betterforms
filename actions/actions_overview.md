@@ -22,8 +22,6 @@ The actions processor allows you to create interactions with the user. The actio
 
 * _**cookie**_** **- Allows setting of browser side cookies
 
-
-
 ### Usage
 
 Actions can be injected the following places:
@@ -58,8 +56,6 @@ The actions object can also have a `function` key. If defined the JS code within
 \*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `function` key evaluated.
 
 Code run in a function can see:
-
-* `formGen` \(entire Due FormGenerator component\) Generally should not need.
 
 * `formSchema` containing `formSchema.model`
 * `action` the action object that triggered the function. 
