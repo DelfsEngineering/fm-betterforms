@@ -17,6 +17,8 @@ Slot scope for VueJS HTML will depend on the slot location. All slots can see `w
     * headerLeft
     * headerMiddle
     * headerRight
+    * formFooter
+    * appFooter
     * leftNavFooter - left navigation menu footer area, good for logos
 
 ```
