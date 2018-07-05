@@ -13,7 +13,7 @@ Slot scope for VueJS HTML will depend on the slot location. All slots can see `w
 #### Slot Locations:
     * headerBrandLeft - To the left of the logo brand block
     * headerBrand
-    * headerSidebarTogglee - replaces default sidebar hamburger toggle
+    * headerSidebarToggle - replaces default sidebar hamburger toggle
     * headerLeft
     * headerMiddle
     * headerRight
