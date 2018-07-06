@@ -8,6 +8,7 @@ You can hide or show various parts of the user interface
     
 Controls for elements are found under the `Appearance` tab of the site editor.
     
+### Navigation 
 Navigation menu options can be configured in the navigation tab of the site editor.
 
 ### Slots     
