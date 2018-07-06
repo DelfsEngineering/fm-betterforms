@@ -25,3 +25,4 @@ Site wide CSS is intered via the `appearance -> CSS` iof the site editor.
 
 You can target specific forms  (pages) by adding class(es) to the `styleClasses` key of the `formSchema.form` section on the `misc.` tab of the form editor.
 
+![](/assets/Screen Shot 2018-07-06 at 1.11.03 PM.png)
