@@ -20,3 +20,8 @@ Custom loader / spinners can be added. Animated SVG's or HTML can be injected vi
 ### Default Theme Colors
 BetterForms has several default site theme colors
 
+### CSS
+Site wide CSS is intered via the `appearance -> CSS` iof the site editor.
+
+You can target specific forms  (pages) by adding class(es) to the `styleClasses` key of the `formSchema.form` section on the `misc.` tab of the form editor.
+
