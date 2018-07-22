@@ -21,7 +21,8 @@ Client side validation is controlled by the `validator` key in all form elements
 }
 ```
 
-**The validator key can be set to the following:**
+*
+*The validator key can be set to the following:**
 **number**
 Checks that the value is numeric - and that it's within the fields min & max range, if these are defined in the schema.
 **integer**
