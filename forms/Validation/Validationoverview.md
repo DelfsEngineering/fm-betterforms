@@ -9,6 +9,7 @@
 Client side validation is controlled by the `validator` key in all form elements.
 
 ```
+// Example
 {
   "inputType": "text",
   "label": "Last Name",
