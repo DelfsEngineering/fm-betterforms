@@ -18,7 +18,7 @@
   * [Site Model](site/formtypes/siteoverview.md)
   * [Form Types](forms/formtypes/formtypesoverview.md)
   * [Form Validation](/forms/Validation/Validationoverview.md)
-    * [Clientside Validation](/forms/Validation/clientside.md)
+    * [Custom Validators](/forms/Validation/clientside.md)
   * [Form Components \(Field Types\)](forms/fieldtypes/components-overview.md)
     * [accordion](forms/fieldtypes/accordion.md)
     * [vtab](forms/fieldtypes/vtab.md)
