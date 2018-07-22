@@ -1,7 +1,7 @@
 # Form Validation Overview
 
-Serverside Validation
+## Validation Types
+- Serverside Validation
+- state.allowTabChange
+- state.tabChangeError
 
-state.allowTabChange
-
-state.tabChangeError
