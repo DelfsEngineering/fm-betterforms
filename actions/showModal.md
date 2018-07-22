@@ -8,7 +8,7 @@ Displays a full screen modal dialogue.
 | options.text |  |
 | options.options | object - additional options to the parent options |
 
-showAlert supports additional parameters
+showAlert supports additional parameters and slots!
 **reference:** [http://sweet-modal-vue.adepto.as](http://sweet-modal-vue.adepto.as)
 
 
@@ -25,7 +25,7 @@ showAlert supports additional parameters
 
 ####FileMaker Custom Function
 ```
-BF_SetAction_Path("/form/123-1234-5678") // takes user to form 123...
+TBD
 ```
 
 
