@@ -1,7 +1,3 @@
-#Clientside Validation
-
-
-
 ## Custom Validators
 You can define your own Javascript custom validation calculation that will fire the same as the regular validators.
 
