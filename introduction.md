@@ -7,8 +7,7 @@
 * **Fully responsive UI **
 
   * allowing desktop, tablet and phone compatible UX
-  
-  
+
 * **Mutli-mode Authentication System **
 
   * Authenticate via URL hash,
@@ -51,14 +50,9 @@
 
 * **Installation and Deployment **
 
-  * Single FMS hosted controller file
+  * Cloud hosted SAAS application
 
-  * Web app deployed on server-less hosting provider e.g. _Docker_ \(various\) , \_Zeit.co No\_w etc.
-  
-  
-  
-  
- 
+  * Single FileMaker Helpler file installed on the target FMS box.
 
 
 
