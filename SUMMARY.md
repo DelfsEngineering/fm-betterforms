@@ -9,7 +9,6 @@
   * [Installation](installation/installation.md)
   * [Integration](installation/integration.md)
   * [Deployment](installation/delopyment.md)
-* [$$BF\_&lt;Globals&gt;](bf-globals.md)
 
 ## Usage
 
@@ -51,14 +50,11 @@
   * [Scoped hooks](/hooks/scopedoverview.md)
     * [Hooks](developer/hooks.md)
 * [Navigation](navigation/navigationoverview.md)
-* [Styling](Styling/stylingverview.md)
+* [Customizing and Styling](Styling/stylingverview.md)
+* [$$BF\_&lt;Globals&gt;](bf-globals.md)
 
-## Services
+## Other Services
 
 * [version](/other_services/version.md)
 * [Authentication](/other_services/authentication.md)
-
-## Operation
-
-* [Admin Mode](developer-mode.md)
 
