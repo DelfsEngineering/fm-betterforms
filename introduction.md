@@ -12,11 +12,11 @@
 
   * Authenticate via URL hash,
 
-  * Authenticate via Username \(email\) and password
+  * Authenticate via username \(email\) and password
 
   * Enable web sign up, account creation
 
-  * Developer Hooks for password reset and forgot password
+  * Developer Hooks for password reset and forgot password and email verification
 
 * **Forms Processing and workflow engine**
 
