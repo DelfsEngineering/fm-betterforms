@@ -1,6 +1,6 @@
 # ![Delfs&apos; Engineering Logo](/assets/1486254174620.png)
 
-# FM Better Forms
+# FM BetterForms
 
 > A loosely coupled high performance front end web publishing framework for Filemaker databases that allows a developer to build anything from a from widgets to full apps.
 
@@ -18,8 +18,8 @@ Get familiar with FM Better Forms.
 FM Better Forms is currently not fully open source but you can still contribute to making this framework better. Learn how you can contribute to this documentation, make suggestions for improvements and contribute code snippets.
 
 **Author**  
-Charles Delfs 
-Delfs Engineering
-TORONTO CANADA 
+Charles Delfs   
+Delfs Engineering  
+TORONTO CANADA   
 cdelfs@delfsengineering.ca
 
