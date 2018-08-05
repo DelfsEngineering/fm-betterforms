@@ -5,9 +5,6 @@
 * [ReadMe](README.md)
 * [Introduction](introduction.md)
 * [Installation](installation/README.md)
-  * [Requirements](installation/requirements.md)
-  * [Integration](installation/integration.md)
-  * [Deployment](installation/delopyment.md)
 
 ## Usage
 
