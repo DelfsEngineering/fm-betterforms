@@ -28,27 +28,17 @@
 
   * Optional server-side validation on page / tab change of form via dev hooks \(in FileMaker\)
 
-  * Form editor and options setting via FM controller app
+* **Actions rocessing Engine**
 
-* **Developer Customization **
+* Various Summary modals and alert actions allow interaction and coomunication with the user
 
-  * Callback hooks for any API needs including:
+* Actions for use navigation to other pages or tabs
 
-    * **onLogin**
+* Actions can be initiated from both the client browser and the FileMaker applicaiton.
 
-    * **onTabChange** \(form\)
+* Hooks run local to the existing developers app.
 
-    * **onComplete** \(form\)
-
-    * **others**
-
-* Various Summary modals and alert options allowing you to pass detailed HTML messages back to the user \(e.g. 'you have an error with your email address'\)
-
-* Post hook routing and state management - Allowing developer to control users routing after a hook \(e.g. go to tab \#2\)
-
-* Developer legacy app local hooks  - hooks have been designed to run local to the existing developers app. This allows the BetterForms controller file to be easily updated.
-
-* **Installation and Deployment **
+* **No Installation and Deployment **
 
   * Cloud hosted SAAS application
 
