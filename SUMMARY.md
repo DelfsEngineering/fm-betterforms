@@ -40,6 +40,7 @@
   * [setFocus](actions/setFocus.md)
   * [showAlert](actions/showAlert.md)
   * [showModal](actions/showModal.md)
+  * [hideModal](actions/hideModal.md)
   * [function](actions/function.md)
   * [cookie](actions/cookie.md)
 * [Hooks](/hooks/hooksoverview.md)
