@@ -54,6 +54,5 @@
 
 ## Other Services
 
-* [version](other-services/version.md)
 * [Authentication](other-services/authentication.md)
 
