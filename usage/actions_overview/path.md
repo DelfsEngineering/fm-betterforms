@@ -1,4 +1,4 @@
-# path
+# path - Action
 
 `path` redirect the user to a different area, form or layout. Path can even be used to log a user out. \( `/logout` \)
 

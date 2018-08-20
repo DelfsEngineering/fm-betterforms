@@ -33,7 +33,7 @@
   * [downloadFile \(depreciated\)](usage/actions_overview/downloadfile.md)
   * [function](usage/actions_overview/function.md)
   * [Named Actions](usage/actions_overview/actions_named.md)
-  * [path](usage/actions_overview/path.md)
+  * [path - Action](usage/actions_overview/path.md)
   * [runUtilityHook](usage/actions_overview/runutilityhook.md)
   * [setFocus](usage/actions_overview/setfocus.md)
   * [showAlert](usage/actions_overview/showalert.md)
