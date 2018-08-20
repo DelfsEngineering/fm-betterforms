@@ -11,8 +11,7 @@
 ## Usage
 
 * [System Overview](usage/system-overview.md)
-* [Site Model](usage/siteoverview/README.md)
-  * [Custom Domains](usage/siteoverview/custom-domains.md)
+* [Site Model](usage/siteoverview.md)
 * [Forms Processor](usage/formsoverview/README.md)
   * [Site Model](usage/formsoverview/siteoverview.md)
   * [Form Types](usage/formsoverview/formtypesoverview.md)
@@ -51,6 +50,7 @@
     * [Hooks](usage/hooksoverview/scopedoverview/hooks.md)
 * [Navigation](usage/navigationoverview.md)
 * [Customizing and Styling](usage/stylingverview.md)
+* [Custom Domains](usage/custom-domains.md)
 * [$$BF\_&lt;Globals&gt;](usage/bf-globals.md)
 
 ## Other Services
