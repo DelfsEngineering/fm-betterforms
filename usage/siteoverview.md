@@ -15,15 +15,19 @@ Slot scope for VueJS HTML will depend on the slot location. All slots can see `w
 
 ### Slot Locations:
 
-* headerBrandLeft - To the left of the logo brand block
-* headerBrand
-* headerSidebarToggle - replaces default sidebar hamburger toggle
-* headerLeft
-* headerMiddle
-* headerRight
-* formFooter
-* appFooter
-* leftNavFooter - left navigation menu footer area, good for logos
+| Slot Key | Description |
+| :--- | :--- |
+| headerBrandLeft | To the left of the logo brand block |
+| headerBrand | Comapny Name / Logo Area, if set, replaces default text |
+| headerSidebarToggle | Replaces default sidebar hamburger toggle is set |
+| headerLeft | Top Header area left most position to the right of the brand |
+| headerMiddle |  |
+| headerRight |  |
+| formFooter | Footer area of form body |
+| appFooter | Footer area of entire page |
+| sidebarLeftTop | Left navigation menu above menu items |
+| sidebarLeftBottom | Left navigation menu below menu items |
+| sidebarLeftFooter | Left navigation menu footer area, good for logos, You will need to add CSS to bottom align this \`div\` |
 
 ```text
 // content.slots
