@@ -1,11 +1,12 @@
 # setFocus
 
-Allows pragmatic element focusing \(set cursor to a field\)
+Allows element focusing \(set cursor to a field\). The contents of the field can also be selected.
 
-| Key | Description |
-| :--- | :--- |
-| action | setFocus |
-| elementId | The DOM element that you want the focus to direct to. |
+| Key |  | Description |
+| :--- | :--- | :--- |
+| action | string | setFocus |
+| elementId | string | The DOM element that you want the focus to direct to. |
+| select | boolean | Field contents are selected when true |
 
 ## Example action object
 
@@ -16,6 +17,7 @@ Allows pragmatic element focusing \(set cursor to a field\)
     "action": "setFocus",
     "options": {
         "elementId": "name-first"
+        "select: true
     }
   }
 ]
