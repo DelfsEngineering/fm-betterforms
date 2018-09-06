@@ -43,13 +43,9 @@ You should always have a `"action": "path"` when you are adding actions to the `
 
 ## Functions
 
-The actions object can also have a `function` key. If defined the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment.
+The actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
 
-\*\*\* This is currently only supported in actions that traverse the main form generator. \(namedActions, actions within `HTML` and actions tied to buttons. Actions that are run via hooks do not get the `function` key evaluated.
+The main difference between the function action and using actions with an added `function` key is that there is no additional action associated with it.
 
-Code run in a function can see:
-
-* `formSchema` containing `formSchema.model`
-* `action` the action object that triggered the function. 
-* `action.options` will contain a merged object from the passed in options \(params\) and the initial schema defined ones.
+For additional information see the [Function Action](function-1.md)
 
