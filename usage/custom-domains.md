@@ -14,11 +14,15 @@ If your account permits it, you can map fully customized domains to betterforms 
 
 \*\*\*\*
 
-**Naked domains**
+### **Naked domains**
 
 You can also use a naked domain like `my-saas-app.com` with this method. In that case, you need to use an [ALIAS](https://support.dnsimple.com/articles/alias-record/) record instead of a CNAME record.
 
 Some DNS providers do not have ALIAS records. In that case, the functionality of ALIAS records is managed using CNAME records.  
-  
+
+
+### CDN Distribution
+
+For faster initial download times, a CDN option may be applicable to custom domains. Additional costs may apply. Contact support.  
  
 
