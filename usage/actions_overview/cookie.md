@@ -35,11 +35,12 @@ To remove a cookie simply set the  `daysOrOptions` value to `0`
 ]
 
 // As JS function 
-Vue.$cookie.set('cookieNAme', 'some info here', 7)
+Vue.$cookie.set('cookieName', 'some info here', 7)
+Vue.$cookie.getJSON('cookieName') returns JSON obj of cookie data
+
 
 // Setting a cookie from a click within a HTML 
-@click="this.Vue.cookie.set('myCookieName', 4"
-
+... @click="Vue.cookie.set('myCookieName', 4") ...
 
 ```
 
