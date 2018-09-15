@@ -1,22 +1,22 @@
 # cookie
 
-Allows client browser cookies setting \(and getting\)
+Allows client browser cookie setting \(and getting\).
 
-| Key | Description |
-| :--- | :--- |
-| action | cookie |
-| options.set | `string` The cookie action to perform |
-| options.daysOrOptions | `number or object` - If number, the number of days before the cookie expires, If object see additional notes |
-| options.name | `string` Cookie name |
-| options.value | `string` Cookie value |
+To remove a cookie simply set the  `daysOrOptions` value to `0`
+
+\`\`
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| action | string | `cookie` Action name |
+| options.action | string | Options: `set`  and `remove` The cookie action to perform. For `get` support see exampels below |
+| options.daysOrOptions | number or sobject | If number, the number of days before the cookie expires, If object see additional notes |
+| options.name | string | Cookie name |
+| options.value | string | Cookie value |
 
 `cookie` action is based on `vue-js-Cookie` and `js-cookie`
 
-## Links
-
-[https://github.com/BlueBayTravel/vue-js-cookie](https://github.com/BlueBayTravel/vue-js-cookie) [https://github.com/js-cookie/js-cookie/](https://github.com/js-cookie/js-cookie/)
-
-**Notes** `options.daysOrOptions` can take an object. See ..
+**Notes** `options.daysOrOptions` can take an number or an object.
 
 **Examples**
 
@@ -26,7 +26,7 @@ Allows client browser cookies setting \(and getting\)
   {
   "action": "cookie",
   "options": {
-    "action": "set",
+    "action": "set",     // or get or remove
     "daysOrOptions": 1,
     "name": "MyCookieName",
     "value": "my cookie value"
@@ -34,12 +34,20 @@ Allows client browser cookies setting \(and getting\)
 }
 ]
 
-// cookie within an HTML that gets the days from a system app var
-@click="this.Vue.cookie.set('myCookieName', $store.state.site.content.app.cookieDays)"
+// As JS function 
+Vue.$cookie.set('cookieNAme', 'some info here', 7)
 
-// show something if there is not a cookie
-v-if="!$cookie.get('myCookieName')"
+// Setting a cookie from a click within a HTML 
+@click="this.Vue.cookie.set('myCookieName', 4"
+
+
 ```
 
 **Custom Function** There is no CF avail at this time.
+
+#### Additional Reference:
+
+[https://github.com/BlueBayTravel/vue-js-cookie](https://github.com/BlueBayTravel/vue-js-cookie)
+
+ [https://github.com/js-cookie/js-cookie/](https://github.com/js-cookie/js-cookie/)
 
