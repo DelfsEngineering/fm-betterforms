@@ -23,6 +23,7 @@ Slot scope for VueJS HTML will depend on the slot location. All slots can see `w
 | headerLeft | Top Header area left most position to the right of the brand |
 | headerMiddle |  |
 | headerRight |  |
+| logout | Replaces the default logout code |
 | formFooter | Footer area of form body |
 | appFooter | Footer area of entire page |
 | sidebarLeftTop | Left navigation menu above menu items |
