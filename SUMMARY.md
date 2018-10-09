@@ -12,6 +12,7 @@
 
 * [System Overview](usage/system-overview.md)
 * [Site Model](usage/siteoverview.md)
+* [Calculations](usage/calculations.md)
 * [Forms Processor](usage/formsoverview/README.md)
   * [Site Model](usage/formsoverview/siteoverview.md)
   * [Form Types](usage/formsoverview/formtypesoverview.md)
