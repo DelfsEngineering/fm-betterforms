@@ -11,7 +11,7 @@ Run JavaScript in an action.
 
 **Note:**  The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
 
-Javascript is placed on a sign JSON value line, you must separate commands with a semicolon. Proper JSON escaping will alway need to be applied.
+Javascript is placed on a single JSON value line,  you must separate commands with a semicolon. Proper JSON escaping will always need to be applied.
 
 #### Uses:
 
