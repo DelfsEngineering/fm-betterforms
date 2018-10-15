@@ -11,7 +11,7 @@ Run JavaScript in an action.
 
 **Note:**  The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
 
-Javascript is placed on a sign JSON value line, as sucj you must separate commands with a semicolon. Proper JSON escaping will alwasy need to be applied.
+Javascript is placed on a sign JSON value line, you must separate commands with a semicolon. Proper JSON escaping will alway need to be applied.
 
 #### Uses:
 
@@ -25,7 +25,7 @@ Functions are great for injecting small logic into any work flow.
 
 | To Get | Reference This | Description |
 | :--- | :--- | :--- |
-| window | `window` | The Browser JS window object, good for enviornmental control |
+| window | `window` | The Browser JS window object, good for environmental control |
 | formSchema | `formSchema` | Containing other sub objects like ~~model~~ etc |
 | model | `formSchema.model` |  This is the uppermost model object regardless of sub objects like accordions etc. |
 | action object | `action` | The whole `action` object that contains this function. eg: `action.options.path` Some BetterForms Elements will merge additional options into the`options` key.  |
