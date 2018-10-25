@@ -61,5 +61,5 @@
 
 ## Security
 
-* [Security](security/security.md)
+* [Firewalls](security/security.md)
 
