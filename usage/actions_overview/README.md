@@ -14,6 +14,7 @@ The actions processor allows you to create interactions with the user. The actio
 * _**clipboard**_ ****- runs `clipboard` action allowing interaction with the clipboard
 * _**cookie**_ ****- Allows setting of browser side cookies
 * _**wait**_ - Waits for specified time or event
+* _**emit**_ - Vue event bus message emit
 
 ## Usage
 
