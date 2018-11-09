@@ -16,7 +16,9 @@ Navigation menu options can be configured in the navigation tab of the site edit
 
 ## Slots
 
-See Slots documentation.
+Slots allow you to inject custom code fragments into various locations around the UI,
+
+Slots See Slots documentation.
 
 ## Loaders
 
