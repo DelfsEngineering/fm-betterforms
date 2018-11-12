@@ -14,17 +14,25 @@ You can define a navigation object in the site settings. This allows you to crea
 
 ### Navigtion Item Types and Key Descriptions
 
-| Type | Description |
-| :--- | :--- |
-| navigation | this key contains an array \(usually only one element\) of the menu sections. |
-| sectionLabel | This label describes what the menu section context is. It is not selectable. |
-| label | This label is the text area of each menu item |
-| path | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. This can also also be accomplished with a path action |
-| parent menu | This is a dropdown style parent menu that will hold sub menus. BettterForms looks to see a \`subs\` key and if present will consider this the parent. |
-| actions | If a navigation item has a 'actions' key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the actions processor. Typical actions include Modals, Alerts and path navigation. |
-| visible | {optional} Controls if item is visible, will accept a `visible_calc` function. Note, the scope of the function is bound to the site and not the specific form.  |
+| key | Type | Description |
+| :--- | :--- | :--- |
+| navigation | array | this key contains an array \(usually only one element\) of the menu sections. |
+| sectionLabel | string | This label describes what the menu section context is. It is not selectable. |
+| label | string | This label is the text area of each menu item |
+| path | string | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. This can also also be accomplished with a path action |
+| subs | array | This is a dropdown style parent menu that will hold sub menus. BettterForms looks to see a \`subs\` key and if present will consider this the parent. |
+| actions | array | If a navigation item has a 'actions' key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the actions processor. Typical actions include Modals, Alerts and path navigation. |
+| visible | boolean | {optional} Controls if item is visible, will accept a `visible_calc` function. Note, the scope of the function is bound to the site and not the specific form.  |
+| html | string | If key present, then the HTML value is inserted as the navigation menu item |
 
-TODO: need examples of `visible_calc`
+Element Type Order
+
+The navigation parser classified the navigation element in the following hierarchy:
+
+* `actions` if key present, item treated as action trigger only
+* `path` if path present, item handled as regular router link
+* `subs` If key present , item hand as a sub menu
+* `html` If key present, item is handled as html
 
 ```text
 // Full Navigation example
@@ -94,4 +102,8 @@ TODO: need examples of `visible_calc`
 ]
 
 ```
+
+
+
+TODO: need examples of `visible_calc, html` and `subs`
 
