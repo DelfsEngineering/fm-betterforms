@@ -2,7 +2,7 @@
 
 Nearly all JSON keys can be replaced with calculations. This is simular to how a field in Filemaker can also be a calculation.
 
-FM BetterForms has two types of calculations, getters and functions. Both types are needed because the framework uses several open source modules internally and not all modules have the same compatibility. 
+FM BetterForms has three types of calculations, getters and functions. Both types are needed because the framework uses several open source modules internally and not all modules have the same compatibility. 
 
 #### As A Getter
 
