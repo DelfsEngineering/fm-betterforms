@@ -2,7 +2,7 @@
 
 The actions processor allows you to create interactions with the user. The actions object is an array. Actions are executed sequentially. Modal actions what until the modal is closed.
 
-## Action Types:
+## Actions:
 
 * _**showModal**_ ****- Renders a modal dialog
 * _**hideModal**_ ****- Hides a modal that is non-blocking
@@ -15,15 +15,20 @@ The actions processor allows you to create interactions with the user. The actio
 * _**cookie**_ ****- Allows setting of browser side cookies
 * _**wait**_ - Waits for specified time or event
 * _**emit**_ - Vue event bus message emit
+* scrollTo - Scrolls to an element
+* function - Runs JavaScript 
+* authLogin, ...TBD
 
 ## Usage
 
-Actions can be injected the following places:
+Actions can be injected in many places:
 
-* All hooks 
+* Most hook scripts
 * Navigation Menu Items
 * Form action elements \(buttons\)
-* Wizard tabbed forms before onCompleteHook is run
+* Named Actions
+
+
 
 ## $$BF\_Actions - Actions Array
 
