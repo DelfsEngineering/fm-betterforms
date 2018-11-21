@@ -2,7 +2,7 @@
 
 Named actions are predefined actions that can be called from events like HTML onClick etc. These actions consist of the same action parameters as regular actions but have a unique name associated with each one. namedActions support the `function` key.
 
-## Places Supporting Named Actions
+### Places Supporting Named Actions
 
 * `formSchema.form.namedActions` These are scoped to the form \(page\) that is current
 * `site.content.namedActions` These are globally scoped and can be called from anywhere.
@@ -11,7 +11,7 @@ Named actions are predefined actions that can be called from events like HTML on
 
 * The actions processor will first try to find the named action in the current form. If unsuccessful, the global `site.namedActions` object is checked.
 
-## namedActions Schema
+### namedActions Schema
 
 ```text
 [
@@ -28,11 +28,15 @@ Named actions are predefined actions that can be called from events like HTML on
 ]
 ```
 
-## Usage
+### Usage
 
-In an HTML element type you can call the named action as follows:
+In an HTML element you can call the named action as follows:
 
 ```text
-// Shows a bootstrap alert
+// Shows a button that triggers a namedAction called gotoMyAccount
+<button @click="namedAction('gotoMyAccount',{})"  type="button">
+     <i class="icon-user"></i>
+     Show Account
+</button>
 ```
 
