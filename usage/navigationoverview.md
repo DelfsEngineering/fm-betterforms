@@ -25,12 +25,12 @@ You can define a navigation object in the site settings. This allows you to crea
 | visible | boolean | {optional} Controls if item is visible, will accept a `visible_calc` function. Note, the scope of the function is bound to the site and not the specific form.  |
 | html | string | If key present, then the HTML value is inserted as the navigation menu item |
 
-Element Type Order
+### Element Type Order
 
-The navigation parser classified the navigation element in the following hierarchy:
+The navigation parser classifies the navigation elements in the following hierarchy:
 
 * `actions` if key present, item treated as action trigger only
-* `path` if path present, item handled as regular router link
+* `path` if path key present, item handled as regular router link
 * `subs` If key present , item hand as a sub menu
 * `html` If key present, item is handled as html
 
