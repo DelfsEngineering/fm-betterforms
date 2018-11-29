@@ -15,9 +15,13 @@ The actions processor allows you to create interactions with the user. The actio
 * _**cookie**_ ****- Allows setting of browser side cookies
 * _**wait**_ - Waits for specified time or event
 * _**emit**_ - Vue event bus message emit
-* scrollTo - Scrolls to an element
-* function - Runs JavaScript 
-* authLogin, ...TBD
+* _**scrollTo**_ - Scrolls to an element
+* _**function**_ - Runs JavaScript 
+
+Authentication Actions
+
+* authLogin
+* authLogout
 
 ## Usage
 
@@ -42,11 +46,11 @@ Actions are executed sequentially starting at the beginning of the array.
 
 ## Other places you can use actions
 
-**actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present
+**actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present. 
 
 ## Actions Options
 
-`nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait and want other things to run \(like slow process utility hooks\)
+`nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait but still want other things to run \(like slow process utility hooks\)
 
 ## Functions
 

@@ -9,10 +9,10 @@ To remove a cookie simply set the  `daysOrOptions` value to `0`
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | action | string | `cookie` Action name |
-| options.action | string | Options: `set`  and `remove` The cookie action to perform. For `get` support see exampels below |
-| options.daysOrOptions | number or sobject | If number, the number of days before the cookie expires, If object see additional notes |
-| options.name | string | Cookie name |
-| options.value | string | Cookie value |
+| action.options.action | string | Options: `set`  and `remove` The cookie action to perform. For `get` support see exampels below |
+| action.options.daysOrOptions | number or sobject | If number, the number of days before the cookie expires, If object see additional notes |
+| action.options.name | string | Cookie name |
+| action.options.value | string | Cookie value |
 
 `cookie` action is based on `vue-js-Cookie` and `js-cookie`
 

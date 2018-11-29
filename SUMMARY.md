@@ -43,6 +43,7 @@
   * [function](usage/actions_overview/function-1.md)
   * [wait](usage/actions_overview/wait.md)
   * [emit](usage/actions_overview/emit.md)
+  * [validate](usage/actions_overview/validate.md)
   * [cookie](usage/actions_overview/cookie.md)
 * [Hooks](usage/hooksoverview/README.md)
   * [Payload Object](usage/hooksoverview/payloadobject.md)

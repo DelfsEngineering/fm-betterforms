@@ -1,14 +1,10 @@
 # Form Validation
 
-## Validation Types
-
-* Serverside Validation
-* state.allowTabChange
-* state.tabChangeError
-
 ## Client Side Validation
 
-Client side validation is controlled by the `validator` key in all form elements.
+Client side validation is controlled by the `validator` key in all form elements. 
+
+Tip: Validation does not run automatically. You can trigger client validation with the `validate` action.
 
 ```text
 // Example
