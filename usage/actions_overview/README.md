@@ -32,13 +32,13 @@ Actions can be injected in many places:
 
 ## $$BF\_Actions - Actions Array
 
-The `$$#actions ($actions)` JSON array is surfaced in all of the developer hooks that are applicable to rendering actions.
+The `$$_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
 
-To add an action simply add the action object as an array element.
+To add an action simply add the action object as an array element. There are custom functions that make this easy. 
 
-Actions are executed sequentially starting at `index = 0`
+Actions are executed sequentially starting at the beginning of the array. 
 
-You should always have a `"action": "path"` when you are adding actions to the `onLogin` developer hook. If you do not, the user will be stuck at the login prompt page.
+
 
 ## Other places you can use actions
 

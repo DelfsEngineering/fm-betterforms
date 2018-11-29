@@ -6,6 +6,8 @@
 
 This hook is called when a user logs in successfully.You can inject actions abd and have full access to the user object .
 
+You should \(usually\) have a path action in this hook script. If you do not, the user will be stuck at the login prompt page. Logging in does not automatically take the user to a default page.
+
 ### onRegistration
 
 Called when a user registers. You can inject actions and have acces to the user model.
