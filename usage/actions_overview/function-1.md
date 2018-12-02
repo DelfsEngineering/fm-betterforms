@@ -19,8 +19,6 @@ Functions are great for injecting small logic into any work flow.
 
 * build a custom string and edit the `url` value for a `path` action
 
-
-
 **Contexts** `function` code executes with slightly different context to other Java Script in BetterForms.
 
 | To Get | Reference This | Description |
@@ -30,11 +28,13 @@ Functions are great for injecting small logic into any work flow.
 | model | `formSchema.model` |  This is the uppermost model object regardless of sub objects like accordions etc. |
 | action object | `action` | The whole `action` object that contains this function. eg: `action.options.path` Some BetterForms Elements will merge additional options into the`options` key.  |
 
-
+| as of ver 0.7.302 |  |
+| :--- | :--- |
+| Site app | app \(site app data model\) |
 
 ```text
 **Example**
-// This will change the nameFirst to Jerome
+// This will change the nameFirst value to Jerome
 [
   {
     "action": "function",
@@ -45,4 +45,12 @@ Functions are great for injecting small logic into any work flow.
   }
 ]
 ```
+
+
+
+Code Style
+
+Function results returned with a `return` statement are ignored. 
+
+**Contexts** `function` code executes with slightly different context to other Java Script in BetterForms.
 
