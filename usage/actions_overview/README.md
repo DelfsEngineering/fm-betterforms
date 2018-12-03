@@ -60,3 +60,22 @@ The main difference between the function action and using actions with an added 
 
 For additional information see the [Function Action](function-1.md)
 
+## Clearing Actions
+
+Actions can be cleared programmatically in a `function` action or `function` key by calling the following internal BF command: \`
+
+```javascript
+    vueapp.$store.dispatch('ACTIONS_CLEAR')   
+```
+
+The following JS code will stop any subsequent actions from running of the `isRegistered` flag is false.
+
+```javascript
+// in a function key
+if(!model.isRegistered) {
+    vueapp.$store.dispatch('ACTIONS_CLEAR')
+}
+```
+
+
+
