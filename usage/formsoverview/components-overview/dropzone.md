@@ -24,7 +24,7 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
 
 ## Minimal Usage Example
 
-```text
+```yaml
 {
   "label": "Upload File(s)",
   "model": "files",
@@ -33,7 +33,6 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
   "options": {
     // all additional items and overrides go here
   }
-
 }
 ```
 
@@ -49,7 +48,7 @@ You can totally customize the dropzone component and control things like file si
 
 ## Example Data model
 
-```text
+```yaml
 [
   {
     "file": {

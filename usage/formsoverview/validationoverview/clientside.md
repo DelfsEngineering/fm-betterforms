@@ -6,7 +6,7 @@ By selecting the `validator` type to `calc` and adding a calculation and error m
 
 ![](../../../.gitbook/assets/screen-shot-2018-01-19-at-6.47.50-pm.png)
 
-```text
+```yaml
 // example JSON for an element with custom validation
 [
   {

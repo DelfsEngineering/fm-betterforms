@@ -14,7 +14,7 @@ TODO add support for options {}
 
 ## Example
 
-```text
+```yaml
 // Sample JSON editor ( will put stringified text into the model field
 {
   "getAsJSON": false,

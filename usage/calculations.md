@@ -26,20 +26,20 @@ Different JavaScript components access different variables in different ways. So
 
 Example:
 
-```text
+```yaml
 // in your schema ...
 {
-"color": "blue",
-"visible": someField == 0
+    "color": "blue",
+    "visible": model.someField == 0
 }
+```
 
+```javascript
 // in the JS module this may be accessed as ...
 var theColor = color // blue
 
 // Other modules would reference the attribute as a function ...
 var isVisible = visible()  // this is calling the key as a function
-
-
 ```
 
 

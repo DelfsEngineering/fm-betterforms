@@ -76,7 +76,7 @@ The _concern_ of each endpoint is generally not to do business logic but to gath
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also.
 
-```text
+```yaml
 // Sample inbound request 
 
     "params": {

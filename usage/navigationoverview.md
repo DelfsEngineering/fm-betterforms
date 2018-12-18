@@ -34,7 +34,7 @@ The navigation parser classifies the navigation elements in the following hierar
 * `subs` If key present , item hand as a sub menu
 * `html` If key present, item is handled as html
 
-```text
+```yaml
 // Full Navigation example
 [
   {

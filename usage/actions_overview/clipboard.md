@@ -7,7 +7,7 @@ Allows interaction with the clipboard
 | action | clipboard |
 | options.set | `string` that you want to be placed on the clipboard |
 
-```text
+```yaml
 // action  object for 'cllipboard'
 [
   {

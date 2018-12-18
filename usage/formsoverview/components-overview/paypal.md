@@ -22,12 +22,12 @@ When clicked, the payment workflow is initiated.
 
 ## Reference
 
-```text
+```javascript
 // sample credential object
 credentials: {
     sandbox: '<sandbox client id>',
     production: '<production client id>'
-  }
+}
 ```
 
 ### Specifying Items
@@ -36,7 +36,7 @@ Optionally, according to the PayPal Payments API documents, you can list out any
 
 For more information, PayPal Item List
 
-```text
+```yaml
 // Sample Items Object
 myItems: [
     {
@@ -60,7 +60,7 @@ myItems: [
 
 You can change the style of the button via a style object like so:
 
-```text
+```javascript
 {
     label: 'checkout',
     size:  'responsive',    // small | medium | large | responsive
@@ -71,7 +71,7 @@ You can change the style of the button via a style object like so:
 
 ### Complete Example Object
 
-```text
+```yaml
 {
   "label": "Paypal",
   "model": "files",

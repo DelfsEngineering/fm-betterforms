@@ -1,6 +1,6 @@
 # signature
 
-```text
+```yaml
 // Signature capture pad
 {
     "height": 150,
@@ -11,7 +11,6 @@
     "styleClasses": "col-md-6",
     "type": "Signature",
     "validator": "string"
-},
-`
+}
 ```
 

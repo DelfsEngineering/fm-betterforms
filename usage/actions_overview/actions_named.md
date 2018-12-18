@@ -13,7 +13,7 @@ Named actions are predefined actions that can be called from events like HTML on
 
 ### namedActions Schema
 
-```text
+```yaml
 [
     "namedActions": {
         "showCantDoThat": {
@@ -32,7 +32,7 @@ Named actions are predefined actions that can be called from events like HTML on
 
 In an HTML element you can call the named action as follows:
 
-```text
+```markup
 // Shows a button that triggers a namedAction called gotoMyAccount
 <button @click="namedAction('gotoMyAccount',{})"  type="button">
      <i class="icon-user"></i>

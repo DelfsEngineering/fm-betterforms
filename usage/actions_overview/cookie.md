@@ -20,28 +20,28 @@ To remove a cookie simply set the  `daysOrOptions` value to `0`
 
 **Examples**
 
-```text
+```yaml
 // action  object for 'cookie'
 [
   {
-  "action": "cookie",
-  "options": {
-    "action": "set",     // or get or remove
-    "daysOrOptions": 1,
-    "name": "MyCookieName",
-    "value": "my cookie value"
+    "action": "cookie",
+    "options": {
+      "action": "set",     // or get or remove
+      "daysOrOptions": 1,
+      "name": "MyCookieName",
+      "value": "my cookie value"
+    }
   }
-}
 ]
+```
 
+```javascript
 // As JS function 
 Vue.$cookie.set('cookieName', 'some info here', 7)
 Vue.$cookie.getJSON('cookieName') returns JSON obj of cookie data
 
-
 // Setting a cookie from a click within a HTML 
 ... @click="Vue.cookie.set('myCookieName', 4") ...
-
 ```
 
 **Custom Function** There is no CF avail at this time.

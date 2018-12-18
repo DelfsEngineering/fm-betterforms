@@ -17,9 +17,11 @@ showAlert supports additional parameters and slots! **reference:** [http://sweet
 
 ## FileMaker Custom Function
 
-There is no FM CF for this action Use
+There is no FM CF for this action. Use the `BF_SetAction` custom function as shown.
 
 ```text
-Set Variable BF_Actions = BF_SetAction( "hideModal" ; "" )
+Set Variable $$BF_Actions = BF_SetAction( "hideModal" ; "" )
 ```
+
+
 

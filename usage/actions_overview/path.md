@@ -12,7 +12,7 @@
 | options.url | will open page url in a new tab |
 | options.sameWindow | if true, will open url replacing betterforms \(same tab\) |
 
-```text
+```yaml
 // example path action object
 {
 "action" :"path",

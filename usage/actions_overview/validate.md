@@ -4,8 +4,6 @@ Runs the page validation routine.
 
 To remove a cookie simply set the  `daysOrOptions` value to `0`
 
-\`\`
-
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | action | 'validate' | Action name |

@@ -10,7 +10,7 @@ You can prevent critical information from being saved to records by adding a `de
 
 ## Example
 
-```text
+```yaml
 // Supplied
 {
   "model": {
@@ -70,8 +70,6 @@ If ( not IsEmpty ( deletePaths )
   ; JSON.DeletePaths ( $model ; deletePaths ; "***" ) 
   ;$model 
   )
-
-
 
 )
 ```

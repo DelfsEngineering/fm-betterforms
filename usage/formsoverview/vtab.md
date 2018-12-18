@@ -18,7 +18,7 @@ v-tab's can contain full form schema. This means you can build forms within form
 
 Set the min and max values to the same number to permanently hide the add and delete icons. Data within your data models array will still render rows accordingly.
 
-```text
+```yaml
 // typical v-tab object
 
 {

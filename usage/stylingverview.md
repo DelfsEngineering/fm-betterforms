@@ -45,6 +45,8 @@ The `favicon` is the custom icon that is located in the tab of the browser. Addi
 
 ![](../.gitbook/assets/screen-shot-2018-11-28-at-12.39.43-am.png)
 
-`// Sample b64 link tag   
-<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAE`
+```markup
+// Sample b64 link tag 
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAE">
+```
 

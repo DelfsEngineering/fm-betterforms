@@ -10,7 +10,7 @@ Allows element focusing \(set cursor to a field\). The contents of the field can
 
 ## Example action object
 
-```text
+```yaml
 // action object for 'setFocus'
 [
   {

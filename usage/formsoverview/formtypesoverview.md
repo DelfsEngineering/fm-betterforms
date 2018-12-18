@@ -41,14 +41,18 @@ Field components can be shown or hidden programatically. The equation of the `vi
 
 When a `visible_calc` parameter is supplied, the `visible` key is ignored.
 
-```text
+```yaml
 // example - show occupation when employed is 'yes'
 
-Model ; {
+//data model
+{
     "isEmployed" : ""
-    },
+}
+```
 
- ... "fields" : 
+```yaml
+//formSchema
+... "fields" : 
   {
     "label" : "Are you employed?",
     "type": "input",
@@ -65,7 +69,7 @@ Model ; {
 
 #### Accordions, v-Tabs and rowLists:
 
-These component types have thier own sub data model so `this.model` will reference theobject within the rows array.To see the entire data model you can reverence `this.options.fullModel` This allows you to look outside of your row or tab.
+These component types have their own sub data model so `this.model` will reference the object within the rows array.To see the entire data model you can reverence `this.options.fullModel` This allows you to look outside of your row or tab.
 
 #### JSONPath Library
 
@@ -91,7 +95,7 @@ see: [https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-va
 
 ## Sample Wizard JSON
 
-```javascript
+```yaml
 {
   "form": {
     "formType": "formwizard",

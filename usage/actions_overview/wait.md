@@ -17,7 +17,7 @@ General purpose, sometimes you may want the following actions to wait until some
 
 \*\*Example\*\*
 
-```text
+```yaml
 // This will wait for 2 seconds 
 [
   {

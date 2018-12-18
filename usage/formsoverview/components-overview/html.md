@@ -11,7 +11,7 @@
 
 ### Example
 
-```text
+```yaml
 // you can use either body or model or both keys for HTML source code
 
 {

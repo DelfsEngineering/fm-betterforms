@@ -7,7 +7,7 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
 | action | runUtilityHook |
 | options | `string` that you want to be placed on the clipboard |
 
-```text
+```yaml
 // action  object for 'cllipboard'
 [
  {

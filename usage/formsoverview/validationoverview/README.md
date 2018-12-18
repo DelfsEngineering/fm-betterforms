@@ -6,7 +6,7 @@ Client side validation is controlled by the `validator` key in all form elements
 
 Tip: Validation does not run automatically. You can trigger client validation with the `validate` action.
 
-```text
+```yaml
 // Example
 {
   "inputType": "text",

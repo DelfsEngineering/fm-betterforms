@@ -1,6 +1,6 @@
 # Environmental Globals
 
-There are defiend $$BF\_xxx global variables available to all scripts. Use these to mutate data and hydrate pages.
+There are defined $$BF\_xxx global variables available to all scripts. Use these to mutate data and hydrate pages.
 
 | $$Var Name | Description |
 | :--- | :--- |
