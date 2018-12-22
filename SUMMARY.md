@@ -55,7 +55,7 @@
     * [Hooks](usage/hooksoverview/scopedoverview/hooks.md)
 * [Navigation](usage/navigationoverview.md)
 * [Additional Display Elements](usage/additional-display-elements/README.md)
-  * [Card Modals](usage/additional-display-elements/card-modals.md)
+  * [Card / Window Modals](usage/additional-display-elements/card-modals.md)
 * [Customizing and Styling](usage/stylingverview.md)
 * [Custom Domains](usage/custom-domains.md)
 * [$$BF\_&lt;Globals&gt;](usage/bf-globals.md)
