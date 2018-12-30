@@ -58,6 +58,11 @@
   * [Card / Window Modals](usage/additional-display-elements/card-modals.md)
 * [Customizing and Styling](usage/stylingverview.md)
 * [Custom Domains](usage/custom-domains.md)
+* [Design Patterns and Debugging](usage/design-patterns-and-debugging/README.md)
+  * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
+  * [Fetching Data](usage/design-patterns-and-debugging/fetching-data.md)
+  * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
+  * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
 * [$$BF\_&lt;Globals&gt;](usage/bf-globals.md)
 
 ## Other Services
