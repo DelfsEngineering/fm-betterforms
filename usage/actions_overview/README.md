@@ -31,6 +31,7 @@ Actions can be injected in many places:
 * Navigation Menu Items
 * Form action elements \(buttons\)
 * Named Actions
+* \`\*\_actions\` schema keys \(where supported\)
 
 
 
@@ -59,6 +60,30 @@ The actions object can also have a `function` key. If defined, the JS code withi
 The main difference between the function action and using actions with an added `function` key is that there is no additional action associated with it.
 
 For additional information see the [Function Action](function-1.md)
+
+### Triggering Actions on Field Changes
+
+All feild element types support an `onChanged_actions`  key. This key can contain actions that will be run when the elements data  model changes.
+
+```text
+// This will show an alsert when the checkbox is toggled
+{
+  "styleClasses": "col-md-4",
+  "text": "Enter Address Manually",
+  "type": "bfcheckbox1",
+  "model": "manualAddress",
+  "onChanged_actions": [
+    {
+      "action": "showAlert",
+      "options": {
+        "text": "This is the alert message text",
+        "title": "Hello World",
+        "type": "information"
+      }
+    }
+  ]
+}
+```
 
 ## Clearing Actions
 
