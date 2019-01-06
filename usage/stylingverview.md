@@ -20,6 +20,14 @@ Slots allow you to inject custom code fragments into various locations around th
 
 Slots See Slots documentation.
 
+### Integration Methods
+
+Your apps can being deployed or integrated with several methods.
+
+* Regular domain / direct access app - This is a basic web site style page, most common.
+* Embedded `iFrame` app using a code snippet like this to embed your application into an existing web site. Styles from the parent site will not alter styles within your App. &lt;iframe src="[https://hms.fmbetterforms.com/](https://hms.fmbetterforms.com/)" width="100%" height="800px" style="font-size: 110%; border: 0; "&gt;&lt;/iframe&gt;`<iframe src="https://myapp.fmbetterforms.com/" width="100%" height="800px" style="font-size: 110%; border: 0; "></iframe>`
+* Button Launch - By adding a button on an existing site, you can open a new tab to launch your app.
+
 ## Loaders
 
 Custom loader / spinners can be added. Animated SVG's or HTML can be injected via the `appearance -> loaders` tab of the site editor.
