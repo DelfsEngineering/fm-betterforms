@@ -24,6 +24,7 @@
     * [dropzone](usage/formsoverview/components-overview/dropzone.md)
     * [html](usage/formsoverview/components-overview/html.md)
     * [listrows](usage/formsoverview/components-overview/listrows.md)
+    * [authorize](usage/formsoverview/components-overview/authorize.md)
     * [paypal](usage/formsoverview/components-overview/paypal.md)
     * [signature](usage/formsoverview/components-overview/signature.md)
     * [tables2](usage/formsoverview/components-overview/tables2.md)

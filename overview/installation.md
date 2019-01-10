@@ -9,5 +9,5 @@ FM BetterForms is a cloud based SAAS platform. There is however a small FileMake
 ### FMS16+
 
 * V16 FileMaker Server with CWP and XML enabled, V17+ for data API Support
-* CPU powerful enough to handle all script requests
+* CPU powerful enough to handle all script requests, typically  existing FMS box is more then adequate. 
 
