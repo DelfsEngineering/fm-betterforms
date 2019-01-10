@@ -20,7 +20,7 @@ When clicked, the payment workflow is initiated.
 | credentials | {} | object | credential object, |
 | style | {} | object | PayPal defined styling of the button |
 
-## Reference
+### Reference
 
 ```javascript
 // sample credential object
