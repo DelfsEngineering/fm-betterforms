@@ -1,6 +1,6 @@
 # paypal
 
-`paypal` Allows you to securly process payments via PayPal. This component only redners the button and hands the secur transaction via the PayPal API. You will have to add summary information around this component so the user knows what they are paying for.
+`paypal` Allows you to securely process payments via PayPal. This component only renders the button and hands the secure transaction via the PayPal API. You will have to add summary information around this component so the user knows what they are paying for.
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
@@ -11,7 +11,7 @@ When clicked, the payment workflow is initiated.
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type | paypal | string |  |
-| model |  | object | data model key name that will contain results of payment tansactions |
+| model |  | object | data model key name that will contain results of payment transactions |
 | amountKey |  | string | model key that holds the amount. |
 | currency |  | string | model key that holds the amount |
 | invoiceNumber | 'USD' | string | curency for the payment |
