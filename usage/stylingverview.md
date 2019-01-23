@@ -69,11 +69,15 @@ Resulting is something similar to the following:
 
 ![](../.gitbook/assets/image.png)
 
-#### Form/ page classes
+#### Form/ page Classes
 
 You can target specific forms \(pages\) by adding class\(es\) to the `styleClasses` key of the `formSchema.form` section on the `misc.` tab of the form editor.
 
 ![](../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
+
+#### Other Classes
+
+Some elements have an additional classes key for targeting internal components to that element. Buttons are an example of this. The `buttonClasses` key in this case allows you to target the button itself and not the wrapping object around the button.
 
 ### Favicon
 
