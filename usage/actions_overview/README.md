@@ -49,7 +49,7 @@ Actions are executed sequentially starting at the beginning of the array.
 
 ### Action Object
 
-| Key | Type | Default | DescriptionaPoint this to the data model.field. It will be used to display on the tab. |
+| Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | action | string |  | {optional} The minimum number of tabs the user is allowed to create. The delete icon will had when this number is reached. |
 | function | string |  | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.  |
