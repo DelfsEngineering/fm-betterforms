@@ -42,7 +42,7 @@ Site wide CSS is configured via the `appearance -> CSS` section the BF editor.
 
 #### Schema Element Classes
 
-all elements within a form schema can have a styleClasses key that can take a string of space separated CSS classes. The below example adds the class `my-red-box` to an input element.
+All elements within a form schema can have a styleClasses key that can take a string of space separated CSS classes. The below example adds the class `my-red-box` to an input element.
 
 ```text
 {
@@ -54,7 +54,7 @@ all elements within a form schema can have a styleClasses key that can take a st
 }
 ```
 
-This class is defined in the CSS section of the Site / Appearance ass follows
+This class is defined in the CSS section of the Site / Appearance as follows:
 
 ```text
 .my-red-box {
@@ -65,7 +65,7 @@ This class is defined in the CSS section of the Site / Appearance ass follows
 }
 ```
 
-Resulting is something similar to the following 
+Resulting is something similar to the following:
 
 ![](../.gitbook/assets/image.png)
 
