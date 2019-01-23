@@ -6,6 +6,8 @@ The actions processor is basically a scripting language processor. Nearly all as
 
 ### Action Types:
 
+#### Regular Actions
+
 * _**showModal**_ ****- Renders a modal dialog
 * _**hideModal**_ ****- Hides a modal that is non-blocking
 * _**showAlert**_ ****- Renders a toaster style alert
@@ -24,6 +26,9 @@ The actions processor is basically a scripting language processor. Nearly all as
 
 * authLogin
 * authLogout
+* authReset
+* authForgot
+* authVerify
 
 ### Usage
 
