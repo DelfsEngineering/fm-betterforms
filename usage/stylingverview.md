@@ -34,11 +34,42 @@ Custom loader / spinners can be added. Animated SVG's or HTML can be injected vi
 
 ## Default Theme Colors
 
-BetterForms has several default site theme colors
+BetterForms has several default site theme colors. This can act as a starting point for your app. Themes are selected under site / appearance.
 
 ## CSS
 
 Site wide CSS is configured via the `appearance -> CSS` section the BF editor.
+
+#### Schema Element Classes
+
+all elements within a form schema can have a styleClasses key that can take a string of space separated CSS classes. The below example adds the class `my-red-box` to an input element.
+
+```text
+{
+  "inputType": "text",
+  "label": "My Input",
+  "model": "field1",
+  "styleClasses": "col-md-3 my-red-box",
+  "type": "input"
+}
+```
+
+This class is defined in the CSS section of the Site / Appearance ass follows
+
+```text
+.my-red-box {
+    border-width: 2px;
+    border-color: red;
+    border-style: solid;
+    padding: 20px;
+}
+```
+
+Resulting is something similar to the following 
+
+![](../.gitbook/assets/image.png)
+
+#### Form/ page classes
 
 You can target specific forms \(pages\) by adding class\(es\) to the `styleClasses` key of the `formSchema.form` section on the `misc.` tab of the form editor.
 
