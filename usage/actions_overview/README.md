@@ -33,8 +33,6 @@ Actions can be injected in many places:
 * Named Actions
 * \`\*\_actions\` schema keys \(where supported\)
 
-
-
 ## $$BF\_Actions - Actions Array
 
 The `$$_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
@@ -43,17 +41,24 @@ To add an action simply add the action object as an array element. There are cus
 
 Actions are executed sequentially starting at the beginning of the array. 
 
-
-
 ## Other places you can use actions
 
 **actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present. 
 
-## Actions Options
+## Action Object
+
+| Key | Type | Default | DescriptionaPoint this to the data model.field. It will be used to display on the tab. |
+| :--- | :--- | :--- | :--- |
+| action | string |  | {optional} The minimum number of tabs the user is allowed to create. The delete icon will had when this number is reached. |
+| function | string |  | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.  |
+| preventClone | boolean | false | {optional} Default: true. When true the entire actions array will not be striped of its references to the objects that were passed in when it was created. This is handy when you are passing references to object that you want to modify later. For example, the BF HTML and JS editor passes in a reference to the source editor so that it is easy to later call methods in that passed in editor. Doing this makes it easy to not have to worry about mutating code in the wrong source editor. You generally should never need to change this unless you have a valid use case warranting it.   By default, all passed in actions are cloned decoupling them from their original objects. |
+| options | object |  | This object may be optional depending on the specific settings needed by a given action.. |
+
+### Actions Options
 
 `nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait but still want other things to run \(like slow process utility hooks\)
 
-## Functions
+### Functions
 
 The actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
 
@@ -63,7 +68,7 @@ For additional information see the [Function Action](function-1.md)
 
 ### Triggering Actions on Field Changes
 
-All feild element types support an `onChanged_actions`  key. This key can contain actions that will be run when the elements data  model changes.
+All field element types support an `onChanged_actions`  key. This key can contain actions that will be run when the elements data  model changes.
 
 ```text
 // This will show an alsert when the checkbox is toggled
