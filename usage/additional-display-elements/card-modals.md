@@ -23,13 +23,13 @@ Fancy Sample
 ```yaml
 {
     "action": "showCardModal",
-        "options": {
-            "clickToClose": false,
-            "draggable": false,
-            "height": "auto",
-            "model" : {
-                "key" : 123
-            },
+    "options": {
+        "clickToClose": false,
+        "draggable": false,
+        "height": "auto",
+        "model" : {
+            "key" : 123
+        },
         "query": {},
         "resizable": false,
         "scrollable": true,
