@@ -35,7 +35,7 @@ As an action in a standard array of actions:
 ```yaml
 {
     "action": "namedAction",
-    "name": "myNameOfAction", //the name your named action
+    "name": "showCantDoThat", //the name your named action
     
     //all options set here are merged into the options of the named actions
     "options": {
