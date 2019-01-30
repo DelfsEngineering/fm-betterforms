@@ -30,6 +30,20 @@ Named actions are predefined actions that can be called from events like HTML on
 
 ### Usage
 
+As an action in a standard array of actions:
+
+```yaml
+{
+    "action": "namedAction",
+    "name": "myNameOfAction", //the name your named action
+    
+    //all options set here are merged into the options of the named actions
+    "options": {
+        "id": "12345" 
+    }
+}
+```
+
 In an HTML element you can call the named action as follows:
 
 ```markup
@@ -39,4 +53,6 @@ In an HTML element you can call the named action as follows:
      Show Account
 </button>
 ```
+
+I
 
