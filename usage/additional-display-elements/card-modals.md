@@ -4,11 +4,9 @@ _**Preliminary, subject to change ver 0.8.3+**_
 
 Modals display other form pages as their content.  
 
-Based on vue js modal - need link
+Based on [vue js modal](https://github.com/euvl/vue-js-modal#properties)
 
 Card Modals are opened with an `showCardModal` action and hidden with a `hideCardModal` action. 
-
-
 
 ```javascript
 // Minimal settings
@@ -22,16 +20,16 @@ Card Modals are opened with an `showCardModal` action and hidden with a `hideCar
 
 Fancy Sample
 
-```javascript
+```yaml
 {
     "action": "showCardModal",
         "options": {
-        "clickToClose": false,
-        "draggable": false,
-        "height": "auto",
-        "model" : {
-            "key" : 123
-        }
+            "clickToClose": false,
+            "draggable": false,
+            "height": "auto",
+            "model" : {
+                "key" : 123
+            },
         "query": {},
         "resizable": false,
         "scrollable": true,
@@ -44,19 +42,15 @@ Fancy Sample
 
 TODO:
 
-`name` key to add a name, 
-
-`slug` key much match a site slug or `idForm`
-
-`query` pass object to FMS
-
-`model` will pass an initial data model to the card.
-
-`onBeforeClosed_actions` Array of actions to run when window closed. 
+| Option Key | Type | Description / Purpose |
+| ---: | :---: | :--- |
+| `name` | string | Add a name to the card window |
+| `slug` | string | Must match a site navigation slug of the form to show in the card |
+| `idForm` | string | \(optional - instead of slug\) UUID of the form to show in the card |
+| `query` | object | Data passed to FMS as if it were a query param \(more below\) |
+| `onBeforeClosed_actions` | array | Array of actions to be run when the card window is closed |
 
 Changing paths / form contents, use a `path` action with added `name` or `wndw` key to target the correct window, in this case the name of this modal. 
-
-
 
 
 
