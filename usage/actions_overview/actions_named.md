@@ -11,6 +11,14 @@ Named actions are predefined actions that can be called from events like HTML on
 
 * The actions processor will first try to find the named action in the current form. If unsuccessful, the global `site.namedActions` object is checked.
 
+### Reserved Names \( &gt; v0.8.13\)
+
+There are some reserved named action key names that are reserved for special use cases. 
+
+**onFormLoad** - When in the form scoped named actions array, these actions will run just after a form is loaded. If there are actions that are generated in an `onFormRequest` hook, those actions will be queued first and the `onFormLoad` actions will run after. A typical use case would be to show an empty form with a loading placeholder image, then request data from the server then render the data after, allowing the application to feel more performant.
+
+**onAppLoad** - When use in the site scoped named actions array, these actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
+
 ### namedActions Schema
 
 ```yaml
