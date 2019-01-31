@@ -19,6 +19,7 @@
   * [Form Validation](usage/formsoverview/validationoverview/README.md)
     * [Custom Validators](usage/formsoverview/validationoverview/clientside.md)
   * [Form Components \(Field Types\)](usage/formsoverview/components-overview/README.md)
+    * [button](usage/formsoverview/components-overview/button.md)
     * [aceeditor](usage/formsoverview/components-overview/aceeditor.md)
     * [accordion](usage/formsoverview/components-overview/accordion.md)
     * [dropzone](usage/formsoverview/components-overview/dropzone.md)

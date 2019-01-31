@@ -89,9 +89,9 @@ omit periods
 
 `"styleClasses": "col-md-offset-2 col-md-6"`
 
-## \#\# Validation
+## Field Validation
 
-see: [https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html](https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html)
+{% page-ref page="validationoverview/" %}
 
 ## Sample Wizard JSON
 
