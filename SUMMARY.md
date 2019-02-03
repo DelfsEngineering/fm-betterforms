@@ -25,10 +25,10 @@
     * [dropzone](usage/formsoverview/components-overview/dropzone.md)
     * [html](usage/formsoverview/components-overview/html.md)
     * [listrows](usage/formsoverview/components-overview/listrows.md)
-    * [authorize](usage/formsoverview/components-overview/authorize.md)
     * [paypal](usage/formsoverview/components-overview/paypal.md)
-    * [signature](usage/formsoverview/components-overview/signature.md)
+    * [authorize](usage/formsoverview/components-overview/authorize.md)
     * [tables2](usage/formsoverview/components-overview/tables2.md)
+    * [signature](usage/formsoverview/components-overview/signature.md)
     * [JS Caclulations and Functions](usage/formsoverview/components-overview/js-caclulations-and-functions.md)
   * [tabs\_form](usage/formsoverview/tabs_form.md)
   * [vtab,](usage/formsoverview/vtab.md)
@@ -66,7 +66,8 @@
   * [Fetching Data](usage/design-patterns-and-debugging/fetching-data.md)
   * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
-* [$$BF\_&lt;Globals&gt;](usage/bf-globals.md)
+* [$$BF\_&lt;Globals&gt;](usage/bf-globals/README.md)
+  * [FileMaker Concepts](usage/bf-globals/filemaker-concepts.md)
 
 ## Other Services
 

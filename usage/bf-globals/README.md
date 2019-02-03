@@ -13,5 +13,5 @@ description: Global variables that are surfaced to FMS scripts
 
 View more info at the following page:
 
-{% page-ref page="hooksoverview/env\_vars.md" %}
+{% page-ref page="../hooksoverview/env\_vars.md" %}
 
