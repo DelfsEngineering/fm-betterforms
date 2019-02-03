@@ -11,19 +11,21 @@ The `content` key within the site object contains data related to the site look 
 Slots are definable HTML templates that can be inserted into various areas of BetterForms. Slots can be used for customizing the header area, navigation and footer areas \(footer not developed yet\).  
 Slots can accept HTML and VueJs HTML.
 
-Slot scope for VueJS HTML will depend on the slot location. All slots can see `window.formGen` from there you can access formGen.formSchema.model.
+Slot scope for VueJS HTML content will depend on the slot location. All slots can see `window.formGen` from there you can access `formGen.formSchema.model` etc. 
+
+Slots replace default slot content if there is a default content \(Eg. `logout` \) 
 
 ### Slot Locations:
 
 | Slot Key | Description |
 | :--- | :--- |
 | headerBrandLeft | To the left of the logo brand block |
-| headerBrand | Comapny Name / Logo Area, if set, replaces default text |
+| headerBrand | Company Name / Logo Area, if set, replaces default text |
 | headerSidebarToggle | Replaces default sidebar hamburger toggle is set |
 | headerLeft | Top Header area left most position to the right of the brand |
 | headerMiddle |  |
 | headerRight |  |
-| logout | Replaces the default logout code |
+| logout | Replaces the default logout code \( This slot hides conditionally depending if the user is authenticated\) |
 | formFooter | Footer area of form body |
 | appFooter | Footer area of entire page |
 | sidebarLeftTop | Left navigation menu above menu items |
