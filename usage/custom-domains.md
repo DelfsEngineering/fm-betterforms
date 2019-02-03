@@ -18,7 +18,13 @@ If your account permits it, you can map fully customized domains to BetterForms 
 
 You can also use a naked domain like `my-saas-app.com` with this method. In that case, you need to use an [ALIAS](https://support.dnsimple.com/articles/alias-record/) record instead of a CNAME record.
 
-Some DNS providers do not have ALIAS records. In that case, the functionality of ALIAS records is managed using CNAME records.  
+Some DNS providers do not have ALIAS records. In that case, the functionality of ALIAS records is managed using CNAME records.
+
+Since all domain registrars are different, the Alias / cname or TXT record interface will not be the same as follows but will generally be simular. 
+
+![](../.gitbook/assets/screen-shot-2018-12-09-at-7.40.47-pm%20%281%29.png)
+
+  
 
 
 ### CDN Distribution
