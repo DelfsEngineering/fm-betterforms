@@ -1,6 +1,6 @@
 # Customizing and Styling
 
-## Optional components
+### Optional Components
 
 You can hide or show various parts of the user interface
 
@@ -10,15 +10,17 @@ You can hide or show various parts of the user interface
 
 Controls for elements are found under the `Appearance` tab of the site editor.
 
-## Navigation
+### Navigation
 
 Navigation menu options can be configured in the navigation tab of the site editor.
 
-## Slots
+### Slots
 
 Slots allow you to inject custom code fragments into various locations around the UI,
 
 Slots See Slots documentation.
+
+### Loaders
 
 ### Integration Methods
 
@@ -30,17 +32,17 @@ Your apps can being deployed or integrated with several methods.
 
 ## Loaders
 
-Custom loader / spinners can be added. Animated SVG's or HTML can be injected via the `appearance -> loaders` tab of the site editor.
+You can customize the default animated page loader. Any HTML compatible image, SVG, GIF etc will be loaded during page transitions. You can find the custom loaders editor from the `site -> appearance -> loaders` tab of the site editor.
 
-## Default Theme Colors
+#### Loader Resources 
 
-BetterForms has several default site theme colors. This can act as a starting point for your app. Themes are selected under site / appearance.
+ [http://svgcircus.com/](http://svgcircus.com/) - Generate custom spinners.
 
-## CSS
+[https://loading.io/](https://loading.io/) - Many animated SVG's \(can right click on page to see source code.
 
-Site wide CSS is configured via the `appearance -> CSS` section the BF editor.
+Google Search for other tools: [https://www.google.com/search?ei=sogvXIiDK8fLjwTYiJPYBQ&q=animate+svg+online&oq=animate+svg+online&gs\_l=psy-ab.3..0i7i30j0j0i8i30j0i30.6239.6748..7301...0.0..0.103.271.2j1......0....1..gws-wiz.......0i71j0i8i7i30.V\_EkTuZrlMw](https://www.google.com/search?ei=sogvXIiDK8fLjwTYiJPYBQ&q=animate+svg+online&oq=animate+svg+online&gs_l=psy-ab.3..0i7i30j0j0i8i30j0i30.6239.6748..7301...0.0..0.103.271.2j1......0....1..gws-wiz.......0i71j0i8i7i30.V_EkTuZrlMw)
 
-#### Schema Element Classes
+
 
 All elements within a form schema can have a styleClasses key that can take a string of space separated CSS classes. The below example adds the class `my-red-box` to an input element.
 
@@ -73,13 +75,23 @@ Resulting is something similar to the following:
 
 You can target specific forms \(pages\) by adding class\(es\) to the `styleClasses` key of the `formSchema.form` section on the `misc.` tab of the form editor.
 
-![](../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
+### Default Theme Colors
 
-#### Other Classes
+BetterForms has several default site theme colors. This can act as a starting point for your app. Themes are selected under site / appearance.
 
 Some elements have an additional classes key for targeting internal components to that element. Buttons are an example of this. The `buttonClasses` key in this case allows you to target the button itself and not the wrapping object around the button.
 
 ### Favicon
+
+### CSS
+
+Site wide CSS is configured via the `appearance -> CSS` section the BF editor.
+
+#### Schema Element Classes
+
+![](../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
+
+#### Other Classes
 
 The `favicon` is the custom icon that is located in the tab of the browser. Adding the Favicon is easy and can be done one of two ways.
 
@@ -92,4 +104,6 @@ The `favicon` is the custom icon that is located in the tab of the browser. Addi
 // Sample b64 link tag 
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAE">
 ```
+
+
 

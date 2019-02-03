@@ -91,9 +91,9 @@ omit periods
 
 ## Field Validation
 
-{% page-ref page="validationoverview/" %}
-
 ## Sample Wizard JSON
+
+{% page-ref page="validationoverview/" %}
 
 ```yaml
 {
