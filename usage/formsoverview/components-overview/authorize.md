@@ -20,10 +20,10 @@ You will need to obtain server sets of credentials from the authorize.net dashbo
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
-| type | authorize | string |  |
-| model |  | object | data model key name that will contain results of payment transactions returned from Authorize.net |
-| credentials | {} | object | credential object, |
-| style | {} | object | PayPal defined styling of the button |
+| `type` | authorize | string |  |
+| `model` |  | object | data model key name that will contain results of payment transactions returned from Authorize.net |
+| `credentials` | {} | object | credential object, |
+| `style` | {} | object | PayPal defined styling of the button |
 
 ```javascript
 // Sample schema object
