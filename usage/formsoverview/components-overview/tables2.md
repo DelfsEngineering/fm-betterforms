@@ -6,7 +6,7 @@ This component is based on [Vue Tables2](https://github.com/matfish2/vue-tables-
 This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables-2#readme) Refer to source code for additional documentation.
 {% endhint %}
 
-### Additional keys:
+## Additional keys:
 
 | Additional Keys | Type | Description |
 | ---: | :---: | :--- |
@@ -57,4 +57,18 @@ Slots allow you to insert you own custom HTML in predefined positions within the
 * `appendBody`: Append to the `<tbody>` tag
 
 If a slot has the same name as a column, it will replace the columns contents. You can class the rows object \(data object for that row\) via `model.row.myField`
+
+## Accessing Data in slots
+
+#### row
+
+Each rows data can be found in the  `row` variable when using custom html slots. 
+
+eg: `{{row.nameFirst}}` would render the first name field
+
+#### data model
+
+Sometimes you may want to reference the parent data model \(The model that was used for the form, or the container element\). You can reference to parents data model with the variable `model`
+
+eg: `{{model.isLocked}}` would render the isLocked field in the parent data model
 
