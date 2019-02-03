@@ -27,6 +27,12 @@ Card Modals are opened with an `showCardModal` action and hidden with a `hideCar
 | action | `"showCardModal"` |  |
 | options.name | _string_ | { optional } defaults to "modal" Can be used to target window for other actions.  |
 
+Changing paths / form contents, use a `path` action with added `windowName`  key to target the correct window, in this case the name of this modal. 
+
+Setting the drag handle
+
+You can optionally set a string for the `draggable` key. This string should be a valid `CSS` selector \( id, class, elementType \). For example to only allow the header portion of a window to be dragable set `"draggable": ".pageheader"` 
+
 Fancy Sample
 
 ```yaml
@@ -49,6 +55,8 @@ Fancy Sample
 }
 ```
 
+#### Example
+
 TODO:
 
 | Option Key | Type | Description / Purpose |
@@ -60,21 +68,17 @@ TODO:
 | `query` | object | Data passed to FMS as if it were a query param \(more below\) |
 | `onBeforeClosed_actions` | array | Array of actions to be run when the card window is closed |
 
-#### Example
 
 
+
+
+T**ODO:**
 
 #### Passing Parameters
 
 Parameters can be passed to the Modal via the `params` object set in an action function. When called from another page. If you need `onFormRequest` params, use the `wuery` key as you would with other pages and read via the `$$BF_Query` global.
 
 Often you will want to show a detail modal when clicking on a parent element. This modal will need to know some params to pass to the `onFormRequest` hook so it can return correct data to display. You can pass params with a `query` key in the elements schema. This data will surface in the `$$BF_Query` global in the script.
-
-T**ODO:**
-
-Changing paths / form contents, use a `path` action with added `windowName`  key to target the correct window, in this case the name of this modal. 
-
-
 
 
 
