@@ -54,6 +54,8 @@ Actions are executed sequentially starting at the beginning of the array.
 
 ### Action Object
 
+`nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait but still want other things to run \(like slow process utility hooks\)
+
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | action | string |  | {optional} The minimum number of tabs the user is allowed to create. The delete icon will had when this number is reached. |
@@ -64,8 +66,6 @@ Actions are executed sequentially starting at the beginning of the array.
 
 #### Actions Options
 
-`nonBlocking` - When added to the action and try, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking modal that tells the user to please wait but still want other things to run \(like slow process utility hooks\)
-
 #### Functions
 
 The actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
@@ -73,6 +73,8 @@ The actions object can also have a `function` key. If defined, the JS code withi
 The main difference between the function action and using actions with an added `function` key is that there is no additional action associated with it.
 
 For additional information see the [Function Action](function-1.md)
+
+## Calling Named Actions <a id="functions"></a>
 
 ### Triggering Actions on Field Changes
 
@@ -116,4 +118,24 @@ if(!model.isRegistered) {
 ```
 
 
+
+You can call named actions from an actions array too. Simply omit the `action` key and add a `name` key.
+
+```text
+// example shows a button that calls a named action
+{
+  "actions": [
+    {
+      "name": "copyAddress",
+      "options": {
+        "key": "value"
+      }
+    }
+  ],
+  "buttonClasses": "btn btn-info btn-trans btn-sm",
+  "styleClasses": "col-md-2",
+  "text": "Call a named action",
+  "type": "button"
+}
+```
 
