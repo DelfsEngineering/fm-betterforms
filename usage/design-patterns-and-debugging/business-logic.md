@@ -2,7 +2,7 @@
 
 Separating Concerns
 
-DRY
+### DRY - Don't Repeat yourself
 
 Write scripts that can be called from both FM Client and BF Web apps equally. This is a paradigm change for most FileMaker developers. 
 
@@ -12,8 +12,7 @@ Consider a workflow that creates a new  record when a user initiates some action
 
 * \[Button Clicked\] - Run script "Create Record"
 
+### Validation Best Practices
 
-
-  
-Reusing code between client and web apps
+Do not assume data has been validated. Anything that comes from the client \( browser\) can be hacked. If you are using the database native field validations \( not empty, unique etc\) then make sure you trap for errors on commit. These errors show be echoed back to the client.
 
