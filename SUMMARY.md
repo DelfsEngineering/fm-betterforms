@@ -29,6 +29,7 @@
     * [paypal](usage/formsoverview/components-overview/paypal.md)
     * [signature](usage/formsoverview/components-overview/signature.md)
     * [tables2](usage/formsoverview/components-overview/tables2.md)
+    * [JS Caclulations and Functions](usage/formsoverview/components-overview/js-caclulations-and-functions.md)
   * [tabs\_form](usage/formsoverview/tabs_form.md)
   * [vtab,](usage/formsoverview/vtab.md)
   * [Styling and Design](usage/formsoverview/styling.md)
