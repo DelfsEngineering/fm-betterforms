@@ -1,6 +1,8 @@
 # Card / Window Modals
 
+{% hint style="danger" %}
 _**Preliminary, subject to change ver 0.8.3+**_
+{% endhint %}
 
 Modals display other form pages as their content.  
 
