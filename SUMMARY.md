@@ -22,6 +22,7 @@
     * [button](usage/formsoverview/components-overview/button.md)
     * [aceeditor](usage/formsoverview/components-overview/aceeditor.md)
     * [accordion](usage/formsoverview/components-overview/accordion.md)
+    * [fullCalendar](usage/formsoverview/components-overview/fullcalendar.md)
     * [dropzone](usage/formsoverview/components-overview/dropzone.md)
     * [html](usage/formsoverview/components-overview/html.md)
     * [listrows](usage/formsoverview/components-overview/listrows.md)
