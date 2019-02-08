@@ -42,6 +42,14 @@ The `v-model` in the component  points to the data source used to populate the c
 
 This code is inserted into an HTML element and we are done!
 
+### Limitations
+
+There are some limitations when adding 3rd party libraries.
+
+* Module libraries must be available via a CDN
+* Modules must self install as a global Vue component
+* Modules must not require initialization code and be ready for use as a Vue component
+
 
 
 
