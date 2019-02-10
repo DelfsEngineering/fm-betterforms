@@ -20,6 +20,7 @@ The actions processor is basically a scripting language processor. Nearly all as
 * _**wait**_ - Waits for specified time or event
 * _**emit**_ - Vue event bus message emit
 * _**scrollTo**_ - Scrolls to an element
+* _**namedAction**_ - Runs a named action. Also requires the `name` key.
 * _**function**_ - Runs JavaScript 
 
 #### Authentication Actions
