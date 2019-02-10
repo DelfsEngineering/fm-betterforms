@@ -14,8 +14,6 @@ Gathering and compiling a JSON based data oject from a found set of FM records c
 
 `getColumnAsArray` is simular to `getColumn` but is design to return a JSON array of the found records. The returned object is an JSON Array and works perfectly for any BF element that renders repeating data \( Data tables, ListRow's etc.
 
-
-
 ### Writing Data
 
 There are two apprioaches to writing returned data from BF. Single records and Arrays.
