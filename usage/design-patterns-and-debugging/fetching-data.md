@@ -24,19 +24,13 @@ When possible it is much easier and more readable to create code that writes sin
 
 #### Multiple Record Writes
 
-If your UI gives the user the ability to made data changes to multiple records at a time \( eg: a list with a checkboxes and the use picks several records to check\) then you will need to loop over the returned array of data and find and mutate each record. For these scenarios, the Select design approach is the easiest.
+If your UI gives the user the ability to made data changes to multiple records at a time \( eg: a list with a checkboxes and the use picks several records to check\) then you will need to loop over the returned array of data and find and mutate each record. For these scenarios, the Select design approach is the easiest. This also has teh benefit making the write a single transaction.
 
 #### New Record vs Edit Record
 
 Many interfaces have the ability to create a new record as well as edit an existing reocrd. A simple design approach that works nicely with BF is to use the same code and layout \(form\) that saves an existing reocrd to create the new record. If you are editing an exisitng record then there will already abe a UID in the data model for the record. The presence of this can be used to tell your script whether to create aa new record or edit an exisitng one. Again, the selector design pattern can handle this automatically.
 
 
-
-Data Optimization Techniques
-
-Multiple JSON objects
-
-Caching data
 
 
 

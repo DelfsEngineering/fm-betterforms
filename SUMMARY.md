@@ -64,10 +64,11 @@
 * [Custom Domains](usage/custom-domains.md)
 * [3rd Party Elements](usage/3rd-party-elements.md)
 * [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
-  * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Handling Data](usage/design-patterns-and-debugging/fetching-data.md)
+  * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
+  * [Optimization](usage/design-patterns-and-debugging/optimization.md)
 * [$$BF\_&lt;Globals&gt;](usage/bf-globals/README.md)
   * [FileMaker Concepts](usage/bf-globals/filemaker-concepts.md)
 
