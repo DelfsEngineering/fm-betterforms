@@ -1,4 +1,4 @@
-# Design Patterns and Debugging
+# Design Patterns and Best Practices
 
 ## Section under development
 
