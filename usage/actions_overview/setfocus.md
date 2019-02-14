@@ -16,8 +16,8 @@ Allows element focusing \(set cursor to a field\). The contents of the field can
   {
     "action": "setFocus",
     "options": {
-        "elementId": "name-first"
-        "select: true
+        "elementId": "name-first",
+        "select": true
     }
   }
 ]
