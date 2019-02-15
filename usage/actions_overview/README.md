@@ -57,10 +57,10 @@ Actions are executed sequentially starting at the beginning of the array.
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| action | string |  | {optional} The minimum number of tabs the user is allowed to create. The delete icon will had when this number is reached. |
+| action | string |  | The name of the action  |
 | function | string |  | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.  |
 | preventClone | boolean | false | {optional} Default: true. When true the entire actions array will not be striped of its references to the objects that were passed in when it was created. This is handy when you are passing references to object that you want to modify later. For example, the BF HTML and JS editor passes in a reference to the source editor so that it is easy to later call methods in that passed in editor. Doing this makes it easy to not have to worry about mutating code in the wrong source editor. You generally should never need to change this unless you have a valid use case warranting it.   By default, all passed in actions are cloned decoupling them from their original objects. |
-| nonBlocking | boolean | false | When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run \(like slow process utility hooks\) |
+| nonBlocking | boolean | false | {optional} When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run \(like slow process utility hooks\) |
 | options | object |  | This object may be optional depending on the specific settings needed by a given action.. |
 
 #### Actions Options
