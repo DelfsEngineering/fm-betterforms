@@ -81,17 +81,19 @@ BetterForms has several default site theme colors. This can act as a starting po
 
 Some elements have an additional classes key for targeting internal components to that element. Buttons are an example of this. The `buttonClasses` key in this case allows you to target the button itself and not the wrapping object around the button.
 
-### Favicon
-
 ### CSS
 
 Site wide CSS is configured via the `appearance -> CSS` section the BF editor.
 
-#### Schema Element Classes
+#### Page scoped classes
 
-![](../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
+To target specific forms in your app, you can add a `styleClasses` key. This will allow you to still keep your CSS in a single location and theme pages separatly.
 
-#### Other Classes
+![Only this Dashboard page with have the \`dash-red\` class applied.](../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
+
+
+
+### Favicon
 
 The `favicon` is the custom icon that is located in the tab of the browser. Adding the Favicon is easy and can be done one of two ways.
 

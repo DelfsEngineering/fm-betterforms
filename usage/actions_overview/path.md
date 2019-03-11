@@ -41,8 +41,8 @@
       <td style="text-align:left">
         <p>{ optional } URN path that follows the # (hash)
           <br />eg:</p>
-        <p>"/" - index page</p>
-        <p>"/form/:id - a form with id</p>
+        <p>&quot;/&quot; - index page</p>
+        <p>&quot;/form/:id - a form with id</p>
       </td>
     </tr>
     <tr>

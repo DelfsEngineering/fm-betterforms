@@ -1,4 +1,4 @@
-# Form Validation
+# Validation
 
 ## Client Side Validation
 
