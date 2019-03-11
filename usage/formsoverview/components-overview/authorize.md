@@ -2,6 +2,8 @@
 
 `authorize` Allows you to securely process payments via Authorize.net This component only renders the button and hands the secure transaction via Authorize.net's accept.js module. The workflow for this component requires a bit more work than the Stripe or PayPal payment gateways. Unlike those elements, `authorize` requires server side calls the the Authorize.net API to complete the transaction.
 
+**Version:** &gt;0.8.16
+
 {% hint style="danger" %}
 #### This component documentation is work in progress
 {% endhint %}
