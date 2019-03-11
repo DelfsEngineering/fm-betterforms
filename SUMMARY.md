@@ -12,6 +12,7 @@
 
 * [System Overview](usage/system-overview.md)
 * [Site Model](usage/siteoverview.md)
+* [Navigation](usage/navigationoverview.md)
 * [Calculations](usage/calculations.md)
 * [Forms Processor](usage/formsoverview/README.md)
   * [Form Types](usage/formsoverview/formtypesoverview.md)
@@ -57,20 +58,17 @@
     * [API Callback Endpoint](usage/hooksoverview/commonoverview/callback.md)
   * [Scoped hooks](usage/hooksoverview/scopedoverview/README.md)
     * [Hooks](usage/hooksoverview/scopedoverview/hooks.md)
-* [Navigation](usage/navigationoverview.md)
 * [Additional Display Elements](usage/additional-display-elements/README.md)
   * [Card / Window Modals](usage/additional-display-elements/card-modals.md)
 * [Customizing and Styling](usage/stylingverview.md)
 * [Custom Domains](usage/custom-domains.md)
-* [3rd Party Elements](usage/3rd-party-elements.md)
+* [Adding 3rd Party Elements](usage/3rd-party-elements.md)
 * [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
   * [Handling Data](usage/design-patterns-and-debugging/fetching-data.md)
   * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
   * [Optimization](usage/design-patterns-and-debugging/optimization.md)
-* [$$BF\_&lt;Globals&gt;](usage/bf-globals/README.md)
-  * [FileMaker Concepts](usage/bf-globals/filemaker-concepts.md)
 
 ## Other Services
 

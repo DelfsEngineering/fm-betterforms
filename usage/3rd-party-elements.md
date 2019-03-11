@@ -1,4 +1,4 @@
-# 3rd Party Elements
+# Adding 3rd Party Elements
 
 Third party modules can be incorporated into BetterForms apps. This opens up en enormous library of open source and paid modules. You should have a good working knowledge of VueJS and how binding works.
 
