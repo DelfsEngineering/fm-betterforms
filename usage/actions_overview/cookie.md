@@ -41,7 +41,7 @@ Vue.$cookie.set('cookieName', 'some info here', 7)
 Vue.$cookie.getJSON('cookieName') returns JSON obj of cookie data
 
 // Setting a cookie from a click within a HTML 
-... @click="Vue.cookie.set('myCookieName', 4") ...
+... @click="Vue.cookie.set('myCookieName', 4)" ...
 ```
 
 **Custom Function** There is no CF avail at this time.
