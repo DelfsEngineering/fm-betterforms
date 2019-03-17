@@ -1,0 +1,31 @@
+# rangeSlider
+
+The range slider component is based in the `ion.rangeSlider` library and will require a DOM header link to include the module.
+
+Add the CDN references below into the DOM Header Insertions section of your site. 
+
+```text
+<!--rangeSlider CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+
+<!--Plugin JavaScript file-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+    
+```
+
+### Example code snippet
+
+```text
+{
+  "label": "Rank",
+  "styleClasses": "col-md-12 ",
+  "max": 10,
+  "min": 1,
+  "model": "rank",
+  "rangeSliderOptions": {
+    "grid": true
+  },
+  "type": "rangeSlider"
+}
+```
+
