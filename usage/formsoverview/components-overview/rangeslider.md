@@ -2,6 +2,12 @@
 
 The range slider component is based in the `ion.rangeSlider` library and will require a DOM header link to include the module.
 
+### Source Reference
+
+Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider](https://vue-generators.gitbook.io/vue-generators/fields/optional_fields/slider)
+
+ion.rangeSlider.js: [http://ionden.com/a/plugins/ion.rangeSlider/index.html](http://ionden.com/a/plugins/ion.rangeSlider/index.html)
+
 ![](../../../.gitbook/assets/2sknsrpi9d%20%281%29.gif)
 
 Add the CDN references below into the DOM Header Insertions section of your site. 
