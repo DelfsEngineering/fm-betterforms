@@ -2,6 +2,8 @@
 
 The range slider component is based in the `ion.rangeSlider` library and will require a DOM header link to include the module.
 
+![](../../../.gitbook/assets/2sknsrpi9d%20%281%29.gif)
+
 Add the CDN references below into the DOM Header Insertions section of your site. 
 
 ```text
@@ -28,4 +30,8 @@ Add the CDN references below into the DOM Header Insertions section of your site
   "type": "rangeSlider"
 }
 ```
+
+#### Theming
+
+see docs for theming info here: [http://ionden.com/a/plugins/ion.rangeSlider/skins.html](http://ionden.com/a/plugins/ion.rangeSlider/skins.html)
 
