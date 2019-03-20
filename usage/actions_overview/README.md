@@ -23,13 +23,15 @@ The actions processor is basically a scripting language processor. Nearly all as
 * _**namedAction**_ - Runs a named action. Also requires the `name` key.
 * _**function**_ - Runs JavaScript 
 
-#### Authentication Actions
+#### Authentication Actions 
 
-* authLogin
-* authLogout
-* authReset
-* authForgot
-* authVerify
+* _**authLogin**_ - Performs an authentication login
+* _**authLogout**_ - Performs logout
+* _**authReset**_ - Performs a password reset action
+* _**authForgot** -_ Performs a forgotten password reset hook
+* _**authVerify**_  - Performs a verification of the verify token
+
+See custom login Forms for more details
 
 ### Usage
 
@@ -45,7 +47,7 @@ Actions can be injected in many places:
 
 The `$$_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
 
-To add an action simply add the action object as an array element. There are custom functions that make this easy. 
+To add an action simply add the action object as an array element. There are FileMaker custom functions that make this easy. 
 
 Actions are executed sequentially starting at the beginning of the array. 
 
@@ -67,7 +69,7 @@ Actions are executed sequentially starting at the beginning of the array.
 
 #### Functions
 
-The actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
+All actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment. 
 
 The main difference between the function action and using actions with an added `function` key is that there is no additional action associated with it.
 

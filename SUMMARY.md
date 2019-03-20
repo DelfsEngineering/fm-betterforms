@@ -36,6 +36,7 @@
     * [vtab,](usage/formsoverview/components-overview/vtab.md)
     * [rangeSlider](usage/formsoverview/components-overview/rangeslider.md)
     * [uploadCare](usage/formsoverview/components-overview/uploadcare.md)
+    * [Authentication Actions](usage/formsoverview/components-overview/authentication-actions.md)
   * [JS Caclulations and Functions](usage/formsoverview/js-caclulations-and-functions.md)
   * [Styling and Design](usage/formsoverview/styling.md)
 * [Actions Processor](usage/actions_overview/README.md)
