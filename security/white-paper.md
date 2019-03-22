@@ -29,7 +29,7 @@ Any web interface regardless of technology needs to access your system with some
 
 #### Server Secrets 
 
-When the server is first deployed it is given all of the secrets \(keys, links etc. it needs to know and they are saved in memory only after the server starts up. This makes it extreamly hard to retrieve to the secrets.
+When the server is first deployed it is given all of the secrets \(keys, links etc. it needs to know and they are saved in memory only after the server starts up. This makes it hard to retrieve to the secrets.
 
 #### Client account credentials 
 
