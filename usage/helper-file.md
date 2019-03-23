@@ -17,9 +17,9 @@ You interact with your application and the Web client via hooks scripts. Hooks f
 
 #### Common Hooks
 
-
+Common hooks are scripts that are not contextual to a specific page. Typically they can be called from anywhere. Eg: A login or registration hook are common hooks.
 
 #### Scoped Hooks
 
-
+Scoped hooks are bound to a specific form / page. `onFormRequest` is an example of a scoped hook. This script would be called when a specific form loads.
 

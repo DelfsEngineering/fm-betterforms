@@ -1,19 +1,15 @@
 # Table of contents
 
 * [Introduction](README.md)
-
-## Overview
-
-* [ReadMe](overview/readme.md)
-* [Introduction](overview/introduction.md)
-* [Installation](overview/installation.md)
+* [Features Summary](introduction.md)
+* [Getting Started](getting-started.md)
+* [Installation](installation.md)
 
 ## Usage
 
 * [System Overview](usage/system-overview.md)
-* [Site Model](usage/siteoverview.md)
-* [Getting Started](usage/getting-started.md)
 * [Helper File](usage/helper-file.md)
+* [Site Model](usage/siteoverview.md)
 * [Navigation](usage/navigationoverview.md)
 * [Calculations](usage/calculations.md)
 * [Forms Processor](usage/formsoverview/README.md)
