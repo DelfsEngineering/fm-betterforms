@@ -1,8 +1,8 @@
 # Navigation
 
-Most of the navigation in BetterForms is handled is handled with the URL path. By using actions and / or custom navigation menus,you can completely control the users movement.
+Most of the navigation in BetterForms is handled is handled with the URL path. By using actions and / or custom navigation menus, you can completely control the users movement.
 
-Ways to change user navigation:
+#### Ways to change user navigation:
 
 * Custom navigation menus
 * Actions passed back from hooks
@@ -10,7 +10,7 @@ Ways to change user navigation:
 
 ## Custom Navigation Menus
 
-You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and thier their children.
+You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and their their children.
 
 ### Navigtion Item Types and Key Descriptions
 
@@ -103,7 +103,7 @@ The navigation parser classifies the navigation elements in the following hierar
 
 ```
 
-In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Simply be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment &gt; App Model_ section of your site settings.
+In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment &gt; App Model_ section of your site settings.
 
 TODO: need examples of `visible_calc, html` and `subs`
 
