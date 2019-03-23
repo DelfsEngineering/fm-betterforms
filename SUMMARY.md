@@ -13,6 +13,7 @@
 * [System Overview](usage/system-overview.md)
 * [Getting Started](usage/getting-started.md)
 * [Site Model](usage/siteoverview.md)
+* [Helper File](usage/helper-file.md)
 * [Navigation](usage/navigationoverview.md)
 * [Calculations](usage/calculations.md)
 * [Forms Processor](usage/formsoverview/README.md)
