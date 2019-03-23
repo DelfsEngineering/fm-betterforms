@@ -11,8 +11,8 @@
 ## Usage
 
 * [System Overview](usage/system-overview.md)
-* [Getting Started](usage/getting-started.md)
 * [Site Model](usage/siteoverview.md)
+* [Getting Started](usage/getting-started.md)
 * [Helper File](usage/helper-file.md)
 * [Navigation](usage/navigationoverview.md)
 * [Calculations](usage/calculations.md)
