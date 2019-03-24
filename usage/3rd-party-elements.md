@@ -49,6 +49,7 @@ There are some limitations when adding 3rd party libraries.
 * Module libraries must be available via a CDN
 * Modules must self install as a global Vue component
 * Modules must not require initialization code and be ready for use as a Vue component
+* Modules that are not Vue components can still be used but will often require writing small JS interface code to help patch them into the BF framework.
 
 
 
