@@ -2,33 +2,36 @@
 
 ## Overview
 
-Hooks allow you to intercept various workflow processes right from within Filemaker. This gives you very powerful control over all aspects of the BetterForms workflow.
+Hooks allow you to intercept various workflow processes right from within FileMaker. This gives you very powerful control over all aspects of the BetterForms workflow.
 
 Hooks are organized in sets within a folder. **hookSets** are folders of hooks that concern a specific form\(s\).These hooks are passed data by a parent dispatch script.
 
-All hooks have data that is passed into and out of them. By mutating this data you can control the user experience. Most hooks surface the same `$$BF_... vars`    but some hooks have additional vars.
+All hooks have data that is passed into and out of them. By mutating this data you can control the user experience. Most hooks surface the same `$$BF_...` vars    but some hooks have additional vars.
 
 ![Script Hook life cycle](../../.gitbook/assets/productionflo-system%20%281%29.png)
-
-### HookSets
-
-Hooksets HookSets are folders of hooks that relate to the same use case. 
 
 HookSets are broken down into two types: `CommonHookSets` and `ScopedHookSets`
 
 ### CommonHookSets
 
-These hooks relate to call that are site wide and not page / form specific.
+These hooks relate to operations that are site wide and not page / form specific. Eg. When a user logs into the application the onLogin hook is called. 
+
+BetterForms allows for multiple common hook sets. This allows you to create multiple front end app's for a common back end database. An example would be a customer pointing front end portal and a separate staff portal that would have different functionality. The use of a separate common hook set allows different scripts to handle things like user registration and authorization. 
 
 ### ScopedHookSets
 
-These hooks are associated with a specific page or pages. A form is bound to a specific hookset but a hookset is not bound to a specific page.. Meaning, the same one could be used for simular forms.
+These hooks are associated with a specific page or pages. A form is bound to a specific hook set but a hook set is not bound to a specific form. Meaning, the same script handlers could be used for similar forms.
 
-### Adding a HookSet to a new form
+When naming common Hook Sets use a simple name that describes the entire application they control.   
+Eg: `custoer` for customer application, `staff` for staff portal.
 
-When you create a new form, you will probably need to also install a hookset to handle that forms business logic.
+### Adding a Scoped HookSet folder for a new form
 
-1. Duplicate the `default hookSet` folder. This folder of scripts will be used only for your new form.
-2. Edit the script `HookSet Dispatch` by adding a new section. Name your hookSet.
-3. In the form editor assign your form's hookSet parameter to your new hookSet name.
+When you create a new form, you will probably need to also install a hook set to handle that form's business logic.
+
+1. From the helper file integration tab, select 'Create New scoped hook set' and enter a name for the hook set. These scoped hook set names should be short and clearly describe what the form they are bound to does.  EG: `invoiceList` , `invoiceDetail`  , `dashboard` 
+2. Paste this set of scripts and their folder into the BetterForms Folder under with your other scoped hooks.
+3. \(V16 FMS\) If you are using &lt;V17 FMS then you will also need to add a script set in the dispatch script to include your new scoped hook set. V17+ does this automatically and is not required.
+
+
 
