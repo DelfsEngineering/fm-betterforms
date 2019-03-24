@@ -24,9 +24,9 @@
   * Perform on the fly reactive calculations for nearly any element or parameter anywhere
   * Write full JS functions that can be called from any action
 * Various Summary modals and alert actions allow interaction and communication with the user
-* Place layouts within modal windows 
-* Three Payment gateways for monetizing your app
-* Hooks scripts run local to the existing developers app keeping a business logic together.
+* Place layouts within modal card windows 
+* Multiple payment gateways for monetizing your app
+* Hooks scripts run local to the existing developers app keeping all business logic together.
 * **No Installation and Deployment** 
   * Cloud hosted SAAS application
   * Single FileMaker Helper file installed on the target FMS box.
