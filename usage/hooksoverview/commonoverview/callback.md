@@ -16,7 +16,7 @@ This service can act as a universal endpoint and service multiple content types.
 
 * Callback for integrating various services
 * Document download endpoint
-* App entry point for passing data when integrating from another system. _Eg. A user clicks a link in your online e-Connerce store and that link hits the BetterForms API callback. This action passes some data that launches the user cart session._
+* App entry point for passing data when integrating from another system. _Eg. A user clicks a link in your online e-commerce store and that link hits the BetterForms API callback. This action passes some data that launches the user cart session._
 
 ### Supported Request Types
 
@@ -58,7 +58,7 @@ Set the `$contentType` var to one of the following to return that content type a
 
 ### Performance
 
-You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistantly achieved. This is dependent on server performance also.
+You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistently achieved. This is dependent on server performance also.
 
 ### Suggested Design Pattern and Notes
 
