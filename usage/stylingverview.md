@@ -14,6 +14,10 @@ Controls for elements are found under the `Appearance` tab of the site editor.
 
 Navigation menu options can be configured in the navigation tab of the site editor.
 
+### Theme Template
+
+The default theme template is your starting point for customization. T0 browse around the theme template select it from the left sidebar navigation. This opens a new browser tab. From here you can inspect the underlaying HTML of page objects such as buttons etc. This allows you to see the CSS classes that are used to compose the element.
+
 ### Slots
 
 Slots allow you to inject custom code fragments into various locations around the UI,
