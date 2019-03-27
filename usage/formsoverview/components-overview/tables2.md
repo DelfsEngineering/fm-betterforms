@@ -4,7 +4,7 @@
 This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables-2#readme) Refer to source code for additional documentation.
 {% endhint %}
 
-## Additional keys:
+### Additional keys:
 
 | Additional Keys | Type | Description |
 | ---: | :---: | :--- |
@@ -56,7 +56,7 @@ Slots allow you to insert you own custom HTML in predefined positions within the
 
 If a slot has the same name as a column, it will replace the columns contents. You can class the rows object \(data object for that row\) via `model.row.myField`
 
-## Accessing Data in slots
+### Accessing Data in slots
 
 #### row
 
@@ -70,7 +70,7 @@ Sometimes you may want to reference the parent data model \(The model that was u
 
 eg: `{{model.isLocked}}` would render the isLocked field in the parent data model
 
-## Child Rows
+### Child Rows
 
 Add the following CSS to your site to change how the icon to open or close the child row
 
@@ -92,4 +92,27 @@ Add the following CSS to your site to change how the icon to open or close the c
     content: "▼";
 }
 ```
+
+### Interacting with the Table \( Row Click Actions\)
+
+**actions\_onRowClick** 
+
+Table2 supports `actions_onRowClick` actions. This allows you to programatically control what happens when a user clicks an row.
+
+The following is an example that will pas the key `id` from the table row into the URN 
+
+```text
+"actions_onRowClick": [{
+   "action": "path",
+   "options": {
+      "path_calc": "'/sitedetail?id=' + this.params.row.id"
+    }
+  ]
+```
+
+This key can be retrieved in the `onFormRequest` script as follows:
+
+`Set Variable $id = JSONGetElement ( $$BF_Query ; "id" )`
+
+\`\`
 
