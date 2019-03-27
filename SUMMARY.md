@@ -1,9 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Features Summary](introduction.md)
-* [Getting Started](getting-started.md)
-* [Installation](installation.md)
 
 ## Usage
 
@@ -22,16 +19,16 @@
     * [aceeditor](usage/formsoverview/components-overview/aceeditor.md)
     * [accordion](usage/formsoverview/components-overview/accordion.md)
     * [dropzone](usage/formsoverview/components-overview/dropzone.md)
-    * [button](usage/formsoverview/components-overview/button.md)
     * [html](usage/formsoverview/components-overview/html.md)
+    * [button](usage/formsoverview/components-overview/button.md)
     * [listrows](usage/formsoverview/components-overview/listrows.md)
-    * [fullCalendar](usage/formsoverview/components-overview/fullcalendar.md)
     * [paypal](usage/formsoverview/components-overview/paypal.md)
+    * [fullCalendar](usage/formsoverview/components-overview/fullcalendar.md)
     * [signature](usage/formsoverview/components-overview/signature.md)
-    * [Untitled](usage/formsoverview/components-overview/untitled.md)
     * [tabs\_form](usage/formsoverview/components-overview/tabs_form.md)
     * [Untitled](usage/formsoverview/components-overview/untitled-1.md)
     * [tables2](usage/formsoverview/components-overview/tables2.md)
+    * [Untitled](usage/formsoverview/components-overview/untitled.md)
     * [vtab,](usage/formsoverview/components-overview/vtab.md)
     * [rangeSlider](usage/formsoverview/components-overview/rangeslider.md)
     * [uploadCare](usage/formsoverview/components-overview/uploadcare.md)
@@ -73,6 +70,9 @@
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
   * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Debugging](usage/design-patterns-and-debugging/debugging.md)
+* [Features Summary](introduction.md)
+* [Getting Started](getting-started.md)
+* [Installation](installation.md)
 
 ## Other Services
 
