@@ -20,13 +20,16 @@ Add the `slots` key to this element to define HTML regions to be displayed with 
 If you name a slot `child_row`, that HTML content will be displayed when the row of the table is expanded. _\(see CSS trick_ [_below_](https://delfs-engineering.gitbook.io/betterforms/usage/formsoverview/components-overview/tables2#child-rows) _for how to customize the look of the child row icon\)_
 
 ```yaml
-"columns": ["name", "title", "slot_name"],
+"columns": ["name", "title", "slot_name", "button_slot"],
 "slots": [{
     "html": "<h1>{{model.title}}</h1>",
     "slot": "title"
 }, {
     "html": "<h6>{{model.description}}</h6>",
     "slot": "slot_name"
+}, {
+    "html": "<button class=\"btn btn-info\" v-on:click=\"namedAction('myNamedAction'; {row: props.row})\"><i class=\"fa fa-check\"></i> OK</button>",
+    "slot": "button_slot"
 }, {
     "html": "{{props.row.productList}}",
     "slot": "child_row"
@@ -60,9 +63,9 @@ If a slot has the same name as a column, it will replace the columns contents. Y
 
 #### row
 
-Each rows data can be found in the  `row` variable when using custom html slots. 
+Each rows data can be found in the  `props.row` variable when using custom html slots. 
 
-eg: `{{row.nameFirst}}` would render the first name field
+eg: `{{props.row.nameFirst}}` would render the first name field
 
 #### data model
 
