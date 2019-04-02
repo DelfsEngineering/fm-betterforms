@@ -66,7 +66,7 @@ TODO:
 | `name` | string | Add a name to the card window |
 | `slug` | string | Must match a site navigation slug of the form to show in the card |
 | `idForm` | string | \(optional - instead of slug\) UUID of the form to show in the card |
-| `model` | object |  |
+| `model` | object | if set, this data will be used for the form data model. If an `onForRequest` hook is enabled, this content will NOT be passed into the hook. |
 | `query` | object | Data passed to FMS as if it were a query param \(more below\) |
 | `onBeforeClosed_actions` | array | Array of actions to be run when the card window is closed |
 
