@@ -6,11 +6,7 @@ _**Preliminary, subject to change ver 0.8.3+**_
 
 Modals display other form pages as their content.  
 
-Based on [vue js modal](https://github.com/euvl/vue-js-modal#properties)
-
-This Modal is based in vue-js-modal module. 
-
-Source: [https://github.com/euvl/vue-js-modal](https://github.com/euvl/vue-js-modal)
+This Modal is based on the [vue js modal](https://github.com/euvl/vue-js-modal#properties) module. 
 
 Card Modals are opened with an `showCardModal` action and hidden with a `hideCardModal` action. 
 
@@ -74,7 +70,7 @@ TODO:
 
 
 
-T**ODO:**
+**TODO:**
 
 #### Passing Parameters
 
