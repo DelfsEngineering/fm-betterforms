@@ -45,7 +45,7 @@ Actions can be injected in many places:
 
 ### $$BF\_Actions - Actions Array
 
-The `$$_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
+The `$$BF_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
 
 To add an action simply add the action object as an array element. There are FileMaker custom functions that make this easy. 
 
@@ -55,7 +55,7 @@ Actions are executed sequentially starting at the beginning of the array.
 
 **actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present. 
 
-### Action Object
+### The Action Object
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
