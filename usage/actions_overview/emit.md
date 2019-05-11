@@ -12,9 +12,9 @@ the `emit` action emits a message to elements that may be listening via this int
 | options.eventName | {string} | The name of the event used to target the listener  |
 | options.message | {string \| object} | The message body object, can be any type of data, see the elements specific fields it requires. |
 
-**Uses**:
+**U**:
 
-General purpose, sometimes you may want the following actions to wait until something is completed.
+G
 
 \*\*Example\*\*
 
