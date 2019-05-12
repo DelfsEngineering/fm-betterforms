@@ -5,6 +5,7 @@ There are defined $$BF\_xxx global variables available to all scripts. Use these
 | $$Var Name | Description |
 | :--- | :--- |
 | $$BF\_Model | This is the forms entire data model |
+| $$BF\_App | Keys passed in will be merged with the current app model.  \(0.8.32+\) |
 | $$BF\_State | The state object holds various data related to the browser environment. |
 | $$BF\_User | The user object when a user has been authenticated. |
 | $$BF\_Query | Key value pairs of the URL query parameters. Useful for direct linking \(smart links\) to a page. |
