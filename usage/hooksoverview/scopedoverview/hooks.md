@@ -2,6 +2,10 @@
 
 ## Common Hooks
 
+`commonHookSetName` The common hookset name is use in routing script requests \( Hooks \) from the web application into your FileMaker database. Typically this name reflects the general purpose of the app. Eg `portal` `admin` `cart` 
+
+The BetterForms hooks scripts will parse this out and route script execution accordingly. By having a commonHookSetName you are able to have several independant front end applications connect to a single FileMaker file back end. An exampl is a Customer Sales Panel and a Staff HR Portal.
+
 ### onLogin
 
 This hook is called when a user logs in successfully.You can inject actions abd and have full access to the user object .
