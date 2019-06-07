@@ -10,12 +10,12 @@ When clicked, the payment workflow is initiated.
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
-| type | paypal | string |  |
+| type | 'paypal' | string |  |
 | model |  | object | data model key name that will contain results of payment transactions |
 | amountKey |  | string | model key that holds the amount. |
 | currency | 'USD' | string | curency for the payment |
 | invoiceNumber |  | string | invoice or tracking ID number. |
-| env | "sandbox" | string | set this key while testing |
+| env | 'sandbox' or 'production' | string | set this key to "sandbox" while testing, delete it or change to production when done testing |
 | itemsKey | 'myItems' | array | optional - model key that holds an array of items |
 | credentials | {} | object | credential object, |
 | style | {} | object | PayPal defined styling of the button |
