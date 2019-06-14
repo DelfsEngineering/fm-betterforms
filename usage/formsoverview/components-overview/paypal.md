@@ -13,8 +13,9 @@ When clicked, the payment workflow is initiated.
 | type | paypal | string |  |
 | model |  | object | data model key name that will contain results of payment transactions |
 | amountKey |  | string | model key that holds the amount. |
+| onEvent\_actions | \[\] | array | If supplied, these actions will run when there is a paypal event. The default onUtilityHook will **not** execute. |
 | currency |  | string | model key that holds the amount |
-| invoiceNumber | 'USD' | string | curency for the payment |
+| invoiceNumber | 'USD' | string | currency for the payment |
 | dev | false | boolean | if true, use sandbox credentials |
 | itemsKey | 'myItems' | array | optional - model key that holds an array of items |
 | credentials | {} | object | credential object, |
