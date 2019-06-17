@@ -29,5 +29,7 @@ To reduce data transfer and increase performance and flexibility you can control
 
 In addition to reducing the data model, other payload keys can optionally be removed. The `form` `pages` and `options` keys can also be removed. These key are normally populated with form schema data and generally do not get mutated by the hook scripts. If the keys are empty the BetterForms client will continue to use the existing values significantly reducing the hook payload size and increasing performance.
 
+By default forms have the `Send full schema in utility hooks` setting in the form editor disabled. The browser will send a reduced data payload for faster transfer times. This can be enalbed for some special use cases require full schema.
+
 
 
