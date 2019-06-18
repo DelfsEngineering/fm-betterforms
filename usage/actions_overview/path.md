@@ -61,9 +61,10 @@
 // example path action object
 {
 "action" :"path",
-    {
-        url
-    }
+  "options" :
+       {
+           "path": "/invoiceList"
+       }
 }
 
 // This will replace the BetterForms page with the URL 'www.delfsengineering.ca'
