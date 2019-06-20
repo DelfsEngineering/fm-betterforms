@@ -29,23 +29,63 @@ To reduce data transfer and increase performance and flexibility you can control
 
 In addition to reducing the data model, other payload keys can optionally be removed. The `form` `pages` and `options` keys can also be removed. These key are normally populated with form schema data and generally do not get mutated by the hook scripts. If the keys are empty the BetterForms client will continue to use the existing values significantly reducing the hook payload size and increasing performance.
 
-By default forms have the `Send full schema in utility hooks` setting in the form editor disabled. The browser will send a reduced data payload for faster transfer times. This can be enalbed for some special use cases require full schema.
+By default forms have the `Send full schema in utility hooks` setting in the form editor disabled. The browser will send a reduced data payload for faster transfer times. This can be enabled for some special use cases require full schema.
 
-#### C​ontrolling Data Sent from the Browser
+### Controlling Data Sent from the Browser
 
-O​ften the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.
+​Often the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.
 
-#### Model Override 
+#### **Model Override Method**
 
-B​y passing in a \`model\` key you can over ride the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to othe model data.
+You can pass an array of paths or keys that will be applied to the form model and allow data to pass though. this allows you to pick out one or more keys to allow to pass on in the hook. The filtering follows [lodash's `pick` method](https://lodash.com/docs/4.17.11#filter).
 
-​Example JSON
+#### ​ModelFilterKeys Method
 
-#### ​ModelFilterKeys
+B​y passing in a \`model\` key you can over ride the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to other model data.
 
-Y​ou can pass an array of paths or keys that will be applied to the form model and allow data to pass though. this allows you to pick out one or more keys to allow to pass on in the hook.
+#### Example runUtilityHook Actions
 
-E​xample JSON
+```text
+// With data model containing the following
+
+{
+  "isLoading": true,
+  "activeContact": {
+    ... some single contact object
+  },
+  "allContacts" ; [
+    {
+      ... array of contact objects
+    }]
+}
+
+
+// This example will send the entire data model in the hook
+{
+  "action": "runUtilityHook",
+  "options": {
+    "type": "save"
+  }
+}
+
+// this will send only the model.activeContact object using the `modelFilterKeys` method
+{
+  "action": "runUtilityHook",
+  "options": {
+    "modelFilterKeys": ["activeContact"],    // you can have multiple filterd keys
+    "type": "save"
+  }
+}
+
+// this will send only the model.activeContact object using the `model` method
+{
+  "action": "runUtilityHook",
+  "options": {
+    "model_calc":"{activeContact: model.activeContact}",  
+    "type": "save"
+  }
+}
+```
 
 
 
