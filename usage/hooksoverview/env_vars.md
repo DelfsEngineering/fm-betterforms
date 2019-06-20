@@ -31,5 +31,11 @@ In addition to reducing the data model, other payload keys can optionally be rem
 
 By default forms have the `Send full schema in utility hooks` setting in the form editor disabled. The browser will send a reduced data payload for faster transfer times. This can be enalbed for some special use cases require full schema.
 
+#### C​ontrolling Data Sent from the Browser
+
+O​ften the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.
+
+ 
+
 
 
