@@ -22,8 +22,8 @@ To reduce data transfer and increase performance and flexibility you can control
 
 | Key | Value | Description |
 | :--- | :--- | :--- |
-| \```modelUpdateMode``` | `replace`  or not supplied | If not supplied \(default\) or `replace` then the returned data from the hook will replace all of the current data model.  |
-| \```modelUpdateMode``` | `merge` | Merge will use a `Object.assign` to merge the data keys supplied by the model with the current data model in the client.This will allow you to keep the current data in the app and only update \(and send\) the smaller changes. |
+| `modelUpdateMode` | `replace`  or not supplied | If not supplied \(default\) or `replace` then the returned data from the hook will replace all of the current data model.  |
+| `modelUpdateMode` | `merge` | Merge will use an `Object.assign` to merge the data keys supplied by the model with the current data model in the client.This will allow you to keep the current data in the app and only update \(and send\) the smaller changes. |
 
 ### Reducing Payload Size \(0.8.44+\)
 
