@@ -35,6 +35,20 @@ By default forms have the `Send full schema in utility hooks` setting in the for
 
 O​ften the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.
 
+#### Model Override 
+
+B​y passing in a \`model\` key you can over ride the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to othe model data.
+
+​Example JSON
+
+#### ​ModelFilterKeys
+
+Y​ou can pass an array of paths or keys that will be applied to the form model and allow data to pass though. this allows you to pick out one or more keys to allow to pass on in the hook.
+
+E​xample JSON
+
+
+
  
 
 
