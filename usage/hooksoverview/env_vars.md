@@ -41,21 +41,21 @@ You can pass an array of paths or keys that will be applied to the form model an
 
 #### ​ModelFilterKeys Method
 
-B​y passing in a \`model\` key you can over ride the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to other model data.
+B​y passing in a \`model\` key you can override the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to other model data.
 
 #### Example runUtilityHook Actions
 
-```text
+```yaml
 // With data model containing the following
 
 {
   "isLoading": true,
   "activeContact": {
-    ... some single contact object
+    //... some single contact object
   },
   "allContacts" ; [
     {
-      ... array of contact objects
+      //... array of contact objects
     }]
 }
 
@@ -72,7 +72,7 @@ B​y passing in a \`model\` key you can over ride the form’s data model that 
 {
   "action": "runUtilityHook",
   "options": {
-    "modelFilterKeys": ["activeContact"],    // you can have multiple filterd keys
+    "modelFilterKeys": [ "activeContact" ], // you can have multiple filterd keys
     "type": "save"
   }
 }
@@ -81,7 +81,7 @@ B​y passing in a \`model\` key you can over ride the form’s data model that 
 {
   "action": "runUtilityHook",
   "options": {
-    "model_calc":"{activeContact: model.activeContact}",  
+    "model_calc" : "{activeContact: model.activeContact}",  
     "type": "save"
   }
 }
