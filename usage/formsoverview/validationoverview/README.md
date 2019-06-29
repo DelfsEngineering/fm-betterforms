@@ -25,6 +25,10 @@ Tip: Validation does not run automatically. You can trigger client validation wi
 
 **double** Checks that the value is a valid number.
 
+{% hint style="warning" %}
+When validating with **number**, **integer**, or **double**, make sure the `inputType` for the field is set to `number`, otherwise the input will be saved as a JSON string in your data model.
+{% endhint %}
+
 **string** Checks that the value is a string - and that its length is within the fields min & max range, if these are defined in the schema.
 
 **array** Checks that the value is an array - and that the arrays length is within the fields min & max range, if these are defined in the schema. Expects the value to be a valid Javascript array literal - something like this: \["John", "Doe", "Jane"\] or \[1, 2, 3\].
