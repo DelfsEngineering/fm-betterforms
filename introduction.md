@@ -12,7 +12,7 @@
   * Enable web sign up, account creation
   * Developer Hooks for password reset and forgot password and email verification
 * **Forms Processing and workflow engine**
-  * Multiple form types including _plain_ and _multi-step wizard_ and _Master-Detail_ base layouts.
+  * Multiple page types including _plain_ and _multi-step wizard_ and _Master-Detail_ base layouts.
   * Wizard form type supports multiple pages
   * In browser client JS validation for common needs
   * Optional server-side validation on page / tab change of form via dev hooks \(in FileMaker\)
