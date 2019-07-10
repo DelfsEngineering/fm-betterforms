@@ -1,4 +1,4 @@
-# 1. Configure your FileMaker Server
+# 1. Configure FileMaker Server
 
 {% hint style="warning" %}
 Make sure you review the [system requirements](./#requirements) before you begin

@@ -7,7 +7,7 @@
 
 * [System Overview](getting-started/system-overview.md)
 * [Integration](getting-started/integration/README.md)
-  * [1. Configure your FileMaker Server](getting-started/integration/installation.md)
+  * [1. Configure FileMaker Server](getting-started/integration/installation.md)
   * [2. Add your Server to BetterForms](getting-started/integration/2.-add-a-server.md)
   * [3. Introduction to Hooks](getting-started/integration/3.-introduction-to-hooks.md)
   * [4. Create your first Site](getting-started/integration/4.-create-a-site.md)
