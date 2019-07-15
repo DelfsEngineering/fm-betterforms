@@ -1,12 +1,12 @@
+---
+description: Card modals display other pages as their content.
+---
+
 # Card / Window Modals
 
-{% hint style="danger" %}
-_**Preliminary, subject to change ver 0.8.3+**_
+{% hint style="info" %}
+This element is based on the [**vue js modal**](https://github.com/euvl/vue-js-modal#properties) module. 
 {% endhint %}
-
-Modals display other pages as their content.  
-
-This Modal is based on the [vue js modal](https://github.com/euvl/vue-js-modal#properties) module. 
 
 Card Modals are opened with an `showCardModal` action and hidden with a `hideCardModal` action. 
 
@@ -15,7 +15,7 @@ Card Modals are opened with an `showCardModal` action and hidden with a `hideCar
 {
     "action": "showCardModal",
     "options": {
-        "slug": "some_page_slug"// note: slug names must be URL comaptible
+        "slug": "some_page_slug" // note: slug names must be URL comaptible
     }
 }
 ```

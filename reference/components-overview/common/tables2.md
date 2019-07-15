@@ -1,4 +1,4 @@
-# tables2
+# Data Table
 
 {% hint style="info" %}
 This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables-2#readme) Refer to source code for additional documentation.
@@ -100,7 +100,7 @@ Add the following CSS to your site to change how the icon to open or close the c
 
 **actions\_onRowClick** 
 
-Table2 supports `actions_onRowClick` actions. This allows you to programatically control what happens when a user clicks an row.
+Table2 supports `actions_onRowClick` actions. This allows you to programmatically control what happens when a user clicks a row.
 
 The following is an example that will pas the key `id` from the table row into the URN 
 

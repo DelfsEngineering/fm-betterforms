@@ -1,7 +1,5 @@
 # Validation
 
-## Client Side Validation
-
 Client side validation is controlled by the `validator` key in all page elements. 
 
 ```yaml
@@ -17,9 +15,9 @@ Client side validation is controlled by the `validator` key in all page elements
 }
 ```
 
-**The validator key can be set to the following:**
+Validation **does not** __run automatically. You can trigger client validation with the [validate action.](../../actions-processor/actions_overview/validate.md)
 
-Tip: Validation does not run automatically. You can trigger client validation with the `validate` action.
+**The validator key can be set to the following:**
 
 **number** Checks that the value is numeric - and that it's within the fields min & max range, if these are defined in the schema. **integer** Checks that the value is a valid Javascript Number - and that it's an integer.
 
@@ -46,6 +44,10 @@ When validating with **number**, **integer**, or **double**, make sure the `inpu
 **alpha** Checks that the value is a letter, using this regex: /^\[a-zA-Z\]\*$/
 
 **alphaNumeric** Checks that the value is a letter or a number, using this regex: /^\[a-zA-Z0-9\]\*$/
+
+{% hint style="danger" %}
+This validation works great as a user interface element, but should not be trusted in FileMaker. **Anything that comes from the a client's web browser can be hacked**, so sensitive data should also be validated in your FileMaker scripts before committing to the database.
+{% endhint %}
 
 Source: [https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html](https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html)
 

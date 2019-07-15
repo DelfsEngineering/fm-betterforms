@@ -1,24 +1,10 @@
 # Page Elements
 
-Pages support various element types. For the main documentation please see Vue-FormBuilder docs.
+Pages support various element types. The primary elements have been adapted from [Vue-FormBuilder](https://icebob.gitbooks.io/vueformgenerator/content/fields/).
 
-Reference: [https://icebob.gitbooks.io/vueformgenerator/content/fields/](https://icebob.gitbooks.io/vueformgenerator/content/fields/)
+However, the BetterForms framework makes some deviations from the source code documentation as needed for implementation. This section covers differences and additions to the components. Many of BetterForms components are custom build and do not reply on external libraries.
 
-The BetterForms framework makes some deviations fro the source code documentation as needed for implementation. This section covers differences and additions to the components. Many of BetterForms components are custom build and do not reply on external libraries. 
+To learn more about how pages are built, see the Getting started guide:
 
-## Custom Field Types
-
-In additional to regular field type there are several custom types.
-
-* [accordion](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/accordion.md)
-* [vtab](../../security/authentication.md)
-* [signature](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/signature.md)
-* [html](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/html.md)
-* [listrows](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/listrows.md)
-* [dropzone](uploading-files/dropzone.md)
-* [bfcheckbox1](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/bfcheckbox1/README.md)
-* [paypal](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/forms/addition-form-types/paypal/README.md)
-* dropzone
-* rangeSlider
-* panel
+{% page-ref page="../../getting-started/integration/5.-create-a-form.md" %}
 
