@@ -7,7 +7,7 @@
 * **Fully responsive UI** 
   * allowing desktop, tablet and phone compatible UX
 * **Mutli-Mode Authentication System** 
-  * Authenticate via URL hash,
+  * Authenticate via URL hash
   * Authenticate via username \(email\) and password
   * Enable web sign up, account creation
   * Developer Hooks for password reset and forgot password and email verification
@@ -17,9 +17,9 @@
   * In browser client JS validation for common needs
   * Optional server-side validation on page / tab change of form via dev hooks \(in FileMaker\)
 * **Actions Processing Engine** 
-  * allows script like work flow execution
+  * allows script-like workflow execution
   * actions an automate nearly all aspects of the web application 
-  * Actions can be initiated from both the client browser and the FileMaker application.
+  * Actions can be initiated from both the client browser and the FileMaker Server application.
 * **Reactive JavaScript Calculation Engine**
   * Perform on the fly reactive calculations for nearly any element or parameter anywhere
   * Write full JS functions that can be called from any action
