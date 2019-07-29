@@ -1,8 +1,8 @@
 # Actions
 
-### Action Types:
+## Action Types
 
-#### Regular Actions
+### Regular Actions
 
 * _**showModal**_ ****- Renders a modal dialog
 * _**hideModal**_ ****- Hides a modal that is non-blocking
@@ -19,29 +19,27 @@
 * _**namedAction**_ - Runs a named action. Also requires the `name` key.
 * _**function**_ - Runs JavaScript 
 
-#### Authentication Actions 
+### Authentication Actions 
 
-* _**authLogin**_ - Performs an authentication login
-* _**authLogout**_ - Performs logout
-* _**authReset**_ - Performs a password reset action
-* _**authForgot** -_ Performs a forgotten password reset hook
-* _**authVerify**_  - Performs a verification of the verify token
+These special actions allow you to create custom login and registration pages. See this page for more:
 
-See custom login Forms for more details
+{% page-ref page="../authentication-actions.md" %}
 
-### Usage
+## Usage
 
 Actions can be injected in many places:
 
 * Most hook scripts
 * Navigation Menu Items
-* Form action elements \(buttons\)
+* Page elements \(buttons\)
 * Named Actions
-* \`\*\_actions\` schema keys \(where supported\)
+* `*_actions` schema keys \(where supported\)
+
+Wherever you see an `actions` key in BetterForms, it can be either an object \(for running a single action\), or an array of objects \(to run a series of actions\).
 
 ### $$BF\_Actions - Actions Array
 
-The `$$BF_Actions`  JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
+The `$$BF_Actions` JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
 
 To add an action simply add the action object as an array element. There are FileMaker custom functions that make this easy. 
 
@@ -54,14 +52,16 @@ Actions are executed sequentially starting at the beginning of the array.
 ### The Action Object
 
 | Key | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| action | string |  | The name of the action  |
-| function | string |  | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.  |
-| preventClone | boolean | false | {optional} Default: true. When true the entire actions array will not be striped of its references to the objects that were passed in when it was created. This is handy when you are passing references to object that you want to modify later. For example, the BF HTML and JS editor passes in a reference to the source editor so that it is easy to later call methods in that passed in editor. Doing this makes it easy to not have to worry about mutating code in the wrong source editor. You generally should never need to change this unless you have a valid use case warranting it.   By default, all passed in actions are cloned decoupling them from their original objects. |
-| nonBlocking | boolean | false | {optional} When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run \(like slow process utility hooks\) |
-| options | object |  | This object may be optional depending on the specific settings needed by a given action.. |
+| ---: | :---: | :--- | :--- |
+| `action` | string |  | The name of the action  |
+| `function` | string |  | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.  |
+| `preventClone` | boolean | false | {optional} Default: true. When true the entire actions array will not be striped of its references to the objects that were passed in when it was created. This is handy when you are passing references to object that you want to modify later. For example, the BF HTML and JS editor passes in a reference to the source editor so that it is easy to later call methods in that passed in editor. Doing this makes it easy to not have to worry about mutating code in the wrong source editor. You generally should never need to change this unless you have a valid use case warranting it.   By default, all passed in actions are cloned decoupling them from their original objects. |
+| `nonBlocking` | boolean | false | {optional} When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run \(like slow process utility hooks\) |
+| `options` | object |  | This object may be optional depending on the specific settings needed by a given action.. |
 
 #### Actions Options
+
+
 
 #### Functions
 
@@ -116,23 +116,5 @@ if(!model.isRegistered) {
 
 
 
-You can call named actions from an actions array too. Simply omit the `action` key and add a `name` key.
 
-```text
-// example shows a button that calls a named action
-{
-  "actions": [
-    {
-      "name": "copyAddress",
-      "options": {
-        "key": "value"
-      }
-    }
-  ],
-  "buttonClasses": "btn btn-info btn-trans btn-sm",
-  "styleClasses": "col-md-2",
-  "text": "Call a named action",
-  "type": "button"
-}
-```
 
