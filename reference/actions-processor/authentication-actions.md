@@ -9,7 +9,7 @@ The authentication set of actions are used on pages that have custom login and r
 * _**authResend**_ - Re/sends the email verification token
 * _**authVerify**_  - Performs a verification of the verify token
 * _**authRegister**_ - Performs a registration and if successful, runs the [onRegistrationHook](../hooksoverview/commonoverview.md#onregistration)
-
+* 
 Each of these actions should be attached to a button that the user will click to perform the respective task. They do not take any options, but some do require that an `email` and/or `password` key is present in your data model.
 
 | Action Name | Requires `email` key | Requires `password` key | Requires `slug`\*  |
