@@ -21,7 +21,5 @@ Delfs' Engineering
 TORONTO CANADA  
 [cdelfs@delfsengineering.ca](mailto:cdelfs@delfsengineering.ca)
 
-{% hint style="warning" %}
-This documentation is still in progress. For clarification on a topic, please email [cdelfs@delfsengineering.ca](mailto:cdelfs@delfsengineering.ca)
-{% endhint %}
+\*\*\*\*
 

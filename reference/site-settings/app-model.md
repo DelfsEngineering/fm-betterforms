@@ -8,7 +8,7 @@ The App model is simply a JSON object that can be globally referenced as `app.ke
 
 * In a JavaScript function or calculation
   * `app.key`
-* In VueJS template syntax
+* In VueJS template syntax \(within HTML code\)
   * `{{app.key}}`
 
 ## Inserting Data to the App Model

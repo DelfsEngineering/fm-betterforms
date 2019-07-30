@@ -36,6 +36,7 @@
   * [Card / Window Modals](reference/form-settings/card-modals.md)
   * [Validation](reference/form-settings/validationoverview/README.md)
     * [Custom Validators](reference/form-settings/validationoverview/clientside.md)
+  * [Misc Page Settings](reference/form-settings/misc-page-settings.md)
 * [Page Elements](reference/components-overview/README.md)
   * [Common](reference/components-overview/common/README.md)
     * [Button](reference/components-overview/common/button.md)
@@ -87,6 +88,7 @@
   * [Scoped Hooks](reference/hooksoverview/hooks.md)
 * [Advanced Configuration](reference/advanced-configuration/README.md)
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
+  * [Custom Login Pages](reference/advanced-configuration/custom-login-pages.md)
 
 ## Usage Tips <a id="usage"></a>
 
