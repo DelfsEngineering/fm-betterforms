@@ -47,9 +47,7 @@ To hide the modal, use the `hideModal` action.
 
 ## FileMaker Custom Function
 
-```text
-
-```
+You can call the "hideModal" action using FileMaker during a [hook script](../../hooksoverview/) using this function:
 
 ```text
 Set Variable $$BF_Actions = BF_SetAction( "hideModal" ; "" )
