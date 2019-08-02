@@ -1,6 +1,6 @@
 # Reducing Payload Size
 
-By default, hooks will send their full schema the `Send full schema in utility hooks` setting in the form editor disabled. The browser will send a reduced data payload for faster transfer times. This can be enabled for some special use cases require full schema.
+By default, utility hooks will **not** send their full schema unless the `Send full schema in utility hooks` setting in the page editor is enabled. This allows the browser to send a reduced data payload resulting in faster transfer times.
 
 ### Controlling Data Sent from the Browser
 
