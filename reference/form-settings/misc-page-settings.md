@@ -11,7 +11,7 @@ The 2 form types currently supported are:
 
 ## isForm
 
-Entire pages or certain elements can be made into more standard forms where a "submit" action is executed when the user presses the **Enter** key. This customization is most common for [Custom Login Pages](../advanced-configuration/custom-login-pages.md).
+Entire pages or certain elements can be made into more standard forms where a "submit" action is executed when the user presses the **Enter** key. This customization is most common for [Custom Login Pages](../users-and-authentication/custom-login-pages.md).
 
 To enable this functionality, add `"isForm": true` to one of the following elements:
 
