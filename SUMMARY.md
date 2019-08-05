@@ -87,7 +87,7 @@
   * [Common Hooks](reference/hooksoverview/commonoverview.md)
   * [Scoped Hooks](reference/hooksoverview/hooks.md)
 * [Users & Authentication](reference/users-and-authentication/README.md)
-  * [Managing Users](reference/users-and-authentication/managing-users.md)
+  * [Managing User Accounts](reference/users-and-authentication/managing-users.md)
   * [Custom Login Pages](reference/users-and-authentication/custom-login-pages.md)
 * [Advanced Configuration](reference/advanced-configuration/README.md)
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
