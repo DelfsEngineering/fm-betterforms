@@ -25,7 +25,8 @@ Functions are great for injecting small logic into any work flow.
 | :--- | :--- | :--- |
 | window | `window` | The Browser JS window object, good for environmental control |
 | formSchema | `formSchema` | Containing other sub objects like ~~model~~ etc |
-| model | `formSchema.model` |  This is the uppermost model object regardless of sub objects like accordions etc. |
+| model | `model` |  This is the uppermost model object regardless of sub objects like accordions etc. |
+| app | `app` | This will access the global `app`  data model |
 | action object | `action` | The whole `action` object that contains this function. eg: `action.options.path` Some BetterForms Elements will merge additional options into the`options` key.  |
 
 | as of ver 0.7.302 |  |
@@ -52,5 +53,5 @@ Code Style
 
 Function results returned with a `return` statement are ignored. 
 
-**Contexts** `function` code executes with slightly different context to other Java Script in BetterForms.
+**Contexts** `function` code executes with the context of the currently active form, if you have a modal displayed, then code runs in that modal's context.
 
