@@ -64,19 +64,23 @@ TODO:
 | `idForm` | string | \(optional - instead of slug\) UUID of the page to show in the card |
 | `model` | object | if set, this data will be used for the page data model. If an `onForRequest` hook is enabled, this content will NOT be passed into the hook. |
 | `query` | object | Data passed to FMS as if it were a query param \(more below\) |
-| `onBeforeClosed_actions` | array | Array of actions to be run when the card window is closed |
-
-
-
-
-
-**TODO:**
+| `onBeforeClosed_actions` | array | Array of actions to be run when the card window is closed. This  and the \`onClosed\` is useful if you want to run actions when a user clicks outside the modal without explicitly clicking a button. |
+| `onClosed_actions` | array | Array of actions run _after_ the modal has been closed. |
 
 #### Passing Parameters
 
-Parameters can be passed to the Modal via the `params` object set in an action function. When called from another page. If you need `onFormRequest` params, use the `wuery` key as you would with other pages and read via the `$$BF_Query` global.
+Often you need to pass some params to the modal form the parent page. These fall within situations, with or without the `onFormRequest` hook enabled.
 
-Often you will want to show a detail modal when clicking on a parent element. This modal will need to know some params to pass to the `onFormRequest` hook so it can return correct data to display. You can pass params with a `query` key in the elements schema. This data will surface in the `$$BF_Query` global in the script.
+#### With `onFormRequest` enabled
+
+When called from another \(parent\) page. If you need `onFormRequest` params, use the `query` key as you would with other pages and read via the `$$BF_Query` global in your hook script. 
+
+#### Without  `onFormRequest` enabled
+
+When showing a modal and you don't need to call a server hook script you can still pass data to modal several ways.
+
+1. Via the `model` key. data in the key will appear in the `model` for the modal. This is useful when you want to edit some detail information that the parent form already has.
+2. Via the `app` object. By setting a key within the `app` object, and then later reading that when the form loads, you can pass anything back and forth between parent and modal.
 
 
 
