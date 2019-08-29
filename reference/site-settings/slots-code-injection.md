@@ -34,7 +34,7 @@ To edit your site's slots, go to the **Appearance &gt; Slots** tab of your [site
 
 ## DOM Header Insertion
 
-If you need to insert HTML in the header of every page in your site, go to the **Environment &gt; DOM Header Insertions** tab in your [site settings](./). This feature is useful for installing custom fonts or a [favicon](../../usage/stylingverview/favicon.md) for the browser tab. You may also need to use it for certain [Custom Form Elements]()
+If you need to insert HTML in the header of every page in your site, go to the **Environment &gt; DOM Header Insertions** tab in your [site settings](./). This feature is useful for installing custom fonts or a [favicon](../../usage/stylingverview/favicon.md) for the browser tab. You may also need to use it for certain [Custom Form Elements](../components-overview/3rd-party-elements.md)
 
 
 

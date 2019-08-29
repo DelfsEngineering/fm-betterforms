@@ -15,9 +15,9 @@ Client side validation is controlled by the `validator` key in all page elements
 }
 ```
 
-Validation **does not** __run automatically. You can trigger client validation with the [validate action.](../../actions-processor/actions_overview/validate.md)
+Validation **does not** __run automatically. You must trigger client validation with the [validate action.](../../actions-processor/actions_overview/validate.md)
 
-**The validator key can be set to the following:**
+### **The validator key can be set to the following:**
 
 **number** Checks that the value is numeric - and that it's within the fields min & max range, if these are defined in the schema. **integer** Checks that the value is a valid Javascript Number - and that it's an integer.
 
