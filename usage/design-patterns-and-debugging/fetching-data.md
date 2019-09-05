@@ -14,6 +14,19 @@ Gathering and compiling a JSON based data object from a found set of FM records 
 
 `getColumnAsArray` is simular to `getColumn` but is design to return a JSON array of the found records. The returned object is an JSON Array and works perfectly for any BF element that renders repeating data \( Data tables, ListRow's etc.
 
+#### Complex Finds
+
+On some rare occasions you may need to perform more complex finds. In this case, FileMaker's find commands will serve you best. Add a `summaryAsJSON`  field to your table that is a _summary_ field type with the option `List of` pointing to the `asJSON` calculation. 
+
+This will return a found set _list_ of the \`asJSON\` results. This field is not true JSON and you will need to convert the line returns to commas and make it an array with square braces to form a proper JSON array.
+
+```text
+// Example to convert a list of asJSON to true JSON
+JSONFormatElements ( 
+"[" & Substitute ( People::summaryAsJSON ; ¶ ; "," ) & "]"
+)
+```
+
 ### Writing Data
 
 There are two approaches to writing returned data from BF. Single records and Arrays.
