@@ -96,15 +96,21 @@ Add the following CSS to your site to change how the icon to open or close the c
 }
 ```
 
-### Interacting with the Table \( Row Click Actions\)
+### Interacting with the Table \(Row Click Actions\)
 
 **actions\_onRowClick** 
 
-Table2 supports `actions_onRowClick` actions. This allows you to programmatically control what happens when a user clicks a row.
+The **Data Table** element supports `actions_onRowClick` actions. This allows you to programmatically control what happens when a user clicks a row.
 
-The following is an example that will pas the key `id` from the table row into the URN 
+Within each action in this actions array, a "row" key will be injected into the `options.params` so that you can reference the data of the row that was clicked.
 
-```text
+* To access the row from a function action use `action.options.params.row`
+* To access the row from within an options key \(see example below\), use `this.params.row.id`
+
+The following is an example that will pas the key `id` from the table row into the path action 
+
+```yaml
+// add this key at the root level of the element
 "actions_onRowClick": [{
    "action": "path",
    "options": {
