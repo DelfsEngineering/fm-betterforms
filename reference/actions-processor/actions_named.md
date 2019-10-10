@@ -67,3 +67,7 @@ In an HTML element using `@click`:
 
 In this example, `goToMyAccount` is the name of the named action and the `{id: '12345'}` is the options array that will be passed to the named action. In JavaScript, JSON keys do not need to be in quotes.
 
+#### Sequence
+
+If a namedAction is called while other actions are still in the queue, the namedAction will run first and get inserted at the front of the actions. You can think of this as a sub-script where the namedAction runs first and then the remaining actions continue. This allows you to reuse code and is particularly useful in the global scope.
+
