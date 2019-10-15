@@ -1,6 +1,6 @@
 # path
 
-`path` redirect the user to a different page. Path can even be used to log a user out. \( `/logout` \)
+`path` redirect the user to a different page. 
 
 **note:** _path_ must be last item \( processor does not check for subsequent ones after path \)
 
