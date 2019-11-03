@@ -2,13 +2,9 @@
 
 ## THIS ELEMENT IS IN DEVELOPMENT AND DOCS ARE PRELIMINARY
 
-
-
 Implementation of www.fullcalendar.io calendaring component.
 
 Component based on [https://github.com/CroudTech/vue-fullcalendar](https://github.com/CroudTech/vue-fullcalendar)
-
-
 
 Action keys:
 
@@ -22,6 +18,4 @@ Action keys:
 * **event-render\(event\)** - Triggered on eventRender\(\)
 * **view-render\(view, element\)** - Triggered on viewRender\(\)
 * **day-click\(date, jsEvent, view\)** - Triggered on dayClick\(\)
-
-
 

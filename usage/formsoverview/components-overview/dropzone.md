@@ -2,7 +2,7 @@
 
 `dropzone` Allows you to easily add a drag and drop file upload component to any form. Files are posted to any upload service such as [file.io](https://www.file.io/#one) and [uploadcare](https://uploadcare.com). The data model is passed back all relevant meta information.
 
-#### File.io 
+#### File.io
 
 The default configuration uses `file.io` as ephemeral storage. Using additional options you can adjust the length of time a file lives for \(default is 2 weeks\). Typically upon form submission, your FileMaker hook script would insert the data from the storage location into a container etc in your database.
 
@@ -11,8 +11,6 @@ The default configuration uses `file.io` as ephemeral storage. Using additional 
 Files can be uploaded to an AWS S3 bucket. You will need to first provision the bucket.
 
 #### Base64
-
-
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |

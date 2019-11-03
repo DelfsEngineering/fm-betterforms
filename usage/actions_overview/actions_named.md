@@ -2,24 +2,24 @@
 
 Named actions are predefined actions that can be called from events like HTML onClick etc. These actions consist of the same action parameters as regular actions but have a unique name associated with each one. namedActions support the `function` key.
 
-### Places Supporting Named Actions
+## Places Supporting Named Actions
 
 * `formSchema.form.namedActions` These are scoped to the form \(page\) that is current
 * `site.content.namedActions` These are globally scoped and can be called from anywhere.
 
-### Priority of Execution
+## Priority of Execution
 
 * The actions processor will first try to find the named action in the current form. If unsuccessful, the global `site.namedActions` object is checked.
 
-### Reserved Names \( &gt; v0.8.13\)
+## Reserved Names \( &gt; v0.8.13\)
 
-There are some reserved named action key names that are reserved for special use cases. 
+There are some reserved named action key names that are reserved for special use cases.
 
 **onFormLoad** - When in the form scoped named actions array, these actions will run just after a form is loaded. If there are actions that are generated in an `onFormRequest` hook, those actions will be queued first and the `onFormLoad` actions will run after. A typical use case would be to show an empty form with a loading placeholder image, then request data from the server then render the data after, allowing the application to feel more performant.
 
 **onAppLoad** - When use in the site scoped named actions array, these actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
 
-### namedActions Schema
+## namedActions Schema
 
 ```yaml
 [
@@ -36,7 +36,7 @@ There are some reserved named action key names that are reserved for special use
 ]
 ```
 
-### Usage
+## Usage
 
 As an action in a standard array of actions:
 
@@ -44,7 +44,7 @@ As an action in a standard array of actions:
 {
     "action": "namedAction",
     "name": "showCantDoThat", //the name your named action
-    
+
     //all options set here are merged into the options of the named actions
     "options": {
         "id": "12345" 

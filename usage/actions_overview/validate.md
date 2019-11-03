@@ -1,8 +1,8 @@
 # validate
 
-Runs the page validation routine. 
+Runs the page validation routine.
 
-To remove a cookie simply set the  `daysOrOptions` value to `0`
+To remove a cookie simply set the `daysOrOptions` value to `0`
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
@@ -31,7 +31,6 @@ To remove a cookie simply set the  `daysOrOptions` value to `0`
   "text": "Save This Form",
   "type": "button"
 }
-
 ```
 
 **Custom Function** There is no CF avail at this time.

@@ -16,13 +16,13 @@ There are defined $$BF\_xxx global variables available to all scripts. Use these
 
 ### Controlling Data Merge Mode
 
-To reduce data transfer and increase performance and flexibility you can control the merge mode of the data in utility hooks. The default mode has the $$BF\_Model data replace the current web pages model. This is usually fine. 
+To reduce data transfer and increase performance and flexibility you can control the merge mode of the data in utility hooks. The default mode has the $$BF\_Model data replace the current web pages model. This is usually fine.
 
 `state.modelUpdateMode` Controls the way returned data is handled in the client.
 
 | Key | Value | Description |
 | :--- | :--- | :--- |
-| `modelUpdateMode` | `replace`  or not supplied | If not supplied \(default\) or `replace` then the returned data from the hook will replace all of the current data model.  |
+| `modelUpdateMode` | `replace`  or not supplied | If not supplied \(default\) or `replace` then the returned data from the hook will replace all of the current data model. |
 | `modelUpdateMode` | `merge` | Merge will use an `Object.assign` to merge the data keys supplied by the model with the current data model in the client.This will allow you to keep the current data in the app and only update \(and send\) the smaller changes. |
 
 ### Reducing Payload Size \(0.8.44+\)
@@ -86,10 +86,4 @@ B​y passing in a \`model\` key you can override the form’s data model that w
   }
 }
 ```
-
-
-
- 
-
-
 

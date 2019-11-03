@@ -5,20 +5,16 @@
 **Version:** &gt;0.8.16
 
 {% hint style="danger" %}
-#### This component documentation is work in progress
+## This component documentation is work in progress
 {% endhint %}
 
 See [https://developer.authorize.net/api/reference/features/acceptjs.html](https://developer.authorize.net/api/reference/features/acceptjs.html) for workflow reference and deeper understanding of this component.
 
 When the rendered button is clicked, a modal window is opened that will contain card capture information. This window is an iFrame and generated securely via the accept.js model. Once the payment information has been entered,
 
-#### Credentials
+## Credentials
 
-You will need to obtain server sets of credentials from the authorize.net dashboard. See screen below for where to obtain the public `apiLoginID` and `clientID`  keys.
-
-
-
-
+You will need to obtain server sets of credentials from the authorize.net dashboard. See screen below for where to obtain the public `apiLoginID` and `clientID` keys.
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -45,12 +41,11 @@ You will need to obtain server sets of credentials from the authorize.net dashbo
   "clientKey": "7amDN97QG6xkHGB4xdD2yd3BYvdZ49HFjp7j7477U282BYuwuheDMvk4zE2R44b8",
   "sandBox": true
 }
-
 ```
 
-#### Response Hook
+## Response Hook
 
-After the communication between the BetterForms browser app and Authorize.net api, a utility hook is automatically generated regardless if the card acquisition was successful. This is located in the hookPackage and also includes the elements schema. 
+After the communication between the BetterForms browser app and Authorize.net api, a utility hook is automatically generated regardless if the card acquisition was successful. This is located in the hookPackage and also includes the elements schema.
 
 ```text
 // Partial utility hook response 

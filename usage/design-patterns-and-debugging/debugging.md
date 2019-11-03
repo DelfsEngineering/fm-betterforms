@@ -1,10 +1,8 @@
 # Debugging
 
-### Start at the Helper File
+## Start at the Helper File
 
 The helper file is typically your first place to start your debugging. Every hook script call will have a record entry. If it does not then the issue is before the FMS.
-
- 
 
 <table>
   <thead>
@@ -21,7 +19,6 @@ The helper file is typically your first place to start your debugging. Every hoo
           <li>Credentials in the BF app do not match</li>
           <li>Incorrect Server Settings</li>
         </ul>
-        <p></p>
       </td>
     </tr>
     <tr>
@@ -36,4 +33,3 @@ The helper file is typically your first place to start your debugging. Every hoo
     </tr>
   </tbody>
 </table>
-

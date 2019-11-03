@@ -21,7 +21,7 @@ When clicked, the payment workflow is initiated.
 | credentials | {} | object | credential object, |
 | style | {} | object | PayPal defined styling of the button |
 
-### Reference
+## Reference
 
 ```javascript
 // sample credential object
@@ -31,7 +31,7 @@ credentials: {
 }
 ```
 
-### Specifying Items
+## Specifying Items
 
 Optionally, according to the PayPal Payments API documents, you can list out any items along with your transaction.
 
@@ -57,7 +57,7 @@ myItems: [
   ]
 ```
 
-### Button Style
+## Button Style
 
 You can change the style of the button via a style object like so:
 
@@ -70,7 +70,7 @@ You can change the style of the button via a style object like so:
 }
 ```
 
-### Complete Example Object
+## Complete Example Object
 
 ```yaml
 {
