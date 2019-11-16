@@ -89,6 +89,10 @@ Lastly, we need to configure the policy for Cognito Role that we created in step
 }
 ```
 
+{% hint style="warning" %}
+Make sure you change the `example-bucket` in lines 17-18 with the name of **your own** bucket
+{% endhint %}
+
 Now we're ready to go back to BetterForms! Feel free to navigate back to S3 and keep it open in a new tab for inspection of your files as we upload them...
 
 ## Configuring your Site Settings
@@ -136,7 +140,9 @@ To initialize the dropzone, you need to run some JavaScript code that programmat
 See the full code in the `initDZ` named action on the example page.
 {% endhint %}
 
-The first few lines of this code is where you'll configure with your settings from AWS. Feel free to hard-code these value into the JavaScript function instead of referencing model unless you want to programmatically change them later. The **bucketRegion** should match the start of your **Identity Pool ID**.
+The first few lines of this code is where you'll configure with your settings from AWS. Feel free to hard-code these value into the JavaScript function instead of referencing model unless you want to programmatically change them later.
+
+Your **bucketRegion** should match the start of your **Identity Pool ID**. For example, if your Identity Pool ID is `us-west-2:5fxxxxxxx-2696-4xxxx-8xxxxxx-dxxxxxxxx` then your bucket region would be `us-west-2`
 
 ```javascript
 var bucketName = model.settings.bucketName;
