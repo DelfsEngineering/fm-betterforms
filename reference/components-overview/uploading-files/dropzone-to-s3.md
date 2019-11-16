@@ -159,3 +159,36 @@ If you follow along with the code, you'll notice that I'm adding files to an arr
 Be sure to leave the default keys in the Data Model when duplicating the example page. These keys are directly referenced by the JavaScript code and it may fail if these keys do not exist.
 {% endhint %}
 
+### Manipulating the Queue
+
+Since we are adding this element completely from scratch, we have to do a little bit more work to interact with the dropzone. It's **not** integrated into Vue like the rest of the elements you may be used to in BetterForms, so we have to use regular JavaScript functions to work with it.
+
+#### The following 3 lines of code is how the Dropzone is initialized.
+
+```javascript
+// bind the events to the Dropzone so that Dropzone will callback our functions
+// when it's done with certain tasks (see Dropzone Events docs)
+Dropzone.prototype.uploadFiles = files => files.map(sendEvents);
+
+// initilaize the dropzone based on the id 'myDZ' and options provided
+var dz = new Dropzone('#myDZ', options)
+
+// store the dropzone object at the window level so it
+// can be referenced globally by other actions
+window.dz = dz
+```
+
+If you keep reading the code in the demo file, you'll see several `dz.on(...)` functions. These functions are the [events](https://www.dropzonejs.com/#events) called when things happen in the dropzone element. One example is the `addedfile` event, which is called when a file is added to the dropzone:
+
+```javascript
+dz.on("addedfile", function(file) {
+    formSchema.model.dropzone.queue.push(file.upload.uuid)
+});
+```
+
+This simple function pushes the `uuid` key of the file that is passed into this function to an array so that you can better work with the queue using Vue.
+
+{% hint style="success" %}
+In production, it's better to pass the entire `file` object into an array so that you can get at more details of the file object instead of just the uuid. The reason it's setup like this for the demo is because the entire file object cannot be printed on screen as code. Once you fully understand how to manipulate the queue, be sure to update **all** references to this array \(it's also used in the `removedFile` event, for example\)
+{% endhint %}
+
