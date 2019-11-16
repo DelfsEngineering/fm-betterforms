@@ -49,6 +49,7 @@
     * [listrows](reference/components-overview/grouping-elements/listrows.md)
   * [Uploading Files](reference/components-overview/uploading-files/README.md)
     * [dropzone](reference/components-overview/uploading-files/dropzone.md)
+    * [dropzone to S3](reference/components-overview/uploading-files/dropzone-to-s3.md)
     * [uploadCare](reference/components-overview/uploading-files/uploadcare.md)
   * [Misc Elements](reference/components-overview/misc-elements/README.md)
     * [Plain Text / Code Editor](reference/components-overview/misc-elements/aceeditor.md)

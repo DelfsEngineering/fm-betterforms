@@ -8,7 +8,9 @@ The default configuration uses `file.io` as ephemeral storage. Using additional 
 
 #### AWS S3
 
-Files can be uploaded to an AWS S3 bucket. You will need to first provision the bucket.
+Files can be uploaded to an AWS S3 bucket. You will need to first provision the bucket. See the following page for complete setup instructions
+
+{% page-ref page="dropzone-to-s3.md" %}
 
 #### Base64
 
@@ -18,7 +20,7 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
 | :--- | :--- | :--- | :--- |
 | type | `dropzone` | string |  |
 | model |  | Array | Array of uploaded file metadata. Does not have to be predefined. |
-| useCustomSlot | \(\) | boolean | If true, then the HTML in the `html` key will be inserted into the target drop area  , defaults false |
+| useCustomSlot | \(\) | boolean | If true, then the HTML in the `html` key will be inserted into the target drop area, defaults false |
 | includeB64 |  | boolean | If true, base64 encoded data is returned in the response, defaults false. |
 | options |  | object | Object of additional options. These will override defaults. and are passed directly into dropzone.js |
 
