@@ -96,6 +96,7 @@
 
 * [Troubleshooting](usage/troubleshooting/README.md)
   * [Debugging](usage/troubleshooting/debugging.md)
+  * [Frozen Actions Queue](usage/troubleshooting/frozen-actions-queue.md)
 * [JavaScript Tips](usage/javascript-tips/README.md)
   * [Calculations](usage/javascript-tips/calculations.md)
 * [System Overview](usage/system-overview.md)
