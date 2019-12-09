@@ -1,7 +1,7 @@
 # Data Table
 
 {% hint style="info" %}
-This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables-2#readme) Refer to source code for additional documentation.
+This component is based on [Vue-Tables-2](https://matanya.gitbook.io/vue-tables-2/options-api#options) Refer to source code for additional documentation.
 {% endhint %}
 
 ### Additional keys:
