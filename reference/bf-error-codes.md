@@ -20,6 +20,7 @@ description: >-
 |  |  |  |
 | 10110 | `namedAction` not found, BF tried to look for the named action in the for and site and was unable to find it. | The action that caused the issue |
 | 10112 | Clipboard copy action error |  |
+| 10120 | No  `onResponse_actions` has been configured  | The response the element tried to handle |
 |  |  |  |
 | **103xx** | **Hook Related** |  |
 | 10300 | Error calling FMS, FMS returned an error | Result |
