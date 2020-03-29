@@ -4,7 +4,7 @@ description: >-
   within JavaScript to replace additional common complex code.
 ---
 
-# BF Utility Function \(Ver 0.9.20+\)
+# BF Utility Functions \(Ver 0.9.20+\)
 
 ### Errors
 
@@ -12,10 +12,12 @@ description: >-
 | :--- | :--- |
 |  |  |
 | **Errors** |  |
-| BF.errorClearAll\(\) | Clears the error cache |
+| \`BF.errorClearAll\(\) | Clears the error cache |
 | BF.errorThrow\(errorCode, errorDescription, info\) | Creates an error |
 |  |  |
 | **Misc** |  |
+| BF.socketConnect\(\) | Connects the client to the BF server via a socket |
+| BF.socketDisconnect\(\) | Disconnects the client from the BF servers  \( Goes off line\) |
 | BF.getUUID\(\) | Returns a UUID |
 | BF.getQueryParam\(key\)  | Returns the URL query key value |
 
