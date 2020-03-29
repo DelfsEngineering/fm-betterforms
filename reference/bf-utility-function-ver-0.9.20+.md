@@ -1,7 +1,7 @@
 ---
 description: >-
   BetterForm has a collection of helper Java Script functions that are used
-  within JavaScript to replace additional common complex code.
+  within JavaScript to allow  easy access to common complex code.
 ---
 
 # BF Utility Functions \(Ver 0.9.20+\)
