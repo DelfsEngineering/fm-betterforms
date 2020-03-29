@@ -91,6 +91,7 @@
   * [Custom Login Pages](reference/users-and-authentication/custom-login-pages.md)
 * [Advanced Configuration](reference/advanced-configuration/README.md)
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
+* [BF Utility Function \(Ver 0.9.20+\)](reference/bf-utility-function-ver-0.9.20+.md)
 * [BF Error Codes](reference/bf-error-codes.md)
 
 ## Usage Tips <a id="usage"></a>
