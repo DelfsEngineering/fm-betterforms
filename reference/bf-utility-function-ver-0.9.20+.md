@@ -12,7 +12,7 @@ description: >-
 | :--- | :--- |
 |  |  |
 | **Errors** |  |
-| \`BF.errorClearAll\(\) | Clears the error cache |
+| BF.errorClearAll\(\) | Clears the error cache |
 | BF.errorThrow\(errorCode, errorDescription, info\) | Creates an error |
 |  |  |
 | **Misc** |  |
