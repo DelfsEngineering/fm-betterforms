@@ -34,9 +34,13 @@ Other pages can be loaded either by ID or by their navigation slug. Using Naviga
 * They make URLs shorter and easier for your users to understand
 * You can easily update a page later across all of your site simply by updating the ID in your site's settings
 
+**.../\#/`navSlug`**
+
 **.../\#/form/`Page ID`**
 
-**.../\#/`navSlug`**
+{% hint style="warning" %}
+Navigating by **Page ID** may not be supported in a future version of BetterForms in order to provide better support for other features. Always use a **navSlug** to maintain compatibility.
+{% endhint %}
 
 ## Query Parameters
 
