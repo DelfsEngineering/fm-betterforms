@@ -15,7 +15,8 @@ description: >-
 |  |  |  |
 | 10010 | DOM Header insertion error, There was an error with adding content to the &lt;head&gt; tag. Usually a JS error or resource error | script content and error |
 | 10020 | HTML Render error |  |
-|  | v |  |
+| 10030 | Custom component not found.  | Component name |
+|  |  |  |
 | **101xx** | **Action related** |  |
 | 10100 | No action handler found for the passed actionThe action, typically a typo in the action name or unsupported action. | The action |
 | 10110 | `namedAction` not found, BF tried to look for the named action in the for and site and was unable to find it. | The action that caused the issue |
