@@ -6,7 +6,7 @@ description: >-
 
 # Customizing and Styling
 
-### Optional Components
+### Optional Page Sections
 
 You can hide or show various parts of the user interface
 
