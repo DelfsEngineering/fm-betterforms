@@ -1,3 +1,7 @@
+---
+description: 'Need to Learn JSON? https://youtu.be/iiADhChRriM'
+---
+
 # 1. Configure FileMaker Server
 
 {% hint style="warning" %}
@@ -14,8 +18,6 @@ The helper file is a FileMaker file that acts as proxy to the application files 
 * Allows hook scripts to be run locally for debugging.
 
 ## Configuring the Helper File
-
-
 
 1. **Download** the helper file. You will find a link to the latest file from the dashboard of the BetterForms online editor.
 2. **Change** default user and pass from `admin / admin` to your choice. This password is used in this file only and is just for your access.
