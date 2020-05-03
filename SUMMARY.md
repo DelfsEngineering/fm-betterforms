@@ -109,6 +109,7 @@
   * [JS Caclulations and Functions](usage/formsoverview/js-caclulations-and-functions.md)
 * [Customizing and Styling](usage/stylingverview/README.md)
   * [Custom CSS](usage/stylingverview/custom-css.md)
+  * [Custom Components](usage/stylingverview/custom-components.md)
   * [Page Pre-loaders](usage/stylingverview/page-pre-loaders.md)
   * [Favicon](usage/stylingverview/favicon.md)
 * [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
@@ -124,5 +125,6 @@
 * [Authentication](security/authentication.md)
 * [White Paper](security/white-paper.md)
 * [Firewalls](security/security.md)
+* [Technology Stack](security/technology-stack.md)
 * [Compatability](compatability.md)
 
