@@ -10,10 +10,13 @@ description: >-
 
 | Function |  |
 | :--- | :--- |
+| **Actions** |  |
+| BF.actionsClear\(\) | Clears the action script buffer halting all subsequent actions \( current action completes\) |
 |  |  |
 | **Errors** |  |
 | BF.errorClearAll\(\) | Clears the error cache |
 | BF.errorThrow\(errorCode, errorDescription, info\) | Creates an error |
+|  |  |
 |  |  |
 | **Misc** |  |
 | BF.socketConnect\(\) | Connects the client to the BF server via a socket |

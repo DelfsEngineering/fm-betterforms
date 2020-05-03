@@ -11,6 +11,7 @@ This page contains a summary of all the variables; subsequent pages in this sect
 | \*\*\*\*[**$$BF\_State**](usdusdbf_state.md)\*\*\*\* | The state object holds various data related to the browser environment. |
 | **$$BF\_User** | The user object when a user has been authenticated. |
 | **$$BF\_Query** | Key value pairs of the URL query parameters. Useful for direct linking \(smart links\) to a page. |
+| **$$BF\_Cookie** | Object containing browser cookies  \(Helper &gt; v1.2\) |
 | **$$BF\_Form** | The formSchema of the current page when applicable. This data may not be present of reduced payload options are set for the current layout. |
 | **$$BF\_Payload** | This var has the entire payload object, most of it is over written at the end or the scripts, so if you mutate it, there is a good chance your data will be overwritten. |
 
