@@ -1,6 +1,6 @@
 # Named Actions
 
-Named actions are action arrays that can be referenced by more than one element, or more easily called from HTML elements. You can think of them like a script; give a name to a set of actions \(script steps\) and then call that named action from as many elements as you like.
+Named actions are action arrays that can be referenced by more than one element, or more easily called from HTML elements. You can think of them like a FileMaker script. The set of actions has a name, like a script name. 
 
 ## Defining Named Actions
 

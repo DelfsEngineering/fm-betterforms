@@ -112,7 +112,7 @@
   * [Page Pre-loaders](usage/stylingverview/page-pre-loaders.md)
   * [Favicon](usage/stylingverview/favicon.md)
 * [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
-  * [Untitled](usage/design-patterns-and-debugging/untitled.md)
+  * [Wothing with environments](usage/design-patterns-and-debugging/untitled.md)
   * [Handling Data](usage/design-patterns-and-debugging/fetching-data.md)
   * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
   * [Optimization](usage/design-patterns-and-debugging/optimization.md)
