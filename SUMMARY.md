@@ -108,6 +108,7 @@
   * [Styling and Design](usage/formsoverview/styling.md)
   * [JS Caclulations and Functions](usage/formsoverview/js-caclulations-and-functions.md)
 * [Customizing and Styling](usage/stylingverview/README.md)
+  * [Custom Components](usage/stylingverview/custom-components-1.md)
   * [Custom CSS](usage/stylingverview/custom-css.md)
   * [Custom Components](usage/stylingverview/custom-components.md)
   * [Page Pre-loaders](usage/stylingverview/page-pre-loaders.md)

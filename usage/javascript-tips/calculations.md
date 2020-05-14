@@ -10,11 +10,19 @@ Adding an evaluating calc as a getter will convert your code into a getter prope
 
 Syntax: `myKey_calc` Add a `_calc` to the key name.
 
-#### As A Function
+#### As A Function Getter
 
-Adding an evaluating calc as a function will convert your code into a funtion and attach it to the referenced key.
+Adding an evaluating calc as a function will convert your code into a function and attach it to the referenced key.
 
 Syntax: `myKey_calcf` Add a `_calcf` to the key name.
+
+#### As A Function 
+
+Adding an evaluating calc as a function will convert your code into a function and attach it to the referenced key.
+
+Syntax: `myKey_function` Add a `_function` to the key name.
+
+#### 
 
 #### Scope
 
