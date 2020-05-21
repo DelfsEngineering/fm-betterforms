@@ -4,7 +4,7 @@
 
 ## FM BetterForms
 
-> ### A loosely coupled high performance front end web publishing framework and application that allows Filemaker database developers to build anything from a from widgets to full web apps.
+> ### A loosely coupled high performance front end web publishing framework and application that allows Filemaker database developers to build anything from  form widgets to full web apps.
 
 FM Better Forms makes it easy to create high performance Web applications and forms without any deep knowledge of JavaScript or web technologies.
 
