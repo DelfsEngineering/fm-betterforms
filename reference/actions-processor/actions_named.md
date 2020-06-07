@@ -36,9 +36,11 @@ Named actions look like any other actions array, with just the name of the actio
 
 There are some reserved named action key names that are reserved for special use cases. 
 
-**onFormLoad** - When in the form scoped named actions array, these actions will run just _after_ a form is loaded. If there are actions that are generated in an `onFormRequest` hook, those actions will be queued first and the `onFormLoad` actions will run after. A typical use case would be to show an empty form with a loading placeholder image, then request data from the server then render the data after, allowing the application to feel more performant.
+**onFormLoad** - Global named action - These actions will run just _after_ a form is loaded. If there are actions that are generated in an `onFormRequest` hook, those actions will be queued first and the `onFormLoad` actions will run after. A typical use case would be to show an empty form with a loading placeholder image, then request data from the server then render the data after, allowing the application to feel more performant.
 
-**onAppLoad** - When use in the site scoped named actions array, these actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
+**onAppLoad** - Global named action - These actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
+
+**onLogin** - Global named action -  These actions will run just after the user is authenticated. This can be used to populate global app settings like user data and flags after a user logs in.
 
 ## Usage
 
