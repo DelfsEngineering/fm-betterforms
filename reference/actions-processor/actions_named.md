@@ -40,7 +40,7 @@ There are some reserved named action key names that are reserved for special use
 
 **onAppLoad** - Global named action - These actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
 
-**onLogin** - Global named action -  These actions will run just after the user is authenticated. This can be used to populate global app settings like user data and flags after a user logs in.
+**onLogin** - \( &gt;0.9.35\) Global named action -  These actions will run just after the user is authenticated. This can be used to populate global app settings like user data and flags after a user logs in.
 
 ## Usage
 
