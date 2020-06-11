@@ -1,6 +1,6 @@
 # API Callback Endpoint
 
-This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks callbacks or as an endpoint serving data.
+This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks or as an endpoint serving data.
 
 This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others \(see below\).
 
@@ -30,7 +30,7 @@ This service can act as a universal endpoint and service multiple content types.
 * PATCH
 * DELETE
 
-The hook is passed all header, query and body data as well as the request type \(located in `$params.method`\)
+The hook is passes all header, query and body data as well as the request type \(located in `$params.method`\)
 
 Set the `$response` var to the data you want to be returned.
 
@@ -51,6 +51,26 @@ Set the `$contentType` var to one of the following to return that content type a
 | $body | if method supports a body, this contains the serialized body string |
 | $params | object containing header, method and query objects |
 | $mehod | The method verb name |
+
+{% hint style="info" %}
+For versions &gt;0.9.35, API responses are able to send headers and status code, as shown below.
+{% endhint %}
+
+Set the `$headers` var to set the correct headers for the outbound data. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Glossary/Response_header).
+
+#### Example
+
+```text
+Set Variable [$headers ; Value: JSONElement ( "" ; ["Content-Type" ; "text/plain" ; JSONString]; ["Transfer-Encoding" ; "chunked" ; JSONString] )
+```
+
+Set the `$statusCode` var to set the correct value for HTTP status code response. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status). 
+
+#### Example
+
+```text
+Set Variable [$statusCode ; Value: 418 ]
+```
 
 ### Performance
 
