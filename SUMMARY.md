@@ -100,6 +100,7 @@
   * [Debugging](usage/troubleshooting/debugging.md)
   * [Frozen Actions Queue](usage/troubleshooting/frozen-actions-queue.md)
 * [JavaScript Tips](usage/javascript-tips/README.md)
+  * [Calling Named Actions from HTML Vue Events](usage/javascript-tips/calling-named-actions-from-html-vue-events.md)
   * [Calculations](usage/javascript-tips/calculations.md)
 * [System Overview](usage/system-overview.md)
 * [Forms Processor](usage/formsoverview/README.md)
