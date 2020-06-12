@@ -23,9 +23,13 @@ Vue makes it easy to attach events onto HTML elements.
 Some Vue components expect a pure function to be passed into the event handler key. For this situation, you cannot use the `namedAction` function directly, but instead just wrap it as follows:
 
 ```markup
-<some-component @click="function(){ namedAction('handleEvents',{arguments:arguments})}" >Do Something</some-component>
+<some-component @someEvent="function(){ namedAction('handleEvents',{arguments:arguments})}" ></some-component>
 // passes the arguments that the component passed, into all the actions.
-// action.options.arguments will contan an array of the following
+// action.options.arguments will contain an array of the following
 // pageSchema, model, action, app, arguments
+
+//ES6 variant ( modern browsers only )
+<some-component @someEvent="(something)=>namedAction('handleEvents',{something:something})" ></some-component>
+// action.options.something will contain the parameter 'something' object
 ```
 
