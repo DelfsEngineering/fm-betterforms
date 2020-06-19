@@ -70,6 +70,9 @@
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
   * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Debugging](usage/design-patterns-and-debugging/debugging.md)
+
+---
+
 * [Features Summary](introduction.md)
 * [Getting Started](getting-started.md)
 * [Installation](installation.md)

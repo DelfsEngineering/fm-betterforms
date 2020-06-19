@@ -47,7 +47,9 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>```yaml
+</table>
+
+```yaml
 // action  object for 'cllipboard'
 [
  {

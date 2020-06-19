@@ -57,7 +57,9 @@
         tab)</td>
     </tr>
   </tbody>
-</table>```yaml
+</table>
+
+```yaml
 // example path action object
 {
 "action" :"path",
