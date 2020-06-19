@@ -33,7 +33,9 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
     </tr>
   </thead>
   <tbody></tbody>
-</table>|  |  |  |
+</table>
+
+|  |  |  |
 | :--- | :--- | :--- |
 
 

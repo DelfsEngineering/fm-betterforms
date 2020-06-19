@@ -31,7 +31,9 @@
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left">options.path</th>
@@ -46,7 +48,9 @@
     </tr>
   </thead>
   <tbody></tbody>
-</table>| options.url |  | { optional } will open page url in a new tab |
+</table>
+
+| options.url |  | { optional } will open page url in a new tab |
 | :--- | :--- | :--- |
 
 
