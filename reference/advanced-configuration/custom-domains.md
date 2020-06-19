@@ -10,6 +10,10 @@ If your account permits it, you can map fully customized domains to BetterForms 
 2. In the BetterForms editor under your apps environment page, add your new custom domain.
 3. If your CNAME record has not propagated BetterForms will not be able complete your domain configuration. BetterForms servers will periodically retest your DNS.
 
+![Example GoDaddy entry](../../.gitbook/assets/screen-shot-2020-06-19-at-6.28.57-pm.png)
+
+
+
 ### **Naked Domains**
 
 #### \( update needed \) 
