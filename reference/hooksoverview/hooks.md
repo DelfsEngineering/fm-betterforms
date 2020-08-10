@@ -44,11 +44,15 @@ To pass back validation error messages set the `validation.error` element to you
 
 The following hooks only apply the pages of the "wizard" type. The are called on special cases, but otherwise function just like the [onUtility](hooks.md#onutility) hook type.
 
-### onTabChange
+#### onTabChange
 
 This hook is run if the **Run onTabChange Script Hook** is enabled for a wizard form.
 
-### onComplete
+#### onComplete
 
 This is run when the user clicks the **Complete** button for a wizard form.
+
+### Additional Submission options
+
+There are times you want to run actions prior to calling server side scripts. If an optional `wizardOnComplete_actions` key has bee set in the form \( misc tab\) then those actions will be run in place of the `onComplete` script hook. You will have to call a utility hook within your actions for server side logic.
 
