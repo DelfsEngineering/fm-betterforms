@@ -8,6 +8,8 @@ Hooks are organized in sets within a folder. **hookSets** are folders of hooks t
 
 All hooks have data that is passed into and out of them. By mutating this data you can control the user experience. Most hooks surface the same `$$BF_...` vars    but some hooks have additional vars.
 
+All hooks have a maximum time of 20 Seconds before they error. Make sure to get all server side processing performed well within this time.
+
 ![Script Hook life cycle](../../.gitbook/assets/productionflo-system%20%281%29.png)
 
 HookSets are broken down into two types: `CommonHookSets` and `ScopedHookSets`
