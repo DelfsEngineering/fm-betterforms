@@ -4,29 +4,7 @@ description: 'What are they, how are they reusable and why'
 
 # Custom Components
 
-Two types, 
-
-### Using
-
-#### Calling as an Element
-
-
-
-
-
-#### Calling as an HTML Vue Component
-
-
-
-
-
-
-
-
-
 ### Building and Customizing
-
-
 
 
 
