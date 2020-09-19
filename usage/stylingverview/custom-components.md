@@ -15,6 +15,7 @@ description: 'What are they, how are they reusable and why'
 | HTML |  | Contains HTML to be rendered as a component. |
 | fields |  | Optional either `html` or `fields` keys must be present. Contains BF schema elements normally found in the `fields` key of the page editor. The schema will be used as a component. |
 | source |  | optional |
+| _schema_ |  | All schema keys can be accessed from within the component as `schema.theKey` This allows  |
 |  |  |  |
 
 ### Implementation API
