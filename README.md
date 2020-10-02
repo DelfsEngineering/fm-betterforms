@@ -19,7 +19,7 @@ FM Better Forms is currently not fully open source but you can still contribute 
 **Author**  
 Delfs' Engineering  
 TORONTO CANADA  
-[cdelfs@delfsengineering.ca](mailto:cdelfs@delfsengineering.ca)
+www.fmbetterforms.com
 
 \*\*\*\*
 
