@@ -118,19 +118,23 @@ In the same way that `visible_calc` works for fields, you can also apply to indi
 {% tab title="HTML" %}
 Using an HTML nav item, you can add badges
 
-```text
-[{
-    “sectionLabel”: “Menu”,
-    “subs”: [{
-        “exact”: true,
-        “icon”: “fa fa-home”,
-        “label”: “Home”,
-        “path”: “/”
-    }, {
-        “html”: “<a href=\“/#/messages\” title=\“Messages\“>\n    <i class=\“fa icon-credit-card\“></i> Payments\n    <span class=\“pull-right badge badge-info\“>overdue</span>\n</a>”    },{
-        }
+```yaml
+[
+  {
+    "sectionLabel": "Menu",
+    "subs": [
+      {
+        "exact": true,
+        "icon": "fa fa-home",
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "html": "<a href=\"/#/messages\" title=\"Messages\">\n    <i class=\"fa icon-credit-card\"></i> Payments\n    <span class=\"pull-right badge badge-info\">overdue</span>\n</a>"
+      }
     ]
-}]
+  }
+]
 ```
 
 ![](../../.gitbook/assets/screen_shot_2020-05-21_at_11.18.58_am.png)
