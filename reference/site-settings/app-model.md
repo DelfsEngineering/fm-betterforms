@@ -1,3 +1,10 @@
+---
+description: >-
+  The App Model functions similar to a page's data model, except that it is
+  accessible to every page in your site. You can also reference data in the App
+  Model from elements that are not bound to a page
+---
+
 # App Model
 
 The **App Model** functions similar to a page's [data model](../form-settings/data-model.md), except that it is accessible to every page in your site. You can also reference data in the App Model from elements that are not bound to a page, such as [Navigation menus](navigationoverview.md#custom-navigation-menus) and [slots](slots-code-injection.md). App data can be cached in local storage for fast performance.
@@ -30,5 +37,5 @@ This feature is enabled within the app model editing page of the page builder.
 
 As your application loads, BetterForms will first check the **Session Storage** and if enabled, try to pull data from there, if that is not successful, it will check the **Local Storage** and attempt to populate data from there. By allowing separate control, you can have a given tabs context preserved.
 
-Keys that are set for caching will automatically be saved locally as they are changed. There is nothing you need to do additionally to manage this.
+Keys that are set for caching will automatically be saved locally as they are changed. No additional cahce management is required.
 
