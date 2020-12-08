@@ -14,13 +14,17 @@ BF hooks transfer data between the client and the BF servers. Reducing this data
 
 ### Caching
 
-If you care compiling deep JSON data objects with your asJSON unstored calcs there can be many large potential gains you can make with data caching.
+If you are compiling deep JSON data objects with your asJSON un-stored calc's there can be many large potential gains you can make with data caching.
 
-#### Caching asJSON
+#### Server Side \(FMS\) Caching asJSON
 
 If you have a large array of data that seldom changes \( only changes when a user occasionally adds data\), you can create a data cache table that can easily be used for all cached data regardless of the data source. 
 
-A simple table that has a `dataName` and `data` fields will suffice. When a user edits data that would normally trigger an expensive operation to rebuild it, you call a script that 
+A simple table that has a `dataName` and `data` fields will suffice. When a user edits data that would normally trigger an expensive operation to rebuild it, you call a script that wil rebuild the data and run asynchronously.
+
+#### Client Caching
+
+Slow changing can be cached in the browser for blazing fast page loads. See browser caching.
 
 
 
