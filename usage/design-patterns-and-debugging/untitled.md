@@ -1,8 +1,10 @@
-# Wothing with environments
+# Working with environments
 
-Y
+THIS IS WORK IN PROGRESS
 
-es, there is an internal ID that is maintained when cloned. You can clear this so you don't have to keep authorizing. See here: [https://fmhelp.filemaker.com/help/18/fmp/en/index.html\#page/FMP\_Help/authorizing-access.html](https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help/authorizing-access.html)  
+#### Duplicating FMP files for multiple deployments
+
+Yes, there is an internal ID that is maintained when cloned. You can clear this so you don't have to keep authorizing. See here: [https://fmhelp.filemaker.com/help/18/fmp/en/index.html\#page/FMP\_Help/authorizing-access.html](https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help/authorizing-access.html)  
 
 
 ```text

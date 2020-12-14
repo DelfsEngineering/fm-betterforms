@@ -21,6 +21,8 @@ After a user is logged into a page that requires authentication, their credentia
 
 A JWT \(JSON Web Token\) token is generated using industry approved encryption. JWT’s are immutable and assure the client is who they claim to be.
 
+It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](https://app.gitbook.com/@delfs-engineering/s/betterforms/~/drafts/-MOWYknypRqP7X-1Pxe7/usage/design-patterns-and-debugging/optimization)
+
 ## Web Servers 
 
 BetterForms uses immutable server-less deployments for the web facing servers. Once these servers are deployed they can not be modified, or logged into.

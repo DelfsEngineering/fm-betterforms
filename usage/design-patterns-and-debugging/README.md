@@ -1,3 +1,9 @@
+---
+description: >-
+  UX, Performance optimizations and best practices for building BetterForms
+  apps.
+---
+
 # Design Patterns and Best Practices
 
 ## Section under development
