@@ -35,7 +35,23 @@ This feature is enabled within the app model editing page of the page builder.
 * **Use Local Storage** - This data will persist from session to session, and remain even after the browser has been closed.
 * **Use Session Storage** - This data will survive a page refresh, but will not survive after the tab has been closed in the browser.
 
-As your application loads, BetterForms will first check the **Session Storage** and if enabled, try to pull data from there, if that is not successful, it will check the **Local Storage** and attempt to populate data from there. By allowing separate control, you can have a given tabs context preserved.
+As your application loads, BetterForms will first check the **Session Storage** and if enabled, try to pull data from there, if that is not successful, it will check the **Local Storage** if enabled and attempt to populate data from there. By allowing separate control, you can have a given tabs context preserved. 
 
-Keys that are set for caching will automatically be saved locally as they are changed. No additional cahce management is required.
+Keys that are set for caching will automatically be saved locally as they are changed. No additional cache management is required.
+
+{% hint style="warning" %}
+**Security:** It is important to be mindful of sensitive data. Browser side caching is not encrypted and as such can be viewed directly by users. 
+
+You can clear local storage explicitly upon logout via an action function with the below JS code. This is not a security mitigation, but may be considered under some circumstances.
+
+```text
+window.localStorage.clear();
+```
+{% endhint %}
+
+
+
+
+
+
 
