@@ -125,7 +125,7 @@
 ## Security
 
 * [Authentication](security/authentication.md)
-* [White Paper](security/white-paper.md)
+* [Security White Paper](security/white-paper.md)
 * [Firewalls](security/security.md)
 * [Technology Stack](security/technology-stack.md)
 

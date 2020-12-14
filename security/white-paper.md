@@ -1,4 +1,4 @@
-# White Paper
+# Security White Paper
 
 ## PRELIMINARY
 
@@ -13,7 +13,7 @@
 
 ## Browser \(Client\)
 
-TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated subdomain certificate with Lets Encrypt, a free certificate service.
+TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Lets Encrypt, a free certificate service.
 
 Authenticated and Un-Authenticated PagesBF allows web pages \(form /layout\) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the BF editor.
 
@@ -79,6 +79,5 @@ Incoming traffic from the BF server only enters the Helper File. The helper file
 * re-login when calling legacy file plug scripts
 * change privileges in legacy file to not allow XML
 * Have legacy file not allow any layouts with XML access
-
-Only allow CWP inbound calls to come from better forms Web server IP via an API Proxy.
+* Only allow CWP inbound calls to come from better forms Web server IP via an API Proxy.
 
