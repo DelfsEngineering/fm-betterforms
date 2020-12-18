@@ -16,7 +16,7 @@ description: >-
 | **Errors** |  |
 | BF.errorClearAll\(\) | Clears the error cache |
 | BF.errorThrow\(errorCode, errorDescription, info\) | Creates an error |
-|  |  |
+| BF.rebuildReactivity\(object\) | This function is normally run upon a completion of a `function` .  It recursively scans the object passed, and adds new reactive keys to keys that do are new or do not have reactivity. You will not need to use this within a function unless that function has a callback that later mutates a reactive object. Eg: setTimeout\(\) which takes a callback. |
 |  |  |
 | **Misc** |  |
 | BF.socketConnect\(\) | Connects the client to the BF server via a socket |
