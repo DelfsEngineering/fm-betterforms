@@ -24,11 +24,5 @@ description: >-
 | BF.getUUID\(\) | Returns a UUID |
 | BF.getQueryParam\(key\)  | Returns the URL query key value |
 
-### 
-
-
-
-B
-
 
 
