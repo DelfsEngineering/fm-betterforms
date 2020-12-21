@@ -6,7 +6,9 @@ The **Production data** field is the JSON object that will load in the page's da
 
 **Development data** is only seen by the BetterForms IDE. The JSON object in this field is merged into the production data when previewing things items like the HTML editor. This allows you to work with separate data in the schema editor
 
-By default, the entire data model of a page is passed to your FMS during a scoped hook. To modify this behavior, see this page:
+By default, the entire data model of a page is passed to your FMS during a scoped hook. To modify this behaviour, see this page:
 
 {% page-ref page="../hooksoverview/env\_vars.md" %}
+
+### 
 
