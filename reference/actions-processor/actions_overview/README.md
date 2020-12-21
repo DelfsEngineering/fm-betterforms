@@ -8,6 +8,8 @@
 * _**hideModal**_ ****- Hides a modal that is non-blocking
 * _**showAlert**_ ****- Renders a toaster style alert
 * _**path**_ **-** redirects the user to a new page ****
+* _**debounce** - Delay running actions until a period of inactivity happens_
+* _**throttle**_ **-** Limit how frequent actions can run
 * _**runUtilityHook**_ ****- runs the `onUtility` hook passing it params
 * _**downloadFile**_ ****- downloads a file \(link\) to the user
 * _**runOnCompleteHook**_ ****- runs the `onComplete` hook
