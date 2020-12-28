@@ -5,7 +5,7 @@ description: >-
   of Oct 22nd, 2020:
 ---
 
-# Compatability
+# Compatibility
 
 ```text
 {

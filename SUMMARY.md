@@ -133,5 +133,5 @@
 
 ---
 
-* [Compatability](compatability.md)
+* [Compatibility](compatibility.md)
 
