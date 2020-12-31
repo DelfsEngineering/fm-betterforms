@@ -72,6 +72,26 @@ Set the `$statusCode` var to set the correct value for HTTP status code response
 Set Variable [$statusCode ; Value: 418 ]
 ```
 
+#### Support for headers and statusCode
+
+In order to include **$headers** and **$statusCode** to your API response, there's a change that needs to be done to the API hook script on business file.
+
+* On your API callback hook script, find where **$$BF\_Payload** is set, as shown in the image below.
+
+![](../../.gitbook/assets/image%20%281%29.png)
+
+* Modify its value so it maches the following code, where **data.headers** and **data.statusCode** are added to the existing JSONSetElement statement.
+
+```yaml
+payload = JSONSetElement ( $$BF_Payload;
+["data.response" ; $response ; If ($contentType = "text" or $contentType = "html"  or $contentType = "xml" ; JSONString ; JSONObject )];
+["data.contentType" ; $contentType ; JSONString ];
+["data.headers" ; $headers ; JSONObject];
+["data.statusCode" ; $statusCode ; JSONNumber ];
+["log" ; $$BF_Log ; JSONString]
+);
+```
+
 ### Performance
 
 You can expect finite performance from this API handler. Initial tests show about 20 concurrent calls or about 1800 calls per minute can be consistently achieved. This is dependent on server performance also.
