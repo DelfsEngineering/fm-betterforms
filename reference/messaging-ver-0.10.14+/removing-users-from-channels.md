@@ -4,10 +4,10 @@ The same way as adding users, there are two methods to remove users from channel
 
 ## FileMaker API script
 
-The script is available in Helper file and is called **API - Leave Channel**. This script accepts an object with two keys **users** and **channels**.
+The script is available in Helper file and is called **API - Leave Channel**. This script accepts an object with two keys **`users`** and **`channels`**.
 
-* users: it accepts a string with an **user ID** or an **array of users ID**
-* channels: it accepts an object with **name** and **mode \(optional\)** or an **array of objects**, with the same shape.
+* `users`: it accepts a string with an **user ID** or an **array of users ID**
+* `channels`: it accepts an object with **name** and **mode \(optional\)** or an **array of objects**, with the same shape.
 
 ### Examples
 
@@ -49,9 +49,9 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
 
 ## API endpoint /message/removeuser
 
-In order to remove users from channels via API endpoint, an API needs to be generated for the app. This API key needs to be sent in the body of the POST request with an array of users, as shown in the example below.
+Users can be removed from channels via BetterForms Network API endpoint with an authenticated request. The API key needs to be sent in the body of the **`POST`**request with an array of users, as shown in the example below.
 
-* Address: https://**YOUR.DOMAIN.com/message/removeuser**;
+* URL: https://**YOUR.DOMAIN.com/message/removeuser**;
 * Set headers:
   * Accept = application/json
   * Content-type = application/json

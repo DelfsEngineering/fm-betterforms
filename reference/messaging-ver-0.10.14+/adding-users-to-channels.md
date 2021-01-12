@@ -2,26 +2,43 @@
 
 ## Authenticated channels
 
-A new field **channels** needs to be added to the users table \(Helper file\). This field must save a JSON object in string format.
+{% hint style="info" %}
+**Helper Update Needed**  
+You will need to update your helper file to the latest version to support the new channels API.
+{% endhint %}
 
-There are two different ways to add users to channels by directly calling our API endpoint or using our FileMaker API script.
+There are two different ways to add users to channels by directly calling the FM BetterForms network API endpoint or using the `messages`  FileMaker API scripts located in the helper file.
 
-Channels can be set to three different modes \(**authenticated channels only, anonymous channels use ignore mode**\): ignore, listen or receive.
+#### Channel Modes
+
+Channels can be set to three different modes: **ignore**, **listen** or **receive**.
 
 * **ignore**: messages sent from browser to browser, not passing through FileMaker Server;
 * **listen**: messages are sent from browser to browser but FileMaker Server receives the message as well;
 * **receive**: messages are sent from browser to FileMaker Server, and messages can be sent later via /message/sendmessage endpoint.
 
-### FileMaker API script
+| Channel Mode | Scope | Description |
+| :--- | :--- | :--- |
+| **ignore** | anonymous, authenticated | messages sent from browser to browser, not passing through FileMaker Server. |
+| **listen** | authenticated only | messages are sent from browser to browser but FileMaker Server receives the message as well. |
+| **receive** | authenticated only | messages are sent from browser to FileMaker Server and not broadcast directly to the channel. Messages can be sent later via the FM messages script API:`/message/sendmessage` endpoint. |
 
-The script is available in Helper file and is called **API - Join Channel**. This script accepts an object with two keys **users** and **channels**.
+### Adding users 
 
-* users: it accepts a string with a **user ID** or an **array of user IDs**;
-* channels: it accepts an object with **name** and **mode** or an **array of objects**, with the same shape.
+#### FileMaker Script: **API - Join Channel** 
 
-#### Examples
+The  **`API - Join Channel`** script  accepts an object with two keys **users** and **channels**.
 
-* Users as string and channels as one object
+* `users`: it accepts a string with a **user ID** _or_ an **array of user IDs**
+* `channels`: it accepts an object with **name** and **mode** _or_ an **array of objects**, with the same shape.
+
+{% hint style="warning" %}
+**TIP**:  The user `id` is the id of the user in the helper file, not your business file.x
+{% endhint %}
+
+#### Example Script Parameters
+
+* `users` as string and channels as one object
 
 ```text
 {
@@ -57,11 +74,11 @@ The script is available in Helper file and is called **API - Join Channel**. Thi
 }
 ```
 
-### API endpoint /message/adduser
+### API endpoint: /message/adduser
 
-In order to add users to channels via API endpoint, an API needs to be generated for the app. This API key needs to be sent in the body of the POST request with an array of users, as shown in the example below.
+In order to add users to channels via BetterForms network API endpoint you must make an authenticated request to the BetterForms network and pass your app's API key.  This API key needs to be sent in the body of the POST request with an array of users, as shown in the example below.
 
-* Address: https://**YOUR.DOMAIN.com/message/adduser**;
+* URL Address: https://**YOUR.DOMAIN.com/message/adduser**;
 * Set headers:
   * Accept = application/json
   * Content-type = application/json
@@ -101,7 +118,7 @@ In order to add users to channels via API endpoint, an API needs to be generated
 
 This type of channel is not saved in the users table, as users connected to these channels are not authenticated. The current browser tab that executes the action will be the one added to the channel.
 
-A user can be joined to an anonymous channel via a BF action called **channelJoinAnonymous**. This action requires two options:
+A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnonymous**. This action requires two options:
 
 * apiKey
 * channel
