@@ -6,11 +6,11 @@ Once we have channels set, we can send messages on them. There are three differe
 
 The BF action **messageSend** can be used to send a message to channel or channels.
 
-This action requires a channel key, which can be sent under options.
+This action requires a `channels` key, which can be sent under options and **needs to be an array**.
 
 ### Examples
 
-* options.channel
+* options.channels
 
 ```yaml
 // This will send a showAlert action
@@ -29,7 +29,7 @@ This action requires a channel key, which can be sent under options.
                     }
                 }
             ],
-            "channel": "channel1, channel2, channel3"
+            "channels": ["channel1, channel2, channel3"]
         }
     }
 ]
