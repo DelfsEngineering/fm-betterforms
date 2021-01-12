@@ -29,3 +29,31 @@ The same API endpoint can be used to retrieve what users are connected to a spec
 }
 ```
 
+### Expected results from requests
+
+The request to the enpoint /message/users should return an object with an arrays of connected authenticated users and the total of anonymous \(non-authenticated\) users, as shown in the example below.
+
+```text
+{
+    "users": [
+        {
+            "id": "UER-ID",
+            "email": "user@email.com",
+            "channels": {
+                "channels": [
+                    {
+                        "mode": "ignore",
+                        "name": "channel1"
+                    },
+                    {
+                        "name": "listen",
+                        "mode": "channel2"
+                    }
+                ]
+            }
+        }
+    ],
+    "totalAnonymous": 1
+}
+```
+
