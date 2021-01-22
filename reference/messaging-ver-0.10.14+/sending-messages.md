@@ -1,100 +1,154 @@
+---
+description: >-
+  Once your users are subscribed to a channel or two, you can send messages to
+  them!
+---
+
 # Sending messages
 
-Once we have channels set, we can send messages on them. There are three different ways to send messages to a channel.
+Think of a message as a standard [**BF Action**](../actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
-## BF action
+## BF Action
 
-The BF action **messageSend** can be used to send a message to channel or channels.
+The BF action **messageSend** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
 
-This action requires a `channels` key, which can be sent under options and **needs to be an array**.
+#### Example
 
-### Examples
-
-* options.channels
+* options.channel
 
 ```yaml
 // This will send a showAlert action
-//to channels "channel1", "channel2" and "channel3"
+// to channels "channel1", "channel2" and "channel3"
 [
-    {
-        "action": "messageSend",
-        "options": {
-            "actions": [
-                {
-                    "action": "showAlert",
-                    "options":{
-                        "text": "Hello from Message",
-                        "title": "Hello World",
-                        "type": "information"
-                    }
-                }
-            ],
-            "channels": ["channel1, channel2, channel3"]
+  {
+    "action": "messageSend",
+    "options": {
+      "actions": [
+        {
+          "action": "showAlert",
+          "options": {
+            "text": "Hello from Message",
+            "title": "Hello World",
+            "type": "information"
+          }
         }
+      ],
+      "channels": ["channel1", "channel2", "channel3"]
     }
+  }
 ]
 ```
 
-More information about **`messageSend`** action can be found [here](../actions-processor/actions_overview/messagesend.md).
+#### Full action reference:
 
-## FileMaker API script
+{% page-ref page="../actions-processor/actions\_overview/messagesend.md" %}
 
-The script is available in Helper file and is called **API - Send Channel**. This script accepts an object with four keys **message**, **channels**, **apiKey** and **domain**.
+## FileMaker Script
+
+The script is available in Helper file and is called **API - Send Message**. This script accepts an object with four keys **message**, **channels**, **apiKey** and **domain**.
 
 * `message`: it accepts an object with:
-  * actions: array of BF object actions.
+  * `actions`: array of BF action objects.
 * `channels`: string of channel name or array of strings;
 * `apiKey`: API key from corresponding app;
 * `domain`: domain to send message to.
 
-### Examples
+#### Example Parameter
 
-```text
+```yaml
 {
-    message:{
-        "actions": [
-            {
-                "action": "showAlert",
-                "options": {    
-                   "text": "Alert from FM",
-                   "title": "Hello World",
-                   "type": "information"
-               }
-           }
-       ]
-   }
-   "channels": ["channel1", "channel2"],
-   "apiKey": "BFAPI_XXXX-YYYY-XXXX",
-   "domain": "my.domain.com"
-}
+  "message": {
+    "actions": [
+      {
+        "action": "showAlert",
+        "options": {
+          "text": "Alert from FM",
+          "title": "Hello World",
+          "type": "information"
+        }
+      }
+    ]
+  },
+  "channels": ["channel1", "channel2"],
+  "apiKey": "BFAPI_XXXX-YYYY-XXXX",
+  "domain": "my.domain.com"
+}
 ```
 
 ## API endpoint /message/sendmessage
 
-You can send messages via the BetterForms Network API endpoint with an authenticated request. The API key needs to be sent in the body of the POST request with **message** and **channels**, as shown in the example below.
+{% api-method method="post" host="https://yourdomain.com" path="/message/sendmessage" %}
+{% api-method-summary %}
+API: Send Message
+{% endapi-method-summary %}
 
-* URL: https://**YOUR.DOMAIN.com/message/sendmessage**;
-* Set headers:
-  * Accept = application/json
-  * Content-type = application/json
-* Body content:
+{% api-method-description %}
 
-```text
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="accept" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="content-type" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="apiKey" type="string" required=true %}
+the API key for the corresponding app
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="channels" type="array" required=true %}
+array of channel names
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="message" type="object" required=true %}
+JSON object with _actions key_
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="message.actions" type="array" required=true %}
+standard JSON for an array of BF action objects
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=201 %}
+{% api-method-response-example-description %}
+This request will return the data that was sent as body of the request.
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+#### Example request body
+
+```yaml
 {
-    "message": {
-        "actions": [
-            {
-                "action": "showAlert",
-                "options": {
-                    "text": "Alert from Jhon",
-                    "title": "Hello World",
-                    "type": "information"
-                }
-            }
-        ]
-    },
-    "channels": ["channel1", "channel2"],
-    "apiKey": "BFAPI_GENERATED-API-KEY"
+  "message": {
+    "actions": [
+      {
+        "action": "showAlert",
+        "options": {
+          "text": "Alert from Jhon",
+          "title": "Hello World",
+          "type": "information"
+        }
+      }
+    ]
+  },
+  "channels": ["channel1", "channel2"],
+  "apiKey": "BFAPI_GENERATED-API-KEY"
 }
 ```
 

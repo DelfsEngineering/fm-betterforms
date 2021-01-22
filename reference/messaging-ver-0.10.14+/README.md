@@ -1,17 +1,26 @@
-# Messaging \(Ver 0.10.14+\)
+---
+description: >-
+  Messaging is intended to be used for real-time features, such as
+  notifications, chat or auto updates. Messaging also allows data to be pushed
+  from FileMaker into your BetterForms apps.
+---
 
-Messaging is intended to be used for real-time features, such as notifications, chat or auto updates. Messaging also allows data to be pushed from FileMaker into your BetterForms apps.
+# Messaging
+
+Messaging is the BetterForms implementation of the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol, which enables a persistent connection between the client and the server.
+
+{% hint style="info" %}
+Requires version 0.10.14 or later
+{% endhint %}
 
 ## Concepts
 
-When using messaging, users need to join channels, and these channels will be used to send and receive messages. Channels can be divided in two different scopes:
+In order to send **messages** from your FileMaker server to users actively viewing your BetterForms app, users need to join **channels**. Channels can be divided in two different scopes:
 
-#### Channel Scopes 
-
-| Channel Scopes | Description |
-| :--- | :--- |
-| **anonymous** | Users need to be logged in and subscribed to channels; |
-| **authenticated** | non-authenticated users are able to send and receive messages. |
+* **anonymous** channels
+  * available for anyone to join, login not requied
+* **authenticated** channels
+  * the user must be logged in to join the channel
 
 {% hint style="info" %}
 **TIP:** All messaging is scoped to the domain of the application. If your app has multiple domains, you will not be able to send messages directly across domains. 

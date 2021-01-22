@@ -95,13 +95,14 @@
   * [Custom Login Pages](reference/users-and-authentication/custom-login-pages.md)
 * [Advanced Configuration](reference/advanced-configuration/README.md)
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
-* [BF Utility Functions \(Ver 0.9.20+\)](reference/bf-utility-function-ver-0.9.20+.md)
+* [BF Utility Functions](reference/bf-utility-function-ver-0.9.20+.md)
 * [BF Error Codes](reference/bf-error-codes.md)
-* [Messaging \(Ver 0.10.14+\)](reference/messaging-ver-0.10.14+/README.md)
+* [Messaging](reference/messaging-ver-0.10.14+/README.md)
   * [Adding users to channels](reference/messaging-ver-0.10.14+/adding-users-to-channels.md)
   * [Removing users from channels](reference/messaging-ver-0.10.14+/removing-users-from-channels.md)
   * [Sending messages](reference/messaging-ver-0.10.14+/sending-messages.md)
-  * [Get all users connected](reference/messaging-ver-0.10.14+/get-all-users-connected.md)
+  * [Get connected users](reference/messaging-ver-0.10.14+/get-all-users-connected.md)
+  * [Get active channels](reference/messaging-ver-0.10.14+/get-active-channels.md)
 
 ## Usage Tips <a id="usage"></a>
 

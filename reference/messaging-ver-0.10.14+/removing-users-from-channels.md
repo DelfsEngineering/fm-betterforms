@@ -1,18 +1,22 @@
+---
+description: >-
+  Similar to adding users, you can remove users either by a REST API call, or
+  via a FileMaker script in your helper file.
+---
+
 # Removing users from channels
 
-The same way as adding users, there are two methods to remove users from channels, via our API endpoint or a FileMaker API script.
-
-## FileMaker API script
+## Removing users using a FileMaker script
 
 The script is available in Helper file and is called **API - Leave Channel**. This script accepts an object with two keys **`users`** and **`channels`**.
 
 * `users`: it accepts a string with an **user ID** or an **array of users ID**
 * `channels`: it accepts an object with **name** and **mode \(optional\)** or an **array of objects**, with the same shape.
 
-### Examples
+#### Examples
 
-* Users as string and channels as one object
-
+{% tabs %}
+{% tab title="Single User/Channel" %}
 ```text
 {
     "users": "USER_ID",
@@ -23,10 +27,10 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
     }
 }
 ```
+{% endtab %}
 
-* Users and channels as arrays
-
-```text
+{% tab title="Multiple Users/Channels" %}
+```
 {
     "users":
     [
@@ -46,41 +50,65 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
     ]
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-## API endpoint /message/removeuser
+{% api-method method="post" host="https://yourdomain.com" path="/message/removeuser" %}
+{% api-method-summary %}
+API: Remove User from Channel
+{% endapi-method-summary %}
 
-Users can be removed from channels via BetterForms Network API endpoint with an authenticated request. The API key needs to be sent in the body of the **`POST`**request with an array of users, as shown in the example below.
+{% api-method-description %}
+You can use this method to remove one or more users from channels. You must pass the API key generated for your app to authenticate this reqeust.
+{% endapi-method-description %}
 
-* URL: https://**YOUR.DOMAIN.com/message/removeuser**;
-* Set headers:
-  * Accept = application/json
-  * Content-type = application/json
-* Body content:
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="content-type" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
 
-```text
+{% api-method-parameter name="accept" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="apiKey" type="string" required=true %}
+The API key generated for your BF app
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users" type="array" required=true %}
+array of user IDs and channels to be removed for those users
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users\[0\].id" type="string" required=true %}
+BF user id from the users table in the helper file
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users\[0\].channels" type="array" required=true %}
+any array of channel objects
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=201 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
 {
     "users": [
-        {
-            "id": "USER-ID-FROM-USERS-TABLE",
-            "channels": [
-                {
-                    "name": "channel1"
-                },
-                {
-                    "name": "listen"
-                }
-            ]
-        },
-        {
-            "id": "USER-ID-FROM-USERS-TABLE",
-            "channels": [
-                {
-                    "name": "channel2"
-                }
-            ]
-        }
-    ],
-    "apiKey": "BFAPI_GENERATED-API-KEY"
+        "USER_1_ID",
+        "USER_2_ID"
+    ]
 }
 ```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 

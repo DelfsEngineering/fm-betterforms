@@ -4,7 +4,11 @@ description: >-
   within JavaScript to allow  easy access to common complex code.
 ---
 
-# BF Utility Functions \(Ver 0.9.20+\)
+# BF Utility Functions
+
+{% hint style="info" %}
+Requires version 0.9.20 or later
+{% endhint %}
 
 ### Errors
 

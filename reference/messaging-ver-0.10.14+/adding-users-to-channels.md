@@ -1,15 +1,27 @@
+---
+description: >-
+  You can add users to channels either by calling a FileMaker script in the
+  Helper File, or by calling a REST API endpoint of your BetterForms domain.
+---
+
 # Adding users to channels
 
-## Authenticated channels
+## The Channel Object
 
-{% hint style="info" %}
-**Helper Update Needed**  
-You will need to update your helper file to the latest version to support the new channels API.
-{% endhint %}
+| key | description |
+| :--- | :--- |
+| name | The name of the channel. It should be unique among your app |
+| mode | One of `ignore`, `listen`, or `receive`. See Chanel Modes below |
 
-There are two different ways to add users to channels by directly calling the FM BetterForms network API endpoint or using the `messages`  FileMaker API scripts located in the helper file.
+```yaml
+// example Channel Object
+{
+  "name": "channel1",
+  "mode": "listen"
+}
+```
 
-#### Channel Modes
+### Channel Modes
 
 Channels can be set to three different modes: **ignore**, **listen** or **receive**.
 
@@ -17,30 +29,33 @@ Channels can be set to three different modes: **ignore**, **listen** or **receiv
 * **listen**: messages are sent from browser to browser but FileMaker Server receives the message as well;
 * **receive**: messages are sent from browser to FileMaker Server, and messages can be sent later via /message/sendmessage endpoint.
 
-| Channel Mode | Scope | Description |
+| Mode | Scope | Description |
 | :--- | :--- | :--- |
 | **ignore** | anonymous, authenticated | messages sent from browser to browser, not passing through FileMaker Server. |
 | **listen** | authenticated only | messages are sent from browser to browser but FileMaker Server receives the message as well. |
-| **receive** | authenticated only | messages are sent from browser to FileMaker Server and not broadcast directly to the channel. Messages can be sent later via the FM messages script API:`/message/sendmessage` endpoint. |
+| **receive** | authenticated only | messages are sent from browser to FileMaker Server and not broadcasted directly to the channel. Messages can be sent later via the FM messages script API:`/message/sendmessage` endpoint. |
 
-### Adding users 
+## Adding users using a FileMaker Script
 
-#### FileMaker Script: **API - Join Channel** 
+{% hint style="warning" %}
+**Requires Helper File Changes**  
+You will need to update your helper file to the latest version to support the new channels API.
+{% endhint %}
 
 The  **`API - Join Channel`** script  accepts an object with two keys **users** and **channels**.
 
 * `users`: it accepts a string with a **user ID** _or_ an **array of user IDs**
 * `channels`: it accepts an object with **name** and **mode** _or_ an **array of objects**, with the same shape.
 
-{% hint style="warning" %}
-**TIP**:  The user `id` is the id of the user in the helper file, not your business file.x
+{% hint style="success" %}
+**TIP**:  The user `id` is the id of the user in the helper file, not your business file.
 {% endhint %}
 
 #### Example Script Parameters
 
-* `users` as string and channels as one object
-
-```text
+{% tabs %}
+{% tab title="Single User/Channel" %}
+```yaml
 {
     "users": "USER_ID",
     "channels":
@@ -50,10 +65,10 @@ The  **`API - Join Channel`** script  accepts an object with two keys **users** 
     }
 }
 ```
+{% endtab %}
 
-* Users and channels as arrays
-
-```text
+{% tab title="Multiple Users/Channels" %}
+```yaml
 {
     "users":
     [
@@ -73,67 +88,88 @@ The  **`API - Join Channel`** script  accepts an object with two keys **users** 
     ]
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-### API endpoint: /message/adduser
+{% api-method method="post" host="https://yourdomain.com" path="/message/adduser" %}
+{% api-method-summary %}
+API: Add User to Channel
+{% endapi-method-summary %}
 
-In order to add users to channels via BetterForms network API endpoint you must make an authenticated request to the BetterForms network and pass your app's API key.  This API key needs to be sent in the body of the POST request with an array of users, as shown in the example below.
+{% api-method-description %}
+You can use this method to join users to one or more channels. This is an authenticated request using the API key for the BetterForms network.
+{% endapi-method-description %}
 
-* URL Address: https://**YOUR.DOMAIN.com/message/adduser**;
-* Set headers:
-  * Accept = application/json
-  * Content-type = application/json
-* Body content:
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="content-type" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
 
-```text
+{% api-method-parameter name="accept" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="apiKey" type="string" required=true %}
+BetterForms network API key
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users" type="string" required=true %}
+array of user IDs and channels to join those users to
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users\[0\].id" type="string" required=true %}
+BF user id from helper file
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="users\[0\].channels" type="array" required=true %}
+an array of channel objects
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=201 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
 {
     "users": [
-        {
-            "id": "USER-ID-FROM-USERS-TABLE",
-            "channels": [
-                {
-                    "name": "channel1",
-                    "mode": "ignore"
-                },
-                {
-                    "name": "channel2",
-                    "mode": "listen"
-                }
-            ]
-        },
-        {
-            "id": "USER-ID-FROM-USERS-TABLE",
-            "channels": [
-                {
-                    "name": "channel2",
-                    "mode": "ignore"
-                }
-            ]
-        }
-    ],
-    "apiKey": "BFAPI_GENERATED-API-KEY"
+        "USER_1_ID",
+        "USER_2_ID"
+    ]
 }
 ```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-## Anonymous channels
+## Joining Anonymous Channels
 
-This type of channel is not saved in the users table, as users connected to these channels are not authenticated. The current browser tab that executes the action will be the one added to the channel.
+Since anonymous channels are for users who are not logged in, they can only be joined directly from the browser. The current browser tab that executes the action will be the one added to the channel.
 
-A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnonymous**. This action requires two options:
+A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnonymous**. 
 
-* apiKey
-* channel
-
-#### Example
+**Example:**
 
 ```text
 {
     "action": "channelJoinAnonymous",
     "options": {
-        "apiKey": "BFAPI_GENERATED-API-KEY",
         "channel": "anonymousChatRoom"
     }
 }
 ```
 
-More information on **channelJoinAnonymous** action [here](../actions-processor/actions_overview/channeljoinanonymous.md).
+**Learn more:**
+
+{% page-ref page="../actions-processor/actions\_overview/channeljoinanonymous.md" %}
+
+
 
