@@ -13,6 +13,8 @@
 | `isOpen` |  | _boolean_ | The current state of the panels display |
 | `credentials` | {} | _object_ | credential object |
 | `isForm` |  | _boolean_ | Defines the panel as a form. [Learn more](../../form-settings/misc-page-settings.md#isform) |
+| `panelStyleClasses` |  | _string_ |  |
+| `bodyStyleClasses` |  | _string_ |  |
 
 ### Reference
 
