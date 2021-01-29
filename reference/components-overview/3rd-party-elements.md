@@ -4,7 +4,7 @@ Third party modules can be incorporated into BetterForms apps. This opens up en 
 
 The easiest modules to incorporate into BetterForms are Vue based. Most Vue Modules start with `v-someName` 
 
-Currently modules will need a CDN link and must install themselves.
+Currently modules will need a CDN link and must install themselves. \(See limitations below\)
 
 ### Example: V-Calendar
 
@@ -50,6 +50,7 @@ There are some limitations when adding 3rd party libraries.
 * Modules must self install as a global Vue component
 * Modules must not require initialization code and be ready for use as a Vue component
 * Modules that are not Vue components can still be used but will often require writing small JS interface code to help patch them into the BF framework.
+* Be sure to make not if the type of links as some are cached much slower than others, see: [https://forum.fmbetterforms.com/t/cdn-advice-if-your-site-is-slow-to-load/239](https://forum.fmbetterforms.com/t/cdn-advice-if-your-site-is-slow-to-load/239)
 
 
 
