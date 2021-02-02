@@ -56,6 +56,20 @@
       <td style="text-align:left">{ optional } If true, will open url replacing the BetteForms app (same
         tab)</td>
     </tr>
+    <tr>
+      <td style="text-align:left">options.name</td>
+      <td style="text-align:left"><em>string</em>
+      </td>
+      <td style="text-align:left">The <code>windowName</code> of the target window. If not specified <code>_blank</code> is
+        used. ( Ver 0.10.22+ )</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">options.features</td>
+      <td style="text-align:left"><em>string</em>
+      </td>
+      <td style="text-align:left">Window features as described in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">MDN here</a>.
+        ( Ver 0.10.22+ )</td>
+    </tr>
   </tbody>
 </table>
 
