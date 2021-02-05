@@ -11,7 +11,6 @@
 * _**debounce** - Delay running actions until a period of inactivity happens_
 * _**throttle**_ **-** Limit how frequent actions can run
 * _**runUtilityHook**_ ****- runs the `onUtility` hook passing it params
-* _**downloadFile**_ ****- downloads a file \(link\) to the user
 * _**runOnCompleteHook**_ ****- runs the `onComplete` hook
 * _**clipboard**_ ****- runs `clipboard` action allowing interaction with the clipboard
 * _**cookie**_ ****- Allows setting of browser side cookies
