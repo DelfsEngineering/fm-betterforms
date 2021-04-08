@@ -39,30 +39,38 @@ if set, will only return users connected to this channel
 {% api-method-response %}
 {% api-method-response-example httpCode=201 %}
 {% api-method-response-example-description %}
-Returns a list of user objects and the channels those users are connected to. **totalAnonymous** also displayed the number of unauthenticated users are currently listening to anonymous channels
+Returns an object with an array of users for each current active channel. The array consists of objects with user ID and email.  
+For anonymous channels, it returns the total of clients connected to each channel.
 {% endapi-method-response-example-description %}
 
 ```yaml
 {
-  "users": [
-    {
-      "id": "USER-ID",
-      "email": "user@email.com",
-      "channels": {
-        "channels": [
-          {
-            "mode": "ignore",
-            "name": "channel1"
-          },
-          {
-            "name": "listen",
-            "mode": "channel2"
-          }
-        ]
-      }
-    }
-  ],
-  "totalAnonymous": 1
+    "authenticated": [
+        {
+            "id": "USER1-HELPER-FILE-ID",
+            "email": "user1@email.com"
+        },
+        {
+            "id": "USER2-HELPER-FILE-ID",
+            "email": "user2@email.com"
+        },
+        {
+            "id": "USER3-HELPER-FILE-ID",
+            "email": "user3@email.com"
+        }
+    ],
+    "myChannel": [
+        {
+            "id": "USER1-HELPER-FILE-ID",
+            "email": "user1@email.com"
+        },
+        {
+            "id": "USER4-HELPER-FILE-ID",
+            "email": "user4@email.com"
+        }
+    ]
+    "anonymous": 2,
+    "myAnonymousChannel": 4
 }
 ```
 {% endapi-method-response-example %}
