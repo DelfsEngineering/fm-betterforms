@@ -68,7 +68,15 @@ For anonymous channels, it returns the total of clients connected to each channe
             "id": "USER4-HELPER-FILE-ID",
             "email": "user4@email.com"
         }
+    ],
+    "tab|connectionID1": [
+        {
+            "id": "USER1-HELPER-FILE-ID",
+            "email": "user1@email.com"
+        }
     ]
+    "tab|connectionID2": 1,
+    "tab|connectionID3": 1
     "anonymous": 2,
     "myAnonymousChannel": 4
 }

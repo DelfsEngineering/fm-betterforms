@@ -28,6 +28,8 @@ In order to send **messages** from your FileMaker server to users actively viewi
 \( This can be handled from within FileMaker \)
 {% endhint %}
 
+Each new tab that a user opens will join its own private channel that will be namespaced as **tab\|connectionID**.
+
 For authenticated channels, users are automatically set to listen to their added channels once they log in. On the other hand, anonymous channels will not be persistent and users will not be automatically reconnected to this type of channel if they refresh the page or open a new tab.
 
 All messages sent to a channel are broadcasted to all users currently listening to that channel. Therefore, it is important to architect well the scope of each channel to optimize and control what and how much data each channel/user will receive.
