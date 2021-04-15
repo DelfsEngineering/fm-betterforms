@@ -33,6 +33,12 @@ The BF action **messageSend** can be used to send a message to channel or channe
           }
         }
       ],
+      "model": {
+        "myModelData": "modelData"
+      },
+      "app": {
+        "myAppData": "appModelData"
+      },
       "channels": ["channel1", "channel2", "channel3"]
     }
   }

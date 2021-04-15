@@ -33,6 +33,12 @@ Sends a message to a given channel.
                     }
                 }
             ],
+            "model": {
+              "myModelData": "modelData"
+            },
+            "app": {
+              "myAppData": "appModelData"
+            },
             "channels": ["channel1, channel2, channel3"]
         }
     }
