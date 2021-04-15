@@ -48,7 +48,9 @@ The BF action **messageSend** can be used to send a message to channel or channe
 The script is available in Helper file and is called **API - Send Message**. This script accepts an object with four keys **message**, **channels**, **apiKey** and **domain**.
 
 * `message`: it accepts an object with:
-  * `actions`: array of BF action objects.
+  * `actions`: array of BF action objects;
+  * `model`: object with model data;
+  * `app`: object with app model data.
 * `channels`: string of channel name or array of strings;
 * `apiKey`: API key from corresponding app;
 * `domain`: domain to send message to.
@@ -67,7 +69,13 @@ The script is available in Helper file and is called **API - Send Message**. Thi
           "type": "information"
         }
       }
-    ]
+    ],
+    "model": {
+      "myModelData": "modelData"
+    },
+    "app": {
+      "myAppData": "appModelData"
+    }
   },
   "channels": ["channel1", "channel2"],
   "apiKey": "BFAPI_XXXX-YYYY-XXXX",
@@ -107,12 +115,20 @@ the API key for the corresponding app
 array of channel names
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="message" type="object" required=true %}
-JSON object with _actions key_
+{% api-method-parameter name="message" type="string" required=true %}
+JSON object to be sent
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="message.actions" type="array" required=true %}
-standard JSON for an array of BF action objects
+{% api-method-parameter name="message.actions" type="array" required=false %}
+JSON for an array of BF action objects
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="message.model" type="object" required=false %}
+JSON object with data to be merged to model data
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="message.app" type="array" required=false %}
+JSON object with data to be merged to app model data
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -145,7 +161,13 @@ This request will return the data that was sent as body of the request.
           "type": "information"
         }
       }
-    ]
+    ],
+    "model": {
+      "myModelData": "modelData"
+    },
+    "app": {
+      "myAppData": "appModelData"
+    }
   },
   "channels": ["channel1", "channel2"],
   "apiKey": "BFAPI_GENERATED-API-KEY"

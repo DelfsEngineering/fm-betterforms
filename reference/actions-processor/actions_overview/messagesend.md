@@ -6,9 +6,11 @@ Sends a message to a given channel.
 
 | Key | value | Description |
 | :--- | :--- | :--- |
-| action | 'channelJoinAnonymous' | Action name |
+| action | 'messageSend' | Action name |
 | options.actions | {array} | Array of BF actions |
 | options.channels | {array} | Array of channel names |
+| options.model | {object} | Key value pairs from model data |
+| options.app | {object} | Key value pairs from app model data |
 
 ### Examples
 
