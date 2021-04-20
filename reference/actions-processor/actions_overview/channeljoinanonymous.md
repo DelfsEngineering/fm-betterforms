@@ -11,7 +11,6 @@ Adds non-authenticated user to anonymous channel.
 | Key | value | Description |
 | :--- | :--- | :--- |
 | action | 'channelJoinAnonymous' | Action name |
-| options.apiKey |  {string} | API key generated for app |
 | options.channel | {string} | Channel name |
 
 ### Example
@@ -22,10 +21,11 @@ Adds non-authenticated user to anonymous channel.
   {
     "action": "channelJoinAnonymous",
     "options": {
-      "apiKey": "BFAPI_GENERATED-API-KEY",
       "channel": "chatRoom"
     }
   }
 ]
 ```
+
+
 
