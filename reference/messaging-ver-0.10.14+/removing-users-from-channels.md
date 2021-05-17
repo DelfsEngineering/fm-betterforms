@@ -112,3 +112,24 @@ any array of channel objects
 {% endapi-method-spec %}
 {% endapi-method %}
 
+## Leaving Anonymous Channels
+
+Users can only be removed from anonymous channels directly from the browser. The current browser tab that executes the action will be the one removed from the channel.
+
+A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelLeaveAnon.**
+
+**Example:**
+
+```text
+{
+    "action": "channelLeaveAnon",
+    "options": {
+        "channel": "anonymousChatRoom"
+    }
+}
+```
+
+**Learn more:**
+
+{% page-ref page="../actions-processor/actions\_overview/channelleaveanon.md" %}
+

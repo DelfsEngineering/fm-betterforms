@@ -1,31 +1,29 @@
 ---
-description: Adds user to anonymous channel
+description: Removes user from anonymous channel
 ---
 
-# channelJoinAnon
+# channelLeaveAnon
 
-Adds users to anonymous channel.
+Removes users from anonymous channel.
 
 #### Function Action Object
 
 | Key | value | Description |
 | :--- | :--- | :--- |
-| action | 'channelJoinAnon' | Action name |
+| action | 'channelLeaveAnon' | Action name |
 | options.channel | {string} | Channel name |
 
 ### Example
 
 ```yaml
-// This will join a user to "chatRoom"
+// This will remove a user to "chatRoom"
 [
   {
-    "action": "channelJoinAnon",
+    "action": "channelLeaveAnon",
     "options": {
       "channel": "chatRoom"
     }
   }
 ]
 ```
-
-
 

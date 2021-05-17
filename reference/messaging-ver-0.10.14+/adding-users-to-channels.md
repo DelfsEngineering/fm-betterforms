@@ -152,15 +152,15 @@ an array of channel objects
 
 ## Joining Anonymous Channels
 
-Since anonymous channels are for users who are not logged in, they can only be joined directly from the browser. The current browser tab that executes the action will be the one added to the channel.
+Users can only be joined to anonymous channels directly from the browser. The current browser tab that executes the action will be the one added to the channel.
 
-A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnonymous**. 
+A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnon.**
 
 **Example:**
 
 ```text
 {
-    "action": "channelJoinAnonymous",
+    "action": "channelJoinAnon",
     "options": {
         "channel": "anonymousChatRoom"
     }

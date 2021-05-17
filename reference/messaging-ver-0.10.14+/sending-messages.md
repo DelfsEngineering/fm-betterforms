@@ -10,6 +10,8 @@ Think of a message as a standard [**BF Action**](../actions-processor/actions_ov
 
 ## BF Action
 
+### Authenticated Channels
+
 The BF action **messageSend** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
 
 #### Example
@@ -48,6 +50,47 @@ The BF action **messageSend** can be used to send a message to channel or channe
 #### Full action reference:
 
 {% page-ref page="../actions-processor/actions\_overview/messagesend.md" %}
+
+### Anonymous channel
+
+The BF action **messageSendAnonChannel** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
+
+#### Example
+
+* options.channel
+
+```yaml
+// This will send a showAlert action
+// to channels "channel1", "channel2" and "channel3"
+[
+  {
+    "action": "messageSendAnonChannel",
+    "options": {
+      "actions": [
+        {
+          "action": "showAlert",
+          "options": {
+            "text": "Hello from Message",
+            "title": "Hello World",
+            "type": "information"
+          }
+        }
+      ],
+      "model": {
+        "myModelData": "modelData"
+      },
+      "app": {
+        "myAppData": "appModelData"
+      },
+      "channels": ["channel1", "channel2", "channel3"]
+    }
+  }
+]
+```
+
+#### Full action reference:
+
+{% page-ref page="../actions-processor/actions\_overview/messagesendanonchannel.md" %}
 
 ## FileMaker Script
 

@@ -1,12 +1,12 @@
-# messageSend
+# messageSendAnonChannel
 
-Sends a message to a given channel\(s\).
+Sends a message to a given anonymous channel\(s\).
 
 #### Function Action Object
 
 | Key | value | Description |
 | :--- | :--- | :--- |
-| action | 'messageSend' | Action name |
+| action | 'messageSendAnonChannel' | Action name |
 | options.actions | {array} | Array of BF actions |
 | options.channels | {array} | Array of channel names |
 | options.model | {object} | Key value pairs from model data |
@@ -21,7 +21,7 @@ Sends a message to a given channel\(s\).
 //to channels "channel1", "channel2" and "channel3"
 [
     {
-        "action": "messageSend",
+        "action": "messageSendAnonChannel",
         "options": {
             "actions": [
                 {
