@@ -11,11 +11,11 @@ FM BetterForms is a cloud based SAAS platform and requires minimal installation.
 * Fast connection to your FMS box, data-center recommended.
 * Base Elements Plugin for integration only.
 
-### Installation 
+### Installation
 
 #### 1. Configure and upload the Helper file, Upload and configure FMS
 
-Prior to uploading the Helper File \([Read more on the helper file here ](usage/helper-file.md)\) You will need to do a bit of setup.
+Prior to uploading the Helper File \([Read more on the helper file here ](helper-file.md)\) You will need to do a bit of setup.
 
 1. [Download the helper file here ...](https://www.dropbox.com/sh/o8c1k649qpret5r/AAAYa7hKiOZEgBlSL4vCs6kma?dl=0)
 2. **Change** default user and pass from `admin / admin` to your choice. This password is used in this file only and is just for your access.
@@ -32,22 +32,14 @@ Prior to uploading the Helper File \([Read more on the helper file here ](usage/
 
 #### 3. Install  custom functions
 
-For this step [please review the section on](usage/hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
+For this step [please review the section on](hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
 
 1. From the helper file, navigate to the integration tab and select step 1. This will copy the custom functions to your clipboard.
 2. Paste these custom functions into your business application file.
 
 #### 4. Install scaffold scripts for common and 1st scoped hookset.
 
-For this step [please review the section on](usage/hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
+For this step [please review the section on](hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
 
 1. From the helper file integration tab, select '_Create Scaffold Hook set_' and paste these folders and scripts into your business application. Note you do not need to create a folder for this as they are already contained within a folder.  _Please make sure you understand the names you give common and scoped hook sets._
-
-
-
-
-
-
-
-
 

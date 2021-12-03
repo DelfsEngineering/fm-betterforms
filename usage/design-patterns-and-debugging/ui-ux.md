@@ -1,8 +1,6 @@
 # UI / UX
 
-### Form Design
+## Form Design
 
-### Data Display
-
-
+## Data Display
 

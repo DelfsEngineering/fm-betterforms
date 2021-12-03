@@ -11,5 +11,3 @@ This section covers proven design patterns that will allow you to build quick so
 * Reusable
 * Performant
 
-
-

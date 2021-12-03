@@ -2,7 +2,7 @@
 
 Allows client browser cookie setting \(and getting\).
 
-To remove a cookie simply set the  `daysOrOptions` value to `0`
+To remove a cookie simply set the `daysOrOptions` value to `0`
 
 \`\`
 
@@ -46,9 +46,9 @@ Vue.$cookie.getJSON('cookieName') returns JSON obj of cookie data
 
 **Custom Function** There is no CF avail at this time.
 
-#### Additional Reference:
+## Additional Reference:
 
 [https://github.com/BlueBayTravel/vue-js-cookie](https://github.com/BlueBayTravel/vue-js-cookie)
 
- [https://github.com/js-cookie/js-cookie/](https://github.com/js-cookie/js-cookie/)
+[https://github.com/js-cookie/js-cookie/](https://github.com/js-cookie/js-cookie/)
 

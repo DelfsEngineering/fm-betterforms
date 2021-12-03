@@ -2,11 +2,11 @@
 
 Third party modules can be incorporated into BetterForms apps. This opens up en enormous library of open source and paid modules. You should have a good working knowledge of VueJS and how binding works.
 
-The easiest modules to incorporate into BetterForms are Vue based. Most Vue Modules start with `v-someName` 
+The easiest modules to incorporate into BetterForms are Vue based. Most Vue Modules start with `v-someName`
 
 Currently modules will need a CDN link and must install themselves.
 
-### Example: V-Calendar
+## Example: V-Calendar
 
 We will add `v-calendar` a beautiful date picker.
 
@@ -38,11 +38,11 @@ Here the `:attributes` key is bound to a variable called `attrs` To make the Bet
 </v-date-picker>
 ```
 
-The `v-model` in the component  points to the data source used to populate the calendar.
+The `v-model` in the component points to the data source used to populate the calendar.
 
 This code is inserted into an HTML element and we are done!
 
-### Limitations
+## Limitations
 
 There are some limitations when adding 3rd party libraries.
 
@@ -50,14 +50,4 @@ There are some limitations when adding 3rd party libraries.
 * Modules must self install as a global Vue component
 * Modules must not require initialization code and be ready for use as a Vue component
 * Modules that are not Vue components can still be used but will often require writing small JS interface code to help patch them into the BF framework.
-
-
-
-
-
-
-
-
-
-
 

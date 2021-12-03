@@ -2,18 +2,18 @@
 
 Run JavaScript in an action.
 
-#### Function Action Object
+## Function Action Object
 
 | Key | Description |
 | :--- | :--- |
 | action | `'function'` |
 | function | `string` javascript to be run. This JS is converted into a function and executed |
 
-**Note:**  The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
+**Note:** The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
 
-Javascript is placed on a single JSON value line,  you must separate commands with a semicolon. Proper JSON escaping will always need to be applied.
+Javascript is placed on a single JSON value line, you must separate commands with a semicolon. Proper JSON escaping will always need to be applied.
 
-#### Uses:
+## Uses:
 
 Functions are great for injecting small logic into any work flow.
 
@@ -25,8 +25,8 @@ Functions are great for injecting small logic into any work flow.
 | :--- | :--- | :--- |
 | window | `window` | The Browser JS window object, good for environmental control |
 | formSchema | `formSchema` | Containing other sub objects like ~~model~~ etc |
-| model | `formSchema.model` |  This is the uppermost model object regardless of sub objects like accordions etc. |
-| action object | `action` | The whole `action` object that contains this function. eg: `action.options.path` Some BetterForms Elements will merge additional options into the`options` key.  |
+| model | `formSchema.model` | This is the uppermost model object regardless of sub objects like accordions etc. |
+| action object | `action` | The whole `action` object that contains this function. eg: `action.options.path` Some BetterForms Elements will merge additional options into the`options` key. |
 
 | as of ver 0.7.302 |  |
 | :--- | :--- |
@@ -46,11 +46,9 @@ Functions are great for injecting small logic into any work flow.
 ]
 ```
 
-
-
 Code Style
 
-Function results returned with a `return` statement are ignored. 
+Function results returned with a `return` statement are ignored.
 
 **Contexts** `function` code executes with slightly different context to other Java Script in BetterForms.
 

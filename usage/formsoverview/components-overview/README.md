@@ -4,7 +4,7 @@ Forms support various field types. For the main documentation please see Vue-For
 
 Reference: [https://icebob.gitbooks.io/vueformgenerator/content/fields/](https://icebob.gitbooks.io/vueformgenerator/content/fields/)
 
-The BetterForms framework makes some deviations fro the source code documentation as needed for implementation. This section covers differences and additions to the components. Many of BetterForms components are custom build and do not reply on external libraries. 
+The BetterForms framework makes some deviations fro the source code documentation as needed for implementation. This section covers differences and additions to the components. Many of BetterForms components are custom build and do not reply on external libraries.
 
 ## Custom Field Types
 

@@ -71,11 +71,10 @@
   * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Debugging](usage/design-patterns-and-debugging/debugging.md)
 
----
+* [Features Summary](usage/introduction.md)
+* [Getting Started](usage/getting-started.md)
+* [Installation](usage/installation.md)
 
-* [Features Summary](introduction.md)
-* [Getting Started](getting-started.md)
-* [Installation](installation.md)
 
 ## Other Services
 

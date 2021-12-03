@@ -22,7 +22,7 @@ You can define a navigation object in the site settings. This allows you to crea
 | `path` | _string_ | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. This can also also be accomplished with a path action |
 | `subs` | _array_ | This is a dropdown style parent menu that will hold sub menus. BettterForms looks to see a \`subs\` key and if present will consider this the parent. |
 | `actions` | _array_ | If a navigation item has a 'actions' key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the actions processor. Typical actions include Modals, Alerts and path navigation. |
-| `visible` | _boolean_ | {optional} Controls if item is visible, will accept a `visible_calc` function. Note, the scope of the function is bound to the site and not the specific form.  |
+| `visible` | _boolean_ | {optional} Controls if item is visible, will accept a `visible_calc` function. Note, the scope of the function is bound to the site and not the specific form. |
 | `html` | _string_ | If key present, then the HTML value is inserted as the navigation menu item |
 
 ### Element Type Order
@@ -100,7 +100,6 @@ The navigation parser classifies the navigation elements in the following hierar
     ]
   }
 ]
-
 ```
 
 In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment &gt; App Model_ section of your site settings.

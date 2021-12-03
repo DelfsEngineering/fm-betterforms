@@ -1,6 +1,6 @@
 # panel
 
-`panel` allows better organization of fields and data. Panel elements can hold other BF elements. 
+`panel` allows better organization of fields and data. Panel elements can hold other BF elements.
 
 Version : 8.26+
 
@@ -15,13 +15,9 @@ Version : 8.26+
 | isOpen |  | boolean | The current state of the panels display |
 | credentials | {} | object | credential object, |
 
-### Reference
+## Reference
 
 ```javascript
 // sample panel object
-
-
 ```
-
-### 
 

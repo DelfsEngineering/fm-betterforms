@@ -4,7 +4,7 @@
 This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables-2#readme) Refer to source code for additional documentation.
 {% endhint %}
 
-### Additional keys:
+## Additional keys:
 
 | Additional Keys | Type | Description |
 | ---: | :---: | :--- |
@@ -13,7 +13,7 @@ This component is based on [Vue-Tables-2](https://github.com/matfish2/vue-tables
 | `actions_onRowClick` | _array_ | \(optional\) Array of actions to execute when row is clicked |
 | `slots` | _array_ | \(optional\) Array of objects, allows insertion of HTML content _\(see below\)_ |
 
-### Slots Example
+## Slots Example
 
 Add the `slots` key to this element to define HTML regions to be displayed with the table. The `slot` key within each object defines the name of the slot, which can be referenced in the `columns` key.
 
@@ -40,7 +40,7 @@ If you name a slot `child_row`, that HTML content will be displayed when the row
 When referencing row data within slots, use `props.row` instead of the usual `model` keyword.
 {% endhint %}
 
-### Slots
+## Slots
 
 Slots allow you to insert you own custom HTML in predefined positions within the component Slots with respect the BF Forms render engine and render VueJS code also:
 
@@ -59,50 +59,58 @@ Slots allow you to insert you own custom HTML in predefined positions within the
 
 If a slot has the same name as a column, it will replace the columns contents. You can class the rows object \(data object for that row\) via `model.row.myField`
 
-### Accessing Data in slots
+## Accessing Data in slots
 
-#### row
+### row
 
-Each rows data can be found in the  `props.row` variable when using custom html slots. 
+Each rows data can be found in the `props.row` variable when using custom html slots.
 
 eg: `{{props.row.nameFirst}}` would render the first name field
 
-#### data model
+### data model
 
 Sometimes you may want to reference the parent data model \(The model that was used for the form, or the container element\). You can reference to parents data model with the variable `model`
 
 eg: `{{model.isLocked}}` would render the isLocked field in the parent data model
 
-### Child Rows
+## Child Rows
 
 Add the following CSS to your site to change how the icon to open or close the child row
 
 ```css
 .VueTables__child-row-toggler {
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
-    display: block;
+
+    width: 16px;
+
+    height: 16px;
+
+    line-height: 16px;
+
+    display: block;
     margin: auto;
-    text-align: center;
+
+    text-align: center;
 }
 
-.VueTables__child-row-toggler--closed::before {
+
+
+.VueTables__child-row-toggler--closed::before {
     content: "►";
 }
 
 .VueTables__child-row-toggler--open::before {
-    content: "▼";
+
+    content: "▼";
 }
 ```
 
-### Interacting with the Table \( Row Click Actions\)
+## Interacting with the Table \( Row Click Actions\)
 
-**actions\_onRowClick** 
+**actions\_onRowClick**
 
 Table2 supports `actions_onRowClick` actions. This allows you to programatically control what happens when a user clicks an row.
 
-The following is an example that will pas the key `id` from the table row into the URN 
+The following is an example that will pas the key `id` from the table row into the URN
 
 ```text
 "actions_onRowClick": [{

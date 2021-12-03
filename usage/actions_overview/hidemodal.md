@@ -23,5 +23,3 @@ There is no FM CF for this action. Use the `BF_SetAction` custom function as sho
 Set Variable $$BF_Actions = BF_SetAction( "hideModal" ; "" )
 ```
 
-
-

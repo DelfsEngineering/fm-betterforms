@@ -6,11 +6,11 @@ Allows interaction with the clipboard
 | :--- | :--- |
 | function | `string` javascript to be run. This JS is converted into a function and executed |
 
-**Note:**  The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
+**Note:** The `function` key can also be used in any other action that originates from the client. This means actions generated in a hook call do not get the function run when arriving at the server.
 
 Code Style
 
-Function results returned with a `return` statement are ignored. 
+Function results returned with a `return` statement are ignored.
 
 **Contexts** `function` code executes with slightly different context to other Java Script in BetterForms.
 

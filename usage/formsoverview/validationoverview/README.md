@@ -2,7 +2,7 @@
 
 ## Client Side Validation
 
-Client side validation is controlled by the `validator` key in all form elements. 
+Client side validation is controlled by the `validator` key in all form elements.
 
 ```yaml
 // Example
