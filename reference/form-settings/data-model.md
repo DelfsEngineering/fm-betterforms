@@ -8,7 +8,8 @@ The **Production data** field is the JSON object that will load in the page's da
 
 By default, the entire data model of a page is passed to your FMS during a scoped hook. To modify this behaviour, see this page:
 
-{% page-ref page="../hooksoverview/env\_vars.md" %}
+{% content-ref url="../hooksoverview/env_vars.md" %}
+[env\_vars.md](../hooksoverview/env\_vars.md)
+{% endcontent-ref %}
 
-### 
-
+###

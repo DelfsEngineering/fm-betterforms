@@ -2,27 +2,29 @@
 
 The authentication set of actions are used on pages that have custom login and registration screens.
 
-{% page-ref page="../users-and-authentication/custom-login-pages.md" %}
+{% content-ref url="../users-and-authentication/custom-login-pages.md" %}
+[custom-login-pages.md](../users-and-authentication/custom-login-pages.md)
+{% endcontent-ref %}
 
 * _**authLogin**_ - Performs an authentication login
 * _**authLogout**_ - Performs logout
 * _**authReset**_ - Performs a password reset action
 * _**authForgot** -_ Performs a forgotten password reset hook
-* _**authVerify**_  - Performs a verification of the verify token
+* _**authVerify**  _ - Performs a verification of the verify token
 * _**authResend**_ - Re/sends the email verification token
 * _**authRegister**_ - Performs a registration and if successful, runs the [onRegistrationHook](../hooksoverview/commonoverview.md#onregistration)
 
 Each of these actions should be attached to a button that the user will click to perform the respective task. They do not take any options, but some do require that an `email` and/or `password` key is present in your data model.
 
-| Action Name | Requires `email` key | Requires `password` key | Requires `token`\* |
-| ---: | :---: | :---: | :---: |
-| authLogin | ✅ | ✅ |  |
-| authLogout |  |  |  |
-| authReset |  | ✅ | ✅ |
-| authForgot | ✅ |  |  |
-| authVerify |  |  | ✅ |
-| authResend | ✅ |  |  |
-| authRegister | ✅ | ✅ |  |
+|  Action Name | Requires `email` key | Requires `password` key | Requires `token`\* |
+| -----------: | :------------------: | :---------------------: | :----------------: |
+|    authLogin |           ✅          |            ✅            |                    |
+|   authLogout |                      |                         |                    |
+|    authReset |                      |            ✅            |          ✅         |
+|   authForgot |           ✅          |                         |                    |
+|   authVerify |                      |                         |          ✅         |
+|   authResend |           ✅          |                         |                    |
+| authRegister |           ✅          |            ✅            |                    |
 
 If these values are required, you should add validation to those fields and run a validate action before the authentication action.
 
@@ -43,4 +45,3 @@ Authentication error messages will get added automatically to your [data model](
   "styleClasses": "col-md-12"
 }
 ```
-

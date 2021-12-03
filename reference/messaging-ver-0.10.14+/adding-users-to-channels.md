@@ -8,9 +8,9 @@ description: >-
 
 ## The Channel Object
 
-| key | description |
-| :--- | :--- |
-| name | The name of the channel. It should be unique among your app |
+| key  | description                                                     |
+| ---- | --------------------------------------------------------------- |
+| name | The name of the channel. It should be unique among your app     |
 | mode | One of `ignore`, `listen`, or `receive`. See Chanel Modes below |
 
 ```yaml
@@ -29,16 +29,16 @@ Channels can be set to three different modes: **ignore**, **listen** or **receiv
 * **listen**: messages are sent from browser to browser but FileMaker Server receives the message as well;
 * **receive**: messages are sent from browser to FileMaker Server, and messages can be sent later via /message/sendmessage endpoint.
 
-| Mode | Scope | Description |
-| :--- | :--- | :--- |
-| **ignore** | anonymous, authenticated | messages sent from browser to browser, not passing through FileMaker Server. |
-| **listen** | authenticated only | messages are sent from browser to browser but FileMaker Server receives the message as well. |
-| **receive** | authenticated only | messages are sent from browser to FileMaker Server and not broadcasted directly to the channel. Messages can be sent later via the FM messages script API:`/message/sendmessage` endpoint. |
+| Mode        | Scope                    | Description                                                                                                                                                                                |
+| ----------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **ignore**  | anonymous, authenticated | messages sent from browser to browser, not passing through FileMaker Server.                                                                                                               |
+| **listen**  | authenticated only       | messages are sent from browser to browser but FileMaker Server receives the message as well.                                                                                               |
+| **receive** | authenticated only       | messages are sent from browser to FileMaker Server and not broadcasted directly to the channel. Messages can be sent later via the FM messages script API:`/message/sendmessage` endpoint. |
 
 ## Adding users using a FileMaker Script
 
 {% hint style="warning" %}
-**Requires Helper File Changes**  
+**Requires Helper File Changes**\
 You will need to update your helper file to the latest version to support the new channels API.
 {% endhint %}
 
@@ -91,52 +91,36 @@ The  **`API - Join Channel`** script  accepts an object with two keys **users** 
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="post" host="https://yourdomain.com" path="/message/adduser" %}
-{% api-method-summary %}
-API: Add User to Channel
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://yourdomain.com" path="/message/adduser" method="post" summary="API: Add User to Channel" %}
+{% swagger-description %}
 You can use this method to join users to one or more channels. This is an authenticated request using the API key for the BetterForms network.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="accept" type="string" required=true %}
+{% swagger-parameter in="header" name="accept" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 BetterForms network API key
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users" type="string" required=true %}
+{% swagger-parameter in="body" name="users" type="string" %}
 array of user IDs and channels to join those users to
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users\[0\].id" type="string" required=true %}
+{% swagger-parameter in="body" name="users[0].id" type="string" %}
 BF user id from helper file
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users\[0\].channels" type="array" required=true %}
+{% swagger-parameter in="body" name="users[0].channels" type="array" %}
 an array of channel objects
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="" %}
 ```
 {
     "users": [
@@ -145,10 +129,8 @@ an array of channel objects
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ## Joining Anonymous Channels
 
@@ -158,7 +140,7 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Example:**
 
-```text
+```
 {
     "action": "channelJoinAnon",
     "options": {
@@ -169,7 +151,7 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Learn more:**
 
-{% page-ref page="../actions-processor/actions\_overview/channeljoinanonymous.md" %}
-
-
+{% content-ref url="../actions-processor/actions_overview/channeljoinanonymous.md" %}
+[channeljoinanonymous.md](../actions-processor/actions\_overview/channeljoinanonymous.md)
+{% endcontent-ref %}
 

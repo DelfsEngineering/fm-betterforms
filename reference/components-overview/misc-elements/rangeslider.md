@@ -4,15 +4,15 @@ The range slider component is based in the `ion.rangeSlider` library and will re
 
 ### Source Reference
 
-Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider](https://vue-generators.gitbook.io/vue-generators/fields/optional_fields/slider)
+Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider](https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider)
 
 ion.rangeSlider.js: [http://ionden.com/a/plugins/ion.rangeSlider/index.html](http://ionden.com/a/plugins/ion.rangeSlider/index.html)
 
-![](../../../.gitbook/assets/2sknsrpi9d%20%281%29.gif)
+![](<../../../.gitbook/assets/2sKnsRPI9D (1).gif>)
 
-Add the CDN references below into the DOM Header Insertions section of your site. 
+Add the CDN references below into the DOM Header Insertions section of your site.&#x20;
 
-```text
+```
 <!--rangeSlider CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
 
@@ -23,7 +23,7 @@ Add the CDN references below into the DOM Header Insertions section of your site
 
 ### Example code snippet
 
-```text
+```
 {
   "label": "Rank",
   "styleClasses": "col-md-12 ",
@@ -40,4 +40,3 @@ Add the CDN references below into the DOM Header Insertions section of your site
 #### Theming
 
 see docs for theming info here: [http://ionden.com/a/plugins/ion.rangeSlider/skins.html](http://ionden.com/a/plugins/ion.rangeSlider/skins.html)
-

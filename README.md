@@ -1,6 +1,6 @@
 # Introduction
 
-## ![Delfs&apos; Engineering Logo](.gitbook/assets/1486254174620.png)
+## ![Delfs' Engineering Logo](.gitbook/assets/1486254174620.png)
 
 ## FM BetterForms
 
@@ -13,13 +13,12 @@ FM BetterForms makes it easy to create high performance web applications and for
 * Build connected widgets ready to be placed into existing websites
 * Publish data and tables
 
-[**Contribute**](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/misc/contribute.md)  
+[**Contribute**](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/misc/contribute.md)\
 FM BetterForms is currently not fully open source but you can still contribute to making this framework better. Learn how you can contribute to this documentation, make suggestions for improvements and contribute code snippets.
 
-**Author**  
-Delfs' Engineering  
-TORONTO CANADA  
+**Author**\
+Delfs' Engineering\
+TORONTO CANADA\
 www.fmbetterforms.com
 
-\*\*\*\*
-
+****

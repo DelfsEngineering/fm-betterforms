@@ -4,40 +4,24 @@ The API endpoint `/message/channels` will return all current active channels.
 
 A channel is considered active if there is at least one client connected to it.
 
-{% api-method method="post" host="https://yourdomain.com" path="/message/channels" %}
-{% api-method-summary %}
-API: Return active channels
-{% endapi-method-summary %}
+{% swagger baseUrl="https://yourdomain.com" path="/message/channels" method="post" summary="API: Return active channels" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="accept" type="string" required=true %}
+{% swagger-parameter in="header" name="accept" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 the API key for your BF app
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-Returns an object with two keys **authenticated** and **anonymous**. Each will have an array of current active channels.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="Returns an object with two keys authenticated and anonymous. Each will have an array of current active channels." %}
 ```
 {
     "authenticated": [
@@ -53,10 +37,6 @@ Returns an object with two keys **authenticated** and **anonymous**. Each will h
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

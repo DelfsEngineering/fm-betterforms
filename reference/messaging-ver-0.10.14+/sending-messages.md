@@ -6,7 +6,7 @@ description: >-
 
 # Sending messages
 
-Think of a message as a standard [**BF Action**](../actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
+Think of a message as a standard [**BF Action**](../actions-processor/actions\_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
 ## BF Action
 
@@ -49,7 +49,9 @@ The BF action **messageSend** can be used to send a message to channel or channe
 
 #### Full action reference:
 
-{% page-ref page="../actions-processor/actions\_overview/messagesend.md" %}
+{% content-ref url="../actions-processor/actions_overview/messagesend.md" %}
+[messagesend.md](../actions-processor/actions\_overview/messagesend.md)
+{% endcontent-ref %}
 
 ### Anonymous channel
 
@@ -90,7 +92,9 @@ The BF action **messageSendAnonChannel** can be used to send a message to channe
 
 #### Full action reference:
 
-{% page-ref page="../actions-processor/actions\_overview/messagesendanonchannel.md" %}
+{% content-ref url="../actions-processor/actions_overview/messagesendanonchannel.md" %}
+[messagesendanonchannel.md](../actions-processor/actions\_overview/messagesendanonchannel.md)
+{% endcontent-ref %}
 
 ## FileMaker Script
 
@@ -134,67 +138,48 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 
 ## API endpoint /message/sendmessage
 
-{% api-method method="post" host="https://yourdomain.com" path="/message/sendmessage" %}
-{% api-method-summary %}
-API: Send Message
-{% endapi-method-summary %}
+{% swagger baseUrl="https://yourdomain.com" path="/message/sendmessage" method="post" summary="API: Send Message" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="accept" type="string" required=true %}
+{% swagger-parameter in="header" name="accept" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 the API key for the corresponding app
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="channels" type="array" required=true %}
+{% swagger-parameter in="body" name="channels" type="array" %}
 array of channel names
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="message" type="string" required=true %}
+{% swagger-parameter in="body" name="message" type="string" %}
 JSON object to be sent
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="message.actions" type="array" required=false %}
+{% swagger-parameter in="body" name="message.actions" type="array" %}
 JSON for an array of BF action objects
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="message.model" type="object" required=false %}
+{% swagger-parameter in="body" name="message.model" type="object" %}
 JSON object with data to be merged to model data
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="message.app" type="array" required=false %}
+{% swagger-parameter in="body" name="message.app" type="array" %}
 JSON object with data to be merged to app model data
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-This request will return the data that was sent as body of the request.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="This request will return the data that was sent as body of the request." %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example request body
 
@@ -222,4 +207,3 @@ This request will return the data that was sent as body of the request.
   "apiKey": "BFAPI_GENERATED-API-KEY"
 }
 ```
-

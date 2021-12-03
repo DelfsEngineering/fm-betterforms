@@ -4,45 +4,29 @@ The API endpoint `/message/users` will return all users connected to all or spec
 
 A channel is considered active if there is at least one client connected to it.
 
-{% api-method method="post" host="https://yourdomain.com" path="/message/users" %}
-{% api-method-summary %}
-API: Return connected users
-{% endapi-method-summary %}
+{% swagger baseUrl="https://yourdomain.com" path="/message/users" method="post" summary="API: Return connected users" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="accept" type="string" required=true %}
+{% swagger-parameter in="header" name="accept" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 the API key for your BF app 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="channel" type="string" required=false %}
+{% swagger-parameter in="body" name="channel" type="string" %}
 if set, will only return users connected to this channel
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-Returns an object with an array of users for each current active channel. The array consists of objects with user ID and email.  
-For anonymous channels, it returns the total of clients connected to each channel.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="Returns an object with an array of users for each current active channel. The array consists of objects with user ID and email.
+For anonymous channels, it returns the total of clients connected to each channel." %}
 ```yaml
 {
     "authenticated": [
@@ -81,8 +65,5 @@ For anonymous channels, it returns the total of clients connected to each channe
     "myAnonymousChannel": 4
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

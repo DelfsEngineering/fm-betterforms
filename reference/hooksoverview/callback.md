@@ -2,7 +2,7 @@
 
 This hook gives the developer access to a universal API endpoint. This can be used for any external callbacks or as an endpoint serving data.
 
-This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others \(see below\).
+This service can act as a universal endpoint and service multiple content types. The default is JSON but this can also be changed to others (see below).
 
 ### Endpoint
 
@@ -22,7 +22,7 @@ This service can act as a universal endpoint and service multiple content types.
 * text/json
 * text/\* - any text content type including text/xml
 
-### Supported Methods \(verbs\)
+### Supported Methods (verbs)
 
 * GET
 * POST
@@ -30,45 +30,45 @@ This service can act as a universal endpoint and service multiple content types.
 * PATCH
 * DELETE
 
-The hook is passes all header, query and body data as well as the request type \(located in `$params.method`\)
+The hook is passes all header, query and body data as well as the request type (located in `$params.method`)
 
 Set the `$response` var to the data you want to be returned.
 
 Set the `$contentType` var to one of the following to return that content type and set the correct headers for the outbound data.
 
-| $contentType values | Content Type |
-| :--- | :--- |
-| empty or null / unset or 'json' | JSON |
-| 'html' | returns $response as html with headers set accordingly |
-| 'text' | returns $response as plain text. |
-| 'xml' | returns $response as xml with headers set accordingly |
+| $contentType values             | Content Type                                           |
+| ------------------------------- | ------------------------------------------------------ |
+| empty or null / unset or 'json' | JSON                                                   |
+| 'html'                          | returns $response as html with headers set accordingly |
+| 'text'                          | returns $response as plain text.                       |
+| 'xml'                           | returns $response as xml with headers set accordingly  |
 
-| Surfaced $vars | Description |
-| :--- | :--- |
-| empty or null / unset or 'json' | JSON |
-| $payload | the standard BetterForms Payload body object see [Payload Object](payloadobject.md) |
-| $data | returns $response as plain text. |
-| $body | if method supports a body, this contains the serialized body string |
-| $params | object containing header, method and query objects |
-| $mehod | The method verb name |
+| Surfaced $vars                  | Description                                                                         |
+| ------------------------------- | ----------------------------------------------------------------------------------- |
+| empty or null / unset or 'json' | JSON                                                                                |
+| $payload                        | the standard BetterForms Payload body object see [Payload Object](payloadobject.md) |
+| $data                           | returns $response as plain text.                                                    |
+| $body                           | if method supports a body, this contains the serialized body string                 |
+| $params                         | object containing header, method and query objects                                  |
+| $mehod                          | The method verb name                                                                |
 
 {% hint style="info" %}
-For versions &gt;0.9.35, API responses are able to send headers and status code, as shown below.
+For versions >0.9.35, API responses are able to send headers and status code, as shown below.
 {% endhint %}
 
-Set the `$headers` var to set the correct headers for the outbound data. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Glossary/Response_header).
+Set the `$headers` var to set the correct headers for the outbound data. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Glossary/Response\_header).
 
 #### Example
 
-```text
+```
 Set Variable [$headers ; Value: JSONElement ( "" ; ["Content-Type" ; "text/plain" ; JSONString]; ["Transfer-Encoding" ; "chunked" ; JSONString] )
 ```
 
-Set the `$statusCode` var to set the correct value for HTTP status code response. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status). 
+Set the `$statusCode` var to set the correct value for HTTP status code response. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).&#x20;
 
 #### Example
 
-```text
+```
 Set Variable [$statusCode ; Value: 418 ]
 ```
 
@@ -76,9 +76,9 @@ Set Variable [$statusCode ; Value: 418 ]
 
 In order to include **$headers** and **$statusCode** to your API response, there's a change that needs to be done to the API hook script on business file.
 
-* On your API callback hook script, find where **$$BF\_Payload** is set, as shown in the image below.
+* On your API callback hook script, find where **\$$BF\_Payload** is set, as shown in the image below.
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 * Modify its value so it maches the following code, where **data.headers** and **data.statusCode** are added to the existing JSONSetElement statement.
 
@@ -108,7 +108,7 @@ The image below shows a best practice for structuring endpoints and allows for e
 
 The _concern_ of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server.
 
-![](../../.gitbook/assets/screen-shot-2017-09-29-at-5.23.15-pm.png)
+![](<../../.gitbook/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png>)
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also.
 
@@ -151,4 +151,3 @@ Keep your script calls to a minimum run time if your script is expecting to have
 ### Use workflow processing queues when needed
 
 If you have a process that for example sends out several emails with a generated report the calling server will probably time out. Instead queue up the work flow and return just the parts of the data that can be prepared quickly.
-

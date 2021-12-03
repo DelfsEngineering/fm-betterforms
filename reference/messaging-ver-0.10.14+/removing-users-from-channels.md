@@ -11,13 +11,13 @@ description: >-
 The script is available in Helper file and is called **API - Leave Channel**. This script accepts an object with two keys **`users`** and **`channels`**.
 
 * `users`: it accepts a string with an **user ID** or an **array of users ID**
-* `channels`: it accepts an object with **name** and **mode \(optional\)** or an **array of objects**, with the same shape.
+* `channels`: it accepts an object with **name** and **mode (optional)** or an **array of objects**, with the same shape.
 
 #### Examples
 
 {% tabs %}
 {% tab title="Single User/Channel" %}
-```text
+```
 {
     "users": "USER_ID",
     "channels":
@@ -53,52 +53,36 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="post" host="https://yourdomain.com" path="/message/removeuser" %}
-{% api-method-summary %}
-API: Remove User from Channel
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://yourdomain.com" path="/message/removeuser" method="post" summary="API: Remove User from Channel" %}
+{% swagger-description %}
 You can use this method to remove one or more users from channels. You must pass the API key generated for your app to authenticate this reqeust.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="accept" type="string" required=true %}
+{% swagger-parameter in="header" name="accept" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 The API key generated for your BF app
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users" type="array" required=true %}
+{% swagger-parameter in="body" name="users" type="array" %}
 array of user IDs and channels to be removed for those users
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users\[0\].id" type="string" required=true %}
+{% swagger-parameter in="body" name="users[0].id" type="string" %}
 BF user id from the users table in the helper file
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="users\[0\].channels" type="array" required=true %}
+{% swagger-parameter in="body" name="users[0].channels" type="array" %}
 any array of channel objects
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="" %}
 ```
 {
     "users": [
@@ -107,10 +91,8 @@ any array of channel objects
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ## Leaving Anonymous Channels
 
@@ -120,7 +102,7 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Example:**
 
-```text
+```
 {
     "action": "channelLeaveAnon",
     "options": {
@@ -131,5 +113,6 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Learn more:**
 
-{% page-ref page="../actions-processor/actions\_overview/channelleaveanon.md" %}
-
+{% content-ref url="../actions-processor/actions_overview/channelleaveanon.md" %}
+[channelleaveanon.md](../actions-processor/actions\_overview/channelleaveanon.md)
+{% endcontent-ref %}

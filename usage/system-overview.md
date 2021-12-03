@@ -12,5 +12,4 @@ The health monitoring of FM BetterForms Cloud deployment can be checked but visi
 
 
 
-![](../.gitbook/assets/bf-overview.png)
-
+![](<../.gitbook/assets/BF Overview (1).png>)

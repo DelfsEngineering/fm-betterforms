@@ -1,6 +1,6 @@
 # Validation
 
-Client side validation is controlled by the `validator` key in all page elements. 
+Client side validation is controlled by the `validator` key in all page elements.&#x20;
 
 ```yaml
 // Example
@@ -15,7 +15,7 @@ Client side validation is controlled by the `validator` key in all page elements
 }
 ```
 
-Validation **does not** __run automatically. You must trigger client validation with the [validate action.](../../actions-processor/actions_overview/validate.md)
+Validation **does not** __ run automatically. You must trigger client validation with the [validate action.](../../actions-processor/actions\_overview/validate.md)
 
 ### **The validator key can be set to the following:**
 
@@ -29,7 +29,7 @@ When validating with **number**, **integer**, or **double**, make sure the `inpu
 
 **string** Checks that the value is a string - and that its length is within the fields min & max range, if these are defined in the schema.
 
-**array** Checks that the value is an array - and that the arrays length is within the fields min & max range, if these are defined in the schema. Expects the value to be a valid Javascript array literal - something like this: \["John", "Doe", "Jane"\] or \[1, 2, 3\].
+**array** Checks that the value is an array - and that the arrays length is within the fields min & max range, if these are defined in the schema. Expects the value to be a valid Javascript array literal - something like this: \["John", "Doe", "Jane"] or \[1, 2, 3].
 
 **date** Checks that the value is a valid Javascript Date - and that the date is between the fields min and max dates, if these are defined in the schema.
 
@@ -41,13 +41,12 @@ When validating with **number**, **integer**, or **double**, make sure the `inpu
 
 **creditCard** Checks that the value is a valid credit card number, using code from here.
 
-**alpha** Checks that the value is a letter, using this regex: /^\[a-zA-Z\]\*$/
+**alpha** Checks that the value is a letter, using this regex: /^\[a-zA-Z]\*$/
 
-**alphaNumeric** Checks that the value is a letter or a number, using this regex: /^\[a-zA-Z0-9\]\*$/
+**alphaNumeric** Checks that the value is a letter or a number, using this regex: /^\[a-zA-Z0-9]\*$/
 
 {% hint style="danger" %}
 This validation works great as a user interface element, but should not be trusted in FileMaker. **Anything that comes from the a client's web browser can be hacked**, so sensitive data should also be validated in your FileMaker scripts before committing to the database.
 {% endhint %}
 
 Source: [https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html](https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html)
-

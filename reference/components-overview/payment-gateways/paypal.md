@@ -4,22 +4,22 @@
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
-![](../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm.png)
+![](<../../../.gitbook/assets/Screen Shot 2017-11-10 at 1.12.57 PM.png>)
 
 When clicked, the payment workflow is initiated.
 
-| Key | Value\(s\) | Type | Description |
-| :--- | :--- | :--- | :--- |
-| type | paypal | string |  |
-| model |  | object | data model key name that will contain results of payment transactions |
-| amountKey |  | string | model key that holds the amount. |
-| onEvent\_actions | \[\] | array | If supplied, these actions will run when there is a paypal event. The default onUtilityHook will **not** execute. |
-| currency |  | string | model key that holds the amount |
-| invoiceNumber | 'USD' | string | currency for the payment |
-| dev | false | boolean | if true, use sandbox credentials |
-| itemsKey | 'myItems' | array | optional - model key that holds an array of items |
-| credentials | {} | object | credential object, |
-| style | {} | object | PayPal defined styling of the button |
+| Key              | Value(s)  | Type    | Description                                                                                                       |
+| ---------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| type             | paypal    | string  |                                                                                                                   |
+| model            |           | object  | data model key name that will contain results of payment transactions                                             |
+| amountKey        |           | string  | model key that holds the amount.                                                                                  |
+| onEvent\_actions | \[]       | array   | If supplied, these actions will run when there is a paypal event. The default onUtilityHook will **not** execute. |
+| currency         |           | string  | model key that holds the amount                                                                                   |
+| invoiceNumber    | 'USD'     | string  | currency for the payment                                                                                          |
+| dev              | false     | boolean | if true, use sandbox credentials                                                                                  |
+| itemsKey         | 'myItems' | array   | optional - model key that holds an array of items                                                                 |
+| credentials      | {}        | object  | credential object,                                                                                                |
+| style            | {}        | object  | PayPal defined styling of the button                                                                              |
 
 ### Reference
 
@@ -94,4 +94,3 @@ You can change the style of the button via a style object like so:
   }
 }
 ```
-

@@ -4,26 +4,26 @@ You can define a navigation object in the site settings. This allows you to crea
 
 ### Navigation Object
 
-The navigation is defined in the **Appearance &gt; Navigation** tab of your [site settings](./). It should be an array of objects, with each object defining a section of the navigation. Most apps may only have 1 navigation section.
+The navigation is defined in the **Appearance > Navigation** tab of your [site settings](./). It should be an array of objects, with each object defining a section of the navigation. Most apps may only have 1 navigation section.
 
-| Key | Type | Description |
-| ---: | :---: | :--- |
-| `sectionLabel` | _string_ | This label describes what the menu section context is. It is not selectable. |
-| `subs` | _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
+|            Key |   Type   | Description                                                                                                                                        |
+| -------------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sectionLabel` | _string_ | This label describes what the menu section context is. It is not selectable.                                                                       |
+|         `subs` |  _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
 
 ### Subs Array
 
 At the base of the navigation menu section, the subs array of objects should contain your list of menu items. Further `subs` keys beyond here will create sub-menus.
 
-| Key | Type | Description |
-| ---: | :---: | :--- |
-| `label` | _string_ | This label is the text area of each menu item |
-| `subs` | _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
-| `path` | _string_ | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. Alternatively, you can use a [path action](../actions-processor/actions_overview/path.md). |
-| `actions` | _array_ | If a navigation item has an `actions` key then it is considered an actions type. The actions\[ \] array can contain several actions that are chained together and passed to the [actions processor](../actions-processor/). |
-| `visible` | _boolean_ | _{optional}_ Controls if item is visible. This key will also accept a `visible_calc` function for conditional visibility, but the scope of the function is bound to the entire site instead of a specific page.  |
-|  |  |  |
-| `html` | _string_ | If key present, then the HTML value is inserted as the navigation menu item |
+|       Key |    Type   | Description                                                                                                                                                                                                                |
+| --------: | :-------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   `label` |  _string_ | This label is the text area of each menu item                                                                                                                                                                              |
+|    `subs` |  _array_  | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent.                                                                         |
+|    `path` |  _string_ | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. Alternatively, you can use a [path action](../actions-processor/actions\_overview/path.md).                             |
+| `actions` |  _array_  | If a navigation item has an `actions` key then it is considered an actions type. The actions\[ ] array can contain several actions that are chained together and passed to the [actions processor](../actions-processor/). |
+| `visible` | _boolean_ | _{optional}_ Controls if item is visible. This key will also accept a `visible_calc` function for conditional visibility, but the scope of the function is bound to the entire site instead of a specific page.            |
+|           |           |                                                                                                                                                                                                                            |
+|    `html` |  _string_ | If key present, then the HTML value is inserted as the navigation menu item                                                                                                                                                |
 
 ### Element Type Order
 
@@ -108,7 +108,7 @@ The navigation parser classifies the navigation elements in the following hierar
 {% endtab %}
 
 {% tab title="Conditionally Hide Nav Items" %}
-In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment &gt; App Model_ section of your site settings.
+In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment > App Model_ section of your site settings.
 {% endtab %}
 
 {% tab title="Sub-menus" %}
@@ -137,11 +137,9 @@ Using an HTML nav item, you can add badges
 ]
 ```
 
-![](../../.gitbook/assets/screen_shot_2020-05-21_at_11.18.58_am.png)
+![](<../../.gitbook/assets/screen\_shot\_2020-05-21\_at\_11.18.58\_am (1).png>)
 {% endtab %}
 {% endtabs %}
-
-
 
 
 
