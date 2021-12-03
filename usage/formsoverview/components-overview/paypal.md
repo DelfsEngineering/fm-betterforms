@@ -10,18 +10,17 @@ When clicked, the payment workflow is initiated.
 
 | Key | Value\(s\) | Type | Description |
 | :--- | :--- | :--- | :--- |
-| type | paypal | string |  |
+| type | 'paypal' | string |  |
 | model |  | object | data model key name that will contain results of payment transactions |
 | amountKey |  | string | model key that holds the amount. |
-| onEvent\_actions | \[\] | array | If supplied, these actions will run when there is a paypal event. The default onUtilityHook will **not** execute. |
-| currency |  | string | model key that holds the amount |
-| invoiceNumber | 'USD' | string | currency for the payment |
-| dev | false | boolean | if true, use sandbox credentials |
+| currency | 'USD' | string | curency for the payment |
+| invoiceNumber |  | string | invoice or tracking ID number. |
+| env | 'sandbox' or 'production' | string | set this key to "sandbox" while testing, delete it or change to production when done testing |
 | itemsKey | 'myItems' | array | optional - model key that holds an array of items |
 | credentials | {} | object | credential object, |
 | style | {} | object | PayPal defined styling of the button |
 
-## Reference
+### Reference
 
 ```javascript
 // sample credential object
@@ -31,7 +30,7 @@ credentials: {
 }
 ```
 
-## Specifying Items
+### Specifying Items
 
 Optionally, according to the PayPal Payments API documents, you can list out any items along with your transaction.
 
@@ -57,7 +56,7 @@ myItems: [
   ]
 ```
 
-## Button Style
+### Button Style
 
 You can change the style of the button via a style object like so:
 
@@ -70,7 +69,7 @@ You can change the style of the button via a style object like so:
 }
 ```
 
-## Complete Example Object
+### Complete Example Object
 
 ```yaml
 {
@@ -80,7 +79,7 @@ You can change the style of the button via a style object like so:
   "type": "paypal",
   "currency": "CAD",
   "locale": "ca",
-  "dev": true,
+  "env": "sandbox",
   "amount": "1.00",
   "credentials": {
     "sandbox": "AfGtki3XCbYBRxGWWY6YQlqRio82v5Jp6oPC7FJ9_0BLOlT3Z5KXLgPVmVGoCtZQTDuaYhrCM7ez3P9g",
