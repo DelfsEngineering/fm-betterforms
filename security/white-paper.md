@@ -1,4 +1,4 @@
-# White Paper
+# Security White Paper
 
 ## PRELIMINARY
 
@@ -13,7 +13,7 @@
 
 ## Browser \(Client\)
 
-TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated subdomain certificate with Lets Encrypt, a free certificate service.
+TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Lets Encrypt, a free certificate service.
 
 Authenticated and Un-Authenticated PagesBF allows web pages \(form /layout\) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the BF editor.
 
@@ -21,7 +21,9 @@ After a user is logged into a page that requires authentication, their credentia
 
 A JWT \(JSON Web Token\) token is generated using industry approved encryption. JWT’s are immutable and assure the client is who they claim to be.
 
-## Web Servers
+It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](https://app.gitbook.com/@delfs-engineering/s/betterforms/~/drafts/-MOWYknypRqP7X-1Pxe7/usage/design-patterns-and-debugging/optimization)
+
+## Web Servers 
 
 BetterForms uses immutable server-less deployments for the web facing servers. Once these servers are deployed they can not be modified, or logged into.
 
@@ -76,6 +78,5 @@ Incoming traffic from the BF server only enters the Helper File. The helper file
 * re-login when calling legacy file plug scripts
 * change privileges in legacy file to not allow XML
 * Have legacy file not allow any layouts with XML access
-
-Only allow CWP inbound calls to come from better forms Web server IP via an API Proxy.
+* Only allow CWP inbound calls to come from better forms Web server IP via an API Proxy.
 

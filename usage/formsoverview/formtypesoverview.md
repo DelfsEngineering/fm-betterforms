@@ -77,7 +77,7 @@ You can also take advantage of the `jsonPath` library and quickly search arrays 
 
 Documentation : [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
 
-### \#\# Bootstrap Columns
+### Bootstrap Columns
 
 Add custom `CSS` classes to `styleClasses`
 
@@ -93,7 +93,7 @@ omit periods
 
 ## Sample Wizard JSON
 
-{% page-ref page="validationoverview/" %}
+{% page-ref page="../../reference/form-settings/validationoverview/" %}
 
 ```yaml
 {
