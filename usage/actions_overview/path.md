@@ -46,9 +46,30 @@
         <p>&quot;/form/:id - a form with id</p>
       </th>
     </tr>
-  </thead>
-  <tbody></tbody>
+
+    <tr>
+      <td style="text-align:left">options.url</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">{ optional } will open page url in a new tab</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">options.sameWindow</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">{ optional } If true, will open url replacing the BetteForms app (same
+        tab)</td>
+    </tr>
+  </tbody>
 </table>
+
+```yaml
+// example path action object
+{
+"action" :"path",
+  "options" :
+       {
+           "path": "/invoiceList"
+       }
+}
 
 | options.url |  | { optional } will open page url in a new tab |
 | :--- | :--- | :--- |
