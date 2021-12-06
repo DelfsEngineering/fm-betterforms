@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Features Summary](introduction.md)
+* [Features Summary](features-summary.md)
 
 ## Getting Started
 
@@ -12,7 +12,7 @@
   * [3. Introduction to Hooks](getting-started/integration/3.-introduction-to-hooks.md)
   * [4. Create your first Site](getting-started/integration/4.-create-a-site.md)
   * [5. Create your first Page](getting-started/integration/5.-create-a-form.md)
-  * [6. Configure your FileMaker File\(s\)](getting-started/integration/3.-copy-custom-functions-and-scripts.md)
+  * [6. Configure your FileMaker File(s)](getting-started/integration/3.-copy-custom-functions-and-scripts.md)
   * [7. Run your first Hook](getting-started/integration/6.-run-your-first-hook.md)
   * [Next Steps](getting-started/integration/next-steps.md)
 * [Common Customizations](getting-started/common-customizations/README.md)
@@ -43,7 +43,7 @@
     * [Data Table](reference/components-overview/common/tables2.md)
     * [HTML](reference/components-overview/common/html.md)
   * [Grouping Elements](reference/components-overview/grouping-elements/README.md)
-    * [Tabs](reference/components-overview/grouping-elements/tabs_form.md)
+    * [Tabs](reference/components-overview/grouping-elements/tabs\_form.md)
     * [panel](reference/components-overview/grouping-elements/untitled-1.md)
     * [accordion](reference/components-overview/grouping-elements/accordion.md)
     * [listrows](reference/components-overview/grouping-elements/listrows.md)
@@ -62,33 +62,33 @@
     * [Stripe](reference/components-overview/payment-gateways/stripe.md)
   * [Adding Custom Page Elements](reference/components-overview/3rd-party-elements.md)
 * [Actions Processor](reference/actions-processor/README.md)
-  * [Named Actions](reference/actions-processor/actions_named.md)
-  * [Actions](reference/actions-processor/actions_overview/README.md)
-    * [runUtilityHook](reference/actions-processor/actions_overview/runutilityhook.md)
-    * [path](reference/actions-processor/actions_overview/path.md)
-    * [debounce](reference/actions-processor/actions_overview/debounce.md)
-    * [throttle](reference/actions-processor/actions_overview/throttle.md)
-    * [showAlert](reference/actions-processor/actions_overview/showalert.md)
-    * [showModal / hideModal](reference/actions-processor/actions_overview/showmodal.md)
-    * [function](reference/actions-processor/actions_overview/function-1.md)
-    * [clipboard](reference/actions-processor/actions_overview/clipboard.md)
-    * [cookie](reference/actions-processor/actions_overview/cookie.md)
-    * [setFocus](reference/actions-processor/actions_overview/setfocus.md)
-    * [wait](reference/actions-processor/actions_overview/wait.md)
-    * [emit](reference/actions-processor/actions_overview/emit.md)
-    * [validate](reference/actions-processor/actions_overview/validate.md)
-    * [channelJoinAnon](reference/actions-processor/actions_overview/channeljoinanonymous.md)
-    * [channelLeaveAnon](reference/actions-processor/actions_overview/channelleaveanon.md)
-    * [messageSend](reference/actions-processor/actions_overview/messagesend.md)
-    * [messageSendAnonChannel](reference/actions-processor/actions_overview/messagesendanonchannel.md)
+  * [Named Actions](reference/actions-processor/actions\_named.md)
+  * [Actions](reference/actions-processor/actions\_overview/README.md)
+    * [runUtilityHook](reference/actions-processor/actions\_overview/runutilityhook.md)
+    * [path](reference/actions-processor/actions\_overview/path.md)
+    * [debounce](reference/actions-processor/actions\_overview/debounce.md)
+    * [throttle](reference/actions-processor/actions\_overview/throttle.md)
+    * [showAlert](reference/actions-processor/actions\_overview/showalert.md)
+    * [showModal / hideModal](reference/actions-processor/actions\_overview/showmodal.md)
+    * [function](reference/actions-processor/actions\_overview/function-1.md)
+    * [clipboard](reference/actions-processor/actions\_overview/clipboard.md)
+    * [cookie](reference/actions-processor/actions\_overview/cookie.md)
+    * [setFocus](reference/actions-processor/actions\_overview/setfocus.md)
+    * [wait](reference/actions-processor/actions\_overview/wait.md)
+    * [emit](reference/actions-processor/actions\_overview/emit.md)
+    * [validate](reference/actions-processor/actions\_overview/validate.md)
+    * [channelJoinAnon](reference/actions-processor/actions\_overview/channeljoinanonymous.md)
+    * [channelLeaveAnon](reference/actions-processor/actions\_overview/channelleaveanon.md)
+    * [messageSend](reference/actions-processor/actions\_overview/messagesend.md)
+    * [messageSendAnonChannel](reference/actions-processor/actions\_overview/messagesendanonchannel.md)
   * [Authentication Actions](reference/actions-processor/authentication-actions.md)
 * [Script Hooks](reference/hooksoverview/README.md)
   * [Globals Variables](reference/hooksoverview/filemaker-globals/README.md)
-    * [$$BF\_Model](reference/hooksoverview/filemaker-globals/usdusdbf_model.md)
-    * [$$BF\_App](reference/hooksoverview/filemaker-globals/usdusdbf_app.md)
-    * [$$BF\_State](reference/hooksoverview/filemaker-globals/usdusdbf_state.md)
+    * [\$$BF\_Model](reference/hooksoverview/filemaker-globals/usdusdbf\_model.md)
+    * [\$$BF\_App](reference/hooksoverview/filemaker-globals/usdusdbf\_app.md)
+    * [\$$BF\_State](reference/hooksoverview/filemaker-globals/usdusdbf\_state.md)
   * [Keeping Keys Private](reference/hooksoverview/payloadobject.md)
-  * [Reducing Payload Size](reference/hooksoverview/env_vars.md)
+  * [Reducing Payload Size](reference/hooksoverview/env\_vars.md)
   * [API Callback Endpoint](reference/hooksoverview/callback.md)
   * [Common Hooks](reference/hooksoverview/commonoverview.md)
   * [Scoped Hooks](reference/hooksoverview/hooks.md)
@@ -106,7 +106,7 @@
   * [Get connected users](reference/messaging-ver-0.10.14+/get-all-users-connected.md)
   * [Get active channels](reference/messaging-ver-0.10.14+/get-active-channels.md)
 
-## Usage Tips <a id="usage"></a>
+## Usage Tips <a href="#usage" id="usage"></a>
 
 * [Troubleshooting](usage/troubleshooting/README.md)
   * [Debugging](usage/troubleshooting/debugging.md)
@@ -134,11 +134,9 @@
   * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
   * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
   * [Debugging](usage/design-patterns-and-debugging/debugging.md)
-
 * [Features Summary](usage/introduction.md)
 * [Getting Started](usage/getting-started.md)
 * [Installation](usage/installation.md)
-
 
 ## Other Services
 
@@ -151,7 +149,6 @@
 * [Firewalls](security/security.md)
 * [Technology Stack](security/technology-stack.md)
 
----
+***
 
 * [Compatibility](compatibility.md)
-
