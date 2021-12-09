@@ -31,7 +31,6 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
         <p>Helper File &gt;Ver 0.1.2</p>
       </th>
     </tr>
-
     <tr>
       <td style="text-align:left"></td>
       <td style="text-align:left"></td>

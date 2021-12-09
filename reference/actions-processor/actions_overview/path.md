@@ -46,7 +46,6 @@
         <p>&quot;/form/:id - a form with id</p>
       </th>
     </tr>
-
     <tr>
       <td style="text-align:left">options.url</td>
       <td style="text-align:left"></td>
