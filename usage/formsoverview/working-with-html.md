@@ -1,6 +1,6 @@
 # HTML & VueJS
 
-The BetterForms framework allows you to dig deep into the low levels of HTML code and still keep the benefits of a framework and reactivity. Many components have html compatible keys or accept slots that allow HTML to be rendered. BetterForms uses [VueJS](https://vuejs.org) under the hood to keep all the elements working together.&#x20;
+The BetterForms framework allows you to dig deep into the low levels of HTML code and still keep the benefits of a framework and reactivity. Many components have html compatible keys or accept slots that allow HTML to be rendered. BetterForms uses [VueJS](https://vuejs.org) under the hood to keep all the elements working together.
 
 {% file src="../../.gitbook/assets/Vue-Essentials-Cheat-Sheet.pdf" %}
 
@@ -12,12 +12,12 @@ You can harness the full power of VueJS the html rendering engine inside of Bett
 
 **Here's just a few things you can do with VueJS Syntax:**
 
-* Render merged data from the `data model`&#x20;
+* Render merged data from the `data model`
 * Build tables and other repeating data. (see example below)
 * Execute all actions and pass data to those actions.
 
 {% hint style="info" %}
-### How do I know when to use `{{curly-brackets}}` or not?
+#### How do I know when to use `{{curly-brackets}}` or not?
 
 The {{}} syntax is _only_ for injecting JavaScript into **HTML** code. Everything that you stick inside of of the curly brackets is actually just JavaScript. Vue is the glue that allows you combine HTML and JS and dynamically insert data (as calculated by the JS) into the HTML of your page.
 

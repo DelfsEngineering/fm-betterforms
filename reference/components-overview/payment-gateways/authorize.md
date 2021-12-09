@@ -2,10 +2,10 @@
 
 `authorize` Allows you to securely process payments via Authorize.net This component only renders the button and hands the secure transaction via Authorize.net's accept.js module. The workflow for this component requires a bit more work than the Stripe or PayPal payment gateways. Unlike those elements, `authorize` requires server side calls the the Authorize.net API to complete the transaction.
 
-**Version:** &gt;0.8.16
+**Version:** >0.8.16
 
 {% hint style="danger" %}
-## This component documentation is work in progress
+### This component documentation is work in progress
 {% endhint %}
 
 See [https://developer.authorize.net/api/reference/features/acceptjs.html](https://developer.authorize.net/api/reference/features/acceptjs.html) for workflow reference and deeper understanding of this component.
@@ -16,12 +16,12 @@ When the rendered button is clicked, a modal window is opened that will contain 
 
 You will need to obtain server sets of credentials from the authorize.net dashboard. See screen below for where to obtain the public `apiLoginID` and `clientID` keys.
 
-| Key | Value\(s\) | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `type` | authorize | string |  |
-| `model` |  | object | data model key name that will contain results of payment transactions returned from Authorize.net |
-| `credentials` | {} | object | credential object, |
-| `style` | {} | object | PayPal defined styling of the button |
+| Key           | Value(s)  | Type   | Description                                                                                       |
+| ------------- | --------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `type`        | authorize | string |                                                                                                   |
+| `model`       |           | object | data model key name that will contain results of payment transactions returned from Authorize.net |
+| `credentials` | {}        | object | credential object,                                                                                |
+| `style`       | {}        | object | PayPal defined styling of the button                                                              |
 
 ```javascript
 // Sample schema object
@@ -47,7 +47,7 @@ You will need to obtain server sets of credentials from the authorize.net dashbo
 
 After the communication between the BetterForms browser app and Authorize.net api, a utility hook is automatically generated regardless if the card acquisition was successful. This is located in the hookPackage and also includes the elements schema.
 
-```text
+```
 // Partial utility hook response 
 { 
 ... // rest of payload ...
@@ -97,4 +97,3 @@ After the communication between the BetterForms browser app and Authorize.net ap
 }
 ... // rest of payload ...
 ```
-
