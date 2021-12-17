@@ -138,10 +138,6 @@
 * [Getting Started](usage/getting-started.md)
 * [Installation](usage/installation.md)
 
-## Other Services
-
-* [Authentication](other-services/authentication.md)
-
 ## Security
 
 * [Authentication](security/authentication.md)
