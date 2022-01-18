@@ -113,10 +113,8 @@ For example, if we were to add  Google to our app:
 //Button in Page Schema
 {
   "actions": [{
-     {
        "action": "namedAction",
        "name": "loginGoogle"
-     }
   }],
   "buttonClasses": "btn btn-info",
   "styleClasses": "col-md-2",
