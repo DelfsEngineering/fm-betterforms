@@ -1,6 +1,9 @@
 {
     "plugins": [ "theme-api" , "search", "hints"],
     "pluginsConfig": {
+        "lunr": {
+            "ignoreSpecialCharacters": true
+        },
         "theme-api": {
             "theme":"dark",
             "split": true,
