@@ -61,7 +61,7 @@ No subdomain value is needed for Google, and Auth0 domain doesn't always have a 
 
 ### Helper File
 
-A new field `oauthid` needs to be created in the `Users` table.
+A new field `oauthId` needs to be created in the `Users` table.
 
 ### Before Registration Hook - Business File
 
