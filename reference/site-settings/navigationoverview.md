@@ -111,10 +111,6 @@ The navigation parser classifies the navigation elements in the following hierar
 In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment > App Model_ section of your site settings.
 {% endtab %}
 
-{% tab title="Sub-menus" %}
-
-{% endtab %}
-
 {% tab title="HTML" %}
 Using an HTML nav item, you can add badges
 
@@ -137,11 +133,6 @@ Using an HTML nav item, you can add badges
 ]
 ```
 
-![](<../../.gitbook/assets/screen\_shot\_2020-05-21\_at\_11.18.58\_am (1).png>)
+![](../../.gitbook/assets/screen\_shot\_2020-05-21\_at\_11.18.58\_am.png)
 {% endtab %}
 {% endtabs %}
-
-
-
-
-

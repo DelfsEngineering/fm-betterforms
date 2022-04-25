@@ -8,9 +8,9 @@ Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/opt
 
 ion.rangeSlider.js: [http://ionden.com/a/plugins/ion.rangeSlider/index.html](http://ionden.com/a/plugins/ion.rangeSlider/index.html)
 
-![](<../../../.gitbook/assets/2sKnsRPI9D (1).gif>)
+![](../../../.gitbook/assets/2sKnsRPI9D.gif)
 
-Add the CDN references below into the DOM Header Insertions section of your site.&#x20;
+Add the CDN references below into the DOM Header Insertions section of your site.
 
 ```
 <!--rangeSlider CSS -->

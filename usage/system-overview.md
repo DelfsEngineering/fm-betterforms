@@ -6,8 +6,4 @@
 
 The health monitoring of FM BetterForms Cloud deployment can be checked but visiting [https://bfstatus.delfsengineering.ca](https://bfstatus.delfsengineering.ca)
 
-
-
-
-
-![](<../.gitbook/assets/BF Overview (1).png>)
+![](<../.gitbook/assets/BF Overview.png>)

@@ -13,34 +13,24 @@ A tabs element can be constructed in either **Data Mode** or **Form Mode**. **Fo
 
 Otherwise, all other parts of this page apply to both modes.
 
-
-
-
-
-
-
 Additional Keys
-
-
 
 |                       | Type          | Description                                                                   |
 | --------------------- | ------------- | ----------------------------------------------------------------------------- |
 | onTabClicked\_actions | actions array | this key accepts an array of actions that are executed when a tab is clicked. |
 
-
-
 Vertical Tabs give you the ability to contain repeating records (tab) of data and allow the user to add additional tabs.
 
 v-tab's can contain full form schema. This means you can build forms within forms!
 
-![](<../../../.gitbook/assets/Screen Shot 2017-09-06 at 11.39.51 PM.png>)
+![](../../../.gitbook/assets/screen-shot-2017-09-06-at-11.39.51-pm.png)
 
 | Key           | Type   | Description                                                                                                                |
 | ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
 | tabLabelModel | string | Point this to the data model.field. It will be used to display on the tab.                                                 |
 | min           | number | {optional} The minimum number of tabs the user is allowed to create. The delete icon will had when this number is reached. |
 | max           | number | {optional} The maximum number of tabs the user is allowed to create. The add icons will hide when this number is reached.  |
-| model         | array  | the data model must be initialized as an array. '_**\[  ]'**_                                                              |
+| model         | array  | the data model must be initialized as an array. '_**\[ ]'**_                                                               |
 | schema        | object | the schema object follows the same construct as schema of its parent. It only needs to contain a _**fields**_ array.       |
 
 ### Notes

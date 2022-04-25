@@ -1,6 +1,6 @@
 # Introduction
 
-## ![Delfs' Engineering Logo](.gitbook/assets/1486254174620.png)
+## ![Delfs' Engineering Logo](assets/1486254174620.png)
 
 ## FM BetterForms
 

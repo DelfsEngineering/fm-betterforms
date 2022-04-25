@@ -35,7 +35,7 @@ This class is defined in the CSS section of the Site / Appearance as follows:
 
 To target specific forms in your app, you can add a `styleClasses` key. This will allow you to still keep your CSS in a single location and theme pages separately.
 
-![Only this Dashboard page with have the \`dash-red\` class applied.](<../../.gitbook/assets/Screen Shot 2018-07-06 at 1.11.03 PM.png>)
+![Only this Dashboard page with have the \`dash-red\` class applied.](../../.gitbook/assets/screen-shot-2018-07-06-at-1.11.03-pm.png)
 
 Resulting is something similar to the following:
 

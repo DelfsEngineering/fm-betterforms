@@ -4,7 +4,7 @@
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
-![](<../../../.gitbook/assets/Screen Shot 2017-11-10 at 1.12.57 PM.png>)
+![](../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm.png)
 
 When clicked, the payment workflow is initiated.
 

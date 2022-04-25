@@ -63,6 +63,10 @@ No subdomain value is needed for Google, and Auth0 domain doesn't always have a 
 
 A new field `oauthId` needs to be created in the `Users` table.
 
+{% hint style="info" %}
+Remeber to add the `ouahtId field to the layout.`
+{% endhint %}
+
 ### Before Registration Hook - Business File
 
 A before registration hook script can be added to the business file if you want  to control whether a user is allowed to register or not.

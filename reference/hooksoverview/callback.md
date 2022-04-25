@@ -64,7 +64,7 @@ Set the `$headers` var to set the correct headers for the outbound data. For fur
 Set Variable [$headers ; Value: JSONElement ( "" ; ["Content-Type" ; "text/plain" ; JSONString]; ["Transfer-Encoding" ; "chunked" ; JSONString] )
 ```
 
-Set the `$statusCode` var to set the correct value for HTTP status code response. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).&#x20;
+Set the `$statusCode` var to set the correct value for HTTP status code response. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 #### Example
 
@@ -108,7 +108,7 @@ The image below shows a best practice for structuring endpoints and allows for e
 
 The _concern_ of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server.
 
-![](<../../.gitbook/assets/Screen Shot 2017-09-29 at 5.23.15 PM.png>)
+![](../../.gitbook/assets/screen-shot-2017-09-29-at-5.23.15-pm.png)
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also.
 
