@@ -7,7 +7,7 @@ description: >-
 
 # Compatibility
 
-```text
+```
 {
   "android": "4.2",
   "chrome": "49",
@@ -19,10 +19,6 @@ description: >-
   "safari": "11.1",
   "samsung": "7.2"
 }
-
 ```
 
 {% embed url="https://browser-update.org" %}
-
-
-

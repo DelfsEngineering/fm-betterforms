@@ -13,7 +13,7 @@
 
 ## Browser (Client)
 
-TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com) domains. Custom domains will also get a generated domain or subdomain certificate with Lets Encrypt, a free certificate service.
+TLS Certificate are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Lets Encrypt, a free certificate service.
 
 Authenticated and Un-Authenticated PagesBF allows web pages (form /layout) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the BF editor.
 
