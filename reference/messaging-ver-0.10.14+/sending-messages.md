@@ -16,7 +16,7 @@ The BF action **messageSend** can be used to send a message to channel or channe
 
 #### Example
 
-* options.channel
+* options.channels
 
 ```yaml
 // This will send a showAlert action
@@ -55,11 +55,11 @@ The BF action **messageSend** can be used to send a message to channel or channe
 
 ### Anonymous channel
 
-The BF action **messageSendAnonChannel** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
+The BF action **messageSendAnonChannel** can be used to send a message to channel or channels. It requires a **channels** key to be set under options.
 
 #### Example
 
-* options.channel
+* options.channels
 
 ```yaml
 // This will send a showAlert action
@@ -143,35 +143,35 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="accept" type="string" %}
+{% swagger-parameter in="header" name="accept" type="string" required="false" %}
 application/json
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="content-type" type="string" %}
+{% swagger-parameter in="header" name="content-type" type="string" required="false" %}
 application/json
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="apiKey" type="string" %}
+{% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
 the API key for the corresponding app
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="channels" type="array" %}
+{% swagger-parameter in="body" name="channels" type="array" required="false" %}
 array of channel names
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="message" type="string" %}
+{% swagger-parameter in="body" name="message" type="string" required="false" %}
 JSON object to be sent
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="message.actions" type="array" %}
+{% swagger-parameter in="body" name="message.actions" type="array" required="false" %}
 JSON for an array of BF action objects
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="message.model" type="object" %}
+{% swagger-parameter in="body" name="message.model" type="object" required="false" %}
 JSON object with data to be merged to model data
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="message.app" type="array" %}
+{% swagger-parameter in="body" name="message.app" type="array" required="false" %}
 JSON object with data to be merged to app model data
 {% endswagger-parameter %}
 
