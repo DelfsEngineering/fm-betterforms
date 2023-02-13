@@ -42,50 +42,33 @@ Channels can be set to three different modes: **ignore**, **listen** or **receiv
 You will need to update your helper file to the latest version to support the new channels API.
 {% endhint %}
 
-The  **`API - Join Channel`** script  accepts an object with two keys **users** and **channels**.
+The **`API - Join Channel`** script accepts an object with two keys **users** and **channels**.
 
 * `users`: it accepts a string with a **user ID** _or_ an **array of user IDs**
 * `channels`: it accepts an object with **name** and **mode** _or_ an **array of objects**, with the same shape.
 
 {% hint style="success" %}
-**TIP**:  The user `id` is the id of the user in the helper file, not your business file.
+**TIP**: The user `id` is the id of the user in the helper file, not your business file.
 {% endhint %}
 
 #### Example Script Parameters
 
 {% tabs %}
-{% tab title="Single User/Channel" %}
+{% tab title="Data shape" %}
 ```yaml
 {
-    "users": "USER_ID",
-    "channels":
-    {
-        "name": "channel1",
-        "mode": "ignore"
-    }
-}
-```
-{% endtab %}
-
-{% tab title="Multiple Users/Channels" %}
-```yaml
-{
-    "users":
-    [
-        "USER_ID_1",
-        "USER_ID_2"
-    ],
-    "channels":
-    [
+    "users": [
         {
-            "name": "channel1",
-            "mode": "ignore"
-        },
-        {
-            "name": "channel2",
-            "mode": "receive"
+            "id": "USER_ID",
+            "channels": [
+                {
+                    "name": "channelName",
+                    "mode": "ignore"
+                }
+            ]
         }
-    ]
+    ],
+    "apiKey": "BF_APP_API-KEY"
 }
 ```
 {% endtab %}
@@ -96,27 +79,27 @@ The  **`API - Join Channel`** script  accepts an object with two keys **users** 
 You can use this method to join users to one or more channels. This is an authenticated request using the API key for the BetterForms network.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="content-type" type="string" %}
+{% swagger-parameter in="header" name="content-type" type="string" required="false" %}
 application/json
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="accept" type="string" %}
+{% swagger-parameter in="header" name="accept" type="string" required="false" %}
 application/json
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="apiKey" type="string" %}
+{% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
 BetterForms network API key
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="users" type="string" %}
+{% swagger-parameter in="body" name="users" type="string" required="false" %}
 array of user IDs and channels to join those users to
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="users[0].id" type="string" %}
+{% swagger-parameter in="body" name="users[0].id" type="string" required="false" %}
 BF user id from helper file
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="users[0].channels" type="array" %}
+{% swagger-parameter in="body" name="users[0].channels" type="array" required="false" %}
 an array of channel objects
 {% endswagger-parameter %}
 
@@ -154,4 +137,3 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 {% content-ref url="../actions-processor/actions_overview/channeljoinanonymous.md" %}
 [channeljoinanonymous.md](../actions-processor/actions\_overview/channeljoinanonymous.md)
 {% endcontent-ref %}
-
