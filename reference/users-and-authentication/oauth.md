@@ -17,7 +17,7 @@ In order to use OAuth make sure you have the following information from the exte
 
 In addition, apps need to be:
 
-* running version 0.10.48+;
+* running version 2.0.6+;
 * migrated to environments.
 
 ## Setting up
@@ -71,7 +71,7 @@ Remeber to add the `ouahtId field to the layout.`
 
 A before registration hook script can be added to the business file if you want  to control whether a user is allowed to register or not.
 
-The script needs to be called `onBeforeRegistration`, and by setting `createUser` to true will allow users to register to your app via OAuth.
+The script needs to be called `onBeforeRegistration`, and by setting `createUser` to true on `$$BF_Model` will allow users to register to your app via OAuth.
 
 ![](<../../.gitbook/assets/image (5).png>)
 
