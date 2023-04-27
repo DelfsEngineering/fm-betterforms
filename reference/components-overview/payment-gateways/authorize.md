@@ -39,7 +39,11 @@ You will need to obtain server sets of credentials from the authorize.net dashbo
   "buttonClasses": "btn btn-lg btn-primary",
   "buttonText": "Pay Now",
   "clientKey": "7amDN97QG6xkHGB4xdD2yd3BYvdZ49HFjp7j7477U282BYuwuheDMvk4zE2R44b8",
-  "sandBox": true
+  "sandBox": true,
+  "onResponse_actions": [{
+      "action": "function",
+      "function": "console.log('@onResponse: ', action.options.args[0])"
+  }]
 }
 ```
 
