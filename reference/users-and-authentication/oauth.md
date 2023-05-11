@@ -73,7 +73,11 @@ A before registration hook script can be added to the business file if you want 
 
 The script needs to be called `onBeforeRegistration`, and by setting `createUser` to true on `$$BF_Model` will allow users to register to your app via OAuth.
 
-![](<../../.gitbook/assets/image (5).png>)
+<div align="center">
+
+<img src="../../.gitbook/assets/image (5).png" alt="">
+
+</div>
 
 {% hint style="info" %}
 If `onBeforeRegistration` hook script is not created and/or `createUser` not set to true, users will not be allowed to register via OAuth.
@@ -89,10 +93,7 @@ In your login page, add the following actions to your onFormLoad:
 
 ```
 "onFormLoad": [{
-            "action": "function",
-            "function": "var currentRoute = vueapp.$router.currentRoute.fullPath;\nif (currentRoute.includes('error')) {\n    BF.actionsClear;\n    BF.namedAction('errorMessage', {'message': vueapp.$router.currentRoute.query.errorMessage});\n}"
-        }, {
-            "action": "oauthLoginHook"
+            "action": "authLoginOauth"
         }, {
             "action": "setFocus",
             "options": {
@@ -100,6 +101,12 @@ In your login page, add the following actions to your onFormLoad:
             }
         }]
 ```
+
+If the external provider or internal code returns an error, the error will return as a query parameter `errorMessage` , be added to default `model.authMessage` key, as well as a console log message.
+
+{% hint style="info" %}
+Note for early OAuth users: the OAuth action used to be `oauthLoginHook` , and as shown above, it changed to `authLoginOauth`. However, both actions will be supported at the moment.
+{% endhint %}
 
 #### Button or Link
 
