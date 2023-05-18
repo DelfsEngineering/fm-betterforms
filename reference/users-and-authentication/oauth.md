@@ -17,7 +17,7 @@ In order to use OAuth make sure you have the following information from the exte
 
 In addition, apps need to be:
 
-* running version 2.0.6+;
+* running version 2.0.11+;
 * migrated to environments.
 
 ## Setting up
