@@ -21,7 +21,7 @@ Here are the links for each provider documentation: [Google](https://support.goo
 
 
 
-In addition, apps need to be running version BetterForms 2.0.11+ (bf-staging, as of May 2023).
+In addition, apps need to be running version BetterForms **2.0.12+** (bf-staging, as of May 2023).
 
 ## Setting up
 
