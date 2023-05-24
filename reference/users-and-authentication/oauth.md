@@ -15,10 +15,13 @@ In order to use OAuth make sure you have the following information from the exte
 * Secret Key;
 * Subdomain.
 
-In addition, apps need to be:
+{% hint style="info" %}
+Here are the links for each provider documentation: [Google](https://support.google.com/cloud/answer/6158849?hl=en), [Auth0](https://auth0.com/docs/get-started/auth0-overview/create-applications/regular-web-apps) and [Okta](https://developer.okta.com/docs/guides/).
+{% endhint %}
 
-* running version 2.0.11+;
-* migrated to environments.
+
+
+In addition, apps need to be running version BetterForms 2.0.11+ (bf-staging, as of May 2023).
 
 ## Setting up
 
@@ -64,7 +67,7 @@ No subdomain value is needed for Google, and Auth0 domain doesn't always have a 
 A new field `oauthId` needs to be created in the `Users` table.
 
 {% hint style="info" %}
-Remeber to add the `ouahtId field to the layout.`
+Remember to add the `ouahtId field to the layout.`
 {% endhint %}
 
 ### Before Registration Hook - Business File
