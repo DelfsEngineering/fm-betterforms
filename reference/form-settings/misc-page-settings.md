@@ -4,10 +4,11 @@
 
 Pages can have various types that define the initial behavior and appearance of the page. The form type is set with the `formtype` key in the Misc tab of the page editor.
 
-The 3 form types currently supported are:
+The 4 form types currently supported are:
 
 * **formblank** - default style for new pages
 * **formwidget** - removes the white background color of a page. Looks great with [panel](../components-overview/grouping-elements/untitled-1.md) elements to create the look of a widget in the middle of your page
+* **formwizard** - enables various hooks to support pages using the wizard form schema&#x20;
 * **formplain** - legacy version of formblank
 
 ## isForm
