@@ -62,7 +62,7 @@
     * [Stripe](reference/components-overview/payment-gateways/stripe.md)
   * [Adding Custom Page Elements](reference/components-overview/3rd-party-elements.md)
 * [Actions Processor](reference/actions-processor/README.md)
-  * [Named Actions](reference/actions-processor/actions\_named.md)
+  * [Named Actions (Action Scripts)](reference/actions-processor/actions\_named.md)
   * [Actions](reference/actions-processor/actions\_overview/README.md)
     * [runUtilityHook](reference/actions-processor/actions\_overview/runutilityhook.md)
     * [path](reference/actions-processor/actions\_overview/path.md)
