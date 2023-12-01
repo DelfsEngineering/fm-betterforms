@@ -86,6 +86,22 @@ The script needs to be called `onBeforeRegistration`, and by setting `createUser
 If `onBeforeRegistration` hook script is not created and/or `createUser` not set to true, users will not be allowed to register via OAuth.
 {% endhint %}
 
+#### Updating your Common hooks to support \`onBeforeRegistration\`
+
+{% hint style="danger" %}
+if your integration is older, you may not have a `onBeforeRegistration` hook installed.
+{% endhint %}
+
+![](<../../.gitbook/assets/image (6).png>)
+
+Update the BF Common Dispatch Script
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>add an onBefore Registration script as shown</p></figcaption></figure>
+
+
+
 Users registered via OAuth workflow are automatically verified, so there’s no need to send verification emails.
 
 ### New Callback Landing Page
