@@ -6,10 +6,11 @@ You can define a navigation object in the site settings. This allows you to crea
 
 The navigation is defined in the **Appearance > Navigation** tab of your [site settings](./). It should be an array of objects, with each object defining a section of the navigation. Most apps may only have 1 navigation section.
 
-|            Key |   Type   | Description                                                                                                                                        |
-| -------------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sectionLabel` | _string_ | This label describes what the menu section context is. It is not selectable.                                                                       |
-|         `subs` |  _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
+|                   Key |   Type   | Description                                                                                                                                        |
+| --------------------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+|        `sectionLabel` | _string_ | This label describes what the menu section context is. It is not selectable.                                                                       |
+| `styleClassesSection` | _string_ | Classes that are applied to each section (group) of the navigational items.                                                                        |
+|                `subs` |  _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
 
 ### Subs Array
 
