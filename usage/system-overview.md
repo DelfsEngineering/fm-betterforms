@@ -4,6 +4,8 @@
 
 ## System Status and Performance Monitor
 
-The health monitoring of FM BetterForms Cloud deployment can be checked but visiting [https://status.fmbetterforms.com ](https://status.fmbetterforms.com)
+The health monitoring of FM BetterForms Cloud deployment can be checked but visiting [https://status.fmbetterforms.com](https://status.fmbetterforms.com).  To receive live updates, subscribe via the monitoring page.&#x20;
+
+
 
 ![](<../.gitbook/assets/BF Overview (1).png>)
