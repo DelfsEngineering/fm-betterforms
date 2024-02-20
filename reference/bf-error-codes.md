@@ -7,6 +7,8 @@ description: >-
 
 # BF Error Codes
 
+{% embed url="https://delfsengineering.notion.site/03ffe884354946b5a6536bafc9b572d8?v=6b9cf03905d444cf9e39da81c2e7d3e5&pvs=4" %}
+
 | Error Code       | Description                                                                                                                 | Other information passed                 |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | **10xxx Series** | **Errors generated within client (browser) side code**                                                                      |                                          |
