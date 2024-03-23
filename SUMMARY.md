@@ -46,6 +46,7 @@
     * [Tabs](reference/components-overview/grouping-elements/tabs\_form.md)
     * [panel](reference/components-overview/grouping-elements/untitled-1.md)
     * [accordion](reference/components-overview/grouping-elements/accordion.md)
+    * [accordion2](reference/components-overview/grouping-elements/accordion-1.md)
     * [listrows](reference/components-overview/grouping-elements/listrows.md)
   * [Uploading Files](reference/components-overview/uploading-files/README.md)
     * [dropzone](reference/components-overview/uploading-files/dropzone.md)
