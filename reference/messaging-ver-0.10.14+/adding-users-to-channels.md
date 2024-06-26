@@ -57,53 +57,42 @@ The **`API - Join Channel`** script accepts an object with two keys **users** an
 {% tab title="Data shape" %}
 ```yaml
 {
-    "users": [
+    "channels": [
         {
-            "id": "USER_ID",
-            "channels": [
-                {
-                    "name": "channelName",
-                    "mode": "ignore"
-                }
-            ]
-        }
+            "channel": "channel1",
+            "mode": "ignore"
+        } 
     ],
-    "apiKey": "BF_APP_API-KEY"
+    "users": "USER_ID"
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://yourdomain.com" path="/message/adduser" method="post" summary="API: Add User to Channel" %}
-{% swagger-description %}
+## API: Add User to Channel
+
+<mark style="color:green;">`POST`</mark> `https://yourdomain.com/message/adduser`
+
 You can use this method to join users to one or more channels. This is an authenticated request using the API key for the BetterForms network.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="content-type" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="accept" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+| Name         | Type   | Description      |
+| ------------ | ------ | ---------------- |
+| content-type | string | application/json |
+| accept       | string | application/json |
 
-{% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
-BetterForms network API key
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="users" type="string" required="false" %}
-array of user IDs and channels to join those users to
-{% endswagger-parameter %}
+| Name               | Type   | Description                                           |
+| ------------------ | ------ | ----------------------------------------------------- |
+| apiKey             | string | BetterForms network API key                           |
+| users              | string | array of user IDs and channels to join those users to |
+| users\[0].id       | string | BF user id from helper file                           |
+| users\[0].channels | array  | an array of channel objects                           |
 
-{% swagger-parameter in="body" name="users[0].id" type="string" required="false" %}
-BF user id from helper file
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="users[0].channels" type="array" required="false" %}
-an array of channel objects
-{% endswagger-parameter %}
-
-{% swagger-response status="201" description="" %}
+{% tabs %}
+{% tab title="201 " %}
 ```
 {
     "users": [
@@ -112,8 +101,8 @@ an array of channel objects
     ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Joining Anonymous Channels
 
