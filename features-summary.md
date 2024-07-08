@@ -31,8 +31,9 @@
   * Cloud hosted SAAS application
   * Single FileMaker Helper file installed on the target FMS box.
   * Update and roll back your apps base code seamlessly
-* Multistage Development Environments
-  * Developer in add development environment.
+*   **Multistage Development Environments**
+
+    * Developer in add development environment.
     * Deploy to testing and staging environments&#x20;
     * Each environment can have its own or shared FileMaker, servers, and files
-  *
+
