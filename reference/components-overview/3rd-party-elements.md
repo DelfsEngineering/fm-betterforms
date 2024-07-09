@@ -4,7 +4,7 @@ Third party modules can be incorporated into BetterForms apps. This opens up en 
 
 The easiest modules to incorporate into BetterForms are Vue based. Most Vue Modules start with `v-someName`
 
-Currently modules will need a CDN link and must install themselves. \(See limitations below\)
+Currently modules will need a CDN link and must install themselves. (See limitations below)
 
 ## Example: V-Calendar
 
@@ -16,21 +16,21 @@ To reference the source code we will add the CDN link by adding the following to
 
 ```markup
 <link rel='stylesheet' href='https://unpkg.com/v-calendar/lib/v-calendar.min.css'>
-<script src='https://unpkg.com/v-calendar'></script>
+<script src='https://unpkg.com/v-calendar@2.1.5/lib/v-calendar.umd.min.js'></script>
 ```
 
 This module installs itself and will be available in `HTML` elements.
 
-In the documentation for this library \([https://vcalendar.io/](https://vcalendar.io/)\) we see:
+In the documentation for this library ([https://vcalendar.io/](https://vcalendar.io/)) we see:
 
 ```javascript
 <v-calendar :attributes='attrs'>
-</v-calendar
+</v-calendar>
 ```
 
-Here the `:attributes` key is bound to a variable called `attrs` To make the BetterForms compatible, we need to bind the `atributes` key to a BetterForms data source. We will use `model` like this: _\(remember: an attribute must have a colon in front of it to be compatible with Vue bindings\)_
+Here the `:attributes` key is bound to a variable called `attrs` To make the BetterForms compatible, we need to bind the `atributes` key to a BetterForms data source. We will use `model` like this: _(remember: an attribute must have a colon in front of it to be compatible with Vue bindings)_
 
-```text
+```
 <v-date-picker 
     :available-dates='model.availableDates' 
     v-model='model.selectedDates'
@@ -51,4 +51,3 @@ There are some limitations when adding 3rd party libraries.
 * Modules must not require initialization code and be ready for use as a Vue component
 * Modules that are not Vue components can still be used but will often require writing small JS interface code to help patch them into the BF framework.
 * Be sure to make not if the type of links as some are cached much slower than others, see: [https://forum.fmbetterforms.com/t/cdn-advice-if-your-site-is-slow-to-load/239](https://forum.fmbetterforms.com/t/cdn-advice-if-your-site-is-slow-to-load/239)
-
