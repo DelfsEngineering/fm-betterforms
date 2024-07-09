@@ -2,4 +2,6 @@
 
 
 
-{% embed url="https://docs.fmbetterforms.com/reference/components-overview/common/tables2" %}
+{% content-ref url="../../reference/components-overview/common/tables2.md" %}
+[tables2.md](../../reference/components-overview/common/tables2.md)
+{% endcontent-ref %}
