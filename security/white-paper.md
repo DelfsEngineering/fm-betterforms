@@ -21,7 +21,7 @@ After a user is logged into a page that requires authentication, their credentia
 
 A JWT (JSON Web Token) token is generated using industry approved encryption. JWT’s are immutable and assure the client is who they claim to be.
 
-It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](http://127.0.0.1:5000/s/-LKI28WjQukQ2x6JNpYA-4045043681/usage/design-patterns-and-debugging/optimization)
+It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](https://app.gitbook.com/s/-LKI28WjQukQ2x6JNpYA-4045043681/usage/design-patterns-and-debugging/optimization)
 
 ## Web Servers
 

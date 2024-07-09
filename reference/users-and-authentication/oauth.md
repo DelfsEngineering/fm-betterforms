@@ -78,7 +78,7 @@ The script needs to be called `onBeforeRegistration`, and by setting `createUser
 
 <div align="center">
 
-<img src="../../.gitbook/assets/image (5).png" alt="">
+<img src="../../.gitbook/assets/image (5) (1).png" alt="">
 
 </div>
 

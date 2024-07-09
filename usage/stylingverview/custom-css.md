@@ -39,4 +39,4 @@ To target specific forms in your app, you can add a `styleClasses` key. This wil
 
 Resulting is something similar to the following:
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (5).png>)
