@@ -44,7 +44,7 @@
     * [HTML](reference/components-overview/common/html.md)
   * [Grouping Elements](reference/components-overview/grouping-elements/README.md)
     * [Tabs](reference/components-overview/grouping-elements/tabs\_form.md)
-    * [panel](reference/components-overview/grouping-elements/untitled-1.md)
+    * [Panel](reference/components-overview/grouping-elements/untitled-1.md)
     * [accordion](reference/components-overview/grouping-elements/accordion.md)
     * [accordion2](reference/components-overview/grouping-elements/accordion-1.md)
     * [listrows](reference/components-overview/grouping-elements/listrows.md)
