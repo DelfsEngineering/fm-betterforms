@@ -39,3 +39,12 @@ Add the CDN references below into the DOM Header Insertions section of your site
 ### Theming
 
 see docs for theming info here: [http://ionden.com/a/plugins/ion.rangeSlider/skins.html](http://ionden.com/a/plugins/ion.rangeSlider/skins.html)
+
+use key `"skin"` to change theme.
+
+```
+"rangeSliderOptions": {
+    "grid": true,
+    "skin": "big"
+  }
+```
