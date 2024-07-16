@@ -23,6 +23,10 @@
 * [Support](getting-started/support/README.md)
   * [Hacking a Webpage](getting-started/support/hacking-a-webpage.md)
   * [Learning JSON](getting-started/support/learning-json.md)
+* [🛠️ Getting Started](getting-started/getting-started/README.md)
+  * [Getting Familiar with the Workspace](getting-started/getting-started/getting-familiar-with-the-workspace.md)
+  * [Build Your First App](getting-started/getting-started/build-your-first-app.md)
+  * [Environments](getting-started/getting-started/environments.md)
 
 ## Reference
 
