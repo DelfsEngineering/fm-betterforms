@@ -24,8 +24,10 @@
   * [Hacking a Webpage](getting-started/support/hacking-a-webpage.md)
   * [Learning JSON](getting-started/support/learning-json.md)
 * [🛠️ Getting Started](getting-started/getting-started/README.md)
+  * [Welcome to FM BetterForms!](getting-started/getting-started/welcome-to-fm-betterforms.md)
   * [Getting Familiar with the Workspace](getting-started/getting-started/getting-familiar-with-the-workspace.md)
-  * [Build Your First App](getting-started/getting-started/build-your-first-app.md)
+  * [Build Your First App](getting-started/getting-started/build-your-first-app/README.md)
+    * [Select a Template](getting-started/getting-started/build-your-first-app/select-a-template.md)
   * [Environments](getting-started/getting-started/environments.md)
 
 ## Reference
