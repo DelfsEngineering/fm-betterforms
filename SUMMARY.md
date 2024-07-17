@@ -29,7 +29,8 @@
   * [Build Your First App](getting-started/getting-started/build-your-first-app/README.md)
     * [Use a Template](getting-started/getting-started/build-your-first-app/use-a-template.md)
     * [Input App Details](getting-started/getting-started/build-your-first-app/input-app-details.md)
-  * [Environments](getting-started/getting-started/environments.md)
+  * [Environments](getting-started/getting-started/environments/README.md)
+    * [Managing Your Environment](getting-started/getting-started/environments/managing-your-environment.md)
 
 ## Reference
 

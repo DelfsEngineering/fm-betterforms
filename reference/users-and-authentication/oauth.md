@@ -38,13 +38,13 @@ https://your.domain.com/oauth/providerName/callback
 
 Select the app where OAuth will be added, click on the ellipsis besides the App name and select `App Settings`.
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (4) (1).png>)
 
 Under `Authentication`, toggle the button `Enable 3rd Party Authentication`.
 
 Select one of the 3 providers from the dropdown menu, enter Client ID, Client Secret and Subdomain (Scope still not implemented).
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2) (1) (1).png>)
 
 {% hint style="info" %}
 Whenever an information from above is changed, the Client Secret always need to be reinserted.
@@ -78,7 +78,7 @@ The script needs to be called `onBeforeRegistration`, and by setting `createUser
 
 <div align="center">
 
-<img src="../../.gitbook/assets/image (5) (1).png" alt="">
+<img src="../../.gitbook/assets/image (5) (1) (1).png" alt="">
 
 </div>
 
@@ -92,7 +92,7 @@ If `onBeforeRegistration` hook script is not created and/or `createUser` not set
 if your integration is older, you may not have a `onBeforeRegistration` hook installed.
 {% endhint %}
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (6) (1).png>)
 
 Update the BF Common Dispatch Script
 

@@ -19,7 +19,7 @@ Click on a template to view more details. A popup window (card modal window) wil
 
 Before clicking <mark style="color:red;">`"Use This Template"`</mark>, make sure to review the provided details.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 **3. Use This Template**
 
