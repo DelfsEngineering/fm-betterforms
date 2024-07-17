@@ -44,7 +44,7 @@ Under `Authentication`, toggle the button `Enable 3rd Party Authentication`.
 
 Select one of the 3 providers from the dropdown menu, enter Client ID, Client Secret and Subdomain (Scope still not implemented).
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 {% hint style="info" %}
 Whenever an information from above is changed, the Client Secret always need to be reinserted.

@@ -25,4 +25,4 @@ After successfully logging in, let's get familiar with the workspace. Below is a
     <figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 8. **Report a Bug Button**: Located at the bottom-right corner, this button allows you to report any issues or bugs you encounter while using the app. Your feedback helps us improve the system.
 
-To start building your first app, click on the ["Build your first app"](./) button located in the Quick Access section.
+To start building your first app, click on the [<mark style="color:red;">`"Build your first app"`</mark>](./) button located in the Quick Access section.

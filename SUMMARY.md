@@ -27,7 +27,8 @@
   * [Welcome to FM BetterForms!](getting-started/getting-started/welcome-to-fm-betterforms.md)
   * [Getting Familiar with the Workspace](getting-started/getting-started/getting-familiar-with-the-workspace.md)
   * [Build Your First App](getting-started/getting-started/build-your-first-app/README.md)
-    * [Select a Template](getting-started/getting-started/build-your-first-app/select-a-template.md)
+    * [Use a Template](getting-started/getting-started/build-your-first-app/use-a-template.md)
+    * [Input App Details](getting-started/getting-started/build-your-first-app/input-app-details.md)
   * [Environments](getting-started/getting-started/environments.md)
 
 ## Reference
