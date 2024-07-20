@@ -48,4 +48,4 @@ Query parameters are additional values that can be passed with a URL as a page i
 
 BetterForms parses these values into a JSON object for your use in any [scoped hooks](../../reference/hooksoverview/hooks.md). They are available in the [**\$$BF\_Query**](../../reference/hooksoverview/filemaker-globals/) global variable.
 
-You can also access the query from JavaScript using the [utility function](../../reference/bf-utility-function-ver-0.9.20+.md) `BF.getQueryParam(key)`.
+You can also access the query from JavaScript using the [utility function](../../reference/bf-utility-function-ver-0.9.20+/) `BF.getQueryParam(key)`.

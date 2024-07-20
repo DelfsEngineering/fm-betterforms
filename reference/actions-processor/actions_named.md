@@ -11,7 +11,7 @@ Named actions are action arrays ( Much like scripts in FileMaker) that can be re
 
 Named actions can be executed from several contexts
 
-<table><thead><tr><th width="134.33333333333331">Context</th><th width="414">Syntax eg</th><th></th></tr></thead><tbody><tr><td>[actions array]</td><td><p><code>"xxx_actions" : [</code></p><p>    <code>{ your namedActions}</code></p><p><code>]</code></p></td><td>A named action is just an action that calls other named Action scripts.</td></tr><tr><td>HTML</td><td><code>&#x3C;button @click="namedAction('saveData',{person: model.person})"> ... &#x3C;/button></code></td><td>Calling from from HTML you can use the method <code>namedAction</code></td></tr><tr><td>JavaScript</td><td><code>BF.namedAction('saveData',{person: model.person})</code></td><td>When calling from JS, use the <a href="../bf-utility-function-ver-0.9.20+.md">BF functions</a> library.</td></tr></tbody></table>
+<table><thead><tr><th width="134.33333333333331">Context</th><th width="414">Syntax eg</th><th></th></tr></thead><tbody><tr><td>[actions array]</td><td><p><code>"xxx_actions" : [</code></p><p>    <code>{ your namedActions}</code></p><p><code>]</code></p></td><td>A named action is just an action that calls other named Action scripts.</td></tr><tr><td>HTML</td><td><code>&#x3C;button @click="namedAction('saveData',{person: model.person})"> ... &#x3C;/button></code></td><td>Calling from from HTML you can use the method <code>namedAction</code></td></tr><tr><td>JavaScript</td><td><code>BF.namedAction('saveData',{person: model.person})</code></td><td>When calling from JS, use the <a href="../bf-utility-function-ver-0.9.20+/">BF functions</a> library.</td></tr></tbody></table>
 
 ### Execution Order
 

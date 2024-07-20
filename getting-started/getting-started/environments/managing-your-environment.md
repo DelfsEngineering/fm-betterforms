@@ -9,7 +9,7 @@ Each environment has a dropdown menu (indicated by the ellipsis) that allows you
     * **Lock Environment**: Prevent any changes to this environment by locking it.
     * **Development Tools**: Enable this option to view development tools such as app and model data on the site page.
 
-    <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
     <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 *   **Deploy**: Move the current version of your app to the selected stage (Development, Staging, Production).
