@@ -1,23 +1,21 @@
 # 🏗️ BF.i18n()
 
-{% hint style="warning" %}
-This page is under construction
-{% endhint %}
-
-You can use this functionality to set up multiple languages for your app or a single page.
+You can use this functionality to set up multiple languages for your app.
 
 ### Step 1: Define Languages in Your App Model
+
+In App Model, define your dictionary with keys and values as following example:
 
 ```json
 "i18n": {
         "dict": {
             "buttonExplore": {
-                "ch": "探索功能",
-                "en": "Explore Features"
+                "en": "Explore Features",
+                "zh": "探索功能"
             },
             "buttonJoin": {
-                "ch": "加入社区",
-                "en": "Join Community"
+                "en": "Join Community",
+                "zh": "加入社区"
             }
         },
         "langDefault": "en",
@@ -26,10 +24,16 @@ You can use this functionality to set up multiple languages for your app or a si
             "id": "en",
             "name": "English"
         }, {
-            "id": "ch",
+            "id": "zh",
             "name": "简体中文"
         }]
     }
+```
+
+You can also have a key to cache the user selection in App model and check it in <mark style="color:red;">`App Key Caching`</mark>.
+
+```json
+"langCurrent": "en"
 ```
 
 ### Step 2: Add Translatable Text in Your HTML
@@ -47,10 +51,34 @@ In your HTML block, add the text using <mark style="color:red;">`BF.i18n()`</mar
 
 ### **Step 3: Set Language Through the App**
 
-If you are setting the language through the app, you can do this in your global scripts <mark style="color:red;">`onAppLoad`</mark>.&#x20;
+Set the language in your global scripts global scripts <mark style="color:red;">`onAppLoad`</mark>.&#x20;
 
 ```javascript
-app.i18n.langSelected =  Vue.cookie.get('langSelected') || app.i18n.langDefault
+app.i18n.langSelected =  app.currentLang || app.i18n.langDefault
+```
+
+### Step 4: Add Function to Handle User Selection
+
+In your global script, create a JavaScript function like <mark style="color:red;">`selectLanguage`</mark> to handle user select.
+
+```javascript
+// change selected language by user
+app.i18n.langSelected = action.options.lang
+
+// change cached langugae
+app.langCurrent = action.options.lang
+```
+
+In your page, use the following to call <mark style="color:red;">`selectLanguage`</mark> and highlight the current selection:
+
+```html
+<div v-for="lang in app.i18n.languages" 
+     @click="namedAction('selectLanguage', { lang: lang.id })"
+     :class="['block px-4 py-2 text-sm leading-5 focus:outline-none', 
+              app.langCurrent === lang.id ? 'bg-purple-700 text-white' : 'text-white hover:bg-purple-400 hover:text-gray-900 cursor-pointer']"
+>
+  {{ lang.name }}
+</div>
 ```
 
 This setup allows your app to support multiple languages, enhancing user experience by displaying content in their preferred language.
