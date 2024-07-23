@@ -111,7 +111,7 @@
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
 * [BF Utility Functions](reference/bf-utility-function-ver-0.9.20+/README.md)
   * [Example Usage](reference/bf-utility-function-ver-0.9.20+/example-usage/README.md)
-    * [🏗️ BF.i18n()](reference/bf-utility-function-ver-0.9.20+/example-usage/bf.i18n.md)
+    * [BF.i18n()](reference/bf-utility-function-ver-0.9.20+/example-usage/bf.i18n.md)
 * [BF Error Codes](reference/bf-error-codes.md)
 * [Messaging](reference/messaging-ver-0.10.14+/README.md)
   * [Adding users to channels](reference/messaging-ver-0.10.14+/adding-users-to-channels.md)
