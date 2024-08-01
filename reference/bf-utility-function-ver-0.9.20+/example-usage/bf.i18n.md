@@ -1,4 +1,4 @@
-# 🏗️ BF.i18n()
+# BF.i18n()
 
 You can use this functionality to set up multiple languages for your app.
 

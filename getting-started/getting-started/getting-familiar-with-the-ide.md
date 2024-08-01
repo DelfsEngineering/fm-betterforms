@@ -1,6 +1,6 @@
-# Getting Familiar with the Workspace
+# Getting Familiar with the IDE
 
-After successfully logging in, let's get familiar with the workspace. Below is a screenshot of the main workspace area:
+After successfully logging in, let's get familiar with the workspace. Below is a screenshot of the main Integrated Development Environment (IDE):
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
