@@ -2,7 +2,7 @@
 
 After selecting the template, you will be prompted to input the app details. Fill in the necessary fields such as App Name, Public Name, and Domain Name.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **App Name**: This is the name that will be displayed in the BetterForms editor and on your dashboard.
 * **Public Name**: This is the name that will be displayed on your site. Keep it short; you can change it later.

@@ -6,45 +6,35 @@ description: >-
 
 # Slots / Code Injection
 
-**Slots** are definable HTML templates that can be inserted into various areas of BetterForms. Slots can be used for customizing the header area, navigation and footer areas \(footer not developed yet\).  
+**Slots** are definable HTML templates that can be inserted into various areas of BetterForms. Slots can be used for customizing the header area, navigation and footer areas (footer not developed yet).\
 Slots can accept HTML and VueJs HTML.
 
-Slot scope for VueJS HTML content will depend on the slot location. All slots can see `window.formGen` from there you can access `formGen.formSchema.model` etc. 
+Slot scope for VueJS HTML content will depend on the slot location. All slots can see `window.formGen` from there you can access `formGen.formSchema.model` etc.
 
-Slots replace default slot content if there is a default content \(Eg. `logout`\) 
+Slots replace default slot content if there is a default content (Eg. `logout`)
 
-To edit your site's slots, go to the **Appearance &gt; Slots** tab of your [site settings](./).
+To edit your site's slots, go to the **Appearance > Slots** tab of your [site settings](./).
+
+
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Head Slot positions</p></figcaption></figure>
 
 ### Slot Locations:
 
-| Slot Name | Description |
-| :--- | :--- |
-| `headerBrandLeft` | To the left of the logo brand block |
-| `headerBrand` | Company Name / Logo Area, if set, replaces default text |
-| `headerSidebarToggle` | Replaces default sidebar hamburger toggle is set |
-| `headerLeft` | Top Header area left most position to the right of the brand |
-| `headerMiddle` |  |
-| `headerRight` |  |
-| `logout` | Replaces the default logout code _\(This slot hides conditionally depending if the user is authenticated\)_ |
-| `formFooter` | Footer area of page body |
-| `appFooter` | Footer area of entire page |
-| `sidebarLeftTop` | Left navigation menu above menu items |
-| `sidebarLeftBottom` | Left navigation menu below menu items |
-| `sidebarLeftFooter` | Left navigation menu footer area, good for logos, You will need to add CSS to bottom align this \`div\` |
+| Slot Name             | Description                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `headerBrandLeft`     | To the left of the logo brand block                                                                                                  |
+| `headerBrand`         | Company Name / Logo Area, if set, replaces default text                                                                              |
+| `headerSidebarToggle` | Replaces default sidebar hamburger toggle is set                                                                                     |
+| `headerLeft`          | Top Header area left most position to the right of the brand                                                                         |
+| `headerMiddle`        |                                                                                                                                      |
+| `headerRight`         |                                                                                                                                      |
+| `logout`              | Replaces the default logout code _(This slot hides conditionally depending if the user is authenticated)_                            |
+| `formHeader`          | Header (top) above the page body. This will show on every page within the app. You can add logic to hide on certain pages as needed. |
+| `formFooter`          | Footer area below the page body. This will show on every page within the app. You can add logic to hide on certain pages as needed.  |
+| `appFooter`           | Footer area of entire app                                                                                                            |
+| `sidebarLeftTop`      | Left navigation menu above menu items                                                                                                |
+| `sidebarLeftBottom`   | Left navigation menu below menu items                                                                                                |
+| `sidebarLeftFooter`   | Left navigation menu footer area, good for logos, You will need to add CSS to bottom align this \`div\`                              |
 
-## DOM Header Insertion
-
-If you need to insert HTML in the header of every page in your site, go to the **Environment &gt; DOM Header Insertions** tab in your [site settings](./). This feature is useful for installing custom fonts or a [favicon](../../usage/stylingverview/favicon.md) for the browser tab. You may also need to use it for certain [Custom Form Elements](../components-overview/3rd-party-elements.md)
-
-#### Optimizations
-
-Inserted tags will generally load and block other code execute that renders the page while the module loads. Since these modules are often used for only a small part of the work flow, you can delay their loading by using `async` and `defer` tags in the script tag.
-
-```javascript
-<script async defer src="https://cdn.somelig.com/" type="text/javascript"></script>
-```
-
-
-
-
-
+##

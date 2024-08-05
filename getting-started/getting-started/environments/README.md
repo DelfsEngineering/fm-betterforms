@@ -2,7 +2,7 @@
 
 After building your app, you will be taken to the environment management page. Here, you can manage different environments for your app, such as Development, Staging, and Production. This allows you to build,  test and deploy your app in a controlled manner.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Development Environment**
 

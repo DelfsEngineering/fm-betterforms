@@ -4,7 +4,7 @@ description: You've got the basics down! Now it's time to start building out you
 
 # Next Steps
 
-By now you should have been able to see how a BetterForms site can interact with your FileMaker solution. Where you go from here depends on the type of app you're building. Browse the [Common Customizations](../common-customizations/) section for additional tips as you're getting started, in addition to the resources listed here  on this page:
+By now you should have been able to see how a BetterForms site can interact with your FileMaker solution. Where you go from here depends on the type of app you're building. Browse the [Common Customizations](../common-customizations/) section for additional tips as you're getting started, in addition to the resources listed here on this page:
 
 ## Using the Examples
 
@@ -18,5 +18,8 @@ The most common JSON objects that you will need are stored in the snippets secti
 
 ## Using the Community
 
-BetterForms has a great Slack group where you can ask questions, find answers, and connect with other developers using BetterForms. If you're not already a member, request an invite after logging the dashboard of the [BetterForms IDE](https://app.fmbetterforms.com/#/).
+BetterForms has a great Slack group where you can ask questions, find answers, and connect with other developers using BetterForms. If you're not already a member, request an invite after logging into the dashboard of the [BetterForms IDE](https://app.fmbetterforms.com/#/).
 
+## Using the Forum
+
+The FM BetterForms forum holds many answers to common questions. [Create an account](https://forum.fmbetterforms.com/) for free and help contribute.&#x20;
