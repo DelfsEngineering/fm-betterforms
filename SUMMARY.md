@@ -1,12 +1,12 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Features Summary](features-summary.md)
+* [🏆 Features](features-summary.md)
 
 ## Getting Started
 
 * [System Overview](getting-started/system-overview.md)
-* [Integration](getting-started/integration/README.md)
+* [⚙️ Integration](getting-started/integration/README.md)
   * [1. Configure FileMaker Server](getting-started/integration/installation.md)
   * [2. Add your Server to BetterForms](getting-started/integration/2.-add-a-server.md)
   * [3. Create your first app](getting-started/integration/4.-create-a-site.md)
