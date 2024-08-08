@@ -121,6 +121,7 @@
   * [Sending messages](reference/messaging-ver-0.10.14+/sending-messages.md)
   * [Get connected users](reference/messaging-ver-0.10.14+/get-all-users-connected.md)
   * [Get active channels](reference/messaging-ver-0.10.14+/get-active-channels.md)
+* [Practices for File Downloads](reference/practices-for-file-downloads.md)
 
 ## Usage Tips <a href="#usage" id="usage"></a>
 
