@@ -30,6 +30,11 @@
     * [Input App Details](getting-started/getting-started/build-your-first-app/input-app-details.md)
   * [Environments](getting-started/getting-started/environments/README.md)
     * [Managing Your Environment](getting-started/getting-started/environments/managing-your-environment.md)
+  * [Working in the Environment](getting-started/getting-started/working-in-the-environment/README.md)
+    * [Pages](getting-started/getting-started/working-in-the-environment/pages.md)
+    * [Styling](getting-started/getting-started/working-in-the-environment/styling.md)
+    * [Navigation](getting-started/getting-started/working-in-the-environment/navigation.md)
+    * [Scripts](getting-started/getting-started/working-in-the-environment/scripts.md)
 * [Hacking a Webpage](getting-started/hacking-a-webpage.md)
 
 ## Reference
