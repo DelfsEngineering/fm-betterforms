@@ -29,6 +29,7 @@
     * [Use a Template](getting-started/getting-started/build-your-first-app/use-a-template.md)
     * [Input App Details](getting-started/getting-started/build-your-first-app/input-app-details.md)
   * [Environments](getting-started/getting-started/environments/README.md)
+    * [Understanding Environments](getting-started/getting-started/environments/understanding-environments.md)
     * [Managing Your Environment](getting-started/getting-started/environments/managing-your-environment.md)
   * [Working in the Environment](getting-started/getting-started/working-in-the-environment/README.md)
     * [Pages](getting-started/getting-started/working-in-the-environment/pages.md)

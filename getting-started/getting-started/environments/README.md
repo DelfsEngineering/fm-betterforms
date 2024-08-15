@@ -2,12 +2,9 @@
 
 After building your app, you will be taken to the environment management page. Here, you can manage different environments for your app, such as Development, Staging, and Production. This allows you to build,  test and deploy your app in a controlled manner.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
 **Development Environment**
 
 * This is where you will develop and test new features and changes before moving them to staging or production.
-* As shown in the image, the development environment URL is <mark style="color:red;">linxue.fmbetterforms.com</mark>.
 
 **Staging Environment**
 
