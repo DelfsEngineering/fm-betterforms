@@ -36,6 +36,7 @@
     * [Styling](getting-started/getting-started/working-in-the-environment/styling.md)
     * [Navigation](getting-started/getting-started/working-in-the-environment/navigation.md)
     * [Scripts](getting-started/getting-started/working-in-the-environment/scripts.md)
+    * [Settings](getting-started/getting-started/working-in-the-environment/settings.md)
 * [Hacking a Webpage](getting-started/hacking-a-webpage.md)
 
 ## Reference
