@@ -123,23 +123,21 @@ The Print button action executes JavaScript functions:
 
 This action allows you to run the <mark style="color:red;">`onUtilityHook`</mark> workflow when clicked. You can pass additional parameters in the <mark style="color:red;">`options`</mark> object:
 
-*   **Run Utility Hook**
-
-    ```json
-    {
-        "actions": [{
-            "action": "runUtilityHook",
-            "options": {
-                "type": "save"
-            }
-        }],
-        "buttonClasses": "btn btn-info",
-        "hint": "to save...",
-        "styleClasses": "col-md-2",
-        "text": "Save",
-        "type": "button"
-    }
-    ```
+```json
+{
+    "actions": [{
+        "action": "runUtilityHook",
+        "options": {
+            "type": "save"
+        }
+    }],
+    "buttonClasses": "btn btn-info",
+    "hint": "to save...",
+    "styleClasses": "col-md-2",
+    "text": "Save",
+    "type": "button"
+}
+```
 
 #### Dropdown Buttons
 
@@ -204,7 +202,7 @@ This button uses <mark style="color:red;">`buttonClasses_calc`</mark> to dynamic
 }
 ```
 
-### Input with Button
+### Button Triggering a namedActionn
 
 This button uses the <mark style="color:red;">`onclick_actions`</mark> array to call a <mark style="color:red;">`namedAction`</mark> when clicked:
 
