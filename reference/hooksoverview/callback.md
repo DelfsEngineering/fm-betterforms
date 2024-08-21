@@ -78,7 +78,7 @@ In order to include **$headers** and **$statusCode** to your API response, there
 
 * On your API callback hook script, find where **\$$BF\_Payload** is set, as shown in the image below.
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 * Modify its value so it maches the following code, where **data.headers** and **data.statusCode** are added to the existing JSONSetElement statement.
 

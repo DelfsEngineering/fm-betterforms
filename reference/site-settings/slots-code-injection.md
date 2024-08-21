@@ -17,7 +17,7 @@ To edit your site's slots, go to the **Appearance > Slots** tab of your [site se
 
 
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Head Slot positions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Head Slot positions</p></figcaption></figure>
 
 ### Slot Locations:
 
