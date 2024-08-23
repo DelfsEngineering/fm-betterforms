@@ -7,6 +7,9 @@ This tab is for managing <mark style="color:red;">local actions</mark> within th
   * Add actions
   * Rearrange actions via drag-and-drop
 * Edit action details in the third panel.
+*   **JavaScript Editor**: If you have a `"function"` action, like the example below, click on the line number to open the JavaScript editor.
+
+    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-08-23 at 4.55.56 PM.png" alt=""><figcaption></figcaption></figure>
 * Remember to save changes.
 
 {% hint style="info" %}

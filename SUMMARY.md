@@ -36,10 +36,13 @@
       * [Page Builder](getting-started/getting-started/working-in-the-environment/pages/page-builder.md)
       * [Action Scripts](getting-started/getting-started/working-in-the-environment/pages/action-scripts.md)
       * [Data Model](getting-started/getting-started/working-in-the-environment/pages/data-model.md)
+      * [Integration](getting-started/getting-started/working-in-the-environment/pages/integration.md)
+      * [Page Info](getting-started/getting-started/working-in-the-environment/pages/page-info.md)
     * [Styling](getting-started/getting-started/working-in-the-environment/styling.md)
     * [Navigation](getting-started/getting-started/working-in-the-environment/navigation.md)
     * [Scripts](getting-started/getting-started/working-in-the-environment/scripts.md)
     * [Settings](getting-started/getting-started/working-in-the-environment/settings.md)
+  * [Create a New Page](getting-started/getting-started/create-a-new-page.md)
 * [Hacking a Webpage](getting-started/hacking-a-webpage.md)
 
 ## Reference
