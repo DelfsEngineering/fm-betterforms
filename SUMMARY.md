@@ -34,6 +34,8 @@
   * [Working in the Environment](getting-started/getting-started/working-in-the-environment/README.md)
     * [Pages](getting-started/getting-started/working-in-the-environment/pages/README.md)
       * [Page Builder](getting-started/getting-started/working-in-the-environment/pages/page-builder.md)
+      * [Action Scripts](getting-started/getting-started/working-in-the-environment/pages/action-scripts.md)
+      * [Data Model](getting-started/getting-started/working-in-the-environment/pages/data-model.md)
     * [Styling](getting-started/getting-started/working-in-the-environment/styling.md)
     * [Navigation](getting-started/getting-started/working-in-the-environment/navigation.md)
     * [Scripts](getting-started/getting-started/working-in-the-environment/scripts.md)
