@@ -136,6 +136,15 @@
   * [Get connected users](reference/messaging-ver-0.10.14+/get-all-users-connected.md)
   * [Get active channels](reference/messaging-ver-0.10.14+/get-active-channels.md)
 * [Practices for File Downloads](reference/practices-for-file-downloads.md)
+* [BF Streaming Proxy](reference/bf-streaming-proxy.md)
+* [Updating the Helper File](reference/updating-the-helper-file.md)
+* [Connection Trouble Shooting Guide](reference/connection-trouble-shooting-guide.md)
+* [Software Testing Overview](reference/software-testing-overview.md)
+* [JavaScript Libraries](reference/javascript-libraries.md)
+* [FM BetterForms - Quality Assurance](reference/fm-betterforms-quality-assurance.md)
+* [Rollbacks and Version Control](reference/rollbacks-and-version-control.md)
+* [BF Server Proxy](reference/bf-server-proxy.md)
+* [Setting up Auth0](reference/setting-up-auth0.md)
 
 ## Usage Tips <a href="#usage" id="usage"></a>
 
