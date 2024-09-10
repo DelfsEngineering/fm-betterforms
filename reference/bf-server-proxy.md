@@ -31,7 +31,7 @@ Add a new server or change currently used by the app. The host address for the s
 
 Note: Change <mark style="color:red;">`YOUR.SERVER.DOMAIN`</mark> to point to the FQDN of your FileMaker server.
 
-<figure><img src="../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Testing Connection
 

@@ -12,21 +12,21 @@ If you already have a tenant to be used, you can skip to the next section.
 
 After signing in to your Auth0 account, on the top left corner click on the dropdown button and select <mark style="color:red;">`Create tenant`</mark>
 
-![Untitled](../.gitbook/assets/Untitled.png)
+![Untitled](<../.gitbook/assets/Untitled (5).png>)
 
 Choose a domain, region and environment for this tenant.
 
-<figure><img src="../.gitbook/assets/Untitled 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 1 (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Creating Application
 
 On the left bar, mouse over it and click the <mark style="color:red;">`Applications`</mark> option, then click on <mark style="color:red;">`+ Create Application`</mark>
 
-<figure><img src="../.gitbook/assets/Untitled 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 2 (2).png" alt=""><figcaption></figcaption></figure>
 
 Choose a name to identify your app, select <mark style="color:red;">`Regular Web Applications`</mark> and click on <mark style="color:red;">`Create`</mark>.
 
-<figure><img src="../.gitbook/assets/Untitled 3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 3 (1).png" alt=""><figcaption></figcaption></figure>
 
 Once it’s created, it should redirect to your app’s <mark style="color:red;">`Quick Start`</mark> tab. Go to the <mark style="color:red;">`Settings`</mark> tab of your application and fill the following fields under <mark style="color:red;">`Application URIs`</mark>.
 
@@ -36,15 +36,15 @@ Still under the <mark style="color:red;">`Settings`</mark> tab, you can add a lo
 
 A link from an asset uploaded to BF could be used here.
 
-<figure><img src="../.gitbook/assets/Untitled 4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 4 (1).png" alt=""><figcaption></figcaption></figure>
 
 The following image shows other options that could be customized according to your policies.
 
-<figure><img src="../.gitbook/assets/Untitled 5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 5 (1).png" alt=""><figcaption></figcaption></figure>
 
 **Add your Dev and Production Domains**
 
-<figure><img src="../.gitbook/assets/Untitled 6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled 6 (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Allowed Callback URLs
 
