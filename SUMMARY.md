@@ -63,6 +63,7 @@
 * [Page Elements](reference/components-overview/README.md)
   * [Copy of Site Structure](reference/components-overview/copy-of-site-structure.md)
   * [Common](reference/components-overview/common/README.md)
+    * [Input](reference/components-overview/common/input.md)
     * [Button](reference/components-overview/common/button.md)
     * [Data Table](reference/components-overview/common/tables2.md)
     * [HTML](reference/components-overview/common/html.md)
