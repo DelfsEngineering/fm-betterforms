@@ -28,7 +28,7 @@ Choose a name to identify your app, select <mark style="color:red;">`Regular Web
 
 <figure><img src="../.gitbook/assets/Untitled 3 (1).png" alt=""><figcaption></figcaption></figure>
 
-Once it’s created, it should redirect to your app’s <mark style="color:red;">`Quick Start`</mark> tab. Go to the <mark style="color:red;">`Settings`</mark> tab of your application and fill the following fields under <mark style="color:red;">`Application URIs`</mark>.
+Once it’s created, it should redirect to your app’s <mark style="color:red;">`Quick Start`</mark> tab. Go to the <mark style="color:red;">`Settings`</mark> tab of your application and fill the [following fields](setting-up-auth0.md#allowed-callback-urls) under <mark style="color:red;">`Application URIs`</mark>.
 
 ### Additional customizations
 
