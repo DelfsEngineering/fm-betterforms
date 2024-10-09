@@ -59,7 +59,7 @@ The **`API - Join Channel`** script accepts an object with two keys **users** an
 {
     "channels": [
         {
-            "channel": "channel1",
+            "name": "channel1",
             "mode": "ignore"
         } 
     ],
