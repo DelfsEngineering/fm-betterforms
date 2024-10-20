@@ -169,6 +169,7 @@
   * [Custom CSS](usage/stylingverview/custom-css.md)
   * [Custom Components](usage/stylingverview/custom-components/README.md)
     * [Components Editor](usage/stylingverview/custom-components/components-editor.md)
+    * [Component Best Practices](usage/stylingverview/custom-components/component-best-practices.md)
   * [Page Pre-loaders](usage/stylingverview/page-pre-loaders.md)
   * [Favicon](usage/stylingverview/favicon.md)
 * [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
