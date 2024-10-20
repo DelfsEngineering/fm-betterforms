@@ -8,7 +8,7 @@ description: >-
 # Custom Components
 
 {% hint style="danger" %}
-This page is under construction🚧&#x20;
+This page is under review and not finalized (beta)
 {% endhint %}
 
 ### Building and Customizing
@@ -39,7 +39,7 @@ Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema
 
 ### Context
 
-Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelemtn schema.&#x20;
+Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema.&#x20;
 
 
 
