@@ -6,9 +6,9 @@ Below are the steps for migration and configuration of the helper file. Addition
 
 [https://docs.fmbetterforms.com/getting-started/integration](https://docs.fmbetterforms.com/getting-started/integration)
 
-1. Download the Helper File using the link below:
+1. Download the Helper File using [this link](https://www.dropbox.com/scl/fo/mt3zf93tv69rbhg076tsh/AELmLRGbURUC4XmW\_72fz28?dl=0\&rlkey=5w2gko8a6v241w4666nejpw7y).
 
-[https://drive.google.com/file/d/18Ont\_4l9Xe1RjtuXZqTtcaLTzBar6kG9/view](https://drive.google.com/file/d/18Ont\_4l9Xe1RjtuXZqTtcaLTzBar6kG9/view)
+<!---->
 
 2. Open the Helper File:
 
