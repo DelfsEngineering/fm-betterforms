@@ -6,6 +6,7 @@ You can use this functionality to set up multiple languages for your app.
 
 In App Model, define your dictionary with keys and values as following example:
 
+{% code title=" i18n object structure" %}
 ```json
 "i18n": {
         "dict": {
@@ -18,7 +19,7 @@ In App Model, define your dictionary with keys and values as following example:
                 "zh": "加入社区"
             }
         },
-        "langDefault": "en",
+        "langDefault": "en", 
         "langSelected": "en",
         "languages": [{
             "id": "en",
@@ -29,23 +30,36 @@ In App Model, define your dictionary with keys and values as following example:
         }]
     }
 ```
+{% endcode %}
+
+|                |                                                                       |                                                               |
+| -------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `langDefault`  | sets the default fallback  language if a translation is not available |                                                               |
+| `langSelected` | Selects the active language                                           | This can be set or changed with UI or set in onAppLoad action |
+|                |                                                                       |                                                               |
+
+
+
+
 
 You can also have a key to cache the user selection in App model and check it in <mark style="color:red;">`App Key Caching`</mark>.
 
 ```json
-"langCurrent": "en"
+"currentLang": "en"
 ```
 
 ### Step 2: Add Translatable Text in Your HTML
 
-In your HTML block, add the text using <mark style="color:red;">`BF.i18n()`</mark> with the corresponding keys:
+the `BF.i18n()` function can be used in both HTML and in calculations.
+
+
 
 ```html
-// html
+// html usage
 <button>{{BF.i18n('buttonExplore')}}</button>
 <button>{{BF.i18n('buttonJoin')}}</button>
 
-// label calc
+// calculation usage
 "label_calc": "BF.i18n('someKey')"
 ```
 
@@ -54,7 +68,7 @@ In your HTML block, add the text using <mark style="color:red;">`BF.i18n()`</mar
 Set the language in your global scripts global scripts <mark style="color:red;">`onAppLoad`</mark>.&#x20;
 
 ```javascript
-app.i18n.langSelected =  app.currentLang || app.i18n.langDefault
+app.i18n.langSelected =  app.currentLang // would set the i18n active language from the langSelected setting
 ```
 
 ### Step 4: Add Function to Handle User Selection
@@ -79,6 +93,18 @@ In your page, use the following to call <mark style="color:red;">`selectLanguage
 >
   {{ lang.name }}
 </div>
+
+
+    <select
+    v-model="app.i18n.langSelected" @change="app.currentLanguage = app.i18n.langSelected" class="border p-2">
+        <option v-for="language in app.i18n.languages" :key="language.id" :value="language.id">
+            {{ language.name }}
+        </option>
+    </select>
+
+
+
+
 ```
 
 This setup allows your app to support multiple languages, enhancing user experience by displaying content in their preferred language.
