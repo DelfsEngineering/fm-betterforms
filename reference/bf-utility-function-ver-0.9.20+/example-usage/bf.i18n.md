@@ -1,6 +1,6 @@
 # BF.i18n()
 
-You can use this functionality to set up multiple languages for your app.
+You can use this functionality to set up multiple languages for your app. `i18n` is short form internationalization. This function allows easy support for the integration of multiple languages.
 
 ### Step 1: Define Languages in Your App Model
 
