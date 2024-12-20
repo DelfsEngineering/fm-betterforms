@@ -67,23 +67,19 @@ No subdomain value is needed for Google, and Auth0 domain doesn't always have a 
 A new field `oauthId` needs to be created in the `Users` table.
 
 {% hint style="info" %}
-Remember to add the `ouahtId field to the layout.`
+Remember to add the **`ouahtId`** field to the layout.
 {% endhint %}
 
 ### Before Registration Hook - Business File
 
-A before registration hook script can be added to the business file if you want  to control whether a user is allowed to register or not.
+A before registration hook script can be used to the business file if you want  to control whether a user is allowed to register or not.
 
 The script needs to be called `onBeforeRegistration`, and by setting `createUser` to true on `$$BF_Model` will allow users to register to your app via OAuth.
 
-<div align="center">
-
-<img src="../../.gitbook/assets/image (5) (1) (1).png" alt="">
-
-</div>
+<div align="center"><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""></div>
 
 {% hint style="info" %}
-If `onBeforeRegistration` hook script is not created and/or `createUser` not set to true, users will not be allowed to register via OAuth.
+If **`onBeforeRegistration`** hook script is not created and/or `createUser` not set to true, users will not be allowed to register via OAuth.
 {% endhint %}
 
 #### Updating your Common hooks to support \`onBeforeRegistration\`
@@ -165,7 +161,9 @@ For example, if we were to add  Google to our app:
         }]
 ```
 
-Redirects can be done by adding a redirect query param to the URL.
+{% hint style="warning" %}
+Redirects can be performed by adding a `redirect` query param to the URL. You can also pass things like `id` 's which will appear in the `onBeforeRegistration`script in the `$$BF_Query`variable.
+{% endhint %}
 
 ```
 //This is just an example, multiple params can be passed as needed
@@ -174,7 +172,7 @@ Redirects can be done by adding a redirect query param to the URL.
             "action": "path",
             "options": {
                 "sameWindow": true,
-                "url": "/oauth/google?redirect=%2Fdashboard"
+                "url": "/oauth/google?redirect=%2Fdashboard&token=123-123-123-123"
             }
         }]
 ```
