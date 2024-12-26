@@ -67,4 +67,4 @@ In the HTML Editor, you can:
 * **Toggle DEV Mode**: Use the DEV button in the top right corner to enable or disable the development data model.
 * **AI Assistant**: You can ask the AI assistant for help, and it will automatically modify the HTML content based on your requests.
 
-Remember to **save** your changes before closing the HTML Editor**.** After that, be sure to **save** the entire page to ensure all modifications are stored.
+Remember to **save** your changes before closing the HTML Edito&#x72;**.** After that, be sure to **save** the entire page to ensure all modifications are stored.

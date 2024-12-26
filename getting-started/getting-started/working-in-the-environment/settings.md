@@ -2,7 +2,7 @@
 
 ### General
 
-You can set the <mark style="color:red;">**App Name**</mark> and <mark style="color:red;">**Common hookSet Name**</mark>** here.**
+You can set the <mark style="color:red;">**App Name**</mark> and <mark style="color:red;">**Common hookSet Name**</mark>**&#x20;here.**
 
 ### App Model
 
