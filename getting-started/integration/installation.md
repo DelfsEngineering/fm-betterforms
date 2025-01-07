@@ -15,12 +15,20 @@ The helper file is a FileMaker file that acts as proxy to the application files 
 
 ## Configuring the Helper File
 
+
+
 1. **Download** the helper file. You will find a link to the latest file from the dashboard of the BetterForms online editor.
 2. **Change** the default user and pass from **`admin`**` ``/`` `**`admin`** to your choice. This password is used in this file only and is just for your access. This can be your developer credentials you use in other files.
 3. **Change** the password only for the user account ‘**BetterForms**’ to a unique one that will be used to access the file by the FMBF servers. Note these credentials will be needed in any file that FM BetterForms interacts with. Note it for later as you will need it.\
-   These credentials are used in the BetterForms IDE, helper file and your business file.
+   \
+   **Only use these credentials within the BetterForms IDE, helper file, and your business file. Avoid using them elsewhere.**\
+
 4. **Add** a `BetterForms` user credential to your existing legacy business FileMaker file. This must have the same credentials as the Helper file above. Make sure to enable data entry only for the privelige set and one or both of the XML and DAPI privs. The default password is **`123456`**
 5. **Upload** the file to your FileMaker server.
 6.  **Enable** the Data API or XML Custom Web publishing gateway.
 
-    If you are using the XML gateway, this will have to be done [from the command line](http://docs.360works.com/index.php/Enable\_XML\_FileMaker\_17).&#x20;
+    If you are using the XML gateway, this will have to be done [from the command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).&#x20;
+
+{% hint style="warning" %}
+You must have a valid TLS certificate attached to your FileMaker server if you are using the Data API.
+{% endhint %}
