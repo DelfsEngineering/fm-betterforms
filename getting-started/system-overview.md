@@ -1,6 +1,6 @@
 ---
 description: >-
-  FM BetterForms was purpose built to allow FileMaker develoeprs access to a
+  FM BetterForms was purpose built to allow FileMaker developers access to a
   full powerful web technology stack.
 ---
 
