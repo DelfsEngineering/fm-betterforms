@@ -157,6 +157,7 @@
 * [Troubleshooting](usage/troubleshooting/README.md)
   * [Debugging](usage/troubleshooting/debugging.md)
   * [Frozen Actions Queue](usage/troubleshooting/frozen-actions-queue.md)
+  * [Vue Variables](usage/troubleshooting/vue-variables.md)
 * [JavaScript Tips](usage/javascript-tips/README.md)
   * [Calling Named Actions from HTML Vue Events](usage/javascript-tips/calling-named-actions-from-html-vue-events.md)
   * [Calculations](usage/javascript-tips/calculations.md)
