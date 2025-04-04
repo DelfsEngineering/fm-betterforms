@@ -118,19 +118,32 @@ Within each action in this actions array, a "row" key will be injected into the 
 The following is an example that will pas the key `id` from the table row into the path action
 
 ```yaml
-// add this key at the root level of the element
+// actions_onRowClick is added to the root level of the element 
+
+// Best practice:
 "actions_onRowClick": [{
+   "action": "namedAction",
+   "name": "myRowClickHandler"
+  }]  
+  
+ // in myRowClickHandler, you can get the row from params:
+ let row = action.options.params.row
+ ...
+ 
+ 
+ 
+ // Older practice:
+ actions_onRowClick": [{
    "action": "path",
    "options": {
-      "path_calc": "'/sitedetail?id=' + this.params.row.id"
+      "path_calc": "'/invoicedetail?id=' + this.params.row.id"
     }
   ]
-```
-
-This key can be retrieved in the `onFormRequest` script as follows:
-
-```
+  
+// In Filemaker in the invoicedetail onFormRequest hook script
+// Get the id via $$BF_Query:
 Set Variable $id = JSONGetElement ( $$BF_Query ; "id" )
+
 ```
 
 ## Custom Sorting Functionality
