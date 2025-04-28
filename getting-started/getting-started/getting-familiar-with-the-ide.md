@@ -20,6 +20,6 @@ After successfully logging in, let's get familiar with the workspace. Below is a
 6.  **Help**: If you need assistance, the Help tab offers various support resources, including documentation, examples & demos, and contact options for technical support.
 
     <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
-7. **Report a Bug Button**: Located at the bottom-right corner, this button allows you to report any issues or bugs you encounter while using the app. Your feedback helps us improve the system.
+7. **Report a Bug Button**: Located at the bottom-center, this button allows you to report any issues or bugs you encounter while using the app. Your feedback helps us improve the system.
 
 To start building your first app, click on the [<mark style="color:red;">`"Build your first app"`</mark>](./) button located in the Quick Access section.
