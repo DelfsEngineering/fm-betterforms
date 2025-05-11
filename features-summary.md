@@ -5,6 +5,7 @@
 **User Interface**
 
 * **Fully Responsive UI**: Compatible with desktop, tablet, and mobile devices for an optimal user experience.
+  * Build installable progressive web apps (PWA's)
 * **Custom Themes**: Create and apply custom themes to enhance the visual appeal of your apps.
 
 **Authentication and Security**
