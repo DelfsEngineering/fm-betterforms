@@ -11,14 +11,16 @@
 * _**debounce** - Delay running actions until a period of inactivity happens_
 * _**throttle**_ - Limit how frequent actions can run
 * _**runUtilityHook**_ - runs the `onUtility` hook passing it params
-* _**runOnCompleteHook**_ - runs the `onComplete` hook
+* _**runOnCompleteHook**_ - Explicitly runs the `onComplete` hook.
 * _**clipboard**_ - runs `clipboard` action allowing interaction with the clipboard
 * _**cookie**_ - Allows setting of browser side cookies
 * _**wait**_ - Waits for specified time or event
 * _**emit**_ - Vue event bus message emit
-* _**scrollTo**_ - Scrolls to an element
+* _**scrollTo**_ - Scrolls the viewport to a specific element.
 * _**namedAction**_ - Runs a named action. Also requires the `name` key.
 * _**function**_ - Runs JavaScript
+* _**consoleError**_ - Logs a message to the browser's error console.
+* _**showStripeCheckout**_ - Initiates the Stripe Checkout process.
 
 ### Authentication Actions
 
