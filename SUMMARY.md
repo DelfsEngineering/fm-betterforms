@@ -5,45 +5,54 @@
 
 ## Getting Started
 
-* [System Overview](getting-started/system-overview.md)
-* [⚙️ Integration](getting-started/integration/README.md)
-  * [1. Configure FileMaker Server](getting-started/integration/installation.md)
-  * [2. Add your Server to BetterForms](getting-started/integration/2.-add-a-server.md)
-  * [3. Create your first app](getting-started/integration/4.-create-a-site.md)
-  * [4. Create your First Page](getting-started/integration/5.-create-a-form.md)
-  * [5. Introduction to Hooks](getting-started/integration/3.-introduction-to-hooks.md)
-  * [6. BetterForms  File Integration](getting-started/integration/3.-copy-custom-functions-and-scripts.md)
-  * [7. Run your first Hook](getting-started/integration/6.-run-your-first-hook.md)
-  * [Next Steps](getting-started/integration/next-steps.md)
-* [Common Customizations](getting-started/common-customizations/README.md)
-  * [Introduction to Actions](getting-started/common-customizations/introduction-to-actions.md)
-  * [Introduction to Buttons](getting-started/common-customizations/introduction-to-buttons.md)
-  * [Page Navigation](getting-started/common-customizations/page-navigation.md)
-  * [Displaying Data in a Table](getting-started/common-customizations/displaying-data-in-a-table.md)
-* [Support](getting-started/support/README.md)
-  * [Learning JSON](getting-started/support/learning-json.md)
-* [🛠️ Getting Started](getting-started/getting-started/README.md)
-  * [Welcome to FM BetterForms!](getting-started/getting-started/welcome-to-fm-betterforms.md)
-  * [Getting Familiar with the IDE](getting-started/getting-started/getting-familiar-with-the-ide.md)
-  * [Build Your First App](getting-started/getting-started/build-your-first-app/README.md)
-    * [Use a Template](getting-started/getting-started/build-your-first-app/use-a-template.md)
-    * [Input App Details](getting-started/getting-started/build-your-first-app/input-app-details.md)
-  * [Environments](getting-started/getting-started/environments/README.md)
-    * [Understanding Environments](getting-started/getting-started/environments/understanding-environments.md)
-    * [Managing Your Environment](getting-started/getting-started/environments/managing-your-environment.md)
-  * [Working in the Environment](getting-started/getting-started/working-in-the-environment/README.md)
-    * [Pages](getting-started/getting-started/working-in-the-environment/pages/README.md)
-      * [Page Builder](getting-started/getting-started/working-in-the-environment/pages/page-builder.md)
-      * [Action Scripts](getting-started/getting-started/working-in-the-environment/pages/action-scripts.md)
-      * [Data Model](getting-started/getting-started/working-in-the-environment/pages/data-model.md)
-      * [Integration](getting-started/getting-started/working-in-the-environment/pages/integration.md)
-      * [Page Info](getting-started/getting-started/working-in-the-environment/pages/page-info.md)
-    * [Styling](getting-started/getting-started/working-in-the-environment/styling.md)
-    * [Navigation](getting-started/getting-started/working-in-the-environment/navigation.md)
-    * [Scripts](getting-started/getting-started/working-in-the-environment/scripts.md)
-    * [Settings](getting-started/getting-started/working-in-the-environment/settings.md)
-  * [Create a New Page](getting-started/getting-started/create-a-new-page.md)
-* [Hacking a Webpage](getting-started/hacking-a-webpage.md)
+*   [Welcome to FM BetterForms!](getting-started/welcome-to-fm-betterforms.md)
+*   [System Overview](getting-started/system-overview.md)
+*   [Quick Tour of the BetterForms IDE](getting-started/ide-quick-tour.md)
+
+*   **Phase 1: Setting Up Your Foundation**
+    *   [1.1 Configure FileMaker Server](getting-started/setup/configure-fm-server.md)
+    *   [1.2 Install BetterForms Helper File](getting-started/setup/install-bf-helper-file.md)
+    *   [1.3 Add Your Server to BetterForms (IDE)](getting-started/setup/add-server-to-bf.md)
+
+*   **Phase 2: Building Your First Application**
+    *   [2.1 Create an App (Site) in the IDE](getting-started/first-app/create-app.md)
+    *   [2.2 Create Your First Page (Intro to Page Builder)](getting-started/first-app/create-page.md)
+    *   [2.3 Understanding & Managing Environments (IDE)](getting-started/first-app/environments.md)
+    *   [2.4 Adding Elements to Your Page](getting-started/first-app/adding-elements.md)
+    *   [2.5 Understanding Validation](getting-started/first-app/understanding-validation.md)
+    *   [2.6 Adding Actions to Your Page](getting-started/first-app/adding-actions-to-your-page.md)
+    *   [2.7 Creating Your First List View](getting-started/first-app/creating-your-first-list-view.md)
+    *   [2.8 Understanding Page Data Flow](getting-started/first-app/page-data-flow.md)
+    *   [2.9 Creating Your First Hook](getting-started/first-app/creating-your-first-hook.md)
+    *   [2.10 Working with Data Tables (Coming Soon)](getting-started/first-app/working-with-data-tables.md)
+
+*   **Phase 3: Understanding Core BetterForms Concepts**
+    *   [3.1 Introduction to Hooks (and where to find them in the IDE)](getting-started/core-concepts/hooks-intro.md)
+    *   [3.2 Running Your First Hook (Practical Example)](getting-started/core-concepts/first-hook-example.md)
+    *   [3.3 Introduction to Actions & Action Scripts (IDE Context)](getting-started/core-concepts/actions-intro.md)
+    *   [3.4 Understanding the Data Model (and Page Data Model UI)](getting-started/core-concepts/data-model-intro.md)
+
+*   **Phase 4: Common Customizations & Expanding Your App**
+    *   [4.1 Adding & Configuring Buttons (Page Builder)](getting-started/customizations/buttons.md)
+    *   [4.2 Implementing Page Navigation (Actions & Site Navigation UI)](getting-started/customizations/page-navigation.md)
+    *   [4.3 Displaying Data in Tables (Page Builder & Element Config)](getting-started/customizations/displaying-data-tables.md)
+    *   [4.4 Basic App Styling (Site Styling UI)](getting-started/customizations/basic-styling.md)
+
+*   **Phase 5: Mastering the BetterForms Environment & Advancing Your Skills**
+    *   [5.1 Understanding & Managing Environments (In-Depth)](getting-started/environment/managing-environments-deep-dive.md)
+    *   [5.2 Deep Dive: Page Configuration & Settings](getting-started/environment/pages-deep-dive/README.md)
+        *   [Navigating the Page Builder Interface](getting-started/environment/pages-deep-dive/page-builder-ui.md)
+        *   [Working with Page-Level Action Scripts](getting-started/environment/pages-deep-dive/page-action-scripts.md)
+        *   [Configuring the Page Data Model](getting-started/environment/pages-deep-dive/page-data-model-config.md)
+        *   [Page Integration Settings Explained](getting-started/environment/pages-deep-dive/page-integration-settings.md)
+        *   [Managing Page Info & Other Settings](getting-started/environment/pages-deep-dive/page-info-misc.md)
+    *   [5.3 Working with Global Scripts](getting-started/environment/global-scripts.md)
+    *   [5.4 Managing App (Site) Settings & Navigation](getting-started/environment/app-settings-navigation.md)
+    *   [5.5 Exploring Further: What to Learn Next](getting-started/next-steps.md)
+
+*   **Support & Resources**
+    *   [Getting Help](getting-started/support/README.md)
+    *   [Learning JSON](getting-started/support/learning-json.md)
 
 ## Reference
 
@@ -178,6 +187,7 @@
 * [JavaScript Tips](usage/javascript-tips/README.md)
   * [Calling Named Actions from HTML Vue Events](usage/javascript-tips/calling-named-actions-from-html-vue-events.md)
   * [Calculations](usage/javascript-tips/calculations.md)
+* [Hacking a Webpage](usage/hacking-a-webpage.md)
 * [System Overview](usage/system-overview.md)
 * [Forms Processor](usage/formsoverview/README.md)
   * [Form Types](usage/formsoverview/formtypesoverview.md)
