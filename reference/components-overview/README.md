@@ -1,8 +1,10 @@
 # Page Elements
 
-Pages support various element types. The primary elements have been adapted from [Vue-FormBuilder](https://icebob.gitbooks.io/vueformgenerator/content/fields/).
+Pages in BetterForms support a wide variety of element types to build rich, interactive user interfaces. Many of the foundational input fields and form controls are based on a robust and widely-used schema-based form generation library. You can find documentation for these [BetterForms Elements](./betterforms-elements/README.md) in their dedicated section, which includes links to comprehensive external references for all their detailed properties and advanced usage.
 
-However, the BetterForms framework makes some deviations from the source code documentation as needed for implementation. This section covers differences and additions to the components. Many of BetterForms components are custom build and do not reply on external libraries.
+Beyond these standard elements, the BetterForms framework introduces numerous enhancements, makes specific adaptations, and includes many custom-built components that are unique to BetterForms or integrate specialized functionalities. These are detailed in the subsequent sections.
+
+This documentation aims to cover how all elements are used within BetterForms, highlighting any deviations from or additions to the base functionalities of standard elements, and providing full details for BetterForms-specific components.
 
 To learn more about how pages are built, see the Getting started guide:
 
