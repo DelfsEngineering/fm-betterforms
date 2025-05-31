@@ -10,12 +10,10 @@ Creating a call to this service will create a post to the LLM and stream results
 
 Avail in **bf-staging** only
 
-```json
 //create endpoint
-portal.myapp.com**/stream/create**
+portal.myapp.com/**/stream/create**
 
-Method: POST
-```
+Method: `POST`
 
 | Key                                                   | Type   | Description                                                                                                   |
 | ----------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
