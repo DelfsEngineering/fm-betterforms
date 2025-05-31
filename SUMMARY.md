@@ -176,6 +176,7 @@
 * [BF Enterprise Documentation](reference/bf-enterprise-documentation.md)
 * [BetterForms Error Pages API](reference/betterforms-error-pages-api.md)
 * [BF Streaming API](reference/bf-streaming-api.md)
+* [LLM Query API](reference/llmQueryAPI.md)
 * [Creating a PWA](reference/creating-a-pwa.md)
 
 ## Usage Tips <a href="#usage" id="usage"></a>
