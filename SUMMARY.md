@@ -9,12 +9,12 @@
 *   [System Overview](getting-started/system-overview.md)
 *   [Quick Tour of the BetterForms IDE](getting-started/ide-quick-tour.md)
 
-*   **1. Setting Up Your Foundation**
+*   [**1. Setting Up Your Foundation**](getting-started/setup/README.md)
     *   [1.1 Configure FileMaker Server](getting-started/setup/configure-fm-server.md)
     *   [1.2 Install BetterForms Helper File](getting-started/setup/install-bf-helper-file.md)
     *   [1.3 Add Your Server to BetterForms (IDE)](getting-started/setup/add-server-to-bf.md)
 
-*   **2. Building Your First Application**
+*   [**2. Building Your First Application**](getting-started/first-app/README.md)
     *   [2.1 Create an App (Site) in the IDE](getting-started/first-app/create-app.md)
     *   [2.2 Create Your First Page (Intro to Page Builder)](getting-started/first-app/create-page.md)
     *   [2.3 Understanding & Managing Environments (IDE)](getting-started/first-app/environments.md)
@@ -26,19 +26,19 @@
     *   [2.9 Creating Your First Hook](getting-started/first-app/creating-your-first-hook.md)
     *   [2.10 Working with Data Tables (Coming Soon)](getting-started/first-app/working-with-data-tables.md)
 
-*   **3. Understanding Core BetterForms Concepts**
+*   [**3. Understanding Core BetterForms Concepts**](getting-started/core-concepts/README.md)
     *   [3.1 Introduction to Hooks (and where to find them in the IDE)](getting-started/core-concepts/hooks-intro.md)
     *   [3.2 Running Your First Hook (Practical Example)](getting-started/core-concepts/first-hook-example.md)
     *   [3.3 Introduction to Actions & Action Scripts (IDE Context)](getting-started/core-concepts/actions-intro.md)
     *   [3.4 Understanding the Data Model (and Page Data Model UI)](getting-started/core-concepts/data-model-intro.md)
 
-*   **4. Common Customizations & Expanding Your App**
+*   [**4. Common Customizations & Expanding Your App**](getting-started/customizations/README.md)
     *   [4.1 Adding & Configuring Buttons (Page Builder)](getting-started/customizations/buttons.md)
     *   [4.2 Implementing Page Navigation (Actions & Site Navigation UI)](getting-started/customizations/page-navigation.md)
     *   [4.3 Displaying Data in Tables (Page Builder & Element Config)](getting-started/customizations/displaying-data-tables.md)
     *   [4.4 Basic App Styling (Site Styling UI)](getting-started/customizations/basic-styling.md)
 
-*   **5. Mastering the BetterForms Environment & Advancing Your Skills**
+*   [**5. Mastering the BetterForms Environment & Advancing Your Skills**](getting-started/environment/README.md)
     *   [5.1 Understanding & Managing Environments (In-Depth)](getting-started/environment/managing-environments-deep-dive.md)
     *   [5.2 Deep Dive: Page Configuration & Settings](getting-started/environment/pages-deep-dive/README.md)
         *   [Navigating the Page Builder Interface](getting-started/environment/pages-deep-dive/page-builder-ui.md)
