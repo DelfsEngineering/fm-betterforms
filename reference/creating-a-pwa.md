@@ -143,7 +143,7 @@ Our modal looks like the image below.
 
 By clicking on <mark style="color:red;">`Install`</mark>, it will trigger the browser event that asks if the user wants to install the app, as shown on the image below.
 
-![Screen Shot 2022-07-08 at 7.38.12 PM.png](<../.gitbook/assets/Screen\_Shot\_2022 07 08\_at\_7.38.12\_PM.png>)
+![Screen Shot 2022-07-08 at 7.38.12 PM.png](<../.gitbook/assets/Screen_Shot_2022 07 08_at_7.38.12_PM.png>)
 
 After installing it, the user will be able to access your web app as a regular native app.
 
@@ -198,6 +198,10 @@ The example below shows how we could trigger the permission prompt from a button
 
 In this example, we set the user ID (BetterForms ID) as a key to target this when sending a push notification. Clicking on the button will display the following prompt.
 
+{% hint style="info" %}
+`window.vueapp.$store.state.auth.user.id` refers to the **BetterForms User record ID**, _not_ your FileMaker business file PK. Using the BF ID ensures your subscription is associated with the correct user in the BF cloud database.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/Untitled 1 (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the user clicks on <mark style="color:red;">`Allow`</mark>, the subscription will be saved in the BF cloud database and you will be able to send a push notification to the user using either an action from the frontend or hitting our <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint, as shown below.
@@ -233,6 +237,10 @@ Use the <mark style="color:red;">`pwaPushNotificationSend`</mark> action step.
     "type": "button"
 }
 ```
+
+{% hint style="info" %}
+Again, place the **BetterForms User record ID** (from `pwaPromptPushPermission`), _not_ the business file PK, in this array. This ensures notifications reach the intended user.
+{% endhint %}
 
 #### Sending a Push Notification from the API endpoint:
 
