@@ -107,7 +107,7 @@ In our example, once the install button is clicked on, a modal will prompt askin
 }
 ```
 
-The named action <mark style="color:red;">`instalApp`</mark> above has the following code.
+The named action <mark style="color:red;">`installApp`</mark> above has the following code.
 
 ```json
 {
