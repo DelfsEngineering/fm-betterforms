@@ -175,6 +175,17 @@ After installing it, the user will be able to access your web app as a regular n
 iOS and iPadOS can only be installed if using Safari.
 {% endhint %}
 
+To support PWA behavior, you can use the <mark style="color:red;">`checkPWAInstallation`</mark> namedAction to detect whether the app is running in a browser or as an installed PWA. This can be useful for conditionally displaying elements like a PWA installation banner—show it only when the app is in the browser, and hide it when already installed. The action can be placed in the <mark style="color:red;">`onFormLoad`</mark> script to automatically update the state on load:
+
+```json
+"checkPWAInstallation": [{
+  "action": "function",
+  "function": "const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;\n\nmodel.isPWAInstalled = isStandalone ? true : false;"
+}]
+```
+
+
+
 ### Sending Push Notifications
 
 With PWA support, you can send push notifications to users, allowing your web app to engage with them. To request push notification permissions from users, we have an action that triggers the browser's 'ask for permission' prompt. This can be used at relevant and convenient points throughout your web app.
