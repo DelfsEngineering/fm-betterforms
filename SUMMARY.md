@@ -170,9 +170,9 @@
 * [BF Enterprise Documentation](reference/bf-enterprise-documentation.md)
 * [BetterForms Error Pages API](reference/betterforms-error-pages-api.md)
 * [BF Streaming Proxy](reference/bf-streaming-proxy.md)
-* [BF Streaming API (Chat)](reference/bf-streaming-api-chat.md)
-* [BF Streaming API (Assistants)](reference/bf-streaming-assistants-api.md)
-* [BF Streaming API (LLM Query)](reference/bf-streaming-api-llm-query.md)
+  * [BF Streaming API (Chat)](reference/bf-streaming-api-chat.md)
+  * [BF Streaming API (Assistants)](reference/bf-streaming-assistants-api.md)
+  * [BF Streaming API (LLM Query)](reference/bf-streaming-api-llm-query.md)
 * [Creating a PWA](reference/creating-a-pwa.md)
 
 ## Usage Tips <a href="#usage" id="usage"></a>
