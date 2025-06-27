@@ -1,4 +1,4 @@
-# BF Streaming API
+# BF Streaming API (Chat)
 
 {% hint style="info" %}
 The BetterForms Streaming API allows real time streaming of responses from LLM services like OpenAI and Google Gemini to be initiated.

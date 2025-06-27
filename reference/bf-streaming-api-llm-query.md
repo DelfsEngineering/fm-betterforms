@@ -1,4 +1,4 @@
-# BetterForms llmQuery API Documentation
+# BF Streaming API (LLM Query)
 
 ## Introduction
 
