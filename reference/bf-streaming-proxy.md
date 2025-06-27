@@ -1,8 +1,13 @@
 # BF Streaming Proxy
 
 {% hint style="info" %}
-The streaming proxy allows you to stream generative AI directly into a BF app via messaging.
+**Note:** This page provides a high-level overview of the streaming workflow. For specific implementation details, please see the following API documentation:
+* [BF Streaming API (Chat)](bf-streaming-api-chat.md)
+* [BF Streaming API (Assistants)](bf-streaming-assistants-api.md)
+* [BF Streaming API (LLM Query)](bf-streaming-api-llm-query.md)
 {% endhint %}
+
+The streaming proxy allows you to stream generative AI directly into a BF app via messaging.
 
 ### Workflow
 
