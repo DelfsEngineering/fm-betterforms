@@ -4,7 +4,7 @@ The API endpoint `/message/channels` will return all current active channels.
 
 A channel is considered active if there is at least one client connected to it.
 
-{% swagger baseUrl="https://yourdomain.com" path="/message/channels" method="post" summary="API: Return active channels" %}
+{% swagger baseUrl="https://portal.yourdomain.com" path="/message/channels" method="post" summary="API: Return active channels" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -39,4 +39,3 @@ the API key for your BF app
 ```
 {% endswagger-response %}
 {% endswagger %}
-

@@ -11,7 +11,7 @@ The component is based on UploadCares JS widget.
 
 ## Usage
 
-1. Register for a free account at [www.uploadcare.com](https://github.com/DelfsEngineering/fm-betterforms/tree/bb2a15739bd120aa2ee5df1765f06de1178e72c4/usage/formsoverview/components-overview/www.uploadcare.com)
+1. Register for a free account at [www.uploadcare.com](https://www.uploadcare.com/)
 2. Add your API public key into the schema
 3. Uploaded file data is found in the `model` key.
 
@@ -52,4 +52,3 @@ Fully read the UploadCare documentation before posting support requests.
     "type": "uploadcare"
 }
 ```
-

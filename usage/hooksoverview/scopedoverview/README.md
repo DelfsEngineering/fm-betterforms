@@ -1,2 +1,0 @@
-# Scoped hooks
-

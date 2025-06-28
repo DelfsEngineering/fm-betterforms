@@ -13,7 +13,7 @@
 
 ## Browser (Client)
 
-TLS Certificates are automatically generated for \*.[fmbetterforms.com](http://fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Let’s Encrypt, a free certificate service.
+TLS Certificates are automatically generated for \*.[fmbetterforms.com](https://app.fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Let's Encrypt, a free certificate service.
 
 Authenticated and Un-Authenticated Pages - BF allows web pages (form/layout) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the BF editor.
 
@@ -21,7 +21,7 @@ After a user is logged into a page that requires authentication, their credentia
 
 A JWT (JSON Web Token) token is generated using industry approved encryption. JWTs are immutable and ensure the client is who they claim to be.
 
-It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](https://app.gitbook.com/s/-LKI28WjQukQ2x6JNpYA-4045043681/usage/design-patterns-and-debugging/optimization)
+It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](../getting-started/environment/pages-deep-dive/page-data-model-config.md#caching-and-syncing)
 
 ## Web Servers
 

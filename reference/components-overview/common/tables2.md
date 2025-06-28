@@ -17,7 +17,7 @@ This component is based on [Vue-Tables-2](https://matanya.gitbook.io/vue-tables-
 
 Add the `slots` key to this element to define HTML regions to be displayed with the table. The `slot` key within each object defines the name of the slot, which can be referenced in the `columns` key.
 
-If you name a slot `child_row`, that HTML content will be displayed when the row of the table is expanded. _(see CSS trick_ [_below_](https://delfs-engineering.gitbook.io/betterforms/usage/formsoverview/components-overview/tables2#child-rows) _for how to customize the look of the child row icon)_
+If you name a slot `child_row`, that HTML content will be displayed when the row of the table is expanded. _(see CSS trick_ [_below_](#child-rows) _for how to customize the look of the child row icon)_
 
 ```yaml
 "columns": ["name", "title", "slot_name", "button_slot"],
@@ -166,4 +166,3 @@ To address this, you can define custom sorting functions in the table options. B
 }
 
 ```
-

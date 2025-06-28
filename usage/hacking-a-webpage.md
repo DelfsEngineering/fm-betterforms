@@ -5,14 +5,14 @@ As you begin to play around with BetterForms, you may find that sometimes you wa
 Hacking a webpage requires that you use the developer tools that are built into your browser. For a brief intro about how to use the developer tools in your browser, check out [this link](https://www.lifewire.com/web-browser-developer-tools-3988965). We recommend using **Google Chrome** for development, but these tips should work in FireFox and Safari just the same.
 
 {% hint style="info" %}
-These tips are only relevant for debugging **JavaScript**, **HTML**, and **CSS** in the web browser. If you're experiencing issues with your data not behaving as expected, you may want to start with your [Helper File's inbox & outbox](../../usage/troubleshooting/) instead.
+These tips are only relevant for debugging **JavaScript**, **HTML**, and **CSS** in the web browser. If you're experiencing issues with your data not behaving as expected, you may want to start with your [Helper File's inbox & outbox](../reference/connection-trouble-shooting-guide.md) instead.
 {% endhint %}
 
 ## Inspecting an Element
 
 An easy way to open the developer tools in most browsers is to right-click on any element and select **"Inspect Element"**. This opens the developer tools panel with the element you selected highlighted in the HTML code. From here, you can easily see how the JSON schema of the BetterForms editor translates to the HTML element on the page. You can even edit the HTML directly in the developer tools panel to quickly see how the changes might affect the look of the page.
 
-This panel also allows you to modify the CSS properties of an element. This is a great way to test how some CSS changes will look before you add them to your [site settings](../../reference/site-settings/).
+This panel also allows you to modify the CSS properties of an element. This is a great way to test how some CSS changes will look before you add them to your [site settings](../getting-started/environment/app-settings-navigation.md).
 
 If you're new to CSS, this is a great way to expand your knowledge by playing around with existing sites. Check out [this article](https://designtlc.com/use-chrome-inspector-edit-website-css/) for a quick overview.
 

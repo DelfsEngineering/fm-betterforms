@@ -4,7 +4,7 @@ The API endpoint `/message/users` will return all users connected to all or spec
 
 A channel is considered active if there is at least one client connected to it.
 
-{% swagger baseUrl="https://yourdomain.com" path="/message/users" method="post" summary="API: Return connected users" %}
+{% swagger baseUrl="https://portal.yourdomain.com" path="/message/users" method="post" summary="API: Return connected users" %}
 {% swagger-description %}
 
 {% endswagger-description %}

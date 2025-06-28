@@ -53,7 +53,7 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://yourdomain.com" path="/message/removeuser" method="post" summary="API: Remove User from Channel" %}
+{% swagger baseUrl="https://portal.yourdomain.com" path="/message/removeuser" method="post" summary="API: Remove User from Channel" %}
 {% swagger-description %}
 You can use this method to remove one or more users from channels. You must pass the API key generated for your app to authenticate this reqeust.
 {% endswagger-description %}
@@ -114,5 +114,5 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 **Learn more:**
 
 {% content-ref url="../actions-processor/actions_overview/channelleaveanon.md" %}
-[channelleaveanon.md](../actions-processor/actions\_overview/channelleaveanon.md)
+[channelleaveanon.md](../actions-processor/actions_overview/channelleaveanon.md)
 {% endcontent-ref %}

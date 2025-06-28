@@ -47,4 +47,4 @@ This editor is for data used only in the BetterForms IDE. The development data i
 
 #### Caching and Syncing
 
-You can choose to sync this cached data with the app to ensure consistency across sessions. [See more details](https://docs.fmbetterforms.com/getting-started/getting-started/working-in-the-environment/settings).
+You can choose to sync this cached data with the app to ensure consistency across sessions. [See more details](../managing-environments-deep-dive.md).

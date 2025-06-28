@@ -64,19 +64,19 @@ Open the helper file and click the **Inbox** tab. Show the status toolbar and ma
 **If the record doesn't show up in the inbox**, then the hook never reached your FileMaker server.
 
 - Double-check that the **onFormRequest** is enabled for your page in the Integration tab of the page editor. Then refresh your preview.
-- Check the BetterForms [user credentials](6.-run-your-first-hook.md#check-extended-privileges) _(see below)_
+- Check the BetterForms [user credentials](../setup/configure-fm-server.md) _(see below)_
 
 **If you're not sure if the record is in the inbox or not**, clear the inbox (delete all records) then refresh your preview in the browser to double-check if the inbox record was created.
 
 **If the inbox record exists but you had unexpected results**, check the outbox payload (the right side) to see the data model that was returned to the browser. You can run the hook locally by clicking the **Run Hook** button.
 
-**If the hook runs as expected locally, but not through BetterForms**, then you need to [check the privileges](6.-run-your-first-hook.md#check-extended-privileges) of the BetterForms user. The only differences between how BetterForms runs the script and when you run it locally with that handy button is the user account that runs the script.
+**If the hook runs as expected locally, but not through BetterForms**, then you need to [check the privileges](../setup/configure-fm-server.md) of the BetterForms user. The only differences between how BetterForms runs the script and when you run it locally with that handy button is the user account that runs the script.
 
 ### Check Extended Privileges
 
 Invalid credentials or misconfigured extended privileges for the BetterForms user is the most common cause of integration problems.
 
-Make sure your credentials for the BetterForms user have XML and Data API privileges enabled, and that they match what was configured in your [site settings](4.-create-a-site.md#configuring-your-first-site).
+Make sure your credentials for the BetterForms user have XML and Data API privileges enabled, and that they match what was configured in your [site settings](./create-app.md).
 
 - BetterForms encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
 
@@ -84,4 +84,4 @@ Make sure your credentials for the BetterForms user have XML and Data API privil
 
 You now have a basic understanding of how to create and run your first hook in BetterForms. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../core-concepts/betterforms-elements/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 

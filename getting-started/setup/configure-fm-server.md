@@ -1,7 +1,7 @@
 # 1. Configure FileMaker Server
 
 {% hint style="warning" %}
-Make sure you review the [system requirements](./#requirements) before you begin.
+Make sure you review the [system requirements](../../compatibility.md) before you begin.
 {% endhint %}
 
 ## What is the Helper file?
@@ -26,7 +26,7 @@ The helper file is a FileMaker file that acts as proxy to the application files 
 5. **Add** a `BetterForms` user credential to your existing legacy business FileMaker file. This must have the same credentials as the Helper file above. Make sure to enable data entry only for the privilege set and one or both of the XML and DAPI privs. The default password is **`123456`**
 6.  **Enable** the Data API or XML Custom Web publishing gateway. (only do this in your business file)
 
-    If you are using the XML gateway, this will have to be done [from the command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).&#x20;
+    If you are using the XML gateway, this will have to be done [from the command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).
 
 {% hint style="warning" %}
 You must have a valid TLS certificate attached to your FileMaker server if you are using the Data API.

@@ -9,7 +9,7 @@ Think of a BetterForms page like a FileMaker layout. It will contain any combina
 Pages are managed within the "Pages" tab of your App in the BetterForms IDE. From there, you can create new pages, edit existing ones, and manage their settings.
 
 {% hint style="warning" %}
-This guide assumes that you already have a working knowledge of basic JSON formatting and terminology. If you have never worked with JSON before, we recommend you [review this introduction to JSON](../../core-concepts/learning-json.md) first.
+This guide assumes that you already have a working knowledge of basic JSON formatting and terminology. If you have never worked with JSON before, we recommend you [review this introduction to JSON](../support/learning-json.md) first.
 {% endhint %}
 
 ## Key Concepts for Your First Page
@@ -20,13 +20,13 @@ Before diving into the creation steps, let's touch on two fundamental concepts:
 
 All data that can be seen and interacted with on the page lives in the **Data Model**. The Data Model is simply a JSON object. It can be pre-populated with data from your FileMaker Server when the page loads, and then users can modify it through input fields or other page elements.
 
-When you run a [**Scoped Hook**](../../core-concepts/hooks/README.md#scoped-hooks) (a FileMaker script tied to this page), the current Data Model is passed with the request, allowing you to process and save the data back to your FileMaker database.
+When you run a [**Scoped Hook**](../core-concepts/hooks-intro.md#scoped-hooks) (a FileMaker script tied to this page), the current Data Model is passed with the request, allowing you to process and save the data back to your FileMaker database.
 
 ### 2. The Page Schema
 
 The **Page Schema** is where you define all the elements that will appear on your page. It's also structured in JSON format.
 
-The most important part of the schema for now is the `fields` array. This array holds a list of all the [Page Elements](../../core-concepts/betterforms-elements/README.md) (like input fields, buttons, text areas, etc.) that make up your page.
+The most important part of the schema for now is the `fields` array. This array holds a list of all the [Page Elements](../../reference/components-overview/README.md) (like input fields, buttons, text areas, etc.) that make up your page.
 
 If you're familiar with HTML, you know that pages are built from the top down by default. The same concept applies here. Using Bootstrap CSS classes (which BetterForms supports), you can control the layout, such as how wide an element should be, and the elements will stack on the page accordingly.
 
@@ -41,7 +41,7 @@ Let's walk through creating a simple page.
 2.  **Initial Page Settings:**
     *   **Page Name:** Give your page a descriptive name, e.g., "My First Page".
     *   **Description:** (Optional) Add a brief description.
-    *   **Scoped Hook Set Name:** You'll need to set a [Scoped Hook Set Name](../../core-concepts/hooks/README.md#how-to-name-hooks) for the page. For this first page, something simple like "page1" or "myFirstPageHooks" will work. This name corresponds to a group of FileMaker scripts that will handle data operations for this specific page.
+    *   **Scoped Hook Set Name:** You'll need to set a [Scoped Hook Set Name](../core-concepts/hooks-intro.md#how-to-name-hooks) for the page. For this first page, something simple like "page1" or "myFirstPageHooks" will work. This name corresponds to a group of FileMaker scripts that will handle data operations for this specific page.
     *   **Authentication:** For this initial page, let's simplify things. Turn the **Authentication toggle to OFF** (it might show as "No Auth" or similar). This means users won't need to log in to see this specific page for now.
 
 3.  **Adding a Simple Element to See Data (Schema Editor):**
@@ -122,4 +122,3 @@ Go ahead and preview this page in your site. You should see the "Data Model Insp
 Congratulations! You've successfully created a basic page, defined its structure with the schema, added some initial data, and viewed it.
 
 The next step is to learn about [Adding and Configuring Page Elements](./adding-elements.md) to build more complex and interactive user interfaces.
-

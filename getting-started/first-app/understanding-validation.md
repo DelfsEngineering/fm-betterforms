@@ -75,4 +75,4 @@ The **Page Settings** tab allows you to manage validation settings for your page
 
 You now have a basic understanding of how to implement and manage validation in your BetterForms application. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../core-concepts/betterforms-elements/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 

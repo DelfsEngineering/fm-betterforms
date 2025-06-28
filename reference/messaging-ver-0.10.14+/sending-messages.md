@@ -6,7 +6,7 @@ description: >-
 
 # Sending messages
 
-Think of a message as a standard [**BF Action**](../actions-processor/actions\_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
+Think of a message as a standard [**BF Action**](../actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
 ## BF Action
 
@@ -50,7 +50,7 @@ The BF action **messageSend** can be used to send a message to channel or channe
 #### Full action reference:
 
 {% content-ref url="../actions-processor/actions_overview/messagesend.md" %}
-[messagesend.md](../actions-processor/actions\_overview/messagesend.md)
+[messagesend.md](../actions-processor/actions_overview/messagesend.md)
 {% endcontent-ref %}
 
 ### Anonymous channel
@@ -93,7 +93,7 @@ The BF action **messageSendAnonChannel** can be used to send a message to channe
 #### Full action reference:
 
 {% content-ref url="../actions-processor/actions_overview/messagesendanonchannel.md" %}
-[messagesendanonchannel.md](../actions-processor/actions\_overview/messagesendanonchannel.md)
+[messagesendanonchannel.md](../actions-processor/actions_overview/messagesendanonchannel.md)
 {% endcontent-ref %}
 
 ## FileMaker Script
@@ -138,7 +138,7 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 
 ## API endpoint /message/sendmessage
 
-{% swagger baseUrl="https://yourdomain.com" path="/message/sendmessage" method="post" summary="API: Send Message" %}
+{% swagger baseUrl="https://portal.yourdomain.com" path="/message/sendmessage" method="post" summary="API: Send Message" %}
 {% swagger-description %}
 
 {% endswagger-description %}

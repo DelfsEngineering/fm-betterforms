@@ -69,7 +69,7 @@ Each element you add will have various properties to configure its behavior and 
 *   `visible`: Can be set to `false` to hide an element statically.
 *   `visible_calc`: For dynamic visibility, you can use a calculation based on your data model, e.g., `"visible_calc": "model.isUserAdmin"`.
 
-You'll find many more properties specific to each element type in the [BetterForms Elements reference documentation](../../core-concepts/betterforms-elements/README.md).
+You'll find many more properties specific to each element type in the [BetterForms Elements reference documentation](../../reference/components-overview/README.md).
 
 ## Basic Input Field Validation
 
@@ -110,4 +110,4 @@ You now have a basic understanding of how to add and configure elements on your 
 2.  Understand the basic properties like `type`, `model`, and `label`.
 3.  Refer to the detailed documentation for each specific element type.
 
-Explore the [BetterForms Elements reference](../../core-concepts/betterforms-elements/README.md) to see the wide variety of available elements and their specific configuration options. As you build out your first application, you'll become more familiar with these tools and properties. 
+Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. As you build out your first application, you'll become more familiar with these tools and properties. 

@@ -91,4 +91,4 @@ You can also use named actions to define a set of actions that can be called fro
 
 You now have a basic understanding of how to add actions to your page in BetterForms. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../core-concepts/betterforms-elements/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 

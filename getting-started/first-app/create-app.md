@@ -20,7 +20,7 @@ To learn more about the comprehensive settings available for an App/Site, you ca
     *   If templates are available, you can browse them, view details (often in a popup window), and select one that suits your needs by clicking **"Use This Template"**.
     <figure><img src="../../.gitbook/assets/image (18).png" alt="Template Selection Page"></figure>
     *   {% hint style="success" %}
-        **Template Documentation:** Some templates may have additional specific documentation. [Check for template-specific guides here (example link - replace if necessary)](https://www.notion.so/delfsengineering/db16310d3e164bea8efe390cf9031c36?v=0fa6ecea0466457fad10edd331dc8a0b).
+        **Template Documentation:** Some templates may have additional specific documentation. [Check for template-specific guides here](../../reference/guides-and-integrations/README.md).
         {% endhint %}
 
 3.  **Input App Details:**

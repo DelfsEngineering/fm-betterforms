@@ -45,6 +45,7 @@
   * [5.4 Managing App (Site) Settings & Navigation](getting-started/environment/app-settings-navigation.md)
   * [5.5 Exploring Further: What to Learn Next](getting-started/next-steps.md)
 * [Support & Resources](getting-started/support-and-resources/README.md)
+  * [Contributing](misc/contribute.md)
   * [Getting Help](getting-started/support/README.md)
   * [Learning JSON](getting-started/support/learning-json.md)
 
@@ -86,7 +87,7 @@
     * [HTML](reference/components-overview/common/html.md)
   * [Grouping Elements](reference/components-overview/grouping-elements/README.md)
     * [Tabs](reference/components-overview/grouping-elements/tabs_form.md)
-    * [Panel](reference/components-overview/grouping-elements/untitled-1.md)
+    * [Panel](reference/components-overview/grouping-elements/panel.md)
     * [accordion](reference/components-overview/grouping-elements/accordion.md)
     * [accordion2](reference/components-overview/grouping-elements/accordion-1.md)
     * [listrows](reference/components-overview/grouping-elements/listrows.md)

@@ -15,11 +15,11 @@ FM BetterForms is a cloud based SAAS platform and requires minimal installation.
 
 #### 1. Configure and upload the Helper file, Upload and configure FMS
 
-Prior to uploading the Helper File ([Read more on the helper file here ](helper-file.md)) You will need to do a bit of setup.
+Prior to uploading the Helper File ([Read more on the helper file here ](../reference/updating-the-helper-file.md)) You will need to do a bit of setup.
 
 1. [Download the helper file here ...](https://www.dropbox.com/sh/o8c1k649qpret5r/AAAYa7hKiOZEgBlSL4vCs6kma?dl=0)
 2. **Change** default user and pass from `admin / admin` to your choice. This password is used in this file only and is just for your access.
-3. **Change** the password only for the user account ‘BetterForms’ to a unique one that will be used to access the file by the FMBF servers. Note these credentials will be needed in any file that FM BetterForms interacts with.
+3. **Change** the password only for the user account 'BetterForms' to a unique one that will be used to access the file by the FMBF servers. Note these credentials will be needed in any file that FM BetterForms interacts with.
 4. **Add** a `BetterForms` user credential to your destination legacy FileMaker File. This must have the same credentials as the Helper File above. Make sure to enable data entry only and XML privs.
 5. **Upload** the file to a V16+ FMS.
 6. **Enable** the XML Custom Web publishing gateway, If your server is V17 this will have to be done from the command line. This is a good reference: [http://docs.360works.com/index.php/Enable\_XML\_FileMaker\_17](http://docs.360works.com/index.php/Enable\_XML\_FileMaker\_17) on how to enable the XML gateway.
@@ -39,20 +39,20 @@ If you have filter databases on in the FMS Admin panel, you will not see the fil
 
 instead of the files hosted.
 
-&#x20;![](<../.gitbook/assets/image (21).png>)
+![](<../.gitbook/assets/image (21).png>)
 {% endhint %}
 
 
 
 #### 3. Install custom functions
 
-For this step [please review the section on](hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
+For this step [please review the section on](../getting-started/core-concepts/hooks-intro.md) `common` and `scoped` hooks to properly understand the differences.
 
 1. From the helper file, navigate to the integration tab and select step 1. This will copy the custom functions to your clipboard.
 2. Paste these custom functions into your business application file.
 
 #### 4. Install scaffold scripts for common and 1st scoped hookset.
 
-For this step [please review the section on](hooksoverview/scopedoverview/hooks.md) `common` and `scoped` hooks to properly understand the differences.
+For this step [please review the section on](../getting-started/core-concepts/hooks-intro.md) `common` and `scoped` hooks to properly understand the differences.
 
 1. From the helper file integration tab, select '_Create Scaffold Hook set_' and paste these folders and scripts into your business application. Note you do not need to create a folder for this as they are already contained within a folder. _Please make sure you understand the names you give common and scoped hook sets._
