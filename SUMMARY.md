@@ -145,7 +145,7 @@
   * [OAuth](reference/users-and-authentication/oauth.md)
 * [Advanced Configuration](reference/advanced-configuration/README.md)
   * [Custom Domains](reference/advanced-configuration/custom-domains.md)
-* [BF Utility Functions](reference/bf-utility-function-ver-0.9.20+/README.md)
+* [BF Utility Function Ver. 0.9.20+](reference/bf-utility-function-ver-0.9.20+/README.md)
   * [Example Usage](reference/bf-utility-function-ver-0.9.20+/example-usage/README.md)
     * [BF.i18n()](reference/bf-utility-function-ver-0.9.20+/example-usage/bf.i18n.md)
 
@@ -181,47 +181,14 @@
 * [Enterprise](reference/enterprise/README.md)
   * [BF Enterprise Documentation](reference/bf-enterprise-documentation.md)
 
-## Usage Tips <a href="#usage" id="usage"></a>
+## Cookbook
+* [Recipes for BetterForms](cookbook/README.md)
 
-* [Troubleshooting](usage/troubleshooting/README.md)
-  * [Debugging](usage/troubleshooting/debugging.md)
-  * [Frozen Actions Queue](usage/troubleshooting/frozen-actions-queue.md)
-  * [Vue Variables](usage/troubleshooting/vue-variables.md)
-* [JavaScript Tips](usage/javascript-tips/README.md)
-  * [Calling Named Actions from HTML Vue Events](usage/javascript-tips/calling-named-actions-from-html-vue-events.md)
-  * [Calculations](usage/javascript-tips/calculations.md)
-* [Hacking a Webpage](usage/hacking-a-webpage.md)
-* [System Overview](usage/system-overview.md)
-* [Forms Processor](usage/formsoverview/README.md)
-  * [Form Types](usage/formsoverview/formtypesoverview.md)
-  * [HTML & VueJS](usage/formsoverview/working-with-html.md)
-  * [Styling and Design](usage/formsoverview/styling.md)
-* [Customizing and Styling](usage/stylingverview/README.md)
-  * [Custom CSS](usage/stylingverview/custom-css.md)
-  * [Custom Components](usage/stylingverview/custom-components/README.md)
-    * [Components Editor](usage/stylingverview/custom-components/components-editor.md)
-    * [Component Best Practices](usage/stylingverview/custom-components/component-best-practices.md)
-  * [Page Pre-loaders](usage/stylingverview/page-pre-loaders.md)
-  * [Favicon](usage/stylingverview/favicon.md)
-* [Design Patterns and Best Practices](usage/design-patterns-and-debugging/README.md)
-  * [Working with environments](usage/design-patterns-and-debugging/untitled.md)
-  * [Handling Data](usage/design-patterns-and-debugging/fetching-data.md)
-  * [Saving Data](usage/design-patterns-and-debugging/saving-data.md)
-  * [Data Optimization](usage/design-patterns-and-debugging/optimization.md)
-  * [Business Logic](usage/design-patterns-and-debugging/business-logic.md)
-  * [UI / UX](usage/design-patterns-and-debugging/ui-ux.md)
-  * [Debugging](usage/design-patterns-and-debugging/debugging.md)
-  * [Script Engine Optimization](usage/design-patterns-and-debugging/script-engine-optimization.md)
-* [Getting Started](usage/getting-started.md)
-* [Installation](usage/installation.md)
-
-## Security
-
-* [Authentication](security/authentication.md)
-* [Security White Paper](security/white-paper.md)
-* [Firewalls](security/security.md)
-* [Technology Stack](security/technology-stack.md)
+* [Security](security/README.md)
+  * [Authentication](security/authentication.md)
+  * [Security White Paper](security/white-paper.md)
+  * [Firewalls](security/security.md)
+  * [Technology Stack](security/technology-stack.md)
+  * [Compatibility](security/compatibility.md)
 
 ***
-
-* [Compatibility](compatibility.md)
