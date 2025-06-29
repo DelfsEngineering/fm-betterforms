@@ -11,7 +11,7 @@ Debugging your developer hooks is easy. The inbox layout helps to probe into bot
 For tracing set break points at the beginning of your hook and manually run the `Run scriptService`  to begin processing the inbox payload.
 
 ```
-            ![](/assets/Screen Shot 2017-07-17 at 9.56.05 AM.png)
+            ![](/assets/Screen-Shot-2017-07-17-at-9.56.05-AM.png)
 ```
 
 ### Common Issues
