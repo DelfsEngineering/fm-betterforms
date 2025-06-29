@@ -35,5 +35,11 @@ description: Software and tools we use to run FM BetterForms!
 * **Discourse** - Forum
 * **Slack** - Live Chat
 
+### Development & Automation
+
+* **n8n** - Automation
+* **Cursor.ai** - Code Editing
+* **OpenAI** - Primary AI Models
+
 
 
