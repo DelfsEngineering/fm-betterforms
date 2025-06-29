@@ -38,7 +38,7 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
 }
 ```
 
-![](../../../.gitbook/assets/screen-shot-2017-10-09-at-5.34.44-pm.png)
+!["Dropzone Element"](../../../.gitbook/assets/screen-shot-2017-10-09-at-5.34.44-pm.png)
 
 ## Additional Options
 

@@ -134,6 +134,6 @@ Using an HTML nav item, you can add badges
 ]
 ```
 
-![](../../.gitbook/assets/screen\_shot\_2020-05-21\_at\_11.18.58\_am.png)
+![](../../.gitbook/assets/screen_shot_2020-05-21_at_11.18.58_am.png)
 {% endtab %}
 {% endtabs %}

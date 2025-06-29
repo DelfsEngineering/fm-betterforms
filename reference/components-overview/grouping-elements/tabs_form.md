@@ -23,7 +23,7 @@ Vertical Tabs give you the ability to contain repeating records (tab) of data an
 
 v-tab's can contain full form schema. This means you can build forms within forms!
 
-![](../../../.gitbook/assets/screen-shot-2017-09-06-at-11.39.51-pm.png)
+!["Tabs Element"](../../../.gitbook/assets/screen-shot-2017-09-06-at-11.39.51-pm.png)
 
 | Key           | Type   | Description                                                                                                                |
 | ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |

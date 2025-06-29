@@ -172,7 +172,6 @@
   * [Developer Mode](reference/developer-mode.md)
   * [JavaScript Libraries](reference/javascript-libraries.md)
   * [Practices for File Downloads](guides/best-practices/practices-for-file-downloads.md)
-  * [Software Testing Overview](reference/software-testing-overview.md)
   * [Rollbacks and Version Control](guides/best-practices/rollbacks-and-version-control.md)
 * [Support & Maintenance](reference/support-and-maintenance/README.md)
   * [Connection Trouble Shooting Guide](reference/connection-trouble-shooting-guide.md)

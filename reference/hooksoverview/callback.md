@@ -76,9 +76,9 @@ Set Variable [$statusCode ; Value: 418 ]
 
 In order to include **$headers** and **$statusCode** to your API response, there's a change that needs to be done to the API hook script on business file.
 
-* On your API callback hook script, find where **\$$BF\_Payload** is set, as shown in the image below.
+* On your API callback hook script, find where `$$BF_Payload` is set, as shown in the image below.
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+!["API Callback Hook Script"](../../.gitbook/assets/callback-hook-example.png)
 
 * Modify its value so it maches the following code, where **data.headers** and **data.statusCode** are added to the existing JSONSetElement statement.
 
@@ -108,7 +108,7 @@ The image below shows a best practice for structuring endpoints and allows for e
 
 The _concern_ of each endpoint is generally not to do business logic but to gather required data and format the response suitable to be returned to your calling server.
 
-![](../../.gitbook/assets/screen-shot-2017-09-29-at-5.23.15-pm.png)
+!["API Endpoint Structure"](../../.gitbook/assets/screen-shot-2017-09-29-at-5.23.15-pm.png)
 
 Here the main common hook script `BetterForms - onAPICallBack ...` acts as a dispatcher for each version. The `V1 Dispatcher` script then parses out each /endpoint and dispatches accordingly. For future debugging the head of each script has a logging step also.
 

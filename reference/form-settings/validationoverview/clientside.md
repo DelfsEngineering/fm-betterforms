@@ -4,7 +4,7 @@ You can define your own Javascript custom validation calculation that will fire 
 
 By selecting the `validator` type to `calc` and adding a calculation and error message you can have excellent control over validation.
 
-![](../../../.gitbook/assets/screen-shot-2018-01-19-at-6.47.50-pm.png)
+!["Custom Validator"](../../../.gitbook/assets/screen-shot-2018-01-19-at-6.47.50-pm.png)
 
 ```yaml
 // example JSON for an element with custom validation

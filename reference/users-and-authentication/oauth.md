@@ -98,7 +98,7 @@ Update the BF Common Dispatch Script
 
 
 
-Users registered via OAuth workflow are automatically verified, so there’s no need to send verification emails.
+Users registered via OAuth workflow are automatically verified, so there's no need to send verification emails.
 
 ### New Callback Landing Page
 
@@ -176,3 +176,19 @@ Redirects can be performed by adding a `redirect` query param to the URL. You ca
             }
         }]
 ```
+
+For Auth0, this can be found under the settings for your application.
+
+!["OAuth Provider Settings"](../../.gitbook/assets/oauth-provider-settings.png)
+
+Now in BetterForms, navigate to the User connectors page and create a new OAuth2 connector.
+
+!["OAuth Credentials"](../../.gitbook/assets/oauth-credentials.png)
+
+Copy the settings from your Auth0 application into the fields in BetterForms. The `scope` can be left as `openid profile email` for Auth0.
+
+### Redirect URI
+
+The redirect URI is a security measure to ensure that the authentication provider only sends users to a trusted location. You must copy the redirect URI from BetterForms and paste it into your authentication provider's settings.
+
+!["OAuth Redirect URI"](../../.gitbook/assets/oauth-redirect-uri.png)

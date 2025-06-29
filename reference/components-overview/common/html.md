@@ -26,13 +26,17 @@ Use of the model key for this element is helpful if you have HTML content that y
 
 ## HTML Editor
 
-To work more directly with HTML code, you can open the dedicated HTML editor from within the schema editor. To launch, click on the line number that contains an "html" key (line 95 in the example below).
+This powerful element allows you to add custom HTML and [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md).
 
-![](<../../../.gitbook/assets/open html.jpg>)
+#### Opening the HTML Editor
 
-Within the HTML editor, you can build your HTML code and even see a live preview of how it will render alongside the editor. If you are using [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md), you'll see your [development data model](../../form-settings/data-model.md) displayed in the preview and can edit it in the Data Model tab.
+!["Open HTML Editor button"](../../../.gitbook/assets/open-html.jpg)
 
-![](../../../.gitbook/assets/html-editor.png)
+When using [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md), you'll see your [development data model](../../form-settings/data-model.md) displayed in the preview and can edit it in the Data Model tab.
+
+!["HTML Editor"](../../../.gitbook/assets/html-editor.png)
+
+This makes developing with custom code fast and easy.
 
 {% hint style="info" %}
 **Remember:** The HTML editor works wherever there is a "html" key in the schema! This expands beyond the HTML element to [modals](../../actions-processor/actions\_overview/showmodal.md) and [slots](tables2.md#slots) of a [data table](tables2.md).

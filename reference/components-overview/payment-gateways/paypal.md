@@ -4,7 +4,9 @@
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
-![](../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm.png)
+!["PayPal Element"](../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm.png)
+
+This element allows you to take payments via PayPal.
 
 When clicked, the payment workflow is initiated.
 
