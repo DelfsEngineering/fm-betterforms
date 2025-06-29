@@ -184,7 +184,7 @@
 ## Cookbook
 * [Recipes for BetterForms](cookbook/README.md)
 
-* [Security](security/README.md)
+* [**Security**](security/README.md)
   * [Authentication](security/authentication.md)
   * [Security White Paper](security/white-paper.md)
   * [Firewalls](security/security.md)
