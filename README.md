@@ -14,12 +14,22 @@ FM BetterForms makes it easy to create high performance web applications and for
 * Publish data and tables
 * Use 3rd party JS modules easily
 
-[**Contribute**](https://github.com/DelfsEngineering/fm-betterforms/tree/1e5cebac9f0ebf84cd9c6da06db5abf75ae698ed/misc/contribute.md)\
-FM BetterForms is currently not fully open source but you can still contribute to making this framework better. Learn how you can contribute to this documentation, make suggestions for improvements and contribute code snippets.
+# Contributing
 
-**Author**\
-Delfs' Engineering\
-TORONTO CANADA\
+### Documentation Contributions
+If you see something that you can contribute, we would LOVE a pull request with your edits! To make this easy you can click the _"Edit this page"_ link at the top of the web docs.
+
+The docs are all written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).  If you've used GitHub, it's pretty likely you've encountered it before.  You can become a pro in a few minutes by reading their [GFM Documentation page](https://help.github.com/articles/github-flavored-markdown/).
+
+### Filemaker Code Snippets 
+If you have Filemaker script code suggestions and code contributions we would love to see them. You can and the files to a pull request or open an issue here. 
+
+### BetterForms Schema trick, and tips
+For contributing schema tricks and techniques please create a pull request or open an issue and we will add them to the Tips and tricks document here.
+
+**Author**
+Delfs' Engineering
+TORONTO CANADA
 www.fmbetterforms.com
 
 ***
