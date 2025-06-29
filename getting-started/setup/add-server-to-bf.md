@@ -1,17 +1,18 @@
-# 2. Add your Server to BetterForms
+# 3. Add Server to BetterForms IDE
 
-In the [BetterForms IDE](https://app.fmbetterforms.com/#/servers), select the Servers tab and follow the instructions to add your FileMaker server.
+The final setup step is to register your FileMaker Server with the BetterForms IDE and test the connection.
 
-All that's needed here is the IP address or FQDN domain name of your FileMaker server (credentials are entered later). Enter a friendly name to be referenced throughout the BetterForms interface.
+### Registration Steps
 
-Once your server is created, click the **Test Connection** button to ensure that the XML gateway or the Data API is properly enabled on your server. You should see the helper file and your business file listed in the results.
+1.  Log into the [BetterForms IDE](https://app.fmbetterforms.com/#/servers) and navigate to the **Servers** tab.
+2.  Create a new server connection, providing a friendly name and the IP address or Fully Qualified Domain Name (FQDN) of your FileMaker server.
+3.  Click the **Test Connection** button to verify that BetterForms can communicate with your server's Data API or XML gateway. You should see a list of the files hosted on your server, including the helper file.
 
-{% hint style="info" %}
-If your FileMaker server is configured to hide files you do not have access, you will be prompted to enter credentials to show the list of files
+{% hint style="warning" %}
+If your FileMaker Server is configured to **Filter databases...**, you will not see the file list immediately. Instead, you will see a `{"messages":[{"code":"9","message":"Insufficient privileges"}]}` error. You must enter the `BetterForms` user credentials you configured previously to see the list of files.
 {% endhint %}
 
-## Troubleshooting
+### Troubleshooting
 
-For FileMaker Server 17, the XML gateway must be enabled from the command line. See [this guide](http://docs.360works.com/index.php/Enable\_XML\_FileMaker\_17) for instructions on that configuration.
-
-If you have strict firewall settings protecting your FileMaker server, see [this page](../../security/security.md).
+*   For FileMaker Server 17+, the XML gateway must be enabled from the command line. See [this guide](http://docs.360works.com/index.php/Enable_XML_FileMaker_17) for instructions.
+*   If you have a firewall protecting your server, you may need to whitelist the BetterForms IP addresses. See the [Firewalls & Security](../../security/security.md) page for details.

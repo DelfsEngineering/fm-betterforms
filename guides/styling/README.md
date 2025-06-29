@@ -6,6 +6,11 @@ description: >-
 
 # Customizing and Styling
 
+BetterForms is built with Bootstrap CSS as the UI design framework. You can learn more about [Bootstrap here](https://getbootstrap.com/docs/3.3/).
+
+## styleClasses
+Every field type can have CSS classes tied to it. This allows you to add any `Bootstrap CSS` or your own custom classes to any object.
+
 ### Optional Page Sections
 
 You can hide or show various parts of the user interface

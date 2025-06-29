@@ -6,9 +6,19 @@ description: >-
 
 # System Overview
 
-FM BetterForms was purpose-built to allow FileMaker developers access to a full powerful web technology stack. All data is stored on your FileMaker Server and no data is cached.&#x20;
+FM BetterForms was purpose-built to allow FileMaker developers access to a full, powerful web technology stack. All data is stored on your FileMaker Server and is not cached by BetterForms. Data remains secure in transit with encryption.
 
-Data remains secure in transit with encryption.&#x20;
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>High-Level Architecture</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+## System Status and Performance Monitor
+
+The health and performance of the BetterForms Cloud can be checked by visiting the official status page:
+
+{% embed url="https://status.fmbetterforms.com" %}
+Official BetterForms Status Page
+{% endembed %}
+
+To receive live updates, you can subscribe via the monitoring page.
+
+<figure><img src="../.gitbook/assets/BF Overview.png" alt=""><figcaption><p>Deployment Overview</p></figcaption></figure>
 

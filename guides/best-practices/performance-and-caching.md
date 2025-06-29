@@ -45,6 +45,20 @@ window.localStorage.clear();
 ```
 {% endhint %}
 
+### Running Concurrent Tasks
+
+Often, slow-running processes can be run concurrently so the user does not have to wait for them to complete. This is a great way to improve the perception of performance for your application.
+
+**Examples of tasks that can be spun into a new thread:**
+
+*   Writing a log entry
+*   Sending an email
+*   Building a report
+*   Sending a real-time message
+
+For more background information on the FileMaker Script Engines and how to implement this, see this video:
+{% embed url="https://www.youtube.com/watch?v=PNCdwNak3XI" %}
+
 ####
 
 

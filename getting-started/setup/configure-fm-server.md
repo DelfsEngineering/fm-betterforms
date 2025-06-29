@@ -1,33 +1,22 @@
-# 1. Configure FileMaker Server
+# 1. Configure FileMaker Server & Helper File
+
+This initial part of the guide is essential for laying the groundwork to connect your FileMaker solutions with BetterForms. 
+
+### Requirements
+*   FileMaker Server v16+ (v17+ preferred for Data API support)
+*   CWP (XML or Data API) enabled on the server
+*   A server with adequate CPU and a fast connection (data-center recommended)
+*   Base Elements Plugin (only used for the integration script in the Helper file)
+
+### Configuration Steps
+
+1.  **Download the Helper File:** [Get the latest version here](https://www.dropbox.com/sh/o8c1k649qpret5r/AAAYa7hKiOZEgBlSL4vCs6kma?dl=0).
+2.  **Change Admin Credentials:** Open the helper file and change the default `admin / admin` credentials to your own secure password.
+3.  **Set BetterForms User Password:** Change the password for the **`BetterForms`** user account. This is the password the BetterForms servers will use to connect to this file. **Note this password down**, as you will need it when adding the server to the IDE and when setting up your own application files.
+4.  **Upload to Server:** Upload the configured helper file to your FileMaker Server.
+5.  **Add Credentials to Your App:** In your own FileMaker application file, create a `BetterForms` user account with the **exact same password** you set in step 3. This account needs a privilege set that allows `Data Entry Only` and has the `fmxml` (for CWP) and/or `fmrest` (for Data API) extended privileges enabled.
+6.  **Enable CWP Gateway:** Ensure either the XML Custom Web Publishing gateway or the Data API is enabled on your FileMaker Server. For FMS 17+, enabling the XML gateway must be done via the [command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).
 
 {% hint style="warning" %}
-Make sure you review the [system requirements](../../compatibility.md) before you begin.
-{% endhint %}
-
-## What is the Helper file?
-
-The helper file is a FileMaker file that acts as proxy to the application files that BetterForms will be connecting to. It also includes many other benefits:
-
-* Provides code generation for clipboard pasting of custom functions and scripts
-* Allows a single point of entry from the BetterForms framework allowing clear and logical security control
-* Contains a user table for tracking users and authentication.
-* Allows hook scripts to be run locally for debugging.
-
-## Configuring the Helper File
-
-
-
-1. **Download** the helper file. You will find a link to the latest file from the dashboard of the BetterForms online editor.
-2. **Change** the default user and pass from **`admin`**` ``/`` `**`admin`** to your choice. This password is used in this file only and is just for your access. This can be your developer credentials you use in other files.
-3. **Change** the password only for the user account ‘**BetterForms**’ to a unique one that will be used to access the file by the FMBF servers. Note these credentials will be needed in any file that FM BetterForms interacts with. Note it for later as you will need it.\
-   \
-   **Only use these credentials within the BetterForms IDE, helper file, and your business file. Avoid using them elsewhere.**
-4. **Upload** the file to your FileMaker server.
-5. **Add** a `BetterForms` user credential to your existing legacy business FileMaker file. This must have the same credentials as the Helper file above. Make sure to enable data entry only for the privilege set and one or both of the XML and DAPI privs. The default password is **`123456`**
-6.  **Enable** the Data API or XML Custom Web publishing gateway. (only do this in your business file)
-
-    If you are using the XML gateway, this will have to be done [from the command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).
-
-{% hint style="warning" %}
-You must have a valid TLS certificate attached to your FileMaker server if you are using the Data API.
+You must have a valid TLS certificate installed on your FileMaker Server to use the Data API.
 {% endhint %}
