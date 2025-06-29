@@ -1,15 +1,29 @@
 # JavaScript Libraries
 
-BetterForms is bundled with the following JS libraries:
+BetterForms is bundled with the following core JS libraries. You can access these libraries anywhere where JavaScript can be inserted.
 
-**MomentJS** - working with dates and times[https://momentjs.com/docs/#/displaying/](https://momentjs.com/docs/#/displaying/)Version: 2.24.0
+*   **MomentJS** - `v2.24.0` - [https://momentjs.com/](https://momentjs.com/)
+*   **NumeralJS** - `v2.0.6` - [http://numeraljs.com/](http://numeraljs.com/)
+*   **Lodash** - `v4.17.11` - [https://lodash.com/](https://lodash.com/)
+*   **Marked** - `v0.6.2` - [https://marked.js.org/](https://marked.js.org/)
 
-**NumeralJS** - formatting numbers[http://numeraljs.com/#format](http://numeraljs.com/#format)Version: 2.0.6
+---
 
-**Lodash** - any useful function you can imagine[https://lodash.com/docs/](https://lodash.com/docs/)Version: 4.17.11
+### Additional Libraries
 
-**Marked** - markdown complier[https://marked.js.org/](https://marked.js.org/)Version: 0.6.2
+The following libraries are also referenced throughout the documentation for use with specific components or features. They may require you to add them via CDN links.
 
-**Bootstrap** - CSS styling[https://getbootstrap.com/](https://getbootstrap.com/)Version: 3.3.7 (this will be removed in the future, it can be added in via CDN)
-
-You can access these libraries anywhere where JavaScript can be inserted, including these curly brackets
+*   **AWS SDK**
+*   **Bootstrap** - `v3.3.7` (Note: This is being phased out but may still be in use)
+*   **Dropzone.js** & **vue-dropzone**
+*   **fullcalendar.io** & **vue-fullcalendar**
+*   **ion.rangeSlider**
+*   **js-cookie** & **vue-js-cookie**
+*   **JsonPath**
+*   **sweet-modal-vue**
+*   **Uppy**
+*   **UploadCare**
+*   **v-calendar**
+*   **vue-form-wizard**
+*   **vue-js-modal**
+*   **vue-notification**
