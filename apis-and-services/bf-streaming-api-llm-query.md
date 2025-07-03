@@ -173,104 +173,43 @@ You, as the user of the `/llm/query` API, do not directly handle the low-level t
 ### Frontend Tools (UI Tools)
 
 {% hint style='info' %}
-**Version Requirement:** Frontend Tools are available in BetterForms version 3.1.8 and later. If you are using an earlier version, please update to access this feature.
+**Version Requirement:** BetterForms v3.1.8+
 {% endhint %}
 
-In addition to FileMaker Common Hook tools, the `llmQuery` service supports **Frontend Tools** - special tools that allow LLMs to trigger UI actions directly in the user's browser. These tools provide a way for AI assistants to interact with users through the BetterForms interface without requiring FileMaker backend processing.
+Frontend Tools trigger UI actions directly in the browser without FileMaker Common Hook calls.
 
-**Key Differences from Common Hook Tools:**
-- **Frontend Tools** execute entirely in the browser using BetterForms actions
-- **Common Hook Tools** execute on the FileMaker server via script calls
-- Frontend Tools are ideal for UI interactions, alerts, navigation, and client-side operations
-- Common Hook Tools are ideal for data operations, server-side logic, and FileMaker integrations
+| Component | Requirement |
+|-----------|-------------|
+| **LLM Tool Name** | Must use `ui_` prefix |
+| **namedAction Name** | Remove `ui_` prefix from tool name |
+| **Response Action** | Must end with `llmToolCallResponse` |
 
-#### How Frontend Tools Work
+#### Implementation Example
 
-**1. Tool Definition with `ui_` Prefix:**
-Frontend tools are identified by the `ui_` prefix in their function name. When the LLM calls a tool with this prefix, the `llmQuery` service routes it to your browser instead of FileMaker.
+| Step | LLM Tool Definition | BetterForms namedAction |
+|------|-------------------|-------------------------|
+| **1. Name** | `ui_tool_hello_world` | `tool_hello_world` |
+| **2. Code** | Standard OpenAI function format | BetterForms action array |
 
-**2. Named Action Handling:**
-Your BetterForms application must have a namedAction configured to handle `llmToolCall` events. The action name corresponds to the tool name without the `ui_` prefix.
-
-**3. Response Mechanism:**
-Frontend tools must use the `llmToolCallResponse` action to send results back to the LLM, allowing the conversation to continue.
-
-#### Quick Start: Creating Your First Frontend Tool
-
-**Step 1: Define the LLM Function** (with `ui_` prefix)
+**LLM Tool:**
 ```json
 {
   "name": "ui_tool_hello_world",
-  "description": "Show a greeting message to the user",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "message": {
-        "type": "string",
-        "description": "The greeting message to display"
-      }
-    },
-    "required": ["message"]
-  }
+  "description": "Show greeting message"
 }
 ```
 
-**Step 2: Create the namedAction** (without `ui_` prefix)
-In your BetterForms application, create a namedAction called `tool_hello_world`:
+**namedAction:**
 ```json
 {
   "tool_hello_world": [
-    { 
-      "action": "showAlert", 
-      "options": { "message": "{{message}}" }
-    },
-    { 
-      "action": "llmToolCallResponse",
-      "options": { 
-        "success": true, 
-        "message": "Greeting displayed successfully!" 
-      }
-    }
+    { "action": "showAlert", "options": { "message": "Hello from LLM!" }},
+    { "action": "llmToolCallResponse", "options": { "success": true, "message": "Displayed!" }}
   ]
 }
 ```
 
-**Step 3: Configure Your Request**
-Ensure your `/llm/query` request includes the proper `actionName` that will handle `llmToolCall` events:
-```json
-{
-  "apiKey": "your-api-key",
-  "channels": ["your-channel"],
-  "actionName": "onLlmMessage",  // This namedAction must handle llmToolCall events
-  "payload": {
-    "provider": "openai",
-    "model": "gpt-4",
-    "tools": [
-      {
-        "type": "function",
-        "function": {
-          "name": "ui_tool_hello_world",
-          "description": "Show a greeting message to the user",
-          "parameters": {
-            "type": "object",
-            "properties": {
-              "message": {
-                "type": "string",
-                "description": "The greeting message to display"
-              }
-            },
-            "required": ["message"]
-          }
-        }
-      }
-    ],
-    // ... other payload options
-  }
-}
-```
-
-**Step 4: Handle llmToolCall Events**
-Your main namedAction (specified in `actionName`) must be configured to route frontend tool calls:
+**Main Handler:**
 ```json
 {
   "onLlmMessage": [
@@ -284,96 +223,13 @@ Your main namedAction (specified in `actionName`) must be configured to route fr
 }
 ```
 
-#### Frontend Tool Action Reference
+#### `llmToolCallResponse` Parameters
 
-**`llmToolCallResponse` Action:**
-This action is required in frontend tools to send the tool execution result back to the LLM.
-
-**Parameters:**
-- `success` (Boolean, Required): Whether the tool execution was successful
-- `message` (String, Required): Result message to send back to the LLM
-- `data` (Object, Optional): Additional data to include in the response
-
-**Example Usage:**
-```json
-{
-  "action": "llmToolCallResponse",
-  "options": {
-    "success": true,
-    "message": "User notification sent successfully",
-    "data": { "timestamp": "2024-01-01T12:00:00Z" }
-  }
-}
-```
-
-#### Common Frontend Tool Patterns
-
-**1. User Notifications:**
-```json
-{
-  "ui_notify_user": [
-    { "action": "showAlert", "options": { "message": "{{notification}}" }},
-    { "action": "llmToolCallResponse", "options": { "success": true, "message": "User notified" }}
-  ]
-}
-```
-
-**2. Page Navigation:**
-```json
-{
-  "ui_navigate_to_page": [
-    { "action": "path", "options": { "path": "{{pagePath}}" }},
-    { "action": "llmToolCallResponse", "options": { "success": true, "message": "Navigation completed" }}
-  ]
-}
-```
-
-**3. Form Interactions:**
-```json
-{
-  "ui_update_form_field": [
-    { "action": "function", "options": { "function": "window.BF.setModelValue('{{fieldName}}', '{{value}}')" }},
-    { "action": "llmToolCallResponse", "options": { "success": true, "message": "Field updated" }}
-  ]
-}
-```
-
-**4. Modal Management:**
-```json
-{
-  "ui_show_modal": [
-    { "action": "showModal", "options": { "modalId": "{{modalId}}" }},
-    { "action": "llmToolCallResponse", "options": { "success": true, "message": "Modal displayed" }}
-  ]
-}
-```
-
-#### Best Practices for Frontend Tools
-
-1. **Always include `llmToolCallResponse`**: Every frontend tool must end with this action to maintain the conversation flow.
-
-2. **Use descriptive tool names**: The LLM uses tool descriptions to decide when to call them, so be specific about what each tool does.
-
-3. **Handle errors gracefully**: Include error handling in your namedActions and send appropriate error responses:
-   ```json
-   {
-     "action": "llmToolCallResponse",
-     "options": {
-       "success": false,
-       "message": "Error: Unable to complete the requested action"
-     }
-   }
-   ```
-
-4. **Combine multiple actions**: Frontend tools can perform multiple UI actions before responding:
-   ```json
-   [
-     { "action": "showAlert", "options": { "message": "Processing..." }},
-     { "action": "setFocus", "options": { "element": "#myInput" }},
-     { "action": "scrollTo", "options": { "element": "#targetSection" }},
-     { "action": "llmToolCallResponse", "options": { "success": true, "message": "UI updated" }}
-   ]
-   ```
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `success` | Boolean | ✅ | `true` for success, `false` for errors |
+| `message` | String | ✅ | Result description sent back to LLM |
+| `data` | Object | ❌ | Optional additional data |
 
 ---
 
