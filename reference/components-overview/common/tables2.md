@@ -167,18 +167,20 @@ To address this, you can define custom sorting functions in the table options. B
 
 ```
 
-⚠️ **Note on Custom Sort Functions**
+{% hint style="info" %}
+&#x20;**Note on Custom Sort Functions**
 
 When providing a custom sort function in JSON (e.g., via the `function` key), the entire function **must be written on a single line** without any line breaks (, line returns, or multi-line formatting). This is required for the function to compile correctly in the BetterForms runtime environment.
+{% endhint %}
 
 ✅ Valid:
 
 ```json
-jsonCopyEdit"function": "return a.value - b.value;"
+"function": "return a.value - b.value;"
 ```
 
-❌ Invalid:
+❌ Invalid (Will cause a compile error):
 
 ```json
-jsonCopyEdit"function": "return a.value -\n b.value;" // Will cause a compile error
+"function": "return a.value -\n b.value;"
 ```
