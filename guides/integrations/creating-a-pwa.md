@@ -139,11 +139,11 @@ The options <mark style="color:red;">`onAccepted_actions`</mark> and <mark style
 
 Our modal looks like the image below.
 
-![Untitled](<../.gitbook/assets/Untitled (2).png>)
+![Untitled](<../../.gitbook/assets/Untitled (2).png>)
 
 By clicking on <mark style="color:red;">`Install`</mark>, it will trigger the browser event that asks if the user wants to install the app, as shown on the image below.
 
-![Screen Shot 2022-07-08 at 7.38.12 PM.png](<../.gitbook/assets/Screen_Shot_2022 07 08_at_7.38.12_PM.png>)
+![Screen Shot 2022-07-08 at 7.38.12 PM.png](<../../.gitbook/assets/Screen_Shot_2022 07 08_at_7.38.12_PM.png>)
 
 After installing it, the user will be able to access your web app as a regular native app.
 
@@ -155,16 +155,16 @@ After installing it, the user will be able to access your web app as a regular n
 
 | OS          | Google Chrome | Microsoft Edge | Microsoft Store | Play Store |
 | ----------- | ------------- | -------------- | --------------- | ---------- |
-| Windows 7   |   ✔️ (73+)    |   ✔️           |   ❌             |   ❌        |
-| Windows 8.x |   ✔️ (73+)    |   ✔️           |   ❌             |   ❌        |
-| WIndows 10  |   ✔️ (73+)    |   ✔️( 79+)     |   ✔️            |   ❌        |
-| Windows 11  |   ✔️ (73+)    |   ✔️ (79+)     |   ✔️            |   ❌        |
-| Chrome OS   |   ✔️ (72+)    |   ❌            |   ❌             |   ✔️ (85+) |
-| macOS       |   ✔️ (73+)    |   ✔️           |   ❌             |   ❌        |
-| Linux       |   ✔️ (73+)    |   ✔️           |   ❌             |   ❌        |
+| Windows 7   | ✔️ (73+)      | ✔️             | ❌               | ❌          |
+| Windows 8.x | ✔️ (73+)      | ✔️             | ❌               | ❌          |
+| WIndows 10  | ✔️ (73+)      | ✔️( 79+)       | ✔️              | ❌          |
+| Windows 11  | ✔️ (73+)      | ✔️ (79+)       | ✔️              | ❌          |
+| Chrome OS   | ✔️ (72+)      | ❌              | ❌               | ✔️ (85+)   |
+| macOS       | ✔️ (73+)      | ✔️             | ❌               | ❌          |
+| Linux       | ✔️ (73+)      | ✔️             | ❌               | ❌          |
 
 {% hint style="info" %}
-&#x20;Please note that PWA installation is not supported on Desktop Safari and Firefox.
+Please note that PWA installation is not supported on Desktop Safari and Firefox.
 {% endhint %}
 
 * Mobile Devices (reference: [https://web.dev/learn/pwa/progressive-web-apps/#mobile-devices](https://web.dev/learn/pwa/progressive-web-apps/#mobile-devices))
@@ -183,8 +183,6 @@ To support PWA behavior, you can use the <mark style="color:red;">`checkPWAInsta
   "function": "const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;\n\nmodel.isPWAInstalled = isStandalone ? true : false;"
 }]
 ```
-
-
 
 ### Sending Push Notifications
 
@@ -213,7 +211,7 @@ In this example, we set the user ID (BetterForms ID) as a key to target this whe
 `window.vueapp.$store.state.auth.user.id` refers to the **BetterForms User record ID**, _not_ your FileMaker business file PK. Using the BF ID ensures your subscription is associated with the correct user in the BF cloud database.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Untitled 1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled 1 (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the user clicks on <mark style="color:red;">`Allow`</mark>, the subscription will be saved in the BF cloud database and you will be able to send a push notification to the user using either an action from the frontend or hitting our <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint, as shown below.
 

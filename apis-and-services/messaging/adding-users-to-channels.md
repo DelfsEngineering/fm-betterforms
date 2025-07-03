@@ -108,7 +108,7 @@ You can use this method to join users to one or more channels. This is an authen
 
 Users can only be joined to anonymous channels directly from the browser. The current browser tab that executes the action will be the one added to the channel.
 
-A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelJoinAnon.**
+A user can be joined to an anonymous channel via a [BF action ](../../reference/actions-processor/)called **channelJoinAnon.**
 
 **Example:**
 
@@ -123,6 +123,6 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Learn more:**
 
-{% content-ref url="../actions-processor/actions_overview/channeljoinanonymous.md" %}
-[channeljoinanonymous.md](../actions-processor/actions\_overview/channeljoinanonymous.md)
+{% content-ref url="../../reference/actions-processor/actions_overview/channeljoinanonymous.md" %}
+[channeljoinanonymous.md](../../reference/actions-processor/actions_overview/channeljoinanonymous.md)
 {% endcontent-ref %}

@@ -1,12 +1,12 @@
 # validate
 
-Runs the page validation routine. 
+Runs the page validation routine.
 
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| action | 'validate' | Action name |
-| action.options | object | No supported options at this time |
-| onFailed | function | add `_actions` to run actions when the validation fails |
+| Key            | Type       | Description                                             |
+| -------------- | ---------- | ------------------------------------------------------- |
+| action         | 'validate' | Action name                                             |
+| action.options | object     | No supported options at this time                       |
+| onFailed       | function   | add `_actions` to run actions when the validation fails |
 
 **Example**
 
@@ -35,13 +35,14 @@ Runs the page validation routine.
 
 ## Running action Scripts when validation fails
 
-Often you want to run actions when a validation fails. The `onFailed` key is perfect for this. Action sin the original script will stop and the `onFailed_actions` script will run. You can use this to do things like pre-save forms, show modals and more. 
+Often you want to run actions when a validation fails. The `onFailed` key is perfect for this. Actions in the original script will stop and the `onFailed_actions` script will run. You can use this to do things like pre-save forms, show modals and more.
 
-## 
+##
 
 ## See Also
 
 Learn more about how to validate fields at this page:
 
-{% page-ref page="../../form-settings/validationoverview/" %}
-
+{% content-ref url="../../form-settings/validationoverview/" %}
+[validationoverview](../../form-settings/validationoverview/)
+{% endcontent-ref %}

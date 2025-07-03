@@ -101,7 +101,7 @@ All we need is an html component with the ApexChart tag, as following:
 
 The expected result should be as shown in the image below.
 
-![Untitled](<../.gitbook/assets/Untitled (4).png>)
+![Untitled](<../../.gitbook/assets/Untitled (4).png>)
 
 ## Reference
 

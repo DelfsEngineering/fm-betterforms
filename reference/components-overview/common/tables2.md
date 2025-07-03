@@ -17,7 +17,7 @@ This component is based on [Vue-Tables-2](https://matanya.gitbook.io/vue-tables-
 
 Add the `slots` key to this element to define HTML regions to be displayed with the table. The `slot` key within each object defines the name of the slot, which can be referenced in the `columns` key.
 
-If you name a slot `child_row`, that HTML content will be displayed when the row of the table is expanded. _(see CSS trick_ [_below_](#child-rows) _for how to customize the look of the child row icon)_
+If you name a slot `child_row`, that HTML content will be displayed when the row of the table is expanded. _(see CSS trick_ [_below_](tables2.md#child-rows) _for how to customize the look of the child row icon)_
 
 ```yaml
 "columns": ["name", "title", "slot_name", "button_slot"],
@@ -165,4 +165,20 @@ To address this, you can define custom sorting functions in the table options. B
     }
 }
 
+```
+
+⚠️ **Note on Custom Sort Functions**
+
+When providing a custom sort function in JSON (e.g., via the `function` key), the entire function **must be written on a single line** without any line breaks (, line returns, or multi-line formatting). This is required for the function to compile correctly in the BetterForms runtime environment.
+
+✅ Valid:
+
+```json
+jsonCopyEdit"function": "return a.value - b.value;"
+```
+
+❌ Invalid:
+
+```json
+jsonCopyEdit"function": "return a.value -\n b.value;" // Will cause a compile error
 ```

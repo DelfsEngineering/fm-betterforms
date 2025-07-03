@@ -53,36 +53,30 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://portal.yourdomain.com" path="/message/removeuser" method="post" summary="API: Remove User from Channel" %}
-{% swagger-description %}
+## API: Remove User from Channel
+
+<mark style="color:green;">`POST`</mark> `https://portal.yourdomain.com/message/removeuser`
+
 You can use this method to remove one or more users from channels. You must pass the API key generated for your app to authenticate this reqeust.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="content-type" type="string" %}
-application/json
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="accept" type="string" %}
-application/json
-{% endswagger-parameter %}
+| Name         | Type   | Description      |
+| ------------ | ------ | ---------------- |
+| content-type | string | application/json |
+| accept       | string | application/json |
 
-{% swagger-parameter in="body" name="apiKey" type="string" %}
-The API key generated for your BF app
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="users" type="array" %}
-array of user IDs and channels to be removed for those users
-{% endswagger-parameter %}
+| Name               | Type   | Description                                                  |
+| ------------------ | ------ | ------------------------------------------------------------ |
+| apiKey             | string | The API key generated for your BF app                        |
+| users              | array  | array of user IDs and channels to be removed for those users |
+| users\[0].id       | string | BF user id from the users table in the helper file           |
+| users\[0].channels | array  | any array of channel objects                                 |
 
-{% swagger-parameter in="body" name="users[0].id" type="string" %}
-BF user id from the users table in the helper file
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="users[0].channels" type="array" %}
-any array of channel objects
-{% endswagger-parameter %}
-
-{% swagger-response status="201" description="" %}
+{% tabs %}
+{% tab title="201 " %}
 ```
 {
     "users": [
@@ -91,14 +85,14 @@ any array of channel objects
     ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Leaving Anonymous Channels
 
 Users can only be removed from anonymous channels directly from the browser. The current browser tab that executes the action will be the one removed from the channel.
 
-A user can be joined to an anonymous channel via a [BF action ](../actions-processor/)called **channelLeaveAnon.**
+A user can be joined to an anonymous channel via a [BF action ](../../reference/actions-processor/)called **channelLeaveAnon.**
 
 **Example:**
 
@@ -113,6 +107,6 @@ A user can be joined to an anonymous channel via a [BF action ](../actions-proce
 
 **Learn more:**
 
-{% content-ref url="../actions-processor/actions_overview/channelleaveanon.md" %}
-[channelleaveanon.md](../actions-processor/actions_overview/channelleaveanon.md)
+{% content-ref url="../../reference/actions-processor/actions_overview/channelleaveanon.md" %}
+[channelleaveanon.md](../../reference/actions-processor/actions_overview/channelleaveanon.md)
 {% endcontent-ref %}

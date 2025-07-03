@@ -6,7 +6,7 @@ description: >-
 
 # Sending messages
 
-Think of a message as a standard [**BF Action**](../actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
+Think of a message as a standard [**BF Action**](../../reference/actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
 ## BF Action
 
@@ -49,8 +49,8 @@ The BF action **messageSend** can be used to send a message to channel or channe
 
 #### Full action reference:
 
-{% content-ref url="../actions-processor/actions_overview/messagesend.md" %}
-[messagesend.md](../actions-processor/actions_overview/messagesend.md)
+{% content-ref url="../../reference/actions-processor/actions_overview/messagesend.md" %}
+[messagesend.md](../../reference/actions-processor/actions_overview/messagesend.md)
 {% endcontent-ref %}
 
 ### Anonymous channel
@@ -92,8 +92,8 @@ The BF action **messageSendAnonChannel** can be used to send a message to channe
 
 #### Full action reference:
 
-{% content-ref url="../actions-processor/actions_overview/messagesendanonchannel.md" %}
-[messagesendanonchannel.md](../actions-processor/actions_overview/messagesendanonchannel.md)
+{% content-ref url="../../reference/actions-processor/actions_overview/messagesendanonchannel.md" %}
+[messagesendanonchannel.md](../../reference/actions-processor/actions_overview/messagesendanonchannel.md)
 {% endcontent-ref %}
 
 ## FileMaker Script
@@ -138,48 +138,34 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 
 ## API endpoint /message/sendmessage
 
-{% swagger baseUrl="https://portal.yourdomain.com" path="/message/sendmessage" method="post" summary="API: Send Message" %}
-{% swagger-description %}
+## API: Send Message
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://portal.yourdomain.com/message/sendmessage`
 
-{% swagger-parameter in="header" name="accept" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="content-type" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+| Name         | Type   | Description      |
+| ------------ | ------ | ---------------- |
+| accept       | string | application/json |
+| content-type | string | application/json |
 
-{% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
-the API key for the corresponding app
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="channels" type="array" required="false" %}
-array of channel names
-{% endswagger-parameter %}
+| Name            | Type   | Description                                          |
+| --------------- | ------ | ---------------------------------------------------- |
+| apiKey          | string | the API key for the corresponding app                |
+| channels        | array  | array of channel names                               |
+| message         | string | JSON object to be sent                               |
+| message.actions | array  | JSON for an array of BF action objects               |
+| message.model   | object | JSON object with data to be merged to model data     |
+| message.app     | array  | JSON object with data to be merged to app model data |
 
-{% swagger-parameter in="body" name="message" type="string" required="false" %}
-JSON object to be sent
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="message.actions" type="array" required="false" %}
-JSON for an array of BF action objects
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="message.model" type="object" required="false" %}
-JSON object with data to be merged to model data
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="message.app" type="array" required="false" %}
-JSON object with data to be merged to app model data
-{% endswagger-parameter %}
-
-{% swagger-response status="201" description="This request will return the data that was sent as body of the request." %}
+{% tabs %}
+{% tab title="201 This request will return the data that was sent as body of the request." %}
 ```
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 #### Example request body
 
