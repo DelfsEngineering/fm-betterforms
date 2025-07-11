@@ -30,7 +30,7 @@ This service can act as a universal endpoint and service multiple content types.
 * PATCH
 * DELETE
 
-The hook is passes all header, query and body data as well as the request type (located in `$params.method`)
+The hook passes all header, query and body data as well as the request type (located in `$params.method`)
 
 Set the `$response` var to the data you want to be returned.
 

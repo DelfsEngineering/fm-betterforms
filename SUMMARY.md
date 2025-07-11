@@ -148,7 +148,7 @@
 * [BF Utility Function Ver. 0.9.20+](reference/bf-utility-function-ver-0.9.20+/README.md)
   * [Example Usage](reference/bf-utility-function-ver-0.9.20+/example-usage/README.md)
     * [BF.i18n()](reference/bf-utility-function-ver-0.9.20+/example-usage/bf.i18n.md)
-* [APIs & SERVICES](apis-and-services/README.md)
+* [APIs & Services](apis-and-services/README.md)
   * [Messaging](apis-and-services/messaging/README.md)
     * [Adding users to channels](apis-and-services/messaging/adding-users-to-channels.md)
     * [Removing users from channels](apis-and-services/messaging/removing-users-from-channels.md)

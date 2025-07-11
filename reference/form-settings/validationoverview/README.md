@@ -15,7 +15,7 @@ Client side validation is controlled by the `validator` key in all page elements
 }
 ```
 
-Validation **does not** __ run automatically. You must trigger client validation with the [validate action.](../../actions-processor/actions\_overview/validate.md)
+Validation **does not** run automatically. You must trigger client validation with the [validate action.](../../actions-processor/actions\_overview/validate.md)
 
 ### **The validator key can be set to the following:**
 

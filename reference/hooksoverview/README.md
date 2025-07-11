@@ -16,14 +16,14 @@ HookSets are broken down into two types: `CommonHookSets` and `ScopedHookSets`
 
 These hooks relate to operations that are site wide and not page / form specific. Eg. When a user logs into the application the onLogin hook is called.
 
-BetterForms allows for multiple common hook sets. This allows you to create multiple front end app's for a common back end database. An example would be a customer pointing front end portal and a separate staff portal that would have different functionality. The use of a separate common hook set allows different scripts to handle things like user registration and authorization.
+BetterForms allows for multiple common hook sets. This allows you to create multiple front end apps for a common back end database. An example would be a customer pointing front end portal and a separate staff portal that would have different functionality. The use of a separate common hook set allows different scripts to handle things like user registration and authorization.
 
 ### ScopedHookSets
 
 These hooks are associated with a specific page or pages. A form is bound to a specific hook set but a hook set is not bound to a specific form. Meaning, the same script handlers could be used for similar forms.
 
 When naming common Hook Sets use a simple name that describes the entire application they control.\
-Eg: `custoer` for customer application, `staff` for staff portal.
+Eg: `customer` for customer application, `staff` for staff portal.
 
 ### Adding a Scoped HookSet folder for a new form
 

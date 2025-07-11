@@ -19,7 +19,7 @@ Javascript is placed on a single JSON value line, you must separate commands wit
 
 General purpose, sometimes you may want the following actions to wait until something is completed.
 
-\*\*Example\*\*
+**Example**
 
 ```yaml
 // This will wait for 2 seconds 

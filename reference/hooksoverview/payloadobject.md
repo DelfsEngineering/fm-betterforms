@@ -4,7 +4,7 @@
 
 You can prevent critical information from being saved to records by adding a `deletePaths` array of data model paths you want to remove or `'***'` out from the data model.
 
-* All hooks will have full access the original payload data, but the sensitive data is never committed to any record in any FileMaker file.
+* All hooks will have full access to the original payload data, but the sensitive data is never committed to any record in any FileMaker file.
 * If you are saving the data model you will also have to apply a `deletePaths` function.
 * This features takes advantage of the JSON.deletePaths custom function.
 
