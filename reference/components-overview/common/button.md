@@ -3,7 +3,7 @@
 This page showcases various buttons you can implement in your app, each designed for specific actions. Below is a detailed explanation of the different button types, their configurations, and their intended actions.
 
 {% hint style="info" %}
-To see buttons in action, check out [example](https://app.fmbetterforms.com/#/apps/pages/edit?id=5251675D-4A4D-4FE1-AD35-5D5B038CA924)[s ](https://app.fmbetterforms.com/#/apps/pages/edit?id=5251675D-4A4D-4FE1-AD35-5D5B038CA924)on this [page](https://examplesdev.fmbetterforms.com/#/form/5251675D-4A4D-4FE1-AD35-5D5B038CA924).
+To see buttons in action, check out [examples](https://app.fmbetterforms.com/#/apps/pages/edit?id=5251675D-4A4D-4FE1-AD35-5D5B038CA924) on this [page](https://examplesdev.fmbetterforms.com/#/form/5251675D-4A4D-4FE1-AD35-5D5B038CA924).
 {% endhint %}
 
 ### Regular Buttons
@@ -57,7 +57,7 @@ To assign actions to a button, you can populate the <mark style="color:red;">`ac
         "buttonClasses": "btn btn-info",
         "hint": "This redirects the user to another form",
         "styleClasses": "col-md-2",
-        "text": "Goto /dash",
+        "text": "Goto dash",
         "type": "button"
     }
     ```
@@ -93,7 +93,7 @@ To assign actions to a button, you can populate the <mark style="color:red;">`ac
     }],
     "buttonClasses": "btn btn-primary btn-block",
     "hint": "Fills the column it defines",
-    "icon": "fa exclamation-triangle",
+    "icon": "fa fa-triangle-exclamation",
     "styleClasses": "col-md-4",
     "text": "Full Width showAlert",
     "type": "button"
@@ -112,7 +112,7 @@ The Print button action executes JavaScript functions:
         "options": {}
     }],
     "buttonClasses": "btn btn-success btn-trans",
-    "icon": "fa icon-printer",
+    "icon": "fa fa-print",
     "styleClasses": "col-md-2",
     "text": "Print",
     "type": "button"

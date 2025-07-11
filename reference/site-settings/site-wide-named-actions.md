@@ -7,7 +7,7 @@ Global named actions can be called from anywhere within the application. This ma
 Typical Usage:
 
 * Common actions that are located in header or footer slots
-* Reused actions like `print` and ~~save~~
+* Reused actions like `print` and `save`
 * Reused navigation like `gotoPageListview`
 
 
