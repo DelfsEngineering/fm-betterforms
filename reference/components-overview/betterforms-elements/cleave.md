@@ -4,13 +4,13 @@ The Cleave.js element provides formatted input masks for various types of data, 
 
 In BetterForms, this element is used when you need to enforce a specific input format for a text field.
 
-**Note:** This element typically uses `type: "input"` in its schema definition, and its masking behavior is controlled by the `cleaveOptions` property.
+**Note:** This element uses `type: "cleave"` in its schema definition, and its masking behavior is controlled by the `cleaveOptions` property.
 
 ## Common Configuration Properties
 
 | Property        | Type    | Description                                                                                              |
 | :-------------- | :------ | :------------------------------------------------------------------------------------------------------- |
-| `type`          | `String`| Typically `"input"`. The Cleave.js functionality is activated by the presence of `cleaveOptions`.        |
+| `type`          | `String`| Must be set to `"cleave"`. The Cleave.js functionality is activated by the presence of `cleaveOptions`.        |
 | `label`         | `String`| The label for the input field.                                                                           |
 | `model`         | `String`| The key in your BetterForms data model where the (potentially unmasked) input value will be stored.        |
 | `placeholder`   | `String`| Placeholder text.                                                                                        |
@@ -25,7 +25,7 @@ In BetterForms, this element is used when you need to enforce a specific input f
 
 ```json
 {
-  "type": "input",
+  "type": "cleave",
   "label": "Phone Number",
   "model": "phoneNumber",
   "placeholder": "(999) 999-9999",
@@ -40,7 +40,7 @@ In BetterForms, this element is used when you need to enforce a specific input f
 
 ```json
 {
-  "type": "input",
+  "type": "cleave",
   "label": "Date of Birth",
   "model": "dob",
   "placeholder": "YYYY-MM-DD",
@@ -56,7 +56,7 @@ In BetterForms, this element is used when you need to enforce a specific input f
 
 ```json
 {
-  "type": "input",
+  "type": "cleave",
   "label": "Credit Card Number",
   "model": "creditCardNum",
   "cleaveOptions": {
