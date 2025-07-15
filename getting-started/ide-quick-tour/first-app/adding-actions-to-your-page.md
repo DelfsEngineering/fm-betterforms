@@ -31,7 +31,7 @@ Actions are instructions that tell the BetterForms framework to perform some ope
 * _**authLogout**_ - Performs logout
 * _**authReset**_ - Performs a password reset action
 * _**authForgot** -_ Performs a forgotten password reset hook
-* _**authVerify**_  - Performs a verification of the verify token
+* _**authVerify**_ - Performs a verification of the verify token
 * _**authResend**_ - Re/sends the email verification token
 * _**authRegister**_ - Performs a registration and if successful, runs the `onRegistrationHook`
 
@@ -91,4 +91,4 @@ You can also use named actions to define a set of actions that can be called fro
 
 You now have a basic understanding of how to add actions to your page in BetterForms. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../../reference/components-overview/) to see the wide variety of available elements and their specific configuration options.

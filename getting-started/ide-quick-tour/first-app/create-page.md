@@ -9,7 +9,7 @@ Think of a BetterForms page like a FileMaker layout. It will contain any combina
 Pages are managed within the "Pages" tab of your App in the BetterForms IDE. From there, you can create new pages, edit existing ones, and manage their settings.
 
 {% hint style="warning" %}
-This guide assumes that you already have a working knowledge of basic JSON formatting and terminology. If you have never worked with JSON before, we recommend you [review this introduction to JSON](../support/learning-json.md) first.
+This guide assumes that you already have a working knowledge of basic JSON formatting and terminology. If you have never worked with JSON before, we recommend you [review this introduction to JSON](../../support/learning-json.md) first.
 {% endhint %}
 
 ## Key Concepts for Your First Page
@@ -26,7 +26,7 @@ When you run a [**Scoped Hook**](broken-reference) (a FileMaker script tied to t
 
 The **Page Schema** is where you define all the elements that will appear on your page. It's also structured in JSON format.
 
-The most important part of the schema for now is the `fields` array. This array holds a list of all the [Page Elements](../../reference/components-overview/) (like input fields, buttons, text areas, etc.) that make up your page.
+The most important part of the schema for now is the `fields` array. This array holds a list of all the [Page Elements](../../../reference/components-overview/) (like input fields, buttons, text areas, etc.) that make up your page.
 
 If you're familiar with HTML, you know that pages are built from the top down by default. The same concept applies here. Using Bootstrap CSS classes (which BetterForms supports), you can control the layout, such as how wide an element should be, and the elements will stack on the page accordingly.
 

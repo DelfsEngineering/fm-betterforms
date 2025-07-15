@@ -11,10 +11,11 @@ A list view in BetterForms is a dynamic way to display and manage multiple rows 
 ## When to Use List Views
 
 List views are ideal for:
-- Simple multi-row data entry forms
-- Contact lists or address books
-- Product lists with basic information
-- Any scenario where you need to add/remove rows of similar data
+
+* Simple multi-row data entry forms
+* Contact lists or address books
+* Product lists with basic information
+* Any scenario where you need to add/remove rows of similar data
 
 For more complex data display needs (sorting, filtering, pagination), consider using [Data Tables](working-with-data-tables.md) instead.
 
@@ -87,10 +88,9 @@ Here's an example of how to configure a `listrows` component:
 
 ### Visual Example
 
-
-- Each row contains four text input fields
-- The [+][-] buttons allow adding/removing rows
-- The component enforces a minimum of 2 and maximum of 4 rows
+* Each row contains four text input fields
+* The \[+]\[-] buttons allow adding/removing rows
+* The component enforces a minimum of 2 and maximum of 4 rows
 
 ## Best Practices
 
@@ -110,5 +110,6 @@ Here's an example of how to configure a `listrows` component:
 You now have a basic understanding of how to create a list view in BetterForms. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
 For more advanced data display needs, you can explore:
-- [Working with Data Tables](working-with-data-tables.md) for complex table-based data display
-- [BetterForms Elements reference](../../reference/components-overview/README.md) for all available components 
+
+* [Working with Data Tables](working-with-data-tables.md) for complex table-based data display
+* [BetterForms Elements reference](../../../reference/components-overview/) for all available components

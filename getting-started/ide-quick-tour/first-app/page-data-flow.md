@@ -1,4 +1,4 @@
-# 2.4 Understanding Page Data Flow (Data Model & Hooks)
+# 2.8 Understanding Page Data Flow
 
 In BetterForms, the **Page Data Model** and **Hooks** are fundamental to how data flows within your application. This guide will help you understand how these components work together to manage data on your page.
 
@@ -39,8 +39,8 @@ These examples show how the data model connects to elements on the page, allowin
 
 ### Default and Development Data Model
 
-- **Default Data Model:** This contains the production data that will be loaded into the page's model when the page is first rendered. This data is sent to your FMS via the `onFormRequest` hook.
-- **Development Data Model:** This is for data used only in the BetterForms IDE. The development data is merged with the default data model during previews, allowing you to work with mock data while building the page.
+* **Default Data Model:** This contains the production data that will be loaded into the page's model when the page is first rendered. This data is sent to your FMS via the `onFormRequest` hook.
+* **Development Data Model:** This is for data used only in the BetterForms IDE. The development data is merged with the default data model during previews, allowing you to work with mock data while building the page.
 
 ## Hooks and Data Flow
 
@@ -62,11 +62,11 @@ To reduce data transfer and improve performance, you can control what data is se
 
 The **Integration** tab allows you to manage hooks and validation settings for your page:
 
-- **Enable onFormRequest Hook:** When enabled, this will trigger the `onFormRequest` hook script. For most pages that have data coming from the backend, this should be ticked on.
-- **Send Full Schema in Utility Hooks:** Sends the entire formSchema on hooks, providing more control but may increase transfer time on large schemas. Leave unchecked for better performance unless necessary.
+* **Enable onFormRequest Hook:** When enabled, this will trigger the `onFormRequest` hook script. For most pages that have data coming from the backend, this should be ticked on.
+* **Send Full Schema in Utility Hooks:** Sends the entire formSchema on hooks, providing more control but may increase transfer time on large schemas. Leave unchecked for better performance unless necessary.
 
 ## Next Steps
 
 You now have a basic understanding of how the Page Data Model and Hooks work together to manage data flow within your BetterForms application. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../../reference/components-overview/) to see the wide variety of available elements and their specific configuration options.

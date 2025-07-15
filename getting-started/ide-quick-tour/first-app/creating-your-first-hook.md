@@ -1,4 +1,4 @@
-# 2.5 Creating Your First Hook
+# 2.9 Creating Your First Hook
 
 Now that you understand the basics of the Page Data Model and Hooks, let's create your first hook in BetterForms. This guide will walk you through the process of setting up and running a simple hook.
 
@@ -8,8 +8,8 @@ Hooks are scripts that insert themselves into normal workflow, allowing addition
 
 Hooks fall into two categories:
 
-- **Common Hooks:** These are not contextual to a specific page and can be called from anywhere. Examples include login or registration hooks.
-- **Scoped Hooks:** These are bound to a specific page. The `onFormRequest` hook is an example of a scoped hook, which is called when a specific form loads.
+* **Common Hooks:** These are not contextual to a specific page and can be called from anywhere. Examples include login or registration hooks.
+* **Scoped Hooks:** These are bound to a specific page. The `onFormRequest` hook is an example of a scoped hook, which is called when a specific form loads.
 
 ## Creating Your First Hook
 
@@ -18,11 +18,10 @@ For your first hook, let's enable the `onFormRequest` option for the page you ju
 ### Step 1: Enable the onFormRequest Hook
 
 1. **Navigate to the Integration Tab:**
-   - In the BetterForms IDE, open the page you want to add a hook to.
-   - Go to the **Integration** tab.
-
+   * In the BetterForms IDE, open the page you want to add a hook to.
+   * Go to the **Integration** tab.
 2. **Enable the onFormRequest Hook:**
-   - Find the **Enable onFormRequest Hook** option and toggle it on. This will trigger the `onFormRequest` hook script when the page is first loaded.
+   * Find the **Enable onFormRequest Hook** option and toggle it on. This will trigger the `onFormRequest` hook script when the page is first loaded.
 
 ### Step 2: Locate the FileMaker Script
 
@@ -47,9 +46,9 @@ Notice how we are only modifying the `$$BF_Model` JSON instead of replacing it. 
 
 ### Step 4: Run the Hook
 
-- **Save the FileMaker script.**
-- **Save your page settings.**
-- **Refresh your preview tab (or launch it again).**
+* **Save the FileMaker script.**
+* **Save your page settings.**
+* **Refresh your preview tab (or launch it again).**
 
 If everything is properly connected, you should see the data set from your FileMaker script on the page instead of the default data model. Even if you succeed here, be sure to review the troubleshooting tips for those times when it doesn't always go as planned.
 
@@ -63,8 +62,8 @@ Open the helper file and click the **Inbox** tab. Show the status toolbar and ma
 
 **If the record doesn't show up in the inbox**, then the hook never reached your FileMaker server.
 
-- Double-check that the **onFormRequest** is enabled for your page in the Integration tab of the page editor. Then refresh your preview.
-- Check the BetterForms [user credentials](../setup/configure-fm-server.md) _(see below)_
+* Double-check that the **onFormRequest** is enabled for your page in the Integration tab of the page editor. Then refresh your preview.
+* Check the BetterForms [user credentials](../setup/configure-fm-server.md) _(see below)_
 
 **If you're not sure if the record is in the inbox or not**, clear the inbox (delete all records) then refresh your preview in the browser to double-check if the inbox record was created.
 
@@ -76,12 +75,12 @@ Open the helper file and click the **Inbox** tab. Show the status toolbar and ma
 
 Invalid credentials or misconfigured extended privileges for the BetterForms user is the most common cause of integration problems.
 
-Make sure your credentials for the BetterForms user have XML and Data API privileges enabled, and that they match what was configured in your [site settings](./create-app.md).
+Make sure your credentials for the BetterForms user have XML and Data API privileges enabled, and that they match what was configured in your [site settings](create-app.md).
 
-- BetterForms encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
+* BetterForms encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
 
 ## Next Steps
 
 You now have a basic understanding of how to create and run your first hook in BetterForms. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../../reference/components-overview/) to see the wide variety of available elements and their specific configuration options.

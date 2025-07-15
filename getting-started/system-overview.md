@@ -4,7 +4,7 @@ description: >-
   full powerful web technology stack.
 ---
 
-# System Overview
+# Overview
 
 FM BetterForms was purpose-built to allow FileMaker developers access to a full, powerful web technology stack. All data is stored on your FileMaker Server and is not cached by BetterForms. Data remains secure in transit with encryption.
 
@@ -19,6 +19,3 @@ Official BetterForms Status Page
 {% endembed %}
 
 To receive live updates, you can subscribe via the monitoring page.
-
-<figure><img src="../.gitbook/assets/BF Overview.png" alt=""><figcaption><p>Deployment Overview</p></figcaption></figure>
-

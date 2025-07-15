@@ -15,12 +15,12 @@ If authentication is enabled for the page that user is trying to visit, BetterFo
 
 ## User Registration
 
-Users in your BetterForms web app are stored within the **Users** table of your [helper file](../../getting-started/setup/configure-fm-server.md#what-is-the-helper-file). When a user registers for an account on your site, they provide an email and a password. As long as their email address is unique, a new record will be created in your Users table. Their password is stored as a one-way hash.
+Users in your BetterForms web app are stored within the **Users** table of your [helper file](../../getting-started/ide-quick-tour/setup/configure-fm-server.md#what-is-the-helper-file). When a user registers for an account on your site, they provide an email and a password. As long as their email address is unique, a new record will be created in your Users table. Their password is stored as a one-way hash.
 
 Then, a verification link is sent to verify their email address. When they click the link in that email, their record in the Users will have the **isVerified** field set to `True`.
 
 {% hint style="warning" %}
-Since email sending happens on your FileMaker server, you must configure your email server settings at the end of the **BF - Common Hooks > onAuthNotifier** script that you pasted into your legacy FileMaker file during [setup](../../getting-started/setup/install-bf-helper-file.md).
+Since email sending happens on your FileMaker server, you must configure your email server settings at the end of the **BF - Common Hooks > onAuthNotifier** script that you pasted into your legacy FileMaker file during [setup](../../getting-started/ide-quick-tour/setup/install-bf-helper-file.md).
 {% endhint %}
 
 Users must also have the **isEnabled** field of their user record set to `True` before they can login. This can be configured to occur automatically, or based on any business logic that you choose to implement in your legacy FileMaker file.

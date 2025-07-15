@@ -21,7 +21,7 @@ After a user is logged into a page that requires authentication, their credentia
 
 A JWT (JSON Web Token) token is generated using industry approved encryption. JWTs are immutable and ensure the client is who they claim to be.
 
-It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](../getting-started/environment/pages-deep-dive/page-data-model-config.md#caching-and-syncing)
+It is important to be mindful of any local or session storage you may have enabled in the client. See [Optimizing Data - caching](../getting-started/ide-quick-tour/environment/pages-deep-dive/page-data-model-config.md#caching-and-syncing)
 
 ## Web Servers
 
@@ -63,7 +63,7 @@ If a user is authenticated, their JWT user ID is passed into all scripts so the 
 
 #### User Tables
 
-BF comes with a helper file that contains a user table with a securely based credential. Developers can also control: 
+BF comes with a helper file that contains a user table with a securely based credential. Developers can also control:
 
 * Enable / Disable Account
 * Force account email to be verified

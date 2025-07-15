@@ -1,4 +1,4 @@
-# 2.7 Understanding Validation
+# 2.5 Understanding Validation
 
 Validation is a crucial part of ensuring data integrity in your BetterForms application. This guide will help you understand how to implement and manage validation in your pages.
 
@@ -8,7 +8,7 @@ Client-side validation is controlled by the `validator` key in all page elements
 
 ### Triggering Validation
 
-Validation does not run automatically. You must trigger client validation with the `validate` action. This action can be added to buttons or other elements to validate the form when needed. Automatic validation can be controlled with the validations settings from the `Page Settings` tab withing the page editor. 
+Validation does not run automatically. You must trigger client validation with the `validate` action. This action can be added to buttons or other elements to validate the form when needed. Automatic validation can be controlled with the validations settings from the `Page Settings` tab withing the page editor.
 
 ### Validator Types
 
@@ -75,4 +75,4 @@ The **Page Settings** tab allows you to manage validation settings for your page
 
 You now have a basic understanding of how to implement and manage validation in your BetterForms application. As you build out your first application, you'll become more familiar with these components and how to use them effectively.
 
-Explore the [BetterForms Elements reference](../../reference/components-overview/README.md) to see the wide variety of available elements and their specific configuration options. 
+Explore the [BetterForms Elements reference](../../../reference/components-overview/) to see the wide variety of available elements and their specific configuration options.
