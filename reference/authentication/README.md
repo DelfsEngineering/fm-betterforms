@@ -74,5 +74,6 @@ See the dedicated pages for step-by-step workflows and best practices:
 - Basic Authentication ➜ Registration & Verification, Password Management
 - Query & Cookie Based Auth
 - OAuth
+  - See JWT Expiration to configure per-tenant token lifetime
 
 
