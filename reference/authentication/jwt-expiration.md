@@ -31,7 +31,7 @@ Tip: Leave it blank to use the default of 24 hours.
 ## What happens behind the scenes
 
 - Your choice is saved with your app and used to issue new sign‑in tokens.
-- For advanced admins: the value is stored on the tenant connection as `jwtOptions.expiresIn`.
+- Changes taken place on next user login.
 
 ## Domain safety (why a token from one site won’t work on another)
 
@@ -43,7 +43,7 @@ Tip: Leave it blank to use the default of 24 hours.
 - AWS ALB: turn on “preserve host header”
 - Cloudflare: set “Origin host header” to On
 
-### If you see this error
+### If you see JWT errors
 
 It usually means the server didn’t receive the original site domain. Check:
 - Your proxy/load balancer forwards the original Host header
