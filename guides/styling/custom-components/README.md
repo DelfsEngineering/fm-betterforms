@@ -39,15 +39,103 @@ Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema
 
 ### Context
 
-Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema.&#x20;
+Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema. 
 
+## Component‑internal named actions (v3.2.18+ Beta)
 
+You can define internal named actions on a custom component and trigger them from inside the component’s HTML/Vue template.
+
+### Where to define
+
+Both locations are supported at runtime:
+
+Top‑level on the component:
+
+```json
+{
+  "html": "<button @click=\"namedAction('comp_hello')\">Hello</button>",
+  "namedActions": {
+    "comp_hello": [{ "action": "showAlert", "options": { "message": "Hi" } }],
+    "onMount": [{ "action": "log", "options": { "message": "mounted" } }]
+  }
+}
+```
+
+Nested under `comp`:
+
+```json
+{
+  "comp": {
+    "namedActions": {
+      "comp_hello": [{ "action": "showAlert", "options": { "message": "Hi" } }],
+      "onMount": [{ "action": "log", "options": { "message": "mounted" } }]
+    }
+  }
+}
+```
+
+### Triggering from a component template
+
+Inside your component HTML/Vue, call `namedAction('name', options)`.
+
+Resolution order:
+
+1) `form.namedActions[name]` (form‑level override if present)
+2) Component definition:
+   - `component.namedActions[name]`
+   - `component.comp.namedActions[name]`
+
+This allows a form to intentionally override a component action by name if needed.
+
+### Lifecycle: `onMount`
+
+If `onMount` is defined (top‑level or under `comp.namedActions`), it is queued once when each component instance mounts. If you place multiple instances of the same component on a page, each instance will evaluate `onMount` — use a guard for singletons.
+
+### Pass per‑instance options
+
+For instance‑specific values, pass options directly from the template; they propagate through the chain:
+
+```html
+<button @click="namedAction('onfileAdded', { docType: 'photo', accept: 'image/*', multiple: false, modelPath: schema.model })">Select File</button>
+```
+
+In a function step, read them via `action.options`.
+
+### Best practices
+
+- Naming: Prefix internal actions to avoid collisions (e.g., `uppy_fileUpload`, `chat_sendMessage`).
+- Stability: If referenced externally (from schema or tools), treat names as API.
+- Idempotency: Prefer `onMount` that can safely run multiple times if needed.
+
+Single Uppy instance (global):
+
+```javascript
+// Guard: only one global Uppy
+window.__bfSingletons = window.__bfSingletons || {};
+if (window.__bfSingletons.uppy) return;
+window.__bfSingletons.uppy = true;
+
+// Hidden host once
+if (!document.getElementById('bf-fileinput-host')) {
+  var host = document.createElement('div');
+  host.id = 'bf-fileinput-host';
+  host.style.position = 'fixed';
+  host.style.left = '-9999px';
+  host.style.top = '0';
+  document.body.appendChild(host);
+}
+
+// Initialize Uppy once
+window.uppy = new Uppy.Uppy({ autoProceed: true, debug: false })
+  .use(Uppy.AwsS3, { /* getUploadParameters, etc. */ })
+  .use(Uppy.FileInput, { id: 'BFFileInput', target: '#bf-fileinput-host', pretty: false });
+```
 
 ## Best Practices
 
 ### Sizing and Styling
 
-Generally, it should be the implementation of the component that is responsible for the component's size.  There are some exceptions. This means that the width of your component is generally full width and the parent or 'implementor' of the component will control the width.&#x20;
+Generally, it should be the implementation of the component that is responsible for the component's size.  There are some exceptions. This means that the width of your component is generally full width and the parent or 'implementor' of the component will control the width. 
 
 Examples:
 
