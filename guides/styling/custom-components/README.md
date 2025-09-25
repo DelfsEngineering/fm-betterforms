@@ -48,15 +48,97 @@ Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema
 
 Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema. 
 
-## Component‑internal named actions (v3.2.18+ Beta)
+## Component-Scoped Named Actions (Internal)
 
-You can define internal named actions on a custom component and trigger them from inside the component’s HTML/Vue template.
+This note focuses on component-internal named actions: defining actions on components, how resolution works inside `bfcomponent` templates, and the `onMount` lifecycle behavior (v3.2.18+ Beta).
 
-### Where to define
+#### Prerequisite: Custom Components as Schema or HTML/Vue
+See the official docs for component usage patterns and `<bfcomp>` embedding:
+[FM BetterForms Docs: Custom Components → Usage as an HTML Vue component](https://docs.fmbetterforms.com/v1/usage/stylingverview/custom-components#usage-as-an-html-vue-component)
 
-Both locations are supported at runtime:
+---
 
-Top‑level on the component:
+## What is a named action?
+Named actions are reusable, named chains of actions defined in a form schema and executable from multiple places (schema actions, HTML/Vue, programmatic events, or LLM tool calls).
+
+- **Where to define**: in the component editor
+
+Example (schema excerpt):
+```json
+{
+  "form": {
+    "namedActions": {
+      "save": [
+        { "action": "validate" },
+        { "action": "runUtilityHook", "options": { "hook": "saveRecord" } },
+        { "action": "showAlert", "options": { "message": "Saved" } }
+      ]
+    }
+  }
+}
+```
+
+Special case supported by the runtime: `form.namedActions.onFormLoad` is queued automatically on load if present.
+
+---
+
+## How to trigger a named action
+
+- **From HTML/Vue templates rendered by BetterForms**
+  - The BF HTML renderer exposes `namedAction(name, options)` method. In a DB-injected template you can do:
+  ```html
+  <button @click="namedAction('save', { source: 'headerBtn' })">Save</button>
+  ```
+  - You can also queue actions directly with an action object:
+  ```json
+  { "action": "namedAction", "name": "save", "options": { "source": "auto" } }
+  ```
+
+- **Programmatically via EventBus**
+  ```js
+  EventBus.$emit('processNamedAction', { action: 'namedAction', name: 'save', options: { source: 'code' } })
+  ```
+
+- **From schema actions**
+  - Anywhere an actions array is supported, include:
+  ```json
+  { "action": "namedAction", "name": "save", "options": { "reason": "autosave" } }
+  ```
+
+Notes:
+- The dispatcher defers to the named action resolver which looks up `form.namedActions[name]` and executes that chain.
+- The `options` object provided to the named action call is propagated into actions within the chain by the runtime.
+
+---
+
+## Quick reference
+
+- **Trigger in HTML (BF component)**
+  ```html
+  <bfcomp name="MyComponent" modelSource="model"></bfcomp>
+  <!-- Inside the component/template: -->
+  <button @click="namedAction('save')">Save</button>
+  ```
+
+- **Trigger programmatically**
+  ```js
+  EventBus.$emit('processNamedAction', { action: 'namedAction', name: 'save', options: { } })
+  ```
+
+- **LLM UI tool response**
+  ```json
+  { "action": "llmToolCallResponse", "options": { "message": "done" } }
+  ```
+
+---
+
+## Component‑internal named actions and lifecycle (v3.2.18+ Beta)
+
+This section documents how named actions defined on custom components are resolved and how the `onMount` lifecycle named action works.
+
+### Where to define component named actions
+
+You can define named actions directly on the component definition. Both locations below are supported when resolving from a component template:
 
 ```json
 {
@@ -68,7 +150,7 @@ Top‑level on the component:
 }
 ```
 
-Nested under `comp`:
+or nested under `comp`:
 
 ```json
 {
@@ -81,40 +163,58 @@ Nested under `comp`:
 }
 ```
 
-### Triggering from a component template
+### How resolution works inside component templates
 
-Inside your component HTML/Vue, call `namedAction('name', options)`.
+When a template rendered inside a `bfcomponent` calls `namedAction('some_name')`, the runtime resolves the chain in this order:
 
-Resolution order:
+- 1) `form.namedActions[some_name]` (form‑level overrides)
+- 2) Component definitions in site content and site root:
+  - `component.namedActions[some_name]`
+  - `component.comp.namedActions[some_name]`
 
-1) `form.namedActions[name]` (form‑level override if present)
-2) Component definition:
-   - `component.namedActions[name]`
-   - `component.comp.namedActions[name]`
-
-This allows a form to intentionally override a component action by name if needed.
+This means a form can intentionally override a component's action by using the same name at form scope.
 
 ### Lifecycle: `onMount`
 
-If `onMount` is defined (top‑level or under `comp.namedActions`), it is queued once when each component instance mounts. If you place multiple instances of the same component on a page, each instance will evaluate `onMount` — use a guard for singletons.
+- `bfcomponent` instances look for `namedActions.onMount` on the instance (`this.comp.namedActions.onMount`) and, if not found, on the component definition (`def.namedActions.onMount`).
+- If present, the action(s) are queued once per component instance during Vue `mounted()`.
+- The runtime clones the steps and injects a unique `idThread` for correlation.
 
-### Pass per‑instance options
+Notes:
+- `onMount` is not global; each instance evaluates it. If you place two instances of the same component on a page, both will attempt to run `onMount` unless you guard it yourself (see next section).
+- Prefer making `onMount` idempotent.
 
-For instance‑specific values, pass options directly from the template; they propagate through the chain:
+---
 
-```html
-<button @click="namedAction('onfileAdded', { docType: 'photo', accept: 'image/*', multiple: false, modelPath: schema.model })">Select File</button>
+## Best practices
+
+- **Naming to avoid collisions**: Prefix internal named actions with a short component prefix to reduce collisions with form/global actions, e.g., `uppy_fileUpload`, `chat_sendMessage`.
+- **Keep names stable**: If your component is referenced externally (schema or tools), treat internal action names as API.
+- **Propagate options**: Make sure options passed at call sites flow to the chain; avoid overwriting `action.options` in custom function steps.
+
+### Single Uppy instance (global)
+
+Uppy should be initialized once globally. Guard at the start of `onMount` so subsequent component instances no‑op.
+
+### Global singleton guard (recommended)
+
+Put a single `function` action first in `onMount` and short‑circuit if already initialized.
+
+```javascript
+window.__bfSingletons = window.__bfSingletons || {};
+const k = 'uppy';
+if (window.__bfSingletons[k]) return;
+window.__bfSingletons[k] = true;
 ```
 
-In a function step, read them via `action.options`.
+Choose a stable key (`k`) per feature you initialize.
 
-### Best practices
+### Make the rest of `onMount` idempotent
 
-- Naming: Prefix internal actions to avoid collisions (e.g., `uppy_fileUpload`, `chat_sendMessage`).
-- Stability: If referenced externally (from schema or tools), treat names as API.
-- Idempotency: Prefer `onMount` that can safely run multiple times if needed.
+- Check for existing global objects or listeners before creating new ones (e.g., `if (window.uppy) return;`).
+- Avoid attaching duplicate event handlers; if needed, track a flag (`window.__bfHandlers.uploaderReady = true`).
 
-Single Uppy instance (global):
+### Example: Single‑instance Uppy (JS)
 
 ```javascript
 // Guard: only one global Uppy
@@ -137,6 +237,34 @@ window.uppy = new Uppy.Uppy({ autoProceed: true, debug: false })
   .use(Uppy.AwsS3, { /* getUploadParameters, etc. */ })
   .use(Uppy.FileInput, { id: 'BFFileInput', target: '#bf-fileinput-host', pretty: false });
 ```
+
+---
+
+## Instance‑specific arguments pattern (recap)
+
+When a component instance needs to pass per‑instance values (like `modelPath`, `accept`, or `apiKey`) into a named action, pass them directly via the call from the template. The options object propagates through the chain.
+
+Example (inside component HTML):
+
+```html
+<button @click="namedAction('onfileAdded', { docType: 'photo', accept: 'image/*', multiple: false, modelPath: schema.model })">Select File</button>
+```
+
+In your action step, read them from `action.options`:
+
+```json
+{ "action": "function", "function": "var ctx = action.options || {}; /* use ctx.docType, ctx.accept, ctx.modelPath */" }
+```
+
+This avoids per‑instance registration in the global store while keeping actions reusable.
+
+---
+
+## Gotchas and best practices
+
+- **Keep names stable**: Treat named action names as API. UI tools may reference them; avoid breaking renames.
+- **Do not drop `toolCallId`**: If you manually construct intermediate actions, ensure the `options` object is preserved so `llmToolCallResponse` can read `toolCallId`.
+- **Use small, composable chains**: Prefer short, reusable named actions and compose with additional schema actions when needed.
 
 ## Best Practices
 
