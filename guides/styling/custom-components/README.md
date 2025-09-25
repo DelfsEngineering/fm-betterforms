@@ -37,6 +37,13 @@ Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema
 <bfcomp name="MyComponent" modelSource="model"   ></bfcomp>
 ```
 
+#### Inline example: calling a component-scoped action
+
+```html
+<!-- Inside MyComponent's HTML/template -->
+<button @click="namedAction('comp_save', { source: 'cta' })">Save</button>
+```
+
 ### Context
 
 Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema. 
