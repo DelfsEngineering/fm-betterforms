@@ -13,7 +13,7 @@ This page is under review and not finalized (beta)
 
 ### Building and Customizing
 
-Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema can be references from within the component as \``` schema` ``
+Both the BF JSON and the HTML APIs are the same. Keys within the BF JSON schema can be referenced within a component as `schema.<key>` (for example, `schema.title`).
 
 
 
@@ -46,15 +46,15 @@ Both the BF JSON and the HTML API's are the same. Keys within the BF JSON schema
 
 ### Context
 
-Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON Elelement schema. 
+Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON element schema. 
 
 ## Component-Scoped Named Actions (Internal)
 
 This note focuses on component-internal named actions: defining actions on components, how resolution works inside `bfcomponent` templates, and the `onMount` lifecycle behavior (v3.2.18+ Beta).
 
 #### Prerequisite: Custom Components as Schema or HTML/Vue
-See the official docs for component usage patterns and `<bfcomp>` embedding:
-[FM BetterForms Docs: Custom Components → Usage as an HTML Vue component](https://docs.fmbetterforms.com/v1/usage/stylingverview/custom-components#usage-as-an-html-vue-component)
+See usage patterns and `<bfcomp>` embedding below:
+[Usage as an HTML Vue component](#usage-as-an-html-vue-component)
 
 ---
 
@@ -277,7 +277,7 @@ Examples:
 | Component Type        | Size controller      | Comments                                                                                                                               |
 | --------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Page Header Component | implementation       | this allows the header                                                                                                                 |
-| Button Component      | Defined in component | Buttons generally don't take on the shapre of the parent elements. When you need to override a buttons width, you can pass in a class. |
+| Button Component      | Defined in component | Buttons generally don't take on the shape of the parent elements. When you need to override a button's width, you can pass in a class. |
 |                       |                      |                                                                                                                                        |
 
 
