@@ -18,8 +18,62 @@ Both the BF JSON and the HTML APIs are the same. Keys within the BF JSON schema 
 
 
 ### **Component API**
-
-<table><thead><tr><th width="165">Key</th><th width="145.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array</td><td>Optional either <code>html</code> or <code>fields</code> keys must be present. Contains BF schema elements normally found in the <code>fields</code> key of the page editor. The schema will be used as a component.<br>If supplied will act as the source of the field schema and replace the components default fields if there are any. </td></tr><tr><td><em><code>schema</code></em></td><td>object</td><td>All schema keys can be accessed from within the component as <code>schema.myTitle</code> This allows you to pass data dynamically into the component</td></tr><tr><td><code>html</code></td><td>string</td><td>Contains HTML to be rendered as a component.</td></tr><tr><td><code>&#x3C;bfcomp></code></td><td></td><td>HTML tag name needed to identify a BF component</td></tr><tr><td>name</td><td>string</td><td>The component name</td></tr><tr><td><code>modelSource</code></td><td>object</td><td>used to supply the model will be for this component, in not supplied, the current model for the element is used.</td></tr><tr><td><code>modelDev</code></td><td>object</td><td>Optional. Used to add model keys that can be used for development and tests of components rendered where there is no <code>model</code> available. ( Used by the BF editor )</td></tr><tr><td><code>source</code></td><td>{ component }</td><td>If supplied, this will act as the entire source for the component. This attribute was added to allow the BF component editor to preview live components. You probably will never use this key. component is a complete component object (not documented in this doc, see support if needed)</td></tr><tr><td><em><code>attributes</code></em></td><td>various</td><td>All additional attributes supplied will override the component's schema keys where applicable.<br>You can add any additional attribute or 'props' you need. Eg: <code>buttonLabel</code></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th width="165">Key</th>
+<th width="145.33333333333331">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td>array</td>
+<td>Optional either <code>html</code> or <code>fields</code> keys must be present. Contains BF schema elements normally found in the <code>fields</code> key of the page editor. The schema will be used as a component.<br>If supplied will act as the source of the field schema and replace the components default fields if there are any.</td>
+</tr>
+<tr>
+<td><em><code>schema</code></em></td>
+<td>object</td>
+<td>All schema keys can be accessed from within the component as <code>schema.myTitle</code> This allows you to pass data dynamically into the component</td>
+</tr>
+<tr>
+<td><code>html</code></td>
+<td>string</td>
+<td>Contains HTML to be rendered as a component.</td>
+</tr>
+<tr>
+<td><code>&#x3C;bfcomp></code></td>
+<td></td>
+<td>HTML tag name needed to identify a BF component</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The component name</td>
+</tr>
+<tr>
+<td><code>modelSource</code></td>
+<td>object</td>
+<td>used to supply the model will be for this component, in not supplied, the current model for the element is used.</td>
+</tr>
+<tr>
+<td><code>modelDev</code></td>
+<td>object</td>
+<td>Optional. Used to add model keys that can be used for development and tests of components rendered where there is no <code>model</code> available. ( Used by the BF editor )</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>{ component }</td>
+<td>If supplied, this will act as the entire source for the component. This attribute was added to allow the BF component editor to preview live components. You probably will never use this key. component is a complete component object (not documented in this doc, see support if needed)</td>
+</tr>
+<tr>
+<td><em><code>attributes</code></em></td>
+<td>various</td>
+<td>All additional attributes supplied will override the component's schema keys where applicable.<br>You can add any additional attribute or 'props' you need. Eg: <code>buttonLabel</code></td>
+</tr>
+</tbody>
+</table>
 
 #### Usage as an JSON Schema element
 
@@ -48,7 +102,7 @@ Both the BF JSON and the HTML APIs are the same. Keys within the BF JSON schema 
 
 Components mostly act the same as any other BF element for context. They see `model` and `app` the same regardless of HTML or BF JSON element schema. 
 
-## Component-Scoped Named Actions (Internal)
+## Component-Scoped Named Actions
 
 This note focuses on component-internal named actions: defining actions on components, how resolution works inside `bfcomponent` templates, and the `onMount` lifecycle behavior (v3.2.18+ Beta).
 
@@ -58,77 +112,12 @@ See usage patterns and `<bfcomp>` embedding below:
 
 ---
 
-## What is a named action?
-Named actions are reusable, named chains of actions defined in a form schema and executable from multiple places (schema actions, HTML/Vue, programmatic events, or LLM tool calls).
+## Named actions overview
+For a full introduction to named actions (definition, execution contexts, and general examples), see:
 
-- **Where to define**: in the component editor
-
-Example (schema excerpt):
-```json
-{
-  "form": {
-    "namedActions": {
-      "save": [
-        { "action": "validate" },
-        { "action": "runUtilityHook", "options": { "hook": "saveRecord" } },
-        { "action": "showAlert", "options": { "message": "Saved" } }
-      ]
-    }
-  }
-}
-```
-
-Special case supported by the runtime: `form.namedActions.onFormLoad` is queued automatically on load if present.
-
----
-
-## How to trigger a named action
-
-- **From HTML/Vue templates rendered by BetterForms**
-  - The BF HTML renderer exposes `namedAction(name, options)` method. In a DB-injected template you can do:
-  ```html
-  <button @click="namedAction('save', { source: 'headerBtn' })">Save</button>
-  ```
-  - You can also queue actions directly with an action object:
-  ```json
-  { "action": "namedAction", "name": "save", "options": { "source": "auto" } }
-  ```
-
-- **Programmatically via EventBus**
-  ```js
-  EventBus.$emit('processNamedAction', { action: 'namedAction', name: 'save', options: { source: 'code' } })
-  ```
-
-- **From schema actions**
-  - Anywhere an actions array is supported, include:
-  ```json
-  { "action": "namedAction", "name": "save", "options": { "reason": "autosave" } }
-  ```
-
-Notes:
-- The dispatcher defers to the named action resolver which looks up `form.namedActions[name]` and executes that chain.
-- The `options` object provided to the named action call is propagated into actions within the chain by the runtime.
-
----
-
-## Quick reference
-
-- **Trigger in HTML (BF component)**
-  ```html
-  <bfcomp name="MyComponent" modelSource="model"></bfcomp>
-  <!-- Inside the component/template: -->
-  <button @click="namedAction('save')">Save</button>
-  ```
-
-- **Trigger programmatically**
-  ```js
-  EventBus.$emit('processNamedAction', { action: 'namedAction', name: 'save', options: { } })
-  ```
-
-- **LLM UI tool response**
-  ```json
-  { "action": "llmToolCallResponse", "options": { "message": "done" } }
-  ```
+{% content-ref url="../../../reference/actions-processor/actions_named.md" %}
+[actions_named.md](../../../reference/actions-processor/actions_named.md)
+{% endcontent-ref %}
 
 ---
 
