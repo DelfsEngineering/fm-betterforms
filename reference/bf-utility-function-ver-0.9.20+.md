@@ -39,4 +39,6 @@ description: >-
 
 For detailed documentation on the dynamic library loading functions (`BF.libraryLoadOnce`, `BF.libraryIsLoaded`, `BF.libraryGetLoaded`), see:
 
+{% content-ref url="bf-dynamic-library-loading.md" %}
 [Dynamic Library Loading](bf-dynamic-library-loading.md)
+{% endcontent-ref %}
