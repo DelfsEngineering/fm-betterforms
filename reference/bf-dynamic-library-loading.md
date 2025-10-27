@@ -5,12 +5,12 @@ description: >-
 
 # Dynamic Library Loading
 
-**Version:** 3.2.31+  
+**Version:** 3.3.1+  
 **Feature:** `BF.libraryLoadOnce()`, `BF.libraryIsLoaded()`, `BF.libraryGetLoaded()`
 
 ## Overview
 
-Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamically within your function actions. Libraries are loaded once and cached automatically (idempotent).
+Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamically within your function actions. Libraries are loaded once and cached automatically (idempotent), with built-in XSS protection and race condition prevention.
 
 ## Why Use This?
 
@@ -24,25 +24,30 @@ Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamica
 ### Load a UMD Library
 
 ```javascript
-// Load jQuery from CDN
-await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js');
+// Load PapaParse from CDN
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js');
 
 // Use it immediately
-$('#myElement').hide();
+const result = Papa.parse('Name,Age\nJohn,30', { header: true });
+console.log(result.data); // [{Name: "John", Age: "30"}]
 ```
 
 ### Load an ESM Module
 
 ```javascript
-// Load lodash-es as ES module
-const _ = await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/+esm', {
+// Load DayJS as ES module
+const dayjs = await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/dayjs@1.11.10/+esm', {
   moduleType: 'module'
 });
 
 // Use module exports
-console.log(_.chunk([1,2,3,4,5,6], 2));
-// Output: [[1,2], [3,4], [5,6]]
+console.log('Today:', dayjs.default().format('YYYY-MM-DD'));
+console.log('Next week:', dayjs.default().add(7, 'day').format('MMMM D'));
 ```
+
+{% hint style="info" %}
+**ESM modules are scoped to the current function action.** See "ESM Module Scope" section below for multi-action usage patterns.
+{% endhint %}
 
 ### Load CSS
 
@@ -161,9 +166,9 @@ console.log('Followers:', response.data.followers);
 
 ```javascript
 // Load with Subresource Integrity
-await BF.libraryLoadOnce('https://code.jquery.com/jquery-3.6.0.min.js', {
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js', {
   attributes: {
-    integrity: 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=',
+    integrity: 'sha384-example-hash-here',
     crossorigin: 'anonymous'
   }
 });
@@ -183,32 +188,20 @@ try {
 }
 ```
 
-### Example 6: Check Before Loading
-
-```javascript
-// Avoid loading if already loaded
-if (!BF.libraryIsLoaded('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js')) {
-  await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js');
-}
-
-// Use lodash
-console.log(_.chunk([1,2,3,4], 2));
-```
-
-### Example 7: Multiple Libraries
+### Example 6: Multiple Libraries
 
 ```javascript
 // Load multiple libraries in parallel
 await Promise.all([
-  BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js'),
-  BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js'),
+  BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js'),
+  BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js'),
   BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js')
 ]);
 
 console.log('All libraries loaded!');
 ```
 
-### Example 8: Dynamic Library Selection
+### Example 7: Dynamic Library Selection
 
 ```javascript
 // Load different library based on user preference
@@ -221,24 +214,111 @@ await BF.libraryLoadOnce(chartLibrary);
 
 ---
 
+## ESM Module Scope
+
+{% hint style="warning" %}
+**Important:** ESM modules are scoped to the function action where they're loaded. Unlike UMD libraries (which are automatically global), ESM modules return an object that only exists in the current function's scope.
+{% endhint %}
+
+### UMD vs ESM Behavior
+
+**UMD Libraries (automatically global):**
+```javascript
+// Action 1
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js');
+Papa.parse(csv); // ✅ Works - Papa is global
+
+// Action 2 (later)
+Papa.parse(csv); // ✅ Still works - Papa is on window
+```
+
+**ESM Modules (function-scoped):**
+```javascript
+// Action 1
+const dayjs = await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/dayjs@1.11.10/+esm', {
+  moduleType: 'module'
+});
+dayjs.default().format('YYYY-MM-DD'); // ✅ Works
+
+// Action 2 (later)
+dayjs.default().format('YYYY-MM-DD'); // ❌ Error: dayjs is not defined
+```
+
+### Solution 1: Re-load in Each Action (Recommended)
+
+The library is cached, so re-loading is < 1ms:
+
+```javascript
+// Action 1
+const dayjs = await BF.libraryLoadOnce('url', { moduleType: 'module' });
+dayjs.default().format('YYYY-MM-DD');
+
+// Action 2 (later - different function action)
+const dayjs = await BF.libraryLoadOnce('url', { moduleType: 'module' });
+dayjs.default().format('YYYY-MM-DD'); // ✅ Works - returns cached module in < 1ms
+```
+
+**When to use:**
+- ✅ Most common case
+- ✅ Clean, simple code
+- ✅ Nearly instant (cached)
+
+### Solution 2: Bind to Window (If Needed Globally)
+
+Manually store the module on window for global access:
+
+```javascript
+// Action 1 (first time setup)
+if (!window._myDayjs) {
+  window._myDayjs = await BF.libraryLoadOnce('url', { moduleType: 'module' });
+}
+window._myDayjs.default().format('YYYY-MM-DD');
+
+// Action 2 (later)
+window._myDayjs.default().format('YYYY-MM-DD'); // ✅ Works - uses cached reference
+```
+
+**When to use:**
+- Used across many actions
+- Need consistent reference
+- Don't mind global namespace
+
+### Do You Even Need It Again?
+
+**In many cases, you won't need the module after initial setup:**
+
+```javascript
+// Load chart library, create chart, done
+const Chart = await BF.libraryLoadOnce('chart.js', { moduleType: 'module' });
+new Chart.default(ctx, config); // Chart is created
+// Module reference no longer needed after this action
+```
+
+**Only need multi-action access if:**
+- Calling library functions repeatedly
+- Building complex multi-step workflows
+- Library maintains state you need to access
+
+---
+
 ## Best Practices
 
 ### ✅ DO:
 
 - **Use version pinning:** Specify exact versions in CDN URLs
   ```javascript
-  // Good
-  'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js'
+  // Good - pinned version
+  'https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js'
   
-  // Avoid
-  'https://cdn.jsdelivr.net/npm/lodash/lodash.min.js' // latest, unstable
+  // Avoid - unpinned, can break
+  'https://cdn.jsdelivr.net/npm/papaparse/papaparse.min.js' // latest, unstable
   ```
 
-- **Check if loaded first:** Avoid unnecessary calls
+- **Idempotent by design:** No need to check before loading
   ```javascript
-  if (!BF.libraryIsLoaded(url)) {
-    await BF.libraryLoadOnce(url);
-  }
+  // Just load it - automatically idempotent
+  await BF.libraryLoadOnce(url);
+  // If already loaded, returns immediately (< 1ms)
   ```
 
 - **Use error handling:** Always catch potential failures
@@ -276,7 +356,7 @@ await BF.libraryLoadOnce(chartLibrary);
 - **Most common format**
 - Exposes global variable
 - Works everywhere
-- Examples: jQuery, Lodash, Moment, Chart.js
+- Examples: Chart.js, PapaParse, QRCode, Axios
 
 ```javascript
 await BF.libraryLoadOnce('https://cdn.example.com/lib.umd.js');
@@ -287,7 +367,7 @@ window.LibraryName.method();
 - **Modern format**
 - Uses `import`/`export`
 - Returns module object
-- Examples: Lodash-ES, DayJS ESM builds
+- Examples: DayJS, D3.js, Lit (web components)
 
 ```javascript
 const lib = await BF.libraryLoadOnce('https://cdn.example.com/lib.esm.js', {
@@ -311,66 +391,109 @@ await BF.libraryLoadOnce('https://cdn.example.com/styles.css', {
 
 ## Finding CDN URLs
 
-### Recommended CDNs:
+Finding the correct CDN URL can be tricky. Here's how:
 
-**jsDelivr** (Recommended)
-- URL: `https://cdn.jsdelivr.net/npm/package@version/file`
-- Example: `https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js`
-- Supports npm packages, GitHub repos
-- ESM support: Add `/+esm` suffix
+### Step 1: Find the Package on npm
+
+1. Go to `https://www.npmjs.com/package/package-name`
+2. Check for version number and main file info
+
+### Step 2: Browse the CDN
+
+**jsDelivr (Recommended)**
+- Browse: `https://cdn.jsdelivr.net/npm/package-name@version/`
+- Example: `https://cdn.jsdelivr.net/npm/dayjs@1.11.10/`
+- Look in: `dist/`, `build/`, or root folder
+- ESM shortcut: Add `/+esm` to auto-find ESM entry
+
+**Common file patterns:**
+- `package.min.js` - Minified UMD (most common)
+- `package.umd.js` - UMD build
+- `dist/package.js` - Main distribution file
+- `build/package.min.js` - Built file
 
 **unpkg**
-- URL: `https://unpkg.com/package@version/file`
-- Example: `https://unpkg.com/lodash@4.17.21/lodash.min.js`
-- Simple, fast
+- Browse: `https://unpkg.com/package@version/?meta` (add `?meta`)
+- Example: `https://unpkg.com/papaparse@5.4.1/?meta`
 
 **cdnjs**
-- URL: `https://cdnjs.cloudflare.com/ajax/libs/package/version/file`
-- Example: `https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js`
-- Large library
+- Search: `https://cdnjs.com/libraries/package-name`
+- Example: `https://cdnjs.com/libraries/Chart.js`
 
-### How to Find Files:
+### Step 3: Verify the File Works
 
-1. Visit `https://cdn.jsdelivr.net/npm/package-name@version/`
-2. Browse to find the right file:
-   - `dist/package.umd.js` - UMD build
-   - `dist/package.esm.js` - ESM build  
-   - `dist/package.min.js` - Minified (usually UMD)
+Test in browser console first:
+```javascript
+// Test UMD
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/package@version/file.js');
+console.log(window.PackageName); // Should exist
+
+// Test ESM  
+const pkg = await BF.libraryLoadOnce('url/+esm', { moduleType: 'module' });
+console.log(pkg); // Should show module exports
+```
+
+### Troubleshooting 404 Errors
+
+1. **Check version exists:** Verify on npmjs.com
+2. **Try alternate paths:**
+   - `package.min.js`
+   - `dist/package.min.js`
+   - `build/package.min.js`
+   - `index.js`
+3. **Check package.json:** `https://cdn.jsdelivr.net/npm/package@version/package.json`
+   - Look for `"main"`, `"browser"`, or `"module"` fields
+
+### Real Examples
+
+**Chart.js:**
+1. Browse: `https://cdn.jsdelivr.net/npm/chart.js@4.4.0/`
+2. Find: `dist/chart.umd.js`
+3. URL: `https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js`
+
+**PapaParse:**
+1. Browse: `https://cdn.jsdelivr.net/npm/papaparse@5.4.1/`
+2. Find: `papaparse.min.js` (at root)
+3. URL: `https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js`
+
+**DayJS ESM:**
+1. Use shortcut: `https://cdn.jsdelivr.net/npm/dayjs@1.11.10/+esm`
+2. Done! (jsDelivr finds ESM automatically)
 
 ---
 
 ## Common Libraries
 
-### Chart.js
+### Chart.js (Charting)
 ```javascript
 await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js');
 ```
 
-### Lodash
+### PapaParse (CSV Parser)
 ```javascript
-await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js');
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js');
 ```
 
-### Moment.js
+### QRCode (QR Generator)
 ```javascript
-await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js');
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js');
 ```
 
-### jQuery
-```javascript
-await BF.libraryLoadOnce('https://code.jquery.com/jquery-3.7.1.min.js');
-```
-
-### Axios
+### Axios (HTTP Client)
 ```javascript
 await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js');
 ```
 
-### DayJS (ESM)
+### DayJS (ESM - Date Library)
 ```javascript
 const dayjs = await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/dayjs@1.11.10/+esm', {
   moduleType: 'module'
 });
+```
+
+### Sortable.js (Drag & Drop)
+```javascript
+await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js');
 ```
 
 ---
