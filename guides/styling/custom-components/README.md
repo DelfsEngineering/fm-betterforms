@@ -121,9 +121,9 @@ For a full introduction to named actions (definition, execution contexts, and ge
 
 ---
 
-## Component‑internal named actions and lifecycle (v3.2.18+ Beta)
+## Component‑internal named actions and lifecycle (v3.3.3+)
 
-This section documents how named actions defined on custom components are resolved and how the `onMount` lifecycle named action works.
+This section documents how named actions defined on custom components are resolved and how lifecycle hooks work.
 
 ### Where to define component named actions
 
@@ -134,7 +134,8 @@ You can define named actions directly on the component definition. Both location
   "html": "<button @click=\"namedAction('comp_hello')\">Hello</button>",
   "namedActions": {
     "comp_hello": [{ "action": "showAlert", "options": { "message": "Hi" } }],
-    "onMount": [{ "action": "log", "options": { "message": "mounted" } }]
+    "onBeforeMount": [{ "action": "function", "function": "await BF.libraryLoadOnce('...')" }],
+    "onMount": [{ "action": "function", "function": "console.log('mounted')" }]
   }
 }
 ```
@@ -146,7 +147,8 @@ or nested under `comp`:
   "comp": {
     "namedActions": {
       "comp_hello": [{ "action": "showAlert", "options": { "message": "Hi" } }],
-      "onMount": [{ "action": "log", "options": { "message": "mounted" } }]
+      "onBeforeMount": [{ "action": "function", "function": "await BF.libraryLoadOnce('...')" }],
+      "onMount": [{ "action": "function", "function": "console.log('mounted')" }]
     }
   }
 }
@@ -163,15 +165,95 @@ When a template rendered inside a `bfcomponent` calls `namedAction('some_name')`
 
 This means a form can intentionally override a component's action by using the same name at form scope.
 
-### Lifecycle: `onMount`
+### Lifecycle Hooks (v3.3.3+)
 
-- `bfcomponent` instances look for `namedActions.onMount` on the instance (`this.comp.namedActions.onMount`) and, if not found, on the component definition (`def.namedActions.onMount`).
-- If present, the action(s) are queued once per component instance during Vue `mounted()`.
-- The runtime clones the steps and injects a unique `idThread` for correlation.
+BetterForms components now support full lifecycle hooks that fire at specific points in the component's lifecycle. All lifecycle actions properly await async operations before proceeding.
 
-Notes:
-- `onMount` is not global; each instance evaluates it. If you place two instances of the same component on a page, both will attempt to run `onMount` unless you guard it yourself (see next section).
-- Prefer making `onMount` idempotent.
+#### Available Lifecycle Hooks
+
+| Hook | When It Fires | Blocks Rendering? | Use Case |
+|------|---------------|-------------------|----------|
+| `onBeforeMount` | Before component renders | ✅ **YES** | **Load external libraries**, initialize before render |
+| `onMount` | After component in DOM | ❌ No | Post-render logic, analytics, DOM operations |
+| `onUpdated` | After component re-renders | ❌ No | React to data changes, update third-party widgets |
+| `onBeforeDestroy` | Before component destroys | ❌ No | Cleanup: remove listeners, clear timers |
+| `onDestroyed` | After component destroyed | ❌ No | Final logging, analytics |
+
+**Naming Support:** Both `onMount` / `mounted`, `onBeforeMount` / `beforeMount` naming conventions are supported.
+
+#### Critical Feature: `onBeforeMount` Blocks Rendering
+
+The `onBeforeMount` hook is special - it **blocks the component from rendering** until all async actions complete. This solves the common problem of components rendering before external libraries load.
+
+**Example: Loading ApexCharts**
+```json
+{
+  "html": "<apexchart :options=\"schema.options\" :series=\"schema.series\"></apexchart>",
+  "namedActions": {
+    "onBeforeMount": [{
+      "action": "function",
+      "function": "try {\n  await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/apexcharts@3.44.0/dist/apexcharts.min.js');\n  await BF.libraryLoadOnce('https://cdn.jsdelivr.net/npm/vue-apexcharts@1.6.2/dist/vue-apexcharts.min.js');\n  if (!Vue.options.components.apexchart) {\n    Vue.component('apexchart', VueApexCharts);\n  }\n} catch (error) {\n  console.error('ApexCharts load failed:', error);\n}"
+    }]
+  }
+}
+```
+
+**Result:** Component waits for libraries to load, then renders. No "undefined component" errors!
+
+#### How `onBeforeMount` Works
+
+1. Component created (Vue lifecycle)
+2. `beforeMount()` hook fires
+3. Dispatches `onBeforeMount` actions
+4. **Component waits** for Promise to resolve
+5. Actions complete (e.g., library loads)
+6. Component renders ✅
+
+#### Using Other Lifecycle Hooks
+
+**`onMount` - Post-render logic**
+```json
+{
+  "namedActions": {
+    "onMount": [{
+      "action": "function",
+      "function": "// Initialize chart animations\nmodel.chartReady = true;\nconsole.log('Component rendered');"
+    }]
+  }
+}
+```
+
+**`onBeforeDestroy` - Cleanup**
+```json
+{
+  "namedActions": {
+    "onBeforeDestroy": [{
+      "action": "function",
+      "function": "// Clean up event listeners\nif (window.myChartInstance) {\n  window.myChartInstance.destroy();\n}"
+    }]
+  }
+}
+```
+
+**`onUpdated` - React to changes**
+```json
+{
+  "namedActions": {
+    "onUpdated": [{
+      "action": "function",
+      "function": "// Refresh chart when data changes\nif (window.myChartInstance) {\n  window.myChartInstance.updateSeries(schema.series);\n}"
+    }]
+  }
+}
+```
+
+#### Notes
+
+- Lifecycle hooks fire once per component instance
+- Multiple instances on the same page each run their own lifecycle actions
+- `onBeforeMount` is the only hook that blocks (by design)
+- Other hooks fire asynchronously but still await completion
+- Prefer making hooks idempotent when possible
 
 ---
 
