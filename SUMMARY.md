@@ -169,6 +169,7 @@
     * [BF Streaming API (Assistants)](apis-and-services/bf-streaming-assistants-api.md)
     * [BF Streaming API (LLM Query)](apis-and-services/bf-streaming-api-llm-query.md)
   * [Guides & Integrations](guides/integrations/README.md)
+    * [Web Awesome Components in BetterForms](guides/integrations/web-awesome-components.md)
     * [ApexCharts - Getting started](guides/integrations/apexcharts-getting-started.md)
     * [Creating a PWA](guides/integrations/creating-a-pwa.md)
     * [Setting up Auth0](guides/integrations/setting-up-auth0.md)
