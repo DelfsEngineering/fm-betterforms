@@ -25,3 +25,19 @@ the API key for your BF app
 if set, will only return users connected to this channel
 {% endswagger-parameter %}
 {% endswagger %}
+
+## Totals across pods/data centers
+
+To get total connected counts across all pods/data centers, use the `/message/allusers` endpoint (POST). It returns per-DC counts plus a global `_total` that sums authenticated and anonymous users:
+
+```
+{
+  "us-east-1": { "authenticated": 12, "anonymous": 4 },
+  "eu-west-1": { "authenticated": 7, "anonymous": 2 },
+  "_total": { "authenticated": 19, "anonymous": 6 }
+}
+```
+
+Notes:
+- Keys are grouped by data center (DC) as reported by the server.
+- `_total` is always present and aggregates all DCs/pods.

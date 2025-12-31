@@ -231,6 +231,19 @@ Frontend Tools trigger UI actions directly in the browser without FileMaker Comm
 | `message` | String | ✅ | Result description sent back to LLM |
 | `data` | Object | ❌ | Optional additional data |
 
+#### Frontend Tool Timeouts
+
+Frontend tools have a **90-second timeout** from when the tool is invoked until the response must be received. If your `namedAction` does not call `llmToolCallResponse` within this time window:
+
+- The backend will automatically reject the tool call with a timeout error
+- The LLM will receive an error message indicating the tool failed to respond
+- The timeout ensures that LLM requests don't hang indefinitely due to frontend issues
+
+**Best Practices:**
+- Keep frontend tool operations quick (< 10 seconds when possible)
+- For long-running operations, return an immediate acknowledgment and update the UI asynchronously
+- Always call `llmToolCallResponse` even if an error occurs in your tool logic
+
 ---
 
 ## Response Format
