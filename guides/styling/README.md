@@ -8,6 +8,14 @@ description: >-
 
 BetterForms is built with Bootstrap CSS as the UI design framework. You can learn more about [Bootstrap here](https://getbootstrap.com/docs/3.3/).
 
+## Custom Components
+
+Create reusable, self-contained components that can integrate third-party JavaScript libraries:
+
+- **[Creating Components with Third-Party Libraries](../integrations/creating-components-with-third-party-libraries.md)** - Complete guide with FullCalendar, Chart.js, and Leaflet examples
+- **[Components Editor](./custom-components/components-editor.md)** - Using the component editor interface
+- **[Component Best Practices](./custom-components/component-best-practices.md)** - Guidelines for component development
+
 ## styleClasses
 Every field type can have CSS classes tied to it. This allows you to add any `Bootstrap CSS` or your own custom classes to any object.
 

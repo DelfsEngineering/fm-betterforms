@@ -82,3 +82,11 @@ In this example, `goToMyAccount` is the name of the named action and the `{id: '
 #### Sequence
 
 If a namedAction is called while other actions are still in the queue, the namedAction will run first and get inserted at the front of the actions queue. You can think of this as a sub-script where the namedAction runs first and then the remaining actions continue. This allows you to reuse code and is particularly useful in the global scope.
+
+---
+
+## See Also
+
+- **[Creating Components with Third-Party Libraries](../../guides/integrations/creating-components-with-third-party-libraries.md)** - Learn how to use named actions in component lifecycle hooks (onBeforeMount, onMount, etc.) to integrate JavaScript libraries
+- **[BF.libraryLoadOnce()](../bf-dynamic-library-loading.md)** - Dynamic library loading utility for use in function actions
+- **[Component Best Practices](../../guides/styling/custom-components/component-best-practices.md)** - Guidelines for creating custom components

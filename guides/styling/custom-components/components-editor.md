@@ -12,3 +12,10 @@ In this **Component Editor**, you can create and edit the components you want to
 * You can add mock data in the **Dev Data Model** tab.
 
 **Note:** If you are using `model.somekey` data, the `model` refers to the page model that contains this component.
+
+---
+
+## See Also
+
+- [Creating Components with Third-Party Libraries](../../integrations/creating-components-with-third-party-libraries.md) - Complete guide with FullCalendar, Chart.js, and Leaflet examples
+- [Component Best Practices](./component-best-practices.md) - General guidelines for component development

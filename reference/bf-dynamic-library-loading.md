@@ -538,6 +538,14 @@ console.log('Already loaded:', loaded);
 
 ---
 
+## See Also
+
+- **[Creating Components with Third-Party Libraries](../guides/integrations/creating-components-with-third-party-libraries.md)** - Complete guide to building custom components with FullCalendar, Chart.js, Leaflet, and more
+- **[Web Awesome Components](../guides/integrations/web-awesome-components.md)** - Modern web components integration example
+- **[Named Actions](./actions-processor/actions_named.md)** - Understanding action scripts and lifecycle hooks
+
+---
+
 ## Need Help?
 
 - Check the [BetterForms documentation](https://docs.fmbetterforms.com)

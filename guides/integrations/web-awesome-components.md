@@ -101,3 +101,9 @@ Docs: [Getting Started – Using a Project](https://webawesome.com/docs/)
 - Wrap additional elements (e.g., `wa-input`) using the same pattern: load once in `onBeforeMount`, then render the element.
 - Provide a small component pack for your team (buttons, inputs, badges, cards).
 - If you later choose a different theme, swap the CSS URL in one place inside the component.
+
+## See Also
+
+- [Creating Components with Third-Party Libraries](./creating-components-with-third-party-libraries.md) - Complete guide with FullCalendar, Chart.js, Leaflet, and more examples
+- [BF.libraryLoadOnce() Reference](../../reference/bf-dynamic-library-loading.md) - Library loading utility documentation
+- [Component Best Practices](../styling/custom-components/component-best-practices.md) - General guidelines for component development
