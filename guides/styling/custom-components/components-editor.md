@@ -10,6 +10,7 @@ In this **Component Editor**, you can create and edit the components you want to
 * You can write notes in the documentation and delete components from the **General** tab.
 * You can edit your component's content in either the **Component Schema** tab using JSON, or in the **HTML** tab using the HTML editor.
 * You can add mock data in the **Dev Data Model** tab.
+* Lifecycle namedActions receive the component schema on `action.schema` (and `action.options._componentSchema`); pass schema explicitly in options for template-triggered actions if needed.
 
 **Note:** If you are using `model.somekey` data, the `model` refers to the page model that contains this component.
 
