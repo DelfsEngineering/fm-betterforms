@@ -194,13 +194,6 @@ Add `_calc` to any key to evaluate it as a JavaScript expression. The expression
 
 If both a static key and its `_calc` counterpart exist, `_calc` takes precedence.
 
-**Best Practice:** Use `_calc` with fallback instead:
-```json
-{
-  "title_calc": "model.dynamicTitle || 'Static Title'"
-}
-```
-
 ---
 
 ## Complete Examples
