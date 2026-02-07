@@ -54,7 +54,6 @@ In your form schema, add a `seoMeta` field:
 ```json
 {
   "type": "seoMeta",
-  "model": "pageMetadata",
   "label": "SEO Meta Tags",
   "icon": "fa-tags",
   "metaTags": {

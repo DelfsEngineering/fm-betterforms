@@ -23,7 +23,6 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 ```json
 {
   "type": "seoMeta",
-  "model": "pageMetadata",
   "label": "SEO Meta Tags",
   "metaTags": {
     "title": "Page Title - Your Brand",
@@ -39,10 +38,8 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | String | Yes | Must be `"seoMeta"` |
-| `model` | String | No | Model binding (typically `"pageMetadata"`) |
 | `label` | String | No | Label shown in form editor |
 | `metaTags` | Object | Yes | Meta tag definitions |
-| `hint` | String | No | Help text for editors |
 | `icon` | String | No | Font Awesome icon (recommend `"fa-tags"`) |
 
 ---
@@ -272,7 +269,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "model": "pageMetadata",
   "label": "SEO Meta Tags",
   "icon": "fa-tags",
   "metaTags": {
@@ -295,7 +291,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "model": "pageMetadata",
   "label": "Product Meta Tags",
   "metaTags": {
     "title_calc": "model.product.name + ' - $' + model.product.price + ' | Acme Store'",
@@ -318,7 +313,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "model": "pageMetadata",
   "label": "Blog Post Meta Tags",
   "metaTags": {
     "title_calc": "model.post.title + ' | Acme Blog'",
