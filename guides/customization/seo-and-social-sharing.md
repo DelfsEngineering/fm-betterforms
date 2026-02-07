@@ -81,7 +81,7 @@ In your site settings, ensure SSR is enabled for this page:
       "id": "YOUR_FORM_ID",
       "title": "Page Title",
       "ssr": {
-        "enabled": true
+         "enabled": true
       }
     }
   }

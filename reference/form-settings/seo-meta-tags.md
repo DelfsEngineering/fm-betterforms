@@ -18,7 +18,7 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 
 ## Field Structure
 
-### Basic Schema
+### Basic Schema 
 
 ```json
 {
