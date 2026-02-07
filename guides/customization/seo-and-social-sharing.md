@@ -54,8 +54,6 @@ In your form schema, add a `seoMeta` field:
 ```json
 {
   "type": "seoMeta",
-  "label": "SEO Meta Tags",
-  "icon": "fa-tags",
   "metaTags": {
     "title": "Your Page Title - Brand Name",
     "description": "Brief description of your page (150-160 characters)",

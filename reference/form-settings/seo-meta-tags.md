@@ -23,7 +23,6 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 ```json
 {
   "type": "seoMeta",
-  "label": "SEO Meta Tags",
   "metaTags": {
     "title": "Page Title - Your Brand",
     "description": "Page description for search results",
@@ -38,9 +37,7 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | String | Yes | Must be `"seoMeta"` |
-| `label` | String | No | Label shown in form editor |
 | `metaTags` | Object | Yes | Meta tag definitions |
-| `icon` | String | No | Font Awesome icon (recommend `"fa-tags"`) |
 
 ---
 
@@ -269,8 +266,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "label": "SEO Meta Tags",
-  "icon": "fa-tags",
   "metaTags": {
     "title": "About Us - Acme Corporation",
     "description": "Learn about Acme Corp's mission, values, and team",
@@ -291,7 +286,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "label": "Product Meta Tags",
   "metaTags": {
     "title_calc": "model.product.name + ' - $' + model.product.price + ' | Acme Store'",
     "description_calc": "model.product.description?.substring(0, 160)",
@@ -313,7 +307,6 @@ When both static and `_calc` keys exist:
 ```json
 {
   "type": "seoMeta",
-  "label": "Blog Post Meta Tags",
   "metaTags": {
     "title_calc": "model.post.title + ' | Acme Blog'",
     "description_calc": "model.post.excerpt?.substring(0, 160)",
