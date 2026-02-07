@@ -44,7 +44,7 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 ## Behavior
 
 ### In Editor (GUI)
-- **Visible** - Field appears in the form designer
+- **Visible** - Field appears in the form designer in the tree view
 - **Editable** - Designers can modify meta tags
 - **No Rendering** - Does not render in the actual form
 
