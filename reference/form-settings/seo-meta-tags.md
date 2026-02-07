@@ -184,71 +184,15 @@ Use `property=""` attribute:
 
 ## Dynamic Expressions with `_calc`
 
-### Syntax
+Add `_calc` to any key to evaluate it as a JavaScript expression. The expression has access to the `model` object from the form's data model.
 
 ```json
 {
-  "key_calc": "JavaScript expression using model"
+  "title_calc": "model.product.name + ' | My Store'"
 }
 ```
 
-### Context
-
-All expressions have access to `model` object from the form's data model:
-
-```javascript
-model.product.name       // Access nested properties
-model.user?.email        // Optional chaining
-model.tags.join(', ')    // Array methods
-model.price || 0         // Logical OR (fallback)
-```
-
-### Examples
-
-**Simple property:**
-```json
-"title_calc": "model.product.name"
-```
-
-**With fallback:**
-```json
-"description_calc": "model.description || 'Default description'"
-```
-
-**Concatenation:**
-```json
-"title_calc": "model.product.name + ' - $' + model.product.price"
-```
-
-**Optional chaining:**
-```json
-"og:image_calc": "model.product.images?.[0]?.url"
-```
-
-**Array operations:**
-```json
-"keywords_calc": "model.tags?.join(', ') || 'default'"
-```
-
-**Conditional:**
-```json
-"product:availability_calc": "model.inStock ? 'in stock' : 'out of stock'"
-```
-
----
-
-## Priority Rules
-
-When both static and `_calc` keys exist:
-
-```json
-{
-  "title": "Static Title",
-  "title_calc": "model.dynamicTitle"
-}
-```
-
-**Result:** `_calc` takes precedence. Static value is ignored.
+If both a static key and its `_calc` counterpart exist, `_calc` takes precedence.
 
 **Best Practice:** Use `_calc` with fallback instead:
 ```json
@@ -261,7 +205,7 @@ When both static and `_calc` keys exist:
 
 ## Complete Examples
 
-### Static Marketing Page
+### Static Page
 
 ```json
 {
@@ -269,9 +213,7 @@ When both static and `_calc` keys exist:
   "metaTags": {
     "title": "About Us - Acme Corporation",
     "description": "Learn about Acme Corp's mission, values, and team",
-    "keywords": "about us, company, team, mission",
     "og:title": "About Acme Corp",
-    "og:description": "Building the future of widgets since 2010",
     "og:image": "https://cdn.acme.com/about-og.jpg",
     "og:type": "website",
     "twitter:card": "summary_large_image"
@@ -279,9 +221,9 @@ When both static and `_calc` keys exist:
 }
 ```
 
----
+### Dynamic Page (using `_calc`)
 
-### Dynamic Product Page
+Any key with a `_calc` suffix is evaluated as a JavaScript expression with access to `model`. The `_calc` version takes priority over the static key.
 
 ```json
 {
@@ -289,32 +231,9 @@ When both static and `_calc` keys exist:
   "metaTags": {
     "title_calc": "model.product.name + ' - $' + model.product.price + ' | Acme Store'",
     "description_calc": "model.product.description?.substring(0, 160)",
-    "keywords_calc": "model.product.tags?.join(', ') || 'products'",
     "og:title_calc": "model.product.name",
     "og:image_calc": "model.product.images?.[0]?.url || 'https://cdn.acme.com/default.jpg'",
     "og:type": "product",
-    "product:price:amount_calc": "model.product.price",
-    "product:price:currency": "USD",
-    "twitter:card": "summary_large_image"
-  }
-}
-```
-
----
-
-### Dynamic Blog Post
-
-```json
-{
-  "type": "seoMeta",
-  "metaTags": {
-    "title_calc": "model.post.title + ' | Acme Blog'",
-    "description_calc": "model.post.excerpt?.substring(0, 160)",
-    "og:title_calc": "model.post.title",
-    "og:image_calc": "model.post.featuredImage?.url",
-    "og:type": "article",
-    "article:published_time_calc": "model.post.publishedAt",
-    "article:author_calc": "model.post.author.name",
     "twitter:card": "summary_large_image"
   }
 }

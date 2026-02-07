@@ -98,20 +98,17 @@ Look for your meta tags in the `<head>` section!
 
 ## Common Scenarios
 
-### 1. Static Marketing Page
+### Static Page
 
-**Use Case:** About Us, Contact, Pricing pages with fixed content
+For pages with fixed content (About Us, Contact, Pricing):
 
-**Example:**
 ```json
 {
   "type": "seoMeta",
   "metaTags": {
     "title": "About Us - Acme Corporation",
-    "description": "Learn about Acme Corp's mission to revolutionize widget manufacturing. Founded in 2010, we serve 10,000+ customers worldwide.",
-    "keywords": "about us, company history, team, mission statement",
-    "og:title": "About Acme Corp - Leading Widget Manufacturer",
-    "og:description": "Discover how we're changing the widget industry",
+    "description": "Learn about Acme Corp's mission and team.",
+    "og:title": "About Acme Corp",
     "og:image": "https://cdn.acme.com/images/about-hero-1200x630.jpg",
     "og:type": "website",
     "twitter:card": "summary_large_image"
@@ -119,90 +116,25 @@ Look for your meta tags in the `<head>` section!
 }
 ```
 
-**Result:**
-- Clear, compelling title in search results
-- Professional preview when shared on social media
-- Keywords help search engines understand your content
+### Dynamic Page (using `_calc`)
 
----
+For database-driven pages, add a `_calc` suffix to any key. The value is evaluated as a JavaScript expression with access to `model` (populated via `onFormRequest` hook).
 
-### 2. Dynamic Product Page
-
-**Use Case:** E-commerce product pages with database-driven content
-
-**Requirements:**
-- Enable `onFormRequest` hook on your form
-- Populate `model.product` with product data
-
-**Example:**
 ```json
 {
   "type": "seoMeta",
   "metaTags": {
     "title_calc": "model.product.name + ' - $' + model.product.price + ' | Acme Store'",
     "description_calc": "model.product.description?.substring(0, 160)",
-    "keywords_calc": "model.product.tags?.join(', ') || 'products, shop'",
     "og:title_calc": "model.product.name",
-    "og:description_calc": "model.product.shortDescription || 'Check out this product'",
-    "og:image_calc": "model.product.images?.[0]?.url || 'https://cdn.acme.com/default-product.jpg'",
+    "og:image_calc": "model.product.images?.[0]?.url || 'https://cdn.acme.com/default.jpg'",
     "og:type": "product",
-    "og:url_calc": "'https://acme.com/products/' + model.product.slug",
-    "product:price:amount_calc": "model.product.price",
-    "product:price:currency": "USD",
-    "product:availability_calc": "model.product.inStock ? 'in stock' : 'out of stock'",
-    "twitter:card": "summary_large_image",
-    "twitter:label1": "Price",
-    "twitter:data1_calc": "'$' + model.product.price"
+    "twitter:card": "summary_large_image"
   }
 }
 ```
 
-**Result:**
-- Each product gets unique, descriptive meta tags
-- Search engines index product details accurately
-- Social shares show product photo, name, and price
-- Twitter cards display price labels
-
----
-
-### 3. Dynamic Blog Post
-
-**Use Case:** Blog articles with author, date, and category information
-
-**Requirements:**
-- Enable `onFormRequest` hook
-- Populate `model.post` with article data
-
-**Example:**
-```json
-{
-  "type": "seoMeta",
-  "metaTags": {
-    "title_calc": "model.post.title + ' | Acme Blog'",
-    "description_calc": "model.post.excerpt?.substring(0, 160) || model.post.content?.substring(0, 160)",
-    "keywords_calc": "model.post.tags?.join(', ') || 'blog, articles'",
-    "og:title_calc": "model.post.title",
-    "og:description_calc": "model.post.excerpt",
-    "og:image_calc": "model.post.featuredImage?.url || 'https://cdn.acme.com/blog-default.jpg'",
-    "og:type": "article",
-    "og:url_calc": "'https://acme.com/blog/' + model.post.slug",
-    "article:published_time_calc": "model.post.publishedAt",
-    "article:modified_time_calc": "model.post.updatedAt",
-    "article:author_calc": "model.post.author?.name || 'Acme Blog'",
-    "article:section_calc": "model.post.category",
-    "twitter:card": "summary_large_image",
-    "twitter:creator_calc": "model.post.author?.twitter ? '@' + model.post.author.twitter : ''",
-    "twitter:label1": "Reading time",
-    "twitter:data1_calc": "(model.post.readingTime || 5) + ' min read'"
-  }
-}
-```
-
-**Result:**
-- Article previews show author, date, and featured image
-- Google News can properly categorize your content
-- Twitter attributes posts to the correct author
-- Reading time estimate appears in Twitter cards
+`_calc` expressions support standard JavaScript — optional chaining, ternaries, string concatenation, array methods, fallbacks with `||`, etc.
 
 ---
 
@@ -332,65 +264,6 @@ Look for your meta tags in the `<head>` section!
 
 ---
 
-## Dynamic Content Patterns
-
-### Pattern 1: Fallback Values
-
-Always provide fallbacks for dynamic data:
-
-```json
-{
-  "title_calc": "model.title || 'Default Page Title | Brand'",
-  "description_calc": "model.description || 'Default page description'",
-  "og:image_calc": "model.image?.url || 'https://yourdomain.com/default-og.jpg'"
-}
-```
-
-### Pattern 2: Optional Chaining
-
-Safely access nested properties:
-
-```json
-{
-  "og:image_calc": "model.product?.images?.[0]?.url",
-  "article:author_calc": "model.post?.author?.name"
-}
-```
-
-### Pattern 3: Array Operations
-
-Work with arrays of tags or categories:
-
-```json
-{
-  "keywords_calc": "model.tags?.join(', ') || 'default, keywords'",
-  "article:tag_calc": "model.categories?.[0]"
-}
-```
-
-### Pattern 4: Conditional Logic
-
-Display different values based on conditions:
-
-```json
-{
-  "product:availability_calc": "model.inStock ? 'in stock' : 'out of stock'",
-  "og:type_calc": "model.isProduct ? 'product' : 'website'"
-}
-```
-
-### Pattern 5: String Operations
-
-Format and truncate text:
-
-```json
-{
-  "description_calc": "model.content?.substring(0, 160)",
-  "title_calc": "model.firstName + ' ' + model.lastName + ' | Profile'"
-}
-```
-
----
 
 ## Image Best Practices
 
@@ -555,82 +428,6 @@ Visit these tools and enter your URL:
 
 ---
 
-## Real-World Examples
-
-### Example 1: SaaS Landing Page
-
-```json
-{
-  "type": "seoMeta",
-  "metaTags": {
-    "title": "ProjectHub - Modern Project Management for Teams",
-    "description": "Streamline your workflow with ProjectHub. Collaborate in real-time, track progress, and ship faster. Try free for 14 days.",
-    "keywords": "project management, collaboration, team productivity, task tracking",
-    "og:title": "ProjectHub - Built for Modern Teams",
-    "og:description": "Join 50,000+ teams using ProjectHub to ship projects faster",
-    "og:image": "https://cdn.projecthub.com/landing-hero-1200x630.jpg",
-    "og:type": "website",
-    "twitter:card": "summary_large_image",
-    "twitter:site": "@projecthub"
-  }
-}
-```
-
-### Example 2: E-commerce Product (Dynamic)
-
-```json
-{
-  "type": "seoMeta",
-  "metaTags": {
-    "title_calc": "model.product.name + ' - ' + model.product.brand + ' | ShopCo'",
-    "description_calc": "model.product.description?.substring(0, 155) + '...'",
-    "keywords_calc": "[model.product.brand, model.product.category, ...model.product.tags].join(', ')",
-    "og:title_calc": "model.product.name + ' - $' + model.product.price",
-    "og:description_calc": "'⭐ ' + model.product.rating + '/5 from ' + model.product.reviewCount + ' reviews. ' + model.product.shortDesc",
-    "og:image_calc": "model.product.images?.[0]?.large || 'https://cdn.shopco.com/default-product.jpg'",
-    "og:type": "product",
-    "product:price:amount_calc": "model.product.price",
-    "product:price:currency": "USD",
-    "product:availability_calc": "model.product.stock > 0 ? 'in stock' : 'out of stock'",
-    "product:condition": "new",
-    "twitter:card": "summary_large_image",
-    "twitter:label1": "Price",
-    "twitter:data1_calc": "'$' + model.product.price + (model.product.onSale ? ' (SALE)' : '')",
-    "twitter:label2": "Reviews",
-    "twitter:data2_calc": "model.product.rating + '/5 ⭐'"
-  }
-}
-```
-
-### Example 3: Blog Post (Dynamic)
-
-```json
-{
-  "type": "seoMeta",
-  "metaTags": {
-    "title_calc": "model.post.title + ' | TechBlog'",
-    "description_calc": "model.post.excerpt || model.post.content?.substring(0, 160)",
-    "keywords_calc": "model.post.tags?.join(', ') || 'technology, blog'",
-    "og:title_calc": "model.post.title",
-    "og:description_calc": "model.post.excerpt",
-    "og:image_calc": "model.post.coverImage?.url || 'https://cdn.techblog.com/default-article.jpg'",
-    "og:type": "article",
-    "article:published_time_calc": "model.post.publishedAt",
-    "article:modified_time_calc": "model.post.updatedAt || model.post.publishedAt",
-    "article:author_calc": "model.post.author?.displayName || 'TechBlog Editorial'",
-    "article:section_calc": "model.post.category",
-    "twitter:card": "summary_large_image",
-    "twitter:site": "@techblog",
-    "twitter:creator_calc": "model.post.author?.twitter ? '@' + model.post.author.twitter : '@techblog'",
-    "twitter:label1": "Reading time",
-    "twitter:data1_calc": "Math.ceil(model.post.wordCount / 200) + ' min read'",
-    "twitter:label2": "Published",
-    "twitter:data2_calc": "new Date(model.post.publishedAt).toLocaleDateString()"
-  }
-}
-```
-
----
 
 ## Automatic robots.txt and sitemap.xml
 
