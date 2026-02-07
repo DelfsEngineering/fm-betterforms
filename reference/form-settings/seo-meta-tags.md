@@ -58,8 +58,8 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 
 ### In Production (Runtime)
 - **Hidden** - Field does not appear to users
-- **SSR Only** - Meta tags are extracted during SSR for bots/crawlers
-- **No Client Impact** - Does not affect client-side app performance
+- **SSR** - Meta tags are extracted during SSR for bots/crawlers
+- **Client-Side** - Meta tags are also injected into `document.head` at runtime for regular users, enabling correct browser tab titles, social sharing from the SPA, and `<html lang>` attributes
 
 ---
 
@@ -90,6 +90,16 @@ The `metaTags` object supports two types of values:
 ---
 
 ## Supported Meta Tag Types
+
+### Special Keys
+
+These keys have unique behavior and do **not** render as `<meta>` tags:
+
+| Key | Behavior |
+|-----|----------|
+| `title` | Sets `<title>` tag (browser tab / search result title) |
+| `language` | Sets `<html lang="...">` attribute. Defaults to `"en"` if omitted |
+| `_comment*` | Ignored — for developer notes and organization |
 
 ### Standard Meta Tags
 Use `name=""` attribute:
@@ -452,12 +462,114 @@ All meta tag values are **automatically HTML-escaped** to prevent XSS attacks:
 
 ---
 
+## Auto-Generated Tags
+
+The following are injected automatically if not explicitly defined in `metaTags`:
+
+| Tag | Value |
+|-----|-------|
+| `<link rel="canonical">` | Current page URL |
+| `og:url` | Current page URL |
+
+---
+
+## Page Language
+
+Set the page language with the `language` key:
+
+```json
+{
+  "language": "fr",
+  "title": "Titre de la Page"
+}
+```
+
+**Renders as:**
+```html
+<html lang="fr">
+```
+
+For dynamic language based on model data:
+```json
+{
+  "language_calc": "model.userLanguage || 'en'"
+}
+```
+
+If omitted, defaults to `"en"`.
+
+---
+
+## Dynamic robots.txt and sitemap.xml
+
+BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tenant based on the site schema's layout configuration.
+
+### robots.txt
+
+Accessible at `https://yourdomain.com/robots.txt`
+
+**How it works:**
+- All routes are disallowed by default (`Disallow: /`)
+- Layouts with `ssr.enabled: true` are explicitly allowed (`Allow: /slug`)
+- A `Sitemap:` reference is included
+
+**Example output:**
+```
+User-agent: *
+Disallow: /
+
+Allow: /
+Allow: /pricing
+Allow: /about
+Allow: /blog
+
+Sitemap: https://yourdomain.com/sitemap.xml
+```
+
+### sitemap.xml
+
+Accessible at `https://yourdomain.com/sitemap.xml`
+
+**How it works:**
+- Lists all SSR-enabled layout slugs as `<url>` entries
+- Uses the full `https://` URL for each page
+
+**Example output:**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourdomain.com/</loc>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/pricing</loc>
+  </url>
+</urlset>
+```
+
+**No configuration required** — both files are generated dynamically from the layout configuration. To add a page, simply set `ssr.enabled: true` on the layout.
+
+---
+
+## Query String Forwarding
+
+When a non-bot user visits a clean URL like `/pricing?ref=campaign`, SSR redirects them to the SPA hash route while **preserving query parameters**:
+
+```
+/pricing?ref=campaign&utm_source=google
+→ 302 redirect to /#/pricing?ref=campaign&utm_source=google
+```
+
+This ensures UTM tracking, referral codes, and other query parameters are not lost during the SSR → SPA redirect.
+
+---
+
 ## Related Documentation
 
 - [Form Settings Overview](./README.md)
 - [Data Model](./data-model.md)
 - [SEO and Social Sharing Guide](../../guides/customization/seo-and-social-sharing.md)
-- [SSR Configuration](../site-settings/README.md)
+- [DOM Header Insertions](../site-settings/dom-header-insertions.md)
 
 ---
 
@@ -466,6 +578,7 @@ All meta tag values are **automatically HTML-escaped** to prevent XSS attacks:
 | Version | Date | Changes |
 |---------|------|---------|
 | Beta 1.0 | 2024-02 | Initial release |
+| Beta 1.1 | 2026-02 | Client-side meta injection, `language` key, `robots.txt`/`sitemap.xml`, query string forwarding |
 
 ---
 
@@ -477,4 +590,4 @@ This is a preliminary feature. Please report issues or suggestions:
 
 ---
 
-*Last Updated: February 2024*
+*Last Updated: February 2026*

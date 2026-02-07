@@ -636,6 +636,98 @@ Visit these tools and enter your URL:
 
 ---
 
+## Automatic robots.txt and sitemap.xml
+
+BetterForms automatically serves a dynamic `robots.txt` and `sitemap.xml` for each tenant. No manual files needed.
+
+### How It Works
+
+- `https://yourdomain.com/robots.txt` — Tells search engines which pages to crawl
+- `https://yourdomain.com/sitemap.xml` — Lists all crawlable pages for search engines
+
+Both are generated from your layout configuration:
+- Layouts with `ssr.enabled: true` are included as **allowed** / **listed**
+- Everything else is **disallowed** by default
+
+### Enabling Pages for Crawling
+
+In your site settings, set `ssr.enabled: true` on any layout you want search engines to find:
+
+```json
+{
+  "layouts": {
+    "pricing": {
+      "id": "FR_xxxxx",
+      "title": "Pricing",
+      "ssr": { "enabled": true }
+    },
+    "admin": {
+      "id": "FR_yyyyy",
+      "title": "Admin Panel"
+    }
+  }
+}
+```
+
+**Result:**
+- `/pricing` appears in `robots.txt` (Allow) and `sitemap.xml`
+- `/admin` is blocked in `robots.txt` (Disallow) and excluded from `sitemap.xml`
+
+### Submitting to Google
+
+1. Go to [Google Search Console](https://search.google.com/search-console)
+2. Add your domain
+3. Submit your sitemap URL: `https://yourdomain.com/sitemap.xml`
+4. Google will automatically discover and index your SSR-enabled pages
+
+---
+
+## Page Language
+
+Control the `<html lang="...">` attribute for international SEO using the `language` key in `metaTags`:
+
+```json
+{
+  "type": "seoMeta",
+  "metaTags": {
+    "language": "fr",
+    "title": "Tarification - Mon Application"
+  }
+}
+```
+
+- Defaults to `"en"` (English) if not specified
+- Use any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (`en`, `fr`, `es`, `de`, `ja`, etc.)
+- For dynamic language: `"language_calc": "model.userLanguage || 'en'"`
+
+---
+
+## Query String Forwarding
+
+When someone visits a clean URL with query parameters (e.g., from an ad campaign), BetterForms preserves them during the SSR → SPA redirect:
+
+```
+https://yourdomain.com/pricing?utm_source=google&ref=partner123
+→ redirects to /#/pricing?utm_source=google&ref=partner123
+```
+
+This means UTM tracking, referral codes, and deep-link parameters work correctly with SSR-enabled pages.
+
+---
+
+## Client-Side Meta Tags
+
+The `seoMeta` field also works for regular (non-bot) users in the browser. When the Vue app loads:
+
+- `document.title` is updated (browser tab shows the correct title)
+- `<html lang="...">` is set
+- All meta tags are injected into `<head>` (useful for single-page app navigation)
+- Tags are cleaned up when navigating away from the page
+
+This means social sharing tools that read the live DOM (not just the initial HTML) will see the correct meta tags.
+
+---
+
 ## Getting Help
 
 This is a preliminary feature and we value your feedback!
@@ -651,9 +743,8 @@ This is a preliminary feature and we value your feedback!
 
 ### Resources
 - [Technical Reference](../../reference/form-settings/seo-meta-tags.md)
-- [SSR Configuration Guide](../integrations/README.md)
 - [Form Settings Overview](../../reference/form-settings/README.md)
 
 ---
 
-*Last Updated: February 2024*
+*Last Updated: February 2026*
