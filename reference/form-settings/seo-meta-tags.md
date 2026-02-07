@@ -236,7 +236,7 @@ Any key with a `_calc` suffix is evaluated as a JavaScript expression with acces
 
 ## Requirements
 
-### Server-Side Rendering (SSR)
+### Server-Side Rendering (SSR) Enabled per page
 
 The `seoMeta` field **only works with SSR enabled**. Meta tags are extracted and rendered when:
 
