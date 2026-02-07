@@ -57,7 +57,6 @@ In your form schema, add a `seoMeta` field:
   "model": "pageMetadata",
   "label": "SEO Meta Tags",
   "icon": "fa-tags",
-  "styleClasses": "col-12",
   "metaTags": {
     "title": "Your Page Title - Brand Name",
     "description": "Brief description of your page (150-160 characters)",

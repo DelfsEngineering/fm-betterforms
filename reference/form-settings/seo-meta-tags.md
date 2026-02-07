@@ -25,7 +25,6 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
   "type": "seoMeta",
   "model": "pageMetadata",
   "label": "SEO Meta Tags",
-  "styleClasses": "col-12",
   "metaTags": {
     "title": "Page Title - Your Brand",
     "description": "Page description for search results",
@@ -42,7 +41,6 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 | `type` | String | Yes | Must be `"seoMeta"` |
 | `model` | String | No | Model binding (typically `"pageMetadata"`) |
 | `label` | String | No | Label shown in form editor |
-| `styleClasses` | String | No | CSS classes (e.g., `"col-12"`) |
 | `metaTags` | Object | Yes | Meta tag definitions |
 | `hint` | String | No | Help text for editors |
 | `icon` | String | No | Font Awesome icon (recommend `"fa-tags"`) |
