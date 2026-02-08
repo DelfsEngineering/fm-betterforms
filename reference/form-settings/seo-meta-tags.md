@@ -410,16 +410,6 @@ BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tena
 - [SEO and Social Sharing Guide](../../guides/customization/seo-and-social-sharing.md)
 - [DOM Header Insertions](../site-settings/dom-header-insertions.md)
 
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| Beta 1.0 | 2024-02 | Initial release |
-| Beta 1.1 | 2026-02 | Client-side meta injection, `language` key, `robots.txt`/`sitemap.xml`, query string forwarding |
-
----
 
 ## Feedback
 
