@@ -178,11 +178,6 @@ Use platform debuggers to preview and refresh cached social cards:
 ---
 
 
-## Automatic robots.txt and sitemap.xml
-
-BetterForms automatically serves `robots.txt` and `sitemap.xml` for each tenant. Pages with `ssr.enabled: true` are allowed/listed; everything else is disallowed. No manual files or extra configuration needed.
-
----
 
 ## Page Language
 
