@@ -431,47 +431,7 @@ Visit these tools and enter your URL:
 
 ## Automatic robots.txt and sitemap.xml
 
-BetterForms automatically serves a dynamic `robots.txt` and `sitemap.xml` for each tenant. No manual files needed.
-
-### How It Works
-
-- `https://yourdomain.com/robots.txt` — Tells search engines which pages to crawl
-- `https://yourdomain.com/sitemap.xml` — Lists all crawlable pages for search engines
-
-Both are generated from your layout configuration:
-- Layouts with `ssr.enabled: true` are included as **allowed** / **listed**
-- Everything else is **disallowed** by default
-
-### Enabling Pages for Crawling
-
-In your site settings, set `ssr.enabled: true` on any layout you want search engines to find:
-
-```json
-{
-  "layouts": {
-    "pricing": {
-      "id": "FR_xxxxx",
-      "title": "Pricing",
-      "ssr": { "enabled": true }
-    },
-    "admin": {
-      "id": "FR_yyyyy",
-      "title": "Admin Panel"
-    }
-  }
-}
-```
-
-**Result:**
-- `/pricing` appears in `robots.txt` (Allow) and `sitemap.xml`
-- `/admin` is blocked in `robots.txt` (Disallow) and excluded from `sitemap.xml`
-
-### Submitting to Google
-
-1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add your domain
-3. Submit your sitemap URL: `https://yourdomain.com/sitemap.xml`
-4. Google will automatically discover and index your SSR-enabled pages
+BetterForms automatically serves `robots.txt` and `sitemap.xml` for each tenant. Pages with `ssr.enabled: true` are allowed/listed; everything else is disallowed. No manual files or extra configuration needed.
 
 ---
 

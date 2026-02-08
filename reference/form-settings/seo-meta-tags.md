@@ -399,52 +399,7 @@ If omitted, defaults to `"en"`.
 
 ## Dynamic robots.txt and sitemap.xml
 
-BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tenant based on the site schema's layout configuration.
-
-### robots.txt
-
-Accessible at `https://yourdomain.com/robots.txt`
-
-**How it works:**
-- All routes are disallowed by default (`Disallow: /`)
-- Layouts with `ssr.enabled: true` are explicitly allowed (`Allow: /slug`)
-- A `Sitemap:` reference is included
-
-**Example output:**
-```
-User-agent: *
-Disallow: /
-
-Allow: /
-Allow: /pricing
-Allow: /about
-Allow: /blog
-
-Sitemap: https://yourdomain.com/sitemap.xml
-```
-
-### sitemap.xml
-
-Accessible at `https://yourdomain.com/sitemap.xml`
-
-**How it works:**
-- Lists all SSR-enabled layout slugs as `<url>` entries
-- Uses the full `https://` URL for each page
-
-**Example output:**
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yourdomain.com/</loc>
-  </url>
-  <url>
-    <loc>https://yourdomain.com/pricing</loc>
-  </url>
-</urlset>
-```
-
-**No configuration required** — both files are generated dynamically from the layout configuration. To add a page, simply set `ssr.enabled: true` on the layout.
+BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tenant. Pages with `ssr.enabled: true` are allowed/listed; everything else is disallowed. No configuration required beyond enabling SSR per layout.
 
 ---
 
