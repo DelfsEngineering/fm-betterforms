@@ -403,19 +403,6 @@ BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tena
 
 ---
 
-## Query String Forwarding
-
-When a non-bot user visits a clean URL like `/pricing?ref=campaign`, SSR redirects them to the SPA hash route while **preserving query parameters**:
-
-```
-/pricing?ref=campaign&utm_source=google
-→ 302 redirect to /#/pricing?ref=campaign&utm_source=google
-```
-
-This ensures UTM tracking, referral codes, and other query parameters are not lost during the SSR → SPA redirect.
-
----
-
 ## Related Documentation
 
 - [Form Settings Overview](./README.md)

@@ -455,19 +455,6 @@ Control the `<html lang="...">` attribute for international SEO using the `langu
 
 ---
 
-## Query String Forwarding
-
-When someone visits a clean URL with query parameters (e.g., from an ad campaign), BetterForms preserves them during the SSR → SPA redirect:
-
-```
-https://yourdomain.com/pricing?utm_source=google&ref=partner123
-→ redirects to /#/pricing?utm_source=google&ref=partner123
-```
-
-This means UTM tracking, referral codes, and deep-link parameters work correctly with SSR-enabled pages.
-
----
-
 ## Client-Side Meta Tags
 
 The `seoMeta` field also works for regular (non-bot) users in the browser. When the Vue app loads:
