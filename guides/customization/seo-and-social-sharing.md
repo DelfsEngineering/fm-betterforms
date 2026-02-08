@@ -138,293 +138,42 @@ For database-driven pages, add a `_calc` suffix to any key. The value is evaluat
 
 ---
 
-## Platform-Specific Guides
+## Supported Meta Tags
 
-### Slack Previews
+All standard Open Graph (`og:`) and Twitter Card (`twitter:`) tags are supported. The most commonly used:
 
-**What Slack Uses:**
-- `og:title` - Title of the preview
-- `og:description` - Description text
-- `og:image` - Preview image
+| Tag | Used by |
+|-----|---------|
+| `title`, `description` | Google, Bing |
+| `og:title`, `og:description`, `og:image`, `og:type` | Facebook, LinkedIn, Slack, Discord, WhatsApp |
+| `twitter:card`, `twitter:title`, `twitter:image` | Twitter/X |
 
-**Minimum Setup:**
-```json
-{
-  "og:title": "Your Title",
-  "og:description": "Your description",
-  "og:image": "https://yourdomain.com/preview-1200x630.jpg"
-}
-```
-
-**Image Requirements:**
-- Minimum: 200x200px
-- Recommended: 1200x630px
-- Max size: 5MB
-- Format: JPG, PNG, or GIF
-
-**Testing:**
-1. Paste your link in any Slack channel
-2. Slack automatically unfurls the preview
-3. To refresh cache: `/unfurl clear https://yoururl.com`
-
----
-
-### Facebook/LinkedIn Previews
-
-**What They Use:**
-- `og:title` - Preview title
-- `og:description` - Preview description
-- `og:image` - Preview image
-- `og:url` - Canonical URL
-- `og:type` - Content type
-- `og:site_name` - Your brand name
-
-**Recommended Setup:**
-```json
-{
-  "og:title": "Your Title",
-  "og:description": "Description (55-65 chars for best display)",
-  "og:image": "https://yourdomain.com/fb-preview-1200x630.jpg",
-  "og:url": "https://yourdomain.com/page-url",
-  "og:type": "website",
-  "og:site_name": "Your Brand Name"
-}
-```
-
-**Image Requirements:**
-- Recommended: 1200x630px
-- Aspect ratio: 1.91:1
-- Min dimensions: 200x200px
-- Max size: 8MB (Facebook), 5MB (LinkedIn)
-
-**Testing:**
-- **Facebook:** https://developers.facebook.com/tools/debug/
-- **LinkedIn:** https://www.linkedin.com/post-inspector/
-
----
-
-### Twitter Cards
-
-**What Twitter Uses:**
-- `twitter:card` - Card type
-- `twitter:title` - Card title
-- `twitter:description` - Card description
-- `twitter:image` - Card image
-- `twitter:site` - Your Twitter handle
-- `twitter:creator` - Author's Twitter handle
-
-**Card Types:**
-- `summary` - Small square image
-- `summary_large_image` - Large image (recommended)
-
-**Recommended Setup:**
-```json
-{
-  "twitter:card": "summary_large_image",
-  "twitter:title": "Your Title (max 70 chars)",
-  "twitter:description": "Your description (max 200 chars)",
-  "twitter:image": "https://yourdomain.com/twitter-1200x675.jpg",
-  "twitter:site": "@yourbrand",
-  "twitter:creator": "@authorhandle"
-}
-```
-
-**Image Requirements:**
-- Large image card: 1200x675px (16:9 ratio)
-- Summary card: 120x120px minimum (1:1 ratio)
-- Max size: 5MB
-
-**Testing:**
-- **Twitter:** https://cards-dev.twitter.com/validator
-
----
-
-### Google Search
-
-**What Google Uses:**
-- `title` - Page title in search results
-- `description` - Snippet text below title
-- `keywords` - Helps with understanding (less important now)
-
-**Recommended Setup:**
-```json
-{
-  "title": "Primary Keyword - Secondary Keyword | Brand",
-  "description": "Compelling description that encourages clicks. Include primary keyword and value proposition.",
-  "keywords": "primary keyword, secondary keyword, related terms"
-}
-```
-
-**Best Practices:**
-- **Title:** 50-60 characters (longer titles get truncated)
-- **Description:** 150-160 characters
-- **Keywords:** 5-10 relevant terms, comma-separated
-- Include your target keyword early in both title and description
-- Make description compelling to improve click-through rate
+Use `"twitter:card": "summary_large_image"` for large image previews. A 1200x630px image works across all platforms.
 
 ---
 
 
-## Image Best Practices
+## Testing
 
-### Optimal Dimensions
-
-| Use Case | Dimensions | Aspect Ratio | Platforms |
-|----------|------------|--------------|-----------|
-| **Universal OG** | 1200x630px | 1.91:1 | Facebook, LinkedIn, Slack, WhatsApp |
-| **Twitter Large** | 1200x675px | 16:9 | Twitter |
-| **Twitter Summary** | 1:1 (square) | 1:1 | Twitter (small card) |
-
-**Pro Tip:** Create one 1200x630px image and use it for all `og:` tags. It works everywhere!
-
-### Image Checklist
-
-- ✅ Use **absolute URLs** (https://yourdomain.com/image.jpg)
-- ✅ Use **high-quality** images (not blurry or pixelated)
-- ✅ Keep **file size under 1MB** for fast loading
-- ✅ Use **descriptive filenames** (product-widget-pro.jpg, not IMG_1234.jpg)
-- ✅ Test images are **accessible** (not behind login)
-- ❌ Don't use relative URLs (/images/photo.jpg)
-- ❌ Don't use images with text overlay (some platforms don't support)
-
----
-
-## Testing Your Configuration
-
-### 1. Test as Search Engine Bot
+Test your page as a bot using curl:
 
 ```bash
-# Google
-curl -H "User-Agent: Googlebot" https://yourdomain.com/page
-
-# Bing
-curl -H "User-Agent: Bingbot" https://yourdomain.com/page
-
-# Facebook
-curl -H "User-Agent: facebookexternalhit/1.1" https://yourdomain.com/page
+curl -H "User-Agent: Googlebot" https://yourdomain.com/your-page
 ```
 
-Look for your meta tags in the `<head>` section.
+Use platform debuggers to preview and refresh cached social cards:
 
-### 2. Test Social Previews
+- **Facebook:** https://developers.facebook.com/tools/debug/
+- **LinkedIn:** https://www.linkedin.com/post-inspector/
+- **Slack:** paste link in channel, use `/unfurl clear <url>` to refresh
 
-Visit these tools and enter your URL:
+## Best Practices
 
-- **Facebook Debugger:** https://developers.facebook.com/tools/debug/
-  - Shows exactly how your link will appear on Facebook
-  - Click "Scrape Again" to refresh cache
-  
-- **Twitter Card Validator:** https://cards-dev.twitter.com/validator
-  - Preview how your Twitter card looks
-  - Request approval for your domain (one-time)
-
-- **LinkedIn Inspector:** https://www.linkedin.com/post-inspector/
-  - Test LinkedIn previews
-  - Refresh cache if needed
-
-- **Slack:** Just paste the link in any channel
-  - Use `/unfurl clear https://yoururl.com` to refresh
-
-### 3. Check Meta Tags in Browser
-
-1. Visit your page in a browser
-2. Right-click → "View Page Source"
-3. Search for `<meta` to find your tags
-4. Verify they contain the correct content
-
----
-
-## Troubleshooting
-
-### Problem: Meta Tags Not Showing
-
-**Possible Causes:**
-1. SSR not enabled for this layout
-2. Form not loading successfully
-3. Testing without bot user-agent
-4. `seoMeta` field not in form schema
-
-**Solutions:**
-1. Check site settings for SSR configuration
-2. Check server logs for form loading errors
-3. Use curl with bot user-agent (see above)
-4. Verify field exists in form designer
-
----
-
-### Problem: Dynamic Values Are Empty
-
-**Possible Causes:**
-1. `onFormRequest` not enabled
-2. Model data not populating
-3. Wrong property path in `_calc`
-4. Syntax error in expression
-
-**Solutions:**
-1. Enable `onFormRequest` hook in form settings
-2. Check server logs for hook execution
-3. Verify property paths match your data model
-4. Test expressions with known good data
-
----
-
-### Problem: Social Preview Not Updating
-
-**Cause:** Platforms cache previews for 7+ days
-
-**Solutions:**
-- **Facebook:** Use Facebook Debugger to scrape again
-- **LinkedIn:** Use LinkedIn Inspector to refresh
-- **Twitter:** Use Card Validator
-- **Slack:** `/unfurl clear https://yoururl.com`
-
----
-
-### Problem: Images Not Showing
-
-**Possible Causes:**
-1. Using relative URLs
-2. Image behind authentication
-3. Image too large (>5MB)
-4. Incorrect image URL
-
-**Solutions:**
-1. Use absolute URLs (https://...)
-2. Ensure images are publicly accessible
-3. Compress images to <1MB
-4. Test URL directly in browser
-
----
-
-## Best Practices Checklist
-
-### Content
-- ✅ Keep titles under 60 characters
-- ✅ Keep descriptions 150-160 characters
-- ✅ Include primary keyword in title
-- ✅ Write compelling, click-worthy descriptions
-- ✅ Use action words and value propositions
-
-### Images
-- ✅ Use 1200x630px images for maximum compatibility
-- ✅ High-quality, professional images only
-- ✅ Compress to <1MB file size
-- ✅ Use absolute URLs (https://...)
-- ✅ Test images are publicly accessible
-
-### Technical
-- ✅ Always include fallback values in `_calc`
-- ✅ Use optional chaining for safety
-- ✅ Enable `onFormRequest` for dynamic content
-- ✅ Test with bot user-agents
-- ✅ Verify in platform preview tools
-
-### SEO
-- ✅ Include relevant keywords naturally
-- ✅ Each page should have unique meta tags
-- ✅ Match page content to meta descriptions
-- ✅ Update meta tags when content changes
-- ✅ Monitor search console for errors
+- Titles: under 60 characters; descriptions: 150-160 characters
+- Images: use absolute URLs, 1200x630px, under 1MB, publicly accessible
+- Use fallback values in `_calc` expressions (e.g. `model.title || 'Default'`)
+- Enable `onFormRequest` hook for dynamic `_calc` content
+- Each page should have unique meta tags
 
 ---
 
