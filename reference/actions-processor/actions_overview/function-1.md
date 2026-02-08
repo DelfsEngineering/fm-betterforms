@@ -142,6 +142,65 @@ try {
 
 
 
+## Error Handling & Debugging
+
+**Effective Version:** 3.x.x+
+
+When JavaScript inside a `function` action throws an error, BetterForms fires error code **`10501`** with detailed context to help you identify the failing action. The error includes:
+
+| Field | Description |
+| :--- | :--- |
+| Error code | `10501` |
+| Message | `executeFunction error in action "<name>": <original error message>` — where `<name>` is `action.name`, falling back to `action.action`, or `"unnamed"` |
+| Info object | A structured object with the fields below |
+
+**Info object fields:**
+
+| Key | Description |
+| :--- | :--- |
+| `action` | The action type (e.g. `"function"`) |
+| `name` | The action name, if set on the action object |
+| `functionSnippet` | The first 200 characters of the JavaScript that was being executed |
+| `stack` | The full JavaScript stack trace |
+| `options` | The action's `options` object (includes `args` and any other keys) |
+
+### Catching Function Errors with Custom Error Handlers
+
+You can add a custom error handler in your site's `app.errorHandlers` array to react to function action errors:
+
+```json
+{
+  "codes": ["10501"],
+  "actions": {
+    "action": "showAlert",
+    "options": {
+      "title": "Script Error",
+      "text": "A function action encountered an error. Check the browser console for details.",
+      "type": "error"
+    }
+  }
+}
+```
+
+The error details (code, message, and info) are automatically injected into the action's `options.error` key, so your custom handler can access `options.error.description.functionSnippet`, `options.error.description.stack`, etc.
+
+### Debugging Tips
+
+- **Name your actions**: Add a `name` key to your function actions so the error message clearly identifies which action failed.
+- **Check the browser console**: The full structured info object is logged, including the code snippet and stack trace.
+- **Use try/catch inside your function**: For expected failure points, wrap your code in try/catch blocks to handle errors gracefully within the function itself rather than relying on the global error handler.
+
+```json
+{
+  "action": "function",
+  "name": "calculateTotals",
+  "function": "model.total = model.items.reduce((sum, item) => sum + item.price, 0);"
+}
+```
+
+If `model.items` is undefined, the error message will read:
+`executeFunction error in action "calculateTotals": Cannot read properties of undefined (reading 'reduce')`
+
 ## Code Style
 
 Function results returned with a `return` statement are ignored.
