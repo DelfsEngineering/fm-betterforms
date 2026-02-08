@@ -413,9 +413,7 @@ BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tena
 
 ## Feedback
 
-This is a preliminary feature. Please report issues or suggestions:
-- **Email:** support@fmbetterforms.com
-- **Forum:** [BetterForms Community](https://community.fmbetterforms.com)
+This is a preliminary feature. Please share feedback or suggestions in the Slack channel **#suggestions**.
 
 ---
 

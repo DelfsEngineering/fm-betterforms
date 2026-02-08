@@ -468,22 +468,9 @@ This means social sharing tools that read the live DOM (not just the initial HTM
 
 ---
 
-## Getting Help
+## Feedback
 
-This is a preliminary feature and we value your feedback!
-
-### Report Issues
-- **Email:** support@fmbetterforms.com
-- **Forum:** [BetterForms Community](https://community.fmbetterforms.com)
-
-### Share Feedback
-- What's working well?
-- What could be improved?
-- What features would you like to see?
-
-### Resources
-- [Technical Reference](../../reference/form-settings/seo-meta-tags.md)
-- [Form Settings Overview](../../reference/form-settings/README.md)
+This is a preliminary feature. Please share feedback or suggestions in the Slack channel **#suggestions**.
 
 ---
 
