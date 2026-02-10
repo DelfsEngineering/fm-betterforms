@@ -23,6 +23,18 @@ Below are some of the most common properties used when configuring a TextArea el
 | `featured`     | `Boolean`| Can be used by themes to apply special styling.                                                            |
 | `styleClasses` | `String` / `Array` | CSS class(es) to apply to the textarea wrapper for custom styling.                                         |
 
+### fieldOptions
+
+The following options can be placed inside the `fieldOptions` object on the schema:
+
+| Property       | Type     | Description                                                                                                |
+| :------------- | :------- | :--------------------------------------------------------------------------------------------------------- |
+| `rows`         | `Number` | Number of visible text rows (default `2`).                                                                 |
+| `min`          | `Number` | Minimum character length (`minlength` attribute).                                                          |
+| `max`          | `Number` | Maximum character length (`maxlength` attribute).                                                          |
+| `autoExpand`   | `Boolean`| When `true`, the textarea automatically grows taller as the user types so all content is visible without scrolling. Defaults to `false`. |
+| `maxHeight`    | `Number` | Optional pixel limit for auto-expansion. Once the content exceeds this height the textarea stops growing and shows a scrollbar instead. Only applies when `autoExpand` is `true`. |
+
 ### Example Schema Snippet
 
 ```json
@@ -37,10 +49,36 @@ Below are some of the most common properties used when configuring a TextArea el
 }
 ```
 
+### Auto-Expand Example
+
+Use `autoExpand` to make the textarea grow with its content. Add `maxHeight` to cap the expansion at a fixed pixel height:
+
+```json
+{
+  "type": "textArea",
+  "label": "Biography",
+  "model": "bio",
+  "placeholder": "Tell us about yourself...",
+  "fieldOptions": {
+    "rows": 4,
+    "max": 500,
+    "autoExpand": true,
+    "maxHeight": 240
+  }
+}
+```
+
+When `autoExpand` is enabled:
+- The textarea starts at the height defined by `rows`.
+- As the user types and content exceeds the visible area, the textarea grows to fit.
+- If `maxHeight` is set (in pixels), the textarea stops growing at that height and a vertical scrollbar appears for any additional content.
+- When content is deleted, the textarea shrinks back down automatically.
+
 ## BetterForms Specific Notes
 
 *   This element is intended for plain text. If you need rich text editing (WYSIWYG), look for a dedicated rich text editor component in BetterForms or consider integrating one as a custom element.
 *   The `min` and `max` properties in the underlying library sometimes refer to character count for textAreas; however, `maxlength` is the more standard HTML attribute for this purpose.
+*   **v3.3.0+**: The `autoExpand` and `maxHeight` options were added. These require VFG v3.3.0 or later.
 
 ## Full Property Reference
 
