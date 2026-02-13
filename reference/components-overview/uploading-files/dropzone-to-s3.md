@@ -25,7 +25,7 @@ If you don't already have an AWS account, sign up [here](https://portal.aws.amaz
 Amazon Cognito is the user management service that we'll use to authenticate our application to AWS for uploading. Cognito allows for us to configure permissions for anonymous users, which will be useful in this case so that we don't have to worry about user credentials when uploading to our bucket.
 
 1. From the AWS Console, navigate to the **Cognito** service.
-2. Make sure you're in your preferred region \(Cognito is not available in all regions\)
+2. Make sure you're in your preferred region (Cognito is not available in all regions)
 3. Create a new Identity Pool
 4. Be sure to check the box labeled **Enable access to unauthenticated identities**. All other settings can be left at default, then click **Create Pool**
 5. The next page will create new roles in IAM for this identity pool. Simply click **Allow** to continue.
@@ -42,18 +42,25 @@ Let's create a new bucket for you uploads. Since this bucket will have public ac
 5. In the **CORS configuration** section, add the following code. This will allow any browser to send a PUT request to your bucket, which is how the upload works
 
 ```markup
-<?xml version="1.0" encoding="UTF-8"?>
-<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-<CORSRule>
-    <AllowedOrigin>*</AllowedOrigin>
-    <AllowedMethod>GET</AllowedMethod>
-    <AllowedMethod>POST</AllowedMethod>
-    <AllowedMethod>PUT</AllowedMethod>
-    <MaxAgeSeconds>3000</MaxAgeSeconds>
-    <ExposeHeader>ETag</ExposeHeader>
-    <AllowedHeader>*</AllowedHeader>
-</CORSRule>
-</CORSConfiguration>
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "POST",
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [
+            "ETag"
+        ],
+        "MaxAgeSeconds": 3000
+    }
+]
 ```
 
 ### 3. Configuring IAM policy
@@ -189,6 +196,5 @@ dz.on("addedfile", function(file) {
 This simple function pushes the `uuid` key of the file that is passed into this function to an array so that you can better work with the queue using Vue.
 
 {% hint style="success" %}
-In production, it's better to pass the entire `file` object into an array so that you can get at more details of the file object instead of just the uuid. The reason it's setup like this for the demo is because the entire file object cannot be printed on screen as code. Once you fully understand how to manipulate the queue, be sure to update **all** references to this array \(it's also used in the `removedFile` event, for example\)
+In production, it's better to pass the entire `file` object into an array so that you can get at more details of the file object instead of just the uuid. The reason it's setup like this for the demo is because the entire file object cannot be printed on screen as code. Once you fully understand how to manipulate the queue, be sure to update **all** references to this array (it's also used in the `removedFile` event, for example)
 {% endhint %}
-

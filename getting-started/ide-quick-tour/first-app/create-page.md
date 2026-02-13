@@ -20,7 +20,7 @@ Before diving into the creation steps, let's touch on two fundamental concepts:
 
 All data that can be seen and interacted with on the page lives in the **Data Model**. The Data Model is simply a JSON object. It can be pre-populated with data from your FileMaker Server when the page loads, and then users can modify it through input fields or other page elements.
 
-When you run a [**Scoped Hook**](broken-reference) (a FileMaker script tied to this page), the current Data Model is passed with the request, allowing you to process and save the data back to your FileMaker database.
+When you run a [**Scoped Hook**](/broken/pages/pDL0XN3XupYEdfzhMBo7#scoped-hooks) (a FileMaker script tied to this page), the current Data Model is passed with the request, allowing you to process and save the data back to your FileMaker database.
 
 ### 2. The Page Schema
 
@@ -40,7 +40,7 @@ Let's walk through creating a simple page.
 2. **Initial Page Settings:**
    * **Page Name:** Give your page a descriptive name, e.g., "My First Page".
    * **Description:** (Optional) Add a brief description.
-   * **Scoped Hook Set Name:** You'll need to set a [Scoped Hook Set Name](broken-reference) for the page. For this first page, something simple like "page1" or "myFirstPageHooks" will work. This name corresponds to a group of FileMaker scripts that will handle data operations for this specific page.
+   * **Scoped Hook Set Name:** You'll need to set a [Scoped Hook Set Name](/broken/pages/pDL0XN3XupYEdfzhMBo7#how-to-name-hooks) for the page. For this first page, something simple like "page1" or "myFirstPageHooks" will work. This name corresponds to a group of FileMaker scripts that will handle data operations for this specific page.
    * **Authentication:** For this initial page, let's simplify things. Turn the **Authentication toggle to OFF** (it might show as "No Auth" or similar). This means users won't need to log in to see this specific page for now.
 3.  **Adding a Simple Element to See Data (Schema Editor):**
 

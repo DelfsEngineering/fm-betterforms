@@ -1,10 +1,12 @@
 # Introduction
 
-## ![Delfs' Engineering Logo](assets/1486254174620.png)
+## Introduction
 
-## FM BetterForms
+### ![Delfs' Engineering Logo](.gitbook/assets/1486254174620.png)
 
-> #### A loosely coupled high performance front end web publishing framework and application that allows FileMaker database developers to build anything from form widgets to full web apps.
+### FM BetterForms
+
+> **A loosely coupled high performance front end web publishing framework and application that allows FileMaker database developers to build anything from form widgets to full web apps.**
 
 FM BetterForms makes it easy to create high performance web applications and forms without any deep knowledge of JavaScript or web technologies.
 
@@ -14,23 +16,23 @@ FM BetterForms makes it easy to create high performance web applications and for
 * Publish data and tables
 * Use 3rd party JS modules easily
 
-# Contributing
+## Contributing
 
-### Documentation Contributions
+#### Documentation Contributions
+
 If you see something that you can contribute, we would LOVE a pull request with your edits! To make this easy you can click the _"Edit this page"_ link at the top of the web docs.
 
-The docs are all written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).  If you've used GitHub, it's pretty likely you've encountered it before.  You can become a pro in a few minutes by reading their [GFM Documentation page](https://help.github.com/articles/github-flavored-markdown/).
+The docs are all written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you've used GitHub, it's pretty likely you've encountered it before. You can become a pro in a few minutes by reading their [GFM Documentation page](https://help.github.com/articles/github-flavored-markdown/).
 
-### Filemaker Code Snippets 
-If you have Filemaker script code suggestions and code contributions we would love to see them. You can and the files to a pull request or open an issue here. 
+#### Filemaker Code Snippets
 
-### BetterForms Schema trick, and tips
+If you have Filemaker script code suggestions and code contributions we would love to see them. You can and the files to a pull request or open an issue here.
+
+#### BetterForms Schema trick, and tips
+
 For contributing schema tricks and techniques please create a pull request or open an issue and we will add them to the Tips and tricks document here.
 
-**Author**
-Delfs' Engineering
-TORONTO CANADA
-www.fmbetterforms.com
+**Author** Delfs' Engineering TORONTO CANADA www.fmbetterforms.com
 
 ***
 

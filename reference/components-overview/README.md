@@ -8,6 +8,6 @@ This documentation aims to cover how all elements are used within BetterForms, h
 
 To learn more about how pages are built, see the Getting started guide:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/PfYAhzpU2D05YIkvwm6r" %}
+[Broken link](/broken/pages/PfYAhzpU2D05YIkvwm6r)
 {% endcontent-ref %}

@@ -1,7 +1,7 @@
 # BetterForms Error Pages API
 
 {% hint style="info" %}
-[Complete Error Code List](broken-reference)
+[Complete Error Code List](/broken/pages/94FDbUanQbIvwtysoRMS)
 {% endhint %}
 
 ## Introduction

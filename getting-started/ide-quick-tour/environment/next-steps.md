@@ -4,7 +4,7 @@ description: You've got the basics down! Now it's time to start building out you
 
 # 5.5 Exploring Further: What to Learn Next
 
-By now you should have been able to see how a BetterForms site can interact with your FileMaker solution. Where you go from here depends on the type of app you're building. Browse the [Common Customizations](broken-reference) section for additional tips as you're getting started, in addition to the resources listed here on this page:
+By now you should have been able to see how a BetterForms site can interact with your FileMaker solution. Where you go from here depends on the type of app you're building. Browse the [Common Customizations](/broken/pages/o5lrNUTC5Ug5QAXejCdl) section for additional tips as you're getting started, in addition to the resources listed here on this page:
 
 ## Using the Examples
 

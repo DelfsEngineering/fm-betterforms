@@ -183,7 +183,7 @@
   * [Rollbacks and Version Control](guides/best-practices/rollbacks-and-version-control.md)
 * [Customizing & Styling](guides/styling/README.md)
   * [SEO & Social Sharing](guides/customization/seo-and-social-sharing.md)
-  * [Custom Components](guides/styling/custom-components/README.md)
+  * [Custom Components](reference/styling/custom-components/README.md)
     * [Components Editor](guides/styling/custom-components/components-editor.md)
     * [Component Best Practices](guides/styling/custom-components/component-best-practices.md)
 * [Support & Maintenance](reference/support-and-maintenance/README.md)

@@ -6,7 +6,7 @@ description: This are is used to add third part code into your app.
 
 ### Purpose
 
-Use the DOM (Document Object Model ) insertions to add  HTML, Meta Data tags, CDN's and JavaScript in your app. Code can be added and edited from the  **Environment > DOM Header Insertions** tab in your [site settings](./). This feature is useful for installing custom fonts or a [favicon](broken-reference), or other third-party [libraries](../components-overview/3rd-party-elements.md).
+Use the DOM (Document Object Model ) insertions to add  HTML, Meta Data tags, CDN's and JavaScript in your app. Code can be added and edited from the  **Environment > DOM Header Insertions** tab in your [site settings](./). This feature is useful for installing custom fonts or a [favicon](/broken/pages/EDg4KsbmWUwTsiaGZq2y), or other third-party [libraries](../components-overview/3rd-party-elements.md).
 
 ### Code Insertion Sections
 
