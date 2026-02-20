@@ -47,4 +47,25 @@ This editor is for data used only in the BetterForms IDE. The development data i
 
 #### Caching and Syncing
 
-You can choose to sync this cached data with the app to ensure consistency across sessions. [See more details](../managing-environments-deep-dive.md).
+In the **Models** tab, each key can be configured under **Key Caching**:
+
+- **Cache in browser** = local storage
+- **Cache in tab** = session storage
+- **Sync with app** = keep that page model key synced with the global app model key
+
+This is configured directly in the UI (you do not need to edit JSON paths manually in this screen).
+
+![Key Caching with Sync with app enabled](../../../../../assets/key-caching-sync-with-app.png)
+
+Example of a page model key (`pet`) that has **Sync with app** enabled:
+
+![Default Data Model with synced key](../../../../../assets/default-data-model-sync-example.png)
+
+For detailed app model behavior and caching notes, see [App Model](../../../../../reference/site-settings/app-model.md).
+
+{% hint style="warning" %}
+**When returning both App + Model from a hook:**
+
+If a key is set to **Sync with app** and your hook returns that same key in both `$$BF_App` and `$$BF_Model`, the values can conflict.  
+To avoid unexpected results, return the key in only one place unless you intentionally want precedence behavior.
+{% endhint %}
