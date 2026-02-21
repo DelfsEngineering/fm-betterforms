@@ -26,6 +26,13 @@ This can be done in several ways:
 * With a [**function action**](../actions-processor/actions_overview/function-1.md), use the code `app.key = 'value'` to change or set data
 * In a **Hook Script** set/modify the [$$BF\_App ](../hooksoverview/filemaker-globals/usdusdbf_app.md)global variable using FileMaker's JSON functions
 
+### Sync with Page Model Keys
+
+In the page **Models** tab, you can enable **Sync with app** per key in **Key Caching**.  
+When enabled, the page model key and app model key of the same name stay synchronized.
+
+If a synced key is returned in both `$$BF_App` and `$$BF_Model` in a single hook response, the `$$BF_App` value is used as the final synced value.
+
 ### App Model Caching \(bf-v0.10.4+\)
 
 The `app` data model keys can be individually cached in the browsers local or session storage.

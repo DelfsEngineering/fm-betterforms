@@ -4,6 +4,8 @@ This global variable contains the data model for the user's current page. You ca
 
 By default, the entire contents of the **\$$BF\_Model** variable is sent back to the client and **merged** with their existing data when the hook returns. This preserves client-side properties while updating server-controlled values. To modify this behavior (e.g., to force a complete replacement), see the **\$$BF\_State** page.
 
+For keys configured with **Sync with app**, if the same key is returned in both `$$BF_Model` and `$$BF_App` in one hook response, the `$$BF_App` value is applied as the final synced value.
+
 {% content-ref url="usdusdbf_state.md" %}
 [usdusdbf\_state.md](usdusdbf\_state.md)
 {% endcontent-ref %}
