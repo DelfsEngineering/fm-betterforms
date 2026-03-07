@@ -10,7 +10,7 @@ BetterForms supports multiple authentication strategies to fit different applica
 
 - **Basic Authentication**
   - Email/password with a `Users` table in the helper file
-  - Registration, email verification, login, logout, and password reset
+  - Registration, email verification, login, logout, password reset, and magic-link sign-in
 - **Query & Cookie Based Auth (Roll your own)**
   - Smart links that can include a time-bound token in the URL query
   - Cookie/session-based access for trusted flows
@@ -21,7 +21,7 @@ BetterForms supports multiple authentication strategies to fit different applica
 ## Building Blocks
 
 - **Authentication Actions** (used on pages)
-  - `authLogin`, `authLogout`, `authRegister`, `authForgot`, `authReset`, `authVerify`, `authResend`
+  - `authLogin`, `authLogout`, `authRegister`, `authForgot`, `authMagicRequest`, `authReset`, `authVerify`, `authResend`
   - OAuth-specific: `authLoginOauth` (preferred), `oauthLoginHook` (legacy alias still supported)
   - To initiate OAuth login, use a `path` action to `/oauth/{provider}` (e.g., `/oauth/google`)
 - **Hooks** (FileMaker)
@@ -45,20 +45,23 @@ If you implement custom auth screens, assign navigation slugs so the system can 
 - Register: `login/signup`
 - Email Verification: `login/verify`
 - Password Reset: `login/reset`
+- Magic Link Landing Page: `login/magic`
 
 Attach the appropriate Actions to the relevant pages:
 
 - Registration page ➜ `authRegister`
 - Verification page ➜ `authVerify` (recommended to run on form load)
 - Forgot page ➜ `authForgot`
+- Magic link request page ➜ `authMagicRequest`
+- Magic link landing page ➜ `authLogin` (recommended to run on form load)
 - Reset page ➜ `authReset`
 - Login page ➜ `authLogin`
 - Logout button/link ➜ `authLogout`
 
 ## Tokens at a Glance
 
-- Verification and password reset flows rely on time-bound tokens delivered via URL query parameters.
-- The `authVerify` and `authReset` actions read the token from the URL; you generally do not need to parse or store tokens manually.
+- Verification, password reset, and magic-link flows rely on time-bound tokens delivered via URL query parameters.
+- The `authVerify`, `authReset`, and magic-link `authLogin` flows read the token from the URL; you generally do not need to parse or store tokens manually.
 - Once redeeded, tokens are cleared from the database ( helper file ) 
 
 ## Error Handling
@@ -67,7 +70,11 @@ Attach the appropriate Actions to the relevant pages:
 
 ## Email Delivery
 
-- Verification and reset emails are sent from your FileMaker server via `onAuthNotifier`. Ensure SMTP is configured there during setup.
+- Verification, reset, and magic-link emails are sent from your FileMaker server via `onAuthNotifier`. Ensure SMTP is configured there during setup.
+
+## Version Note
+
+- Magic-link authentication was added in BetterForms `3.4.x`.
 
 See the dedicated pages for step-by-step workflows and best practices:
 

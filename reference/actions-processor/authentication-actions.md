@@ -2,6 +2,8 @@
 
 The authentication set of actions are used on pages that have custom login and registration screens.
 
+Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequest` and token-based `authLogin`.
+
 {% content-ref url="../users-and-authentication/custom-login-pages.md" %}
 [custom-login-pages.md](../users-and-authentication/custom-login-pages.md)
 {% endcontent-ref %}
@@ -10,6 +12,7 @@ The authentication set of actions are used on pages that have custom login and r
 * _**authLogout**_ - Performs logout
 * _**authReset**_ - Performs a password reset action
 * _**authForgot** -_ Performs a forgotten password reset hook
+* _**authMagicRequest**_ - Requests a passwordless magic sign-in link
 * _**authVerify**  _ - Performs a verification of the verify token
 * _**authResend**_ - Re/sends the email verification token
 * _**authRegister**_ - Performs a registration and if successful, runs the [onRegistrationHook](../hooksoverview/commonoverview.md#onregistration)
@@ -18,10 +21,11 @@ Each of these actions should be attached to a button that the user will click to
 
 |  Action Name | Requires `email` key | Requires `password` key | Requires `token`\* |
 | -----------: | :------------------: | :---------------------: | :----------------: |
-|    authLogin |           ✅          |            ✅            |                    |
+|    authLogin |                      |            ✅            |          ✅         |
 |   authLogout |                      |                         |                    |
 |    authReset |                      |            ✅            |          ✅         |
 |   authForgot |           ✅          |                         |                    |
+| authMagicRequest |        ✅         |                         |                    |
 |   authVerify |                      |                         |          ✅         |
 |   authResend |           ✅          |                         |                    |
 | authRegister |           ✅          |            ✅            |                    |
@@ -33,6 +37,15 @@ The **authRegister** action does _not_ require 2 password fields. If you want th
 The **authReset** action doesn't require an email field, but it does require a valid `token` slug be present. The token is automatically generated and appended to the URL when you run the **authForgot** action, so you don't need to do anything with it on the page.
 
 Similarly, the **authVerify** action only checks for the verification token in URL. It's recommended that this action be used within the onFormLoad named action as the user will be clicking the link in their email to get to this page.
+
+The **authMagicRequest** action requires an `email` key in the model and sends a one-time sign-in link through `onAuthNotifier`.
+
+The **authLogin** action can now work in two modes:
+
+- Email/password login using `email` and `password`
+- Magic-link login using `token` in the model or URL
+
+For magic-link pages, it is common to run `authLogin` in an `onFormLoad` action after the user lands on a page with `?token=...`.
 
 ## Error Handling
 

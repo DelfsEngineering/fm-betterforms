@@ -4,7 +4,7 @@ description: Email/password authentication using the internal Users table in the
 
 # Basic Authentication
 
-Basic Authentication uses the internal `Users` table with email and hashed password. It supports registration, email verification, login, logout, and password resets.
+Basic Authentication uses the internal `Users` table with email and hashed password. It supports registration, email verification, login, logout, password resets, and magic-link sign-in.
 
 ## Scope
 
@@ -17,13 +17,18 @@ Basic Authentication uses the internal `Users` table with email and hashed passw
 - Registration ➜ verification email sent ➜ user verified
 - Login ➜ access to restricted pages
 - Forgot/Reset password ➜ time-bound token ➜ set new password
+- Magic link ➜ request sign-in link ➜ click link ➜ token-based login
 - Logout ➜ session cleanup
 
 ## Building Blocks
 
-- Actions: `authRegister`, `authVerify`, `authLogin`, `authLogout`, `authForgot`, `authReset`, `authResend`
+- Actions: `authRegister`, `authVerify`, `authLogin`, `authLogout`, `authForgot`, `authMagicRequest`, `authReset`, `authResend`
 - Hooks: `onRegistration`, `onLogin`, `onAuthNotifier`
 - Data: Users table stores email and password hash; verification/reset tokens are treated as secrets
+
+## Version Note
+
+- Magic-link support was added in BetterForms `3.4.x`.
 
 ## Next
 

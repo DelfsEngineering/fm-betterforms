@@ -6,6 +6,8 @@ description: Password reset flows for end users and admin-initiated resets in Ba
 
 Covers both user-initiated password resets and admin-triggered resets.
 
+Added in BetterForms `3.4.x`: the same helper-file token fields can also be used for magic-link sign-in.
+
 ## User-Initiated Reset (Forgot/Reset)
 
 1. User requests a reset link
@@ -32,6 +34,15 @@ When an admin resets a user’s password:
 
 - `onAuthNotifier`: email delivery for reset links and notifications
 - Optional business logic hooks to enforce account validity etc
+
+## Shared Token Fields
+
+Magic-link authentication can reuse the same helper-file token fields used by password reset.
+
+- `resetToken`
+- `resetExpires`
+
+If you use both password reset and magic-link sign-in in the same UI, the most recently issued token wins. For most apps, it is best to use one token-based strategy per UI flow.
 
 ## Security Considerations
 
