@@ -1,12 +1,20 @@
 # Authentication
 
-BetterForms has several authentication strategies. These fall into internal and external systems.
+This page is kept as a legacy pointer.
 
-## Internal Basic Authentication
+The canonical authentication overview now lives here:
 
-This authentication strategy uses an internal `users` table with email and hashed password.
+- [Authentication](../authentication/README.md)
 
-### Accessing Restricted Pages
+For the current reference pages, use:
 
-If you have enabled authentication for a specific page if an unauthenticated user attempts to access that page they will be redirected to your login page. After they login they will be forwarded to the initial page they requested. If the `onLogin` hook returns a `path` action, then that initial page will not be followed and the action will determine the users next page.
+- [Basic Authentication](../authentication/basic-auth.md)
+- [User Registration & Verification](../authentication/user-registration.md)
+- [Password Management](../authentication/password-management.md)
+- [Custom Login Pages](../authentication/custom-login-pages.md)
+- [OAuth](../authentication/oauth.md)
+
+## Legacy Note
+
+This older page summarized restricted-page access and basic authentication at a high level. That guidance now lives in the canonical auth section so login, redirect, verification, reset, and OAuth behavior can stay in sync.
 

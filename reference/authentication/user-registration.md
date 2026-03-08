@@ -65,7 +65,7 @@ References:
   - Ensure SMTP is configured in `onAuthNotifier` during setup
 
 References:
-- See `reference/users-and-authentication/README.md` for Users table, password hashing, and verification email
+- See [Authentication](./README.md) for Users table, password hashing, and verification email
 
 ### 3) Verification Link and Page
 
@@ -75,8 +75,8 @@ References:
 - On success, the user’s `isVerified` is set to `True`
 
 References:
-- See `reference/actions-processor/authentication-actions.md` for `authVerify` token handling guidance
-- See `reference/users-and-authentication/README.md` for `isVerified`
+- See [Authentication Actions](../actions-processor/authentication-actions.md) for `authVerify` token handling guidance
+- See [Authentication](./README.md) for `isVerified`
 
 ### 4) Login Eligibility
 
@@ -84,7 +84,7 @@ References:
 - This can be configured automatically or per your business logic
 
 References:
-- See `reference/users-and-authentication/README.md`
+- See [Authentication](./README.md)
 
 ### 5) Optional: Resend Verification
 

@@ -7,34 +7,26 @@ description: >-
 
 # Users & Authentication
 
-## Enabling Authentication
+This section is now a legacy entry point.
 
-Authentication is enabled on a per-page basis in BetterForms. In the general tab of the page editor, you can toggle authentication on or off for that page.
+The canonical authentication docs live under [`reference/authentication/`](../authentication/README.md).
 
-If authentication is enabled for the page that user is trying to visit, BetterForms will not allow any user to load that page unless they are logged in. Non-authenticated users who attempt to access a restricted page will be redirected to login. After login, they are redirected back to the page they were trying to access. To override this behavior you can add a [path action](../actions-processor/actions_overview/path.md) in the **onLogin** hook script.
+Use that section for the current overview and workflow pages:
 
-## User Registration
+- [Authentication](../authentication/README.md)
+- [Basic Authentication](../authentication/basic-auth.md)
+- [User Registration & Verification](../authentication/user-registration.md)
+- [Password Management](../authentication/password-management.md)
+- [Custom Login Pages](../authentication/custom-login-pages.md)
+- [Managing User Accounts](../authentication/managing-users.md)
+- [OAuth](../authentication/oauth.md)
 
-Users in your BetterForms web app are stored within the **Users** table of your [helper file](../../getting-started/ide-quick-tour/setup/configure-fm-server.md#what-is-the-helper-file). When a user registers for an account on your site, they provide an email and a password. As long as their email address is unique, a new record will be created in your Users table. Their password is stored as a one-way hash.
+## Legacy Scope
 
-Then, a verification link is sent to verify their email address. When they click the link in that email, their record in the Users will have the **isVerified** field set to `True`.
+This older section historically mixed:
 
-{% hint style="warning" %}
-Since email sending happens on your FileMaker server, you must configure your email server settings at the end of the **BF - Common Hooks > onAuthNotifier** script that you pasted into your legacy FileMaker file during [setup](../../getting-started/ide-quick-tour/setup/install-bf-helper-file.md).
-{% endhint %}
+- authentication overview material
+- helper-file / FileMaker-oriented user-management notes
+- custom login-page guidance
 
-Users must also have the **isEnabled** field of their user record set to `True` before they can login. This can be configured to occur automatically, or based on any business logic that you choose to implement in your legacy FileMaker file.
-
-To easily manage the users in this table, an API script is available for you to call from your legacy FileMaker file. Learn more here:
-
-{% content-ref url="managing-users.md" %}
-[managing-users.md](managing-users.md)
-{% endcontent-ref %}
-
-## Customizing Your Login/Registration Pages
-
-For full control over the style and behavior of all the pages related to login, registration, password resets, etc, see this guide:
-
-{% content-ref url="custom-login-pages.md" %}
-[custom-login-pages.md](custom-login-pages.md)
-{% endcontent-ref %}
+Those topics are now being consolidated into the canonical `reference/authentication/` section so the docs have one authoritative auth hub.

@@ -4,8 +4,8 @@ The authentication set of actions are used on pages that have custom login and r
 
 Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequest` and token-based `authLogin`.
 
-{% content-ref url="../users-and-authentication/custom-login-pages.md" %}
-[custom-login-pages.md](../users-and-authentication/custom-login-pages.md)
+{% content-ref url="../authentication/custom-login-pages.md" %}
+[custom-login-pages.md](../authentication/custom-login-pages.md)
 {% endcontent-ref %}
 
 * _**authLogin**_ - Performs an authentication login
@@ -39,6 +39,7 @@ The **authReset** action doesn't require an email field, but it does require a v
 Similarly, the **authVerify** action only checks for the verification token in URL. It's recommended that this action be used within the onFormLoad named action as the user will be clicking the link in their email to get to this page.
 
 The **authMagicRequest** action requires an `email` key in the model and sends a one-time sign-in link through `onAuthNotifier`.
+It is the request step of the magic-link flow and is typically used on a page where the user enters their email address.
 
 The **authLogin** action can now work in two modes:
 
@@ -46,6 +47,7 @@ The **authLogin** action can now work in two modes:
 - Magic-link login using `token` in the model or URL
 
 For magic-link pages, it is common to run `authLogin` in an `onFormLoad` action after the user lands on a page with `?token=...`.
+When a `token` is present, `authLogin` redeems that magic link token instead of attempting a normal email/password login.
 
 ## Error Handling
 
