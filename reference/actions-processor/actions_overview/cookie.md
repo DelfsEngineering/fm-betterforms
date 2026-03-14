@@ -46,7 +46,7 @@ There is no built-in custom function at this time. If you want to set a cookie f
 {% hint style="warning" %}
 Cookies that you set in a browser are will persist for every page in your site (until they expire) and are sent with every hook script back to your FileMaker server. Be careful not to store too much data in cookies as this can impact your site's performance.
 
-For more on reducing the payload that is sent to your FileMaker server, see [this page](../../hooksoverview/env\_vars.md).
+For more on reducing the payload that is sent to your FileMaker server, see [this page](../../hooksoverview/env_vars.md).
 {% endhint %}
 
 ## Additional Reference:

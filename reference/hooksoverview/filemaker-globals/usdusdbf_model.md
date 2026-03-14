@@ -7,6 +7,6 @@ By default, the entire contents of the **\$$BF\_Model** variable is sent back to
 For keys configured with **Sync with app**, if the same key is returned in both `$$BF_Model` and `$$BF_App` in one hook response, the `$$BF_App` value is applied as the final synced value.
 
 {% content-ref url="usdusdbf_state.md" %}
-[usdusdbf\_state.md](usdusdbf\_state.md)
+[usdusdbf_state.md](usdusdbf_state.md)
 {% endcontent-ref %}
 

@@ -1,6 +1,10 @@
 # runUtilityHook
 
-Calls the scoped `onUtility` server hook. You can pass additional parameters in `options`, and BetterForms includes them in the hook payload sent to FileMaker.
+Calls the scoped `onUtility` server hook.
+
+`runUtilityHook` is a browser-side action that packages a payload and sends it to FileMaker through `formsService.onUtility`.
+
+## Action Shape
 
 <table>
   <thead>
@@ -19,7 +23,7 @@ Calls the scoped `onUtility` server hook. You can pass additional parameters in 
     <tr>
       <td style="text-align:left">options</td>
       <td style="text-align:left">object</td>
-      <td style="text-align:left">Containing values that are also passed into the FileMaker hook payload</td>
+      <td style="text-align:left">Additional values passed into the `hookPackage` that FileMaker receives</td>
     </tr>
     <tr>
       <td style="text-align:left">options.hookSetName</td>
@@ -32,25 +36,74 @@ Calls the scoped `onUtility` server hook. You can pass additional parameters in 
         <p>Helper File &gt;Ver 0.1.2</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">options.model</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">Optional custom outgoing model payload. If supplied, it replaces the normal outgoing page model for this hook call.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">options.modelFilterKeys</td>
+      <td style="text-align:left">array</td>
+      <td style="text-align:left">Optional list of model keys to keep from the current page model before sending the hook payload.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">options.query</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">Optional query override. If omitted, BetterForms sends the current page query parameters.</td>
+    </tr>
   </tbody>
 </table>
 
-```yaml
-// action object for 'runUtilityHook'
-[
- {
+```json
+{
   "action": "runUtilityHook",
   "options": {
     "type": "save",
     "someKey": "some passed info"
   }
 }
-]
 ```
 
-In the above example, `type` is an arbitrary key you can inspect in FileMaker to branch between different `onUtility` behaviors for the same page or hook set.
+In the example above, `type` is just an arbitrary key you can inspect in FileMaker to branch between different `onUtility` behaviors for the same page or hook set.
 
-You can access the entire action object under the `hookPackage` key.
+You can inspect the full action object in FileMaker under `hookPackage`.
+
+## Payload Behavior
+
+By default, BetterForms starts from the current page schema/model payload.
+
+If the page does **not** have `Send full schema in utility hooks` enabled, BetterForms trims the outgoing payload and keeps only a lightweight `form` object with the current `hookSetName`.
+
+For payload-size details, see [Reducing Payload Size](../../hooksoverview/env_vars.md).
+
+## Response Behavior
+
+When FileMaker returns from `onUtility`, BetterForms can apply:
+
+- returned `actions`
+- returned `model`
+- returned `app`
+- returned `pages` / `form` updates
+
+Returned actions are inserted back into the active action thread.
+
+### Model Merge Rules
+
+If the response includes `result.model`:
+
+- BetterForms defaults to `merge` behavior unless `state.modelUpdateMode` is explicitly set
+- `options.model` and `options.modelFilterKeys` also mark the request for merge behavior
+- explicit `state.modelUpdateMode = "replace"` is required when you want a full model replacement
+
+This preserves client-only reactive keys while still letting FileMaker update the page model.
+
+### App Sync
+
+If a returned model key is configured with `appSync`, BetterForms keeps the page model and app model aligned.
+
+When both the returned `app` object and returned `model` object provide the same `appSync` key, the returned `app` value wins for the final synced value.
+
+## Hook Boundary
 
 `runUtilityHook` is an **action**, not a hook by itself:
 

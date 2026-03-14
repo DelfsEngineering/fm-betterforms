@@ -1,6 +1,19 @@
 # Actions
 
-This page is the action index. Use it to see which actions are supported and then click through to the detailed action pages.
+This page is the action index. Use it to see which actions are supported in the current browser runtime and then click through to the detailed action pages.
+
+## What Actions Are
+
+Actions are browser-side workflow steps processed by the BetterForms actions queue.
+
+Use them to:
+
+- navigate or open UI elements
+- run browser-side JavaScript
+- trigger named actions
+- call FileMaker through actions such as `runUtilityHook`
+
+Actions are not the same thing as FileMaker hooks. Hooks are server-side scripts; actions are client-side workflow steps that may call those hooks.
 
 ## Core Actions
 
@@ -76,27 +89,34 @@ These special actions allow you to create custom login and registration pages. S
 
 ## Usage
 
-Actions can be injected in many places:
+Actions can run from many places:
 
-* Most hook scripts
-* Navigation Menu Items
-* Page elements (buttons)
-* Named Actions
+* `$$BF_Actions` payloads returned from supported FileMaker hooks
+* navigation menu items
+* page elements such as buttons
+* named actions
 * `*_actions` schema keys (where supported)
 
-Wherever you see an `actions` key in BetterForms, it can be either an object (for running a single action), or an array of objects (to run a series of actions).
+Wherever you see an `actions` key in BetterForms, it can be either:
+
+- a single action object
+- an array of action objects to run in sequence
 
 ### \$$BF\_Actions - Actions Array
 
-The `$$BF_Actions` JSON array is surfaced in all of the developer hooks that are applicable to executing actions.
+`$$BF_Actions` is the browser action array that applicable FileMaker hooks can return.
 
-To add an action simply add the action object as an array element. There are FileMaker custom functions that make this easy.
+Each array element is one action object. BetterForms queues them and runs them in order.
 
-Actions are executed sequentially starting at the beginning of the array.
+For user-facing docs and custom scripts, clear queued actions with the public BetterForms helper:
+
+```javascript
+BF.actionsClear()
+```
 
 ### Other places you can use actions
 
-**actionsBeforeComplete** can be added to the `schema.form` object and BetterForms will run the actions array if present.
+`actionsBeforeComplete` can be added to `schema.form` and BetterForms will run that action array when present.
 
 ### The Action Object
 
@@ -108,15 +128,13 @@ Actions are executed sequentially starting at the beginning of the array.
 |  `nonBlocking` | boolean | false   | {optional} When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run (like slow process utility hooks)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |      `options` |  object |         | This object may be optional depending on the specific settings needed by a given action.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-#### Actions Options
+## `function` On Any Action
 
-#### Functions
+Any action object can also include a `function` key. When present, BetterForms runs that JavaScript just before the action executes.
 
-All actions object can also have a `function` key. If defined, the JS code within this key will be executed. The result is not used, so it is expected that your code will mutate the environment.
+Use this for pre-processing or mutating the action/options just before the action runs.
 
-The main difference between the function action and using actions with an added `function` key is that there is no additional action associated with it.
-
-For additional information see the [Function Action](function-1.md)
+This is different from the standalone [`function` action](function-1.md), which is itself the action being executed.
 
 ## Calling Named Actions <a href="#functions" id="functions"></a>
 
@@ -146,17 +164,9 @@ All field element types support an `onChanged_actions` key. This key can contain
 
 ### Clearing Actions
 
-For user-facing docs and custom scripts, clear queued actions with the public BetterForms helper:
-
-```javascript
-BF.actionsClear()
-```
-
-The following JS code will stop any subsequent actions from running if the `isRegistered` flag is false.
-
 ```javascript
 // in a function key
-if(!model.isRegistered) {
-    BF.actionsClear()
+if (!model.isRegistered) {
+  BF.actionsClear()
 }
 ```

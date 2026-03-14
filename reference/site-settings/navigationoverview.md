@@ -1,46 +1,55 @@
 # Navigation
 
-You can define a navigation object in the site settings. This allows you to create dropdown drop down menus and their children.
+You can define the site navigation object in site settings to build menu sections, links, action items, dropdowns, and custom HTML items.
 
-### Navigation Object
+## Navigation Shape
 
-The navigation is defined in the **Appearance > Navigation** tab of your [site settings](./). It should be an array of objects, with each object defining a section of the navigation. Most apps may only have 1 navigation section.
+The navigation is defined in the **Appearance > Navigation** tab of your [site settings](./).
 
-|                   Key |   Type   | Description                                                                                                                                        |
-| --------------------: | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-|        `sectionLabel` | _string_ | This label describes what the menu section context is. It is not selectable.                                                                       |
-| `styleClassesSection` | _string_ | Classes that are applied to each section (group) of the navigational items.                                                                        |
-|                `subs` |  _array_ | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent. |
+It should be an array of section objects. Most apps use one or more sections, each with a `subs` array of menu items.
 
-### Subs Array
+### Section Keys
 
-At the base of the navigation menu section, the subs array of objects should contain your list of menu items. Further `subs` keys beyond here will create sub-menus.
+| Key | Type | Description |
+| --- | --- | --- |
+| `sectionLabel` | `string` | Optional heading shown above the section |
+| `styleClassesSection` | `string` | CSS classes applied to the wrapping section `<nav>` |
+| `styleClasses` | `string` | CSS classes passed to the rendered item list |
+| `visible` | `boolean` or function result | Controls whether the section renders |
+| `subs` | `array` | Menu items for the section |
 
-|       Key |    Type   | Description                                                                                                                                                                                                                |
-| --------: | :-------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   `label` |  _string_ | This label is the text area of each menu item                                                                                                                                                                              |
-|    `subs` |  _array_  | This is a dropdown style parent menu that will hold sub menus. BetterForms looks to see a `subs` key and if present will consider this the parent.                                                                         |
-|    `path` |  _string_ | navigational sub path e.g.: /forms/123 Use this to gain direct access to another part of your app. Alternatively, you can use a [path action](../actions-processor/actions\_overview/path.md).                             |
-| `actions` |  _array_  | If a navigation item has an `actions` key then it is considered an actions type. The actions\[ ] array can contain several actions that are chained together and passed to the [actions processor](../actions-processor/). |
-| `visible` | _boolean_ | _{optional}_ Controls if item is visible. This key will also accept a `visible_calc` function for conditional visibility, but the scope of the function is bound to the entire site instead of a specific page.            |
-|           |           |                                                                                                                                                                                                                            |
-|    `html` |  _string_ | If key present, then the HTML value is inserted as the navigation menu item                                                                                                                                                |
+## Item Keys
 
-### Element Type Order
+Each object in `subs` can be one of several supported item types.
 
-The navigation parser classifies the navigation elements in the following hierarchy:
+| Key | Type | Description |
+| --- | --- | --- |
+| `label` | `string` | Display label for links, action items, and dropdown labels |
+| `icon` | `string` | Optional icon classes |
+| `styleClasses` | `string` | CSS classes applied to the item |
+| `visible` | `boolean` or function result | Controls whether the item renders |
+| `path` | `string` | Internal BetterForms route |
+| `exact` | `boolean` | Passed to the router link for exact active matching |
+| `actions` | `array` or named-action object | Action payload to run when the item is clicked |
+| `subs` | `array` | Nested submenu items |
+| `html` | `string` | Raw HTML item content |
 
-* `actions` if key present, item treated as action trigger only
-* `path` if path key present, item handled as regular router link
-* `subs` If key present , item hand as a sub menu
-* `html` If key present, item is handled as html
+## How Items Resolve
+
+The runtime supports these common patterns:
+
+- If an item has `actions`, clicking it emits either:
+  - `processActions` when `actions` is an action array
+  - `processNamedAction` when the value is a named-action object with a `name`
+- If an item has `path`, BetterForms renders it as a router link.
+- If an item has `subs`, BetterForms renders it as a dropdown container for nested items.
+- If an item has `html`, BetterForms renders that HTML directly.
+
+Submenus automatically open when the current route matches a descendant item's `path`.
 
 ## Examples
 
-{% tabs %}
-{% tab title="Simple" %}
-```yaml
-// Full Navigation example
+```json
 [
   {
     "sectionLabel": "Menu",
@@ -72,7 +81,7 @@ The navigation parser classifies the navigation elements in the following hierar
                 "action": "showAlert",
                 "options": {
                   "title": "Hello World!",
-                  "text": "This is the Alert body, you will take to the dash",
+                  "text": "This item runs an action instead of routing directly.",
                   "type": "success"
                 }
               }
@@ -85,7 +94,7 @@ The navigation parser classifies the navigation elements in the following hierar
               {
                 "action": "showModal",
                 "options": {
-                  "body": "This model has a second action, you willl be taken to the /dash",
+                  "body": "This modal is followed by a route change.",
                   "icon": "success",
                   "options": {},
                   "overlayTheme": "dark",
@@ -106,34 +115,10 @@ The navigation parser classifies the navigation elements in the following hierar
   }
 ]
 ```
-{% endtab %}
 
-{% tab title="Conditionally Hide Nav Items" %}
-In the same way that `visible_calc` works for fields, you can also apply to individual items or entire sections of the nav menu. Be aware that from the context of the nav menu, you don't have access to the data model of the page, and may need to reference site-global variables as set in the _Environment > App Model_ section of your site settings.
-{% endtab %}
+## Notes
 
-{% tab title="HTML" %}
-Using an HTML nav item, you can add badges
-
-```yaml
-[
-  {
-    "sectionLabel": "Menu",
-    "subs": [
-      {
-        "exact": true,
-        "icon": "fa fa-home",
-        "label": "Home",
-        "path": "/"
-      },
-      {
-        "html": "<a href=\"/#/messages\" title=\"Messages\">\n    <i class=\"fa icon-credit-card\"></i> Payments\n    <span class=\"pull-right badge badge-info\">overdue</span>\n</a>"
-      }
-    ]
-  }
-]
-```
-
-![](../../.gitbook/assets/screen_shot_2020-05-21_at_11.18.58_am.png)
-{% endtab %}
-{% endtabs %}
+- Navigation visibility is evaluated from the site/app context, not a page-specific form model.
+- If you just need to route somewhere, prefer `path`.
+- If you need a menu item to run a workflow first, use `actions` and include a `path` action in that workflow when needed.
+- For route/action behavior details, see [path](../actions-processor/actions_overview/path.md) and [Named Actions](../actions-processor/actions_named.md).

@@ -1,21 +1,17 @@
 ---
-description: >-
-  FM BetterForms app's do have some small opinionated design elements.
-  Understanding the undunderlying structure will help you to design better apps.
+description: Quick pointer to the canonical BetterForms app layout overview.
 ---
 
-# Copy of Site Structure
+# App Layout Overview
 
-## App Sections
+This page exists as a pointer for readers browsing the page-elements section.
 
-There are two main sections of your app. The **Site** section which is global to the whole app and the **Page** section which is scoped to a particular page.&#x20;
+For the canonical explanation of the BetterForms app shell layout, use:
 
-### Site Structure
+- [Site Structure](../site-settings/site-structure.md)
 
-The site structure consists of main parts.
+That page covers:
 
-* **Header** - This is the top section of the app. The header contains several slots
-* **Navigation** - This navigation consists of the leftmost sidebar
-* **Page** - This is the main working area you will use to build your app's page content. Note the page section technically extends up behind the&#x20;
-
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Digram of page structure</p></figcaption></figure>
+- the main app sections
+- where the header, navigation, and page body render
+- the published layout diagram

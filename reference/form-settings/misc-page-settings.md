@@ -1,24 +1,81 @@
 # Misc Page Settings
 
-## Form Types
+This page covers the page-level form keys that affect layout, shell behavior, routing, and wizard behavior.
 
-Pages can have various types that define the initial behavior and appearance of the page. The form type is set with the `formtype` key in the Misc tab of the page editor.
+## Core Page Keys
 
-The 4 form types currently supported are:
+The runtime reads these keys from `form`.
 
-* **formblank** - default style for new pages
-* **formwidget** - removes the white background color of a page. Looks great with [panel](../components-overview/grouping-elements/panel.md) elements to create the look of a widget in the middle of your page
-* **formwizard** - enables various hooks to support pages using the wizard form schema&#x20;
-* **formplain** - legacy version of formblank
+| Key | Purpose |
+| --- | --- |
+| `formType` | Selects which page renderer BetterForms mounts |
+| `styleClassesPage` | CSS classes applied to the outer page wrapper |
+| `styleClassesBody` | CSS classes applied to the page body / form body |
+| `hideHeader` | Hides the page header block that normally renders `form.title` and `form.text` |
+| `isForm` | Renders the page body as an actual HTML `<form>` instead of a `<div>` |
+| `requestHook` | Affects form-fetch behavior and disables the local cached-form shortcut |
+| `authLevel` | Affects whether an authenticated form can be served from cache while online |
 
-## isForm
+## `formType`
 
-Entire pages or certain elements can be made into more standard forms where a "submit" action is executed when the user presses the **Enter** key. This customization is most common for [Custom Login Pages](../authentication/custom-login-pages.md).
+The current runtime supports these page renderers:
 
-To enable this functionality, add `"isForm": true` to one of the following elements:
+- `formblank`
+- `formwidget`
+- `formwizard`
+- `formplain`
 
-* [panel](../components-overview/grouping-elements/panel.md) element
-* [accordion](../components-overview/grouping-elements/accordion.md) element
-* misc tab of the page editor (for an entire page to become a form)
+`formblank` is the default single-page renderer.
 
-In order for this feature to function properly, you must have a [button](../components-overview/common/button.md) defined within the same context as the `isForm` flag. That button element must also have `"submit": true` defined within its schema. There can only be 1 button with the `submit` flag set for each element that is defined as a form.
+`formwizard` mounts the wizard layout and enables wizard-specific keys such as button labels, transitions, and tab validation behavior.
+
+`formplain` is still present in the runtime as a legacy renderer.
+
+## `isForm`
+
+If `form.isForm` is true, BetterForms renders the page body as a real HTML `<form>`.
+
+This is most useful for flows like [Custom Login Pages](../authentication/custom-login-pages.md), where pressing **Enter** should submit the page-level form naturally.
+
+In practice, pair `isForm` with a [button](../components-overview/common/button.md) that is configured to submit in the same form context.
+
+## Header And Page Styling
+
+- `styleClassesPage` controls classes on the outer page wrapper.
+- `styleClassesBody` controls classes on the page body area used by the mounted form renderer.
+- `hideHeader` removes the default page header block that would otherwise show the page title/text for non-blank form types.
+
+## Fetch / Cache Related Keys
+
+Two page keys influence how BetterForms fetches and reuses page definitions:
+
+- `requestHook`: if true, BetterForms does not reuse the cached form definition shortcut for that page
+- `authLevel`: when `authLevel === 1`, BetterForms requires authentication before reusing that cached page while online
+
+These keys matter most for pages that rely on dynamic server-side page setup or authentication-gated access.
+
+## Wizard Keys
+
+When `formType` is `formwizard`, the runtime reads these additional keys from `form`:
+
+| Key | Purpose |
+| --- | --- |
+| `title` / `subtitle` | Standard wizard header text passed to the wizard component |
+| `wizardTitle` | Custom slot title rendered above the tabs |
+| `color` / `errorColor` | Wizard accent and error colors |
+| `shape` | Wizard step shape |
+| `stepSize` | Wizard step sizing |
+| `validateOnBack` | Controls validation when moving backward |
+| `nextButtonText` | Next button label |
+| `backButtonText` | Back button label |
+| `finishButtonText` | Finish button label |
+| `transition` | Transition name passed to the wizard |
+| `wizardEnableAllTabs` | Marks all tabs as available on mount |
+| `wizardAllowInvalidTabChange` | Allows tab changes even when the current tab is invalid |
+| `state.startIndex` | Starting tab index when loading the wizard |
+
+## Related Pages
+
+- [Form Types](../form-types.md)
+- [Custom Login Pages](../authentication/custom-login-pages.md)
+- [Button](../components-overview/common/button.md)

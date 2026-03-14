@@ -6,61 +6,98 @@ In the page editor, that setting is available on the `Integration` tab:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-23 at 4.05.28 PM.png" alt="Integration tab showing Send full schema in utility hooks"><figcaption></figcaption></figure>
 
-### Controlling Data Sent from the Browser
+## What Gets Sent By Default
 
-​Often the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.
+When `sendFullSchema` is **off**, BetterForms trims the utility-hook payload before sending it to FileMaker.
 
-#### **Model Override Method**
+In that reduced mode, BetterForms removes the large page/schema structures and keeps a lightweight `form` object with the current `hookSetName`.
 
-You can pass an array of paths or keys that will be applied to the form model and allow data to pass though. this allows you to pick out one or more keys to allow to pass on in the hook. The filtering follows [lodash's `pick` method](https://lodash.com/docs/4.17.11#filter).
+Use full-schema payloads only when your FileMaker hook really needs page/schema/site context.
 
-#### ​ModelFilterKeys Method
+## Controlling `payload.model`
 
-B​y passing in a \`model\` key you can override the form’s data model that would normally be passed. Add a \`\_calc\` to the model key to bind it to other model data.
+For `runUtilityHook`, BetterForms supports two browser-side ways to reduce or reshape the `model` that is sent:
 
-#### Example runUtilityHook Actions
+### `options.modelFilterKeys`
 
-```yaml
-// With data model containing the following
+`modelFilterKeys` keeps only selected keys from the current page model before the payload is sent.
 
-{
-  "isLoading": true,
-  "activeContact": {
-    //... some single contact object
-  },
-  "allContacts" ; [
-    {
-      //... array of contact objects
-    }]
-}
+This follows Lodash `pick` behavior on the current model object.
 
-
-// This example will send the entire data model in the hook
+```json
 {
   "action": "runUtilityHook",
   "options": {
-    "type": "save"
-  }
-}
-
-// this will send only the model.activeContact object using the `modelFilterKeys` method
-{
-  "action": "runUtilityHook",
-  "options": {
-    "modelFilterKeys": [ "activeContact" ], // you can have multiple filterd keys
-    "type": "save"
-  }
-}
-
-// this will send only the model.activeContact object using the `model` method
-{
-  "action": "runUtilityHook",
-  "options": {
-    "model_calc" : "{activeContact: model.activeContact}",  
+    "modelFilterKeys": ["activeContact"],
     "type": "save"
   }
 }
 ```
+
+Use this when you want to send a smaller subset of the existing page model.
+
+### `options.model`
+
+`model` overrides the outgoing model payload entirely.
+
+This is commonly paired with a `function` or `model_calc` pattern that builds a smaller object just for the hook call.
+
+```json
+{
+  "action": "runUtilityHook",
+  "options": {
+    "model": {
+      "activeContact": {
+        "id": "123"
+      }
+    },
+    "type": "save"
+  }
+}
+```
+
+Use this when you want to send a custom object instead of the page's normal model shape.
+
+## Merge Behavior On Return
+
+When `runUtilityHook` uses `options.model` or `options.modelFilterKeys`, BetterForms marks the request with:
+
+- `state.modelUpdateMode = "merge"`
+
+On the way back from FileMaker:
+
+- if the hook returns `result.model` and no explicit `state.modelUpdateMode`, BetterForms now defaults to `merge`
+- merge mode applies the returned keys onto the current client model
+- replace mode must be requested explicitly with `state.modelUpdateMode = "replace"`
+
+This matters because merge mode preserves client-only reactive keys while still applying the server's returned values.
+
+## Practical Example
+
+```json
+{
+  "action": "runUtilityHook",
+  "options": {
+    "modelFilterKeys": ["activeContact"],
+    "type": "save"
+  }
+}
+```
+
+If FileMaker returns:
+
+```json
+{
+  "model": {
+    "activeContact": {
+      "id": "123",
+      "status": "saved"
+    }
+  }
+}
+```
+
+BetterForms merges that returned object into the existing page model unless the response explicitly sets `state.modelUpdateMode` to `replace`.
 
 
 

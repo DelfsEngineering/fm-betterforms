@@ -35,4 +35,4 @@ Typical flow:
 ## Related Pages
 
 - [llmToolCallResponse](./llmtoolcallresponse.md)
-- [BF Streaming API (LLM Query)](../../apis-and-services/bf-streaming-api-llm-query.md)
+- [BF Streaming API (LLM Query)](../../../apis-and-services/bf-streaming-api-llm-query.md)

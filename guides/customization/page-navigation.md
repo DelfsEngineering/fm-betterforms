@@ -23,7 +23,7 @@ More features may be added to this object in the future, but for now, `id` is th
 
 Every page in a BetterForms URL starts with the domain name followed by the # symbol as shown. The # symbol allows the application to function like a single-page web app so that parts of the page can be changed without the browser needing to render the entire page again.
 
-The domain section can be either a subdomain of fmbetterforms.com or your own [custom domain](../../reference/advanced-configuration/custom-domains.md),
+The domain section can be either a subdomain of fmbetterforms.com or your own [custom domain](../../reference/security/custom-domains.md),
 
 **https:// `domain` /#/**
 
@@ -48,4 +48,4 @@ Query parameters are additional values that can be passed with a URL as a page i
 
 BetterForms parses these values into a JSON object for your use in any [scoped hooks](../../reference/hooksoverview/hooks.md). They are available in the [**\$$BF\_Query**](../../reference/hooksoverview/filemaker-globals/) global variable.
 
-You can also access the query from JavaScript using the [utility function](../../reference/bf-utility-function-ver-0.9.20+/) `BF.getQueryParam(key)`.
+You can also access the query from JavaScript using the [utility function](../../reference/bf-utility-function-ver-0.9.20+.md) `BF.getQueryParam(key)`.

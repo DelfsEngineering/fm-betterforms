@@ -34,4 +34,4 @@ description: Requests that an active BetterForms assistants stream stop graceful
 ## Related Pages
 
 - [llmQueryStop](./llmquerystop.md)
-- [BF Streaming API (Assistants)](../../apis-and-services/bf-streaming-assistants-api.md)
+- [BF Streaming API (Assistants)](../../../apis-and-services/bf-streaming-assistants-api.md)

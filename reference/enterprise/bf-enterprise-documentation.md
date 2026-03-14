@@ -26,11 +26,11 @@ BF Enterprise runs out of a docker image and new BF Enterprise Helper file, ther
 * BF App migrated to the latest BF Editor (Environments version)
 * FileMaker 19+.
 
-**Optional** (not included with BF Enterprise docker image):
+**Optional / environment-dependent** (not included with the BF Enterprise docker image):
 
-* **Redis** database for caching and increased performance/availability
-* **Redis** database for messages (Sync between different servers, if more than one is being used);
-* **Redis** database for OAuth if OAuth authentication is needed
+* **Redis cache** settings can be supplied for cache-backed services.
+* **Messaging/shared Redis** should be configured when you need cross-pod messaging or multi-pod synchronization.
+* The current server runtime also uses the shared messaging Redis client for OAuth session storage.
 
 **Creating Redis server from Docker images**
 
@@ -39,7 +39,7 @@ After installing Docker, as described [below](bf-enterprise-documentation.md#set
 Link to Redis’ official docs on how to run Redis Stack on Docker: [https://redis.io/docs/stack/get-started/install/docker/](https://redis.io/docs/stack/get-started/install/docker/)
 
 {% hint style="info" %}
-As a development environment, this Redis Stack instance can be deployed on localhost, and the env var <mark style="color:red;">`REDIS_HOST`</mark> will be <mark style="color:red;">`host.docker.internal`</mark> and a password won’t be needed.
+As a development environment, this Redis Stack instance can be deployed on localhost, and the env var <mark style="color:red;">`REDIS_HOST`</mark> can be <mark style="color:red;">`host.docker.internal`</mark> with no password when your setup allows that.
 {% endhint %}
 
 ### Env File
@@ -55,7 +55,7 @@ Default environment variables to be declared in the file:
 | AUTHENTICATION\_SECRET     | Salt used in authentication service                                                                                 | Yes      |
 | ENCRYPTION\_KEY            | Sal used to generate vaults                                                                                         | Yes      |
 | ISENTERPRISE               | Set to enterprise mode (must be set as ISENTERPRISE=true)                                                           | Yes      |
-| FM\_GATEWAY                | XML or DAPI - gateway to be used to communicate with BF Enterprise Helper file (defaults to XML if no value is set) | No       |
+| FMS\_CONNECTION\_DEFAULT\_GATEWAY | XML or DAPI - default gateway used to communicate with the BF Enterprise Helper file | No |
 | NOW\_DC                    | used to identify which server app is running from                                                                   | No       |
 | REDIS\_HOST                | Redis host address for caching                                                                                      | No       |
 | REDIS\_PASSWORD            | Redis password for caching                                                                                          | No       |
@@ -63,15 +63,19 @@ Default environment variables to be declared in the file:
 | REDIS\_HOST\_MESSAGING     | Redis host address for messaging                                                                                    | No       |
 | REDIS\_PASSWORD\_MESSAGING | Redis password for messaging                                                                                        | No       |
 | REDIS\_PORT\_MESSAGING     | Redis port for messaging                                                                                            | No       |
+| REDIS\_URI\_MESSAGING      | Full Redis URI used directly by some messaging services                                                             | No       |
 | REDIS\_SECRET\_MESSAGING   | Redis secret for messaging                                                                                          | No       |
 | REDIS\_HOST\_OAUTH         | Redis host address for OAuth                                                                                        | No       |
 | REDIS\_PASSWORD\_OAUTH     | Redis password for OAuth                                                                                            | No       |
-| REDIS\_PORT\_OAUTH         | Redis port for OAuth                                                                                                | No       |
 | REDIS\_SECRET\_OAUTH       | Redis secret for OAuth                                                                                              | No       |
+
+{% hint style="info" %}
+**Current runtime note:** the active server wiring uses `REDIS_HOST_MESSAGING`, `REDIS_PASSWORD_MESSAGING`, and `REDIS_PORT_MESSAGING` for cross-pod sync and the shared Redis client used by OAuth session handling. Some messaging services also read `REDIS_URI_MESSAGING` directly. The separate `REDIS_*_OAUTH` keys still appear in config defaults, but they are not the primary Redis settings used by the current server path shown above.
+{% endhint %}
 
 Here is a sample file (where values for the right hand side will be changed to your own info):
 
-[env .development\_sample.development](../.gitbook/assets/env\_.development\_sample.development)
+[env_.development_sample.development](../../.gitbook/assets/env_.development_sample.development)
 
 ### Setting up the Server
 

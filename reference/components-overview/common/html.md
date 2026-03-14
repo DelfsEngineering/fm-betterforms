@@ -22,22 +22,22 @@ The HTML element allows you to merge any HTML and inline CSS into your form layo
 },
 ```
 
-Use of the model key for this element is helpful if you have HTML content that you want to generate in FileMaker and push to the browser. Otherwise, it can be left out entirely and you can build your own HTML elements using the [HTML editor](html.md#html-editor) and [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md).
+Use of the model key for this element is helpful if you have HTML content that you want to generate in FileMaker and push to the browser. Otherwise, it can be left out entirely and you can build your own HTML elements using the [HTML editor](html.md#html-editor) and [VueJS Template syntax](../../../guides/html-and-vuejs.md).
 
 ## HTML Editor
 
-This powerful element allows you to add custom HTML and [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md).
+This powerful element allows you to add custom HTML and [VueJS Template syntax](../../../guides/html-and-vuejs.md).
 
 #### Opening the HTML Editor
 
 !["Open HTML Editor button"](../../../.gitbook/assets/open-html.jpg)
 
-When using [VueJS Template syntax](../../../usage/formsoverview/working-with-html.md), you'll see your [development data model](../../form-settings/data-model.md) displayed in the preview and can edit it in the Data Model tab.
+When using [VueJS Template syntax](../../../guides/html-and-vuejs.md), you'll see your [development data model](../../form-settings/data-model.md) displayed in the preview and can edit it in the Data Model tab.
 
 !["HTML Editor"](../../../.gitbook/assets/html-editor.png)
 
 This makes developing with custom code fast and easy.
 
 {% hint style="info" %}
-**Remember:** The HTML editor works wherever there is a "html" key in the schema! This expands beyond the HTML element to [modals](../../actions-processor/actions\_overview/showmodal.md) and [slots](tables2.md#slots) of a [data table](tables2.md).
+**Remember:** The HTML editor works wherever there is a "html" key in the schema! This expands beyond the HTML element to [modals](../../actions-processor/actions_overview/showmodal.md) and [slots](tables2.md#slots) of a [data table](tables2.md).
 {% endhint %}

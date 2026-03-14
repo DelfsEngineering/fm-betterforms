@@ -36,4 +36,4 @@ description: Sends the result of a frontend tool workflow back to the BetterForm
 ## Related Pages
 
 - [llmToolCall](./llmtoolcall.md)
-- [BF Streaming API (LLM Query)](../../apis-and-services/bf-streaming-api-llm-query.md)
+- [BF Streaming API (LLM Query)](../../../apis-and-services/bf-streaming-api-llm-query.md)

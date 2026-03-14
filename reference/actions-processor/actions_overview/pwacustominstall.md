@@ -19,7 +19,7 @@ description: Captures the browser install prompt so your app can trigger install
 {
   "action": "pwaCustomInstall",
   "options": {
-    "beforeinstallprompt": "function or callback setup"
+    "beforeinstallprompt": "callback that updates install UI state"
   }
 }
 ```
@@ -34,4 +34,4 @@ description: Captures the browser install prompt so your app can trigger install
 ## Related Pages
 
 - [pwaPromptInstall](./pwapromptinstall.md)
-- [Creating a PWA](../../guides/integrations/creating-a-pwa.md)
+- [Creating a PWA](../../../guides/integrations/creating-a-pwa.md)

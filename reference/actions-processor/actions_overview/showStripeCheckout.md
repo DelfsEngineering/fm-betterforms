@@ -1,38 +1,34 @@
 # showStripeCheckout
 
-The `showStripeCheckout` action initiates the Stripe Checkout process. This action is often used internally by the Stripe component but can be called directly if needed for custom payment flows.
+Triggers a Stripe checkout flow for an existing Stripe component on the page.
 
-| Key             | Type     | Description                                                                      |
-| :-------------- | :------- | :------------------------------------------------------------------------------- |
-| `action`        | `string` | `"showStripeCheckout"`                                                             |
-| `options`       | `object` | Contains the necessary parameters for Stripe Checkout (e.g., API key, product details, currency, etc.). These options typically mirror those used by the Stripe component. |
+This action does not define the Stripe product, API key, or success handling by itself. Those values belong on the Stripe component schema.
 
-## Example Action Object
+## Action Object
 
-```yaml
+| Key | Type | Description |
+| --- | --- | --- |
+| `action` | `string` | Must be `"showStripeCheckout"` |
+| `options.formId` | `string` | Required Stripe component `formId` to trigger |
+
+## Example
+
+```json
 {
   "action": "showStripeCheckout",
   "options": {
-    "apiKey": "pk_test_YOUR_STRIPE_PUBLIC_KEY", // Replace with your actual public key
-    "product": {
-      "name": "My Product",
-      "description": "Description of my product",
-      "amount": 2000, // Amount in cents (e.g., $20.00)
-      "currency": "usd"
-    },
-    "onSuccess_actions": [
-      {
-        "action": "showAlert",
-        "options": {
-          "title": "Payment Successful",
-          "text": "Thank you for your purchase!",
-          "type": "success"
-        }
-      }
-    ]
-    // ... other Stripe options as needed
+    "formId": "checkoutMain"
   }
 }
 ```
 
-**Note:** For most use cases, it is recommended to use the dedicated [Stripe Component](../../components-overview/payment-gateways/stripe.md) which handles the presentation and invocation of the Stripe Checkout process. 
+## Behavior Notes
+
+- BetterForms emits a Stripe checkout event using the supplied `formId`.
+- The matching Stripe component receives that event and opens the checkout flow.
+- Success handling is configured on the Stripe component schema with `onSuccess`, not on the action object.
+- If no matching Stripe component is configured, the action has nothing to trigger.
+
+## Related Pages
+
+- [Stripe](../../components-overview/payment-gateways/stripe.md)

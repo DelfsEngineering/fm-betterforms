@@ -1,18 +1,18 @@
 # validate
 
-Runs the page validation routine.
+Runs the current page validation routine.
 
-| Key            | Type       | Description                                             |
-| -------------- | ---------- | ------------------------------------------------------- |
-| action         | 'validate' | Action name                                             |
-| action.options | object     | No supported options at this time                       |
-| onFailed       | function   | add `_actions` to run actions when the validation fails |
+## Action Object
 
-**Example**
+| Key | Type | Description |
+| --- | --- | --- |
+| `action` | `string` | Must be `"validate"` |
+| `options` | `object` | No supported options at this time |
+| `onFailed` | `function` | Optional callback that runs if validation fails |
 
-```yaml
-// This Button will validate and the run a hook
-// if the validation fails on the page, the UtilityHook will NOT run
+## Example
+
+```json
 {
   "actions": [
     {
@@ -21,28 +21,24 @@ Runs the page validation routine.
     {
       "action": "runUtilityHook",
       "options": {
-        "someKey": "myButtonParameter"
+        "type": "save"
       }
     }
   ],
-  "buttonClasses": "btn btn-info",
-  "label": "",
-  "styleClasses": "col-md-2",
   "text": "Save This Form",
   "type": "button"
 }
 ```
 
-## Running action Scripts when validation fails
+## Behavior Notes
 
-Often you want to run actions when a validation fails. The `onFailed` key is perfect for this. Actions in the original script will stop and the `onFailed_actions` script will run. You can use this to do things like pre-save forms, show modals and more.
+- BetterForms emits the page validation event and waits for the form validation result.
+- If validation succeeds, the action queue continues to the next action.
+- If validation fails, BetterForms clears the pending action queue for that action run.
+- If `onFailed` is supplied as a function, BetterForms calls it after validation fails.
+- `validate` does not define any runtime `options` keys in the current implementation.
 
-##
+## Related Pages
 
-## See Also
-
-Learn more about how to validate fields at this page:
-
-{% content-ref url="../../form-settings/validationoverview/" %}
-[validationoverview](../../form-settings/validationoverview/)
-{% endcontent-ref %}
+- [Validation Overview](../../form-settings/validationoverview/)
+- [runUtilityHook](./runutilityhook.md)

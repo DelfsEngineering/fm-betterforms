@@ -39,10 +39,11 @@ The `_note` property (e.g., `"HEADER"`) is a user-defined label used for organiz
 
     ```json
     {
-        "action": "validate",
-        "onFailed_actions": []
+        "action": "validate"
     }
     ```
+
+    If you need custom failure handling, use the `onFailed` callback described in the [`validate` action reference](../../../../reference/actions-processor/actions_overview/validate.md).
 
 ### Using Snippets
 

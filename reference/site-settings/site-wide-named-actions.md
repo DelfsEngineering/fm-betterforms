@@ -15,5 +15,5 @@ Typical Usage:
 For more details about named actions, see this page:
 
 {% content-ref url="../actions-processor/actions_named.md" %}
-[actions\_named.md](../actions-processor/actions\_named.md)
+[actions_named.md](../actions-processor/actions_named.md)
 {% endcontent-ref %}

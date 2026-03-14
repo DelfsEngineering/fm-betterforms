@@ -54,6 +54,19 @@ The current redirect order is:
 
 That means you should only return a `path` action when you intentionally want to override the normal post-login destination.
 
+### Relationship To Client `onLogin`
+
+BetterForms can also run a client-side named action called `onLogin`.
+
+Keep the distinction clear:
+
+- `onLogin` on this page is the **server hook** called through FileMaker
+- `site.content.namedActions.onLogin` is a **browser-side named action**
+
+In the real login flow, both can be involved. Treat them as separate workflow layers rather than relying on a strict "one always runs before the other" mental model.
+
+Use the server hook for FileMaker business logic and returned actions. Use the client named action for browser-side UI or state work.
+
 ### What You Can Return
 
 `onLogin` can return actions just like other server hooks. Those actions are inserted back into the active action thread and executed in the client.
@@ -87,6 +100,8 @@ This is typically where FileMaker sends:
 - password-reset emails
 - magic-link emails
 - optional follow-up notifications after certain auth events
+
+The current notifier flow sends this hook a `type` describing the auth event plus user data and host/subdomain context so FileMaker can build the correct outbound message.
 
 If your app uses registration, password reset, or magic-link login, this hook is one of the most important common hooks to configure correctly.
 

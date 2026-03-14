@@ -32,4 +32,4 @@ description: Triggers the stored PWA install prompt and runs callbacks for accep
 ## Related Pages
 
 - [pwaCustomInstall](./pwacustominstall.md)
-- [Creating a PWA](../../guides/integrations/creating-a-pwa.md)
+- [Creating a PWA](../../../guides/integrations/creating-a-pwa.md)

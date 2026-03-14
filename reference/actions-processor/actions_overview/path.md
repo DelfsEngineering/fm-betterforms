@@ -1,8 +1,10 @@
 # path
 
-`path` redirect the user to a different page. 
+`path` navigates the user to another route, opens an external URL, or retargets an existing BetterForms window.
 
-**note:** _path_ must be last item \( processor does not check for subsequent ones after path \)
+The old rule that "`path` must always be the last action" is too absolute for the current runtime.
+
+What actually happens depends on which navigation mode you use.
 
 <table>
   <thead>
@@ -24,12 +26,7 @@
       <td style="text-align:left"> <em>string</em>
       </td>
       <td style="text-align:left">
-        <p>{ optional } If specified the <code>options</code> object will be used to
-          update the target window that has the specified name. This is useful for
-          changing things like card modal forms without destroying th modal and recreating
-          again. Can also target windows by <code>id </code>
-        </p>
-        <p>via<code>options.id</code>
+        <p>{ optional } If specified, BetterForms updates the target card/modal window with the matching name instead of opening a normal route or URL navigation. This is useful when you want to retarget an existing BetterForms window.
         </p>
         <p>ver 0.8.2+</p>
       </td>
@@ -39,29 +36,24 @@
       <td style="text-align:left"><em>string</em>
       </td>
       <td style="text-align:left">
-        <p>{ optional } URN path that follows the # (hash)
-          <br />eg:</p>
-        <p>&quot;/&quot; - index page</p>
-        <p>&quot;/form/:id - a form with id</p>
+        <p>{ optional } Internal BetterForms route, for example <code>/</code>, <code>/dash</code>, or <code>/form/:id</code>.</p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">options.url</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">{ optional } will open page url in a new tab</td>
+      <td style="text-align:left">{ optional } External URL to open.</td>
     </tr>
     <tr>
       <td style="text-align:left">options.sameWindow</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">{ optional } If true, will open url replacing the BetteForms app (same
-        tab)</td>
+      <td style="text-align:left">{ optional } If true with <code>options.url</code>, BetterForms replaces the current browser tab instead of opening a new one.</td>
     </tr>
     <tr>
       <td style="text-align:left">options.name</td>
       <td style="text-align:left"><em>string</em>
       </td>
-      <td style="text-align:left">The <code>windowName</code> of the target window. If not specified <code>_blank</code> is
-        used. ( Ver 0.10.22+ )</td>
+      <td style="text-align:left">Target name used by <code>window.open()</code> when opening an external URL. If omitted, BetterForms uses <code>_blank</code>. ( Ver 0.10.22+ )</td>
     </tr>
     <tr>
       <td style="text-align:left">options.features</td>
@@ -73,31 +65,52 @@
   </tbody>
 </table>
 
-```yaml
-// example path action object
+## Runtime Behavior
+
+| Mode | Key(s) used | What BetterForms does | Action thread continues? |
+| --- | --- | --- | --- |
+| Internal route | `options.path` | Calls the Vue router | Yes |
+| External URL, new tab/window | `options.url` | Calls `window.open()` | Yes |
+| External URL, same tab | `options.url` + `sameWindow: true` | Replaces the current browser location | No |
+| Existing BetterForms window | `options.windowName` | Updates the target BetterForms window | Yes |
+
+For same-window external navigation, treat `path` as the last meaningful action because the browser is leaving the BetterForms app.
+
+For internal routes and new-tab external links, the action queue can continue after navigation.
+
+```json
 {
-"action" :"path",
-  "options" :
-       {
-           "path": "/invoiceList"
-       }
+  "action": "path",
+  "options": {
+    "path": "/invoiceList"
+  }
 }
+```
 
-// This will replace the BetterForms page with the URL 'www.delfsengineering.ca'
+```json
 {
-"action" : "path",
-    "options" :
-    {
-        "sameWindow" : true,
-        "url" : "http://www.delfsengineering.ca"
-    }
+  "action": "path",
+  "options": {
+    "url": "https://docs.fmbetterforms.com/",
+    "sameWindow": true
+  }
+}
+```
 
+```json
+{
+  "action": "path",
+  "options": {
+    "url": "https://example.com/report.pdf",
+    "name": "_blank",
+    "features": "noopener,noreferrer"
+  }
 }
 ```
 
 ## FileMaker Custom Function
 
 ```text
-    BF_SetAction_Path("/form/123-1234-5678") // takes user to form 123...
+BF_SetAction_Path("/form/123-1234-5678")
 ```
 

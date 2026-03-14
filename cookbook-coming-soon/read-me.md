@@ -1,11 +1,13 @@
 ---
-description: >-
-  This section provides practical, end-to-end tutorials that solve common,
-  real-world problems by combining multiple BetterForms features.
+description: Planned recipe topics with links to the best current reference pages.
 ---
 
-# Read Me
+# Cookbook Backlog
 
+This section is a backlog of recipe topics that have not been written as full end-to-end guides yet.
 
+Use these pages as topic pointers:
 
-This is a work in progress
+- they identify the intended recipe topic
+- they link to the best current reference or getting-started pages
+- they should not be treated as complete validated walkthroughs yet

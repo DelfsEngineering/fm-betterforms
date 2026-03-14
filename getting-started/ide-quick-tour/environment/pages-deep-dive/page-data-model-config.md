@@ -61,7 +61,7 @@ Example of a page model key (`pet`) that has **Sync with app** enabled:
 
 ![Default Data Model with synced key](../../../../assets/default-data-model-sync-example.png)
 
-For detailed app model behavior and caching notes, see [App Model](../../../../../reference/site-settings/app-model.md).
+For detailed app model behavior and caching notes, see [App Model](../../../../reference/site-settings/app-model.md).
 
 {% hint style="warning" %}
 **When returning both App + Model from a hook:**

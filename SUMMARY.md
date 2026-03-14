@@ -22,7 +22,7 @@
     * [2.7 Creating Your First List View](getting-started/ide-quick-tour/first-app/creating-your-first-list-view.md)
     * [2.8 Understanding Page Data Flow](getting-started/ide-quick-tour/first-app/page-data-flow.md)
     * [2.9 Creating Your First Hook](getting-started/ide-quick-tour/first-app/creating-your-first-hook.md)
-    * [2.10 Working with Data Tables (Coming Soon)](getting-started/ide-quick-tour/first-app/working-with-data-tables.md)
+    * [2.10 Working with Data Tables](getting-started/ide-quick-tour/first-app/working-with-data-tables.md)
   * [3. Understanding Core BetterForms Concepts](getting-started/ide-quick-tour/3.-understanding-core-betterforms-concepts/README.md)
     * [3.1 Introduction to Hooks (and where to find them in the IDE)](getting-started/ide-quick-tour/3.-understanding-core-betterforms-concepts/3.1-introduction-to-hooks-and-where-to-find-them-in-the-ide.md)
     * [3.2 Running Your First Hook (Practical Example)](getting-started/ide-quick-tour/3.-understanding-core-betterforms-concepts/3.2-running-your-first-hook-practical-example.md)
@@ -65,7 +65,7 @@
   * [SEO Meta Tags](reference/form-settings/seo-meta-tags.md)
   * [Misc Page Settings](reference/form-settings/misc-page-settings.md)
 * [Page Elements](reference/components-overview/README.md)
-  * [Copy of Site Structure](reference/components-overview/copy-of-site-structure.md)
+  * [App Layout Overview](reference/components-overview/copy-of-site-structure.md)
   * [BetterForms Elements](reference/components-overview/betterforms-elements/README.md)
     * [Checkbox](reference/components-overview/betterforms-elements/checkbox.md)
     * [Checklist](reference/components-overview/betterforms-elements/checklist.md)
@@ -209,9 +209,9 @@
 * [Enterprise](reference/enterprise/README.md)
   * [BF Enterprise Documentation](reference/enterprise/bf-enterprise-documentation.md)
 
-## Cookbook - Coming soon
+## Cookbook Backlog
 
-* [Read Me](cookbook-coming-soon/read-me.md)
+* [Cookbook Backlog](cookbook-coming-soon/read-me.md)
 * [AI Assistant - Tips & Tricks](cookbook-coming-soon/ai-assistant-tips-and-tricks.md)
 * [Using Development Data](cookbook-coming-soon/using-development-data.md)
 * [Passing Data Between Pages](cookbook-coming-soon/passing-data-between-pages.md)
@@ -219,4 +219,4 @@
 * [Using Smart Links](cookbook-coming-soon/using-smart-links.md)
 * [FM Script Architecture](cookbook-coming-soon/fm-script-architecture.md)
 * [Using JSON in FileMaker](cookbook-coming-soon/using-json-in-filemaker.md)
-* [Performance / & Optimization](cookbook-coming-soon/preformance.md)
+* [Performance & Optimization](cookbook-coming-soon/preformance.md)

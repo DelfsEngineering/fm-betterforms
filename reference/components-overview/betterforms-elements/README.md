@@ -1,9 +1,15 @@
 # BetterForms Elements
 
-This section provides an overview of the standard page elements available in BetterForms for building dynamic and interactive forms. These elements are foundational building blocks derived from a robust, schema-based form generation library that powers many of BetterForms' core input capabilities.
+This section covers the field types and input-oriented elements you can place on BetterForms pages.
 
-For each element, you'll find a brief description of its use within the BetterForms environment and a list of common configuration properties. For a comprehensive list of all available properties, advanced configuration options, and the full technical specification, please refer to the original library documentation for that specific element, which will be linked on its respective page.
+In practice, this section mixes three kinds of docs:
 
-Our aim is to provide you with the essential information to get started with these elements in BetterForms, while also guiding you to the exhaustive resources for more in-depth exploration.
+- BetterForms-owned fields and wrappers
+- Vue Form Generator-backed fields that BetterForms still uses at runtime
+- Compatibility-oriented pages where BetterForms normalizes older field shapes into the current V3+ `fieldOptions` shape
 
-Browse the sub-pages to learn more about each element. 
+When a field page shows `fieldOptions`, treat that as the canonical V3+ contract unless the page clearly says otherwise.
+
+These pages focus on the BetterForms-facing schema and behavior you need in the editor. Where a field ultimately comes from a dependency, the page should still describe the runtime shape BetterForms expects.
+
+Browse the sub-pages for the specific field you need.

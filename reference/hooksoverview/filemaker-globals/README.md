@@ -6,9 +6,9 @@ This page contains a summary of all the variables; subsequent pages in this sect
 
 |                                    \$$Var Name | Description                                                                                                                                                              |
 | ---------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|     ****[**\$$BF\_Model**](usdusdbf\_model.md) | This is the form's entire data model                                                                                                                                      |
-|         ****[**\$$BF\_App**](usdusdbf\_app.md) | Keys passed in will be merged with the current app model.  (0.8.32+) This global is not populated with the current `app` data, it is outbound only.                      |
-| ****[**\$$BF\_State**](usdusdbf\_state.md)**** | The state object holds various data related to the browser environment.                                                                                                  |
+|     ****[**\$$BF\_Model**](usdusdbf_model.md) | This is the form's entire data model                                                                                                                                      |
+|         ****[**\$$BF\_App**](usdusdbf_app.md) | Keys passed in will be merged with the current app model.  (0.8.32+) This global is not populated with the current `app` data, it is outbound only.                      |
+| ****[**\$$BF\_State**](usdusdbf_state.md)**** | The state object holds various data related to the browser environment.                                                                                                  |
 |                                **\$$BF\_User** | The user object when a user has been authenticated.                                                                                                                      |
 |                               **\$$BF\_Query** | Key value pairs of the URL query parameters. Useful for direct linking (smart links) to a page.                                                                          |
 |                              **\$$BF\_Cookie** | Object containing browser cookies  (Helper > v1.2)                                                                                                                       |

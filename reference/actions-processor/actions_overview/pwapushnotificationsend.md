@@ -38,4 +38,4 @@ description: Sends a push notification through BetterForms to registered browser
 ## Related Pages
 
 - [pwaPromptPushPermission](./pwapromptpushpermission.md)
-- [Creating a PWA](../../guides/integrations/creating-a-pwa.md)
+- [Creating a PWA](../../../guides/integrations/creating-a-pwa.md)

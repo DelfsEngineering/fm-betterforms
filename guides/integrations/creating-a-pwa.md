@@ -56,15 +56,12 @@ Next, as part of the <mark style="color:red;">`onAppLoad`</mark> as well, we add
 {
     "action": "pwaCustomInstall",
     "options": {
-        "beforeinstallprompt_actions": [{
-            "action": "function",
-            "function": "model.isInstalled = false;"
-        }]
+        "beforeinstallprompt": "callback that sets model.isInstalled = false"
     }
 }
 ```
 
-This new action has the options <mark style="color:red;">`beforeinstallprompt`</mark>, which are actions that will run before the trapped prompt to install event triggered by the browser when it identifies the web app as installable. The example above shows one way of setting a state variable that we will use to show or hide a button to install the app.
+This action supports the <mark style="color:red;">`beforeinstallprompt`</mark> callback, which runs when the browser identifies the app as installable and BetterForms traps the install prompt for later use. The example above shows one way to set a state variable that you can use to show or hide an install button.
 
 So in this case, we need a key <mark style="color:red;">`isInstalled`</mark> in our model.
 
@@ -113,29 +110,15 @@ The named action <mark style="color:red;">`installApp`</mark> above has the foll
 {
     "action": "pwaPromptInstall",
     "options": {
-        "onAccepted_actions": [{
-            "action": "showAlert",
-            "options": {
-                "text": "Thanks for installing the app!",
-                "title": "Welcome!",
-                "type": "information"
-            }
-        }],
-        "onDismissed_actions": [{
-            "action": "showAlert",
-            "options": {
-                "text": "If I were you, I'd install the app!",
-                "title": "Too bad!",
-                "type": "information"
-            }
-        }]
+        "onAccepted": "callback after the user accepts installation",
+        "onDismissed": "callback after the user dismisses installation"
     }
 }
 ```
 
 The action <mark style="color:red;">`pwaPromptInstall`</mark> is the action that triggers the browser to prompt the user with the actual window that will install the app. This gives the flexibility to trigger this event from anywhere in your app, and customize it according to your needs.
 
-The options <mark style="color:red;">`onAccepted_actions`</mark> and <mark style="color:red;">`onDismissed_actions`</mark> will run after the user click on <mark style="color:red;">`Cancel`</mark>, <mark style="color:red;">`Install`</mark> or close the browser’s prompt window.
+The options <mark style="color:red;">`onAccepted`</mark> and <mark style="color:red;">`onDismissed`</mark> run after the user accepts or dismisses the browser's install prompt.
 
 Our modal looks like the image below.
 

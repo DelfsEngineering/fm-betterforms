@@ -34,4 +34,4 @@ description: Requests push-notification permission and registers the browser sub
 ## Related Pages
 
 - [pwaPushNotificationSend](./pwapushnotificationsend.md)
-- [Creating a PWA](../../guides/integrations/creating-a-pwa.md)
+- [Creating a PWA](../../../guides/integrations/creating-a-pwa.md)

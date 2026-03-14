@@ -1,59 +1,23 @@
-# 2.10 Working with Data Tables (Coming Soon)
+# 2.10 Working with Data Tables
 
-> **Note: This documentation is currently under development. The content will be expanded to include comprehensive guidance on working with data tables in BetterForms.**
+This page is a quick starting point for BetterForms data tables.
 
-## Overview
+If you are deciding between list-style layouts and data tables:
 
-Data tables are a powerful feature in BetterForms that allow you to display and interact with tabular data. While [list views](creating-your-first-list-view.md) are great for simple multi-row forms, data tables provide advanced features for displaying and managing complex data sets.
+- Use [Creating Your First List View](creating-your-first-list-view.md) for simpler repeated record layouts.
+- Use [Data Tables in the IDE](../4.-common-customizations-and-expanding-your-app/4.3-displaying-data-in-tables-page-builder-and-element-config.md) when you want sorting, filtering, pagination, row actions, or richer table presentation.
 
-This documentation will cover:
+## Start Here
 
-* Creating and configuring data tables
-* Implementing sorting and filtering
-* Adding pagination
-* Customizing table appearance
-* Handling table events and interactions
-* Best practices for data table implementation
+- [Data Table component reference](../../../reference/components-overview/common/tables2.md)
+- [Data Tables in the IDE](../4.-common-customizations-and-expanding-your-app/4.3-displaying-data-in-tables-page-builder-and-element-config.md)
+- [Vue-Tables-2 options reference](https://matanya.gitbook.io/vue-tables-2/options-api#options)
 
-## Common Use Cases
+## Typical Use Cases
 
-Data tables are ideal for:
+- admin and management screens
+- reporting and analytics views
+- searchable multi-column record lists
+- row actions, details, and custom cell rendering
 
-1. **Data Management Interfaces**
-   * User management systems
-   * Product catalogs
-   * Order management
-   * Inventory tracking
-2. **Reporting and Analytics**
-   * Sales reports
-   * Performance metrics
-   * Audit logs
-   * Financial statements
-3. **Complex Data Display**
-   * Multi-column sorting
-   * Advanced filtering
-   * Pagination of large datasets
-   * Custom column formatting
-4. **Interactive Data Views**
-   * Row selection
-   * Inline editing
-   * Row expansion for details
-   * Custom actions per row
-
-## Prerequisites
-
-Before diving into data tables, you should be familiar with:
-
-* [Creating Your First List View](creating-your-first-list-view.md) for basic multi-row data handling
-* Basic understanding of [Vue-Tables-2](https://matanya.gitbook.io/vue-tables-2/options-api#options), as BetterForms data tables are built on this library
-
-## Coming Soon
-
-This section is being actively developed and will be updated with detailed documentation soon. In the meantime, you can refer to the [Data Table component reference](../../../reference/components-overview/common/tables2.md) for basic implementation details.
-
-## Next Steps
-
-Once this documentation is complete, it will provide a comprehensive guide to working with data tables in BetterForms. For now, please refer to:
-
-* The [Data Table component reference](../../../reference/components-overview/common/tables2.md) for basic implementation details
-* The [Vue-Tables-2 documentation](https://matanya.gitbook.io/vue-tables-2/options-api#options) for advanced features and options
+Use the reference page for supported BetterForms schema keys, then use the IDE guide for practical setup patterns.

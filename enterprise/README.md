@@ -20,7 +20,7 @@ FM BetterForms Enterprise is an extension of the FM BetterForms Cloud service al
 BF Enterprise runs out of a docker image and new BF Enterprise Helper file, therefore the requirements are:
 
 * Docker Instance (Min 1);
-* [Env settings file](bf-enterprise-documentation.md#env-file);
+* [Env settings file](../reference/enterprise/bf-enterprise-documentation.md#env-file);
 * BF Enterprise Helper FileMaker File (will be provided);
 * BF App migrated to the latest BF Editor (Environments version)
 * FileMaker 19+.
@@ -33,7 +33,7 @@ BF Enterprise runs out of a docker image and new BF Enterprise Helper file, ther
 
 **Creating Redis server from Docker images**
 
-After installing Docker, as described [below](bf-enterprise-documentation.md#setting-up-the-server), a Redis database could be installed on the server as well.
+After installing Docker, as described [below](../reference/enterprise/bf-enterprise-documentation.md#setting-up-the-server), a Redis database could be installed on the server as well.
 
 Link to Redis’ official docs on how to run Redis Stack on Docker: [https://redis.io/docs/stack/get-started/install/docker/](https://redis.io/docs/stack/get-started/install/docker/)
 
@@ -70,7 +70,7 @@ Default environment variables to be declared in the file:
 
 Here is a sample file (where values for the right hand side will be changed to your own info):
 
-[env .development\_sample.development](../.gitbook/assets/env\_.development\_sample.development)
+[env_.development_sample.development](../.gitbook/assets/env_.development_sample.development)
 
 ### Setting up the Server
 

@@ -42,5 +42,5 @@ In addition to reducing the data model, other payload keys can optionally be rem
 To reduce the data sent by the client to your FileMaker Server on each hook call, see this page:
 
 {% content-ref url="../env_vars.md" %}
-[env\_vars.md](../env\_vars.md)
+[env_vars.md](../env_vars.md)
 {% endcontent-ref %}
