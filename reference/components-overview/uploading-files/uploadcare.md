@@ -15,11 +15,23 @@ The component is based on UploadCares JS widget.
 2. Add your API public key into the schema
 3. Uploaded file data is found in the `model` key.
 
+## Key Properties
+
+| Key | Value(s) | Type | Description |
+| --- | --- | --- | --- |
+| `type` | `uploadcare` | string | Identifies the Uploadcare element |
+| `model` |  | string | Data model key that will receive the uploaded file info array |
+| `options` | `{}` | object | Options passed directly into the Uploadcare widget |
+| `globals` | `{}` | object | Global Uploadcare settings written onto `window` before the widget is initialized |
+| `onUploadComplete_actions` | `[]` | array | Actions to run after the upload completes |
+
 ### Notes:
 
 Not all of UploadCare's options setting ar available as `options.someOption` keys, some are only available as global variables. To handle this BetterForms adds provision for adding both `GLOBAL` and `JS` options. See options documentation for what ones are supported under what key.
 
 Fully read the UploadCare documentation before posting support requests.
+
+`onUploadComplete_actions` is the user-facing schema key. BetterForms translates it into the runtime `onUploadComplete` callback internally.
 
 ```text
 // Example

@@ -10,22 +10,26 @@ By selecting the `validator` type to `calc` and adding a calculation and error m
 // example JSON for an element with custom validation
 [
   {
-    "inputType": "text",
     "label": "Some Password",
     "model": "password1",
     "placeholder": "",
     "styleClasses": "col-md-3",
     "type": "input",
+    "fieldOptions": {
+      "inputType": "text"
+    },
     "required": true,
     "validator": "string"
   },
   {
-    "inputType": "text",
     "label": "Another Password",
     "model": "password2",
     "placeholder": "",
     "styleClasses": "col-md-3",
     "type": "input",
+    "fieldOptions": {
+      "inputType": "text"
+    },
     "required": true,
     "validator": "calc",
     "validator_calc": "model.password1 == model.password2",

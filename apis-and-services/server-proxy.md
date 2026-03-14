@@ -35,9 +35,25 @@ Note: Change <mark style="color:red;">`YOUR.SERVER.DOMAIN`</mark> to point to th
 
 #### Testing Connection
 
-TODO
+To test the proxy:
 
-Get the entire URL `http://4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/`<mark style="color:red;">`YOUR.SERVER.DOMAIN`</mark> and open on a browser. The expected result is shown below:
+1. Build the full proxy URL using your FileMaker server FQDN:
+
+   `http://4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/YOUR.SERVER.DOMAIN`
+
+2. Open that URL in a browser.
+3. Confirm that the request reaches your FileMaker web server through the proxy.
+
+If the proxy is working, you should reach the same kind of response page your FileMaker server would normally return for a direct browser request.
+
+If it does not work, check:
+
+- the server FQDN is correct
+- your FileMaker server is reachable on the expected web endpoint
+- your network rules allow the published proxy IP
+- you did not omit the server domain portion of the proxy URL
+
+Example response:
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN" "http://www.w3.org/TR/html4/loose.dtd">

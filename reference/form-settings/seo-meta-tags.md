@@ -52,6 +52,7 @@ The `seoMeta` field type allows you to define SEO meta tags at the form/page lev
 - **Hidden** - Field does not appear to users
 - **SSR** - Meta tags are extracted during SSR for bots/crawlers
 - **Client-Side** - Meta tags are also injected into `document.head` at runtime for regular users, enabling correct browser tab titles, social sharing from the SPA, and `<html lang>` attributes
+- **Merged** - If multiple `seoMeta` fields exist on the page, their `metaTags` are merged and later fields override earlier ones
 
 ---
 
@@ -90,7 +91,7 @@ These keys have unique behavior and do **not** render as `<meta>` tags:
 | Key | Behavior |
 |-----|----------|
 | `title` | Sets `<title>` tag (browser tab / search result title) |
-| `language` | Sets `<html lang="...">` attribute. Defaults to `"en"` if omitted |
+| `language` | Sets `<html lang="...">` attribute. During SSR, defaults to `"en"` if omitted |
 | `_comment*` | Ignored — for developer notes and organization |
 
 ### Standard Meta Tags
@@ -236,9 +237,9 @@ Any key with a `_calc` suffix is evaluated as a JavaScript expression with acces
 
 ## Requirements
 
-### Server-Side Rendering (SSR) Enabled per page
+### Server-Side Rendering (SSR) for crawlers and social previews
 
-The `seoMeta` field **only works with SSR enabled**. Meta tags are extracted and rendered when:
+The `seoMeta` field also works in the browser at runtime, but SSR must be enabled if you want bots and social crawlers to receive the tags in the initial HTML response. Meta tags are extracted and rendered server-side when:
 
 1. A bot/crawler accesses the page (Googlebot, Facebookbot, etc.)
 2. SSR is enabled for the form's layout in site settings
@@ -340,9 +341,9 @@ Look for meta tags in the `<head>` section.
 
 ## Security
 
-### XSS Prevention
+### Escaping
 
-All meta tag values are **automatically HTML-escaped** to prevent XSS attacks:
+Server-rendered meta tag values are HTML-escaped before they are written into the SSR response:
 
 ```javascript
 <script>alert('xss')</script>
@@ -350,12 +351,9 @@ All meta tag values are **automatically HTML-escaped** to prevent XSS attacks:
 &lt;script&gt;alert('xss')&lt;/script&gt;
 ```
 
-### Expression Safety
+### `_calc` Expressions
 
-`_calc` expressions are evaluated with:
-- Limited scope (only `model` object available)
-- Error catching (failures are logged, not exposed)
-- No access to `require()`, `process`, or other Node.js APIs
+`_calc` expressions are evaluated with access to the page `model`, and evaluation failures are caught and logged. Keep these expressions simple and side-effect free.
 
 ---
 
@@ -393,7 +391,7 @@ For dynamic language based on model data:
 }
 ```
 
-If omitted, defaults to `"en"`.
+If omitted, SSR falls back to `"en"`.
 
 ---
 

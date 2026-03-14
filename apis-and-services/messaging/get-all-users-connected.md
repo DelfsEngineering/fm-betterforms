@@ -1,6 +1,6 @@
 # Get connected users
 
-The API endpoint `/message/users` will return all users connected to all or specific active channels, which means channels that currently have at least one user listening to it.
+The API endpoint `/message/users` returns the currently connected listeners for the current domain host.
 
 A channel is considered active if there is at least one client connected to it.
 
@@ -22,9 +22,41 @@ the API key for your BF app
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="channel" type="string" required="false" %}
-if set, will only return users connected to this channel
+if set, BetterForms will look up that specific channel for the current host
 {% endswagger-parameter %}
 {% endswagger %}
+
+## Response Shape
+
+The response is an object keyed by channel name.
+
+Common patterns:
+
+- authenticated channels return arrays of `{ id, email }`
+- anonymous channels return a connection count
+- per-tab private channels use keys like `tab|connectionId`
+
+Example:
+
+```json
+{
+  "tab|abc123": {
+    "id": "USER_ID",
+    "email": "person@example.com"
+  },
+  "salesRoom": [
+    {
+      "id": "USER_1",
+      "email": "a@example.com"
+    },
+    {
+      "id": "USER_2",
+      "email": "b@example.com"
+    }
+  ],
+  "anonymousChat": 3
+}
+```
 
 ## Totals across pods/data centers
 

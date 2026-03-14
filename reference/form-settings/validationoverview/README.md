@@ -5,12 +5,14 @@ Client side validation is controlled by the `validator` key in all page elements
 ```yaml
 // Example
 {
-  "inputType": "text",
   "label": "Last Name",
   "model": "nameLast",
   "required": true,
   "styleClasses": "col-md-3",
   "type": "input",
+  "fieldOptions": {
+    "inputType": "text"
+  },
   "validator": "string"
 }
 ```
@@ -24,7 +26,7 @@ Validation **does not** run automatically. You must trigger client validation wi
 **double** Checks that the value is a valid number.
 
 {% hint style="warning" %}
-When validating with **number**, **integer**, or **double**, make sure the `inputType` for the field is set to `number`, otherwise the input will be saved as a JSON string in your data model.
+When validating with **number**, **integer**, or **double**, make sure `fieldOptions.inputType` is set to `number`, otherwise the field will be treated as a text-style input in the browser.
 {% endhint %}
 
 **string** Checks that the value is a string - and that its length is within the fields min & max range, if these are defined in the schema.

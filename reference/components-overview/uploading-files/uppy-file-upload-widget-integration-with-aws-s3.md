@@ -78,7 +78,7 @@ Check [this example](https://app.fmbetterforms.com/#/apps/pages/edit?id=FR\_A1E5
 
 `uploadHandler` handles the post-upload process.
 
-`onFormLoad` In this action, it **i**nitializes necessary variables and Uppy instances for different upload scenarios, including drag-drop area, status bar, dashboard trigger, and file input.
+`onFormLoad` named action: this initializes the necessary variables and Uppy instances for different upload scenarios, including drag-drop area, status bar, dashboard trigger, and file input.
 
 ```javascript
 // Initialize session and promise resolver

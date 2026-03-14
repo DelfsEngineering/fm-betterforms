@@ -11,9 +11,8 @@ When clicked, the payment workflow is initiated.
 | Key                | Value(s) | Type   | Description                                                                            |
 | ------------------ | -------- | ------ | -------------------------------------------------------------------------------------- |
 | type               | stripe   | string | Identifies the type of payment processor being used.                                   |
-| model              |          | object | Data model key name that will contain results of payment transactions.                 |
+| model              |          | string | Data model key that will contain the Stripe response.                                  |
 | product            |          | object | Contains details about the product being purchased.                                    |
-| currency           |          | string | The currency for the payment (e.g., `USD`).                                            |
 | onSuccess\_actions |          | array  | Actions to run when the payment is successfully processed.                             |
 | button             |          | string | Text to be displayed on the payment button.                                            |
 | buttonClass        |          | string | CSS classes to style the button.                                                       |
@@ -42,3 +41,8 @@ When clicked, the payment workflow is initiated.
   "type": "stripe"
 }
 ```
+
+## Notes
+
+- `onSuccess_actions` is the user-facing schema key. BetterForms translates it into the runtime `onSuccess` callback internally.
+- The component passes your `product` and `options` objects through to the Stripe Checkout integration.

@@ -18,18 +18,19 @@ Guidelines to help secure all authentication strategies.
 - Hash passwords server-side using a modern algorithm
 - Never transmit or store plaintext passwords
 - Enforce minimum complexity and length
-- On admin resets, force user to change password at next login or use a reset-link flow
+- If you build an admin-reset workflow, prefer a reset-link flow or force a password change at next login
 
 ## Cookies & Sessions
 
 - Keep session duration short; rotate on privilege changes
 - Do not store sensitive user data in cookies
+- Use secure cookie attributes where possible and keep cookie lifetimes short
 
 ## Pages & Actions
 
 - Require authentication for restricted pages
 - Validate required fields before running auth actions (e.g., email, password)
-- Surface errors to the user via `model.authMessage` when available
+- Surface auth feedback to the user in a controlled way using `model.authMessage`, `model.authMessageCode`, or `model.authMessageType`
 
 ## Hooks
 
@@ -39,6 +40,12 @@ Guidelines to help secure all authentication strategies.
 ## Operational Considerations
 
 - Monitor for repeated failures and lock or throttle as needed (roll your own)
+
+## Related Pages
+
+- [Authentication](./README.md)
+- [Custom Login Pages](./custom-login-pages.md)
+- [Query & Cookie Based Auth](./query-cookie-auth.md)
 
 
 

@@ -10,8 +10,15 @@ The `aceeditor` element is great for editing HTML, CSS, JSON, or any other type 
 | `getAsJSON` | _optional_ | _boolean_ | if true, the model is stringified for editing. This allows you to edit the JSON directly in the MODEL \(vs it being stored as a string \(all other languages\) |
 | `height` | _optional_ | _string_ | default of 700px else element height can be specified `300px`, `70%` are valid values. |
 | `theme` | _optional_ | _string_ | The theme used in the editor |
+| `readOnly` | _optional_ | _boolean_ | If true, the editor content cannot be edited. |
+| `foldDepth` | _optional_ | _number_ | Applies code folding when the editor first loads. |
+| `gutterclick` | _optional_ | _function_ | Callback fired when the gutter is clicked and the current line can be parsed as a JSON key/value pair. |
 
-TODO add support for options {}
+Notes:
+
+- Supported languages in the component include `html`, `javascript`, `markdown`, `plain_text`, `css`, and `json`.
+- Built-in themes loaded by BetterForms include `chrome`, `solarized_light`, and `dracula`.
+- When `getAsJSON` is `true`, the editor reads and writes the model as parsed JSON rather than a plain string.
 
 ## Example
 

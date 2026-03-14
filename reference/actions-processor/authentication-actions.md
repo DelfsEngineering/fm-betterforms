@@ -1,6 +1,6 @@
 # Authentication Actions
 
-The authentication set of actions are used on pages that have custom login and registration screens.
+These actions are used on custom login, registration, verification, reset, and magic-link pages.
 
 Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequest` and token-based `authLogin`.
 
@@ -8,16 +8,20 @@ Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequ
 [custom-login-pages.md](../authentication/custom-login-pages.md)
 {% endcontent-ref %}
 
-* _**authLogin**_ - Performs an authentication login
-* _**authLogout**_ - Performs logout
-* _**authReset**_ - Performs a password reset action
-* _**authForgot** -_ Performs a forgotten password reset hook
-* _**authMagicRequest**_ - Requests a passwordless magic sign-in link
-* _**authVerify**  _ - Performs a verification of the verify token
-* _**authResend**_ - Re/sends the email verification token
-* _**authRegister**_ - Performs a registration and if successful, runs the [onRegistrationHook](../hooksoverview/commonoverview.md#onregistration)
+{% content-ref url="./actions_overview/authloginoauth.md" %}
+[authloginoauth.md](./actions_overview/authloginoauth.md)
+{% endcontent-ref %}
 
-Each of these actions should be attached to a button that the user will click to perform the respective task. They do not take any options, but some do require that an `email` and/or `password` key is present in your data model.
+* _**authLogin**_ - Signs the user in with email/password or a magic-link token
+* _**authLogout**_ - Signs the user out
+* _**authReset**_ - Completes a password reset
+* _**authForgot** -_ Requests a password-reset email
+* _**authMagicRequest**_ - Requests a passwordless magic sign-in link
+* _**authVerify**  _ - Verifies the email-verification token
+* _**authResend**_ - Resends the email-verification token
+* _**authRegister**_ - Registers a user and, on success, runs [onRegistration](../hooksoverview/commonoverview.md#onregistration)
+
+These actions do not take custom options, but several require specific model keys such as `email`, `password`, or a token delivered in the URL.
 
 |  Action Name | Requires `email` key | Requires `password` key | Requires `token`\* |
 | -----------: | :------------------: | :---------------------: | :----------------: |
@@ -30,33 +34,36 @@ Each of these actions should be attached to a button that the user will click to
 |   authResend |           ✅          |                         |                    |
 | authRegister |           ✅          |            ✅            |                    |
 
-If these values are required, you should add validation to those fields and run a validate action before the authentication action.
+If these values are required, add field validation and run a `validate` action before the authentication action.
 
 The **authRegister** action does _not_ require 2 password fields. If you want the user to enter their password twice before creating an account, you should create a [custom validator](../form-settings/validationoverview/clientside.md) that checks if the `password` key also matches some other `password2` key.
 
-The **authReset** action doesn't require an email field, but it does require a valid `token` slug be present. The token is automatically generated and appended to the URL when you run the **authForgot** action, so you don't need to do anything with it on the page.
+The **authReset** action doesn't require an email field, but it does require a valid `token` in the URL. The token is generated and appended automatically when you run **authForgot**.
 
-Similarly, the **authVerify** action only checks for the verification token in URL. It's recommended that this action be used within the onFormLoad named action as the user will be clicking the link in their email to get to this page.
+Similarly, **authVerify** only checks for the verification token in the URL. It is usually run in `onFormLoad` because users arrive from an email link.
 
-The **authMagicRequest** action requires an `email` key in the model and sends a one-time sign-in link through `onAuthNotifier`.
-It is the request step of the magic-link flow and is typically used on a page where the user enters their email address.
+The **authMagicRequest** action requires an `email` key in the model and sends a one-time sign-in link through `onAuthNotifier`. It is typically used on the page where the user enters their email address.
 
 The **authLogin** action can now work in two modes:
 
 - Email/password login using `email` and `password`
 - Magic-link login using `token` in the model or URL
 
-For magic-link pages, it is common to run `authLogin` in an `onFormLoad` action after the user lands on a page with `?token=...`.
+For magic-link pages, it is common to run `authLogin` in `onFormLoad` after the user lands on a page with `?token=...`.
 When a `token` is present, `authLogin` redeems that magic link token instead of attempting a normal email/password login.
 
-## Error Handling
+## Auth Feedback
 
-Authentication error messages will get added automatically to your [data model](../form-settings/data-model.md) under the `authMessage` key. You can display this info with any decoration you would like with an `html` element and some Vue syntax as follows:
+Authentication pages can read feedback from:
 
-```yaml
-{
-  "type": "html",
-  "html": "<h2 class=\"warning\">{{model.authMessage}}</h2>",
-  "styleClasses": "col-md-12"
-}
-```
+- `model.authMessage`
+- `model.authMessageCode`
+- `model.authMessageType`
+- `BF.authGetLastFeedback()`
+
+For new pages, prefer `auth.*` codes over parsing the English message text. For UI examples and patterns, see [Custom Login Pages](../authentication/custom-login-pages.md) and [BF Utility Functions](../bf-utility-function-ver-0.9.20+.md).
+
+Security note:
+
+- Default auth UI should avoid confirming whether a specific email/account exists.
+- For request/initiation flows such as magic-link request or password reset request, prefer existence-blind messages such as "If that email is registered..." or "If that email can be used to sign in...".

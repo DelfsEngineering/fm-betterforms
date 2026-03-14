@@ -4,7 +4,7 @@ The **Page Info** tab contains essential settings and metadata for your page.
 
 * **UUID**: A unique identifier for the page.
 * **Description**: You can add a description for internal reference (not displayed to the user).
-* **Scoped Hook Set Name**: Specify the hook set name for scoped hooks. [Learn more about hooks](/broken/pages/pDL0XN3XupYEdfzhMBo7).
+* **Scoped Hook Set Name**: Specify the hook set name for scoped hooks. [Learn more about hooks](../../3.-understanding-core-betterforms-concepts/3.1-introduction-to-hooks-and-where-to-find-them-in-the-ide.md).
 * **Authentication**: Toggle authentication requirements for the page.
 * **Delete Page**: Permanently delete the page.
 

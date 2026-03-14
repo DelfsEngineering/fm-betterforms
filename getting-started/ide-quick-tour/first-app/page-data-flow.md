@@ -44,7 +44,7 @@ These examples show how the data model connects to elements on the page, allowin
 
 ## Hooks and Data Flow
 
-Hooks are scripts that can be triggered at specific points in the page lifecycle, such as when the page is first loaded or when a utility action is performed.
+Server hooks are FileMaker-side scripts that BetterForms can trigger during page workflows. Client-side lifecycle named actions such as `onFormLoad` are related, but they are not FileMaker hooks.
 
 ### onFormRequest Hook
 
@@ -53,6 +53,10 @@ The `onFormRequest` hook is used to pull data from the backend and integrate it 
 ### onUtility Hook
 
 The `onUtility` hook is the most common type of scoped hook and is called with the `runUtilityHook` action. This hook allows you to perform actions like saving data back to your FileMaker database.
+
+### Related Lifecycle Named Actions
+
+You may also use client-side named actions such as `onFormLoad` to start browser workflows after the page loads. Those workflows can include a `runUtilityHook` action when they need to call FileMaker.
 
 ### Controlling Data Sent from the Browser
 

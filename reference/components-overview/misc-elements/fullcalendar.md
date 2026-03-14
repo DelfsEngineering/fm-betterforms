@@ -10,79 +10,52 @@ Implementation of [www.fullcalendar.io](https://fullcalendar.io/) calendaring co
 
 Component based on [https://github.com/CroudTech/vue-fullcalendar](https://github.com/CroudTech/vue-fullcalendar)
 
-#### Action keys:
+## Runtime Shape
 
-* **event-selected(event, jsEvent, view)** - Triggered on eventClick()
-* **event-mouseover(event, jsEvent, view)** - Triggered on eventMouseover()
-* **event-mouseout(event, jsEvent, view)** - Triggered on eventMouseout()
-* **event-drop(event)** - Triggered on eventDrop()
-* **event-resize(event)** - Triggered on eventResize()
-* **event-created(event)** - Triggered on select()
-* **event-receive(event)** - Triggered on eventReceive()
-* **event-render(event)** - Triggered on eventRender()
-* **view-render(view, element)** - Triggered on viewRender()
-* **day-click(date, jsEvent, view)** - Triggered on dayClick()
+The live component:
 
-{% hint style="info" %}
-Check [this example](https://app.fmbetterforms.com/#/apps/pages/edit?id=A64024B1-FD90-7044-B7B0-39279F350430) of fullCalendar.
-{% endhint %}
+- reads events from the field `model`
+- passes those events into the calendar as the field value
+- merges `schema.config` over a default config where `defaultView` starts as `month`
 
-The provided schema is an example configuration that includes a `fullCalendar` component and some HTML elements to display the event data and the selected event.
+## Common Schema Keys
 
-#### Configuration and Action Keys
+| Key | Type | Description |
+| --- | --- | --- |
+| `type` | `string` | Must be `fullCalendar` |
+| `model` | `string` | Model path containing the calendar event array |
+| `config` | `object` | Calendar configuration object passed into the underlying component |
 
-`config` holds the configuration settings for the `fullCalendar` component.
+Example:
 
 ```json
 {
-    "schedulerLicenseKey": "GPL-My-Project-Is-Open-Source"
+  "type": "fullCalendar",
+  "model": "events",
+  "config": {
+    "defaultView": "month",
+    "editable": true
+  }
 }
 ```
 
-**Action Keys**
+## Callback Keys
 
-Action keys define what should happen when specific events occur on the calendar. Each action is associated with a JavaScript event and specifies a sequence of actions to be executed.
+The current implementation wires these schema callback functions:
 
-*   **`dayClick_actions`**: Triggered when a day on the calendar is clicked.
+- `eventSelected(...args)`
+- `eventDrop(...args)`
+- `eventResize(...args)`
+- `eventCreated(...args)`
+- `eventRender(...args)`
+- `eventMouseover(...args)`
+- `eventMouseout(...args)`
+- `dayClick(...args)`
 
-    ```json
-    "dayClick_actions": [{
-                    "action": "showAlert",
-                    "options": {
-                        "text": "",
-                        "title": "dayClick_actions",
-                        "type": "information"
-                    }
-                }]
-    ```
-* **`eventCreated_actions`**
-* **`eventMouseout_actions`**
-* **`eventMouseover_actions`**
-* **`eventRender_actions`**
-* **`eventResize_actions`**
-* **`eventSelected_actions`**
+These are JavaScript callback functions on the field schema, not `*_actions` arrays.
 
-These keys can be used to define customized actions for each corresponding event.
+## Notes
 
-**Additional Configuration Keys**
-
-*   **`defaultView`**: Specifies the default view of the calendar (e.g., month, week, day).
-
-    ```json
-    "defaultView": "month"
-    ```
-*   **`editable`**: Determines if the events on the calendar can be edited (dragged, resized).
-
-    ```json
-    "editable": true
-    ```
-*   **`model`**: Links the calendar to a model that holds the events data.
-
-    ```json
-    code"model": "events"
-    ```
-*   **`type`**: Specifies the type of component, which in this case is `fullCalendar`.
-
-    ```json
-    "type": "fullCalendar"
-    ```
+- If you do not provide `config.defaultView`, the component defaults to `month`.
+- The component passes the full field schema through to the underlying calendar component with `v-bind=\"schema\"`.
+- The published docs previously referenced `*_actions` keys, but the live component code currently uses direct schema callback functions instead.

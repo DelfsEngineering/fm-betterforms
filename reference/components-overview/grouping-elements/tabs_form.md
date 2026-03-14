@@ -50,24 +50,30 @@ Set the min and max values to the same number to permanently hide the add and de
   "schema": {
     "fields": [
       {
-        "inputType": "text",
         "label": "First Name",
         "model": "nameFirst",
         "styleClasses": "col-md-6",
+        "fieldOptions": {
+          "inputType": "text"
+        },
         "type": "input"
       },
       {
-        "inputType": "text",
         "label": "Last Name",
         "model": "nameLast",
         "styleClasses": "col-md-6",
+        "fieldOptions": {
+          "inputType": "text"
+        },
         "type": "input"
       },
       {
-        "inputType": "select",
         "label": "Street 1",
         "model": "street1",
         "styleClasses": "col-md-12",
+        "fieldOptions": {
+          "inputType": "text"
+        },
         "type": "input"
       }
     ]

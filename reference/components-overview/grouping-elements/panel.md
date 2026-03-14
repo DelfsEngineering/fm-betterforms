@@ -32,10 +32,12 @@ To see panel in grouping eleelements, check out [this example](https://appstagin
   "schema": {
     "fields": [
       {
-        "inputType": "text",
         "label": "My Input",
         "model": "field1",
         "styleClasses": "col-md-12",
+        "fieldOptions": {
+          "inputType": "text"
+        },
         "type": "input"
       }
     ]

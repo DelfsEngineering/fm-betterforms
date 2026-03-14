@@ -1,24 +1,30 @@
 # Actions
 
-## Action Types
+This page is the action index. Use it to see which actions are supported and then click through to the detailed action pages.
 
-### Regular Actions
+## Core Actions
 
-* _**showModal**_ - Renders a modal dialog
-* _**hideModal**_ - Hides a modal that is non-blocking
-* _**showAlert**_ - Renders a toaster style alert
-* _**path**_ - redirects the user to a new page&#x20;
-* _**debounce** - Delay running actions until a period of inactivity happens_
-* _**throttle**_ - Limit how frequent actions can run
-* _**runUtilityHook**_ - runs the `onUtility` hook passing it params
-* _**clipboard**_ - runs `clipboard` action allowing interaction with the clipboard
-* _**cookie**_ - Allows setting of browser side cookies
-* _**wait**_ - Waits for specified time or event
-* _**emit**_ - Vue event bus message emit
-* _**scrollTo**_ - Scrolls to an element
-* _**namedAction**_ - Runs a named action. Also requires the `name` key.
-* _**function**_ - Runs JavaScript
-* _**consoleError**_ - Logs a message to the browser's error console.
+| Action | Summary | Details |
+| --- | --- | --- |
+| `showModal` / `hideModal` | Opens or closes the standard modal dialog | [showModal / hideModal](showmodal.md) |
+| `showCardModal` / `hideCardModal` | Opens or closes a card modal that renders another page | [showCardModal / hideCardModal](showcardmodal.md) |
+| `showAlert` | Shows a toaster-style alert | [showAlert](showalert.md) |
+| `path` | Navigates to another page, URL, or target window | [path](path.md) |
+| `runUtilityHook` | Calls the scoped server utility hook workflow | [runUtilityHook](runutilityhook.md) |
+| `runOnCompleteHook` | Triggers the completion hook flow and waits before continuing | [runOnCompleteHook](runoncompletehook.md) |
+| `validate` | Runs page validation | [validate](validate.md) |
+| `setFocus` | Focuses or selects an input element | [setFocus](setfocus.md) |
+| `scrollTo` | Scrolls to a target element | [scrollTo](scrollTo.md) |
+| `wait` | Delays the next queued action for a specified number of milliseconds | [wait](wait.md) |
+| `debounce` | Delays repeated actions until activity settles | [debounce](debounce.md) |
+| `throttle` | Limits how frequently an action can run | [throttle](throttle.md) |
+| `function` | Runs JavaScript in the client workflow | [function](function-1.md) |
+| `emit` | Emits an internal event-bus event | [emit](emit.md) |
+| `mapInfoWindow` | Emits a component-facing map info-window event | [mapInfoWindow](mapinfowindow.md) |
+| `clipboard` | Interacts with the clipboard helper | [clipboard](clipboard.md) |
+| `cookie` | Sets or removes browser-side cookies | [cookie](cookie.md) |
+| `consoleError` | Writes a message to the browser error console | [consoleError](consoleError.md) |
+| `namedAction` | Runs another named action / workflow by name | [Named Actions](../actions_named.md) |
 
 ### Authentication Actions
 
@@ -27,6 +33,46 @@ These special actions allow you to create custom login and registration pages. S
 {% content-ref url="../authentication-actions.md" %}
 [authentication-actions.md](../authentication-actions.md)
 {% endcontent-ref %}
+
+### Messaging Actions
+
+| Action | Summary | Details |
+| --- | --- | --- |
+| `messageSend` | Sends a BetterForms message | [messageSend](messagesend.md) |
+| `messageSendAnonChannel` | Sends a message to an anonymous channel flow | [messageSendAnonChannel](messagesendanonchannel.md) |
+| `channelJoinAnon` | Joins an anonymous channel | [channelJoinAnon](channeljoinanonymous.md) |
+| `channelLeaveAnon` | Leaves an anonymous channel | [channelLeaveAnon](channelleaveanon.md) |
+
+### Payment Actions
+
+| Action | Summary | Details |
+| --- | --- | --- |
+| `showStripeCheckout` | Triggers the Stripe checkout event for a configured form | [showStripeCheckout](showStripeCheckout.md) |
+
+### OAuth Actions
+
+| Action | Summary | Details |
+| --- | --- | --- |
+| `authLoginOauth` | Finalizes OAuth login on the callback page | [authLoginOauth / oauthLoginHook](authloginoauth.md) |
+| `oauthLoginHook` | Legacy alias for `authLoginOauth` | [authLoginOauth / oauthLoginHook](authloginoauth.md) |
+
+### PWA Actions
+
+| Action | Summary | Details |
+| --- | --- | --- |
+| `pwaCustomInstall` | Captures the browser install prompt for later use | [pwaCustomInstall](pwacustominstall.md) |
+| `pwaPromptInstall` | Triggers the stored browser install prompt | [pwaPromptInstall](pwapromptinstall.md) |
+| `pwaPromptPushPermission` | Requests push-notification permission and registers the browser subscription | [pwaPromptPushPermission](pwapromptpushpermission.md) |
+| `pwaPushNotificationSend` | Sends a push notification through BetterForms | [pwaPushNotificationSend](pwapushnotificationsend.md) |
+
+### AI / Tooling Actions
+
+| Action | Summary | Details |
+| --- | --- | --- |
+| `llmToolCall` | Maps LLM-requested frontend tools into BetterForms named actions | [llmToolCall](llmtoolcall.md) |
+| `llmToolCallResponse` | Sends a frontend tool result back to the tool-response service | [llmToolCallResponse](llmtoolcallresponse.md) |
+| `llmQueryStop` | Requests that an active `/llm/query` stream stop | [llmQueryStop](llmquerystop.md) |
+| `assistantStop` | Requests that an active assistants run stop | [assistantStop](assistantstop.md) |
 
 ## Usage
 
@@ -58,9 +104,9 @@ Actions are executed sequentially starting at the beginning of the array.
 | -------------: | :-----: | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |       `action` |  string |         | The name of the action                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |     `function` |  string |         | {optional} All actions can also take a function. This is processed just before the action is executed. This function can be an JS code and can also easily change the action parameters itself of any other environmental value. This is handy for pre-processing data prior to an action.                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `preventClone` | boolean | false   | <p>{optional} Default: true. When true the entire actions array will not be striped of its references to the objects that were passed in when it was created. This is handy when you are passing references to object that you want to modify later. For example, the BF HTML and JS editor passes in a reference to the source editor so that it is easy to later call methods in that passed in editor. Doing this makes it easy to not have to worry about mutating code in the wrong source editor. You generally should never need to change this unless you have a valid use case warranting it.<br><br>By default, all passed in actions are cloned decoupling them from their original objects.</p> |
+| `preventClone` | boolean | false   | <p>{optional} When true, BetterForms does not strip object references before running the action array. By default, actions are cloned so they are decoupled from the original objects that created them.</p> |
 |  `nonBlocking` | boolean | false   | {optional} When added to the action and true, the actions processor will not wait for the action to complete before starting the next action. This is useful when you have a blocking action but still want other things to run (like slow process utility hooks)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|      `options` |  object |         | This object may be optional depending on the specific settings needed by a given action..                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|      `options` |  object |         | This object may be optional depending on the specific settings needed by a given action.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 #### Actions Options
 
@@ -100,10 +146,10 @@ All field element types support an `onChanged_actions` key. This key can contain
 
 ### Clearing Actions
 
-Actions can be cleared programmatically in a `function` action or `function` key by calling the following internal BF command: \`
+For user-facing docs and custom scripts, clear queued actions with the public BetterForms helper:
 
 ```javascript
-    vueapp.$store.dispatch('ACTIONS_CLEAR')   
+BF.actionsClear()
 ```
 
 The following JS code will stop any subsequent actions from running if the `isRegistered` flag is false.
@@ -111,6 +157,6 @@ The following JS code will stop any subsequent actions from running if the `isRe
 ```javascript
 // in a function key
 if(!model.isRegistered) {
-    vueapp.$store.dispatch('ACTIONS_CLEAR')
+    BF.actionsClear()
 }
 ```

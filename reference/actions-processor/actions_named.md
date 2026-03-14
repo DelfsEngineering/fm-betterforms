@@ -46,11 +46,44 @@ Named actions look like any other actions array, with just the name of the actio
 
 There are some reserved named action key names that are reserved for special use cases.
 
-**onFormLoad** - Global named action - These actions will run just _after_ a form is loaded. If there are actions that are generated in an `onFormRequest` hook, those actions will be queued first and the `onFormLoad` actions will run after. A typical use case would be to show an empty form with a loading placeholder image, then request data from the server then render the data after, allowing the application to feel more performant.
+These reserved names are part of the **client-side lifecycle / workflow system**. They are not the same thing as FileMaker server hooks.
 
-**onAppLoad** - Global named action - These actions will run just after the app is loaded. This can be used to populate global app settings like user data and flags after a page is refreshed.
+| Reserved name | Scope | What it does |
+| --- | --- | --- |
+| `onFormLoad` | Page-level named action | Runs just after a form/page is loaded in the browser |
+| `onAppLoad` | App-level named action | Runs just after the app/site is loaded |
+| `onLogin` | App-level named action | Runs after the user is authenticated on the client |
 
-**onLogin** - ( >0.9.35) Global named action - These actions will run just after the user is authenticated. This can be used to populate global app settings like user data and flags after a user logs in.
+### onFormLoad
+
+`onFormLoad` runs after the page/form has loaded.
+
+- Define it on the page's `form.namedActions`
+- If actions were generated in an `onFormRequest` hook, those actions are queued before `onFormLoad`
+- A common pattern is to render the page, then run follow-up browser actions or a `runUtilityHook`
+
+### onAppLoad
+
+`onAppLoad` runs after the app/site loads in the browser.
+
+- Define it in app-level named actions
+- Use it for app-wide startup work such as populating browser-side flags, loading libraries, or setting up PWA behavior
+
+### onLogin
+
+`onLogin` is a client-side named action that runs after the user authenticates.
+
+- Define it in app-level named actions
+- Use it for post-login client workflows such as populating client-side state or running follow-up UI actions
+- This is separate from the FileMaker `onLogin` **server hook**
+
+The normal login flow can involve both:
+
+1. BetterForms authenticates the user.
+2. BetterForms runs the FileMaker `onLogin` server hook.
+3. BetterForms can also run the client-side named action `site.content.namedActions.onLogin`.
+
+For the broader distinction between lifecycle hooks and FileMaker hooks, see [Lifecycle Hooks](../hooksoverview/lifecycle-hooks.md) and [Common Hooks](../hooksoverview/commonoverview.md).
 
 ## Usage
 
@@ -87,6 +120,8 @@ If a namedAction is called while other actions are still in the queue, the named
 
 ## See Also
 
+- **[Lifecycle Hooks](../hooksoverview/lifecycle-hooks.md)** - Reference for `onAppLoad`, `onFormLoad`, and component lifecycle named actions
+- **[Common Hooks](../hooksoverview/commonoverview.md)** - Reference for FileMaker server hooks such as `onLogin`
 - **[Creating Components with Third-Party Libraries](../../guides/integrations/creating-components-with-third-party-libraries.md)** - Learn how to use named actions in component lifecycle hooks (onBeforeMount, onMount, etc.) to integrate JavaScript libraries
 - **[BF.libraryLoadOnce()](../bf-dynamic-library-loading.md)** - Dynamic library loading utility for use in function actions
 - **[Component Best Practices](../../guides/styling/custom-components/component-best-practices.md)** - Guidelines for creating custom components

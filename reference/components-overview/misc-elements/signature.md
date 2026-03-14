@@ -16,3 +16,9 @@ The `signature` element is a basic signature capture that is mobile compatible. 
 }
 ```
 
+## Runtime Notes
+
+- The saved value is a data URL string from the canvas, or an empty string when the pad is cleared.
+- A built-in **Clear** button is rendered below the signature pad.
+- `height` controls the canvas height; the width follows the container width.
+

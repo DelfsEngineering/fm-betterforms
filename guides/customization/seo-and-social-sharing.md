@@ -68,7 +68,7 @@ In your form schema, add a `seoMeta` field:
 
 ### Step 2: Enable SSR for the Layout
 
-In your site settings, ensure SSR is enabled for this page:
+If you want bots and social crawlers to receive these tags in the initial HTML response, enable SSR for the page:
 
 ```json
 {
@@ -208,7 +208,7 @@ The `seoMeta` field also works for regular (non-bot) users in the browser. When 
 - All meta tags are injected into `<head>` (useful for single-page app navigation)
 - Tags are cleaned up when navigating away from the page
 
-This means social sharing tools that read the live DOM (not just the initial HTML) will see the correct meta tags.
+This means the field can still update browser-side metadata without SSR, but SSR is what makes those tags available in the initial response for crawlers and social preview scrapers.
 
 ---
 

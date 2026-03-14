@@ -59,10 +59,12 @@ When a `visible_calc` parameter is supplied, the `visible` key is ignored.
     "model" : "isEmployed"
   },
   {
-    "inputType": "text",
     "label": "What's your occupation?",
     "model": "occupation",
     "type": "input",
+    "fieldOptions": {
+      "inputType": "text"
+    },
     "visible_calc": "this.model.isEmployed == 'yes'"
   }
 ```
@@ -132,8 +134,10 @@ omit periods
             "featured": false,
             "disabled": true,
             "default": true,
-            "textOn": "Active",
-            "textOff": "Inactive"
+            "fieldOptions": {
+              "textOn": "Active",
+              "textOff": "Inactive"
+            }
           },
           {
             "type": "select",
@@ -149,20 +153,24 @@ omit periods
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "Family Name",
             "model": "familyName",
             "readonly": false,
             "disabled": false,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-5"
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "Referred By",
             "model": "reffered",
             "readonly": false,
             "disabled": false,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-5"
           }
         ]
@@ -176,17 +184,18 @@ omit periods
         "fields": [
           {
             "type": "input",
-            "inputType": "text",
             "label": "First Name",
             "model": "nameFirst",
             "placeholder": "",
             "featured": true,
             "required": true,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-4"
           },
           {
             "type": "googleAddress",
-            "inputType": "text",
             "label": "Address",
             "model": "address",
             "placeholder": "start typ",
@@ -196,40 +205,48 @@ omit periods
           },
           {
             "type": "input",
-            "inputType": "email",
             "label": "E-mail",
             "model": "email",
             "validator": "email",
             "placeholder": "User's e-mail address",
+            "fieldOptions": {
+              "inputType": "email"
+            },
             "styleClasses": "col-md-4"
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "First Name",
             "model": "nameFirst2",
             "placeholder": "",
             "featured": true,
             "required": true,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-4"
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "Last Name",
             "model": "nameLast2",
             "placeholder": "",
             "featured": true,
             "required": true,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-4"
           },
           {
             "type": "input",
-            "inputType": "email",
             "label": "E-mail",
             "model": "email2",
             "validator": "email",
             "placeholder": "User's e-mail address",
+            "fieldOptions": {
+              "inputType": "email"
+            },
             "styleClasses": "col-md-4"
           }
         ]
@@ -243,22 +260,26 @@ omit periods
         "fields": [
           {
             "type": "input",
-            "inputType": "text",
             "label": "Campers First Name",
             "model": "campFirstName",
             "placeholder": "",
             "featured": true,
             "required": true,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-6"
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "Campers Last Name",
             "model": "camplast",
             "placeholder": "",
             "featured": true,
             "required": true,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "styleClasses": "col-md-6"
           },
           {
@@ -272,15 +293,13 @@ omit periods
             "styleClasses": "col-md-4"
           },
           {
-            "type": "dateTime",
+            "type": "dateTimePicker",
             "label": "DOB",
             "model": "dob",
             "required": true,
             "placeholder": "User's birth of date",
-            "min": "",
-            "max": "",
             "validator": "date",
-            "dateTimePickerOptions": {
+            "fieldOptions": {
               "format": "YYYY-MM-DD"
             },
             "onChanged": "",
@@ -297,27 +316,33 @@ omit periods
         "fields": [
           {
             "type": "input",
-            "inputType": "text",
             "label": "Card Type",
             "model": "cardType",
             "placeholder": "visa / MC / Amex",
             "featured": false,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "required": false
           },
           {
             "type": "input",
-            "inputType": "text",
             "label": "Full Name On Card",
             "model": "cardName",
             "placeholder": "john J. Smith",
             "featured": false,
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "required": false
           },
           {
             "type": "input",
-            "inputType": "input",
             "label": "Number",
             "model": "cardNumber",
+            "fieldOptions": {
+              "inputType": "text"
+            },
             "placeholder": "xxx-xxx-xxx"
           }
         ]

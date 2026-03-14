@@ -1,40 +1,48 @@
 ---
 description: >-
-  There are many ways to inject code throughout your site. Slots are the primary
-  method for doing this
+  Reference for BetterForms slot names and where each slot renders in the app UI.
 ---
 
 # Slots / Code Injection
 
-**Slots** are definable HTML templates that can be inserted into various areas of BetterForms. Slots can be used for customizing the header area, navigation and footer areas (footer not developed yet).\
-Slots can accept HTML and VueJs HTML.
+Slots are reusable HTML or Vue template insertion points that let you customize the BetterForms app shell and page wrapper without editing the core application code.
 
-Slot scope for VueJS HTML content will depend on the slot location. All slots can see `window.formGen` from there you can access `formGen.formSchema.model` etc.
+To edit slots in the IDE, go to:
 
-Slots replace default slot content if there is a default content (Eg. `logout`)
+- `Styling > Slots`
 
-To edit your site's slots, go to the **Appearance > Slots** tab of your [site settings](./).
+## Reference
 
+| Slot Name | Where it renders | Notes |
+| --- | --- | --- |
+| `header` | Standalone app-level header area rendered below the top navigation bar | App-shell level slot handled separately from the named header-bar slots |
+| `headerBrandLeft` | Left of the brand/logo area in the top navigation bar | Header-bar slot |
+| `headerBrand` | Brand / app-name area in the top navigation bar | Replaces the default app-name block |
+| `headerSidebarToggle` | Sidebar toggle area in the top navigation bar | Replaces the default left-nav toggle button |
+| `headerLeft` | Left-side header content area | Header-bar slot |
+| `headerCenter` | Center header content area | Current runtime slot name; use this instead of older `headerMiddle` wording |
+| `headerRight` | Right-side header content area | Header-bar slot |
+| `logout` | Logout area in the top navigation bar | Only shown when the user is authenticated |
+| `sidebarLeftTop` | Above the left navigation menu items | Sidebar slot |
+| `sidebarLeftBottom` | Below the left navigation menu items | Sidebar slot |
+| `sidebarLeftFooter` | Footer area of the left navigation bar | Often used for logos or custom footer content |
+| `formHeader` | Above the current page body | Page-wrapper slot inside the form layout |
+| `formFooter` | Below the current page body | Page-wrapper slot inside the form layout |
+| `appFooter` | Footer area of the overall app shell | App-shell level footer slot |
 
+## Notes
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Head Slot positions</p></figcaption></figure>
+- Slots can replace or extend default shell content depending on where they are inserted.
+- `logout` is a conditional slot because the default logout control only renders for authenticated users.
+- `formHeader` and `formFooter` are page-wrapper slots, so they render around the current page content rather than inside the top navigation or sidebar.
+- `appFooter` renders at the app-shell level and is separate from page-level footer content.
 
-### Slot Locations:
+## Advanced Note
 
-| Slot Name             | Description                                                                                                                          |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `headerBrandLeft`     | To the left of the logo brand block                                                                                                  |
-| `headerBrand`         | Company Name / Logo Area, if set, replaces default text                                                                              |
-| `headerSidebarToggle` | Replaces default sidebar hamburger toggle is set                                                                                     |
-| `headerLeft`          | Top Header area left most position to the right of the brand                                                                         |
-| `headerMiddle`        |                                                                                                                                      |
-| `headerRight`         |                                                                                                                                      |
-| `logout`              | Replaces the default logout code _(This slot hides conditionally depending if the user is authenticated)_                            |
-| `formHeader`          | Header (top) above the page body. This will show on every page within the app. You can add logic to hide on certain pages as needed. |
-| `formFooter`          | Footer area below the page body. This will show on every page within the app. You can add logic to hide on certain pages as needed.  |
-| `appFooter`           | Footer area of entire app                                                                                                            |
-| `sidebarLeftTop`      | Left navigation menu above menu items                                                                                                |
-| `sidebarLeftBottom`   | Left navigation menu below menu items                                                                                                |
-| `sidebarLeftFooter`   | Left navigation menu footer area, good for logos, You will need to add CSS to bottom align this \`div\`                              |
+Some slot templates can access runtime browser-side objects such as `window.formGen`, depending on where the slot is rendered and what page context is currently active.
 
-##
+Treat that as advanced behavior:
+
+- it is useful for custom dynamic templates
+- it should not be the main mental model for learning slots
+- if you rely on it heavily, document the expected page context clearly in your own implementation notes

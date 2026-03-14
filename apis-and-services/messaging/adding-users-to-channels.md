@@ -87,7 +87,7 @@ You can use this method to join users to one or more channels. This is an authen
 | Name               | Type   | Description                                           |
 | ------------------ | ------ | ----------------------------------------------------- |
 | apiKey             | string | BetterForms network API key                           |
-| users              | string | array of user IDs and channels to join those users to |
+| users              | array  | array of user/channel objects                         |
 | users\[0].id       | string | BF user id from helper file                           |
 | users\[0].channels | array  | an array of channel objects                           |
 
@@ -103,6 +103,44 @@ You can use this method to join users to one or more channels. This is an authen
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Example request body
+
+```json
+{
+  "apiKey": "BFAPI_GENERATED-API-KEY",
+  "users": [
+    {
+      "id": "USER_1_ID",
+      "channels": [
+        {
+          "name": "channel1",
+          "mode": "listen"
+        },
+        {
+          "name": "channel2",
+          "mode": "receive"
+        }
+      ]
+    },
+    {
+      "id": "USER_2_ID",
+      "channels": [
+        {
+          "name": "channel1",
+          "mode": "listen"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Notes
+
+- The REST endpoint expects `users` to be an **array of objects**.
+- Each object contains the user `id` plus the `channels` to add for that user.
+- This is different from the helper-file script shape described earlier on this page, which accepts top-level `users` and `channels` keys separately.
 
 ## Joining Anonymous Channels
 

@@ -159,7 +159,7 @@ Once you have all records saved locally, you should have a connection record for
 
 As shown in the image below, you should have a <mark style="color:red;">`vault`</mark> key with an empty object.
 
-![Untitled](<../.gitbook/assets/Untitled (1).png>)
+![Untitled](<../../.gitbook/assets/Untitled (1).png>)
 
 Add your credentials as an object as follows.
 

@@ -2,13 +2,13 @@
 
 The BetterForms framework allows you to dig deep into the low levels of HTML code and still keep the benefits of a framework and reactivity. Many components have html compatible keys or accept slots that allow HTML to be rendered. BetterForms uses [VueJS](https://vuejs.org) under the hood to keep all the elements working together.
 
-{% file src="../../.gitbook/assets/vue-essentials-cheat-sheet.pdf" %}
+{% file src="../.gitbook/assets/vue-essentials-cheat-sheet.pdf" %}
 
 ## Injecting VueJS syntax
 
 You can harness the full power of VueJS the html rendering engine inside of BetterForms but simply adding Vue html syntax into your `HTML` code. When you use Vue, it maintains a link to the data in your data model and wherever that data is referenced so changes made to the data model will reflect instantly on the page.
 
-![This combination of an input field and HTML is made possible with VueJS](../../.gitbook/assets/2019-07-15-15.47.39.gif)
+![This combination of an input field and HTML is made possible with VueJS](../.gitbook/assets/2019-07-15-15.47.39.gif)
 
 **Here's just a few things you can do with VueJS Syntax:**
 

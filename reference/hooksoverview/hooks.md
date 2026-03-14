@@ -6,6 +6,8 @@ description: >-
 
 # Scoped Hooks
 
+Scoped hooks are **server hooks** tied to a page or form workflow. They are different from client-side lifecycle hooks such as `onFormLoad`; if you need the browser-side equivalents, see [Lifecycle Hooks](./lifecycle-hooks.md).
+
 ### onUtility
 
 By far the most common type of scoped hook! This hook is called with the [**runUtilityHook** action](../actions-processor/actions_overview/runutilityhook.md) like so:
@@ -55,4 +57,10 @@ This is run when the user clicks the **Complete** button for a wizard form.
 ### Additional Submission options
 
 There are times you want to run actions prior to calling server side scripts. If an optional `wizardOnComplete_actions` key has bee set in the form \( misc tab\) then those actions will be run in place of the `onComplete` script hook. You will have to call a utility hook within your actions for server side logic.
+
+## Related Pages
+
+- [Script Hooks](./README.md)
+- [Common Hooks](./commonoverview.md)
+- [Lifecycle Hooks](./lifecycle-hooks.md)
 

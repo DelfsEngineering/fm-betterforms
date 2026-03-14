@@ -1,36 +1,37 @@
 # BF Streaming API (Chat)
 
 {% hint style="info" %}
-The BetterForms Streaming API allows real time streaming of responses from LLM services like OpenAI and Google Gemini to be initiated.
+The BetterForms chat streaming endpoint is a lightweight streaming API for simple OpenAI and Gemini text generation.
 {% endhint %}
 
-#### **Overview**
+## Overview
 
-Creating a call to this service will create a post to the LLM and stream results back to the appropriate channel. This service is in beta release as of the time of this document.
+This endpoint still exists in the current BetterForms server and is registered at:
 
-Avail in **bf-staging** only
+- `POST /stream/create`
 
-//create endpoint
-portal.myapp.com/**/stream/create**
+It is a simpler streaming endpoint than `/llm/query`:
 
-Method: `POST`
+- supports `openai` and `gemini`
+- streams basic `delta` and `end` events over BetterForms messaging
+- does not expose the richer tool orchestration and cancellation contract documented for `/llm/query`
 
-| Key                                                   | Type   | Description                                                                                                   |
-| ----------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
-| <mark style="color:red;">`apiKey`</mark>              | string | Unique API key for BF (find in app settings)                                                                  |
-| <mark style="color:red;">`channels`</mark>            | array  | Array of BF Messaging communication channels                                                                  |
-| <mark style="color:red;">`actionName`</mark>          | string | Name of the action to be performed                                                                            |
-| <mark style="color:red;">`payload`</mark>             | object | Object containing parameters for the action, this contains params that are passed on to the streaming service |
-| <mark style="color:red;">`payload.provider`</mark>    | string | Name of the AI provider to be used (e.g., "openai", "gemini"). Defaults to "openai" if not specified.      |
-| <mark style="color:red;">`payload.apiKey`</mark>      | string | Unique API key for the selected AI provider                                                                   |
-| <mark style="color:red;">`payload.stream`</mark>      | bool   | Indicator if streaming is enabled. If false, result is returned directly in the POST response.                |
-| <mark style="color:red;">`payload.messages`</mark>    | array  | Array of messages to be processed. Structure may vary slightly based on the provider.                       |
-| <mark style="color:red;">`payload.model`</mark>       | string | Model to be used for processing (e.g., "gpt-4-turbo-preview" for OpenAI, "gemini-pro" for Gemini)          |
-| <mark style="color:green;">`payload.generationConfig`</mark> | object | (Optional - Gemini specific) Object containing generation parameters for the Gemini provider.              |
+## Request Shape
 
-{% hint style="warning" %}
-**Note on OpenAI Parameters:** Parameters like `functions`, `max_tokens`, `seed`, and `temperature` previously documented for OpenAI are not explicitly passed to the OpenAI SDK in the current service implementation. They might be subject to the OpenAI SDK's default behaviors or could be added in future updates.
-{% endhint %}
+| Key | Type | Description |
+| --- | --- | --- |
+| `apiKey` | `string` | BetterForms API key |
+| `channels` | `array` | BetterForms messaging channels used for streamed events |
+| `actionName` | `string` | Named action that handles the streamed events |
+| `payload` | `object` | Provider request payload |
+| `payload.provider` | `string` | Provider name. Current implementation supports `openai` and `gemini`. Defaults to `openai` if omitted. |
+| `payload.apiKey` | `string` | API key for the selected provider |
+| `payload.stream` | `boolean` | If `true`, returns a streaming setup acknowledgment and emits events over messaging. If `false`, returns the result directly in the HTTP response. |
+| `payload.messages` | `array` | Conversation messages |
+| `payload.model` | `string` | Model name for the selected provider |
+| `payload.generationConfig` | `object` | Optional Gemini-specific generation settings |
+
+## Example
 
 ```json
 {
@@ -46,7 +47,7 @@ Method: `POST`
     "messages": [
       {
         "content": "You are a helpful assistant.",
-        "role": "system" // For Gemini, 'system' role might need to be adapted or handled as part of 'history'
+        "role": "system"
       },
       {
         "content": "Tell me a fun fact about space.",
@@ -61,3 +62,61 @@ Method: `POST`
   }
 }
 ```
+
+## Streaming Behavior
+
+When `payload.stream` is `true`, the endpoint returns a setup acknowledgment such as:
+
+```json
+{
+  "success": true,
+  "message": "Streaming setup complete"
+}
+```
+
+The generated content is then delivered over BetterForms messaging.
+
+Current event types for this endpoint are intentionally simple:
+
+- `delta`
+- `end`
+
+Example streamed event:
+
+```json
+{
+  "type": "delta",
+  "content": "A streamed chunk of text"
+}
+```
+
+```json
+{
+  "type": "end"
+}
+```
+
+## Non-Streaming Behavior
+
+When `payload.stream` is `false`, BetterForms returns the result directly in the HTTP response.
+
+- OpenAI returns the provider response object
+- Gemini returns a normalized response with `choices[0].message.content`
+
+## Provider Notes
+
+### OpenAI
+
+- Uses the older chat-completions streaming flow in the current implementation
+- Sends streamed text chunks as `delta` events
+
+### Gemini
+
+- Uses Gemini streaming directly
+- Expects the last message to be a `user` message
+- Supports `payload.generationConfig`
+
+## Related Pages
+
+- [BF Streaming API (LLM Query)](./bf-streaming-api-llm-query.md)
+- [BF Streaming API (Assistants)](./bf-streaming-assistants-api.md)

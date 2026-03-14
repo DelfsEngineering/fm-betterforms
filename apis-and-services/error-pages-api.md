@@ -1,7 +1,7 @@
 # BetterForms Error Pages API
 
 {% hint style="info" %}
-[Complete Error Code List](/broken/pages/94FDbUanQbIvwtysoRMS)
+[Complete Error Code List](../reference/bf-error-codes.md)
 {% endhint %}
 
 ## Introduction
@@ -68,7 +68,7 @@ The result from the example code above is the alert shown below.
 
 <figure><img src="../.gitbook/assets/Untitled 2.png" alt=""><figcaption></figcaption></figure>
 
-The error data can be found under <mark style="color:red;">`options`</mark> for each action of the array, for a given code. The error object has the same shape as previously presented [here](https://www.notion.so/BetterForms-Error-Pages-API-b5fe058f25ee4cb38758d7c089bea073?pvs=21) and can be accessed as follows:
+The error data can be found under <mark style="color:red;">`options`</mark> for each action of the array, for a given code. The error object has the same shape as shown earlier on this page and can be accessed as follows:
 
 | Key                                           | Path                              |
 | --------------------------------------------- | --------------------------------- |

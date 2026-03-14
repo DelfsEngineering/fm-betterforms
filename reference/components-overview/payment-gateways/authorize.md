@@ -14,14 +14,25 @@ When the rendered button is clicked, a modal window is opened that will contain 
 
 ## Credentials
 
-You will need to obtain server sets of credentials from the authorize.net dashboard. See screen below for where to obtain the public `apiLoginID` and `clientID` keys.
+You will need to obtain credentials from the Authorize.net dashboard. The BetterForms component uses the public `apiLoginID` and `clientKey` values.
 
-| Key           | Value(s)  | Type   | Description                                                                                       |
-| ------------- | --------- | ------ | ------------------------------------------------------------------------------------------------- |
-| `type`        | authorize | string |                                                                                                   |
-| `model`       |           | object | data model key name that will contain results of payment transactions returned from Authorize.net |
-| `credentials` | {}        | object | credential object,                                                                                |
-| `style`       | {}        | object | PayPal defined styling of the button                                                              |
+If you need to locate the public client key in Authorize.net, the dashboard screen looks like this:
+
+<figure><img src="../../../.gitbook/assets/public-client-key.png" alt="Authorize.net public client key screen"><figcaption></figcaption></figure>
+
+| Key | Value(s) | Type | Description |
+| --- | --- | --- | --- |
+| `type` | authorize | string | Identifies the Authorize.net element |
+| `model` |  | string | Data model key that will contain the response returned from Authorize.net |
+| `apiLoginID` |  | string | Public API Login ID from Authorize.net |
+| `clientKey` |  | string | Public client key used by AcceptUI |
+| `buttonText` |  | string | Text displayed on the rendered button |
+| `buttonClasses` |  | string | CSS classes applied to the button |
+| `acceptUIFormBtnTxt` |  | string | Text shown on the AcceptUI submit button |
+| `acceptUIFormHeaderTxt` |  | string | Header text shown in the AcceptUI dialog |
+| `billingAddressOptions` | `{}` | object | Billing-address settings passed to AcceptUI |
+| `sandBox` | `true` / `false` | boolean | If true, BetterForms loads the Authorize.net sandbox AcceptUI script |
+| `onResponse_actions` | `[]` | array | Actions to run after AcceptUI returns a response |
 
 ```javascript
 // Sample schema object
@@ -49,55 +60,37 @@ You will need to obtain server sets of credentials from the authorize.net dashbo
 
 ## Response Hook
 
-After the communication between the BetterForms browser app and Authorize.net api, a utility hook is automatically generated regardless if the card acquisition was successful. This is located in the hookPackage and also includes the elements schema.
+After AcceptUI returns a response, BetterForms stores that response in the configured `model` key and runs `onResponse_actions` if you configured them.
 
-```
-// Partial utility hook response 
-{ 
-... // rest of payload ...
-  "hookPackage": {
-    "response": {
-      "customerInformation": {
-        "firstName": "Adf",
-        "lastName": "Asdf"
-      },
-      "encryptedCardData": {
-        "bin": "424242",
-        "cardNumber": "XXXXXXXXXXXX4242",
-        "expDate": "02/21"
-      },
-      "messages": {
-        "message": [
-          {
-            "code": "I_WC_01",
-            "text": "Successful."
-          }
-        ],
-        "resultCode": "Ok"
-      },
-      "opaqueData": {
-        "dataDescriptor": "COMMON.ACCEPT.INAPP.PAYMENT",
-        "dataValue": "eyJjb2RlIjoiNTBfMl8wNjAwMDUzMEQ1OUEyRTREREEwODM3RTJGOURENDVEOTI5NjdGRjRENzQ4MUExQzRDQ0VFNTE3Q0U4MTRBQjRENUYyOEFGDFgwMjYyNTNBRERDNEYyM0QzQkY1MjJADSaSdfasDfsdfOiI5NTQ3NDcyNDEyNzQ2MjQ5MTAzNTAyIiwidiI6IjEuMSJ9"
-      }
-    },
-    "schema": {
-      "acceptUIFormBtnTxt": "Complete Payment",
-      "acceptUIFormHeaderTxt": "Card Payment Information",
-      "apiLoginID": "9vR4pUBE483",
-      "billingAddressOptions": {
-        "required": true,
-        "show": true
-      },
-      "buttonClasses": "btn btn-lg btn-primary",
-      "buttonText": "Pay Now",
-      "clientKey": "7amDN97QG6xkHGB4xdD2yd3BYvdZDfGHJjY55F77U282BYuwmb%Cvk4zE2R44b8",
-      "model": "authorize",
-      "sandBox": true,
-      "styleClasses": "col-lg-4 col-md-4 ",
+This is **not** an automatic utility-hook flow by itself. If you want to send the payment token or opaque data to FileMaker, add a `runUtilityHook` action inside `onResponse_actions`.
+
+For example:
+
+```json
+{
+  "onResponse_actions": [{
+    "action": "runUtilityHook",
+    "options": {
       "type": "authorize"
-    },
-    "type": "authorize"
+    }
+  }]
+}
+```
+
+In practice, the response object contains values such as:
+
+```json
+{
+  "messages": {
+    "resultCode": "Ok"
+  },
+  "opaqueData": {
+    "dataDescriptor": "COMMON.ACCEPT.INAPP.PAYMENT",
+    "dataValue": "..."
+  },
+  "encryptedCardData": {
+    "cardNumber": "XXXXXXXXXXXX4242",
+    "expDate": "02/21"
   }
 }
-... // rest of payload ...
 ```

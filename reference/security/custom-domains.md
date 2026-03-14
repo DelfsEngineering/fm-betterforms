@@ -14,6 +14,10 @@ If your account permits it, you can map fully customized domains to BetterForms 
 
 ![Example GoDaddy entry](../../.gitbook/assets/screen-shot-2020-06-19-at-6.28.57-pm.png)
 
+If your DNS provider shows both the alias and verification records together, it may look like this:
+
+![Example CNAME and TXT records](../../.gitbook/assets/screen-shot-2018-12-09-at-7.40.47-pm.png)
+
 ***
 
 ## How Custom Domain Provisioning Works

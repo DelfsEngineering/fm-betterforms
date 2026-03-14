@@ -4,21 +4,30 @@
 
 ## asJSON
 
-**TODO** information on how and why `asJSON` calcs are used
+`asJSON` is a common FileMaker-side pattern for exposing records to BetterForms as structured JSON.
+
+In practice, teams often add an `asJSON` calculation field to a table so a page hook can return a record, or a set of records, without manually building JSON in every script.
+
+Why this helps:
+
+- It keeps the shape of a record consistent across pages and hooks
+- It reduces repeated JSON-construction logic in FileMaker scripts
+- It works well with helper functions such as `getColumn` and `getColumnAsArray`
+- It can be paired with caching when building large JSON objects becomes expensive
 
 ## Fetching Data
 
-Gathering and compiling a JSON based data object from a found set of FM records can be challenging. as costly in compute cycles. We recommend using some of the provided custom functions that are installed when you integrate FM BetterForms into your app.
+Gathering and compiling a JSON-based data object from a found set of FileMaker records can become expensive. When possible, use the helper custom functions installed during BetterForms integration.
 
-`getColumn` Is a CF that wraps and execute SQL statement at its core. It returns a list of field results \(first arg\) when the 2nd arg is equal to the 3rd arg. This is great for returning a single record too and thats how it works best for BF.
+`getColumn` is a custom function that wraps an SQL query. It returns a list of field results when the second argument matches the third. It is often most useful when returning a single record or a small lookup value for BetterForms.
 
-`getColumnAsArray` is simular to `getColumn` but is design to return a JSON array of the found records. The returned object is an JSON Array and works perfectly for any BF element that renders repeating data \( Data tables, ListRow's etc.
+`getColumnAsArray` is similar to `getColumn`, but is designed to return a JSON array of found records. That makes it a strong fit for BetterForms elements that render repeating data, such as tables and list-style components.
 
 #### Complex Finds
 
-On some rare occasions you may need to perform more complex finds. In this case, FileMaker's find commands will serve you best. Add a `summaryAsJSON`  field to your table that is a _summary_ field type with the option `List of` pointing to the `asJSON` calculation. 
+On some occasions you may need a more complex found set than `getColumnAsArray` can easily provide. In those cases, use normal FileMaker finds and add a `summaryAsJSON` field that is a _summary_ field with `List of` pointing to your `asJSON` calculation.
 
-This will return a found set _list_ of the \`asJSON\` results. This field is not true JSON and you will need to convert the line returns to commas and make it an array with square braces to form a proper JSON array.
+This returns a found-set list of `asJSON` results. That field is not true JSON by itself, so you must convert line returns to commas and wrap the result in square brackets to form a proper JSON array.
 
 ```text
 // Example to convert a list of asJSON to true JSON
@@ -29,17 +38,25 @@ JSONFormatElements (
 
 ### Writing Data
 
-There are two approaches to writing returned data from BF. Single records and Arrays.
+There are two common approaches to writing data back from BetterForms: single-record writes and multi-record writes.
 
 ### Single Record Writes
 
-When possible it is much easier and more readable to create code that writes single records at a time. This requires you UI to also account for this. Basically, from an array of records you select a single record and display that. The user edits the data and triggers a save action. This hook will have the UID for the record and you can simply find the record and make the changes and commit it. The finding of the record can also be handled with a Select-Connector style design pattern. \(Just the selector is needed\).
+When possible, it is simpler and easier to maintain code that writes one record at a time. A common pattern is:
+
+- let the user choose a single record from a list
+- load that record into the page model
+- let the user edit it
+- save it by finding that one record and committing the changes
 
 ### Multiple Record Writes
 
-If your UI gives the user the ability to made data changes to multiple records at a time \( eg: a list with a checkboxes and the use picks several records to check\) then you will need to loop over the returned array of data and find and mutate each record. For these scenarios, the Select design approach is the easiest. This also has the benefit making the write a single transaction.
+If your UI allows edits to multiple records at once, you will usually need to loop over the returned array, find each record, and apply the changes. In these scenarios, a selection-based design can still help keep the workflow predictable.
 
 ### New Record vs Edit Record
 
-Many interfaces have the ability to create a new record as well as edit an existing record. A simple design approach that works nicely with BF is to use the same code and layout \(form\) that saves an existing record to create the new record. If you are editing an existing record then there will already be a UID in the data model for the record. The presence of this can be used to tell your script whether to create aa new record or edit an existing one. Again, the selector design pattern can handle this automatically.
+Many interfaces need to create new records as well as edit existing ones. A simple pattern is to use the same page and save logic for both:
+
+- if the model already has the record UID, update the existing record
+- if the UID is missing, create a new record instead
 

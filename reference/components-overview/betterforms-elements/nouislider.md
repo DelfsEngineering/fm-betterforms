@@ -15,9 +15,9 @@ In BetterForms, this element leverages the `noUiSlider` library to provide a tou
 | `readonly`        | `Boolean`| If `true`, the slider value cannot be changed. Similar to `disabled`. Defaults to `false`.                  |
 | `hint`            | `String`| Additional helper text displayed below the slider.                                                              |
 | `styleClasses`    | `String` / `Array` | CSS classes for styling the wrapper.                                                                          |
-| `noUiSliderOptions`| `Object`| **Crucial property.** An object containing options for the underlying `noUiSlider` component. See examples.     |
+| `fieldOptions` | `Object` | **Crucial property.** Options passed directly into `window.noUiSlider.create(...)`. |
 
-### `noUiSliderOptions` common settings:
+### `fieldOptions` common settings:
 
 | Option        | Type    | Description                                                                                                  |
 | :------------ | :------ | :----------------------------------------------------------------------------------------------------------- |
@@ -38,15 +38,12 @@ In BetterForms, this element leverages the `noUiSlider` library to provide a tou
   "type": "noUiSlider",
   "label": "Set Volume",
   "model": "volumeLevel",
-  "noUiSliderOptions": {
-    "start": 50,
-    "range": {
-      "min": 0,
-      "max": 100
-    },
+  "fieldOptions": {
+    "min": 0,
+    "max": 100,
     "step": 1,
     "tooltips": true,
-    "connect": [true, false] // Connects the lower part to the handle
+    "connect": [true, false]
   }
 }
 ```
@@ -57,17 +54,15 @@ In BetterForms, this element leverages the `noUiSlider` library to provide a tou
 {
   "type": "noUiSlider",
   "label": "Price Range",
-  "model": "priceRangeArray", // Stores an array like [minPrice, maxPrice]
-  "noUiSliderOptions": {
-    "start": [200, 800],
-    "range": {
-      "min": 0,
-      "max": 1000
-    },
+  "model": "priceRangeArray",
+  "fieldOptions": {
+    "min": 0,
+    "max": 1000,
+    "double": true,
     "step": 10,
-    "connect": true, // Connects the area between the two handles
-    "tooltips": true, // Can also be an array: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })]
-    "format": { // Example using wNumb for formatting (requires wNumb.js)
+    "connect": true,
+    "tooltips": true,
+    "format": {
       "to": function (value) { return '$' + parseInt(value); },
       "from": function (value) { return Number(value.replace('$', '')); }
     }
@@ -77,12 +72,14 @@ In BetterForms, this element leverages the `noUiSlider` library to provide a tou
 
 ## BetterForms Specific Notes
 
-*   The `model` will store a single number if one handle is used, or an array of two numbers if two handles (a range) are used.
-*   For advanced tooltip formatting or value formatting (like adding currency symbols or units), you'll typically use the `tooltips` (with formatters) or `format` options within `noUiSliderOptions`. The `wNumb` library is commonly used with `noUiSlider` for number formatting, but it needs to be available in your project.
-*   Check the `noUiSlider` documentation for the full extent of customization available through `noUiSliderOptions`.
+*   The component requires the `noUiSlider` library to be loaded globally.
+*   The model stores a single number for one handle, or a two-item number array for a range.
+*   If the model already has a value, that value is used as the slider `start`.
+*   If there is no current model value, the component builds `start` from `fieldOptions.min`, and uses `[min, min]` when `fieldOptions.double` is present.
+*   `fieldOptions.pips` and `fieldOptions.tooltips` also affect wrapper classes used for spacing.
 
 ## Full Property Reference
 
-This element wraps the `noUiSlider` library. For a comprehensive list of all `noUiSliderOptions` and detailed technical specifications, please refer to:
+This element wraps the `noUiSlider` library. For the available `fieldOptions`, refer to:
 *   [VFG noUiSlider Field Documentation](https://vue-generators.gitbook.io/vue-generators/fields/optional-fields/nouislider)
 *   [noUiSlider Official Documentation](https://refreshless.com/nouislider/) 

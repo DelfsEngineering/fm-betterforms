@@ -26,6 +26,7 @@ This workflow covers creating a user account with email/password and verifying t
 
 - Registration page: `authRegister`
 - Verification page: `authVerify` (recommended to run in an onFormLoad named action)
+- Optional resend-verification UI: `authResend` (requires `email`)
 
 ## Hooks (FileMaker)
 
@@ -35,69 +36,21 @@ This workflow covers creating a user account with email/password and verifying t
 ## Data Considerations
 
 - Verification tokens should be treated as secrets; avoid logging or storing them in cleartext
-- Developer‑generated tokens are recommended to be time‑bound and single‑use (delete after use)
+- Verification tokens should be time-bound and single-use
 
-## Notes
+## Practical Notes
 
-- FileMaker script references and examples will be linked where relevant in this and related pages.
+- Registration pages must provide `email` and `password` in the page model before running `authRegister`
+- If you want a second "confirm password" field, use a custom validator to compare `password` and `password2`
+- Authentication feedback can be shown with `model.authMessage`, or more robustly with `model.authMessageCode` and `model.authMessageType`
+- Verification pages usually run `authVerify` automatically in `onFormLoad`
+- The verification action reads the token from the URL; you generally do not need to parse it manually
+- Users must still be enabled (`isEnabled = true`) to sign in after verification
 
----
+## Related Pages
 
-## Detailed Steps (from existing docs)
-
-### 1) Registration Page
-
-- Required action: `authRegister`
-- Data model: must include `email` and `password` keys for the action to succeed
-- Validation: add client-side validation before running the action
-  - If you want a second "confirm password" field, use a custom validator to compare `password` and `password2` (the action itself does not require two fields)
-- Error display: authentication errors are available at `model.authMessage`
-
-References:
-- See `reference/actions-processor/authentication-actions.md` for required keys and actions behavior
-
-### 2) Server-side Processing
-
-- On registration, the helper file creates a new user record in the Users table
-- Password is stored as a one-way hash
-- An onRegistration Hook is run and passed email and id in the `$$BF_User` object
-- A verification email is sent from your FileMaker server
-  - Ensure SMTP is configured in `onAuthNotifier` during setup
-
-References:
-- See [Authentication](./README.md) for Users table, password hashing, and verification email
-
-### 3) Verification Link and Page
-
-- The verification email contains a link with a token in the URL
-- Recommended: run `authVerify` automatically on the verification page load (onFormLoad named action)
-- The action reads the token from the URL; you generally do not need to parse it manually on the page
-- On success, the user’s `isVerified` is set to `True`
-
-References:
-- See [Authentication Actions](../actions-processor/authentication-actions.md) for `authVerify` token handling guidance
-- See [Authentication](./README.md) for `isVerified`
-
-### 4) Login Eligibility
-
-- Users must have `isEnabled = True` in the user table to be able to log in
-- This can be configured automatically or per your business logic
-
-References:
-- See [Authentication](./README.md)
-
-### 5) Optional: Resend Verification
-
-- Provide a page or UI to run `authResend` (requires `email`) to re-send the verification link
-
-References:
-- See `reference/actions-processor/authentication-actions.md`
-
----
-
-## Open Questions (not explicitly defined in current docs)
-
-- After successful verification, should the user be auto-logged in or redirected to the login page? The docs do not specify auto-login behavior.
-- Preferred post-verification destination (e.g., dashboard vs. login page). If custom, we can document using a `path` action.
+- [Authentication](./README.md)
+- [Authentication Actions](../actions-processor/authentication-actions.md)
+- [Custom Login Pages](./custom-login-pages.md)
 
 

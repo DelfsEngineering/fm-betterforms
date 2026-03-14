@@ -15,6 +15,7 @@ description: >-
 | `BF.errorClearAll()` | Clears the error cache |
 | `BF.errorGetAll()` | Returns all current errors |
 | `BF.errorThrow(errorCode, errorDescription, info)` | Creates an error |
+| `BF.authGetLastFeedback()` | Returns the latest authentication feedback object from `store.state.auth.lastFeedback`. Useful for reading the latest auth `code`, `message`, `type`, and `numericCode` (for error flows). |
 | | |
 | **Actions** | |
 | `BF.namedAction(name, options)` | Runs a named action, options are propagated to all actions within the named action. |
@@ -42,3 +43,44 @@ For detailed documentation on the dynamic library loading functions (`BF.library
 {% content-ref url="bf-dynamic-library-loading.md" %}
 [Dynamic Library Loading](bf-dynamic-library-loading.md)
 {% endcontent-ref %}
+
+## Auth Feedback Helper
+
+### `BF.authGetLastFeedback()`
+
+Returns the latest auth feedback object written by BetterForms authentication flows.
+
+Example return values:
+
+```javascript
+{
+  code: "auth.magic_link_sent",
+  message: "If that email can be used to sign in, a magic link has been sent.",
+  type: "info"
+}
+```
+
+```javascript
+{
+  code: "auth.invalid_login",
+  message: "We couldn't sign you in. Check your details and try again.",
+  type: "error",
+  numericCode: 10150
+}
+```
+
+Typical usage:
+
+```javascript
+const feedback = BF.authGetLastFeedback();
+
+if (feedback && feedback.code === "auth.invalid_login") {
+  console.log(feedback.message);
+}
+```
+
+Notes:
+
+- This is a read helper only.
+- The value mirrors `store.state.auth.lastFeedback`.
+- For page UI, you can also read `model.authMessage`, `model.authMessageCode`, and `model.authMessageType`.

@@ -13,13 +13,13 @@ Below are some of the most common properties used when configuring a Select elem
 | `type`         | `String`| Must be set to `"select"`.                                                                               |
 | `label`        | `String`| A label for the dropdown list.                                                                             |
 | `model`        | `String`| The key in your BetterForms data model where the value of the selected option will be stored.                |
-| `values`       | `Array` | An array of strings or objects defining the options in the dropdown. If objects, they usually have `name` (display text) and `id` or `value` (stored value) properties. Can also be grouped if `selectOptions` with `groups` is used. |
+| `values`       | `Array` | An array of strings or objects defining the options in the dropdown. If objects, they usually have `name` (display text) and `id` or `value` (stored value) properties. Grouped items can also be provided. |
 | `disabled`     | `Boolean`| If `true`, the select element will be visible but not interactive. Defaults to `false`.                    |
 | `hint`         | `String`| Additional helper text displayed with the select element.                                                    |
 | `required`     | `Boolean`| If `true`, the form will require an option to be selected. Defaults to `false`.                            |
 | `featured`     | `Boolean`| Can be used by themes to apply special styling.                                                            |
 | `styleClasses` | `String` / `Array` | CSS class(es) to apply to the select element wrapper for custom styling.                                   |
-| `selectOptions`| `Object`| Advanced options for the select field, such as `multiple` (for multi-select, though less common with basic `select`), `noneSelectedText`, or defining `groups` for optgroups within the dropdown. |
+| `fieldOptions` | `Object` | Advanced options for the V3+ field shape, including `noneSelectedText`, `hideNoneSelectedText`, and custom object key mapping with `value` / `name`. |
 
 ### Example Schema Snippet
 
@@ -34,7 +34,7 @@ Below are some of the most common properties used when configuring a Select elem
     { "id": "GB", "name": "United Kingdom" },
     { "id": "AU", "name": "Australia" }
   ],
-  "selectOptions": {
+  "fieldOptions": {
     "noneSelectedText": "-- Please select a country --"
   },
   "hint": "Choose your country of residence."
@@ -43,8 +43,9 @@ Below are some of the most common properties used when configuring a Select elem
 
 ## BetterForms Specific Notes
 
-*   The `model` will store the `id` (or `value`) of the chosen option from the `values` array.
-*   The `values` array is key. For simple lists, an array of strings can suffice. For more control over display text vs. stored value, use an array of objects (commonly with `id`/`value` and `name` keys).
+*   The `model` stores the chosen option value.
+*   For object items, the V3+ field uses `fieldOptions.value` and `fieldOptions.name` when you want keys other than the default `id` and `name`.
+*   The `values` array can also include `group` on object items, which the runtime renders as `<optgroup>` sections.
 *   For very long lists of options that might benefit from searching or type-ahead functionality, consider more advanced select components like `vueMultiSelect` (an optional VFG field) or custom solutions if available in BetterForms.
 
 ## Full Property Reference

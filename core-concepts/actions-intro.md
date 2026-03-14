@@ -11,7 +11,7 @@ You can think of an action as similar to a single Script Step in FileMaker. When
 The most common actions are:
 
 * **path** - change the URL of the browser to take them to another page
-* **runUtilityHook** - run a hook script on your FileMaker server
+* **runUtilityHook** - call the scoped FileMaker `onUtility` server hook
 * **showAlert** - display a non-intrusive message to the user
 
 ### What does an action look like?
@@ -43,7 +43,7 @@ and here is the `showAlert` action:
 ```
 
 {% hint style="info" %}
-Be sure to check out the [**Actions Reference**](../../reference/actions-processor/actions_overview/) for more details about how each action works.
+Be sure to check out the [**Actions Reference**](../reference/actions-processor/actions_overview/) for more details about how each action works.
 {% endhint %}
 
 ## Where are actions triggered?
@@ -53,9 +53,11 @@ When actions are executed, they are always added to the end of the **actions que
 Various elements throughout a BetterForms page can add actions to the queue, here are just a few examples:
 
 * **buttons** - triggered when a button is clicked
-* **onFormLoad** - triggered when a page is first loaded
-* **onRowClicked** - specifically for the [table element](../../reference/components-overview/common/tables2.md); triggered when a row in the table is clicked
+* **onFormLoad** - a client-side named action that runs when a page is first loaded
+* **onRowClicked** - specifically for the [table element](../reference/components-overview/common/tables2.md); triggered when a row in the table is clicked
 * **onFieldChanged** - triggered when a field is changed
+
+Client-side named actions such as `onFormLoad` are different from FileMaker server hooks. They can run browser workflows directly and may include actions like `runUtilityHook` when server-side logic is needed.
 
 Throughout the docs, anywhere you see a reference to an "**actions key"** or **"actions array"**, this is where you can place actions.
 

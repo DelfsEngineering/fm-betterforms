@@ -155,14 +155,36 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 | --------------- | ------ | ---------------------------------------------------- |
 | apiKey          | string | the API key for the corresponding app                |
 | channels        | array  | array of channel names                               |
-| message         | string | JSON object to be sent                               |
+| message         | object | JSON object to be sent                               |
 | message.actions | array  | JSON for an array of BF action objects               |
 | message.model   | object | JSON object with data to be merged to model data     |
-| message.app     | array  | JSON object with data to be merged to app model data |
+| message.app     | object | JSON object with data to be merged to app model data |
 
 {% tabs %}
 {% tab title="201 This request will return the data that was sent as body of the request." %}
 ```
+{
+  "message": {
+    "actions": [
+      {
+        "action": "showAlert",
+        "options": {
+          "text": "Alert from Jhon",
+          "title": "Hello World",
+          "type": "information"
+        }
+      }
+    ],
+    "model": {
+      "myModelData": "modelData"
+    },
+    "app": {
+      "myAppData": "appModelData"
+    }
+  },
+  "channels": ["channel1", "channel2"],
+  "apiKey": "BFAPI_GENERATED-API-KEY"
+}
 ```
 {% endtab %}
 {% endtabs %}

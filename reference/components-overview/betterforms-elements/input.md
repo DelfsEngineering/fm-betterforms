@@ -1,64 +1,81 @@
 # Input Element
 
-The Input element is a versatile field used for capturing various types of user input, such as text, numbers, email addresses, passwords, and more. Its specific behavior and appearance are determined by its `inputType` property.
-
-In BetterForms, this is one of the most frequently used elements for gathering textual and numerical data from users.
+The live `input` field is the standard single-line field for text, numbers, dates, email, passwords, and similar browser input types.
 
 ## Common Configuration Properties
 
-Below are some of the most common properties used when configuring an Input element in BetterForms:
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| `type` | `String` | Must be `"input"` |
+| `label` | `String` | Field label |
+| `model` | `String` | Model key that stores the value |
+| `placeholder` | `String` | Placeholder text |
+| `disabled` | `Boolean` | Disables the field |
+| `readonly` | `Boolean` | Makes the field read-only |
+| `required` | `Boolean` | Marks the field as required |
+| `styleClasses` | `String` / `Array` | CSS classes for the field wrapper |
+| `fieldOptions` | `Object` | V3+ input configuration, including `inputType` and standard input attributes |
 
-| Property       | Type    | Description                                                                                                |
-| :------------- | :------ | :--------------------------------------------------------------------------------------------------------- |
-| `type`         | `String`| Must be set to `"input"`.                                                                                 |
-| `inputType`    | `String`| Defines the type of input. Common values include `"text"`, `"password"`, `"email"`, `"number"`, `"url"`, `"tel"`, `"date"`. Defaults to `"text"`. |
-| `label`        | `String`| The text displayed above or next to the input field to describe its purpose.                               |
-| `model`        | `String`| The key in your BetterForms data model where the input value will be stored.                                 |
-| `placeholder`  | `String`| Placeholder text displayed within the input field when it is empty.                                          |
-| `disabled`     | `Boolean`| If `true`, the input field will be visible but not interactive. Defaults to `false`.                         |
-| `readonly`     | `Boolean`| If `true`, the input field will not be editable, though its content can be selected/copied. Defaults to `false`. |
-| `hint`         | `String`| Additional helper text displayed with the input field.                                                     |
-| `required`     | `Boolean`| If `true`, the form will require this field to have a value for submission. Defaults to `false`.             |
-| `featured`     | `Boolean`| Can be used by themes to apply special styling.                                                            |
-| `styleClasses` | `String` / `Array` | CSS class(es) to apply to the input field wrapper for custom styling.                                      |
-| `maxlength`    | `Number`| For text-based input types, the maximum number of characters allowed.                                      |
-| `min`, `max`, `step` | `Number` | For `inputType: "number"`, these define the minimum, maximum, and step increment values.                   |
+## `fieldOptions`
 
-### Example Schema Snippet (Text Input)
+The live V3+ field reads its HTML input configuration from `fieldOptions`.
+
+Common keys include:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `inputType` | `String` | Browser input type such as `text`, `password`, `email`, `number`, `url`, `tel`, `date`, `datetime-local`, `color`, or `range` |
+| `autocomplete` | `String` | Browser autocomplete mode |
+| `min` | `Number` / `String` | Minimum value for numeric/date-like inputs |
+| `max` | `Number` / `String` | Maximum value for numeric/date-like inputs |
+| `step` | `Number` / `String` | Step increment for numeric/range inputs |
+| `maxlength` | `Number` | Maximum length for text-like inputs |
+| `minlength` | `Number` | Minimum length for text-like inputs |
+| `pattern` | `String` | HTML input pattern |
+| `accept` | `String` | Accepted file types when using file-style inputs |
+
+## Example Schema Snippet
 
 ```json
 {
   "type": "input",
-  "inputType": "text",
   "label": "Full Name",
   "model": "fullName",
   "placeholder": "Enter your full name",
   "required": true,
-  "hint": "Please provide your first and last name."
+  "hint": "Please provide your first and last name.",
+  "fieldOptions": {
+    "inputType": "text",
+    "maxlength": 100
+  }
 }
 ```
 
-### Example Schema Snippet (Number Input)
+## Number Input Example
 
 ```json
 {
   "type": "input",
-  "inputType": "number",
   "label": "Quantity",
   "model": "itemQuantity",
   "default": 1,
-  "min": 1,
-  "max": 100,
-  "step": 1,
-  "hint": "Enter a number between 1 and 100."
+  "hint": "Enter a number between 1 and 100.",
+  "fieldOptions": {
+    "inputType": "number",
+    "min": 1,
+    "max": 100,
+    "step": 1
+  }
 }
 ```
 
-## BetterForms Specific Notes
+## Runtime Notes
 
-*   The `inputType` property is critical for defining the behavior and validation of the input field.
-*   Always ensure the `model` property correctly maps to an appropriate field in your BetterForms data model.
+- `fieldOptions.inputType` is the canonical V3+ shape. BetterForms can migrate legacy top-level `inputType`, but docs should prefer `fieldOptions`.
+- For `number` and `range`, the field parses user input into numeric values.
+- For `date`, `datetime`, and `datetime-local`, the field applies date parsing and formatting logic before writing back to the model.
+- If `schema.format` is supplied for date-like input types, it is used when formatting the stored value.
 
 ## Full Property Reference
 
-This element is based on a standard form generation library. For a comprehensive list of all available properties (including other `inputType` options like `color`, `search`, `month`, etc.), advanced configuration, and the full technical specification, please refer to the [Input Field Documentation](https://vue-generators.gitbook.io/vue-generators/fields/core-fields/input). 
+This element is implemented in the sibling `vue-form-generator` source as `fieldInput.vue`.

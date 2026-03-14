@@ -24,31 +24,39 @@ The following example illustrates a `listrows` component where users can enter m
                     "schema": {
                         "fields": [
                             {
-                                "inputType": "text",
                                 "label": "First Name",
                                 "model": "nameFirst",
                                 "styleClasses": "col-md-3",
+                                "fieldOptions": {
+                                    "inputType": "text"
+                                },
                                 "type": "input"
                             },
                             {
-                                "inputType": "text",
                                 "label": "Last Name",
                                 "model": "nameLast",
                                 "styleClasses": "col-md-3",
+                                "fieldOptions": {
+                                    "inputType": "text"
+                                },
                                 "type": "input"
                             },
                             {
-                                "inputType": "text",
                                 "label": "Street 1",
                                 "model": "street1",
                                 "styleClasses": "col-md-3",
+                                "fieldOptions": {
+                                    "inputType": "text"
+                                },
                                 "type": "input"
                             },
                             {
-                                "inputType": "text",
                                 "label": "Street 2",
                                 "model": "street2",
                                 "styleClasses": "col-md-3",
+                                "fieldOptions": {
+                                    "inputType": "text"
+                                },
                                 "type": "input"
                             }
                         ]

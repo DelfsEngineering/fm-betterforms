@@ -121,7 +121,7 @@ The Print button action executes JavaScript functions:
 
 #### runUtilityHook
 
-This action allows you to run the <mark style="color:red;">`onUtilityHook`</mark> workflow when clicked. You can pass additional parameters in the <mark style="color:red;">`options`</mark> object:
+This action allows a button click to call the scoped FileMaker <mark style="color:red;">`onUtility`</mark> server hook. You can pass additional parameters in the <mark style="color:red;">`options`</mark> object:
 
 ```json
 {
@@ -217,10 +217,12 @@ This button uses the <mark style="color:red;">`onclick_actions`</mark> array to 
             "options": {}
         }]
     }],
-    "inputType": "text",
     "label": "My Input",
     "model": "field1",
     "styleClasses": "col-md-3",
+    "fieldOptions": {
+        "inputType": "text"
+    },
     "type": "input"
 }
 ```

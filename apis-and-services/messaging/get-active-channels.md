@@ -25,13 +25,10 @@ the API key for your BF app
 ```
 {
     "authenticated": [
-        "authenticated",
-        "USER_ID_PRIVATE_CHANNEL",
         "channelOne",
         "channelTwo"
     ],
     "anonymous": [
-        "anonymous",
         "testRoom1",
         "testRoom2"
     ]
@@ -39,3 +36,8 @@ the API key for your BF app
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Notes
+
+- Results are scoped to the current domain host.
+- The response groups active channel names under `authenticated` and `anonymous`.

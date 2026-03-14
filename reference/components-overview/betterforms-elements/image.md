@@ -1,8 +1,8 @@
 # Image Display Element
 
-The Image element is used to display an image on your form or page. The image source can be a URL or a Base64 encoded string.
+The live `image` field supports both displaying an image and selecting a local file that is then stored into the model as a data URL.
 
-In BetterForms, this element is primarily for displaying static or dynamic images. For image uploading, BetterForms typically uses dedicated uploader components like Dropzone or Uppy, which may have their own preview capabilities.
+In BetterForms, this field is useful for lightweight image preview and simple inline image capture. For larger upload workflows, use the dedicated uploader components.
 
 ## Common Configuration Properties
 
@@ -11,10 +11,19 @@ In BetterForms, this element is primarily for displaying static or dynamic image
 | `type`         | `String`| Must be set to `"image"`.                                                                              |
 | `label`        | `String`| An optional label for the image, which might be displayed as a caption or title.                        |
 | `model`        | `String`| The key in your BetterForms data model that holds the image URL or Base64 data string.                    |
-| `alt`          | `String`| Alternative text for the image, important for accessibility. Defaults to "Image".                       |
-| `width`        | `String` / `Number` | Sets the display width of the image (e.g., "100px", "50%", or `100`).                                   |
-| `height`       | `String` / `Number` | Sets the display height of the image (e.g., "100px", `100`). Can also be `"auto"`.                      |
 | `styleClasses` | `String` / `Array` | CSS class(es) to apply to the image wrapper or the image itself for custom styling.                 |
+| `fieldOptions` | `Object` | V3+ image field configuration such as `preview`, `hideInput`, `browse`, and `autocomplete`. |
+
+## `fieldOptions`
+
+Common keys include:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `preview` | `Boolean` | When not `false`, shows the preview area below the field |
+| `hideInput` | `Boolean` | When `true`, hides the URL/text input |
+| `browse` | `Boolean` | When `false`, hides the file picker input |
+| `autocomplete` | `String` | Browser autocomplete mode for the text input |
 
 ### Example Schema Snippet (Image from URL)
 
@@ -22,9 +31,10 @@ In BetterForms, this element is primarily for displaying static or dynamic image
 {
   "type": "image",
   "label": "Company Logo",
-  "model": "companyLogoUrl", // This model field would contain 'https://example.com/logo.png'
-  "alt": "Our Company Logo",
-  "width": "150px"
+  "model": "companyLogoUrl",
+  "fieldOptions": {
+    "preview": true
+  }
 }
 ```
 
@@ -33,20 +43,22 @@ In BetterForms, this element is primarily for displaying static or dynamic image
 ```json
 {
   "type": "image",
-  "model": "userAvatarBase64", // Model field contains 'data:image/jpeg;base64,...'
-  "alt": "User Avatar",
-  "width": 100,
-  "height": 100,
-  "styleClasses": "img-circle"
+  "model": "userAvatarBase64",
+  "styleClasses": "img-circle",
+  "fieldOptions": {
+    "preview": true,
+    "hideInput": true
+  }
 }
 ```
 
 ## BetterForms Specific Notes
 
-*   This element is for displaying images. For image *upload* functionality, refer to BetterForms' uploader components (e.g., Dropzone, Uppy) which are documented separately under "Uploading Files".
-*   The `model` property should provide a valid image source (URL or Base64 data URI).
-*   Dynamic image display can be achieved by updating the `model` field through actions or hook scripts.
+*   If the text input is used, only values starting with `http` are written back to the model.
+*   If the file input is used, the selected file is read with `FileReader.readAsDataURL()` and stored as a base64 data URL in the model.
+*   The preview area also includes a remove control that clears the model value.
+*   For heavier upload pipelines, use the dedicated upload components documented under "Uploading Files".
 
 ## Full Property Reference
 
-This element is based on a standard form generation library. For a comprehensive list of all available properties and the full technical specification, please refer to the [Image Field Documentation](https://vue-generators.gitbook.io/vue-generators/fields/optional-fields/image). 
+This element is implemented in the sibling `vue-form-generator` source as `fieldImage.vue`.

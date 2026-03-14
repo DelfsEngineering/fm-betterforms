@@ -1,6 +1,6 @@
 # runUtilityHook
 
-Allows the `onUtilityHook` hook to execute. You have the ability to pass any additional parameters.
+Calls the scoped `onUtility` server hook. You can pass additional parameters in `options`, and BetterForms includes them in the hook payload sent to FileMaker.
 
 <table>
   <thead>
@@ -19,7 +19,7 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
     <tr>
       <td style="text-align:left">options</td>
       <td style="text-align:left">object</td>
-      <td style="text-align:left">containing options that are also passed into the FMS hook script</td>
+      <td style="text-align:left">Containing values that are also passed into the FileMaker hook payload</td>
     </tr>
     <tr>
       <td style="text-align:left">options.hookSetName</td>
@@ -28,11 +28,7 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
         <p>(optional)</p>
       </td>
       <td style="text-align:left">
-        <p>If passed, will override the default hookSetName (scoped by the page the
-          hook was called from. This key is handy when you want to have a hook run
-          from Page 1 but run a script in the Page 2 handlers. This is also needed
-          if you have global namedActions that calla onUtilityHook, as they are not
-          associated with a specific form.</p>
+        <p>If passed, this overrides the page's default scoped hook set name. This is useful when you want to trigger the `onUtility` server hook from one page but route it through another scoped hook set. It is also useful for global named actions, because they are not associated with a specific form.</p>
         <p>Helper File &gt;Ver 0.1.2</p>
       </td>
     </tr>
@@ -40,7 +36,7 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
 </table>
 
 ```yaml
-// action  object for 'cllipboard'
+// action object for 'runUtilityHook'
 [
  {
   "action": "runUtilityHook",
@@ -52,6 +48,14 @@ Allows the `onUtilityHook` hook to execute. You have the ability to pass any add
 ]
 ```
 
-In the above example `type` is an arbitrary key used to parse multiple hook methods from the same page.
+In the above example, `type` is an arbitrary key you can inspect in FileMaker to branch between different `onUtility` behaviors for the same page or hook set.
 
 You can access the entire action object under the `hookPackage` key.
+
+`runUtilityHook` is an **action**, not a hook by itself:
+
+- the action runs in the browser
+- BetterForms packages the payload
+- the server-side `onUtility` hook runs in FileMaker
+
+If you want browser-side workflows such as `onFormLoad` or `onAppLoad`, see [Lifecycle Hooks](../../hooksoverview/lifecycle-hooks.md).

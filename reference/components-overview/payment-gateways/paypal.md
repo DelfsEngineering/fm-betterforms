@@ -13,12 +13,12 @@ When clicked, the payment workflow is initiated.
 | Key              | Value(s)  | Type    | Description                                                                                                       |
 | ---------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
 | type             | paypal    | string  |                                                                                                                   |
-| model            |           | object  | data model key name that will contain results of payment transactions                                             |
+| model            |           | string  | Data model key that will contain the PayPal response                                                              |
 | amountKey        |           | string  | model key that holds the amount.                                                                                  |
-| onEvent\_actions | \[]       | array   | If supplied, these actions will run when there is a paypal event. The default onUtilityHook will **not** execute. |
-| currency         |           | string  | model key that holds the amount                                                                                   |
-| invoiceNumber    | 'USD'     | string  | currency for the payment                                                                                          |
-| dev              | false     | boolean | if true, use sandbox credentials                                                                                  |
+| onPaypalEvent\_actions | \[] | array   | If supplied, these actions run for PayPal events. If not supplied, the component falls back to the default `runUtilityHook` / `onUtility` server-hook flow. |
+| currency         |           | string  | Currency for the payment, for example `USD` or `CAD`                                                              |
+| invoiceNumber    |           | string  | Optional invoice number passed to PayPal                                                                          |
+| env              | `sandbox` or `production` | string | PayPal environment to use                                                                                         |
 | itemsKey         | 'myItems' | array   | optional - model key that holds an array of items                                                                 |
 | credentials      | {}        | object  | credential object,                                                                                                |
 | style            | {}        | object  | PayPal defined styling of the button                                                                              |
@@ -82,8 +82,14 @@ You can change the style of the button via a style object like so:
   "type": "paypal",
   "currency": "CAD",
   "locale": "ca",
-  "dev": true,
-  "amount": "1.00",
+  "env": "sandbox",
+  "amountKey": "paymentAmount",
+  "onPaypalEvent_actions": [{
+    "action": "runUtilityHook",
+    "options": {
+      "type": "paypal"
+    }
+  }],
   "credentials": {
     "sandbox": "AfGtki3XCbYBRxGWWY6YQlqRio82v5Jp6oPC7FJ9_0BLOlT3Z5KXLgPVmVGoCtZQTDuaYhrCM7ez3P9g",
     "production": "AcWg3pjwEtxVCX_UNrmb8GDvh3ntnP7zeDbIfVKRvDVWHr2UkkYUM9ze0r4-H4HkhzGtBEXE21iFsmg2"
@@ -96,3 +102,8 @@ You can change the style of the button via a style object like so:
   }
 }
 ```
+
+## Notes
+
+- The runtime reads the amount from `model[amountKey]`, so use `amountKey` rather than a literal `amount` property on the element.
+- `onPaypalEvent_actions` is the user-facing schema key. BetterForms translates it into the runtime callback function internally.

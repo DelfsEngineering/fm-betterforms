@@ -2,6 +2,10 @@
 
 By default, utility hooks will **not** send their full schema unless the `Send full schema in utility hooks` setting in the page editor is enabled. This allows the browser to send a reduced data payload resulting in faster transfer times.
 
+In the page editor, that setting is available on the `Integration` tab:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-08-23 at 4.05.28 PM.png" alt="Integration tab showing Send full schema in utility hooks"><figcaption></figcaption></figure>
+
 ### Controlling Data Sent from the Browser
 
 ​Often the form model contains a lot of data that does not need to be passed in Hooks. BetterForms provides two methods to control what data is passed in utility hooks.

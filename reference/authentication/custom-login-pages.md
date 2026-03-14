@@ -85,9 +85,16 @@ If you want the cursor to land in the email field on page load, add:
 
 For later focus changes after page load, use [`setFocus`](../actions-processor/actions_overview/setfocus.md).
 
-## Error Display
+## Auth Feedback Display
 
-Authentication errors are written to `model.authMessage`.
+Authentication pages can now read auth feedback from:
+
+- `model.authMessage`
+- `model.authMessageCode`
+- `model.authMessageType`
+- `BF.authGetLastFeedback()`
+
+`model.authMessage` is still supported for backward compatibility, but for new pages it is better to branch on `model.authMessageCode` and `model.authMessageType` rather than matching English strings.
 
 Example:
 
@@ -98,6 +105,22 @@ Example:
   "styleClasses": "col-md-12"
 }
 ```
+
+Recommended pattern:
+
+```json
+{
+  "type": "html",
+  "html": "<div v-if=\"model.authMessageCode || model.authMessage\" :class=\"{ 'alert alert-danger': (model.authMessageType || 'error') === 'error', 'alert alert-info': model.authMessageType === 'info', 'alert alert-success': model.authMessageType === 'success' }\">{{ ({ 'auth.invalid_login': \"We couldn't sign you in. Check your details and try again.\", 'auth.magic_link_sent': 'If that email can be used to sign in, a magic link has been sent.', 'auth.reset_link_sent': 'If that email is registered, a reset link has been sent.' })[model.authMessageCode] || model.authMessage }}</div>",
+  "styleClasses": "col-md-12"
+}
+```
+
+Security notes:
+
+- Avoid UI that reveals whether a specific email exists in the system.
+- Prefer mapping from `auth.*` codes to your own localized text rather than parsing raw message text.
+- For login, reset, and magic-link request pages, use calm generic fallback strings by default.
 
 ## Related Pages
 

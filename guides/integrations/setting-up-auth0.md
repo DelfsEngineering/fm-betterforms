@@ -1,138 +1,101 @@
 # Setting up Auth0
 
-## Introduction
+Auth0 is one of the OAuth providers supported by BetterForms.
 
-Auth0 is an authentication and authorization platform that can be integrated with BetterForms to handle sign ups and logins to apps. Here we’ll explain what is needed to be set up on Auth0 to have it ready to be integrated with your app.
+Before using this guide, make sure you have already set up the shared BetterForms OAuth requirements in the canonical reference:
 
-## Getting started
+- [OAuth](../../reference/authentication/oauth.md)
 
-### Creating a tenant
+That page covers the BetterForms-side flow, required callback page, `authLoginOauth`, `Users.oauthId`, and `onBeforeRegistration`.
 
-If you already have a tenant to be used, you can skip to the next section.
+## What Is Auth0-Specific
 
-After signing in to your Auth0 account, on the top left corner click on the dropdown button and select <mark style="color:red;">`Create tenant`</mark>
+For Auth0, the main provider-specific pieces are:
 
-![Untitled](<../../.gitbook/assets/Untitled (5).png>)
+- Create an Auth0 application of type `Regular Web Application`
+- Add the BetterForms callback URL to the application
+- Copy the Auth0 credentials into BetterForms
+- Optionally enable Auth0 database or social connections for the login methods you want
 
-Choose a domain, region and environment for this tenant.
+## Create the Auth0 Application
 
-<figure><img src="../../.gitbook/assets/Untitled 1 (3).png" alt=""><figcaption></figcaption></figure>
+In Auth0, create or open the application that will be used for BetterForms and choose:
 
-### Creating Application
+- Application type: `Regular Web Application`
 
-On the left bar, mouse over it and click the <mark style="color:red;">`Applications`</mark> option, then click on <mark style="color:red;">`+ Create Application`</mark>
+## Allowed Callback URLs
 
-<figure><img src="../../.gitbook/assets/Untitled 2 (2).png" alt=""><figcaption></figcaption></figure>
+In the Auth0 application settings, add:
 
-Choose a name to identify your app, select <mark style="color:red;">`Regular Web Applications`</mark> and click on <mark style="color:red;">`Create`</mark>.
-
-<figure><img src="../../.gitbook/assets/Untitled 3 (1).png" alt=""><figcaption></figcaption></figure>
-
-Once it’s created, it should redirect to your app’s <mark style="color:red;">`Quick Start`</mark> tab. Go to the <mark style="color:red;">`Settings`</mark> tab of your application and fill the [following fields](setting-up-auth0.md#allowed-callback-urls) under <mark style="color:red;">`Application URIs`</mark>.
-
-### Additional customizations
-
-Still under the <mark style="color:red;">`Settings`</mark> tab, you can add a logo that will be used on the default pages used by Auth0 (Login, Reset Password, etc.).
-
-A link from an asset uploaded to BF could be used here.
-
-<figure><img src="../../.gitbook/assets/Untitled 4 (1).png" alt=""><figcaption></figcaption></figure>
-
-The following image shows other options that could be customized according to your policies.
-
-<figure><img src="../../.gitbook/assets/Untitled 5 (1).png" alt=""><figcaption></figcaption></figure>
-
-**Add your Dev and Production Domains**
-
-<figure><img src="../../.gitbook/assets/Untitled 6 (1).png" alt=""><figcaption></figcaption></figure>
-
-#### Allowed Callback URLs
-
-This URL will be used by Auth0 to redirect the user back to your BF app, and the value should be as follows:
-
-```jsx
+```text
 https://yourapp.domain.com/oauth/auth0/callback
 ```
 
-If multiple domains are being used, multiple domains can be added using comma as the separator.
+If the same BetterForms app is reachable on multiple domains, add each callback URL as a comma-separated entry in Auth0.
 
-```jsx
-https://yourapp1.domain.com/oauth/auth0/callback, https://yourapp2.domain.com/oauth/auth0/callback
-```
+## Credentials to Copy Into BetterForms
 
-## Creating a Database
+BetterForms expects the Auth0 provider credentials for the app or tenant:
 
-This is where your user records will be saved to.
+In BetterForms, open the app environment menu, choose `App Settings`, and then go to the authentication settings for the app:
 
-From the left bar choose <mark style="color:red;">`Authentication`</mark> → <mark style="color:red;">`Database`</mark>. On the page, select <mark style="color:red;">`+ Create DB Connection`</mark>.
+<figure><img src="../../.gitbook/assets/oauth-provider-settings.png" alt="Open the app environment menu and choose App Settings"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Untitled 7.png" alt=""><figcaption></figcaption></figure>
+The Auth0 provider fields in BetterForms look like this:
 
-Choose a name to identify your database and a few initial setups, as needed.
+<figure><img src="../../.gitbook/assets/oauth-credentials.png" alt="BetterForms Auth0 provider credential fields"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Untitled 8.png" alt=""><figcaption></figcaption></figure>
+- Client ID
+- Client Secret
+- Subdomain
 
-If users are required to follow a specific password policy, that can be set under the tab <mark style="color:red;">`Password Policy`</mark> of your database.
+For the `Subdomain` field, use only the Auth0 subdomain portion, not the full URL.
 
-<figure><img src="../../.gitbook/assets/Untitled 9.png" alt=""><figcaption></figcaption></figure>
+Example:
 
-Under <mark style="color:red;">`Applications`</mark> you can verify which applications are connected to that database.
+- Auth0 domain: `yourtenant.us.auth0.com`
+- BetterForms subdomain value: `yourtenant.us`
 
-<figure><img src="../../.gitbook/assets/Untitled 10.png" alt=""><figcaption></figcaption></figure>
+## Auth0 Login Options
 
-### Choosing different login options
+Auth0 can present different login methods depending on what you enable in Auth0:
 
-#### Social Connections
+- Auth0 database connection for username/password login
+- Social or enterprise connections for external identity providers
 
-Different external providers like Google, Facebook and Github, can be added as login options for your app. These options can be found under <mark style="color:red;">`Authentication`</mark> → <mark style="color:red;">`Social`</mark>. And new options can be added by clicking on <mark style="color:red;">`+ Create Connection`</mark>.
+Those choices are managed in Auth0. BetterForms still completes the sign-in through the same OAuth callback flow.
 
-<figure><img src="../../.gitbook/assets/Untitled 11.png" alt=""><figcaption></figcaption></figure>
+## Allowing New Users
 
-In order to setup these external providers, make sure you have the necessary credentials for this. It will be usually a Client ID and Client Secret, or API and Secret keys.
+If OAuth users should be allowed to create BetterForms users automatically, your FileMaker integration must support the `onBeforeRegistration` hook and return `model.createUser = true` when registration should proceed.
 
-#### Username and password (Auth0)
+This is the FileMaker-side hook location commonly used for that setup:
 
-As already mentioned above, you can link apps to users database under <mark style="color:red;">`Authentication`</mark> → <mark style="color:red;">`Database`</mark>. Another option is to navigate to your application (on Auth0), and under the <mark style="color:red;">`Connections`</mark> tab you will be able to individually toggle the options you want to have enabled for that specific application. By selecting a database connection, it will allow users registered on that database to login to your application using the username and password created under Auth0.
+<figure><img src="../../.gitbook/assets/oauth-redirect-uri.png" alt="FileMaker onBeforeRegistration hook"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Untitled 12.png" alt=""><figcaption></figcaption></figure>
+If that hook is missing, or if it does not allow the user, BetterForms will not create the new account.
 
-#### Creating new BF Users
+## Optional: Force a Full Auth0 Logout
 
-In case the application will allow users to register using OAuth, an <mark style="color:red;">`onBeforeRegistration`</mark>hook needs to be added to your business file, and it’s documented [here](https://docs.fmbetterforms.com/reference/users-and-authentication/oauth#before-registration-hook-business-file).
-
-#### Using Auth0 in an iFrame
-
-You will need to change:
-
-Settings / Branding / Set to Classic
-
-Mitigations - Disable Clickjacking protection
-
-#### Configuring FM BetterForms
-
-<figure><img src="../../.gitbook/assets/Untitled 13.png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Be sure to only include the subdomain in the <mark style="color:red;">`Subdomain`</mark> field
-{% endhint %}
-
-#### **Additional Notes**
-
-**Logging out of Auth0**
-
-Sometimes you may need to force an Auth0 logout. An example is if a user uses the wrong social account to login to your app but that account is not registered.
+`authLogout` clears the BetterForms session. If you also need to clear the Auth0-hosted session, redirect the browser to Auth0's logout endpoint after `authLogout`.
 
 ```json
- "logout": [{
-        "action": "authLogout"
-    }, {
-        "action": "path",
-        "function": "action.options.url = `https://visionarybar.us.auth0.com/v2/logout?client_id=xxxxxxxxxxxxxxx&returnTo=https://${window.location.host}`",
-        "options": {
-            "sameWindow": true,
-            "url": "/"
-        }
-    }]
+"logout": [
+  {
+    "action": "authLogout"
+  },
+  {
+    "action": "path",
+    "function": "action.options.url = `https://yourtenant.us.auth0.com/v2/logout?client_id=YOUR_CLIENT_ID&returnTo=https://${window.location.host}`",
+    "options": {
+      "sameWindow": true,
+      "url": "/"
+    }
+  }
+]
 ```
 
-The <mark style="color:red;">`client_id`</mark> comes from the Auth0 dashboard page.
+Replace:
+
+- `yourtenant.us.auth0.com` with your Auth0 tenant domain
+- `YOUR_CLIENT_ID` with the Auth0 application client ID

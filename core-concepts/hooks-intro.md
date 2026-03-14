@@ -23,13 +23,21 @@ A hook script can be triggered in a variety of places, here are just a few of th
 * **onLogin** - a common hook used when a user first logs in to the web client
 * **onFormRequest** - a scoped hook that's optionally triggered when a page is first loaded
   * typically used to push data from FileMaker to the user
-* using the [**runUtilityHook**](../../reference/actions-processor/actions\_overview/runutilityhook.md) \*\*\*\* action anywhere that [actions](../../reference/actions-processor/) can run
+* using the [**runUtilityHook**](../reference/actions-processor/actions_overview/runutilityhook.md) action anywhere that [actions](../reference/actions-processor/) can run
   * typically used on a button that's intended to save data back to your FileMaker database
 
-For a full reference of all available hooks, see this page:
+Client-side lifecycle named actions such as `onAppLoad` and `onFormLoad` are separate from FileMaker hook scripts. They can start browser workflows and may include `runUtilityHook`, but they are documented separately.
 
-{% content-ref url="../../reference/hooksoverview/" %}
-[hooksoverview](../../reference/hooksoverview/)
+For a full reference of FileMaker-side hooks, see this page:
+
+{% content-ref url="../reference/hooksoverview/" %}
+[hooksoverview](../reference/hooksoverview/)
+{% endcontent-ref %}
+
+For client lifecycle named actions, see:
+
+{% content-ref url="../reference/hooksoverview/lifecycle-hooks.md" %}
+[lifecycle-hooks](../reference/hooksoverview/lifecycle-hooks.md)
 {% endcontent-ref %}
 
 ## How to name Hooks

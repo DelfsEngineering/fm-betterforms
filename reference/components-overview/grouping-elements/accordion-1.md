@@ -20,16 +20,20 @@ Accordion2 version adds slots that can replace the row header.&#x20;
                 }],
                 "schema": {
                     "fields": [{
-                        "inputType": "text",
                         "label": "First Name",
                         "model": "nameFirst",
                         "styleClasses": "",
+                        "fieldOptions": {
+                            "inputType": "text"
+                        },
                         "type": "input"
                     },{
-                        "inputType": "text",
                         "label": "Last Name",
                         "model": "nameLast",
                         "styleClasses": "",
+                        "fieldOptions": {
+                            "inputType": "text"
+                        },
                         "type": "input"
                     }]
                 },

@@ -1,24 +1,126 @@
 # Common Hooks
 
-### onLogin
+Common hooks are **server calls** that are available across the application, rather than being tied to a single page.
 
-The `onLogin` hook is called when a user first log's into the system and is authenticated. If you add actions here you can over rise the default behaviour of BetterForms and navigate the user to any page you want based on your business logic. The default is to navigate the user to the `"/"` raw default home page. 
+For FileMaker developers, this is the key distinction:
 
-If the user ended up at the login page because they tried to access a page requiring authentication, they will be redirected to that page after they successfully login unless the this hook returns a `path` action, in which case that will take priority.
+- **Hooks** are server-side calls into your FileMaker scripts.
+- **Actions** and **named actions** are client-side workflows.
+- A named action can include a `runUtilityHook` action when a workflow needs to call a server hook.
 
+Use **Common Hooks** for app-wide authentication, registration, notification, and API-entry logic. Use [Scoped Hooks](./hooks.md) for page-specific server logic such as `onUtility`.
 
+## Common Hook Set Name
 
-`commonHookSetName` The common hook set name is use in routing script requests \( Hooks \) from the web application into your FileMaker database. Typically this name reflects the general purpose of the app. Eg `portal` `admin` `cart` 
+`commonHookSetName` is part of how BetterForms routes common hook calls from the web application into the correct FileMaker script set.
 
-The BetterForms hooks scripts will parse this out and route script execution accordingly. By having a commonHookSetName you are able to have several independent front end applications connect to a single FileMaker file back end. An example is a Customer Sales Panel and a Staff HR Portal.
+- Keep the name short and app-oriented, for example `portal`, `admin`, or `cart`.
+- This belongs mainly to setup and architecture, so this page only mentions it briefly.
+- The important practical point is that multiple BetterForms front ends can point at the same back end while still using different common hook handlers.
 
-### onLogin
+This older flowchart is still useful if you want a high-level picture of how a hook request moves from the browser through BetterForms and into your FileMaker hook scripts:
 
-This hook is called when a user logs in successfully.You can inject actions and and have full access to the user object .
+<figure><img src="../../.gitbook/assets/productionflo-system.png" alt="Hook flowchart showing browser, BetterForms, and FileMaker hook routing"><figcaption></figcaption></figure>
 
-You should \(usually\) have a path action in this hook script. If you do not, the user will be stuck at the login prompt page. Logging in does not automatically take the user to a default page.
+## Common Hooks At A Glance
 
-### onRegistration
+| Hook | Purpose | Typical Trigger |
+| --- | --- | --- |
+| `onLogin` | Post-login server-side business logic | Successful authentication |
+| `onRegistration` | Post-registration server-side business logic | Successful `authRegister` |
+| `onAuthNotifier` | Sends verification, reset, and magic-link notifications | Auth email / notification flows |
+| `onBeforeRegistration` | Allows or blocks certain registrations before user creation | OAuth or controlled registration flows |
+| `onApiCall` | Handles the universal BetterForms API callback endpoint | Requests to `/api*` |
 
-Called when a user registers. You can inject actions and have access to the user model.
+## onLogin
+
+`onLogin` runs after a user has authenticated successfully.
+
+This is a **server hook**, not a client action. Use it when you want FileMaker-side logic to run after login, for example:
+
+- loading app-level flags or user-related data
+- returning actions based on roles or business rules
+- overriding the post-login destination
+
+### Redirect Behavior
+
+BetterForms does **not** require you to always return a `path` action from `onLogin`.
+
+The current redirect order is:
+
+1. If `onLogin` returns a `path` action, that takes priority.
+2. Otherwise, if the login URL included a `redirect` query parameter, BetterForms navigates there.
+3. Otherwise, BetterForms falls back to `/`.
+
+That means you should only return a `path` action when you intentionally want to override the normal post-login destination.
+
+### What You Can Return
+
+`onLogin` can return actions just like other server hooks. Those actions are inserted back into the active action thread and executed in the client.
+
+In practice, this means:
+
+- FileMaker decides the business logic
+- BetterForms runs any returned actions in the browser
+- a returned `path` action changes where the user goes next
+
+## onRegistration
+
+`onRegistration` runs after `authRegister` successfully creates a user.
+
+Use it for server-side logic such as:
+
+- creating related records
+- setting default values
+- storing app-specific user metadata
+- returning follow-up actions
+
+This hook has access to the newly created user information and can return actions back to the client workflow.
+
+## onAuthNotifier
+
+`onAuthNotifier` is the common hook used for authentication-related notifications.
+
+This is typically where FileMaker sends:
+
+- verification emails
+- password-reset emails
+- magic-link emails
+- optional follow-up notifications after certain auth events
+
+If your app uses registration, password reset, or magic-link login, this hook is one of the most important common hooks to configure correctly.
+
+## onBeforeRegistration
+
+`onBeforeRegistration` is used when you need to decide whether a registration should be allowed before the user is created.
+
+This is especially relevant for controlled OAuth registration flows.
+
+Typical uses:
+
+- allow registration only for approved domains
+- block automatic user creation unless a FileMaker rule passes
+- inspect query parameters or inbound context before creating the user
+
+If your OAuth setup depends on controlled user creation, this hook should be documented and implemented as part of that flow.
+
+## onApiCall
+
+`onApiCall` is the common hook behind the BetterForms universal API callback endpoint.
+
+Use it when you want FileMaker to respond to inbound API requests at `/api*`.
+
+This hook is documented in more detail here:
+
+- [API Callback Endpoint](./callback.md)
+
+## Related Pages
+
+- [Scoped Hooks](./hooks.md)
+- [Lifecycle Hooks](./lifecycle-hooks.md)
+- [Authentication](../authentication/README.md)
+- [Authentication Actions](../actions-processor/authentication-actions.md)
+- [API Callback Endpoint](./callback.md)
+- [Keeping Keys Private](./payloadobject.md)
+- [Reducing Payload Size](./env_vars.md)
 

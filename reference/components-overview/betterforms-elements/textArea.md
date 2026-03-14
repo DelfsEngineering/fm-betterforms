@@ -14,14 +14,13 @@ Below are some of the most common properties used when configuring a TextArea el
 | `label`        | `String`| The text displayed above or next to the textarea to describe its purpose.                                  |
 | `model`        | `String`| The key in your BetterForms data model where the textarea's string value will be stored.                     |
 | `placeholder`  | `String`| Placeholder text displayed within the textarea when it is empty.                                             |
-| `rows`         | `Number`| A hint to the browser for the number of visible text lines.                                                |
-| `maxlength`    | `Number`| The maximum number of characters allowed in the textarea.                                                    |
 | `disabled`     | `Boolean`| If `true`, the textarea will be visible but not interactive. Defaults to `false`.                            |
 | `readonly`     | `Boolean`| If `true`, the textarea content will not be editable. Defaults to `false`.                                   |
 | `hint`         | `String`| Additional helper text displayed with the textarea.                                                        |
 | `required`     | `Boolean`| If `true`, the form will require this field to have a value for submission. Defaults to `false`.             |
 | `featured`     | `Boolean`| Can be used by themes to apply special styling.                                                            |
 | `styleClasses` | `String` / `Array` | CSS class(es) to apply to the textarea wrapper for custom styling.                                         |
+| `fieldOptions` | `Object` | V3+ textarea configuration such as `rows`, `min`, `max`, and `autoExpand`. |
 
 ### fieldOptions
 
@@ -43,9 +42,11 @@ The following options can be placed inside the `fieldOptions` object on the sche
   "label": "Additional Comments",
   "model": "userComments",
   "placeholder": "Enter any additional comments here...",
-  "rows": 4,
-  "maxlength": 500,
-  "hint": "Maximum 500 characters."
+  "hint": "Maximum 500 characters.",
+  "fieldOptions": {
+    "rows": 4,
+    "max": 500
+  }
 }
 ```
 
@@ -77,7 +78,7 @@ When `autoExpand` is enabled:
 ## BetterForms Specific Notes
 
 *   This element is intended for plain text. If you need rich text editing (WYSIWYG), look for a dedicated rich text editor component in BetterForms or consider integrating one as a custom element.
-*   The `min` and `max` properties in the underlying library sometimes refer to character count for textAreas; however, `maxlength` is the more standard HTML attribute for this purpose.
+*   In the live V3+ field, character limits are read from `fieldOptions.min` and `fieldOptions.max`, which map to `minlength` and `maxlength`.
 *   **v3.3.0+**: The `autoExpand` and `maxHeight` options were added. These require VFG v3.3.0 or later.
 
 ## Full Property Reference

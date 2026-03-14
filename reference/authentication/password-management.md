@@ -1,10 +1,10 @@
 ---
-description: Password reset flows for end users and admin-initiated resets in Basic Authentication.
+description: Password reset flows for end users in Basic Authentication.
 ---
 
 # Password Management
 
-Covers both user-initiated password resets and admin-triggered resets.
+Covers the end-user forgot/reset flow in Basic Authentication.
 
 Added in BetterForms `3.4.x`: the same helper-file token fields can also be used for magic-link sign-in.
 
@@ -26,14 +26,13 @@ Recommended page actions:
 
 ## Admin-Triggered Reset
 
-When an admin resets a user’s password:
-
-- This is currently not supported
+This page focuses on the built-in end-user reset flow.
+If you need an admin-managed reset process, implement it as custom business logic on the FileMaker side.
 
 ## Hooks (FileMaker)
 
 - `onAuthNotifier`: email delivery for reset links and notifications
-- Optional business logic hooks to enforce account validity etc
+- Add your own FileMaker-side rules if you need extra checks around password reset
 
 ## Shared Token Fields
 
@@ -48,6 +47,12 @@ If you use both password reset and magic-link sign-in in the same UI, the most r
 
 - Treat reset tokens as secrets; limit TTL and ensure single-use
 - Never log tokens or cleartext passwords
+
+## Related Pages
+
+- [Authentication](./README.md)
+- [Authentication Actions](../actions-processor/authentication-actions.md)
+- [Custom Login Pages](./custom-login-pages.md)
 
 
 
