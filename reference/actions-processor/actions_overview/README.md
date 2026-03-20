@@ -114,6 +114,32 @@ For user-facing docs and custom scripts, clear queued actions with the public Be
 BF.actionsClear()
 ```
 
+#### Stacking actions from FileMaker (Helper custom functions)
+
+The Helper File’s **`BF_SetAction…` custom functions** (for example `BF_SetAction`, `BF_SetAction_Function`, `BF_SetAction_Path`, and action-specific helpers like `BF_SetAction_showAlert`) **append** one action object to the JSON array in `$$BF_Actions`. Each function reads the current `$$BF_Actions`, adds the next action at the end, and **returns the full updated array**.
+
+**Pattern:** After each call, set `$$BF_Actions` to the **return value** of the custom function. The next call then appends to that result.
+
+**Do not** use FileMaker’s `List()` (or similar) to merge multiple actions—those helpers already merge into the JSON array.
+
+Your Helper may ship multiple versions of a function (for example a generator variant). Use the **names from your Helper file**; the examples below use the common names **without** a `_G` suffix.
+
+Example script steps:
+
+```filemaker
+Set Variable [ $$BF_Actions ; Value: BF_SetAction_Function ( "model.ui.isLoading = true;" ) ]
+Set Variable [ $$BF_Actions ; Value: BF_SetAction_Path ( "/orders" ) ]
+Set Variable [ $$BF_Actions ; Value: BF_SetAction_Function ( "model.ui.isLoading = false;" ) ]
+```
+
+Generic action + options (second parameter is a JSON **string** for `options`, or `""` when empty):
+
+```filemaker
+Set Variable [ $$BF_Actions ; Value: BF_SetAction ( "runUtilityHook" ; "{ \"type\": \"save\" }" ) ]
+```
+
+For other globals built by FileMaker (`$$BF_Model`, `$$BF_App`, etc.), see [Global Variables for Hooks](../../hooksoverview/filemaker-globals/README.md). Only `$$BF_Actions` is an ordered action queue built this way.
+
 ### Other places you can use actions
 
 `actionsBeforeComplete` can be added to `schema.form` and BetterForms will run that action array when present.
