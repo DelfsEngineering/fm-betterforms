@@ -60,7 +60,15 @@ Example:
 
 ## Totals across pods/data centers
 
-To get total connected counts across all pods/data centers, use the `/message/allusers` endpoint (POST). It returns per-DC counts plus a global `_total` that sums authenticated and anonymous users:
+To get total connected counts across all pods/data centers for the current domain host, use the `/message/allusers` endpoint (POST). It authenticates with the app API key and returns per-DC counts plus a global `_total` that sums authenticated and anonymous users:
+
+```json
+{
+  "apiKey": "BFAPI_..."
+}
+```
+
+Default response:
 
 ```
 {
@@ -73,3 +81,45 @@ To get total connected counts across all pods/data centers, use the `/message/al
 Notes:
 - Keys are grouped by data center (DC) as reported by the server.
 - `_total` is always present and aggregates all DCs/pods.
+- Counts are scoped to the incoming host domain across all matching pods/clusters for that domain.
+
+### Detailed admin mode
+
+To return authenticated user details by DC, send `includeUsers: true`:
+
+```json
+{
+  "apiKey": "BFAPI_...",
+  "includeUsers": true
+}
+```
+
+Response:
+
+```json
+{
+  "us-east-1": {
+    "authenticated": [
+      { "id": "USER_1", "email": "a@example.com" },
+      { "id": "USER_2", "email": "b@example.com" }
+    ],
+    "authenticatedCount": 2,
+    "anonymous": 4
+  },
+  "_total": { "authenticated": 2, "anonymous": 4 }
+}
+```
+
+By default, detailed mode de-duplicates authenticated users by `id` within each DC.
+
+To preserve raw pod-level duplicates in the authenticated array, send `dedupeUsers: false`:
+
+```json
+{
+  "apiKey": "BFAPI_...",
+  "includeUsers": true,
+  "dedupeUsers": false
+}
+```
+
+With `dedupeUsers: false`, `authenticatedCount` reflects raw authenticated entries rather than unique users.

@@ -63,7 +63,10 @@ This section is for essential libraries and scripts that need to be available as
 In Styling > CSS:
 
 ```css
-.main-content-wrapper,body {    background: var(--white-color);}
+.main-content-wrapper,
+body {
+    background: var(--white-color);
+}
 ```
 
 In a single page html object:

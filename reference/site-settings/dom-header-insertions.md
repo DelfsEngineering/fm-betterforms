@@ -14,6 +14,10 @@ Use the DOM (Document Object Model ) insertions to add  HTML, Meta Data tags, CD
 
 FM BetterForms will load this code into your app before the first element of the app is rendered. Use this section when you need to ensure code or links are available before the app attempts to draw the page.
 
+If you are upgrading an older BetterForms V2 project and need to restore legacy Bootstrap 3 `glyphicon` support for custom HTML, see the cookbook note on backward compatibility:
+
+- [Backward Compatibility for V2 to V3](../../cookbook-coming-soon/backward-compatibility-v2-to-v3.md)
+
 **DOM Header Insertions - Load Later**
 
 Code in this area is loaded at an undetermined point after the main application begins to load. This is ideal for adding libraries, like a payment gateway, into your app without affecting its loading and startup performance. Only put code here that your application does not need immediately. While it usually loads early, there is a possibility that rendering will start before this code loads.
