@@ -105,6 +105,10 @@ The current notifier flow sends this hook a `type` describing the auth event plu
 
 If your app uses registration, password reset, or magic-link login, this hook is one of the most important common hooks to configure correctly.
 
+If you are upgrading an older V2 helper-file implementation, make sure your FileMaker notifier script also handles the newer `sendMagicLogin` type used by magic-link sign-in requests. See the compatibility note here:
+
+- [Backward Compatibility for V2 to V3](../../cookbook-coming-soon/backward-compatibility-v2-to-v3.md)
+
 ## onBeforeRegistration
 
 `onBeforeRegistration` is used when you need to decide whether a registration should be allowed before the user is created.
