@@ -62,6 +62,7 @@ These reserved names are part of the **client-side lifecycle / workflow system**
 | `onLogin` | App-level named action | Runs after the user is authenticated on the client |
 | `appIsOnline` | App-level named action | Runs when BetterForms detects the app has come back online |
 | `appIsOffline` | App-level named action | Runs when BetterForms detects the app has gone offline |
+| `onDeployPost` | App-level named action | Runs when the live app receives a post-deploy message after a deployment completes |
 
 ### onFormLoad
 
@@ -100,6 +101,45 @@ These app-level named actions are triggered when BetterForms detects an online/o
 - Define them in app-level named actions
 - Use them for reconnect UX, retry messaging, or online/offline banners
 - They are browser-state workflows, not FileMaker hooks
+
+### onDeployPost
+
+`onDeployPost` is an app-level named action that BetterForms can run when a deployment completes and the live app receives the post-deploy message.
+
+- Define it in app-level named actions
+- Available in **Editor v125+**
+- This behavior works across supported basecode apps; the requirement is the Editor version that publishes the deploy behavior
+- Use it for app-specific post-deploy UX such as custom messaging, partial refresh logic, cache invalidation, or controlled redirects/reloads
+
+When a deploy completes, BetterForms sends a post message to the target app domain.
+
+Before showing the shared fallback UI, BetterForms checks for a named action called `onDeployPost`.
+
+- If `site.content.namedActions.onDeployPost` exists for the current app/site context, BetterForms runs that named action instead of the default footer UI
+- If no `onDeployPost` named action is present, BetterForms shows the shared fallback UI
+
+### Default Fallback UI
+
+The shared fallback is a bottom-of-screen refresh banner with:
+
+- Title: `Refresh needed`
+- Versioned title when available: `Refresh needed (V<version>)`
+- Body text: `An update is available. Save your work and refresh this page.`
+- Action button: `Refresh`
+
+If deploy notes are provided, those notes are shown instead of the generic fallback body text.
+
+### Payload Passed To onDeployPost
+
+The deploy message payload includes:
+
+- `source` with value `deploy`
+- `reason`
+- `deployedAt`
+- `version`
+- `note`
+- `idEnvironment`
+- `idApp`
 
 For the broader distinction between lifecycle hooks and FileMaker hooks, see [Lifecycle Hooks](../hooksoverview/lifecycle-hooks.md) and [Common Hooks](../hooksoverview/commonoverview.md).
 

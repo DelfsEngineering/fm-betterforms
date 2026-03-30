@@ -14,6 +14,7 @@ For FileMaker developers, the key rule is:
 | Lifecycle Hook | Scope | When it runs |
 | --- | --- | --- |
 | `onAppLoad` | App-wide | After the app/site loads in the browser |
+| `onDeployPost` | App-wide | After the live app receives a post-deploy message for a completed deployment |
 | `onFormLoad` | Page-specific | After a page/form has loaded in the browser |
 | `onBeforeMount` | Component | Before a custom component renders |
 | `onMount` | Component | After a custom component renders to the DOM |
@@ -53,6 +54,25 @@ Notes:
 
 - If actions are returned from `onFormRequest`, those are queued before `onFormLoad`.
 - `onFormLoad` is a very common place to run auth-related actions like `authVerify` or token-based `authLogin`.
+
+## onDeployPost
+
+`onDeployPost` is a global named action that BetterForms can run after a deployment completes and the live app receives the deploy post message.
+
+Typical uses:
+
+- show a custom deploy notice instead of the shared refresh banner
+- invalidate cached client state
+- refresh a specific part of the UI
+- perform a controlled redirect or reload
+
+Notes:
+
+- This is a client-side workflow, not a FileMaker server call.
+- Define it in app-level named actions.
+- Available in **Editor v125+**.
+- If no `onDeployPost` named action is defined, BetterForms shows the shared fallback refresh banner instead.
+- The deploy payload includes `source`, `reason`, `deployedAt`, `version`, `note`, `idEnvironment`, and `idApp`.
 
 ## Component Lifecycle Hooks
 

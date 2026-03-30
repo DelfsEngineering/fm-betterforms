@@ -27,6 +27,10 @@ Each environment has a dropdown menu (indicated by the ellipsis) that allows you
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160303.png" alt=""><figcaption></figcaption></figure>
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160256.png" alt=""><figcaption></figcaption></figure>
+
+    After a deployment completes, BetterForms can notify the live app that a new deployment is available. By default, the client shows a refresh-needed banner so users can reload safely.
+
+    If your app defines the global named action `onDeployPost`, BetterForms runs that browser-side workflow instead of the shared fallback banner. This is available in **Editor v125+**. For the full behavior and payload details, see [Named Actions (Action Scripts)](../../../reference/actions-processor/actions_named.md).
 *   **Rollback**: Revert to a previous version of the environment if needed.
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160349.png" alt=""><figcaption></figcaption></figure>
