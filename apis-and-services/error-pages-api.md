@@ -75,3 +75,14 @@ The error data can be found under <mark style="color:red;">`options`</mark> for 
 | <mark style="color:red;">`code`</mark>        | actions.options.error.code        |
 | <mark style="color:red;">`description`</mark> | actions.options.error.description |
 | <mark style="color:red;">`message`</mark>     | actions.options.error.message     |
+
+### Update the global `onAppLoad` script
+
+Paste the following into the global <mark style="color:$primary;">`onAppLoad`</mark> script to overwrite the error page:
+
+```javascript
+delete vueapp.$store.state.site.content.layouts.error.formSchema;
+var lsData = JSON.parse(window.localStorage.getItem("_bfsite"));
+delete lsData.siteJSON.content.layouts.error.formSchema;
+window.localStorage.setItem("_bfsite", JSON.stringify(lsData));
+```

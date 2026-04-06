@@ -12,7 +12,7 @@ Each environment is independent, with its own database connections, settings, an
 
 Each environment has a dropdown menu (indicated by the ellipsis) that allows you to manage it:
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160043 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160043 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 *   **Edit**: Modify the environment settings, such as its name, stage, domains, and credentials. You can lock the environment to prevent changes (usually for the production environment) and turn on the development tools (usually for the development environment).
 
@@ -21,7 +21,7 @@ Each environment has a dropdown menu (indicated by the ellipsis) that allows you
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160147.png" alt=""><figcaption></figcaption></figure>
 
-    <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 *   **Deploy**: Move the current version of your app to the selected stage (Development, Staging, Production).
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-17 160303.png" alt=""><figcaption></figcaption></figure>

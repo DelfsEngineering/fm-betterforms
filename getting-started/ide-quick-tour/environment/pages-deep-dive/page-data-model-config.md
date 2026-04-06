@@ -1,4 +1,4 @@
-# Data Model
+# Configuring the Page Data Model
 
 The **Data Model** tab contains all data accessible to the current page in JSON format.
 
@@ -49,17 +49,17 @@ This editor is for data used only in the BetterForms IDE. The development data i
 
 In the **Models** tab, each key can be configured under **Key Caching**:
 
-- **Cache in browser** = local storage
-- **Cache in tab** = session storage
-- **Sync with app** = keep that page model key synced with the global app model key
+* **Cache in browser** = local storage
+* **Cache in tab** = session storage
+* **Sync with app** = keep that page model key synced with the global app model key
 
 This is configured directly in the UI (you do not need to edit JSON paths manually in this screen).
 
-![Key Caching with Sync with app enabled](../../../../assets/key-caching-sync-with-app.png)
+![Key Caching with Sync with app enabled](../../../../.gitbook/assets/key-caching-sync-with-app.png)
 
 Example of a page model key (`pet`) that has **Sync with app** enabled:
 
-![Default Data Model with synced key](../../../../assets/default-data-model-sync-example.png)
+![Default Data Model with synced key](../../../../.gitbook/assets/default-data-model-sync-example.png)
 
 For detailed app model behavior and caching notes, see [App Model](../../../../reference/site-settings/app-model.md).
 

@@ -4,11 +4,11 @@ The live `rangeSlider` field uses the `ion.rangeSlider` jQuery plugin.
 
 ## Source Reference
 
-Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider](https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider)
+Vue-form-generator: [https://vue-generators.gitbook.io/vue-generators/fields/optional\_fields/slider](https://vue-generators.gitbook.io/vue-generators/fields/optional_fields/slider)
 
 ion.rangeSlider.js: [http://ionden.com/a/plugins/ion.rangeSlider/index.html](http://ionden.com/a/plugins/ion.rangeSlider/index.html)
 
-!["Range Slider Element"](../../../.gitbook/assets/2sKnsRPI9D.gif)
+!["Range Slider Element"](<../../../.gitbook/assets/2sKnsRPI9D (2).gif>)
 
 Add the CDN references below into the DOM Header Insertions section of your site.
 
@@ -22,15 +22,15 @@ Add the CDN references below into the DOM Header Insertions section of your site
 
 ## Common Configuration Properties
 
-| Property | Type | Description |
-| :-- | :-- | :-- |
-| `type` | `String` | Must be `"rangeSlider"` |
-| `label` | `String` | Field label |
-| `model` | `String` | Model key that stores either a single number or a two-item array |
-| `placeholder` | `String` | Placeholder text |
-| `disabled` | `Boolean` | Disables the control |
-| `readonly` | `Boolean` | Makes the input read-only |
-| `fieldOptions` | `Object` | Options passed directly into `$(el).ionRangeSlider(...)` |
+| Property       | Type      | Description                                                      |
+| -------------- | --------- | ---------------------------------------------------------------- |
+| `type`         | `String`  | Must be `"rangeSlider"`                                          |
+| `label`        | `String`  | Field label                                                      |
+| `model`        | `String`  | Model key that stores either a single number or a two-item array |
+| `placeholder`  | `String`  | Placeholder text                                                 |
+| `disabled`     | `Boolean` | Disables the control                                             |
+| `readonly`     | `Boolean` | Makes the input read-only                                        |
+| `fieldOptions` | `Object`  | Options passed directly into `$(el).ionRangeSlider(...)`         |
 
 ## Example Schema Snippet
 
@@ -50,10 +50,10 @@ Add the CDN references below into the DOM Header Insertions section of your site
 
 ## Runtime Notes
 
-- The component requires the `ion.rangeSlider` library to be loaded globally.
-- `fieldOptions.type` defaults to `"single"` if you do not provide it.
-- When the slider type is `"double"`, the model is written as `[from, to]`.
-- Otherwise, the model is written as a single numeric value.
+* The component requires the `ion.rangeSlider` library to be loaded globally.
+* `fieldOptions.type` defaults to `"single"` if you do not provide it.
+* When the slider type is `"double"`, the model is written as `[from, to]`.
+* Otherwise, the model is written as a single numeric value.
 
 ### Theming
 

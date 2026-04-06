@@ -16,17 +16,17 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
 
 #### Base64
 
-| Key           | Value(s)   | Type    | Description                                                                                          |
-| ------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| type          | `dropzone` | string  |                                                                                                      |
-| model         |            | Array   | Array of uploaded file metadata. Does not have to be predefined.                                     |
-| useCustomSlot | ()         | boolean | If true, then the HTML in the `html` key will be inserted into the target drop area, defaults false  |
-| includeB64    |            | boolean | If true, base64 encoded data is returned in the response, defaults false.                            |
-| options       |            | object  | Object of additional options. These will override defaults. and are passed directly into dropzone.js |
-| html          |            | string  | Optional custom HTML rendered inside the drop area when `useCustomSlot` is true                      |
-| awss3 / s3    |            | object  | Optional AWS S3 configuration passed through to the underlying vue-dropzone S3 integration           |
-| s3UploadSuccess |          | function / `_actions` | Optional callback for successful S3 uploads                                                   |
-| s3UploadError |            | function / `_actions` | Optional callback for S3 upload errors                                                         |
+| Key             | Value(s)   | Type                  | Description                                                                                          |
+| --------------- | ---------- | --------------------- | ---------------------------------------------------------------------------------------------------- |
+| type            | `dropzone` | string                |                                                                                                      |
+| model           |            | Array                 | Array of uploaded file metadata. Does not have to be predefined.                                     |
+| useCustomSlot   | ()         | boolean               | If true, then the HTML in the `html` key will be inserted into the target drop area, defaults false  |
+| includeB64      |            | boolean               | If true, base64 encoded data is returned in the response, defaults false.                            |
+| options         |            | object                | Object of additional options. These will override defaults. and are passed directly into dropzone.js |
+| html            |            | string                | Optional custom HTML rendered inside the drop area when `useCustomSlot` is true                      |
+| awss3 / s3      |            | object                | Optional AWS S3 configuration passed through to the underlying vue-dropzone S3 integration           |
+| s3UploadSuccess |            | function / `_actions` | Optional callback for successful S3 uploads                                                          |
+| s3UploadError   |            | function / `_actions` | Optional callback for S3 upload errors                                                               |
 
 ## Minimal Usage Example
 
@@ -42,7 +42,7 @@ Files can be uploaded to an AWS S3 bucket. You will need to first provision the 
 }
 ```
 
-!["Dropzone Element"](../../../.gitbook/assets/screen-shot-2017-10-09-at-5.34.44-pm.png)
+!["Dropzone Element"](<../../../.gitbook/assets/screen-shot-2017-10-09-at-5.34.44-pm (1).png>)
 
 ## Additional Options
 
@@ -50,9 +50,9 @@ You can totally customize the dropzone component and control things like file si
 
 BetterForms also exposes a few integration-specific additions on top of the standard Dropzone options:
 
-- `awss3` or `s3` to enable the S3 upload mode
-- `html` plus `useCustomSlot` to replace the default dropzone content
-- `s3UploadSuccess` and `s3UploadError` hooks for S3-specific upload events
+* `awss3` or `s3` to enable the S3 upload mode
+* `html` plus `useCustomSlot` to replace the default dropzone content
+* `s3UploadSuccess` and `s3UploadError` hooks for S3-specific upload events
 
 ### Reference
 

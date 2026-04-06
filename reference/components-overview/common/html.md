@@ -30,11 +30,11 @@ This powerful element allows you to add custom HTML and [VueJS Template syntax](
 
 #### Opening the HTML Editor
 
-!["Open HTML Editor button"](../../../.gitbook/assets/open-html.jpg)
+!["Open HTML Editor button"](<../../../.gitbook/assets/open-html (3).jpg>)
 
 When using [VueJS Template syntax](../../../guides/html-and-vuejs.md), you'll see your [development data model](../../form-settings/data-model.md) displayed in the preview and can edit it in the Data Model tab.
 
-!["HTML Editor"](../../../.gitbook/assets/html-editor.png)
+!["HTML Editor"](<../../../.gitbook/assets/html-editor (1).png>)
 
 This makes developing with custom code fast and easy.
 

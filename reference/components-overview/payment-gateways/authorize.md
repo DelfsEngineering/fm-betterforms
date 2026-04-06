@@ -5,7 +5,7 @@
 **Version:** >0.8.16
 
 {% hint style="danger" %}
-### This component documentation is work in progress
+#### This component documentation is work in progress
 {% endhint %}
 
 See [https://developer.authorize.net/api/reference/features/acceptjs.html](https://developer.authorize.net/api/reference/features/acceptjs.html) for workflow reference and deeper understanding of this component.
@@ -18,21 +18,21 @@ You will need to obtain credentials from the Authorize.net dashboard. The Better
 
 If you need to locate the public client key in Authorize.net, the dashboard screen looks like this:
 
-<figure><img src="../../../.gitbook/assets/public-client-key.png" alt="Authorize.net public client key screen"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/public-client-key (1).png" alt="Authorize.net public client key screen"><figcaption></figcaption></figure>
 
-| Key | Value(s) | Type | Description |
-| --- | --- | --- | --- |
-| `type` | authorize | string | Identifies the Authorize.net element |
-| `model` |  | string | Data model key that will contain the response returned from Authorize.net |
-| `apiLoginID` |  | string | Public API Login ID from Authorize.net |
-| `clientKey` |  | string | Public client key used by AcceptUI |
-| `buttonText` |  | string | Text displayed on the rendered button |
-| `buttonClasses` |  | string | CSS classes applied to the button |
-| `acceptUIFormBtnTxt` |  | string | Text shown on the AcceptUI submit button |
-| `acceptUIFormHeaderTxt` |  | string | Header text shown in the AcceptUI dialog |
-| `billingAddressOptions` | `{}` | object | Billing-address settings passed to AcceptUI |
-| `sandBox` | `true` / `false` | boolean | If true, BetterForms loads the Authorize.net sandbox AcceptUI script |
-| `onResponse_actions` | `[]` | array | Actions to run after AcceptUI returns a response |
+| Key                     | Value(s)         | Type    | Description                                                               |
+| ----------------------- | ---------------- | ------- | ------------------------------------------------------------------------- |
+| `type`                  | authorize        | string  | Identifies the Authorize.net element                                      |
+| `model`                 |                  | string  | Data model key that will contain the response returned from Authorize.net |
+| `apiLoginID`            |                  | string  | Public API Login ID from Authorize.net                                    |
+| `clientKey`             |                  | string  | Public client key used by AcceptUI                                        |
+| `buttonText`            |                  | string  | Text displayed on the rendered button                                     |
+| `buttonClasses`         |                  | string  | CSS classes applied to the button                                         |
+| `acceptUIFormBtnTxt`    |                  | string  | Text shown on the AcceptUI submit button                                  |
+| `acceptUIFormHeaderTxt` |                  | string  | Header text shown in the AcceptUI dialog                                  |
+| `billingAddressOptions` | `{}`             | object  | Billing-address settings passed to AcceptUI                               |
+| `sandBox`               | `true` / `false` | boolean | If true, BetterForms loads the Authorize.net sandbox AcceptUI script      |
+| `onResponse_actions`    | `[]`             | array   | Actions to run after AcceptUI returns a response                          |
 
 ```javascript
 // Sample schema object

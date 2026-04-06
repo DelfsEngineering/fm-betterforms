@@ -4,24 +4,24 @@
 
 This element in an implementation of [vue-paypal-checkout](https://github.com/khoanguyen96/vue-paypal-checkout)
 
-!["PayPal Element"](../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm.png)
+!["PayPal Element"](<../../../.gitbook/assets/screen-shot-2017-11-10-at-1.12.57-pm (1).png>)
 
 This element allows you to take payments via PayPal.
 
 When clicked, the payment workflow is initiated.
 
-| Key              | Value(s)  | Type    | Description                                                                                                       |
-| ---------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| type             | paypal    | string  |                                                                                                                   |
-| model            |           | string  | Data model key that will contain the PayPal response                                                              |
-| amountKey        |           | string  | model key that holds the amount.                                                                                  |
-| onPaypalEvent\_actions | \[] | array   | If supplied, these actions run for PayPal events. If not supplied, the component falls back to the default `runUtilityHook` / `onUtility` server-hook flow. |
-| currency         |           | string  | Currency for the payment, for example `USD` or `CAD`                                                              |
-| invoiceNumber    |           | string  | Optional invoice number passed to PayPal                                                                          |
-| env              | `sandbox` or `production` | string | PayPal environment to use                                                                                         |
-| itemsKey         | 'myItems' | array   | optional - model key that holds an array of items                                                                 |
-| credentials      | {}        | object  | credential object,                                                                                                |
-| style            | {}        | object  | PayPal defined styling of the button                                                                              |
+| Key                    | Value(s)                  | Type   | Description                                                                                                                                                 |
+| ---------------------- | ------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                   | paypal                    | string |                                                                                                                                                             |
+| model                  |                           | string | Data model key that will contain the PayPal response                                                                                                        |
+| amountKey              |                           | string | model key that holds the amount.                                                                                                                            |
+| onPaypalEvent\_actions | \[]                       | array  | If supplied, these actions run for PayPal events. If not supplied, the component falls back to the default `runUtilityHook` / `onUtility` server-hook flow. |
+| currency               |                           | string | Currency for the payment, for example `USD` or `CAD`                                                                                                        |
+| invoiceNumber          |                           | string | Optional invoice number passed to PayPal                                                                                                                    |
+| env                    | `sandbox` or `production` | string | PayPal environment to use                                                                                                                                   |
+| itemsKey               | 'myItems'                 | array  | optional - model key that holds an array of items                                                                                                           |
+| credentials            | {}                        | object | credential object,                                                                                                                                          |
+| style                  | {}                        | object | PayPal defined styling of the button                                                                                                                        |
 
 ### Reference
 
@@ -105,5 +105,5 @@ You can change the style of the button via a style object like so:
 
 ## Notes
 
-- The runtime reads the amount from `model[amountKey]`, so use `amountKey` rather than a literal `amount` property on the element.
-- `onPaypalEvent_actions` is the user-facing schema key. BetterForms translates it into the runtime callback function internally.
+* The runtime reads the amount from `model[amountKey]`, so use `amountKey` rather than a literal `amount` property on the element.
+* `onPaypalEvent_actions` is the user-facing schema key. BetterForms translates it into the runtime callback function internally.

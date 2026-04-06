@@ -4,33 +4,33 @@ Common hooks are **server calls** that are available across the application, rat
 
 For FileMaker developers, this is the key distinction:
 
-- **Hooks** are server-side calls into your FileMaker scripts.
-- **Actions** and **named actions** are client-side workflows.
-- A named action can include a `runUtilityHook` action when a workflow needs to call a server hook.
+* **Hooks** are server-side calls into your FileMaker scripts.
+* **Actions** and **named actions** are client-side workflows.
+* A named action can include a `runUtilityHook` action when a workflow needs to call a server hook.
 
-Use **Common Hooks** for app-wide authentication, registration, notification, and API-entry logic. Use [Scoped Hooks](./hooks.md) for page-specific server logic such as `onUtility`.
+Use **Common Hooks** for app-wide authentication, registration, notification, and API-entry logic. Use [Scoped Hooks](hooks.md) for page-specific server logic such as `onUtility`.
 
 ## Common Hook Set Name
 
 `commonHookSetName` is part of how BetterForms routes common hook calls from the web application into the correct FileMaker script set.
 
-- Keep the name short and app-oriented, for example `portal`, `admin`, or `cart`.
-- This belongs mainly to setup and architecture, so this page only mentions it briefly.
-- The important practical point is that multiple BetterForms front ends can point at the same back end while still using different common hook handlers.
+* Keep the name short and app-oriented, for example `portal`, `admin`, or `cart`.
+* This belongs mainly to setup and architecture, so this page only mentions it briefly.
+* The important practical point is that multiple BetterForms front ends can point at the same back end while still using different common hook handlers.
 
 This older flowchart is still useful if you want a high-level picture of how a hook request moves from the browser through BetterForms and into your FileMaker hook scripts:
 
-<figure><img src="../../.gitbook/assets/productionflo-system.png" alt="Hook flowchart showing browser, BetterForms, and FileMaker hook routing"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/productionflo-system (4).png" alt="Hook flowchart showing browser, BetterForms, and FileMaker hook routing"><figcaption></figcaption></figure>
 
 ## Common Hooks At A Glance
 
-| Hook | Purpose | Typical Trigger |
-| --- | --- | --- |
-| `onLogin` | Post-login server-side business logic | Successful authentication |
-| `onRegistration` | Post-registration server-side business logic | Successful `authRegister` |
-| `onAuthNotifier` | Sends verification, reset, and magic-link notifications | Auth email / notification flows |
+| Hook                   | Purpose                                                     | Typical Trigger                        |
+| ---------------------- | ----------------------------------------------------------- | -------------------------------------- |
+| `onLogin`              | Post-login server-side business logic                       | Successful authentication              |
+| `onRegistration`       | Post-registration server-side business logic                | Successful `authRegister`              |
+| `onAuthNotifier`       | Sends verification, reset, and magic-link notifications     | Auth email / notification flows        |
 | `onBeforeRegistration` | Allows or blocks certain registrations before user creation | OAuth or controlled registration flows |
-| `onApiCall` | Handles the universal BetterForms API callback endpoint | Requests to `/api*` |
+| `onApiCall`            | Handles the universal BetterForms API callback endpoint     | Requests to `/api*`                    |
 
 ## onLogin
 
@@ -38,9 +38,9 @@ This older flowchart is still useful if you want a high-level picture of how a h
 
 This is a **server hook**, not a client action. Use it when you want FileMaker-side logic to run after login, for example:
 
-- loading app-level flags or user-related data
-- returning actions based on roles or business rules
-- overriding the post-login destination
+* loading app-level flags or user-related data
+* returning actions based on roles or business rules
+* overriding the post-login destination
 
 ### Redirect Behavior
 
@@ -60,8 +60,8 @@ BetterForms can also run a client-side named action called `onLogin`.
 
 Keep the distinction clear:
 
-- `onLogin` on this page is the **server hook** called through FileMaker
-- `site.content.namedActions.onLogin` is a **browser-side named action**
+* `onLogin` on this page is the **server hook** called through FileMaker
+* `site.content.namedActions.onLogin` is a **browser-side named action**
 
 In the real login flow, both can be involved. Treat them as separate workflow layers rather than relying on a strict "one always runs before the other" mental model.
 
@@ -73,9 +73,9 @@ Use the server hook for FileMaker business logic and returned actions. Use the c
 
 In practice, this means:
 
-- FileMaker decides the business logic
-- BetterForms runs any returned actions in the browser
-- a returned `path` action changes where the user goes next
+* FileMaker decides the business logic
+* BetterForms runs any returned actions in the browser
+* a returned `path` action changes where the user goes next
 
 ## onRegistration
 
@@ -83,10 +83,10 @@ In practice, this means:
 
 Use it for server-side logic such as:
 
-- creating related records
-- setting default values
-- storing app-specific user metadata
-- returning follow-up actions
+* creating related records
+* setting default values
+* storing app-specific user metadata
+* returning follow-up actions
 
 This hook has access to the newly created user information and can return actions back to the client workflow.
 
@@ -96,10 +96,10 @@ This hook has access to the newly created user information and can return action
 
 This is typically where FileMaker sends:
 
-- verification emails
-- password-reset emails
-- magic-link emails
-- optional follow-up notifications after certain auth events
+* verification emails
+* password-reset emails
+* magic-link emails
+* optional follow-up notifications after certain auth events
 
 The current notifier flow sends this hook a `type` describing the auth event plus user data and host/subdomain context so FileMaker can build the correct outbound message.
 
@@ -107,7 +107,7 @@ If your app uses registration, password reset, or magic-link login, this hook is
 
 If you are upgrading an older V2 helper-file implementation, make sure your FileMaker notifier script also handles the newer `sendMagicLogin` type used by magic-link sign-in requests. See the compatibility note here:
 
-- [Backward Compatibility for V2 to V3](../../cookbook-coming-soon/backward-compatibility-v2-to-v3.md)
+* [Backward Compatibility for V2 to V3](../../cookbook-coming-soon/backward-compatibility-v2-to-v3.md)
 
 ## onBeforeRegistration
 
@@ -117,9 +117,9 @@ This is especially relevant for controlled OAuth registration flows.
 
 Typical uses:
 
-- allow registration only for approved domains
-- block automatic user creation unless a FileMaker rule passes
-- inspect query parameters or inbound context before creating the user
+* allow registration only for approved domains
+* block automatic user creation unless a FileMaker rule passes
+* inspect query parameters or inbound context before creating the user
 
 If your OAuth setup depends on controlled user creation, this hook should be documented and implemented as part of that flow.
 
@@ -131,15 +131,14 @@ Use it when you want FileMaker to respond to inbound API requests at `/api*`.
 
 This hook is documented in more detail here:
 
-- [API Callback Endpoint](./callback.md)
+* [API Callback Endpoint](callback.md)
 
 ## Related Pages
 
-- [Scoped Hooks](./hooks.md)
-- [Lifecycle Hooks](./lifecycle-hooks.md)
-- [Authentication](../authentication/README.md)
-- [Authentication Actions](../actions-processor/authentication-actions.md)
-- [API Callback Endpoint](./callback.md)
-- [Keeping Keys Private](./payloadobject.md)
-- [Reducing Payload Size](./env_vars.md)
-
+* [Scoped Hooks](hooks.md)
+* [Lifecycle Hooks](lifecycle-hooks.md)
+* [Authentication](../authentication/)
+* [Authentication Actions](../actions-processor/authentication-actions.md)
+* [API Callback Endpoint](callback.md)
+* [Keeping Keys Private](payloadobject.md)
+* [Reducing Payload Size](env_vars.md)
