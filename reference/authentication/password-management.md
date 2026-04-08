@@ -29,6 +29,63 @@ Recommended page actions:
 This page focuses on the built-in end-user reset flow.
 If you need an admin-managed reset process, implement it as custom business logic on the FileMaker side.
 
+## Developer Invite Flow (Set Password + Optional Auto-Login)
+
+When a developer or admin wants to invite a user without using the default `authForgot` email flow, use `authInviteComplete` with helper user fields.
+
+### Why use UUID tokens
+
+- A UUIDv4 token provides high entropy and is difficult to guess.
+- It is easy to generate in FileMaker and easy to move through scripts/emails.
+- Combined with short expiry and single-use clearing, it is suitable for invite links.
+
+### Fields to set on the user record
+
+- `resetToken` (token string, for example UUIDv4)
+- `resetExpires` (future timestamp/date)
+- `isEnabled` (must be true for redemption)
+- `isVerified` (recommended true for invite-completion flows)
+
+You can set these through the helper `API- User CRUD (user)` script by passing a user JSON payload.
+
+Example payload:
+
+```json
+{
+  "id": "AA2F347A-8E3F-4190-91BB-9843DC8B2ED9",
+  "isEnabled": 1,
+  "isVerified": 1,
+  "resetToken": "7f9e8f9a-43c8-4d49-9c8d-1a2b3c4d5e6f",
+  "resetExpires": 1776172800000
+}
+```
+
+### Invite URL example
+
+```text
+https://christinadev.bfoperations.com:8080/#/login/reset?token=7f9e8f9a-43c8-4d49-9c8d-1a2b3c4d5e6f
+```
+
+### Reset/invite page action
+
+Use `authInviteComplete` on the password page:
+
+```json
+{
+  "action": "authInviteComplete",
+  "options": {
+    "signIn": true
+  }
+}
+```
+
+- `signIn: false` (default): sets password and clears invite token fields.
+- `signIn: true`: sets password, clears invite token fields, and signs the user in immediately.
+
+### Compatibility note
+
+`authInviteComplete` and `authReset` are separate redemption paths. Use the same action family that issued the token.
+
 ## Hooks (FileMaker)
 
 - `onAuthNotifier`: email delivery for reset links and notifications

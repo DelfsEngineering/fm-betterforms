@@ -10,7 +10,7 @@ BetterForms supports multiple authentication strategies to fit different applica
 
 - **Basic Authentication**
   - Email/password with a `Users` table in the helper file
-  - Registration, email verification, login, logout, password reset, and magic-link sign-in
+  - Registration, email verification, login, logout, password reset, invite completion, and magic-link sign-in
 - **Query & Cookie Based Auth (Roll your own)**
   - Smart links that can include a time-bound token in the URL query
   - Cookie/session-based access for trusted flows
@@ -21,7 +21,7 @@ BetterForms supports multiple authentication strategies to fit different applica
 ## Building Blocks
 
 - **Authentication Actions** (used on pages)
-  - `authLogin`, `authLogout`, `authRegister`, `authForgot`, `authMagicRequest`, `authReset`, `authVerify`, `authResend`
+  - `authLogin`, `authLogout`, `authRegister`, `authForgot`, `authMagicRequest`, `authReset`, `authInviteComplete`, `authVerify`, `authResend`
   - OAuth-specific: `authLoginOauth` (preferred), `oauthLoginHook` (legacy alias still supported)
   - To initiate OAuth login, use a `path` action to `/oauth/{provider}` (e.g., `/oauth/google`)
 - **Hooks** (FileMaker)
@@ -55,6 +55,7 @@ Attach the appropriate Actions to the relevant pages:
 - Magic link request page ➜ `authMagicRequest` to email a one-time sign-in link
 - Magic link landing page ➜ `authLogin` (recommended to run in `onFormLoad`) to redeem the token from the URL
 - Reset page ➜ `authReset`
+- Invite-completion page ➜ `authInviteComplete` (commonly same page as reset)
 - Login page ➜ `authLogin`
 - Logout button/link ➜ `authLogout`
 
@@ -62,6 +63,7 @@ Attach the appropriate Actions to the relevant pages:
 
 - Verification, password reset, and magic-link flows rely on time-bound tokens delivered via URL query parameters.
 - The `authVerify`, `authReset`, and magic-link `authLogin` flows read the token from the URL; you generally do not need to parse or store tokens manually.
+- `authInviteComplete` is available for developer-issued invite/reset tokens stored in user helper fields (`resetToken`, `resetExpires`).
 - In practice, the magic-link flow is usually split into two pages or steps: `authMagicRequest` to send the email, then `authLogin` to consume the token after the user opens the link.
 - Once redeemed, tokens are cleared from the helper file.
 

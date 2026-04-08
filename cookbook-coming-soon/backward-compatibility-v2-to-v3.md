@@ -62,6 +62,10 @@ Else If [ $type = "sendMagicLogin" ]
 End If
 ```
 
+Example from an older helper-based notifier script:
+
+<figure><img src="../.gitbook/assets/legacy-helper-magic-link-notifier-example.png" alt="FileMaker onAuthNotifier script branch for sendMagicLogin in a legacy helper-based setup"><figcaption></figcaption></figure>
+
 Add this alongside the existing auth notifier branches, for example between `sendResetPwd` and `resendVerifySignup` if that matches your current script.
 
 If your helper already sends reset emails successfully, you usually do not need new token fields for magic links. The newer magic-link flow reuses the same helper token values as password reset.

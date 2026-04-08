@@ -4,7 +4,7 @@ description: Email/password authentication using the internal Users table in the
 
 # Basic Authentication
 
-Basic Authentication uses the internal `Users` table with email and hashed password. It supports registration, email verification, login, logout, password resets, and magic-link sign-in.
+Basic Authentication uses the internal `Users` table with email and hashed password. It supports registration, email verification, login, logout, password resets, invite completion, and magic-link sign-in.
 
 ## Scope
 
@@ -17,12 +17,13 @@ Basic Authentication uses the internal `Users` table with email and hashed passw
 - Registration ➜ verification email sent ➜ user verified
 - Login ➜ access to restricted pages
 - Forgot/Reset password ➜ time-bound token ➜ set new password
+- Developer invite completion ➜ developer-issued token ➜ set new password (`authInviteComplete`)
 - Magic link ➜ request sign-in link ➜ click link ➜ token-based login
 - Logout ➜ session cleanup
 
 ## Building Blocks
 
-- Actions: `authRegister`, `authVerify`, `authLogin`, `authLogout`, `authForgot`, `authMagicRequest`, `authReset`, `authResend`
+- Actions: `authRegister`, `authVerify`, `authLogin`, `authLogout`, `authForgot`, `authMagicRequest`, `authReset`, `authInviteComplete`, `authResend`
 - Hooks: `onRegistration`, `onLogin`, `onAuthNotifier`
 - Data: Users table stores email and password hash; verification/reset tokens are treated as secrets
 

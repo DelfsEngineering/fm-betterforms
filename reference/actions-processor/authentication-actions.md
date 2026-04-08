@@ -1,6 +1,6 @@
 # Authentication Actions
 
-These actions are used on custom login, registration, verification, reset, and magic-link pages.
+These actions are used on custom login, registration, verification, reset, invite-completion, and magic-link pages.
 
 Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequest` and token-based `authLogin`.
 
@@ -17,17 +17,19 @@ Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequ
 * _**authReset**_ - Completes a password reset
 * _**authForgot** -_ Requests a password-reset email
 * _**authMagicRequest**_ - Requests a passwordless magic sign-in link
+* _**authInviteComplete**_ - Completes a developer-issued invite/reset token flow and sets a new password
 * _**authVerify**  _ - Verifies the email-verification token
 * _**authResend**_ - Resends the email-verification token
 * _**authRegister**_ - Registers a user and, on success, runs [onRegistration](../hooksoverview/commonoverview.md#onregistration)
 
-These actions do not take custom options, but several require specific model keys such as `email`, `password`, or a token delivered in the URL.
+Most of these actions do not take custom options, but several require specific model keys such as `email`, `password`, or a token delivered in the URL. `authInviteComplete` supports an optional `options.signIn` flag.
 
 |  Action Name | Requires `email` key | Requires `password` key | Requires `token`\* |
 | -----------: | :------------------: | :---------------------: | :----------------: |
 |    authLogin |                      |            ✅            |          ✅         |
 |   authLogout |                      |                         |                    |
 |    authReset |                      |            ✅            |          ✅         |
+| authInviteComplete |                |            ✅            |          ✅         |
 |   authForgot |           ✅          |                         |                    |
 | authMagicRequest |        ✅         |                         |                    |
 |   authVerify |                      |                         |          ✅         |
@@ -39,6 +41,25 @@ If these values are required, add field validation and run a `validate` action b
 The **authRegister** action does _not_ require 2 password fields. If you want the user to enter their password twice before creating an account, you should create a [custom validator](../form-settings/validationoverview/clientside.md) that checks if the `password` key also matches some other `password2` key.
 
 The **authReset** action doesn't require an email field, but it does require a valid `token` in the URL. The token is generated and appended automatically when you run **authForgot**.
+
+The **authInviteComplete** action also requires `password` and a valid `token`, but it is intended for developer-issued invite links (for example, tokens written to `resetToken`/`resetExpires` by FileMaker logic or the helper CRUD script).
+
+Use `authInviteComplete` options when you want immediate sign-in after password set:
+
+```json
+{
+  "action": "authInviteComplete",
+  "options": {
+    "signIn": true
+  }
+}
+```
+
+Compatibility note:
+
+- `authInviteComplete` is not the same flow as `authReset`.
+- If a token was issued for `authInviteComplete`, use `authInviteComplete` to redeem it.
+- If a token was issued by `authForgot`, use `authReset` to redeem it.
 
 Similarly, **authVerify** only checks for the verification token in the URL. It is usually run in `onFormLoad` because users arrive from an email link.
 

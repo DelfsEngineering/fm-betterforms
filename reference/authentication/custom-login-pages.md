@@ -27,6 +27,7 @@ If you are replacing the default authentication UI, create pages for the flows y
 | Register | `login/signup` | `authRegister` |
 | Email Verification | `login/verify` | `authVerify` |
 | Password Reset | `login/reset` | `authReset` |
+| Invite Completion (set password) | `login/reset` (or custom slug) | `authInviteComplete` |
 | Magic Link Landing Page | `login/magic` | `authLogin` |
 
 Notes:
@@ -43,9 +44,12 @@ Notes:
 - Registration page: `authRegister`
 - Forgot-password page: `authForgot`
 - Reset page: `authReset`
+- Invite completion page: `authInviteComplete` (same page as reset is common)
 - Verification page: `authVerify`
 - Magic-link request page: `authMagicRequest`
 - Magic-link landing page: `authLogin`
+
+For invite completion flows, set `options.signIn: true` on `authInviteComplete` when you want immediate login after the new password is saved.
 
 ## Form Design Notes
 
