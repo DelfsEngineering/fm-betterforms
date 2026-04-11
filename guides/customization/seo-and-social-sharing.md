@@ -138,6 +138,66 @@ For database-driven pages, add a `_calc` suffix to any key. The value is evaluat
 
 ---
 
+### Dynamic SEO Pages With Clean URLs
+
+For public detail pages such as products, articles, or blog posts, BetterForms now supports clean dynamic paths while still keeping hash routing for normal browser navigation.
+
+Example layout key:
+
+```json
+{
+  "layouts": {
+    "products/:idproduct": {
+      "id": "YOUR_FORM_ID",
+      "ssr": {
+        "enabled": true
+      }
+    }
+  }
+}
+```
+
+Typical setup:
+
+1. Use a dynamic layout key such as `products/:idproduct`
+2. Enable `ssr.enabled: true` for that layout
+3. In `onFormRequest`, load the record using the route param that BetterForms maps into `query`
+4. Add a `seoMeta` field that reads from `model.product`
+5. Add the common `onSiteMap` hook so crawlers can discover all dynamic clean URLs
+
+Example dynamic SEO tags:
+
+```json
+{
+  "type": "seoMeta",
+  "metaTags": {
+    "title_calc": "model.product.name + ' | Products'",
+    "description_calc": "model.product.brand + ' ' + model.product.model + ' product overview'",
+    "og:title_calc": "model.product.name",
+    "og:description_calc": "model.product.brand + ' ' + model.product.model + ' product overview'",
+    "og:type": "product",
+    "twitter:card": "summary_large_image"
+  }
+}
+```
+
+If you use the common `onSiteMap` hook, return dynamic URLs in this shape:
+
+```json
+{
+  "response": {
+    "urls": [
+      { "loc": "/products/PRD_D3758281-4BE9-4DAC-9E74-3ED4DAE718C2" },
+      { "loc": "/products/PRD_7D0CD18C-876A-4CBD-B157-C8E638FD4E7D", "lastmod": "2026-04-11" }
+    ]
+  }
+}
+```
+
+This lets search engines discover and crawl the clean product URLs even though normal user navigation still uses hash URLs in the browser.
+
+---
+
 ## Supported Meta Tags
 
 All standard Open Graph (`og:`) and Twitter Card (`twitter:`) tags are supported. The most commonly used:

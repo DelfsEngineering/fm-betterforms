@@ -31,6 +31,7 @@ This older flowchart is still useful if you want a high-level picture of how a h
 | `onAuthNotifier`       | Sends verification, reset, and magic-link notifications     | Auth email / notification flows        |
 | `onBeforeRegistration` | Allows or blocks certain registrations before user creation | OAuth or controlled registration flows |
 | `onApiCall`            | Handles the universal BetterForms API callback endpoint     | Requests to `/api*`                    |
+| `onSiteMap`            | Adds dynamic clean URLs to the generated sitemap            | Requests to `/sitemap.xml`             |
 
 ## onLogin
 
@@ -132,6 +133,42 @@ Use it when you want FileMaker to respond to inbound API requests at `/api*`.
 This hook is documented in more detail here:
 
 * [API Callback Endpoint](callback.md)
+
+## onSiteMap
+
+`onSiteMap` is the common hook BetterForms uses when generating `/sitemap.xml`.
+
+Use it when your public SSR pages include dynamic clean URLs such as:
+
+* `/products/PRD_123`
+* `/blog/how-to-code`
+* `/articles/widget-pro`
+
+BetterForms already includes static SSR-enabled layouts in the sitemap automatically. `onSiteMap` is for adding the dynamic URLs that cannot be listed directly from static layout keys.
+
+### What It Should Return
+
+Return your dynamic sitemap URLs in `response.urls`:
+
+```json
+{
+  "response": {
+    "urls": [
+      { "loc": "/products/PRD_D3758281-4BE9-4DAC-9E74-3ED4DAE718C2" },
+      { "loc": "/products/PRD_7D0CD18C-876A-4CBD-B157-C8E638FD4E7D", "lastmod": "2026-04-11" }
+    ]
+  }
+}
+```
+
+### Rules
+
+* `loc` is required
+* `loc` must start with `/`
+* return clean URLs, not hash URLs
+* `lastmod` is optional
+
+If the hook is missing, BetterForms still returns a valid static-only sitemap. If the hook returns malformed data, BetterForms ignores the bad dynamic payload and falls back to the static sitemap.
 
 ## Related Pages
 

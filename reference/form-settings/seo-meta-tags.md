@@ -397,7 +397,34 @@ If omitted, SSR falls back to `"en"`.
 
 ## Dynamic robots.txt and sitemap.xml
 
-BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tenant. Pages with `ssr.enabled: true` are allowed/listed; everything else is disallowed. No configuration required beyond enabling SSR per layout.
+BetterForms automatically generates `robots.txt` and `sitemap.xml` for each tenant.
+
+Static pages with `ssr.enabled: true` are included automatically.
+
+For dynamic clean URLs such as product detail pages or blog posts, BetterForms can also expand the sitemap through the common `onSiteMap` hook. This is important because search engines discover and index the clean server-visible URL, not the browser hash URL.
+
+Example `onSiteMap` response:
+
+```json
+{
+  "response": {
+    "urls": [
+      { "loc": "/products/PRD_D3758281-4BE9-4DAC-9E74-3ED4DAE718C2" },
+      { "loc": "/products/PRD_7D0CD18C-876A-4CBD-B157-C8E638FD4E7D", "lastmod": "2026-04-11" }
+    ]
+  }
+}
+```
+
+Rules:
+
+* static SSR layouts are listed automatically
+* dynamic URLs should be returned by `onSiteMap`
+* `loc` must be a clean path beginning with `/`
+* return clean URLs, not hash URLs such as `/#/products/...`
+* `lastmod` is optional
+
+If `onSiteMap` is not implemented, BetterForms still returns a valid static-only sitemap.
 
 ---
 
