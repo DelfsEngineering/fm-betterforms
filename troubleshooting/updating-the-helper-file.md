@@ -86,7 +86,7 @@ We need to replicate the steps we made in the helper file in the FileMaker appli
 
 8. Sync App with Frontend:
 
-(If the file is replaced with the same name, there is no change needed in the BF editor. If not, make sure you use the same credentials.)
+(If the file is replaced with the same name, there is no change needed in the Klai editor. If not, make sure you use the same credentials.)
 
 * Open the environments list and choose the environment.
 * Click the three dots menu > Edit.

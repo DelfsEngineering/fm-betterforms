@@ -189,7 +189,7 @@
 - **Custom Domains** - *.fmbetterforms.com reference issue + need* .clientportal.cloud info + step reordering
 - **Naked Domains** - Empty section with "(update needed)"
 
-### **BF Utility Function Ver. 0.9.20+ - Eduardo**
+### **Klai Utility Function Ver. 0.9.20+ - Eduardo**
 
 - **Table** - BF.getPaths(object, JPquery) → BF.getPaths(object, JPath)
 - **Example Usage** - Landing page is empty + need examples for every function (currently only i18n)
@@ -200,11 +200,11 @@
 - Adding users to channels - Update Helper File version requirement
 - Sending messages - Response object is empty
 - **Core APIs**
-- BF Server Proxy - Testing Connection has TODO text
+- Klai Server Proxy - Testing Connection has TODO text
 - BetterForms Error Pages API - Complete Error Code List link doesn't work
 - Custom error pages - Need onAppLoad workaround documentation
-- **BF Streaming Proxy**
-- BF Streaming API (Chat) - Fix "Avail in **bf-staging** only" text
+- **Klai Streaming Proxy**
+- Klai Streaming API (Chat) - Fix "Avail in **bf-staging** only" text
 
 ### **Support & Maintenance - Eduardo**
 

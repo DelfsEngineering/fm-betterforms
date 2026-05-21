@@ -88,7 +88,7 @@ You can use this method to join users to one or more channels. This is an authen
 | ------------------ | ------ | ----------------------------------------------------- |
 | apiKey             | string | BetterForms network API key                           |
 | users              | array  | array of user/channel objects                         |
-| users\[0].id       | string | BF user id from helper file                           |
+| users\[0].id       | string | Klai user id from helper file                           |
 | users\[0].channels | array  | an array of channel objects                           |
 
 {% tabs %}
@@ -146,7 +146,7 @@ You can use this method to join users to one or more channels. This is an authen
 
 Users can only be joined to anonymous channels directly from the browser. The current browser tab that executes the action will be the one added to the channel.
 
-A user can be joined to an anonymous channel via a [BF action ](../../reference/actions-processor/)called **channelJoinAnon.**
+A user can be joined to an anonymous channel via a [Klai action ](../../reference/actions-processor/)called **channelJoinAnon.**
 
 **Example:**
 

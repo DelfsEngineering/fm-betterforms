@@ -42,7 +42,7 @@ When referencing row data within slots, use `props.row` instead of the usual `mo
 
 ## Slots
 
-Slots allow you to insert you own custom HTML in predefined positions within the component Slots with respect the BF Forms render engine and render VueJS code also:
+Slots allow you to insert you own custom HTML in predefined positions within the component Slots with respect the Klai Forms render engine and render VueJS code also:
 
 * `beforeTable`: Before the table wrapper. After the controls row
 * `afterTable`: Before the table wrapper.

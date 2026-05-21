@@ -82,7 +82,7 @@ Authentication pages can read feedback from:
 - `model.authMessageType`
 - `BF.authGetLastFeedback()`
 
-For new pages, prefer `auth.*` codes over parsing the English message text. For UI examples and patterns, see [Custom Login Pages](../authentication/custom-login-pages.md) and [BF Utility Functions](../bf-utility-function-ver-0.9.20+.md).
+For new pages, prefer `auth.*` codes over parsing the English message text. For UI examples and patterns, see [Custom Login Pages](../authentication/custom-login-pages.md) and [Klai Utility Functions](../bf-utility-function-ver-0.9.20+.md).
 
 Security note:
 

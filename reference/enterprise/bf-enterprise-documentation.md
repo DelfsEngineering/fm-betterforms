@@ -1,4 +1,4 @@
-# BF Enterprise Documentation
+# Klai Enterprise Documentation
 
 
 ### Overview
@@ -7,8 +7,8 @@ Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing
 
 #### Features
 
-* Fully standalone serving of BF apps
-* Apps are built with BF Cloud in the same manner as regular apps
+* Fully standalone serving of Klai apps
+* Apps are built with Klai Cloud in the same manner as regular apps
 * Apps can live both in the cloud and on-premise
 * Choose which apps to host
 
@@ -18,15 +18,15 @@ Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing
 
 ### Requirements
 
-BF Enterprise runs out of a docker image and new BF Enterprise Helper file, therefore the requirements are:
+Klai Enterprise runs out of a docker image and new Klai Enterprise Helper file, therefore the requirements are:
 
 * Docker Instance (Min 1);
 * [Env settings file](bf-enterprise-documentation.md#env-file);
-* BF Enterprise Helper FileMaker File (will be provided);
-* BF App migrated to the latest BF Editor (Environments version)
+* Klai Enterprise Helper FileMaker File (will be provided);
+* Klai App migrated to the latest Klai Editor (Environments version)
 * FileMaker 19+.
 
-**Optional / environment-dependent** (not included with the BF Enterprise docker image):
+**Optional / environment-dependent** (not included with the Klai Enterprise docker image):
 
 * **Redis cache** settings can be supplied for cache-backed services.
 * **Messaging/shared Redis** should be configured when you need cross-pod messaging or multi-pod synchronization.
@@ -55,7 +55,7 @@ Default environment variables to be declared in the file:
 | AUTHENTICATION\_SECRET     | Salt used in authentication service                                                                                 | Yes      |
 | ENCRYPTION\_KEY            | Sal used to generate vaults                                                                                         | Yes      |
 | ISENTERPRISE               | Set to enterprise mode (must be set as ISENTERPRISE=true)                                                           | Yes      |
-| FMS\_CONNECTION\_DEFAULT\_GATEWAY | XML or DAPI - default gateway used to communicate with the BF Enterprise Helper file | No |
+| FMS\_CONNECTION\_DEFAULT\_GATEWAY | XML or DAPI - default gateway used to communicate with the Klai Enterprise Helper file | No |
 | NOW\_DC                    | used to identify which server app is running from                                                                   | No       |
 | REDIS\_HOST                | Redis host address for caching                                                                                      | No       |
 | REDIS\_PASSWORD            | Redis password for caching                                                                                          | No       |
@@ -107,7 +107,7 @@ Find the links to Docker’s official docs on how to install Docker on each OS.
 
 #### Loading image to a local repository
 
-As of Jun 1st, 2022, the docker image is distributed via .tar file. In order to load this file to your local docker repository and be able to start the BF server, run the following docker command.
+As of Jun 1st, 2022, the docker image is distributed via .tar file. In order to load this file to your local docker repository and be able to start the Klai server, run the following docker command.
 
 ```json
 docker load -i bf-enterprise-v0-10-84.tar
@@ -144,7 +144,7 @@ docker run -dp 80:80 --restart always --env-file yourEnvFile ourPublicRepo/bette
 
 #### Scaling up
 
-Using the command above will start one pod, equivalent to one BF server. In order to increase availability and performance, more pods can be deployed in single or multiple servers. If multiple servers are being used, it will be necessary to use a load balancer in front of those servers to distribute load between multiple pods.
+Using the command above will start one pod, equivalent to one Klai server. In order to increase availability and performance, more pods can be deployed in single or multiple servers. If multiple servers are being used, it will be necessary to use a load balancer in front of those servers to distribute load between multiple pods.
 
 ### Hardware Recommendations
 

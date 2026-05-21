@@ -1,7 +1,7 @@
 # Components Editor
 
 {% hint style="info" %}
-If Alpha Features are enabled on your account, you will see the <mark style="color:orange;">`Component`</mark> tab in the right-hand navigation bar of the BF editor.
+If Alpha Features are enabled on your account, you will see the <mark style="color:orange;">`Component`</mark> tab in the right-hand navigation bar of the Klai editor.
 {% endhint %}
 
 In this **Component Editor**, you can create and edit the components you want to insert into your pages.

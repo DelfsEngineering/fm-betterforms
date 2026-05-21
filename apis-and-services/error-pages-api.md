@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This document covers the system static and app dynamic error pages and how they work. The static error page is a non-customizable page that will be shown for lower level errors (e.g. BF server, network, providers errors), and the app dynamic error page is shown for some higher-level errors (e.g. page not found, request timeout, and some FM errors like Invalid Data API token).
+This document covers the system static and app dynamic error pages and how they work. The static error page is a non-customizable page that will be shown for lower level errors (e.g. Klai server, network, providers errors), and the app dynamic error page is shown for some higher-level errors (e.g. page not found, request timeout, and some FM errors like Invalid Data API token).
 
 ### Static Error Page
 

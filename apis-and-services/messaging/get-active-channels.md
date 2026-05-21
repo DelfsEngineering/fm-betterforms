@@ -18,7 +18,7 @@ application/json
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="apiKey" type="string" %}
-the API key for your BF app
+the API key for your Klai app
 {% endswagger-parameter %}
 
 {% swagger-response status="201" description="Returns an object with two keys authenticated and anonymous. Each will have an array of current active channels." %}

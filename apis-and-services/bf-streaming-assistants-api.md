@@ -1,4 +1,4 @@
-# BF Streaming API (Assistants)
+# Klai Streaming API (Assistants)
 
 {% hint style="info" %}
 The BetterForms assistants endpoint provides stateful assistant-style conversations with streamed updates.
@@ -182,9 +182,9 @@ Behavior notes:
 
 - Use `thread_id` in the request payload to continue an existing assistant thread.
 - Streaming requests emit `threadInfo` messages that contain `assistantThreadId` and `runId`.
-- If you want the more general multi-provider/tooling contract, see [BF Streaming API (LLM Query)](./bf-streaming-api-llm-query.md).
+- If you want the more general multi-provider/tooling contract, see [Klai Streaming API (LLM Query)](./bf-streaming-api-llm-query.md).
 
 ## Related Pages
 
 - [assistantStop](../reference/actions-processor/actions_overview/assistantstop.md)
-- [BF Streaming API (LLM Query)](./bf-streaming-api-llm-query.md)
+- [Klai Streaming API (LLM Query)](./bf-streaming-api-llm-query.md)

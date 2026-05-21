@@ -1,4 +1,4 @@
-# BF Streaming API (Chat)
+# Klai Streaming API (Chat)
 
 {% hint style="info" %}
 The BetterForms chat streaming endpoint is a lightweight streaming API for simple OpenAI and Gemini text generation.
@@ -118,5 +118,5 @@ When `payload.stream` is `false`, BetterForms returns the result directly in the
 
 ## Related Pages
 
-- [BF Streaming API (LLM Query)](./bf-streaming-api-llm-query.md)
-- [BF Streaming API (Assistants)](./bf-streaming-assistants-api.md)
+- [Klai Streaming API (LLM Query)](./bf-streaming-api-llm-query.md)
+- [Klai Streaming API (Assistants)](./bf-streaming-assistants-api.md)

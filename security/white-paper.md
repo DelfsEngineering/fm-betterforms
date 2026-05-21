@@ -6,7 +6,7 @@
 
 * Authentication - Ensuring the identity of a user.
 * Authorization - Ensuring that an authorized user is allowed to perform a workflow.
-* BF - Klai Studio
+* Klai - Klai Studio
 * FMS - FileMaker Server
 * JWT - JSON Web Token, a securely signed token that is immutable.
 * CWP - Custom Web Publishing, a method of connecting and exposing data to third-party applications.
@@ -15,9 +15,9 @@
 
 TLS Certificates are automatically generated for \*.[fmbetterforms.com](https://app.fmbetterforms.com/) domains. Custom domains will also get a generated domain or subdomain certificate with Let's Encrypt, a free certificate service.
 
-Authenticated and Un-Authenticated Pages - BF allows web pages (form/layout) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the BF editor.
+Authenticated and Un-Authenticated Pages - Klai allows web pages (form/layout) to be accessed with and without authentication. By default, Pages need authentication. This is indicated visually in the Klai editor.
 
-After a user is logged into a page that requires authentication, their credentials are one-way hashed and compared to those in the user table in the BF helper file.
+After a user is logged into a page that requires authentication, their credentials are one-way hashed and compared to those in the user table in the Klai helper file.
 
 A JWT (JSON Web Token) token is generated using industry approved encryption. JWTs are immutable and ensure the client is who they claim to be.
 
@@ -35,7 +35,7 @@ When the server is first deployed it is given all of the secrets (keys, links, e
 
 #### Client account credentials
 
-In order for BF to access an FMS server it must retain a set of credentials (see FileMaker Credentials section). These credentials are encrypted and saved on the BF application server. The credentials are decrypted immediately before each FMS server interaction with a decryption key that is injected into the BF server upon start up.
+In order for Klai to access an FMS server it must retain a set of credentials (see FileMaker Credentials section). These credentials are encrypted and saved on the Klai application server. The credentials are decrypted immediately before each FMS server interaction with a decryption key that is injected into the Klai server upon start up.
 
 aes-256-cbc with random IV (initialization Vector) Decrypted on fly, cached data remains encrypted until retrieved.
 
@@ -43,19 +43,19 @@ aes-256-cbc with random IV (initialization Vector) Decrypted on fly, cached data
 
 #### FileMaker Credentials
 
-The credential that BF uses to access FMS has very limited scope.
+The credential that Klai uses to access FMS has very limited scope.
 
 * CWP API Gateway only (cannot be used).
 * Read Write Access Only (not full admin).
 * Can only run scripts/layouts it's given access to.
 
-All BF interactions to FMS are performed via scripts. This give great control over workflow and makes it easy to keep tight security.
+All Klai interactions to FMS are performed via scripts. This give great control over workflow and makes it easy to keep tight security.
 
 Even knowing the password does not actually grant the user data, but allows them to run the hook script at most. It is important that at the top of scripts that need to restrict data the user id is verified for authorization.
 
 You can add additional restrictions to the BetterForms account credential by the following:
 
-* Only grant the account access to the BF hook scripts and any scripts they reach.
+* Only grant the account access to the Klai hook scripts and any scripts they reach.
 * Since all access is via a script and NOT direct access to your tables, your scripts can check for additional authentication (user is logged in, user allowed to fetch data etc) in the hook scripts.
 * **User ID**
 
@@ -63,14 +63,14 @@ If a user is authenticated, their JWT user ID is passed into all scripts so the 
 
 #### User Tables
 
-BF comes with a helper file that contains a user table with a securely based credential. Developers can also control:
+Klai comes with a helper file that contains a user table with a securely based credential. Developers can also control:
 
 * Enable / Disable Account
 * Force account email to be verified
 
 #### Helper File
 
-Incoming traffic from the BF server only enters the Helper File. The helper file acts as a credential firewall and adds a degree of isolation between the legacy file.
+Incoming traffic from the Klai server only enters the Helper File. The helper file acts as a credential firewall and adds a degree of isolation between the legacy file.
 
 #### Techniques for increasing security (Proposed - Edit needed)
 

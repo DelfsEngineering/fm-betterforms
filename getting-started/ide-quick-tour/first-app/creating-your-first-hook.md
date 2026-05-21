@@ -25,7 +25,7 @@ For your first hook, let's enable the `onFormRequest` option for the page you ju
 
 ### Step 2: Locate the FileMaker Script
 
-From the scripts you pasted into your legacy FileMaker file, locate the one called `BF - onFormRequest - [scopedHookName]` where `[scopedHookName]` is the name of the scoped hook you defined on your page settings. This is the script that is run when the page is first loaded in the browser.
+From the scripts you pasted into your legacy FileMaker file, locate the one called `Klai - onFormRequest - [scopedHookName]` where `[scopedHookName]` is the name of the scoped hook you defined on your page settings. This is the script that is run when the page is first loaded in the browser.
 
 ### Step 3: Modify the FileMaker Script
 

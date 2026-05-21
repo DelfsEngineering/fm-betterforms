@@ -4,7 +4,7 @@ For your first hook, let's try enabling the **onFormRequest** option for the pag
 
 ## The FileMaker Script
 
-From the scripts you pasted into your legacy FileMaker file, locate the one called `BF - onFormRequest - [scopedHookName]` where **\[scopedHookName]** is the name of scoped hook you defined on your page settings. This is the script that is run when the page is first loaded in the browser.
+From the scripts you pasted into your legacy FileMaker file, locate the one called `Klai - onFormRequest - [scopedHookName]` where **\[scopedHookName]** is the name of scoped hook you defined on your page settings. This is the script that is run when the page is first loaded in the browser.
 
 You can do anything you want in this script, but the ultimate goal for this example is to push data back to the browser. This is accomplished by setting the **\$$BF\_Model** global variable to a JSON object containing the data.
 

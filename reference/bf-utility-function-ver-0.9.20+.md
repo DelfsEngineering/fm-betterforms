@@ -4,7 +4,7 @@ description: >-
   within JavaScript to allow  easy access to common complex code.
 ---
 
-# BF Utility Functions
+# Klai Utility Functions
 
 | Function | Description |
 |----------|-------------|
@@ -26,10 +26,10 @@ description: >-
 | `BF.i18n(key)` | Internationalization translations. Returns the key's value in its correct language. |
 | `BF.getUUID()` | Returns a UUID |
 | `BF.pwaSetManifest(manifest)` | Sets the manifest for PWA apps. `manifest` is a JSON object that confirms to a standard PWA manifest object. |
-| **`BF.getVersion()`** | Returns an object with version info: `{ basecode, app }`.<br>**basecode** is the BF operating system version. **app** is the published app version (from the evironments card if present, otherwise falls back to `site.hash`).<br>*Available in basecode v3.2.19+*. |
-| `BF.rebuildReactivity(object)` | This function is normally run upon the completion of a `function` internally by the BF actions processor.<br>It recursively scans the object passed and adds new reactive keys to keys that are new or do not have reactivity. You will not need to use this within a function unless that function has a callback that later mutates a reactive object. Eg: setTimeout() which takes a callback. |
-| `BF.socketConnect()` | Connects the client to the BF server via a socket |
-| `BF.socketDisconnect()` | Disconnects the client from the BF servers (Goes off line) |
+| **`BF.getVersion()`** | Returns an object with version info: `{ basecode, app }`.<br>**basecode** is the Klai operating system version. **app** is the published app version (from the evironments card if present, otherwise falls back to `site.hash`).<br>*Available in basecode v3.2.19+*. |
+| `BF.rebuildReactivity(object)` | This function is normally run upon the completion of a `function` internally by the Klai actions processor.<br>It recursively scans the object passed and adds new reactive keys to keys that are new or do not have reactivity. You will not need to use this within a function unless that function has a callback that later mutates a reactive object. Eg: setTimeout() which takes a callback. |
+| `BF.socketConnect()` | Connects the client to the Klai server via a socket |
+| `BF.socketDisconnect()` | Disconnects the client from the Klai servers (Goes off line) |
 | | |
 | **Dynamic Library Loading** | |
 | `BF.libraryLoadOnce(url, options)` | Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamically. Libraries are loaded once and cached automatically (idempotent).<br>*Available in basecode v3.2.31+*. |

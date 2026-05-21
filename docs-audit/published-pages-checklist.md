@@ -150,7 +150,7 @@ Legend: `scope` = whether the page is part of the first-pass audit, `content typ
 | OAuth | `reference/authentication/oauth.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | JWT Expiration | `reference/authentication/jwt-expiration.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | Security Best Practices | `reference/authentication/security-best-practices.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Utility Functions | `reference/bf-utility-function-ver-0.9.20+.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
+| Klai Utility Functions | `reference/bf-utility-function-ver-0.9.20+.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Dynamic Library Loading | `reference/bf-dynamic-library-loading.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | APIs & Services | `apis-and-services/README.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | Messaging | `apis-and-services/messaging/README.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
@@ -160,12 +160,12 @@ Legend: `scope` = whether the page is part of the first-pass audit, `content typ
 | Get connected users | `apis-and-services/messaging/get-all-users-connected.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | Get active channels | `apis-and-services/messaging/get-active-channels.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | Core APIs | `apis-and-services/core-apis/README.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Server Proxy | `apis-and-services/server-proxy.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
+| Klai Server Proxy | `apis-and-services/server-proxy.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | BetterForms Error Pages API | `apis-and-services/error-pages-api.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Streaming Proxy | `apis-and-services/streaming-proxy.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Streaming API (Chat) | `apis-and-services/bf-streaming-api-chat.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Streaming API (Assistants) | `apis-and-services/bf-streaming-assistants-api.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
-| BF Streaming API (LLM Query) | `apis-and-services/bf-streaming-api-llm-query.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
+| Klai Streaming Proxy | `apis-and-services/streaming-proxy.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
+| Klai Streaming API (Chat) | `apis-and-services/bf-streaming-api-chat.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
+| Klai Streaming API (Assistants) | `apis-and-services/bf-streaming-assistants-api.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
+| Klai Streaming API (LLM Query) | `apis-and-services/bf-streaming-api-llm-query.md` | `reference` | `published-first-pass` | `high` | `deep-audited` |
 | Guides & Integrations | `guides/integrations/README.md` | `guide` | `published-first-pass` | `medium` | `inventory complete` |
 | Creating Components with Third-Party Libraries | `guides/integrations/creating-components-with-third-party-libraries.md` | `guide` | `published-first-pass` | `medium` | `inventory complete` |
 | Web Awesome Components in BetterForms | `guides/integrations/web-awesome-components.md` | `guide` | `published-first-pass` | `medium` | `inventory complete` |
@@ -186,7 +186,7 @@ Legend: `scope` = whether the page is part of the first-pass audit, `content typ
 | Support & Maintenance | `reference/support-and-maintenance/README.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Connection Trouble Shooting Guide | `reference/support-and-maintenance/connection-trouble-shooting-guide.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Updating the Helper File | `reference/support-and-maintenance/updating-the-helper-file.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
-| BF Error Codes | `reference/bf-error-codes.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
+| Klai Error Codes | `reference/bf-error-codes.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Security | `security/README.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Custom Domains | `reference/security/custom-domains.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Security White Paper | `security/white-paper.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
@@ -194,7 +194,7 @@ Legend: `scope` = whether the page is part of the first-pass audit, `content typ
 | Technology Stack | `security/technology-stack.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Compatibility | `security/compatibility.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | Enterprise | `reference/enterprise/README.md` | `reference` | `published-first-pass` | `medium` | `deep-audited` |
-| BF Enterprise Documentation | `reference/enterprise/bf-enterprise-documentation.md` | `reference` | `published-first-pass` | `medium` | `deep-audited` |
+| Klai Enterprise Documentation | `reference/enterprise/bf-enterprise-documentation.md` | `reference` | `published-first-pass` | `medium` | `deep-audited` |
 | Read Me | `cookbook-coming-soon/read-me.md` | `cookbook` | `published-gap-review` | `low` | `inventory complete` |
 | AI Assistant - Tips & Tricks | `cookbook-coming-soon/ai-assistant-tips-and-tricks.md` | `cookbook` | `published-gap-review` | `low` | `inventory complete` |
 | Using Development Data | `cookbook-coming-soon/using-development-data.md` | `cookbook` | `published-gap-review` | `low` | `inventory complete` |

@@ -4,7 +4,7 @@ Separating Concerns
 
 ## DRY - Don't Repeat yourself
 
-Write scripts that can be called from both FM Client and BF Web apps equally. This is a paradigm change for most FileMaker developers.
+Write scripts that can be called from both FM Client and Klai Web apps equally. This is a paradigm change for most FileMaker developers.
 
 Consider a workflow that creates a new record when a user initiates some action like clicking a button.
 

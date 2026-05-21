@@ -7,7 +7,7 @@ Sends a message to a given anonymous channel\(s\).
 | Key | value | Description |
 | :--- | :--- | :--- |
 | action | 'messageSendAnonChannel' | Action name |
-| options.actions | {array} | Array of BF actions |
+| options.actions | {array} | Array of Klai actions |
 | options.channels | {array} | Array of channel names |
 | options.model | {object} | Key value pairs from model data |
 | options.app | {object} | Key value pairs from app model data |

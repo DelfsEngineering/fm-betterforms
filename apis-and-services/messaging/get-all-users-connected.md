@@ -18,7 +18,7 @@ application/json
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
-the API key for your BF app
+the API key for your Klai app
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="channel" type="string" required="false" %}

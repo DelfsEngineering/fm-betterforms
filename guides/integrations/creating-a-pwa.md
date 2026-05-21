@@ -13,17 +13,17 @@ PWA (Progressive Web Applications) offer several advantages that make them a des
 
 By choosing a PWA approach, businesses and developers can provide their users with a native-like experience, increase user engagement, and reach a wider audience across various devices and platforms.
 
-The following sections will explain how to transform your BF App into a PWA.
+The following sections will explain how to transform your Klai App into a PWA.
 
 ## Getting Started
 
 #### Requirements
 
-* Running >V2.1.0 BF base code
+* Running >V2.1.0 Klai base code
 
 ### Making it installable
 
-This will be the first feature added to your PWA. We will start by creating a manifest object and passing it as a parameter to a new BF function <mark style="color:red;">`pwaSetManifest`</mark>. In this example we added this code to a function in our <mark style="color:red;">`onAppLoad`</mark> named action.
+This will be the first feature added to your PWA. We will start by creating a manifest object and passing it as a parameter to a new Klai function <mark style="color:red;">`pwaSetManifest`</mark>. In this example we added this code to a function in our <mark style="color:red;">`onAppLoad`</mark> named action.
 
 ```javascript
 let manifest = {
@@ -191,12 +191,12 @@ The example below shows how we could trigger the permission prompt from a button
 In this example, we set the user ID (BetterForms ID) as a key to target this when sending a push notification. Clicking on the button will display the following prompt.
 
 {% hint style="info" %}
-`window.vueapp.$store.state.auth.user.id` refers to the **BetterForms User record ID**, _not_ your FileMaker business file PK. Using the BF ID ensures your subscription is associated with the correct user in the BF cloud database.
+`window.vueapp.$store.state.auth.user.id` refers to the **BetterForms User record ID**, _not_ your FileMaker business file PK. Using the BF ID ensures your subscription is associated with the correct user in the Klai cloud database.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Untitled 1 (1).png" alt=""><figcaption></figcaption></figure>
 
-Once the user clicks on <mark style="color:red;">`Allow`</mark>, the subscription will be saved in the BF cloud database and you will be able to send a push notification to the user using either an action from the frontend or hitting our <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint, as shown below.
+Once the user clicks on <mark style="color:red;">`Allow`</mark>, the subscription will be saved in the Klai cloud database and you will be able to send a push notification to the user using either an action from the frontend or hitting our <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint, as shown below.
 
 #### Sending a Push Notification from an action:
 
@@ -209,7 +209,7 @@ Use the <mark style="color:red;">`pwaPushNotificationSend`</mark> action step.
     "actions": [{
         "action": "pwaPushNotificationSend",
         "options": {
-            "body": "Hello from BF push notification!",
+            "body": "Hello from Klai push notification!",
             "data": {
                 "dateOfArrival_calc": "Date.now()",
                 "path": "/"
@@ -244,7 +244,7 @@ Hitting <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint ( 
 ```json
 {
     "apiKey": "BFAPI_YOUR_KEY",
-    "body": "Hello from BF push notification!",
+    "body": "Hello from Klai push notification!",
     "data": {
         "dateOfArrival_calc": "Date.now()",
         "path": "/"

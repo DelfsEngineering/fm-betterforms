@@ -71,7 +71,7 @@ These files were visually matched to a suitable page and reattached:
   - shows BetterForms OAuth provider credentials fields for Auth0
 - `.gitbook/assets/oauth-redirect-uri.png`
   - attached to `guides/integrations/setting-up-auth0.md`
-  - shows the FileMaker script list with `BF - onBeforeRegistration` selected
+  - shows the FileMaker script list with `Klai - onBeforeRegistration` selected
 - `.gitbook/assets/public-client-key.png`
   - attached to `reference/components-overview/payment-gateways/authorize.md`
   - shows the Authorize.net public client key page
@@ -106,9 +106,9 @@ These files were intentionally removed after manual review because they were sta
 - `.gitbook/assets/Screen Shot 2018-08-20 at 9.08.57 PM.png`
 - `.gitbook/assets/Screenshot 2024-08-21 151451.png`
 - `.gitbook/assets/Screenshot 2024-08-21 151827.png`
-- `.gitbook/assets/BF Overview (1) (1).png`
-- `.gitbook/assets/BF Overview (1).png`
-- `.gitbook/assets/BF Overview.png`
+- `.gitbook/assets/Klai Overview (1) (1).png`
+- `.gitbook/assets/Klai Overview (1).png`
+- `.gitbook/assets/Klai Overview.png`
 - `.gitbook/assets/bf-overview (1).png`
 
 ## Remaining Orphans

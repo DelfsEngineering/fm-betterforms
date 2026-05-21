@@ -6,13 +6,13 @@ description: >-
 
 # Sending messages
 
-Think of a message as a standard [**BF Action**](../../reference/actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
+Think of a message as a standard [**Klai Action**](../../reference/actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
-## BF Action
+## Klai Action
 
 ### Authenticated Channels
 
-The BF action **messageSend** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
+The Klai action **messageSend** can be used to send a message to channel or channels. It requires a **channel** key to be set under options.
 
 #### Example
 
@@ -55,7 +55,7 @@ The BF action **messageSend** can be used to send a message to channel or channe
 
 ### Anonymous channel
 
-The BF action **messageSendAnonChannel** can be used to send a message to channel or channels. It requires a **channels** key to be set under options.
+The Klai action **messageSendAnonChannel** can be used to send a message to channel or channels. It requires a **channels** key to be set under options.
 
 #### Example
 
@@ -101,7 +101,7 @@ The BF action **messageSendAnonChannel** can be used to send a message to channe
 The script is available in Helper file and is called **API - Send Message**. This script accepts an object with four keys **message**, **channels**, **apiKey** and **domain**.
 
 * `message`: it accepts an object with:
-  * `actions`: array of BF action objects;
+  * `actions`: array of Klai action objects;
   * `model`: object with model data;
   * `app`: object with app model data.
 * `channels`: string of channel name or array of strings;
@@ -156,7 +156,7 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 | apiKey          | string | the API key for the corresponding app                |
 | channels        | array  | array of channel names                               |
 | message         | object | JSON object to be sent                               |
-| message.actions | array  | JSON for an array of BF action objects               |
+| message.actions | array  | JSON for an array of Klai action objects               |
 | message.model   | object | JSON object with data to be merged to model data     |
 | message.app     | object | JSON object with data to be merged to app model data |
 

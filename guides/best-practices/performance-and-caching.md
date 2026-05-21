@@ -10,7 +10,7 @@ The Helper File inbox has a timer that measures the total time a hook took to ru
 
 ## Reducing Data Transfer
 
-BF hooks transfer data between the client and the BF servers. Reducing this data transfer will reduce latency times for all calls. Inspect the inbox for data size. Often you can remove data that is not needed to perform the purpose of the hook.
+Klai hooks transfer data between the client and the Klai servers. Reducing this data transfer will reduce latency times for all calls. Inspect the inbox for data size. Often you can remove data that is not needed to perform the purpose of the hook.
 
 ### Caching Data
 
@@ -38,7 +38,7 @@ Keys set for caching will automatically be saved locally as they are changed. No
 {% hint style="warning" %}
 **Security:** It is important to be mindful of sensitive data. Browser-side caching is not encrypted and as such can be viewed directly by users.
 
-You can clear local storage explicitly upon logout via an action function with the below JS code. This is not a security mitigation but may be considered under some circumstances. This will also force the clearing of the BF authentication token.
+You can clear local storage explicitly upon logout via an action function with the below JS code. This is not a security mitigation but may be considered under some circumstances. This will also force the clearing of the Klai authentication token.
 
 ```
 window.localStorage.clear();

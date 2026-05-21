@@ -70,9 +70,9 @@ You can use this method to remove one or more users from channels. You must pass
 
 | Name               | Type   | Description                                                  |
 | ------------------ | ------ | ------------------------------------------------------------ |
-| apiKey             | string | The API key generated for your BF app                        |
+| apiKey             | string | The API key generated for your Klai app                        |
 | users              | array  | array of user/channel objects                                |
-| users\[0].id       | string | BF user id from the users table in the helper file           |
+| users\[0].id       | string | Klai user id from the users table in the helper file           |
 | users\[0].channels | array  | any array of channel objects                                 |
 
 {% tabs %}
@@ -127,7 +127,7 @@ You can use this method to remove one or more users from channels. You must pass
 
 Users can only be removed from anonymous channels directly from the browser. The current browser tab that executes the action will be the one removed from the channel.
 
-A user can be removed from an anonymous channel via a [BF action ](../../reference/actions-processor/)called **channelLeaveAnon.**
+A user can be removed from an anonymous channel via a [Klai action ](../../reference/actions-processor/)called **channelLeaveAnon.**
 
 **Example:**
 

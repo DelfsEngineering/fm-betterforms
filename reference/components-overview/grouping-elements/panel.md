@@ -8,7 +8,7 @@ To see panel in grouping eleelements, check out [this example](https://appstagin
 
 
 
-`panel` allows better organization of fields and data. Panel elements can hold other BF elements.
+`panel` allows better organization of fields and data. Panel elements can hold other Klai elements.
 
 |                 Key | Value(s) |    Type   | Description                                                                                 |
 | ------------------: | -------- | :-------: | ------------------------------------------------------------------------------------------- |

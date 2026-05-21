@@ -74,7 +74,7 @@ Attach the appropriate Actions to the relevant pages:
 - Real auth failures continue to flow through the normal BetterForms error pipeline.
 - Success/info auth states update the auth feedback contract but are not pushed into the global error stack.
 - For new UI, prefer mapping from `auth.*` codes to your own localized copy instead of parsing the English message text.
-- For UI examples, see [Custom Login Pages](./custom-login-pages.md) and [BF Utility Functions](../bf-utility-function-ver-0.9.20+.md).
+- For UI examples, see [Custom Login Pages](./custom-login-pages.md) and [Klai Utility Functions](../bf-utility-function-ver-0.9.20+.md).
 
 ## Email Delivery
 
