@@ -1,12 +1,12 @@
 ---
 description: >-
-  FM BetterForms was purpose built to allow FileMaker developers access to a
+  Klai Studio was purpose built to allow FileMaker developers access to a
   full powerful web technology stack.
 ---
 
 # Overview
 
-FM BetterForms was purpose-built to allow FileMaker developers access to a full, powerful web technology stack. All data is stored on your FileMaker Server and is not cached by BetterForms. Data remains secure in transit with encryption.
+Klai Studio was purpose-built to allow FileMaker developers access to a full, powerful web technology stack. All data is stored on your FileMaker Server and is not cached by BetterForms. Data remains secure in transit with encryption.
 
 For authentication options and workflows, see the Authentication section in the Reference docs: [Authentication](../reference/authentication/README.md).
 

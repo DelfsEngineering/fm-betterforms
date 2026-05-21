@@ -92,7 +92,7 @@
 
 ### **🚀 Getting Started - Pearson**
 
-- Welcome to FM BetterForms!
+- Welcome to Klai Studio!
 - System Overview
 - Quick Tour of the BetterForms IDE
 1. Setting Up Your Foundation

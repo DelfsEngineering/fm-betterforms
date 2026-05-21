@@ -4,11 +4,11 @@
 
 ### ![Delfs' Engineering Logo](.gitbook/assets/1486254174620.png)
 
-### FM BetterForms
+### Klai Studio
 
 > **A loosely coupled high performance front end web publishing framework and application that allows FileMaker database developers to build anything from form widgets to full web apps.**
 
-FM BetterForms makes it easy to create high performance web applications and forms without any deep knowledge of JavaScript or web technologies.
+Klai Studio makes it easy to create high performance web applications and forms without any deep knowledge of JavaScript or web technologies.
 
 * Mobile first responsive design
 * Publish and process forms, data and pages

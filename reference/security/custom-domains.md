@@ -1,6 +1,6 @@
 # Custom Domains
 
-FM BetterForms generates custom subdomains with the `*.fmbetterforms.com` domain name space and will automatically generate and maintain a security certificate For custom domains you will have to follow a few steps to configure.
+Klai Studio generates custom subdomains with the `*.fmbetterforms.com` domain name space and will automatically generate and maintain a security certificate For custom domains you will have to follow a few steps to configure.
 
 If your account permits it, you can map fully customized domains to BetterForms servers.
 

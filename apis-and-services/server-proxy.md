@@ -6,7 +6,7 @@ The BF Proxy can be used to provide a single known IP address to access a given 
 
 #### PROS
 
-Dev Ops technicians can whitelist only one IP address from the FM BetterForms Cloud servers.
+Dev Ops technicians can whitelist only one IP address from the Klai Studio Cloud servers.
 
 #### CONS
 

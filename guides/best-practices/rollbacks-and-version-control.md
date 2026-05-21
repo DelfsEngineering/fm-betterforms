@@ -2,7 +2,7 @@
 
 #### **Overview**
 
-Introducing the BetterForms Version Control feature, designed to provide users with the ability to effortlessly manage changes and rollback pages, sites, and environments to previously saved versions. By assigning unique version numbers to each entity, users can easily identify and revert to desired versions, ensuring enhanced control and flexibility when working with forms and applications in FM BetterForms.
+Introducing the BetterForms Version Control feature, designed to provide users with the ability to effortlessly manage changes and rollback pages, sites, and environments to previously saved versions. By assigning unique version numbers to each entity, users can easily identify and revert to desired versions, ensuring enhanced control and flexibility when working with forms and applications in Klai Studio.
 
 1. _**Environment versioning:**_ Incremented version numbers with each edit made to the environment before deployment, making it easy to track changes and revert if needed.
 2. _**Page versioning:**_ Dual-number versioning system that represents major (environment) and minor (page) versions, allowing users to easily identify and rollback to previous versions.

@@ -1,4 +1,4 @@
-# Welcome to FM BetterForms!
+# Welcome to Klai Studio!
 
 You're signed up! Check your inbox to verify your account.
 
@@ -10,7 +10,7 @@ You're signed up! Check your inbox to verify your account.
 
 **Join Our Community:**
 
-In the meantime, we recommend you join these communities to help you get the most out of FM BetterForms:
+In the meantime, we recommend you join these communities to help you get the most out of Klai Studio:
 
 *   **Slack**: Connect with other users and our support team in real-time for assistance and collaboration.
 

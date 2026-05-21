@@ -8,7 +8,7 @@
 
 Below are the steps for migration and configuration of the helper file. Additionally, we recommend familiarizing yourself with the general documentation, which provides answers to many questions.
 
-[Welcome to FM BetterForms!](../getting-started/welcome-to-fm-betterforms.md)
+[Welcome to Klai Studio!](../getting-started/welcome-to-fm-betterforms.md)
 
 1. Download the Helper File using [this link](https://www.dropbox.com/scl/fo/mt3zf93tv69rbhg076tsh/AELmLRGbURUC4XmW_72fz28?dl=0&rlkey=5w2gko8a6v241w4666nejpw7y).
 

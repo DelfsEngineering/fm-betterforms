@@ -1,6 +1,6 @@
 ---
 description: >-
-  FM BetterForms app's do have some small opinionated design elements.
+  Klai Studio app's do have some small opinionated design elements.
   Understanding the undunderlying structure will help you to design better apps.
 ---
 

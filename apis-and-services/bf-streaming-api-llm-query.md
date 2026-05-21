@@ -14,7 +14,7 @@ This service acts as a proxy, allowing you to leverage different LLMs without ne
 
 Access to the `/llm/query` service is controlled by an API key that must be included in your request.
 
-*   **API Key Location:** You can find your API key in the **App Settings** section of the FM BetterForms editor for your application.
+*   **API Key Location:** You can find your API key in the **App Settings** section of the Klai Studio editor for your application.
 *   **Sending the API Key:** The API key must be provided in the JSON body of your `POST` request to the `/llm/query` endpoint, within a top-level field named `apiKey`.
 
 **Example Snippet of Request Body:**
@@ -54,7 +54,7 @@ The request body must be a JSON object. It includes BetterForms service-authenti
 
 ### Main Body Parameters:
 
-*   `apiKey` (String, **Required**): Your application-specific API key obtained from the App Settings in the FM BetterForms editor. This key authenticates your request to the `llmQuery` service.
+*   `apiKey` (String, **Required**): Your application-specific API key obtained from the App Settings in the Klai Studio editor. This key authenticates your request to the `llmQuery` service.
 *   `channels` (Array of Strings, **Required for streaming**): At least one BetterForms messaging channel ID. Streaming requests are rejected if this array is missing or empty.
 *   `actionName` (String, **Required for streaming**): The BetterForms named action that will receive streamed events and frontend tool calls. There is **no automatic default** for streaming requests.
 *   `payload` (Object, **Required**): An object containing the parameters to be sent to the chosen LLM provider. See "Payload Object" section below.

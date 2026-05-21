@@ -1,6 +1,6 @@
 ---
 description: >-
-  FM BetterForms can throw various errors due to code or configuration. Errors
+  Klai Studio can throw various errors due to code or configuration. Errors
   can appear in the Helper File, Developer Tools ( when enabled) or the browser
   console.
 ---

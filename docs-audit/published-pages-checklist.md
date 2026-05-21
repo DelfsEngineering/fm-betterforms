@@ -8,7 +8,7 @@ Legend: `scope` = whether the page is part of the first-pass audit, `content typ
 | --- | --- | --- | --- | --- | --- |
 | Introduction | `README.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
 | 🏆 Features | `features-summary.md` | `reference` | `published-first-pass` | `medium` | `inventory complete` |
-| Welcome to FM BetterForms! | `getting-started/welcome-to-fm-betterforms.md` | `getting-started` | `published-first-pass` | `medium` | `inventory complete` |
+| Welcome to Klai Studio! | `getting-started/welcome-to-fm-betterforms.md` | `getting-started` | `published-first-pass` | `medium` | `inventory complete` |
 | Overview | `getting-started/system-overview.md` | `getting-started` | `published-first-pass` | `medium` | `inventory complete` |
 | Your First App | `getting-started/ide-quick-tour/README.md` | `getting-started` | `published-first-pass` | `medium` | `inventory complete` |
 | 1. Setting Up Your Foundation | `getting-started/ide-quick-tour/setup/README.md` | `getting-started` | `published-first-pass` | `medium` | `inventory complete` |

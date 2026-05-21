@@ -1,5 +1,5 @@
 ---
-description: Software and tools we use to run FM BetterForms!
+description: Software and tools we use to run Klai Studio!
 ---
 
 # Technology Stack

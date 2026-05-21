@@ -22,4 +22,4 @@ BetterForms has a great Slack group where you can ask questions, find answers, a
 
 ## Using the Forum
 
-The FM BetterForms forum holds many answers to common questions. [Create an account](https://forum.fmbetterforms.com/) for free and help contribute.
+The Klai Studio forum holds many answers to common questions. [Create an account](https://forum.fmbetterforms.com/) for free and help contribute.

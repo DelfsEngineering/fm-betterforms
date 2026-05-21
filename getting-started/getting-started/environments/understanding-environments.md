@@ -1,6 +1,6 @@
 # Understanding Environments
 
-Apps and Environments are the best way to manage your FM BetterForms Projects.
+Apps and Environments are the best way to manage your Klai Studio Projects.
 
 With the introduction to Apps and environments, you now have a great way to manage the development and deployment of your projects.
 
@@ -14,7 +14,7 @@ Environment: Environment is a state of an application, it can be <mark style="co
 
 ### Migrating to Apps and Environments
 
-When you migrate from Sites to Apps with the FM BetterForms editor you will see that your sites have been reorganized into Apps and Environments. Every site in your organization will be moved into an environment within an app.
+When you migrate from Sites to Apps with the Klai Studio editor you will see that your sites have been reorganized into Apps and Environments. Every site in your organization will be moved into an environment within an app.
 
 Apps will be in <mark style="color:red;">`production`</mark> after you migrate. The new environment will be created in the <mark style="color:red;">`production`</mark> stage of the application. This is because BetterForms assumes all sites are in production. If your site is still in development, you can move the stage from the environment edit modal.
 

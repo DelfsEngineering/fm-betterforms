@@ -3,7 +3,7 @@
 
 ### Overview
 
-FM BetterForms Enterprise is an extension of the FM BetterForms Cloud service allowing fully autonomous standalone operation.
+Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing fully autonomous standalone operation.
 
 #### Features
 

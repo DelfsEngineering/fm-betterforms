@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-* [Welcome to FM BetterForms!](getting-started/welcome-to-fm-betterforms.md)
+* [Welcome to Klai Studio!](getting-started/welcome-to-fm-betterforms.md)
 * [Overview](getting-started/system-overview.md)
 * [Your First App](getting-started/ide-quick-tour/README.md)
   * [1. Setting Up Your Foundation](getting-started/ide-quick-tour/setup/README.md)

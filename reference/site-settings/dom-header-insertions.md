@@ -12,7 +12,7 @@ Use the DOM (Document Object Model ) insertions to add  HTML, Meta Data tags, CD
 
 **DOM Header Insertions - Load First**
 
-FM BetterForms will load this code into your app before the first element of the app is rendered. Use this section when you need to ensure code or links are available before the app attempts to draw the page.
+Klai Studio will load this code into your app before the first element of the app is rendered. Use this section when you need to ensure code or links are available before the app attempts to draw the page.
 
 If you are upgrading an older BetterForms V2 project and need to restore legacy Bootstrap 3 `glyphicon` support for custom HTML, see the cookbook note on backward compatibility:
 
@@ -24,4 +24,4 @@ Code in this area is loaded at an undetermined point after the main application 
 
 #### Optimizations
 
-Moving code and links into the load later section will decrease your application's initial loading time, particularly noticeable during the first load of the app. FM BetterForms internally caches most of your external assets, so they will not need to be fetched on app revisits.
+Moving code and links into the load later section will decrease your application's initial loading time, particularly noticeable during the first load of the app. Klai Studio internally caches most of your external assets, so they will not need to be fetched on app revisits.

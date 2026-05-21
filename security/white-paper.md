@@ -6,7 +6,7 @@
 
 * Authentication - Ensuring the identity of a user.
 * Authorization - Ensuring that an authorized user is allowed to perform a workflow.
-* BF - FM BetterForms
+* BF - Klai Studio
 * FMS - FileMaker Server
 * JWT - JSON Web Token, a securely signed token that is immutable.
 * CWP - Custom Web Publishing, a method of connecting and exposing data to third-party applications.
