@@ -64,7 +64,7 @@ In the HTML Editor, you can:
 * **Edit HTML content**: Directly modify HTML elements and see real-time updates.
 * **Edit Data Models**: Modify both the main data model and the development data model JSON.
 * **Toggle DEV Mode**: Use the DEV button in the top right corner to enable or disable the development data model.
-* **AI Assistant**: You can ask the AI assistant for help, and it will automatically modify the HTML content based on your requests.
+* **AI Assistant**: You can ask the AI assistant for help, and it will automatically modify the HTML content based on your requests. For external IDE workflows, see [Klai Studio MCP (Beta)](../../../../guides/integrations/klai-studio-mcp.md).
 
 Remember to **save** your changes before closing the HTML Editor**.** After that, be sure to **save** the entire page to ensure all modifications are stored.
 

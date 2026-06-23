@@ -180,6 +180,7 @@
     * [Klai Streaming API (Assistants)](apis-and-services/bf-streaming-assistants-api.md)
     * [Klai Streaming API (LLM Query)](apis-and-services/bf-streaming-api-llm-query.md)
   * [Guides & Integrations](guides/integrations/README.md)
+    * [Klai Studio MCP (Beta)](guides/integrations/klai-studio-mcp.md)
     * [Creating Components with Third-Party Libraries](guides/integrations/creating-components-with-third-party-libraries.md)
     * [Web Awesome Components in BetterForms](guides/integrations/web-awesome-components.md)
     * [ApexCharts - Getting started](guides/integrations/apexcharts-getting-started.md)
