@@ -1,5 +1,5 @@
 ---
-description: OAuth sign-in with Google, Auth0, and Okta.
+description: OAuth sign-in with Google, Auth0, Okta, and Microsoft Entra ID.
 ---
 
 # OAuth
@@ -9,6 +9,7 @@ BetterForms currently supports OAuth login with:
 - `google`
 - `auth0`
 - `okta`
+- `microsoft`
 
 Use OAuth when you want the provider to authenticate the user while BetterForms still creates or updates the app user and signs them into the app.
 
@@ -34,6 +35,7 @@ Examples:
 - `https://your.domain.com/oauth/google/callback`
 - `https://your.domain.com/oauth/auth0/callback`
 - `https://your.domain.com/oauth/okta/callback`
+- `https://your.domain.com/oauth/microsoft/callback`
 
 ## Typical Flow
 
@@ -84,5 +86,6 @@ Start the flow with a `path` action:
 - If OAuth login fails, BetterForms returns an `errorMessage` to the callback page and `authLoginOauth` sends it through the normal BetterForms error pipeline.
 - Any query params you append to the initial OAuth URL are also available to `onBeforeRegistration` if you need them for registration logic.
 - For an Auth0-specific walkthrough, see [Setting Up Auth0](../../guides/integrations/setting-up-auth0.md).
+- For Microsoft Entra ID (Office 365), see [Setting Up Microsoft Entra ID](../../guides/integrations/setting-up-microsoft-entra.md).
 
 

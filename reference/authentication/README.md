@@ -15,7 +15,7 @@ BetterForms supports multiple authentication strategies to fit different applica
   - Smart links that can include a time-bound token in the URL query
   - Cookie/session-based access for trusted flows
 - **OAuth**
-  - Sign-in with external identity providers (e.g., Auth0, Okta, Google)
+  - Sign-in with external identity providers (e.g., Auth0, Okta, Google, Microsoft Entra ID)
   - Use your identity provider to authenticate users while BetterForms signs them into the app
 
 ## Building Blocks

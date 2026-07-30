@@ -13,4 +13,5 @@ This section provides guides for integrating BetterForms with third-party librar
 - **[Klai Studio MCP (Beta)](./klai-studio-mcp.md)** - Connect Cursor, Claude Desktop, and other MCP clients to create and edit Klai Studio pages from your IDE
 - **[Creating a PWA](./creating-a-pwa.md)** - Turn your BetterForms app into a Progressive Web App
 - **[Setting up Auth0](./setting-up-auth0.md)** - Third-party authentication with Auth0
+- **[Setting up Microsoft Entra ID](./setting-up-microsoft-entra.md)** - Office 365 / Microsoft work or school account login
 - **[Create an S3 Bucket on AWS](./create-an-s3-bucket-on-aws.md)** - File storage with Amazon S3 

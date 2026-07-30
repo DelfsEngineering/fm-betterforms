@@ -186,6 +186,7 @@
     * [ApexCharts - Getting started](guides/integrations/apexcharts-getting-started.md)
     * [Creating a PWA](guides/integrations/creating-a-pwa.md)
     * [Setting up Auth0](guides/integrations/setting-up-auth0.md)
+    * [Setting up Microsoft Entra ID](guides/integrations/setting-up-microsoft-entra.md)
     * [Create an S3 Bucket on AWS](guides/integrations/create-an-s3-bucket-on-aws.md)
 * [Development & Best Practices](guides/best-practices/README.md)
   * [Developer Mode](reference/developer-mode.md)
