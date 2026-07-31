@@ -29,7 +29,7 @@ This older flowchart is still useful if you want a high-level picture of how a h
 | `onLogin`              | Post-login server-side business logic                       | Successful authentication              |
 | `onRegistration`       | Post-registration server-side business logic                | Successful `authRegister`              |
 | `onAuthNotifier`       | Sends verification, reset, and magic-link notifications     | Auth email / notification flows        |
-| `onBeforeRegistration` | Allows or blocks certain registrations before user creation | OAuth or controlled registration flows |
+| `onBeforeRegistration` | Allows or blocks registration before the user is created | Password signup (`authRegister`) and OAuth new-user creation |
 | `onApiCall`            | Handles the universal BetterForms API callback endpoint     | Requests to `/api*`                    |
 | `onSiteMap`            | Adds dynamic clean URLs to the generated sitemap            | Requests to `/sitemap.xml`             |
 
@@ -112,17 +112,40 @@ If you are upgrading an older V2 helper-file implementation, make sure your File
 
 ## onBeforeRegistration
 
-`onBeforeRegistration` is used when you need to decide whether a registration should be allowed before the user is created.
+`onBeforeRegistration` runs **before** a new user record is created. Use it when FileMaker should decide who is allowed to sign up.
 
-This is especially relevant for controlled OAuth registration flows.
+It is called for both registration paths (Klai Studio `3.5.x` and later for password signup):
+
+* email/password registration via `authRegister`
+* OAuth when the provider user does not already exist
+
+### What To Return
+
+Set `model.createUser` in your FileMaker script result:
+
+| `model.createUser` | Meaning |
+| --- | --- |
+| `true` | Allow this registration |
+| `false` | Block this registration |
 
 Typical uses:
 
-* allow registration only for approved domains
-* block automatic user creation unless a FileMaker rule passes
-* inspect query parameters or inbound context before creating the user
+* allow only approved email domains
+* require an invite or matching FileMaker record before signup
+* inspect query parameters passed into the registration or OAuth start URL
 
-If your OAuth setup depends on controlled user creation, this hook should be documented and implemented as part of that flow.
+### Password Signup vs OAuth
+
+The same hook is used, but the default when the hook is missing differs:
+
+| Flow | If hook returns `createUser: true` | If hook returns `createUser: false` | If hook is missing / older helper |
+| --- | --- | --- | --- |
+| Password (`authRegister`) | Allow | Block | Allow (backward compatible) |
+| OAuth new user | Allow | Block | Block |
+
+So for OAuth, you must implement this hook and return `createUser: true` when automatic account creation should proceed. For password signup, an older app without the hook keeps working; add the hook when you want an explicit deny path.
+
+Blocking registration is separate from **Auto Enable User Accounts** in the helper file. Auto Enable controls whether a newly created user can sign in (`isEnabled`). This hook controls whether the user is created at all.
 
 ## onApiCall
 
@@ -175,6 +198,8 @@ If the hook is missing, BetterForms still returns a valid static-only sitemap. I
 * [Scoped Hooks](hooks.md)
 * [Lifecycle Hooks](lifecycle-hooks.md)
 * [Authentication](../authentication/)
+* [User Registration & Verification](../authentication/user-registration.md)
+* [OAuth](../authentication/oauth.md)
 * [Authentication Actions](../actions-processor/authentication-actions.md)
 * [API Callback Endpoint](callback.md)
 * [Keeping Keys Private](payloadobject.md)

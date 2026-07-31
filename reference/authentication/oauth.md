@@ -20,7 +20,7 @@ Use OAuth when you want the provider to authenticate the user while Klai Studio 
 - A callback page with the navigation slug `auth/oauth`
 - `authLoginOauth` on that page's `onFormLoad`
 
-If you want Klai Studio to create users who do not already exist, you also need the `onBeforeRegistration` server hook.
+If you want Klai Studio to create users who do not already exist, you also need the `onBeforeRegistration` server hook. The same hook can also gate password signup; see [onBeforeRegistration](../hooksoverview/commonoverview.md#onbeforeregistration).
 
 ## Provider Callback URL
 
@@ -64,7 +64,7 @@ Add `authLoginOauth` to the page's `onFormLoad` action:
 - Klai Studio looks up users by email from the provider response.
 - If the user already exists, Klai Studio updates `oauthId` when needed and signs the user in.
 - If the user does not exist, Klai Studio calls `onBeforeRegistration`.
-- New user creation only continues when that hook returns `model.createUser = true`.
+- New user creation only continues when that hook returns `model.createUser = true` (OAuth is fail-closed; a missing hook blocks creation).
 - New users created through OAuth are automatically verified.
 
 ## Minimal Login Example

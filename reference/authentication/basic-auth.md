@@ -24,12 +24,13 @@ Basic Authentication uses the internal `Users` table with email and hashed passw
 ## Building Blocks
 
 - Actions: `authRegister`, `authVerify`, `authLogin`, `authLogout`, `authForgot`, `authMagicRequest`, `authReset`, `authInviteComplete`, `authResend`
-- Hooks: `onRegistration`, `onLogin`, `onAuthNotifier`
+- Hooks: `onBeforeRegistration`, `onRegistration`, `onLogin`, `onAuthNotifier`
 - Data: Users table stores email and password hash; verification/reset tokens are treated as secrets
 
 ## Version Note
 
 - Magic-link support was added in BetterForms `3.4.x`.
+- Password signup also calls `onBeforeRegistration` starting in `3.5.x` (OAuth already used this hook). See [Controlling Who Can Sign Up](./user-registration.md#controlling-who-can-sign-up).
 
 ## Next
 
