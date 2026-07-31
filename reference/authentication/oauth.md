@@ -4,14 +4,14 @@ description: OAuth sign-in with Google, Auth0, Okta, and Microsoft Entra ID.
 
 # OAuth
 
-BetterForms currently supports OAuth login with:
+Klai Studio currently supports OAuth login with:
 
 - `google`
 - `auth0`
 - `okta`
 - `microsoft`
 
-Use OAuth when you want the provider to authenticate the user while BetterForms still creates or updates the app user and signs them into the app.
+Use OAuth when you want the provider to authenticate the user while Klai Studio still creates or updates the app user and signs them into the app.
 
 ## What You Need
 
@@ -20,7 +20,7 @@ Use OAuth when you want the provider to authenticate the user while BetterForms 
 - A callback page with the navigation slug `auth/oauth`
 - `authLoginOauth` on that page's `onFormLoad`
 
-If you want BetterForms to create users who do not already exist, you also need the `onBeforeRegistration` server hook.
+If you want Klai Studio to create users who do not already exist, you also need the `onBeforeRegistration` server hook.
 
 ## Provider Callback URL
 
@@ -40,10 +40,10 @@ Examples:
 ## Typical Flow
 
 1. Add a button or link that navigates to `/oauth/{provider}`.
-2. The provider authenticates the user and returns to BetterForms.
-3. BetterForms redirects the browser to your `auth/oauth` page.
+2. The provider authenticates the user and returns to Klai Studio.
+3. Klai Studio redirects the browser to your `auth/oauth` page.
 4. Your `auth/oauth` page runs `authLoginOauth`.
-5. BetterForms stores the token and continues through the normal login flow.
+5. Klai Studio stores the token and continues through the normal login flow.
 
 ## Callback Page
 
@@ -61,9 +61,9 @@ Add `authLoginOauth` to the page's `onFormLoad` action:
 
 ## How User Matching Works
 
-- BetterForms looks up users by email from the provider response.
-- If the user already exists, BetterForms updates `oauthId` when needed and signs the user in.
-- If the user does not exist, BetterForms calls `onBeforeRegistration`.
+- Klai Studio looks up users by email from the provider response.
+- If the user already exists, Klai Studio updates `oauthId` when needed and signs the user in.
+- If the user does not exist, Klai Studio calls `onBeforeRegistration`.
 - New user creation only continues when that hook returns `model.createUser = true`.
 - New users created through OAuth are automatically verified.
 
@@ -83,9 +83,7 @@ Start the flow with a `path` action:
 
 ## Notes
 
-- If OAuth login fails, BetterForms returns an `errorMessage` to the callback page and `authLoginOauth` sends it through the normal BetterForms error pipeline.
+- If OAuth login fails, Klai Studio returns an `errorMessage` to the callback page and `authLoginOauth` sends it through the normal Klai Studio error pipeline.
 - Any query params you append to the initial OAuth URL are also available to `onBeforeRegistration` if you need them for registration logic.
 - For an Auth0-specific walkthrough, see [Setting Up Auth0](../../guides/integrations/setting-up-auth0.md).
 - For Microsoft Entra ID (Office 365), see [Setting Up Microsoft Entra ID](../../guides/integrations/setting-up-microsoft-entra.md).
-
-
