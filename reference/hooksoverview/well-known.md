@@ -28,16 +28,16 @@ Do **not** use this as a general website folder, for SSL issuance, or for MCP di
 | ---- | ----- | ------------------ |
 | `/.well-known/mcp.json` | Klai | Leave it alone. Not sent to `onApiCall`. |
 | `/.well-known/acme-challenge/...` | Certificate manager | Leave it alone. Not rewritten. |
-| Any other `GET`/`HEAD` `/.well-known/...` | Your app, optional | Handle in `onApiCall` **or** let Node return an empty `404`. |
+| Any other `GET`/`HEAD` `/.well-known/...` | Your app, optional | Handle in `onApiCall` **or** let Klai return an empty `404`. |
 
 `POST` / `PUT` / `PATCH` / `DELETE` on `/.well-known` are not rewritten. Direct calls to `/api/.well-known/...` still use normal `/api` behavior (no well-known 404 trap).
 
-## What Node does
+## What Klai does
 
 1. Rewrites the public URL to `/api/.well-known/...` (no HTTP redirect).
 2. Calls your common hook `onApiCall`.
-3. If the script returns an explicit `contentType` of `text`, `json`, `xml`, or `html` and a `2xx` status, Node sends that body as-is.
-4. If `contentType` is missing, the result is empty, the status is `3xx` / `401` / `403`, or the script errors, Node responds **`404` with an empty `text/plain` body**. It does not return SPA HTML, a hash redirect, or Feathers `"Snap, Page not found"` JSON.
+3. If the script returns an explicit `contentType` of `text`, `json`, `xml`, or `html` and a `2xx` status, Klai sends that body as-is.
+4. If `contentType` is missing, the result is empty, the status is `3xx` / `401` / `403`, or the script errors, Klai responds **`404` with an empty `text/plain` body**. It does not return the app HTML, a hash redirect, or a JSON not-found error.
 
 That 404 trap exists because scanners probe many `/.well-known` paths. A default JSON `onApiCall` response on those URLs looks like an accidental API.
 
@@ -51,7 +51,7 @@ Replace `{MyAppCommonHooksetName}` with your app's common hook set name (the sam
 
 Add the well-known branch **at the top of the developer-editable area**, before version/service routing, and **exit** so existing `/api/V1/...` routes are unchanged.
 
-The payload Node already builds for you:
+The payload Klai already builds for you:
 
 * `params.method` — `GET` (HEAD is dispatched as GET)
 * `params.path` — array, for Apple Pay: `[".well-known", "apple-developer-merchantid-domain-association"]`
@@ -60,7 +60,7 @@ The payload Node already builds for you:
 
 You must set `$contentType` (for Apple Pay, `"text"`), `$statusCode` (`200`), and `$response` to the **exact** file bytes. Do not JSON-encode a text blob. Do not wrap it in HTML.
 
-For every other `.well-known` path, do not return a 200. Leave `$contentType` empty so Node 404s.
+For every other `.well-known` path, do not return a 200. Leave `$contentType` empty so Klai 404s.
 
 {% hint style="info" %}
 The existing footer that writes `$$BF_Payload` already supports `text` / `html` / `xml` vs JSON. You do not need to change the "do not edit below here" block if it already includes `data.contentType`, `data.response`, `data.headers`, and `data.statusCode`.
@@ -71,7 +71,7 @@ The existing footer that writes `$$BF_Payload` already supports `text` / `html` 
 This is only the well-known part. Keep your existing dispatcher for `/api/V1/...`.
 
 ```
-# /.well-known — Node rewrites GET /.well-known/{file} to /api/.well-known/{file}
+# /.well-known — Klai rewrites GET /.well-known/{file} to /api/.well-known/{file}
 # Add this before your version / service routing, then Exit Loop If.
 
 If [ JSONGetElement ( $params ; "path[0]" ) = ".well-known" and JSONGetElement ( $params ; "path[1]" ) = "apple-developer-merchantid-domain-association" ]
@@ -80,7 +80,7 @@ If [ JSONGetElement ( $params ; "path[0]" ) = ".well-known" and JSONGetElement (
 	Set Variable [ $statusCode ; Value: 200 ]
 	Exit Loop If [ True ]
 Else If [ JSONGetElement ( $params ; "wellKnown" ) = True or JSONGetElement ( $params ; "path[0]" ) = ".well-known" ]
-	# Other well-known files: do not return JSON. Node will 404.
+	# Other well-known files: do not return JSON. Klai will 404.
 	Set Variable [ $contentType ; Value: "" ]
 	Exit Loop If [ True ]
 End If
