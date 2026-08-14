@@ -13,6 +13,7 @@ This service can act as a universal endpoint and service multiple content types.
 * Callback for integrating various services
 * Document download endpoint
 * App entry point for passing data when integrating from another system. _Eg. A user clicks a link in your online e-commerce store and that link hits the BetterForms API callback. This action passes some data that launches the user cart session._
+* **Beta (3.5.69+):** site-root well-known files such as Apple Pay domain verification. See [Well-Known URLs (beta)](well-known.md).
 
 ### Supported Request Types
 

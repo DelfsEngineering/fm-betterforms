@@ -30,7 +30,7 @@ This older flowchart is still useful if you want a high-level picture of how a h
 | `onRegistration`       | Post-registration server-side business logic                | Successful `authRegister`              |
 | `onAuthNotifier`       | Sends verification, reset, and magic-link notifications     | Auth email / notification flows        |
 | `onBeforeRegistration` | Allows or blocks registration before the user is created | Password signup (`authRegister`) and OAuth new-user creation |
-| `onApiCall`            | Handles the universal BetterForms API callback endpoint     | Requests to `/api*`                    |
+| `onApiCall`            | Handles `/api*` and, from 3.5.69 (beta), optional `/.well-known/*` files | Requests to `/api*` and rewritten well-known GETs |
 | `onSiteMap`            | Adds dynamic clean URLs to the generated sitemap            | Requests to `/sitemap.xml`             |
 
 ## onLogin
@@ -153,9 +153,12 @@ Blocking registration is separate from **Auto Enable User Accounts** in the help
 
 Use it when you want FileMaker to respond to inbound API requests at `/api*`.
 
+From Klai Studio / BetterForms **3.5.69** (beta), `GET`/`HEAD` `/.well-known/*` (except MCP discovery and ACME) is also dispatched through this hook. That is only needed for cases such as Apple Pay domain association files. See [Well-Known URLs (beta)](well-known.md).
+
 This hook is documented in more detail here:
 
 * [API Callback Endpoint](callback.md)
+* [Well-Known URLs (beta)](well-known.md)
 
 ## onSiteMap
 
@@ -202,5 +205,6 @@ If the hook is missing, BetterForms still returns a valid static-only sitemap. I
 * [OAuth](../authentication/oauth.md)
 * [Authentication Actions](../actions-processor/authentication-actions.md)
 * [API Callback Endpoint](callback.md)
+* [Well-Known URLs (beta)](well-known.md)
 * [Keeping Keys Private](payloadobject.md)
 * [Reducing Payload Size](env_vars.md)

@@ -150,6 +150,7 @@
   * [Keeping Keys Private](reference/hooksoverview/payloadobject.md)
   * [Reducing Payload Size](reference/hooksoverview/env_vars.md)
   * [API Callback Endpoint](reference/hooksoverview/callback.md)
+    * [Well-Known URLs (beta)](reference/hooksoverview/well-known.md)
   * [Common Hooks](reference/hooksoverview/commonoverview.md)
   * [Scoped Hooks](reference/hooksoverview/hooks.md)
   * [Lifecycle Hooks](reference/hooksoverview/lifecycle-hooks.md)
