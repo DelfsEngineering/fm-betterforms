@@ -57,5 +57,5 @@
 
 **Additional Features**
 
-* **Internationalization**: Use the `BF.i18n('key')` function for multi-language support.
+* **Internationalization**: Use the `BF.i18n('key')` function for multi-language support. See [Localization (i18n)](reference/bf-i18n.md).
 * **Analytics and Reporting**: Track app visitation and user interactions for insights.

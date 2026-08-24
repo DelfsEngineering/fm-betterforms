@@ -165,6 +165,7 @@
   * [JWT Expiration](reference/authentication/jwt-expiration.md)
   * [Security Best Practices](reference/authentication/security-best-practices.md)
 * [Klai Utility Functions](reference/bf-utility-function-ver-0.9.20+.md)
+  * [Localization (i18n)](reference/bf-i18n.md)
   * [Dynamic Library Loading](reference/bf-dynamic-library-loading.md)
 * [APIs & Services](apis-and-services/README.md)
   * [Messaging](apis-and-services/messaging/README.md)

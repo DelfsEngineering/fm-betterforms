@@ -23,7 +23,7 @@ description: >-
 | **Misc** | |
 | `BF.getPaths(object, JPquery)` | Returns JSONPath query on passed object |
 | `BF.getQueryParam(key)` | Returns the URL query key value |
-| `BF.i18n(key)` | Internationalization translations. Returns the key's value in its correct language. |
+| `BF.i18n(key)` | Internationalization translations. Returns the key's value in its correct language. See [Localization (i18n)](bf-i18n.md). |
 | `BF.getUUID()` | Returns a UUID |
 | `BF.pwaSetManifest(manifest)` | Sets the manifest for PWA apps. `manifest` is a JSON object that confirms to a standard PWA manifest object. |
 | **`BF.getVersion()`** | Returns an object with version info: `{ basecode, app }`.<br>**basecode** is the Klai operating system version. **app** is the published app version (from the evironments card if present, otherwise falls back to `site.hash`).<br>*Available in basecode v3.2.19+*. |
@@ -35,6 +35,14 @@ description: >-
 | `BF.libraryLoadOnce(url, options)` | Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamically. Libraries are loaded once and cached automatically (idempotent).<br>*Available in basecode v3.2.31+*. |
 | `BF.libraryIsLoaded(url)` | Check if a library is already loaded. Returns boolean.<br>*Available in basecode v3.2.31+*. |
 | `BF.libraryGetLoaded()` | Get array of all loaded library URLs.<br>*Available in basecode v3.2.31+*. |
+
+## Localization (i18n)
+
+For the full setup guide (`app.i18n` dictionary, HTML usage, and a language picker), see:
+
+{% content-ref url="bf-i18n.md" %}
+[Localization (i18n)](bf-i18n.md)
+{% endcontent-ref %}
 
 ## Dynamic Library Loading
 
