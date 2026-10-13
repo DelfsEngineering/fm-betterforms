@@ -22,36 +22,39 @@ Proxy location: **AWS Data Center in Northern California. `US-WEST-1`**
 
 #### Configuring
 
-_<mark style="color:orange;">The following is a temporary provision until the UI in the Klai editor is built</mark>_
+In the Klai editor, add a server and check **Use Klai Proxy**. **Host Address** is the FileMaker server’s own IP address or domain name.
 
-Add a new server or change currently used by the app. The host address for the server will be:
+The checkbox routes that server through the Klai proxy. Traffic to your FileMaker server then comes from the fixed proxy IP above, so the firewall only needs to allow that address.
 
-<pre class="language-markup"><code class="lang-markup"><strong>4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/YOUR.SERVER.DOMAIN
-</strong></code></pre>
+1. Open **Add Server**.
+2. Enter a **Server Name**.
+3. Enter the FileMaker server’s IP address or domain name in **Host Address**. The field already includes the `https://` prefix.
+4. Choose the gateway: **XML** or **DAPI**.
+5. Check **Use Klai Proxy**.
+6. Click **Create Connection**.
 
-Note: Change <mark style="color:red;">`YOUR.SERVER.DOMAIN`</mark> to point to the FQDN of your FileMaker server.
+Ask your network team to allow inbound HTTPS from `54.215.158.200` on port `443`.
 
-<figure><img src="../.gitbook/assets/Untitled (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/add-server-use-klai-proxy.png" alt="Add Server dialog with the Use Klai Proxy checkbox"><figcaption>Check Use Klai Proxy, and enter the FileMaker server’s own host.</figcaption></figure>
+
+Servers that were pointed at the proxy by pasting the proxy URL into **Host Address** can be switched over the same way: use the FileMaker server’s own host, and check **Use Klai Proxy**.
 
 #### Testing Connection
 
-To test the proxy:
+To confirm the proxy can reach your FileMaker server, open this URL in a browser. Replace `YOUR.SERVER.DOMAIN` with the server’s domain name:
 
-1. Build the full proxy URL using your FileMaker server FQDN:
+`https://4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/YOUR.SERVER.DOMAIN`
 
-   `http://4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/YOUR.SERVER.DOMAIN`
-
-2. Open that URL in a browser.
-3. Confirm that the request reaches your FileMaker web server through the proxy.
+This URL is only for that check. In the editor, keep the real host in **Host Address** and use the **Use Klai Proxy** checkbox.
 
 If the proxy is working, you should reach the same kind of response page your FileMaker server would normally return for a direct browser request.
 
 If it does not work, check:
 
-- the server FQDN is correct
+- the server domain name is correct
 - your FileMaker server is reachable on the expected web endpoint
 - your network rules allow the published proxy IP
-- you did not omit the server domain portion of the proxy URL
+- the domain is included at the end of the proxy URL
 
 Example response:
 
