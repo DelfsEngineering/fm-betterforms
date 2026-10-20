@@ -37,7 +37,7 @@ When the server is first deployed it is given all of the secrets (keys, links, e
 
 In order for Klai to access an FMS server it must retain a set of credentials (see FileMaker Credentials section). These credentials are encrypted and saved on the Klai application server. The credentials are decrypted immediately before each FMS server interaction with a decryption key that is injected into the Klai server upon start up.
 
-aes-256-cbc with random IV (initialization Vector) Decrypted on fly, cached data remains encrypted until retrieved.
+aes-256-cbc with random IV (initialization Vector) Credentials are encrypted at rest on the Klai server. No client data is stored or cached in any form.
 
 ## FileMaker
 
