@@ -84,7 +84,7 @@ Start the flow with a `path` action:
 ## Notes
 
 - HTTP **406** (`NotAcceptable`) means the provider is not in the connection OAuth vault. Enable 3rd Party Authentication being on is not enough — Google, Auth0, Okta, or Microsoft still needs client credentials saved. See [Klai Error Codes](../bf-error-codes.md).
-- If OAuth login fails, Klai Studio returns an `errorMessage` to the callback page and `authLoginOauth` sends it through the normal Klai Studio error pipeline.
+- If OAuth login fails, Klai Studio returns an `errorMessage` to the callback page and `authLoginOauth` sends it through the normal Klai Studio error pipeline. A disabled account uses `10163` / `auth.account_disabled`. Other OAuth failures stay `10160` / `auth.oauth_failed`.
 - Any query params you append to the initial OAuth URL are also available to `onBeforeRegistration` if you need them for registration logic.
 - For an Auth0-specific walkthrough, see [Setting Up Auth0](../../guides/integrations/setting-up-auth0.md).
 - For Microsoft Entra ID (Office 365), see [Setting Up Microsoft Entra ID](../../guides/integrations/setting-up-microsoft-entra.md).

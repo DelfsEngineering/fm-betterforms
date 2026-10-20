@@ -92,3 +92,6 @@ Notes:
 - This is a read helper only.
 - The value mirrors `store.state.auth.lastFeedback`.
 - For page UI, you can also read `model.authMessage`, `model.authMessageCode`, and `model.authMessageType`.
+- `10162` is `auth.invite_complete_failed`. A bad, expired, or disabled invite keeps the message `Token is invalid or expired.`
+- `10163` is `auth.account_disabled`. It is set when local login or OAuth passed the credential check and the account is disabled. Wrong password and unknown email stay `10150` / `auth.invalid_login`.
+- `auth.account_disabled` is a builder opt-in. The default `auth.invalid_login` sentence stays generic.

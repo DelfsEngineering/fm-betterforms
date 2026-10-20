@@ -120,11 +120,18 @@ Recommended pattern:
 }
 ```
 
+Useful codes:
+
+- `auth.invalid_login` (`10150`) — wrong password or unknown email. Keep the default sentence generic: `We couldn't sign you in. Check your details and try again.`
+- `auth.account_disabled` (`10163`) — the password was correct and the account is off. This is an opt-in. The framework stores the server sentence on `model.authMessage`, for example `name - account disabled.`
+- `auth.invite_complete_failed` (`10162`) — invite completion failed. The message stays `Token is invalid or expired.`
+
 Security notes:
 
 - Avoid UI that reveals whether a specific email exists in the system.
 - Prefer mapping from `auth.*` codes to your own localized text rather than parsing raw message text.
 - For login, reset, and magic-link request pages, use calm generic fallback strings by default.
+- Show a distinct disabled-account sentence only when `model.authMessageCode` is `auth.account_disabled`.
 
 ## Related Pages
 

@@ -28,7 +28,8 @@ description: Finalizes an OAuth login after the provider redirects back into Bet
 
 - This action is usually run automatically on the OAuth callback page.
 - Use `authLoginOauth` as the preferred action name for new work.
-- If the OAuth provider returns an error, BetterForms surfaces it through the normal error pipeline.
+- If the OAuth provider returns an error, BetterForms surfaces it through the normal error pipeline as `10160` / `auth.oauth_failed`.
+- A disabled account uses `10163` / `auth.account_disabled` and keeps the server sentence.
 - This action does not need any custom options.
 
 ## Related Pages

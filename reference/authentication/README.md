@@ -74,6 +74,7 @@ Attach the appropriate Actions to the relevant pages:
 - Real auth failures continue to flow through the normal BetterForms error pipeline.
 - Success/info auth states update the auth feedback contract but are not pushed into the global error stack.
 - For new UI, prefer mapping from `auth.*` codes to your own localized copy instead of parsing the English message text.
+- `auth.invalid_login` (`10150`) stays the generic login failure. `auth.account_disabled` (`10163`) is the opt-in for a correct password on a disabled account. `auth.invite_complete_failed` (`10162`) is a bad, expired, or disabled invite, and its message stays `Token is invalid or expired.`
 - For UI examples, see [Custom Login Pages](./custom-login-pages.md) and [Klai Utility Functions](../bf-utility-function-ver-0.9.20+.md).
 
 ## Email Delivery

@@ -31,6 +31,7 @@ Guidelines to help secure all authentication strategies.
 - Require authentication for restricted pages
 - Validate required fields before running auth actions (e.g., email, password)
 - Surface auth feedback to the user in a controlled way using `model.authMessage`, `model.authMessageCode`, or `model.authMessageType`
+- Keep the default `auth.invalid_login` sentence generic. Show a distinct disabled-account message only when the code is `auth.account_disabled`
 
 ## Hooks
 

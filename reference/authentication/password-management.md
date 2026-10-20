@@ -81,6 +81,9 @@ Use `authInviteComplete` on the password page:
 
 - `signIn: false` (default): sets password and clears invite token fields.
 - `signIn: true`: sets password, clears invite token fields, and signs the user in immediately.
+- A bad, expired, or disabled invite fails with `Token is invalid or expired.` and auth feedback code `auth.invite_complete_failed` (`10162`). A disabled invitee does not get `auth.account_disabled`.
+
+Password reset does not check `isEnabled`. A disabled user can complete reset and receive `auth.password_reset_success`.
 
 ### Compatibility note
 

@@ -84,6 +84,21 @@ Authentication pages can read feedback from:
 
 For new pages, prefer `auth.*` codes over parsing the English message text. For UI examples and patterns, see [Custom Login Pages](../authentication/custom-login-pages.md) and [Klai Utility Functions](../bf-utility-function-ver-0.9.20+.md).
 
+| Numeric code | Auth feedback code | When it is set |
+| -----------: | --- | --- |
+| 10150 | `auth.invalid_login` | Wrong password (`Invalid login`) or unknown email (`No records found`) |
+| 10161 | `auth.magic_link_request_failed` | Magic-link request failed |
+| 10162 | `auth.invite_complete_failed` | Invite completion failed. The message stays `Token is invalid or expired.` for a bad, expired, or disabled invite |
+| 10163 | `auth.account_disabled` | Local login or OAuth passed the credential check and the account is disabled |
+
+`auth.account_disabled` is the builder opt-in for a correct password on a disabled account. The default `auth.invalid_login` sentence stays generic. Pages that do not branch on `auth.account_disabled` should keep showing that generic sentence.
+
+These flows do not emit `auth.account_disabled`:
+
+- Password reset does not check `isEnabled`. A disabled user can set a password and receive `auth.password_reset_success`.
+- Magic-link request returns success and sends nothing when the user is missing or disabled.
+- Magic-link login for a disabled account still returns `Invalid login` and stays `auth.invalid_login`.
+
 Security note:
 
 - Default auth UI should avoid confirming whether a specific email/account exists.
