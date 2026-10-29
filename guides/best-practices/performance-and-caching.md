@@ -1,6 +1,6 @@
 # Data Optimization
 
-Optimizing your app for best performance can be a process that you incorporate toward the end of the development. Because of the nature of the BetterForms hooks, typical early development optimizations are not as beneficial as later in the development stages.
+Optimizing your app for best performance can be a process that you incorporate toward the end of the development. Because of the nature of the Klai Studio hooks, typical early development optimizations are not as beneficial as later in the development stages.
 
 There are several areas where most apps can be made more performant; perception, caching, threading and general FileMaker best practices. Once your app is built you will know what areas and workflows will need to be revisited, if any.
 
@@ -31,7 +31,7 @@ The keys you would like to cache are is enabled within the corresponding model e
 * **Use Local Storage** - This data will persist from session to session, and remain even after the browser has been closed.
 * **Use Session Storage** - This data will survive a page refresh, but will not survive after the browser closes the tab.
 
-As your application loads, BetterForms will first check the **Session Storage** and if enabled, try to pull data from there, if that is not successful, it will check the **Local Storage** if enabled and attempt to populate data from there. By allowing separate control, you can have a given tabs context preserved.
+As your application loads, Klai Studio will first check the **Session Storage** and if enabled, try to pull data from there, if that is not successful, it will check the **Local Storage** if enabled and attempt to populate data from there. By allowing separate control, you can have a given tabs context preserved.
 
 Keys set for caching will automatically be saved locally as they are changed. No additional cache management is required.
 

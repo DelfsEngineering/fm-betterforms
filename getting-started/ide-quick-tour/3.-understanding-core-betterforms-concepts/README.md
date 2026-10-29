@@ -1,2 +1,2 @@
-# 3. Understanding Core BetterForms Concepts
+# 3. Understanding Core Klai Studio Concepts
 

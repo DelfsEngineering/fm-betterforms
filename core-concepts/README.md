@@ -1,9 +1,9 @@
-# 3. Understanding Core BetterForms Concepts
+# 3. Understanding Core Klai Studio Concepts
 
-This part of the guide delves into the fundamental building blocks of BetterForms applications. You'll gain a conceptual understanding of Hooks, Actions, and the Data Model, which are essential for creating dynamic and interactive user experiences.
+This part of the guide delves into the fundamental building blocks of Klai Studio applications. You'll gain a conceptual understanding of Hooks, Actions, and the Data Model, which are essential for creating dynamic and interactive user experiences.
 
 **Key Goals for this Section:**
-*   Learn what FileMaker server hooks are and how they connect BetterForms to your scripts.
+*   Learn what FileMaker server hooks are and how they connect Klai Studio to your scripts.
 *   Understand how actions and named actions drive browser-side workflows.
 *   Grasp the role of the Page Data Model in managing and displaying data.
 

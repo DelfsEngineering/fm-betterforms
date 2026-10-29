@@ -1,4 +1,4 @@
-# BetterForms Error Pages API
+# Klai Error Pages API
 
 {% hint style="info" %}
 [Complete Error Code List](../reference/bf-error-codes.md)

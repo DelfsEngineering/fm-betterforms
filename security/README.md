@@ -1,3 +1,3 @@
 # Security
 
-This section provides an overview of the security-related aspects of BetterForms. 
+This section provides an overview of the security-related aspects of Klai Studio.

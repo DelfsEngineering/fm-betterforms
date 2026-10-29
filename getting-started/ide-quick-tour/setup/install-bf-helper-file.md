@@ -4,7 +4,7 @@ The BetterForms Helper file contains pre-built custom functions and scripts to a
 
 ### What is the "Business File"?
 
-The "business file" is your primary FileMaker application file that you are connecting to BetterForms. The custom functions and scripts only need to be installed in this single, primary file.
+The "business file" is your primary FileMaker application file that you are connecting to Klai Studio. The custom functions and scripts only need to be installed in this single, primary file.
 
 ### Integration Steps
 
@@ -31,7 +31,7 @@ To run and debug hooks locally from the helper file, you need to connect it to y
 This allows the helper file to act as a proxy, which is useful for development and testing.
 
 {% hint style="info" %}
-Each FileMaker file that BetterForms interacts with must have the same user credentials. Your BetterForms user account should have \[Data Entry Only] permissions with XML and Data API extended privileges enabled.
+Each FileMaker file that Klai Studio interacts with must have the same user credentials. Your BetterForms user account should have \[Data Entry Only] permissions with XML and Data API extended privileges enabled.
 {% endhint %}
 
 

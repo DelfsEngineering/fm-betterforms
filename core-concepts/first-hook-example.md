@@ -46,7 +46,7 @@ Open the helper file and click the **Inbox** tab. Show the status toolbar and ma
 
 **If the inbox record exists but you had unexpected results**, check the outbox payload (the right side) to see the data model that was returned to the browser. You can run the hook locally by clicking the **Run Hook** button.
 
-**If the hook runs as expected locally, but not through BetterForms**, then you need to [check the privileges](../getting-started/ide-quick-tour/setup/configure-fm-server.md) of the BetterForms user. The only differences between how BetterForms runs the script and when you run it locally with that handy button is the user account that runs the script.
+**If the hook runs as expected locally, but not through Klai Studio**, then you need to [check the privileges](../getting-started/ide-quick-tour/setup/configure-fm-server.md) of the BetterForms user. The only difference between how Klai Studio runs the script and when you run it locally with that handy button is the user account that runs the script.
 
 ### Check Extended Privileges
 
@@ -54,8 +54,8 @@ Invalid credentials or misconfigured extended privileges for the BetterForms use
 
 Make sure your credentials for the BetterForms user have XML and Data API privileges enabled, and that they match what was configured in your [site settings](../getting-started/ide-quick-tour/first-app/create-app.md).
 
-* BetterForms encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
+* Klai Studio encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
 
 {% hint style="warning" %}
-Remember that all files that BetterForms interact with must have these matching credentials. If the BetterForms user does not have access to the file or does not have XML and Data API privileges enabled in all files, the server script fails silently unless you have strong error capturing in place.
+Remember that all files that Klai Studio interacts with must have these matching credentials. If the BetterForms user does not have access to the file or does not have XML and Data API privileges enabled in all files, the server script fails silently unless you have strong error capturing in place.
 {% endhint %}

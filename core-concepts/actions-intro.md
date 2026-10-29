@@ -50,7 +50,7 @@ Be sure to check out the [**Actions Reference**](../reference/actions-processor/
 
 When actions are executed, they are always added to the end of the **actions queue** and evaluated in order. The actions queue is always running; if the actions queue is empty it will simply wait for new actions to be added and continue processing.
 
-Various elements throughout a BetterForms page can add actions to the queue, here are just a few examples:
+Various elements throughout a Klai Studio page can add actions to the queue, here are just a few examples:
 
 * **buttons** - triggered when a button is clicked
 * **onFormLoad** - a client-side named action that runs when a page is first loaded

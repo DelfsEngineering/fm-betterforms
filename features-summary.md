@@ -1,6 +1,6 @@
 # 🏆 Features
 
-**FMBetterForms** is a high-performance single-page web application (SPA) platform that allows FileMaker developers to build modern responsive web apps without learning all new technology.
+**Klai Studio** is a high-performance single-page web application (SPA) platform that allows FileMaker developers to build modern responsive web apps without learning all new technology.
 
 **User Interface**
 

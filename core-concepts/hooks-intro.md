@@ -1,7 +1,7 @@
 ---
 description: >-
   Before we continue integrating, let's take a step back to understand the
-  concept of Hooks in BetterForms
+  concept of Hooks in Klai Studio
 ---
 
 # 3. Introduction to Hooks
@@ -10,11 +10,11 @@ description: >-
 
 A hook script is a script that inserts itself into normal workflow allowing additional control. See: [https://en.wikipedia.org/wiki/Hooking](https://en.wikipedia.org/wiki/Hooking). You interact with your application and the web client via hooks scripts.
 
-BetterForms hooks fall into 2 categories:
+Klai Studio hooks fall into 2 categories:
 
 **Common hooks** are scripts that are not contextual to a specific page. Typically they can be called from anywhere and do not contain information about the user's current page. _(Eg: A login or registration hook are common hooks.)_ Common hooks are unified by a Site and therefore configured in the site settings.
 
-**Scoped hooks** are bound to a specific page. Most of the hook scripts you will use throughout BetterForms will be scoped hooks. Scoped hooks are unified by the form and therefore configured in the form editor.
+**Scoped hooks** are bound to a specific page. Most of the hook scripts you will use throughout Klai Studio will be scoped hooks. Scoped hooks are unified by the form and therefore configured in the form editor.
 
 ## When do Hooks run?
 
@@ -47,7 +47,7 @@ The next few steps will ask you to create names for both a common hook set and a
 * The names of hooks are internal to your application and never displayed to the user
 * It's best to keep them short but descriptive for easy legibility
 * Hook names do **not** need to be unique throughout your site (see tip below)
-* As long as the names match between BetterForms and FileMaker, everything will work just fine.
+* As long as the names match between Klai Studio and FileMaker, everything will work just fine.
 
 {% hint style="info" %}
 #### **FileMaker Analogy**

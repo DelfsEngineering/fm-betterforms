@@ -1,6 +1,6 @@
 # Learning JSON
 
-BetterForms is heavily dependent on JSON for nearly all of its functionality, so knowing how JSON works is crucial to understanding BetterForms. Luckily, if you're new to JSON it's easy to learn!
+Klai Studio is heavily dependent on JSON for nearly all of its functionality, so knowing how JSON works is crucial to understanding Klai Studio. Luckily, if you're new to JSON it's easy to learn!
 
 Here are some great articles from around the web that can help your understanding:
 
