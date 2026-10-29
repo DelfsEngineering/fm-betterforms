@@ -39,7 +39,7 @@ Below are some of the most common properties used when configuring a Checklist e
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The `model` property should map to a field in your BetterForms data model that can store an array of the selected values.
 *   The `values` array is fundamental for defining the options available to the user.

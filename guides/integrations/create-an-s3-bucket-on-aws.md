@@ -64,7 +64,7 @@ Once the bucket is created, select the newly created bucket and go to the <mark 
 
 > The example above shows an object that allows origins to upload (POST / PUT), download (GET), and delete (DELETE) objects. If one of these actions should not be allowed, remove them from the methods.
 
-## Credentials needed for BetterForms
+## Credentials needed for Klai Studio
 
 In order to be able to communicate with the bucket, we need to add the AWS access key and secret access key, it can be either an existing or newly created one.
 

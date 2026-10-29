@@ -112,4 +112,4 @@ You now have a basic understanding of how to create a list view in BetterForms. 
 For more advanced data display needs, you can explore:
 
 * [Working with Data Tables](working-with-data-tables.md) for complex table-based data display
-* [BetterForms Elements reference](../../../reference/components-overview/) for all available components
+* [Klai Studio Elements reference](../../../reference/components-overview/) for all available components

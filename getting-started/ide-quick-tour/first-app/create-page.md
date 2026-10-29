@@ -2,7 +2,7 @@
 
 Now that you have [created your App (Site) structure](create-app.md), the next exciting step is to build your first interactive page within it.
 
-## What is a BetterForms Page?
+## What is a Klai Studio Page?
 
 Think of a BetterForms page like a FileMaker layout. It will contain any combination of fields, buttons, data tables, text, labels, etc., that you place onto it. The primary difference is that a BetterForms **page** is not tied to a specific Table Occurrence from your FileMaker solution. Instead, it will have access to whatever data you pass into it individually through its **Data Model**.
 

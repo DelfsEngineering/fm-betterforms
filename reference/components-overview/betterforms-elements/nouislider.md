@@ -70,7 +70,7 @@ In BetterForms, this element leverages the `noUiSlider` library to provide a tou
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The component requires the `noUiSlider` library to be loaded globally.
 *   The model stores a single number for one handle, or a two-item number array for a range.

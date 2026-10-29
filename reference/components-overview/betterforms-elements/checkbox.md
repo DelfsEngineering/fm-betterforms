@@ -33,7 +33,7 @@ Below are some of the most common properties used when configuring a Checkbox el
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The `model` property is crucial and must map to a field in your BetterForms data model designed to store a boolean value.
 *   For scenarios requiring a user to select multiple items from a list of checkboxes, consider using the `checklist` element instead.

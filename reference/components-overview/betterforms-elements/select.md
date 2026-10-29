@@ -41,7 +41,7 @@ Below are some of the most common properties used when configuring a Select elem
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The `model` stores the chosen option value.
 *   For object items, the V3+ field uses `fieldOptions.value` and `fieldOptions.name` when you want keys other than the default `id` and `name`.

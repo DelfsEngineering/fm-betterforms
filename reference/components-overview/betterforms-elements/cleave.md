@@ -65,7 +65,7 @@ In BetterForms, this element is used when you need to enforce a specific input f
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The live field writes back `cleave.properties.result` when available, or falls back to the input's current value.
 *   If you omit settings, the component supplies defaults such as `phoneRegionCode: "AU"`, `datePattern: ["d", "m", "Y"]`, `delimiter: " "`, and `numeralDecimalScale: 2`.

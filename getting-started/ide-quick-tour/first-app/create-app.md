@@ -2,7 +2,7 @@
 
 After [setting up your foundation](../setup/configure-fm-server.md) (including configuring your FileMaker Server and adding it to BetterForms), you're ready to create your first web application, which BetterForms refers to as an "App" or "Site".
 
-## What is an "App" or "Site" in BetterForms?
+## What is an "App" or "Site" in Klai Studio?
 
 An App/Site in BetterForms is the front-end code and configuration for an entire web application. Apps can have multiple environments (e.g., development, staging, production), where each environment is technically a separate instance of the app with its own settings and data connections.
 

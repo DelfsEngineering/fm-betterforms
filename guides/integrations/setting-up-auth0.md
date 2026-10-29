@@ -33,7 +33,7 @@ https://yourapp.domain.com/oauth/auth0/callback
 
 If the same BetterForms app is reachable on multiple domains, add each callback URL as a comma-separated entry in Auth0.
 
-## Credentials to Copy Into BetterForms
+## Credentials to Copy Into Klai Studio
 
 BetterForms expects the Auth0 provider credentials for the app or tenant:
 

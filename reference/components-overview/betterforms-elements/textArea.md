@@ -75,7 +75,7 @@ When `autoExpand` is enabled:
 - If `maxHeight` is set (in pixels), the textarea stops growing at that height and a vertical scrollbar appears for any additional content.
 - When content is deleted, the textarea shrinks back down automatically.
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   This element is intended for plain text. If you need rich text editing (WYSIWYG), look for a dedicated rich text editor component in BetterForms or consider integrating one as a custom element.
 *   In the live V3+ field, character limits are read from `fieldOptions.min` and `fieldOptions.max`, which map to `minlength` and `maxlength`.

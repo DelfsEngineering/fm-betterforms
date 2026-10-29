@@ -3,7 +3,7 @@ description: >-
   Use Web Awesome components inside BetterForms with self-contained bfcomponents that lazy-load the library and styles.
 ---
 
-# Web Awesome Components in BetterForms (v3+)
+# Web Awesome Components in Klai Studio (v3+)
 
 Web Awesome has launched a modern set of web components that you can use directly in BetterForms. This guide shows a minimal, self-contained component you can share so developers can drag-and-drop onto a page without extra setup.
 

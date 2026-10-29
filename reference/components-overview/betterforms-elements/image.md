@@ -52,7 +52,7 @@ Common keys include:
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   If the text input is used, only values starting with `http` are written back to the model.
 *   If the file input is used, the selected file is read with `FileReader.readAsDataURL()` and stored as a base64 data URL in the model.

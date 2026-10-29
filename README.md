@@ -28,7 +28,7 @@ The docs are all written in [GitHub Flavored Markdown](https://help.github.com/a
 
 If you have Filemaker script code suggestions and code contributions we would love to see them. You can and the files to a pull request or open an issue here.
 
-#### BetterForms Schema trick, and tips
+#### Klai Studio Schema trick, and tips
 
 For contributing schema tricks and techniques please create a pull request or open an issue and we will add them to the Tips and tricks document here.
 

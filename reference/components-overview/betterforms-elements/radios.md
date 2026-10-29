@@ -37,7 +37,7 @@ Below are some of the most common properties used when configuring a Radios elem
 }
 ```
 
-## BetterForms Specific Notes
+## Klai Studio Specific Notes
 
 *   The `model` property will store the `value` of the selected radio button option.
 *   Ensure the `values` array is properly defined to present all necessary choices to the user.
