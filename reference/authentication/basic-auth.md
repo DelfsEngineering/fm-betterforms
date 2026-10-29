@@ -30,7 +30,7 @@ Basic Authentication uses the internal `Users` table with email and hashed passw
 ## Version Note
 
 - Magic-link support was added in BetterForms `3.4.x`.
-- Password signup also calls `onBeforeRegistration` starting in `3.5.x` (OAuth already used this hook). See [Controlling Who Can Sign Up](./user-registration.md#controlling-who-can-sign-up).
+- Password signup also calls `onBeforeRegistration` starting in `3.5.x` (OAuth already used this hook). If that hook does not return `model.createUser = true`, the Klai Sign Up page shows `User not authorized to register.` after **Create Account**. See [Controlling Who Can Sign Up](./user-registration.md#controlling-who-can-sign-up).
 
 ## Next
 

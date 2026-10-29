@@ -128,6 +128,12 @@ Set `model.createUser` in your FileMaker script result:
 | `true` | Allow this registration |
 | `false` | Block this registration |
 
+If password signup is blocked, the Klai Sign Up page shows this error after **Create Account**:
+
+`User not authorized to register.`
+
+That message appears when `authRegister` calls `onBeforeRegistration` and the hook does not allow the signup. `model.createUser` must be `true`. Any other result, including `false` or a missing value, blocks account creation and shows that error. A missing hook does not show it; password signup still continues for older apps.
+
 Typical uses:
 
 * allow only approved email domains
