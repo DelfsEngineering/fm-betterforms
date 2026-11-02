@@ -20,7 +20,7 @@ Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequ
 * _**authInviteComplete**_ - Completes a developer-issued invite/reset token flow and sets a new password
 * _**authVerify**  _ - Verifies the email-verification token
 * _**authResend**_ - Resends the email-verification token
-* _**authRegister**_ - Registers a user and, on success, runs [onRegistration](../hooksoverview/commonoverview.md#onregistration)
+* _**authRegister**_ - Registers a user and, on success, runs [onRegistration](../hooksoverview/commonoverview.md#onregistration) in that same request. The sign-up page model is included on `onRegistration` and on the verification `onAuthNotifier` call. `data.user.id` and `data.user.recid` are the new user record.
 
 Most of these actions do not take custom options, but several require specific model keys such as `email`, `password`, or a token delivered in the URL. `authInviteComplete` supports an optional `options.signIn` flag.
 

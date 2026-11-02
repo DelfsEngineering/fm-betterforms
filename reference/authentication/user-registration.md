@@ -14,13 +14,14 @@ This workflow covers creating a user account with email/password and verifying t
 ## Workflow
 
 1. User submits the registration form
-2. Run `authRegister` action
-3. Helper file creates the user (password stored as a one-way hash)
-4. System sends verification email with a time-bound verification link
-5. User clicks the link and lands on a verification page
-6. Run `authVerify` action on page load to confirm the token
-7. Mark the user record as verified (`isVerified = True`)
-8. Optionally sign the user in or redirect to login
+2. Run `authRegister` action. The sign-up page model, form, pages, and URL query go with that request. `password` and `password2` are removed.
+3. `onBeforeRegistration` runs, then the user record is created (password stored as a one-way hash)
+4. `onAuthNotifier` sends the verification email. That call includes `data.model` from the sign-up form.
+5. `onRegistration` runs in the same request. `data.user` is the new user record (`id` and `recid`). The helper replaces `data.user` with `ui_Users::asJSON` before your hook script runs.
+6. User clicks the link and lands on a verification page
+7. Run `authVerify` action on page load to confirm the token
+8. Mark the user record as verified (`isVerified = True`)
+9. Optionally sign the user in or redirect to login
 
 ## Page Actions
 
@@ -31,8 +32,8 @@ This workflow covers creating a user account with email/password and verifying t
 ## Hooks (FileMaker)
 
 - `onBeforeRegistration`: optional gate **before** the user is created — return `model.createUser = false` to reject the signup
-- `onRegistration`: optional post-registration business logic
-- `onAuthNotifier`: send verification email and any admin notifications
+- `onRegistration`: runs after the user exists, in the same sign-up request. `data.user` is the new row (`id`, `recid`). `data.model` is the sign-up page model without passwords. Returned actions continue the sign-up thread; no actions sends the browser to `/dash`.
+- `onAuthNotifier`: sends the verification email. The email sent during sign-up includes `data.model`. `authResend` does not.
 
 ## Controlling Who Can Sign Up
 

@@ -80,6 +80,7 @@ Attach the appropriate Actions to the relevant pages:
 ## Email Delivery
 
 - Verification, reset, and magic-link emails are sent from your FileMaker server via `onAuthNotifier`. Ensure SMTP is configured there during setup.
+- The verification email sent during sign-up also includes the sign-up page model on `data.model`. Reset, magic-link, and resent verification emails do not.
 
 ## Version Note
 

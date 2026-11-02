@@ -80,7 +80,16 @@ In practice, this means:
 
 ## onRegistration
 
-`onRegistration` runs after `authRegister` successfully creates a user.
+`onRegistration` runs after `authRegister` successfully creates a user. It runs on the server as part of that same sign-up request, before the browser continues.
+
+The payload includes:
+
+* `data.user` — the user record that was just created. `id` and `recid` are that row. A user identity sent from the browser is not used.
+* `data.model` — the sign-up page model, without `password` or `password2`
+* `data.form` and `data.pages` — the sign-up page schema. `form.hookSetName` is not included.
+* `data.query` — the query string from the sign-up URL
+
+The helper script `SubService onRegistration` looks up `ui_Users` by `data.user.id` (or by `data.user.recordId` when `id` is empty) and replaces `data.user` with `ui_Users::asJSON` before your hook script runs. Your script sees the user row from the helper file, including `recid`.
 
 Use it for server-side logic such as:
 
@@ -89,7 +98,9 @@ Use it for server-side logic such as:
 * storing app-specific user metadata
 * returning follow-up actions
 
-This hook has access to the newly created user information and can return actions back to the client workflow.
+Actions returned by the hook are inserted into the sign-up action thread. If the hook returns no actions, the browser continues and goes to `/dash`. If the hook returns an error, the user record still exists and the action thread stops.
+
+The sign-up request waits for this hook. A long script delays the response. The browser allows 30 seconds for the whole request.
 
 ## onAuthNotifier
 
@@ -102,7 +113,13 @@ This is typically where FileMaker sends:
 * magic-link emails
 * optional follow-up notifications after certain auth events
 
-The current notifier flow sends this hook a `type` describing the auth event plus user data and host/subdomain context so FileMaker can build the correct outbound message.
+The hook receives:
+
+* `type` — the auth event, such as `resendVerifySignup`, `sendResetPwd`, or `sendMagicLogin`
+* `user` — the user record for that event
+* `state.host` and `state.subdomain` — so FileMaker can build the correct link
+
+The verification email sent during `authRegister` (`type` `resendVerifySignup`) also includes `data.model`, the sign-up page model. A later verification resend, a password reset, and a magic-link email do not include `data.model`.
 
 If your app uses registration, password reset, or magic-link login, this hook is one of the most important common hooks to configure correctly.
 
