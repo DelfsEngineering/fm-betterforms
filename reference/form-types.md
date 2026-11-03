@@ -95,7 +95,7 @@ omit periods
 
 ## Sample Wizard JSON
 
-{% page-ref page="../../reference/form-settings/validationoverview/" %}
+[validationoverview](./form-settings/validationoverview/)
 
 ```yaml
 {

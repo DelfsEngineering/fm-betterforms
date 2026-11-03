@@ -15,8 +15,8 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
 
 #### Examples
 
-{% tabs %}
-{% tab title="Single User/Channel" %}
+:::tabs
+== Single User/Channel
 ```
 {
     "users": "USER_ID",
@@ -27,9 +27,8 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Multiple Users/Channels" %}
+== Multiple Users/Channels
 ```
 {
     "users":
@@ -50,8 +49,10 @@ The script is available in Helper file and is called **API - Leave Channel**. Th
     ]
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+:::
+
+
 
 ## API: Remove User from Channel
 
@@ -75,8 +76,8 @@ You can use this method to remove one or more users from channels. You must pass
 | users\[0].id       | string | Klai user id from the users table in the helper file           |
 | users\[0].channels | array  | any array of channel objects                                 |
 
-{% tabs %}
-{% tab title="201 " %}
+:::tabs
+== 201
 ```
 {
     "users": [
@@ -85,8 +86,10 @@ You can use this method to remove one or more users from channels. You must pass
     ]
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+:::
+
+
 
 #### Example request body
 
@@ -142,6 +145,4 @@ A user can be removed from an anonymous channel via a [Klai action ](../../refer
 
 **Learn more:**
 
-{% content-ref url="../../reference/actions-processor/actions_overview/channelleaveanon.md" %}
 [channelleaveanon.md](../../reference/actions-processor/actions_overview/channelleaveanon.md)
-{% endcontent-ref %}

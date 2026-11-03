@@ -42,9 +42,13 @@ and here is the `showAlert` action:
 }
 ```
 
-{% hint style="info" %}
+
+::: info
+
 Be sure to check out the [**Actions Reference**](../reference/actions-processor/actions_overview/) for more details about how each action works.
-{% endhint %}
+
+:::
+
 
 ## Where are actions triggered?
 

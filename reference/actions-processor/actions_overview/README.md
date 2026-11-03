@@ -43,9 +43,7 @@ Actions are not the same thing as FileMaker hooks. Hooks are server-side scripts
 
 These special actions allow you to create custom login and registration pages. See this page for more:
 
-{% content-ref url="../authentication-actions.md" %}
 [authentication-actions.md](../authentication-actions.md)
-{% endcontent-ref %}
 
 ### Messaging Actions
 

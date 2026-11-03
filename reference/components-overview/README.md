@@ -8,6 +8,4 @@ This documentation aims to cover how all elements are used within BetterForms, h
 
 To learn more about how pages are built, see the Getting started guide:
 
-{% content-ref url="../../getting-started/ide-quick-tour/first-app/adding-elements.md" %}
 [adding-elements.md](../../getting-started/ide-quick-tour/first-app/adding-elements.md)
-{% endcontent-ref %}

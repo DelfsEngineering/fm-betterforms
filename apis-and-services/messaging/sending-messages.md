@@ -49,9 +49,7 @@ The Klai action **messageSend** can be used to send a message to channel or chan
 
 #### Full action reference:
 
-{% content-ref url="../../reference/actions-processor/actions_overview/messagesend.md" %}
 [messagesend.md](../../reference/actions-processor/actions_overview/messagesend.md)
-{% endcontent-ref %}
 
 ### Anonymous channel
 
@@ -92,9 +90,7 @@ The Klai action **messageSendAnonChannel** can be used to send a message to chan
 
 #### Full action reference:
 
-{% content-ref url="../../reference/actions-processor/actions_overview/messagesendanonchannel.md" %}
 [messagesendanonchannel.md](../../reference/actions-processor/actions_overview/messagesendanonchannel.md)
-{% endcontent-ref %}
 
 ## FileMaker Script
 
@@ -160,8 +156,8 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 | message.model   | object | JSON object with data to be merged to model data     |
 | message.app     | object | JSON object with data to be merged to app model data |
 
-{% tabs %}
-{% tab title="201 This request will return the data that was sent as body of the request." %}
+:::tabs
+== 201 This request will return the data that was sent as body of the request.
 ```
 {
   "message": {
@@ -186,8 +182,10 @@ The script is available in Helper file and is called **API - Send Message**. Thi
   "apiKey": "BFAPI_GENERATED-API-KEY"
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+:::
+
+
 
 #### Example request body
 

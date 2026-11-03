@@ -4,13 +4,9 @@ These actions are used on custom login, registration, verification, reset, invit
 
 Added in BetterForms `3.4.x`: passwordless magic-link support via `authMagicRequest` and token-based `authLogin`.
 
-{% content-ref url="../authentication/custom-login-pages.md" %}
 [custom-login-pages.md](../authentication/custom-login-pages.md)
-{% endcontent-ref %}
 
-{% content-ref url="./actions_overview/authloginoauth.md" %}
 [authloginoauth.md](./actions_overview/authloginoauth.md)
-{% endcontent-ref %}
 
 * _**authLogin**_ - Signs the user in with email/password or a magic-link token
 * _**authLogout**_ - Signs the user out

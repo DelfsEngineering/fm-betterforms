@@ -4,9 +4,13 @@ As you begin to play around with BetterForms, you may find that sometimes you wa
 
 Hacking a webpage requires that you use the developer tools that are built into your browser. For a brief intro about how to use the developer tools in your browser, check out [this link](https://www.lifewire.com/web-browser-developer-tools-3988965). We recommend using **Google Chrome** for development, but these tips should work in FireFox and Safari just the same.
 
-{% hint style="info" %}
+
+::: info
+
 These tips are only relevant for debugging **JavaScript**, **HTML**, and **CSS** in the web browser. If you're experiencing issues with your data not behaving as expected, you may want to start with your [Helper File's inbox & outbox](../reference/support-and-maintenance/connection-trouble-shooting-guide.md) instead.
-{% endhint %}
+
+:::
+
 
 ## Inspecting an Element
 
@@ -24,7 +28,11 @@ You'll see your code pop up in your developer tools panel and can use the button
 
 While a script is paused, you can mouse-over parts of a variable or JSON path to see the result of that data. This is very helpful to see if your JSON path reference is incorrect!
 
-{% hint style="info" %}
+
+::: info
+
 When you're done, don't forget to remove the `debugger` statement so that your scripts are better hidden in your production app!
-{% endhint %}
+
+:::
+
 

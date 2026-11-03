@@ -17,9 +17,13 @@ JSONSetElement ( $$BF_Model ;
 )
 ```
 
-{% hint style="info" %}
+
+::: info
+
 Notice how we are only modifying the **\$$BF\_Model** JSON instead of replacing it. This is good practice when working with that global variable because otherwise you could accidentally erase existing data from the user's browser.
-{% endhint %}
+
+:::
+
 
 ## Running the hook
 
@@ -56,6 +60,10 @@ Make sure your credentials for the BetterForms user have XML and Data API privil
 
 * Klai Studio encrypts these credentials so you would have to re-enter them to verify they are correct. Your current credentials are not viewable from the IDE.
 
-{% hint style="warning" %}
+
+::: warning
+
 Remember that all files that Klai Studio interacts with must have these matching credentials. If the BetterForms user does not have access to the file or does not have XML and Data API privileges enabled in all files, the server script fails silently unless you have strong error capturing in place.
-{% endhint %}
+
+:::
+

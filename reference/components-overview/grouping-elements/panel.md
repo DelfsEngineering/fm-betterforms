@@ -2,9 +2,13 @@
 
 
 
-{% hint style="info" %}
+
+::: info
+
 To see panel in grouping eleelements, check out [this example](https://appstaging.fmbetterforms.com/#/apps/pages/edit?id=945D672C-B27E-2B4C-BEAA-54F5EC6F7435).
-{% endhint %}
+
+:::
+
 
 
 

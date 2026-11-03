@@ -6,11 +6,15 @@ After clicking the <mark style="color:red;">`"Build your first app"`</mark> butt
 
 <figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="success" %}
+
+::: tip
+
 **Template** **Documentation**
 
 Some templates have additional documentation. [You can see the list of templates here.](https://www.notion.so/delfsengineering/db16310d3e164bea8efe390cf9031c36?v=0fa6ecea0466457fad10edd331dc8a0b)
-{% endhint %}
+
+:::
+
 
 **2. View Template Details**
 

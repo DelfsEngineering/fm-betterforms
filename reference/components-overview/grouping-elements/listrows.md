@@ -4,9 +4,13 @@ The `listrows` is used to display and manage a list of rows where each row consi
 
 **Example Configuration**
 
-{% hint style="info" %}
+
+::: info
+
 You can reference to [this example](https://examplesdev.fmbetterforms.com/#/form/4AE6421A-C3B9-4218-9DB8-7692A2486BD4).
-{% endhint %}
+
+:::
+
 
 The following example illustrates a `listrows` component where users can enter multiple contacts with specific fields for first name, last name, and address. It also demonstrates the flexibility of customizing the minimum and maximum number of entries.
 

@@ -20,11 +20,18 @@ To learn more about the comprehensive settings available for an App/Site, you ca
 
     <figure><img src="../../../.gitbook/assets/image (18).png" alt="Template Selection Page"><figcaption></figcaption></figure>
 
-    \* \{% hint style="success" %\} \*\*Template Documentation:\*\* Some templates may have additional specific documentation. \[Check for template-specific guides here]\(../../reference/guides-and-integrations/README.md). \{% endhint %\}3. \*\*Input App Details:\*\* Whether starting from scratch or a template, you'll need to provide some basic details for your new app:
+    ::: tip
+    **Template Documentation:** Some templates may have additional specific documentation. [Check for template-specific guides here](../../../guides/integrations/README.md).
+    :::
+
+3. **Input App Details:** Whether starting from scratch or a template, you'll need to provide some basic details for your new app:
 
     <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="Input App Details Form"><figcaption></figcaption></figure>
 
-    \* \*\*App Name:\*\* This is the internal name displayed in the BetterForms editor and on your dashboard. \* \*\*Public Name:\*\* This is the name that can be displayed on your live site (e.g., in the browser title bar). Keep it concise; you can usually change it later. \* \*\*Domain Name:\*\* Enter the desired subdomain for your app (e.g., \`myawesomeapp\`.bfm.app). The system may check for availability. You can configure a custom domain later. \* \*\*Select Your Server:\*\* From the dropdown list, choose the FileMaker Server connection you configured in \[Phase 1.3]\(../setup/add-server-to-bf.md). If you haven't added your server yet, you might be prompted or need to go back to that step. \*(The UI for this might be integrated with the "Input App Details" form or a subsequent step).\*
+    * **App Name:** This is the internal name displayed in the BetterForms editor and on your dashboard.
+    * **Public Name:** This is the name that can be displayed on your live site (e.g., in the browser title bar). Keep it concise; you can usually change it later.
+    * **Domain Name:** Enter the desired subdomain for your app (e.g., `myawesomeapp`.bfm.app). The system may check for availability. You can configure a custom domain later.
+    * **Select Your Server:** From the dropdown list, choose the FileMaker Server connection you configured in [Phase 1.3](../setup/add-server-to-bf.md). If you haven't added your server yet, you might be prompted or need to go back to that step. *(The UI for this might be integrated with the "Input App Details" form or a subsequent step).*
 3. **Configure Core App Settings (often on a "General" tab or similar after initial creation):**
    * **Set Server Credentials:** Click the **"Set Credentials"** button (or a similar section, possibly per environment) to securely enter the username and password for the FileMaker account BetterForms will use to connect to your database. This user should have the necessary privileges as outlined in the server setup.
    * **Common Hook Set Name:** Enter a name for the common hook FileMaker script set for this app. For your first app, using "app" (or a similar default like "bf\_hooks") is typical. This refers to a set of FileMaker scripts that BetterForms will call. You were introduced to hooks in [Phase 1.2](../setup/install-bf-helper-file.md).

@@ -1,8 +1,12 @@
 # Klai Streaming API (Chat)
 
-{% hint style="info" %}
+
+::: info
+
 The BetterForms chat streaming endpoint is a lightweight streaming API for simple OpenAI and Gemini text generation.
-{% endhint %}
+
+:::
+
 
 ## Overview
 

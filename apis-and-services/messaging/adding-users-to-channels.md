@@ -37,24 +37,32 @@ Channels can be set to three different modes: **ignore**, **listen** or **receiv
 
 ## Adding users using a FileMaker Script
 
-{% hint style="warning" %}
+
+::: warning
+
 **Requires Helper File Changes**\
 You will need to update your helper file to the latest version to support the new channels API.
-{% endhint %}
+
+:::
+
 
 The **`API - Join Channel`** script accepts an object with two keys **users** and **channels**.
 
 * `users`: it accepts a string with a **user ID** _or_ an **array of user IDs**
 * `channels`: it accepts an object with **name** and **mode** _or_ an **array of objects**, with the same shape.
 
-{% hint style="success" %}
+
+::: tip
+
 **TIP**: The user `id` is the id of the user in the helper file, not your business file.
-{% endhint %}
+
+:::
+
 
 #### Example Script Parameters
 
-{% tabs %}
-{% tab title="Data shape" %}
+:::tabs
+== Data shape
 ```yaml
 {
     "channels": [
@@ -66,8 +74,10 @@ The **`API - Join Channel`** script accepts an object with two keys **users** an
     "users": "USER_ID"
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+:::
+
+
 
 ## API: Add User to Channel
 
@@ -91,8 +101,8 @@ You can use this method to join users to one or more channels. This is an authen
 | users\[0].id       | string | Klai user id from helper file                           |
 | users\[0].channels | array  | an array of channel objects                           |
 
-{% tabs %}
-{% tab title="201 " %}
+:::tabs
+== 201
 ```
 {
     "users": [
@@ -101,8 +111,10 @@ You can use this method to join users to one or more channels. This is an authen
     ]
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+:::
+
+
 
 #### Example request body
 
@@ -161,6 +173,4 @@ A user can be joined to an anonymous channel via a [Klai action ](../../referenc
 
 **Learn more:**
 
-{% content-ref url="../../reference/actions-processor/actions_overview/channeljoinanonymous.md" %}
 [channeljoinanonymous.md](../../reference/actions-processor/actions_overview/channeljoinanonymous.md)
-{% endcontent-ref %}

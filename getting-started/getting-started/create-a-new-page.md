@@ -1,8 +1,12 @@
 # Create a New Page
 
-{% hint style="info" %}
+
+::: info
+
 **Important:** If you're working with the HTML or JavaScript editor, remember to **save your content before closing the editor**. This ensures your changes are preserved.
-{% endhint %}
+
+:::
+
 
 **Step 1: Choose a Template**
 

@@ -38,9 +38,13 @@ Other pages can be loaded either by ID or by their navigation slug. Using Naviga
 
 **.../#/form/`Page ID`**
 
-{% hint style="warning" %}
+
+::: warning
+
 Navigating by **Page ID** may not be supported in a future version of BetterForms in order to provide better support for other features. Always use a **navSlug** to maintain compatibility.
-{% endhint %}
+
+:::
+
 
 ## Query Parameters
 

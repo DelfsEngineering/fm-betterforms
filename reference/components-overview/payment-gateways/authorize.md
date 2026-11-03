@@ -4,9 +4,13 @@
 
 **Version:** >0.8.16
 
-{% hint style="danger" %}
+
+::: danger
+
 #### This component documentation is work in progress
-{% endhint %}
+
+:::
+
 
 See [https://developer.authorize.net/api/reference/features/acceptjs.html](https://developer.authorize.net/api/reference/features/acceptjs.html) for workflow reference and deeper understanding of this component.
 

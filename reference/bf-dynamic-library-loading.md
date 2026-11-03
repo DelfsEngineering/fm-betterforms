@@ -45,9 +45,13 @@ console.log('Today:', dayjs.default().format('YYYY-MM-DD'));
 console.log('Next week:', dayjs.default().add(7, 'day').format('MMMM D'));
 ```
 
-{% hint style="info" %}
+
+::: info
+
 **ESM modules are scoped to the current function action.** See "ESM Module Scope" section below for multi-action usage patterns.
-{% endhint %}
+
+:::
+
 
 ### Load CSS
 
@@ -216,9 +220,13 @@ await BF.libraryLoadOnce(chartLibrary);
 
 ## ESM Module Scope
 
-{% hint style="warning" %}
+
+::: warning
+
 **Important:** ESM modules are scoped to the function action where they're loaded. Unlike UMD libraries (which are automatically global), ESM modules return an object that only exists in the current function's scope.
-{% endhint %}
+
+:::
+
 
 ### UMD vs ESM Behavior
 

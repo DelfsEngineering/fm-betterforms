@@ -40,9 +40,13 @@ JSONSetElement ( $$BF_Model ;
 )
 ```
 
-{% hint style="info" %}
+
+::: info
+
 Notice how we are only modifying the `$$BF_Model` JSON instead of replacing it. This is good practice when working with that global variable because otherwise you could accidentally erase existing data from the user's browser.
-{% endhint %}
+
+:::
+
 
 ### Step 4: Run the Hook
 

@@ -14,7 +14,11 @@ Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing
 
 #### Overview Diagram
 
-{% embed url="https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x" %}
+
+<iframe src="https://whimsical.com/embed/Ew1asCqpaCGiZsBZzgEy9x" width="100%" height="520" style="border:1px solid var(--vp-c-divider);border-radius:8px" loading="lazy" title="Enterprise deployment and architecture"></iframe>
+
+[Open the diagram in Whimsical](https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x)
+
 
 ### Requirements
 
@@ -38,9 +42,13 @@ After installing Docker, as described [below](bf-enterprise-documentation.md#set
 
 Link to Redis’ official docs on how to run Redis Stack on Docker: [https://redis.io/docs/stack/get-started/install/docker/](https://redis.io/docs/stack/get-started/install/docker/)
 
-{% hint style="info" %}
+
+::: info
+
 As a development environment, this Redis Stack instance can be deployed on localhost, and the env var <mark style="color:red;">`REDIS_HOST`</mark> can be <mark style="color:red;">`host.docker.internal`</mark> with no password when your setup allows that.
-{% endhint %}
+
+:::
+
 
 ### Env File
 
@@ -69,9 +77,13 @@ Default environment variables to be declared in the file:
 | REDIS\_PASSWORD\_OAUTH     | Redis password for OAuth                                                                                            | No       |
 | REDIS\_SECRET\_OAUTH       | Redis secret for OAuth                                                                                              | No       |
 
-{% hint style="info" %}
+
+::: info
+
 **Current runtime note:** the active server wiring uses `REDIS_HOST_MESSAGING`, `REDIS_PASSWORD_MESSAGING`, and `REDIS_PORT_MESSAGING` for cross-pod sync and the shared Redis client used by OAuth session handling. Some messaging services also read `REDIS_URI_MESSAGING` directly. The separate `REDIS_*_OAUTH` keys still appear in config defaults, but they are not the primary Redis settings used by the current server path shown above.
-{% endhint %}
+
+:::
+
 
 Here is a sample file (where values for the right hand side will be changed to your own info):
 
@@ -83,9 +95,13 @@ Here is a sample file (where values for the right hand side will be changed to y
 
 Find the links to Docker’s official docs on how to install Docker on each OS.
 
-{% hint style="info" %}
+
+::: info
+
 &#x20;Windows and MacOS only available for the Desktop version, whereas Linux has the option to use Engine (server) or Desktop.
-{% endhint %}
+
+:::
+
 
 *   Linux
 

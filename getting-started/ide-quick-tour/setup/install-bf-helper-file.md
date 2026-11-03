@@ -30,9 +30,13 @@ To run and debug hooks locally from the helper file, you need to connect it to y
 
 This allows the helper file to act as a proxy, which is useful for development and testing.
 
-{% hint style="info" %}
+
+::: info
+
 Each FileMaker file that Klai Studio interacts with must have the same user credentials. Your BetterForms user account should have \[Data Entry Only] permissions with XML and Data API extended privileges enabled.
-{% endhint %}
+
+:::
+
 
 
 

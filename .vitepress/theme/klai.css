@@ -1,0 +1,30 @@
+/* Klai Studio brand: colors from klai.studio (bfprimary #0369A1 / #075985) and the GitBook site customization (#0284C7). */
+:root {
+  --vp-font-family-base: 'Inter', 'InterVariable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --vp-c-brand-1: #0369A1;
+  --vp-c-brand-2: #0284C7;
+  --vp-c-brand-3: #075985;
+  --vp-c-brand-soft: rgba(2, 132, 199, 0.14);
+  --vp-c-tip-1: #00A63E; --vp-c-tip-soft: rgba(0, 201, 80, 0.12);
+  --vp-c-warning-1: #C27300; --vp-c-warning-soft: rgba(254, 154, 0, 0.14);
+  --vp-c-danger-1: #E7000B; --vp-c-danger-soft: rgba(251, 44, 54, 0.12);
+  --vp-home-hero-name-color: #0369A1;
+  --vp-button-brand-bg: #0369A1;
+  --vp-button-brand-hover-bg: #075985;
+}
+.dark {
+  --vp-c-brand-1: #7DD3FC;
+  --vp-c-brand-2: #38BDF8;
+  --vp-c-brand-3: #0284C7;
+  --vp-c-brand-soft: rgba(56, 189, 248, 0.16);
+  --vp-c-tip-1: #4ADE80;
+  --vp-c-warning-1: #FBBF24;
+  --vp-c-danger-1: #F87171;
+  --vp-button-brand-bg: #0284C7;
+  --vp-button-brand-hover-bg: #0369A1;
+}
+.VPNavBarTitle .logo { height: 28px; }
+/* API method badges (converted GitBook swagger blocks) */
+.api-method { display: inline-block; font: 600 12px/1 var(--vp-font-family-mono); padding: 4px 8px; border-radius: 6px; color: #fff; margin-right: 6px; vertical-align: middle; }
+.api-get { background: #0284C7; } .api-post { background: #00A63E; } .api-put, .api-patch { background: #C27300; } .api-delete { background: #E7000B; }
+.vp-doc iframe { max-width: 100%; }

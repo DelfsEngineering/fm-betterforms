@@ -1,0 +1,1 @@
+{"Version":"2012-10-17","Statement":[{"Sid":"AllowCloudFrontOAC","Effect":"Allow","Principal":{"Service":"cloudfront.amazonaws.com"},"Action":"s3:GetObject","Resource":"arn:aws:s3:::docs-klai-studio/*","Condition":{"StringEquals":{"AWS:SourceArn":"arn:aws:cloudfront::536237283731:distribution/E13U0TYGFYECCK"}}}]}

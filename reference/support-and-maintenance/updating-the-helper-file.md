@@ -8,4 +8,6 @@ Before starting the update, make sure you have access to your existing BetterFor
 
 ### Updating the Helper File
 
-{% embed url="https://fmbetterforms.screencasthost.com/channels/cqhuIOHZw" %}
+
+[🔗 https://fmbetterforms.screencasthost.com/channels/cqhuIOHZw](https://fmbetterforms.screencasthost.com/channels/cqhuIOHZw)
+

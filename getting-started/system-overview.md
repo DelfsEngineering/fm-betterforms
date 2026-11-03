@@ -16,8 +16,9 @@ For authentication options and workflows, see the Authentication section in the 
 
 The health and performance of the Klai Studio Cloud can be checked by visiting the official status page:
 
-{% embed url="https://status.klai.studio" %}
+
+[🔗 https://status.klai.studio](https://status.klai.studio)
+
 Official Klai Studio Status Page
-{% endembed %}
 
 To receive live updates, you can subscribe via the monitoring page.

@@ -8,9 +8,13 @@ You can set the <mark style="color:red;">**App Name**</mark> and <mark style="co
 
 You can define the default data model for your entire app.
 
-{% hint style="info" %}
+
+::: info
+
 Data in the App Model resets on page refresh unless cached. It’s not sent to the server but can be set server-side using <mark style="color:red;">`$$BF_App`</mark>.
-{% endhint %}
+
+:::
+
 
 Store global elements like your logo or user info here and reference them as `{{app.key}}`. For example, upload your logo to **File Assets**, copy its URL, and set it in `logoURL`:
 
@@ -28,13 +32,17 @@ In **Styling** > **Header slots > HTML contents**:&#x20;
 
 You can also cache the data here to enable <mark style="color:red;">Sync with app</mark> for a single page's data model.
 
-{% hint style="info" %}
+
+::: info
+
 Caching:
 
 * In Browser: Uses local storage, persists across tabs and after browser closure.
 * In Tab: Uses session storage, persists only in the tab and survives refreshes.
 * If both options are selected, session storage is prioritized.
-{% endhint %}
+
+:::
+
 
 ### DOM Header Insertions
 

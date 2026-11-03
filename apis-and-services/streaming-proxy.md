@@ -1,11 +1,15 @@
 # Klai Streaming Proxy
 
-{% hint style="info" %}
+
+::: info
+
 **Note:** This page provides a high-level overview of the streaming workflow. For specific implementation details, please see the following API documentation:
 * [Klai Streaming API (Chat)](bf-streaming-api-chat.md)
 * [Klai Streaming API (Assistants)](bf-streaming-assistants-api.md)
 * [Klai Streaming API (LLM Query)](bf-streaming-api-llm-query.md)
-{% endhint %}
+
+:::
+
 
 The streaming proxy allows you to stream generative AI directly into a Klai app via messaging.
 

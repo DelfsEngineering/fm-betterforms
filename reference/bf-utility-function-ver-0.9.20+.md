@@ -40,17 +40,13 @@ description: >-
 
 For the full setup guide (`app.i18n` dictionary, HTML usage, and a language picker), see:
 
-{% content-ref url="bf-i18n.md" %}
 [Localization (i18n)](bf-i18n.md)
-{% endcontent-ref %}
 
 ## Dynamic Library Loading
 
 For detailed documentation on the dynamic library loading functions (`BF.libraryLoadOnce`, `BF.libraryIsLoaded`, `BF.libraryGetLoaded`), see:
 
-{% content-ref url="bf-dynamic-library-loading.md" %}
 [Dynamic Library Loading](bf-dynamic-library-loading.md)
-{% endcontent-ref %}
 
 ## Auth Feedback Helper
 

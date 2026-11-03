@@ -6,9 +6,13 @@ description: >-
 
 # Component Best Practices
 
-{% hint style="info" %}
+
+::: info
+
 **For Third-Party Library Integration:** See the complete guide: [Creating Components with Third-Party Libraries](../../integrations/creating-components-with-third-party-libraries.md) with full FullCalendar, Chart.js, and Leaflet examples.
-{% endhint %}
+
+:::
+
 
 ### Sizing and Styling
 

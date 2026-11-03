@@ -2,9 +2,13 @@
 
 ## Introduction
 
-{% hint style='warning' %}
+
+::: warning
+
 **Beta Service:** The `llmQuery` service is currently in beta. Its functionality and API contract are subject to change in future updates. Please test thoroughly and be prepared for potential adjustments.
-{% endhint %}
+
+:::
+
 
 The `llmQuery` service provides a unified interface to interact with various Large Language Model (LLM) providers like OpenAI, Google Gemini, and Anthropic Claude. It handles request formatting, and response handling, including support for streaming responses.
 
@@ -173,9 +177,13 @@ You, as the user of the `/llm/query` API, do not directly handle the low-level t
 
 ### Frontend Tools (UI Tools)
 
-{% hint style='info' %}
+
+::: info
+
 **Version Requirement:** BetterForms v3.1.8+
-{% endhint %}
+
+:::
+
 
 Frontend Tools trigger UI actions directly in the browser without FileMaker Common Hook calls.
 

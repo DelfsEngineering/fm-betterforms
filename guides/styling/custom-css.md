@@ -4,9 +4,13 @@ description: You can apply custom CSS styles on a per-site basis
 
 # Custom CSS
 
-{% hint style="info" %}
+
+::: info
+
 Site wide CSS is configured via the **Appearance > CSS** tab of the [site editor](../../reference/site-settings/).
-{% endhint %}
+
+:::
+
 
 All elements within a form schema can have a styleClasses key that can take a string of space separated CSS classes. The below example adds the class `my-red-box` to an input element.
 

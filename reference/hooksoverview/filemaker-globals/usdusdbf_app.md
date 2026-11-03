@@ -8,7 +8,7 @@ If the same synced key is returned in both `$$BF_App` and `$$BF_Model` in a sing
 
 For more information about how the app data model is used by BetterForms, see this page:
 
-{% page-ref page="../../site-settings/app-model.md" %}
+[app-model.md](../../site-settings/app-model.md)
 
 
 

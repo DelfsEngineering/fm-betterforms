@@ -35,7 +35,9 @@ As your application loads, Klai Studio will first check the **Session Storage** 
 
 Keys set for caching will automatically be saved locally as they are changed. No additional cache management is required.
 
-{% hint style="warning" %}
+
+::: warning
+
 **Security:** It is important to be mindful of sensitive data. Browser-side caching is not encrypted and as such can be viewed directly by users.
 
 You can clear local storage explicitly upon logout via an action function with the below JS code. This is not a security mitigation but may be considered under some circumstances. This will also force the clearing of the Klai authentication token.
@@ -43,7 +45,9 @@ You can clear local storage explicitly upon logout via an action function with t
 ```
 window.localStorage.clear();
 ```
-{% endhint %}
+
+:::
+
 
 ### Running Concurrent Tasks
 
@@ -57,7 +61,9 @@ Often, slow-running processes can be run concurrently so the user does not have 
 *   Sending a real-time message
 
 For more background information on the FileMaker Script Engines and how to implement this, see this video:
-{% embed url="https://www.youtube.com/watch?v=PNCdwNak3XI" %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PNCdwNak3XI" frameborder="0" allowfullscreen></iframe>
+
 
 ####
 

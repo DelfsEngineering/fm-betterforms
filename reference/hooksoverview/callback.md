@@ -53,9 +53,13 @@ Set the `$contentType` var to one of the following to return that content type a
 | $params                         | object containing header, method and query objects                                  |
 | $mehod                          | The method verb name                                                                |
 
-{% hint style="info" %}
+
+::: info
+
 For versions >0.9.35, API responses are able to send headers and status code, as shown below.
-{% endhint %}
+
+:::
+
 
 Set the `$headers` var to set the correct headers for the outbound data. For further reference of HTTP response headers options, please refer to [docs](https://developer.mozilla.org/en-US/docs/Glossary/Response\_header).
 
@@ -99,9 +103,13 @@ You can expect finite performance from this API handler. Initial tests show abou
 
 ### Suggested Design Pattern and Notes
 
-{% hint style="info" %}
+
+::: info
+
 If you are returning JSON, make sure $response is set to a \`JSONObject\` type. For XML, and other custom serialized responses you an set $response to the string you want to return.
-{% endhint %}
+
+:::
+
 
 Keeping your API handler scripts orderly is key to stability and ease of code maintenance. If your API is handling more than one simple task it is recommended you use the example multi-endpoint script structure.
 

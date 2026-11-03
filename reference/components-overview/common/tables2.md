@@ -1,8 +1,12 @@
 # Data Table
 
-{% hint style="info" %}
+
+::: info
+
 This component is based on [Vue-Tables-2](https://matanya.gitbook.io/vue-tables-2/options-api#options) Refer to source code for additional documentation.
-{% endhint %}
+
+:::
+
 
 ## Additional keys:
 
@@ -36,9 +40,13 @@ If you name a slot `child_row`, that HTML content will be displayed when the row
 }]
 ```
 
-{% hint style="info" %}
+
+::: info
+
 When referencing row data within slots, use `props.row` instead of the usual `model` keyword.
-{% endhint %}
+
+:::
+
 
 ## Slots
 
@@ -167,11 +175,15 @@ To address this, you can define custom sorting functions in the table options. B
 
 ```
 
-{% hint style="info" %}
+
+::: info
+
 &#x20;**Note on Custom Sort Functions**
 
 When providing a custom sort function in JSON (e.g., via the `function` key), the entire function **must be written on a single line** without any line breaks (, line returns, or multi-line formatting). This is required for the function to compile correctly in the BetterForms runtime environment.
-{% endhint %}
+
+:::
+
 
 ✅ Valid:
 

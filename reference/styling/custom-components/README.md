@@ -10,9 +10,13 @@ A custom component is a named definition stored on the site (`content.components
 
 The runtime lives in `bfcomponent.vue`. If `comp.html` is set, BetterForms renders that HTML. Otherwise it renders `comp.fields` through vue-form-generator.
 
-{% hint style="info" %}
+
+::: info
+
 Alpha Features must be on to see the **Component** tab in the Klai editor. See [Components Editor](../../../guides/styling/custom-components/components-editor.md).
-{% hint %}
+
+::: info
+
 
 ## Component API (`comp`)
 

@@ -25,9 +25,13 @@ Validation **does not** run automatically. You must trigger client validation wi
 
 **double** Checks that the value is a valid number.
 
-{% hint style="warning" %}
+
+::: warning
+
 When validating with **number**, **integer**, or **double**, make sure `fieldOptions.inputType` is set to `number`, otherwise the field will be treated as a text-style input in the browser.
-{% endhint %}
+
+:::
+
 
 **string** Checks that the value is a string - and that its length is within the fields min & max range, if these are defined in the schema.
 
@@ -47,8 +51,12 @@ When validating with **number**, **integer**, or **double**, make sure `fieldOpt
 
 **alphaNumeric** Checks that the value is a letter or a number, using this regex: /^\[a-zA-Z0-9]\*$/
 
-{% hint style="danger" %}
+
+::: danger
+
 This validation works great as a user interface element, but should not be trusted in FileMaker. **Anything that comes from the a client's web browser can be hacked**, so sensitive data should also be validated in your FileMaker scripts before committing to the database.
-{% endhint %}
+
+:::
+
 
 Source: [https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html](https://icebob.gitbooks.io/vueformgenerator/content/validation/built-in-validators.html)

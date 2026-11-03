@@ -4,9 +4,13 @@ description: Card modals display other pages as their content.
 
 # Card / Window Modals
 
-{% hint style="info" %}
+
+::: info
+
 This element is based on the [**vue js modal**](https://github.com/euvl/vue-js-modal#properties) module.
-{% endhint %}
+
+:::
+
 
 Card Modals are a special type of modal that show the contents of another page as their contents.
 
