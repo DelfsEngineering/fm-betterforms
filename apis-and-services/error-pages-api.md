@@ -1,8 +1,12 @@
 # Klai Error Pages API
 
-{% hint style="info" %}
+
+::: info
+
 [Complete Error Code List](../reference/bf-error-codes.md)
-{% endhint %}
+
+:::
+
 
 ## Introduction
 

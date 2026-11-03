@@ -18,6 +18,10 @@ For example, when a `function` action is selected in the script editor, clicking
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2024-08-23 at 4.55.56 PM.png" alt="Click the line number next to the function key to open the JavaScript editor"><figcaption></figcaption></figure>
 
-{% hint style="info" %}
+
+::: info
+
 **Priority of Local Scripts**: Local scripts take priority over global scripts. For example, if both local and global scripts define a namedAction `"someAction"`, the local script will be executed on this page.
-{% endhint %}
+
+:::
+

@@ -15,3 +15,7 @@ _book
 *.mobi
 *.pdf
 docs_edit_guide.md
+
+# VitePress
+.vitepress/dist
+.vitepress/cache

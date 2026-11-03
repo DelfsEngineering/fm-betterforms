@@ -63,10 +63,14 @@ Example of a page model key (`pet`) that has **Sync with app** enabled:
 
 For detailed app model behavior and caching notes, see [App Model](../../../../reference/site-settings/app-model.md).
 
-{% hint style="warning" %}
+
+::: warning
+
 **When returning both App + Model from a hook:**
 
 If a key is set to **Sync with app** and your hook returns that same key in both `$$BF_App` and `$$BF_Model`, the **app value is authoritative** for that key.
 
 Use `$$BF_App` for the final shared value you want synced across pages.
-{% endhint %}
+
+:::
+

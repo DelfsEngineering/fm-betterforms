@@ -146,17 +146,25 @@ After installing it, the user will be able to access your web app as a regular n
 | macOS       | ✔️ (73+)      | ✔️             | ❌               | ❌          |
 | Linux       | ✔️ (73+)      | ✔️             | ❌               | ❌          |
 
-{% hint style="info" %}
+
+::: info
+
 Please note that PWA installation is not supported on Desktop Safari and Firefox.
-{% endhint %}
+
+:::
+
 
 * Mobile Devices (reference: [https://web.dev/learn/pwa/progressive-web-apps/#mobile-devices](https://web.dev/learn/pwa/progressive-web-apps/#mobile-devices))
   * **iOS and iPadOS**: Safari (since iOS 11.3), App Store (since iOS/iPadOS 14, with some limitations), Mobile Configuration for enterprise distribution;
   * **Android**: Firefox, Google Chrome, Samsung Internet, Microsoft Edge, Opera, Brave, Huawei Browser, Baidu, UCWeb, Play Store (from version 72 with Google Chrome installed, or browsers compatible with TWA), Galaxy Store, Managed Play iframe for enterprise distribution.
 
-{% hint style="info" %}
+
+::: info
+
 iOS and iPadOS can only be installed if using Safari.
-{% endhint %}
+
+:::
+
 
 To support PWA behavior, you can use the <mark style="color:red;">`checkPWAInstallation`</mark> namedAction to detect whether the app is running in a browser or as an installed PWA. This can be useful for conditionally displaying elements like a PWA installation banner—show it only when the app is in the browser, and hide it when already installed. The action can be placed in the <mark style="color:red;">`onFormLoad`</mark> script to automatically update the state on load:
 
@@ -190,9 +198,13 @@ The example below shows how we could trigger the permission prompt from a button
 
 In this example, we set the user ID (BetterForms ID) as a key to target this when sending a push notification. Clicking on the button will display the following prompt.
 
-{% hint style="info" %}
+
+::: info
+
 `window.vueapp.$store.state.auth.user.id` refers to the **BetterForms User record ID**, _not_ your FileMaker business file PK. Using the BF ID ensures your subscription is associated with the correct user in the Klai cloud database.
-{% endhint %}
+
+:::
+
 
 <figure><img src="../../.gitbook/assets/Untitled 1 (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -230,9 +242,13 @@ Use the <mark style="color:red;">`pwaPushNotificationSend`</mark> action step.
 }
 ```
 
-{% hint style="info" %}
+
+::: info
+
 Again, place the **BetterForms User record ID** (from `pwaPromptPushPermission`), _not_ the business file PK, in this array. This ensures notifications reach the intended user.
-{% endhint %}
+
+:::
+
 
 #### Sending a Push Notification from the API endpoint:
 
@@ -259,9 +275,13 @@ Hitting <mark style="color:red;">`/pushdata/sendnotification`</mark> endpoint ( 
 }
 ```
 
-{% hint style="info" %}
+
+::: info
+
 The <mark style="color:red;">`filter`</mark> key is optional, only needed when push notifications should be sent only to specific users. General push notifications can be sent without the <mark style="color:red;">`filter`</mark> key. Another optional key is <mark style="color:red;">`ttl`</mark>, which defines how long a notification will stay alive if a user is offline (e.g.: ttl is set to 300 seconds, so if a user is offline, the notification will be delivered to the user if the user comes back online within 5 minutes). The default value set to ttl, if no value is passed, is 300 seconds.
-{% endhint %}
+
+:::
+
 
 #### Adding DOM Header Insertion to be available for offline use
 

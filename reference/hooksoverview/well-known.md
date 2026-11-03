@@ -1,8 +1,12 @@
 # Well-Known URLs (Beta)
 
-{% hint style="warning" %}
+
+::: warning
+
 This is a **beta** feature in Klai Studio / BetterForms **3.5.69** and later. The routing contract may change. Only add a FileMaker handler when you have a concrete need for a site-root `/.well-known/` file. Unhandled well-known requests already return an empty `404`; you do not need a catch-all in FileMaker.
-{% endhint %}
+
+:::
+
 
 Some external services will only accept a file at a **fixed path on your app hostname**, not under `/api`. The usual case is Apple Pay merchant domain verification:
 
@@ -62,9 +66,13 @@ You must set `$contentType` (for Apple Pay, `"text"`), `$statusCode` (`200`), an
 
 For every other `.well-known` path, do not return a 200. Leave `$contentType` empty so Klai 404s.
 
-{% hint style="info" %}
+
+::: info
+
 The existing footer that writes `$$BF_Payload` already supports `text` / `html` / `xml` vs JSON. You do not need to change the "do not edit below here" block if it already includes `data.contentType`, `data.response`, `data.headers`, and `data.statusCode`.
-{% endhint %}
+
+:::
+
 
 ### Example branch (Apple Pay file)
 

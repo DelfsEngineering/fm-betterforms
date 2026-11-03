@@ -27,9 +27,7 @@ When `runUtilityHook` sends data to FileMaker, BetterForms can reduce or reshape
 
 See:
 
-{% content-ref url="../hooksoverview/env_vars.md" %}
 [env_vars.md](../hooksoverview/env_vars.md)
-{% endcontent-ref %}
 
 That page covers:
 

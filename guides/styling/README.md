@@ -35,9 +35,7 @@ These optional components can also be controlled dynamically using JavaScript fu
 
 Navigation menu options can be configured in the navigation tab of the site editor.
 
-{% content-ref url="../../reference/site-settings/navigationoverview.md" %}
 [navigationoverview.md](../../reference/site-settings/navigationoverview.md)
-{% endcontent-ref %}
 
 ### Theme Template
 

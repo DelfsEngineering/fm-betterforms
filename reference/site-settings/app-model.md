@@ -46,7 +46,9 @@ As your application loads, BetterForms will first check the **Session Storage** 
 
 Keys that are set for caching will automatically be saved locally as they are changed. No additional cache management is required.
 
-{% hint style="warning" %}
+
+::: warning
+
 **Security:** It is important to be mindful of sensitive data. Browser side caching is not encrypted and as such can be viewed directly by users. 
 
 You can clear local storage explicitly upon logout via an action function with the below JS code. This is not a security mitigation, but may be considered under some circumstances.
@@ -54,7 +56,9 @@ You can clear local storage explicitly upon logout via an action function with t
 ```text
 window.localStorage.clear();
 ```
-{% endhint %}
+
+:::
+
 
 
 

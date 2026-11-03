@@ -30,15 +30,11 @@ Client-side lifecycle named actions such as `onAppLoad` and `onFormLoad` are sep
 
 For a full reference of FileMaker-side hooks, see this page:
 
-{% content-ref url="../reference/hooksoverview/" %}
 [hooksoverview](../reference/hooksoverview/)
-{% endcontent-ref %}
 
 For client lifecycle named actions, see:
 
-{% content-ref url="../reference/hooksoverview/lifecycle-hooks.md" %}
 [lifecycle-hooks](../reference/hooksoverview/lifecycle-hooks.md)
-{% endcontent-ref %}
 
 ## How to name Hooks
 
@@ -49,10 +45,14 @@ The next few steps will ask you to create names for both a common hook set and a
 * Hook names do **not** need to be unique throughout your site (see tip below)
 * As long as the names match between Klai Studio and FileMaker, everything will work just fine.
 
-{% hint style="info" %}
+
+::: info
+
 #### **FileMaker Analogy**
 
 A scoped hook name is referenced similarly to `Get ( LayoutName )` in FileMaker. When a script is run, the scoped hook name is used to let your server-side script know the context that the user is sitting in.
 
 This allows you to group scripts that run from the context of the same page together in your FileMaker scripts. Since these name don't need to be unique, you can group multiple pages together by having them share the same scoped hook name and your FileMaker scripts will see them as effectively the same page.
-{% endhint %}
+
+:::
+

@@ -17,6 +17,10 @@ This initial part of the guide is essential for laying the groundwork to connect
 5.  **Add Credentials to Your App:** In your own FileMaker application file, create a `BetterForms` user account with the **exact same password** you set in step 3. This account needs a privilege set that allows `Data Entry Only` and has the `fmxml` (for CWP) and/or `fmrest` (for Data API) extended privileges enabled.
 6.  **Enable CWP Gateway:** Ensure either the XML Custom Web Publishing gateway or the Data API is enabled on your FileMaker Server. For FMS 17+, enabling the XML gateway must be done via the [command line](http://docs.360works.com/index.php/Enable_XML_FileMaker_17).
 
-{% hint style="warning" %}
+
+::: warning
+
 You must have a valid TLS certificate installed on your FileMaker Server to use the Data API.
-{% endhint %}
+
+:::
+

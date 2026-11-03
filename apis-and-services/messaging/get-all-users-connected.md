@@ -4,27 +4,21 @@ The API endpoint `/message/users` returns the currently connected listeners for 
 
 A channel is considered active if there is at least one client connected to it.
 
-{% swagger baseUrl="https://portal.yourdomain.com" path="/message/users" method="post" summary="API: Return connected users" %}
-{% swagger-description %}
 
-{% endswagger-description %}
+### `POST /message/users`
 
-{% swagger-parameter in="header" name="accept" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+API: Return connected users
 
-{% swagger-parameter in="header" name="content-type" type="string" required="false" %}
-application/json
-{% endswagger-parameter %}
+**Base URL:** `https://portal.yourdomain.com`
 
-{% swagger-parameter in="body" name="apiKey" type="string" required="false" %}
-the API key for your Klai app
-{% endswagger-parameter %}
+| In | Name | Type | Required | Description |
+|---|---|---|---|---|
+| header | `accept` | string |  | application/json |
+| header | `content-type` | string |  | application/json |
+| body | `apiKey` | string |  | the API key for your Klai app |
+| body | `channel` | string |  | if set, BetterForms will look up that specific channel for the current host |
 
-{% swagger-parameter in="body" name="channel" type="string" required="false" %}
-if set, BetterForms will look up that specific channel for the current host
-{% endswagger-parameter %}
-{% endswagger %}
+
 
 ## Response Shape
 

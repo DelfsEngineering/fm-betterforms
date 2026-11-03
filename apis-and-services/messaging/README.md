@@ -9,9 +9,13 @@ description: >-
 
 Messaging is the BetterForms implementation of the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol, which enables a persistent connection between the client and the server.
 
-{% hint style="info" %}
+
+::: info
+
 Requires version 0.10.14 or later
-{% endhint %}
+
+:::
+
 
 ## Concepts
 
@@ -22,11 +26,15 @@ In order to send **messages** from your FileMaker server to users actively viewi
 * **authenticated** channels
   * the user must be logged in to join the channel
 
-{% hint style="info" %}
+
+::: info
+
 **TIP:** All messaging is scoped to the domain of the application. If your app has multiple domains, you will not be able to send messages directly across domains. 
 
 \( This can be handled from within FileMaker \)
-{% endhint %}
+
+:::
+
 
 Each new tab that a user opens will join its own private channel that will be namespaced as **tab\|connectionID**.
 

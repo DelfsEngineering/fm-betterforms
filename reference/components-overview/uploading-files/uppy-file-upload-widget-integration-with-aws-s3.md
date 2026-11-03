@@ -1,8 +1,12 @@
 # 🏗️ Uppy File Upload Widget Integration with AWS S3
 
-{% hint style="warning" %}
+
+::: warning
+
 This page is in development&#x20;
-{% endhint %}
+
+:::
+
 
 This page provides instructions on how to integrate the Uppy file upload widget with AWS S3 for seamless file uploads. It also includes helper functions for path extraction and named actions.
 
@@ -64,9 +68,13 @@ Include the `BF.namedActionPromise` function in  your DOM Header Insertion. It f
 
 Ensure you have an AWS S3 bucket and the necessary credentials for accessing it. You can reference [here](dropzone-to-s3.md).
 
-{% hint style="info" %}
+
+::: info
+
 Check [this example](https://app.fmbetterforms.com/#/apps/pages/edit?id=FR\_A1E5B73B-3238-1A43-A212-92999C2EA9CF) for Uppy used in various cases.
-{% endhint %}
+
+:::
+
 
 #### Action Scripts
 

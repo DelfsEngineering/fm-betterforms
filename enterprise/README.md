@@ -13,7 +13,9 @@ Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing
 
 #### Overview Diagram
 
-{% embed url="https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x" %}
+
+[🔗 https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x](https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x)
+
 
 ### Requirements
 
@@ -37,9 +39,13 @@ After installing Docker, as described [below](../reference/enterprise/bf-enterpr
 
 Link to Redis’ official docs on how to run Redis Stack on Docker: [https://redis.io/docs/stack/get-started/install/docker/](https://redis.io/docs/stack/get-started/install/docker/)
 
-{% hint style="info" %}
+
+::: info
+
 As a development environment, this Redis Stack instance can be deployed on localhost, and the env var <mark style="color:red;">`REDIS_HOST`</mark> will be <mark style="color:red;">`host.docker.internal`</mark> and a password won’t be needed.
-{% endhint %}
+
+:::
+
 
 ### Env File
 
@@ -78,9 +84,13 @@ Here is a sample file (where values for the right hand side will be changed to y
 
 Find the links to Docker’s official docs on how to install Docker on each OS.
 
-{% hint style="info" %}
+
+::: info
+
 &#x20;Windows and MacOS only available for the Desktop version, whereas Linux has the option to use Engine (server) or Desktop.
-{% endhint %}
+
+:::
+
 
 *   Linux
 

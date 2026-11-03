@@ -2,9 +2,13 @@
 
 This page showcases various buttons you can implement in your app, each designed for specific actions. Below is a detailed explanation of the different button types, their configurations, and their intended actions.
 
-{% hint style="info" %}
+
+::: info
+
 To see buttons in action, check out [examples](https://app.fmbetterforms.com/#/apps/pages/edit?id=5251675D-4A4D-4FE1-AD35-5D5B038CA924) on this [page](https://examplesdev.fmbetterforms.com/#/form/5251675D-4A4D-4FE1-AD35-5D5B038CA924).
-{% endhint %}
+
+:::
+
 
 ### Regular Buttons
 

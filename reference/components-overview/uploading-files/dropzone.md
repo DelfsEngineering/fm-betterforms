@@ -10,9 +10,7 @@ The default configuration uses `file.io` as ephemeral storage. Using additional 
 
 Files can be uploaded to an AWS S3 bucket. You will need to first provision the bucket. See the following page for complete setup instructions
 
-{% content-ref url="dropzone-to-s3.md" %}
 [dropzone-to-s3.md](dropzone-to-s3.md)
-{% endcontent-ref %}
 
 #### Base64
 

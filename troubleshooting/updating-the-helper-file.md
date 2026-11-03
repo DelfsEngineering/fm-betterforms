@@ -1,8 +1,12 @@
 # Updating the Helper File
 
-{% hint style="warning" %}
+
+::: warning
+
 **Images Needed:** The screenshots for this guide are currently missing. New images need to be captured and added to make these instructions complete.
-{% endhint %}
+
+:::
+
 
 ## **Guide to Migrate the Helper File**
 

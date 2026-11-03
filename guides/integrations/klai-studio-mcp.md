@@ -1,8 +1,12 @@
 # Klai Studio MCP (Beta)
 
-{% hint style="warning" %}
+
+::: warning
+
 This is a **beta feature**. Capabilities and configuration may change. Do not paste real API keys into docs, tickets, or chat logs.
-{% endhint %}
+
+:::
+
 
 ## What this is
 
@@ -48,9 +52,13 @@ Before editing your MCP client config, fetch the environment-scoped configuratio
 
 Each environment has its own MCP configuration, scoped to that environment's data and tools. Use the config for the environment you intend the external agent to work in.
 
-{% hint style="info" %}
+
+::: info
+
 The configuration includes an API key. Treat it like a password — only share it with people who should have access to this app, and rotate the app API key if it is exposed.
-{% endhint %}
+
+:::
+
 
 ### Add the config to your MCP client
 

@@ -1,0 +1,62 @@
+name: Deploy docs.klai.studio
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AWS_REGION: us-east-1
+  AWS_ROLE_ARN: arn:aws:iam::536237283731:role/docs-klai-studio-deploy
+  S3_BUCKET: docs-klai-studio
+  CF_DISTRIBUTION_ID: E13U0TYGFYECCK
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # lastUpdated needs git history
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run docs:build   # fails on dead links
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: .vitepress/dist
+          retention-days: 3
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Sync assets (1 day browser cache)
+        run: aws s3 sync dist/assets "s3://$S3_BUCKET/assets" --delete --cache-control "public,max-age=86400"
+      - name: Sync everything else (short cache)
+        run: aws s3 sync dist "s3://$S3_BUCKET" --delete --exclude "assets/*" --cache-control "public,max-age=300"
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths "/*"

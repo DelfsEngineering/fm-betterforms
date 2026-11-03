@@ -4,13 +4,21 @@ Apps and Environments are the best way to manage your Klai Studio Projects.
 
 With the introduction to Apps and environments, you now have a great way to manage the development and deployment of your projects.
 
-{% hint style="info" %}
-App: Application is a single software project and can consist of a development, test and production environment.
-{% endhint %}
 
-{% hint style="info" %}
+::: info
+
+App: Application is a single software project and can consist of a development, test and production environment.
+
+:::
+
+
+
+::: info
+
 Environment: Environment is a state of an application, it can be <mark style="color:red;">development</mark>, <mark style="color:red;">staging</mark> or <mark style="color:red;">production</mark>.
-{% endhint %}
+
+:::
+
 
 ### Migrating to Apps and Environments
 
@@ -22,9 +30,13 @@ Apps will be in <mark style="color:red;">`production`</mark> after you migrate. 
 
 After you have developed features in your app, you will want to deploy it to a <mark style="color:red;">`staging`</mark> environment or directly to <mark style="color:red;">`production`</mark>
 
-{% hint style="info" %}
+
+::: info
+
 TIP: If you edit a <mark style="color:red;">production</mark> or <mark style="color:red;">staging</mark> environment and then deploy _from_ that env, the edits that you have made will not be deployed.
-{% endhint %}
+
+:::
+
 
 ### Versioning
 

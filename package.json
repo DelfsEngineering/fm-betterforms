@@ -1,0 +1,11 @@
+{
+  "name": "klai-studio-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev .",
+    "docs:build": "vitepress build . && node scripts/postbuild.mjs",
+    "docs:preview": "vitepress preview ."
+  },
+  "devDependencies": { "vitepress": "^1.6.4" }
+}

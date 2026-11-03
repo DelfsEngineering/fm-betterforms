@@ -42,9 +42,13 @@ Understanding the provisioning process can help you troubleshoot issues:
 
 If your custom domain uses **Cloudflare** or another CDN / reverse proxy (Akamai, Fastly, AWS CloudFront, and similar), BetterForms often cannot see the real CNAME target. That blocks certificate issuance, certificate renewal, and sometimes environment updates such as basecode changes.
 
-{% hint style="warning" %}
+
+::: warning
+
 Leave the CNAME in **DNS-only** mode until BetterForms has verified DNS and issued the certificate. Proxied records (Cloudflare orange cloud) resolve to the proxy, not `alias.bfoperations.com`.
-{% endhint %}
+
+:::
+
 
 ### Symptoms
 
@@ -68,9 +72,13 @@ If the proxy caches, rewrites, redirects, or terminates TLS for that path, the c
 
 ### Solution Options
 
-{% hint style="info" %}
+
+::: info
+
 **Note:** Resolving this issue requires access to your DNS / CDN account or coordination with your IT team.
-{% endhint %}
+
+:::
+
 
 #### Option 1: Use DNS-only (recommended)
 
@@ -97,9 +105,13 @@ Keep the proxy enabled and let Cloudflare (or your CDN) terminate TLS:
    * See [Cloudflare SSL documentation](https://developers.cloudflare.com/ssl/)
 3. Visitors will see the CDN's certificate, not BetterForms' Let's Encrypt certificate
 
-{% hint style="warning" %}
+
+::: warning
+
 **Important:** With this option, your IT team is responsible for CDN SSL. BetterForms cannot troubleshoot those certificate issues, and BetterForms-managed Let's Encrypt renewals will not succeed while the proxy hides origin DNS and the ACME path.
-{% endhint %}
+
+:::
+
 
 ***
 

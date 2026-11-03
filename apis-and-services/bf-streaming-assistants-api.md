@@ -1,8 +1,12 @@
 # Klai Streaming API (Assistants)
 
-{% hint style="info" %}
+
+::: info
+
 The BetterForms assistants endpoint provides stateful assistant-style conversations with streamed updates.
-{% endhint %}
+
+:::
+
 
 ## Overview
 
@@ -46,9 +50,13 @@ The `payload` object contains all the necessary information for the assistant to
 | `instructions` | string | Optional assistant instructions |
 | `tools` | array | Optional tool definitions |
 
-{% hint style="warning" %}
+
+::: warning
+
 Tool calls are handled by the BetterForms assistants backend flow. In current builds, that backend work is routed through the assistants tool execution path rather than being documented as a generic Common Hook contract.
-{% endhint %}
+
+:::
+
 
 ## Example Request
 

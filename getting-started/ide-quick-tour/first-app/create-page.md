@@ -8,9 +8,13 @@ Think of a BetterForms page like a FileMaker layout. It will contain any combina
 
 Pages are managed within the "Pages" tab of your App in the BetterForms IDE. From there, you can create new pages, edit existing ones, and manage their settings.
 
-{% hint style="warning" %}
+
+::: warning
+
 This guide assumes that you already have a working knowledge of basic JSON formatting and terminology. If you have never worked with JSON before, we recommend you [review this introduction to JSON](../../support/learning-json.md) first.
-{% endhint %}
+
+:::
+
 
 ## Key Concepts for Your First Page
 
@@ -100,9 +104,13 @@ You have two main ways to see your page:
 1. **Preview within the IDE:** Most page editors have a **"Preview"** button. This will render your page directly within the BetterForms environment.
 2. **Preview in Your Site:** To see it as your users would, you often want to preview it within your actual site. To do this, replace the `app.fmbetterforms.com` part of the preview URL (or the IDE's URL) with your own app's domain that you configured (e.g., `myawesomeapp.bfm.app`).
 
-{% hint style="success" %}
+
+::: tip
+
 Remember to **save** your page _before_ previewing it in a new browser tab or window to ensure you see the latest changes!
-{% endhint %}
+
+:::
+
 
 Go ahead and preview this page in your site. You should see the "Data Model Inspector" element displaying the JSON data you entered:
 

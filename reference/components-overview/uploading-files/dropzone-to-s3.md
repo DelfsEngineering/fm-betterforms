@@ -4,17 +4,25 @@ description: How to use the dropzone element to upload files directly to an AWS 
 
 # dropzone to S3
 
-{% hint style="danger" %}
+
+::: danger
+
 This page is still under development
-{% endhint %}
+
+:::
+
 
 ## Introduction
 
 If you want your users to upload large files, S3 is a great option. However, it can be tricky to navigate because of how it is secure by default. The Dropzone uploader wants to be able to push a file to a URL endpoint, but S3 doesn't provide that for security purposes. Other techniques suggest using a **Lambda** function to generate that signed URL, which is possible. However, this guide will focus on using the AWS JavaScript SDK to upload directly from a browser.
 
-{% hint style="warning" %}
+
+::: warning
+
 The method that will be outlined on this page is **advanced** and not directly supported by BetterForms. These techniques were compiled from around the internet and are implemented into BetterForms by taking advantage of how BetterForms exposes HTML and JavaScript in the page editor
-{% endhint %}
+
+:::
+
 
 ## Configuring AWS
 
@@ -96,9 +104,13 @@ Lastly, we need to configure the policy for Cognito Role that we created in step
 }
 ```
 
-{% hint style="warning" %}
+
+::: warning
+
 Make sure you change the `example-bucket` in lines 17-18 with the name of **your own** bucket
-{% endhint %}
+
+:::
+
 
 Now we're ready to go back to BetterForms! Feel free to navigate back to S3 and keep it open in a new tab for inspection of your files as we upload them...
 
@@ -112,12 +124,16 @@ Since this method requires external libraries not provided by BetterForms, you'l
 <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css" rel="stylesheet">
 ```
 
-{% hint style="info" %}
+
+::: info
+
 These libraries may have been updated since the time of this writing, check the original sources for the most updated CDN links.
 
 * [AWS SDK](https://cdnjs.com/libraries/aws-sdk)
 * [Dropzone.JS](https://cdnjs.com/libraries/dropzone)
-{% endhint %}
+
+:::
+
 
 ## Configuring your Page
 
@@ -143,9 +159,13 @@ To insert the Dropzone element in your page, we'll use an [HTML element](../comm
 
 To initialize the dropzone, you need to run some JavaScript code that programmatically configures all of the settings. I recommend doing this in a [named action](../../actions-processor/actions_named.md#defining-named-actions) on the page so that you can call it at a specific place in your users workflow if necessary. In my testing, I found that putting this code in the `onFormLoad` named action works about half of the time because sometimes the code runs before the page is fully rendered and therefore cannot be attached to the form.
 
-{% hint style="info" %}
+
+::: info
+
 See the full code in the `initDZ` named action on the example page.
-{% endhint %}
+
+:::
+
 
 The first few lines of this code is where you'll configure with your settings from AWS. Feel free to hard-code these value into the JavaScript function instead of referencing model unless you want to programmatically change them later.
 
@@ -162,9 +182,13 @@ For the **options** variable, see the [Dropzone documentation](https://www.dropz
 
 If you follow along with the code, you'll notice that I'm adding files to an array as they are added to the dropzone and moving them to a _different_ array when the upload is complete. Finally, the named action called `onDropzoneComplete` runs when all the files have uploaded. This is where you can run a [Utility Hook](../../actions-processor/actions_overview/runutilityhook.md) back to your FMS to save the data in your database.
 
-{% hint style="warning" %}
+
+::: warning
+
 Be sure to leave the default keys in the Data Model when duplicating the example page. These keys are directly referenced by the JavaScript code and it may fail if these keys do not exist.
-{% endhint %}
+
+:::
+
 
 ### Manipulating the Queue
 
@@ -195,6 +219,10 @@ dz.on("addedfile", function(file) {
 
 This simple function pushes the `uuid` key of the file that is passed into this function to an array so that you can better work with the queue using Vue.
 
-{% hint style="success" %}
+
+::: tip
+
 In production, it's better to pass the entire `file` object into an array so that you can get at more details of the file object instead of just the uuid. The reason it's setup like this for the demo is because the entire file object cannot be printed on screen as code. Once you fully understand how to manipulate the queue, be sure to update **all** references to this array (it's also used in the `removedFile` event, for example)
-{% endhint %}
+
+:::
+

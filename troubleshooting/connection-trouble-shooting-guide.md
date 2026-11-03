@@ -1,8 +1,12 @@
 # Connection Trouble Shooting Guide
 
-{% hint style="info" %}
+
+::: info
+
 Use this troubleshooting guide to help diagnose connection problems with Klai Studio and your FileMaker server
-{% endhint %}
+
+:::
+
 
 ## Start at the Helper File
 The helper file is typically your first place to start your debugging. Every hook script call will have a record entry. If it does not, then the issue is happening before the request reaches the FileMaker Server.

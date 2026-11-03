@@ -8,9 +8,13 @@ The final setup step is to register your FileMaker Server with the Klai Studio I
 2. Create a new server connection, providing a friendly name and the IP address or Fully Qualified Domain Name (FQDN) of your FileMaker server.
 3. Click the **Test Connection** button to verify that Klai Studio can communicate with your server's Data API or XML gateway. You should see a list of the files hosted on your server, including the helper file.
 
-{% hint style="warning" %}
+
+::: warning
+
 If your FileMaker Server is configured to **Filter databases...**, you will not see the file list immediately. Instead, you will see a `{"messages":[{"code":"9","message":"Insufficient privileges"}]}` error. You must enter the `BetterForms` user credentials you configured previously to see the list of files.
-{% endhint %}
+
+:::
+
 
 ### Troubleshooting
 

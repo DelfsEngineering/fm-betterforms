@@ -4,9 +4,13 @@ description: Displays a full screen modal dialogue with customizable buttons
 
 # showModal / hideModal
 
-{% hint style="info" %}
+
+::: info
+
 This element is based off of [http://sweet-modal-vue.adepto.as](http://sweet-modal-vue.adepto.as)
-{% endhint %}
+
+:::
+
 
 | Key | Value |
 | :--- | :--- |
@@ -39,11 +43,15 @@ To hide the modal, use the `hideModal` action.
 }
 ```
 
-{% hint style="warning" %}
-**NOTE:** Modals are different than Card Modals, and require separate actions. You cannot use a `hideModal` action to close a Card Modal. 
-{% endhint %}
 
-{% page-ref page="../../form-settings/card-modals.md" %}
+::: warning
+
+**NOTE:** Modals are different than Card Modals, and require separate actions. You cannot use a `hideModal` action to close a Card Modal. 
+
+:::
+
+
+[card-modals.md](../../form-settings/card-modals.md)
 
 ## FileMaker Custom Function
 

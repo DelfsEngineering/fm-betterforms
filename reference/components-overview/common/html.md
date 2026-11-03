@@ -38,6 +38,10 @@ When using [VueJS Template syntax](../../../guides/html-and-vuejs.md), you'll se
 
 This makes developing with custom code fast and easy.
 
-{% hint style="info" %}
+
+::: info
+
 **Remember:** The HTML editor works wherever there is a "html" key in the schema! This expands beyond the HTML element to [modals](../../actions-processor/actions_overview/showmodal.md) and [slots](tables2.md#slots) of a [data table](tables2.md).
-{% endhint %}
+
+:::
+

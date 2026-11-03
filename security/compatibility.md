@@ -21,4 +21,6 @@ description: >-
 }
 ```
 
-{% embed url="https://browser-update.org" %}
+
+[🔗 https://browser-update.org](https://browser-update.org)
+
