@@ -5,6 +5,9 @@ description: >-
 
 # Slots / Code Injection
 
+Reference for BetterForms slot names and where each slot renders in the app UI.
+
+
 Slots are reusable HTML or Vue template insertion points that let you customize the BetterForms app shell and page wrapper without editing the core application code.
 
 To edit slots in the IDE, go to:

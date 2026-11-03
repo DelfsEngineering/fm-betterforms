@@ -4,6 +4,9 @@ description: OAuth sign-in with Google, Auth0, Okta, and Microsoft Entra ID.
 
 # OAuth
 
+OAuth sign-in with Google, Auth0, Okta, and Microsoft Entra ID.
+
+
 Klai Studio currently supports OAuth login with:
 
 - `google`

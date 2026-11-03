@@ -67,7 +67,7 @@ Each element you add will have various properties to configure its behavior and 
 
 * `type`: Specifies the kind of element (e.g., "input", "button", "html"). This is fundamental.
 * `label`: Text displayed as the label for an element (e.g., for an input field).
-* `model`: For input fields, this links the element to a specific key in your [Page Data Model](create-page.md#1-the-data-model).
+* `model`: For input fields, this links the element to a specific key in your [Page Data Model](create-page.md#_1-the-data-model).
 * `styleClasses`: Allows you to apply CSS classes (e.g., Bootstrap classes like `col-md-6` for layout, or custom classes) to style the element.
 * `visible`: Can be set to `false` to hide an element statically.
 * `visible_calc`: For dynamic visibility, you can use a calculation based on your data model, e.g., `"visible_calc": "model.isUserAdmin"`.

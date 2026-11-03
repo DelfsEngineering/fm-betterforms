@@ -6,6 +6,9 @@ description: >-
 
 # 3. Introduction to Hooks
 
+Before we continue integrating, let's take a step back to understand the concept of Hooks in Klai Studio
+
+
 ## What is a Hook Script?
 
 A hook script is a script that inserts itself into normal workflow allowing additional control. See: [https://en.wikipedia.org/wiki/Hooking](https://en.wikipedia.org/wiki/Hooking). You interact with your application and the web client via hooks scripts.

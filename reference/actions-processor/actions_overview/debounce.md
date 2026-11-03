@@ -4,6 +4,9 @@ description: Ver +bf-0.01.4
 
 # debounce
 
+Ver +bf-0.01.4
+
+
 `debounce` controls the execution of actions based on a period of inactivity, It makes the actions wait until nothing is happening.
 
 This action is based on [https://lodash.com/docs/4.17.15\#debounce](https://lodash.com/docs/4.17.15#debounce)

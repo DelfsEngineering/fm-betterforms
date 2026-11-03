@@ -4,6 +4,9 @@ description: Password reset flows for end users in Basic Authentication.
 
 # Password Management
 
+Password reset flows for end users in Basic Authentication.
+
+
 Covers the end-user forgot/reset flow in Basic Authentication.
 
 Added in BetterForms `3.4.x`: the same helper-file token fields can also be used for magic-link sign-in.
@@ -110,7 +113,7 @@ If you use both password reset and magic-link sign-in in the same UI, the most r
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Authentication Actions](../actions-processor/authentication-actions.md)
 - [Custom Login Pages](./custom-login-pages.md)
 

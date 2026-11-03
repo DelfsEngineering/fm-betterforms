@@ -4,6 +4,9 @@ description: Triggers the stored PWA install prompt and runs callbacks for accep
 
 # pwaPromptInstall
 
+Triggers the stored PWA install prompt and runs callbacks for accept or dismiss outcomes.
+
+
 `pwaPromptInstall` triggers the install prompt previously captured by `pwaCustomInstall`.
 
 ## Action Object

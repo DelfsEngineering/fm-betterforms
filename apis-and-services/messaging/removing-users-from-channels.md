@@ -6,6 +6,9 @@ description: >-
 
 # Removing users from channels
 
+Similar to adding users, you can remove users either by a REST API call, or via a FileMaker script in your helper file.
+
+
 ## Removing users using a FileMaker script
 
 The script is available in Helper file and is called **API - Leave Channel**. This script accepts an object with two keys **`users`** and **`channels`**.

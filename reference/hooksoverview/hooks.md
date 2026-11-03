@@ -6,6 +6,9 @@ description: >-
 
 # Scoped Hooks
 
+Scoped hooks are specific to the page on which they are initiated and contain relevant data about the page context
+
+
 Scoped hooks are **server hooks** tied to a page or form workflow. They are different from client-side lifecycle hooks such as `onFormLoad`; if you need the browser-side equivalents, see [Lifecycle Hooks](./lifecycle-hooks.md).
 
 ### onUtility
@@ -60,7 +63,7 @@ There are times you want to run actions prior to calling server side scripts. If
 
 ## Related Pages
 
-- [Script Hooks](./README.md)
+- [Script Hooks](./)
 - [Common Hooks](./commonoverview.md)
 - [Lifecycle Hooks](./lifecycle-hooks.md)
 

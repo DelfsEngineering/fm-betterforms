@@ -150,7 +150,7 @@ Instead, they often work together:
 
 ## Related Pages
 
-- [Script Hooks](./README.md)
+- [Script Hooks](./)
 - [Common Hooks](./commonoverview.md)
 - [Scoped Hooks](./hooks.md)
 - [BetterForms Error Pages API](../../apis-and-services/error-pages-api.md)

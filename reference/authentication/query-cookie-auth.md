@@ -4,6 +4,9 @@ description: Using smart links (query tokens) and cookie-based sessions for stre
 
 # Query & Cookie Based Auth
 
+Using smart links (query tokens) and cookie-based sessions for streamlined authentication.
+
+
 These are custom patterns for apps that need controlled access outside the built-in Basic Authentication and OAuth flows.
 
 ## Smart Links (Query Tokens)
@@ -74,7 +77,7 @@ JSONGetElement ( $$BF_Cookies ; "myCookieName" )
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Security Best Practices](./security-best-practices.md)
 
 

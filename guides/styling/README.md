@@ -6,6 +6,9 @@ description: >-
 
 # Customizing and Styling
 
+There are many ways to customize a BetterForms site to suit the needs of your application!
+
+
 BetterForms is built with Bootstrap CSS as the UI design framework. You can learn more about [Bootstrap here](https://getbootstrap.com/docs/3.3/).
 
 ## Custom Components

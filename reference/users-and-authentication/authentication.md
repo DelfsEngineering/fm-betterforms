@@ -4,7 +4,7 @@ This page is kept as a legacy pointer.
 
 The canonical authentication overview now lives here:
 
-- [Authentication](../authentication/README.md)
+- [Authentication](../authentication/)
 
 For the current reference pages, use:
 

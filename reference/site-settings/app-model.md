@@ -7,6 +7,9 @@ description: >-
 
 # App Model
 
+The App Model functions similar to a page's data model, except that it is accessible to every page in your site. You can also reference data in the App Model from elements that are not bound to a page
+
+
 The **App Model** functions similar to a page's [data model](../form-settings/data-model.md), except that it is accessible to every page in your site. You can also reference data in the App Model from elements that are not bound to a page, such as [Navigation menus](navigationoverview.md#custom-navigation-menus) and [slots](slots-code-injection.md). App data can be cached in local storage for fast performance.
 
 ### Referencing the App Model

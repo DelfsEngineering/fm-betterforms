@@ -4,6 +4,9 @@ description: High-level overview of BetterForms authentication strategies and bu
 
 # Authentication
 
+High-level overview of BetterForms authentication strategies and building blocks.
+
+
 BetterForms supports multiple authentication strategies to fit different application needs. This page orients you to the available options, how authentication is enabled, and the core concepts used across all workflows. Detailed, step-by-step guides are provided in the linked pages.
 
 ## Supported Methods

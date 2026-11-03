@@ -6,6 +6,9 @@ description: >-
 
 # Overview
 
+Klai Studio was purpose built to allow FileMaker developers access to a full powerful web technology stack.
+
+
 Klai Studio was purpose-built to allow FileMaker developers access to a full, powerful web technology stack. All data is stored on your FileMaker Server and is not cached by Klai Studio. Data remains secure in transit with encryption.
 
 For authentication options and workflows, see the Authentication section in the Reference docs: [Authentication](../reference/authentication/).

@@ -430,7 +430,7 @@ If `onSiteMap` is not implemented, BetterForms still returns a valid static-only
 
 ## Related Documentation
 
-- [Form Settings Overview](./README.md)
+- [Form Settings Overview](./)
 - [Data Model](./data-model.md)
 - [SEO and Social Sharing Guide](../../guides/customization/seo-and-social-sharing.md)
 - [DOM Header Insertions](../site-settings/dom-header-insertions.md)

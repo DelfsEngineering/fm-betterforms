@@ -4,6 +4,9 @@ description: Sends a push notification through BetterForms to registered browser
 
 # pwaPushNotificationSend
 
+Sends a push notification through BetterForms to registered browser subscriptions.
+
+
 `pwaPushNotificationSend` sends a push notification through the BetterForms push-notification service.
 
 ## Action Object

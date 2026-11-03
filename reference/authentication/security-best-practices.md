@@ -4,6 +4,9 @@ description: Recommended practices for securing authentication flows in BetterFo
 
 # Security Best Practices
 
+Recommended practices for securing authentication flows in BetterForms.
+
+
 Guidelines to help secure all authentication strategies.
 
 ## Tokens
@@ -44,7 +47,7 @@ Guidelines to help secure all authentication strategies.
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Custom Login Pages](./custom-login-pages.md)
 - [Query & Cookie Based Auth](./query-cookie-auth.md)
 

@@ -6,6 +6,9 @@ description: >-
 
 # Custom Components
 
+Custom components are reusable UI blocks. Define them once, then drop them into pages as a `bfcomponent` field or a `<bfcomp>` tag.
+
+
 A custom component is a named definition stored on the site (`content.components` or the site-level `components` list). Each definition has a `name` used for lookup and a `comp` object with the actual UI (`html` and/or `fields`), plus optional `namedActions`.
 
 The runtime lives in `bfcomponent.vue`. If `comp.html` is set, BetterForms renders that HTML. Otherwise it renders `comp.fields` through vue-form-generator.

@@ -4,6 +4,9 @@ description: Displays a full screen modal dialogue with customizable buttons
 
 # showModal / hideModal
 
+Displays a full screen modal dialogue with customizable buttons
+
+
 
 ::: info
 

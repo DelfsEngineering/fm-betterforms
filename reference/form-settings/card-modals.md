@@ -4,6 +4,9 @@ description: Card modals display other pages as their content.
 
 # Card / Window Modals
 
+Card modals display other pages as their content.
+
+
 
 ::: info
 

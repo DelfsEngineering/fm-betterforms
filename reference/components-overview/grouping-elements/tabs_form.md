@@ -4,6 +4,9 @@ description: Organize complex forms using a standard tab element
 
 # Tabs
 
+Organize complex forms using a standard tab element
+
+
 ## Tab Modes
 
 A tabs element can be constructed in either **Data Mode** or **Form Mode**. **Form mode** allows you to define each tab individually as its own form, very similar to how a tab element would work in FileMaker. **Data Mode** takes an array of data and generates a tab for each item in the array, with identical elements in each tab containers.

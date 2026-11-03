@@ -4,6 +4,9 @@ description: Requests that an active BetterForms assistants stream stop graceful
 
 # assistantStop
 
+Requests that an active BetterForms assistants stream stop gracefully.
+
+
 `assistantStop` requests that an active assistants run stop.
 
 ## Expected Options

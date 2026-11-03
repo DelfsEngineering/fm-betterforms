@@ -6,6 +6,9 @@ description: >-
 
 # Design Patterns and Best Practices
 
+UX, Performance optimizations and best practices for building BetterForms apps.
+
+
 ## Section under development
 
 This section covers proven design patterns that will allow you to build quick solid apps in BetterForms.

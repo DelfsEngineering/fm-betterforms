@@ -4,6 +4,9 @@ description: Configure per-tenant JWT authentication token expiry and domain aud
 
 # JWT Expiration (Per‑Tenant)
 
+Configure per-tenant JWT authentication token expiry and domain audience.
+
+
 You can choose how long a user stays signed in before they need to sign in again. This is controlled by the JWT expiration setting for your app (tenant).
 
 ## Who is this for?

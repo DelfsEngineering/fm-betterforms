@@ -4,6 +4,9 @@ description: Adds user to anonymous channel
 
 # channelJoinAnon
 
+Adds user to anonymous channel
+
+
 Adds users to anonymous channel.
 
 #### Function Action Object

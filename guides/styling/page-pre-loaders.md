@@ -4,6 +4,9 @@ description: Customize the animated page loading style
 
 # Page Pre-loaders
 
+Customize the animated page loading style
+
+
 You can customize the default animated page loader. Any HTML compatible image, SVG, GIF etc will be loaded during page transitions. You can find the custom loaders editor from the `site -> appearance -> loaders` tab of the site editor.
 
 #### Loader Resources 

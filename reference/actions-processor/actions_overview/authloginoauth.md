@@ -4,6 +4,9 @@ description: Finalizes an OAuth login after the provider redirects back into Bet
 
 # authLoginOauth / oauthLoginHook
 
+Finalizes an OAuth login after the provider redirects back into BetterForms.
+
+
 `authLoginOauth` finalizes an OAuth login after the user returns from the provider callback.
 
 `oauthLoginHook` is a legacy alias that is still supported.
@@ -35,4 +38,4 @@ description: Finalizes an OAuth login after the provider redirects back into Bet
 ## Related Pages
 
 - [OAuth](../../authentication/oauth.md)
-- [Authentication](../../authentication/README.md)
+- [Authentication](../../authentication/)

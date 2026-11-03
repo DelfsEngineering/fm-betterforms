@@ -4,6 +4,9 @@ description: How to use the dropzone element to upload files directly to an AWS 
 
 # dropzone to S3
 
+How to use the dropzone element to upload files directly to an AWS S3 bucket.
+
+
 
 ::: danger
 

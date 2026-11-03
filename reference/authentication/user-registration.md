@@ -4,6 +4,9 @@ description: Step-by-step for user sign-up and email verification using Basic Au
 
 # User Registration & Verification
 
+Step-by-step for user sign-up and email verification using Basic Authentication.
+
+
 This workflow covers creating a user account with email/password and verifying the email address before allowing login.
 
 ## Prerequisites
@@ -75,7 +78,7 @@ After a user is created, helper **Auto Enable User Accounts** still controls whe
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Common Hooks — onBeforeRegistration](../hooksoverview/commonoverview.md#onbeforeregistration)
 - [Authentication Actions](../actions-processor/authentication-actions.md)
 - [Custom Login Pages](./custom-login-pages.md)

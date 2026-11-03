@@ -6,6 +6,9 @@ description: >-
 
 # fullCalendar
 
+Implementation of www.fullcalendar.io calendaring component. Component based on https://github.com/CroudTech/vue-fullcalendar
+
+
 Implementation of [www.fullcalendar.io](https://fullcalendar.io/) calendaring component.
 
 Component based on [https://github.com/CroudTech/vue-fullcalendar](https://github.com/CroudTech/vue-fullcalendar)

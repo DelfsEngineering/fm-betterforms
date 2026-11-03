@@ -7,6 +7,9 @@ description: >-
 
 # Messaging
 
+Messaging is intended to be used for real-time features, such as notifications, chat or auto updates. Messaging also allows data to be pushed from FileMaker into your BetterForms apps.
+
+
 Messaging is the BetterForms implementation of the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol, which enables a persistent connection between the client and the server.
 
 

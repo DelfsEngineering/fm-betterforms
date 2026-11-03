@@ -5,6 +5,9 @@ description: >-
 
 # Dynamic Library Loading
 
+Dynamic library loading functionality for BetterForms - Load external JavaScript libraries, ESM modules, and CSS files from CDN dynamically within function actions.
+
+
 **Version:** 3.3.1+  
 **Feature:** `BF.libraryLoadOnce()`, `BF.libraryIsLoaded()`, `BF.libraryGetLoaded()`
 

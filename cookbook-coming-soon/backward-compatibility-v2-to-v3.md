@@ -4,6 +4,9 @@ description: Notes for restoring legacy behaviors when upgrading older BetterFor
 
 # Backward Compatibility for V2 to V3
 
+Notes for restoring legacy behaviors when upgrading older BetterForms V2 projects to V3.
+
+
 This page collects temporary compatibility notes for projects being upgraded from BetterForms V2 to V3.
 
 These notes are not general BetterForms setup guidance. If you are building a new V3 app, you usually do not need these steps.

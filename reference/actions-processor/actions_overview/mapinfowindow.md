@@ -4,6 +4,9 @@ description: Emits a map info-window event to components listening for map inter
 
 # mapInfoWindow
 
+Emits a map info-window event to components listening for map interactions.
+
+
 `mapInfoWindow` is a component-oriented action that emits an event using the action name itself.
 
 ## Action Object

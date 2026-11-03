@@ -6,6 +6,9 @@ description: >-
 
 # Site Structure
 
+Klai Studio app's do have some small opinionated design elements. Understanding the undunderlying structure will help you to design better apps.
+
+
 ## App Sections
 
 There are two main sections of your app. The **Site** section which is global to the whole app and the **Page** section which is scoped to a particular page.&#x20;

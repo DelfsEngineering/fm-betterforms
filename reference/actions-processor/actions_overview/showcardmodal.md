@@ -4,6 +4,9 @@ description: Opens or closes a BetterForms card modal that renders another page.
 
 # showCardModal / hideCardModal
 
+Opens or closes a BetterForms card modal that renders another page.
+
+
 Card modals are page-based modal windows. They are different from `showModal` / `hideModal`, which control the standard Sweet Modal dialog.
 
 Use `showCardModal` when you want to open another BetterForms page inside a modal window.

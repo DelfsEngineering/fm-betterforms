@@ -6,6 +6,9 @@ description: >-
 
 # Component Best Practices
 
+Good components need to be designed well. Taking the time to think of future use cases significantly enhances the components usability.
+
+
 
 ::: info
 

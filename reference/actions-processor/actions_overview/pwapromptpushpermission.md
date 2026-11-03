@@ -4,6 +4,9 @@ description: Requests push-notification permission and registers the browser sub
 
 # pwaPromptPushPermission
 
+Requests push-notification permission and registers the browser subscription with BetterForms.
+
+
 `pwaPromptPushPermission` asks the browser for push-notification permission and, when permission is granted, creates or reuses a push subscription and registers it with BetterForms.
 
 ## Action Object

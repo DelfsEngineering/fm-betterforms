@@ -4,6 +4,9 @@ description: Email/password authentication using the internal Users table in the
 
 # Basic Authentication
 
+Email/password authentication using the internal Users table in the helper file.
+
+
 Basic Authentication uses the internal `Users` table with email and hashed password. It supports registration, email verification, login, logout, password resets, invite completion, and magic-link sign-in.
 
 ## Scope

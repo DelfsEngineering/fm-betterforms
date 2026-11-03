@@ -4,6 +4,9 @@ description: Sends the result of a frontend tool workflow back to the BetterForm
 
 # llmToolCallResponse
 
+Sends the result of a frontend tool workflow back to the BetterForms LLM tool-response service.
+
+
 `llmToolCallResponse` sends the result of a frontend tool workflow back to BetterForms so the LLM flow can continue.
 
 ## Expected Options

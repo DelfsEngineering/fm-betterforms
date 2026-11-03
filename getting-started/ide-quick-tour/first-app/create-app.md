@@ -21,7 +21,7 @@ To learn more about the comprehensive settings available for an App/Site, you ca
     <figure><img src="../../../.gitbook/assets/image (18).png" alt="Template Selection Page"><figcaption></figcaption></figure>
 
     ::: tip
-    **Template Documentation:** Some templates may have additional specific documentation. [Check for template-specific guides here](../../../guides/integrations/README.md).
+    **Template Documentation:** Some templates may have additional specific documentation. [Check for template-specific guides here](../../../guides/integrations/).
     :::
 
 3. **Input App Details:** Whether starting from scratch or a template, you'll need to provide some basic details for your new app:

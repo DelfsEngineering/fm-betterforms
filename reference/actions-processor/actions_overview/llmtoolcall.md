@@ -4,6 +4,9 @@ description: Dispatches LLM-requested frontend tools by mapping them to BetterFo
 
 # llmToolCall
 
+Dispatches LLM-requested frontend tools by mapping them to BetterForms named actions.
+
+
 `llmToolCall` is a frontend AI/tooling action. It receives one or more tool calls requested by an LLM and maps them into BetterForms named actions.
 
 ## Expected Options

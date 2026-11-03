@@ -7,13 +7,16 @@ description: >-
 
 # Users & Authentication
 
+This section will guide you through how authentication is built into BetterForms and how you can customize its behavior to meet the needs of your app.
+
+
 This section is now a legacy entry point.
 
-The canonical authentication docs live under [`reference/authentication/`](../authentication/README.md).
+The canonical authentication docs live under [`reference/authentication/`](../authentication/).
 
 Use that section for the current overview and workflow pages:
 
-- [Authentication](../authentication/README.md)
+- [Authentication](../authentication/)
 - [Basic Authentication](../authentication/basic-auth.md)
 - [User Registration & Verification](../authentication/user-registration.md)
 - [Password Management](../authentication/password-management.md)

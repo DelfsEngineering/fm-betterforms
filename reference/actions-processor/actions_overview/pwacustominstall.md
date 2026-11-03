@@ -4,6 +4,9 @@ description: Captures the browser install prompt so your app can trigger install
 
 # pwaCustomInstall
 
+Captures the browser install prompt so your app can trigger installation later with custom UI.
+
+
 `pwaCustomInstall` listens for the browser's `beforeinstallprompt` event, prevents the browser from auto-showing the install prompt, and stores the deferred prompt so your app can trigger it later.
 
 ## Action Object

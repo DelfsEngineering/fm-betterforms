@@ -4,6 +4,9 @@ description: Software and tools we use to run Klai Studio!
 
 # Technology Stack
 
+Software and tools we use to run Klai Studio!
+
+
 ### Front End Client Stack
 
 * **Tailwind CSS / Bootstrap CSS**

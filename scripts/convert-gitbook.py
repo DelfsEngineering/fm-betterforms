@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One-time converter: GitBook liquid tags -> VitePress markdown."""
-import re, sys, pathlib, html
+import re, sys, pathlib, html, yaml
 root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else '.')
 HINT = {'info':'info','success':'tip','warning':'warning','danger':'danger','':'info'}
 def attr(s, k):
@@ -38,10 +38,27 @@ def conv(t):
             out.append(f'**Response {attr(ra,"status")}:** {attr(ra,"description")}\n\n{rb.strip()}\n')
         return '\n'.join(out) + '\n'
     t = re.sub(r'\{%\s*swagger\s([^%]*)%\}(.*?)\{%\s*endswagger\s*%\}', sw, t, flags=re.S)
+    # README.md links -> directory URLs (VitePress rewrites README.md to index.md)
+    t = re.sub(r'(\]\((?!https?:)[^)\s#]*?)(?:^|(?<=/)|(?<=\())README\.md(?=[)#\s])', lambda m: m.group(1) + ('./' if m.group(1).endswith('(') else ''), t)
+    # raw HTML hrefs to .md files -> clean URLs
+    t = re.sub(r'href="((?!https?:|mailto:)[^"#]*?)(README)?\.md(#[^"]*)?"', lambda m: 'href="' + (m.group(1) or './') + (m.group(3) or '') + '"', t)
     return t
+def lead(t):
+    # GitBook shows frontmatter `description` as a lead paragraph under the H1; VitePress doesn't.
+    fm = re.match(r'^---\n(.*?)\n---\n', t, re.S)
+    if not fm: return t
+    try: d = (yaml.safe_load(fm.group(1)) or {}).get('description')
+    except Exception: return t
+    if not isinstance(d, str) or not d.strip(): return t
+    d = ' '.join(d.split()); body = t[fm.end():]
+    if d[:60] in ' '.join(body.split()): return t
+    h = re.search(r'^# .*$', body, re.M)
+    if h: body = body[:h.end()] + '\n\n' + d + '\n' + body[h.end():]
+    else: body = d + '\n\n' + body
+    return t[:fm.end()] + body
 n = 0
 for p in root.rglob('*.md'):
-    if '.git' in p.parts or 'node_modules' in p.parts: continue
-    s = p.read_text(encoding='utf-8'); c = conv(s)
+    if '.git' in p.parts or 'node_modules' in p.parts or p.name == 'SUMMARY.md' or 'docs-audit' in p.parts: continue
+    s = p.read_text(encoding='utf-8'); c = lead(conv(s))
     if c != s: p.write_text(c, encoding='utf-8'); n += 1
 print('converted', n)

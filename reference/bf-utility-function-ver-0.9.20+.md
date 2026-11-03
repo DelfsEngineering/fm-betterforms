@@ -6,6 +6,9 @@ description: >-
 
 # Klai Utility Functions
 
+BetterForm has a collection of helper Java Script functions that are used within JavaScript to allow easy access to common complex code.
+
+
 | Function | Description |
 |----------|-------------|
 | **Actions** | |

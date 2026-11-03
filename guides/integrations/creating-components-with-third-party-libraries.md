@@ -2,7 +2,7 @@
 
 Learn how to create self-contained, reusable custom components that integrate third-party JavaScript libraries like FullCalendar, Leaflet maps, Chart.js, and more.
 
-For the runtime API (`html`, `fields`, `namedActions`, `<bfcomp>`), see [Custom Components](../../reference/styling/custom-components/README.md).
+For the runtime API (`html`, `fields`, `namedActions`, `<bfcomp>`), see [Custom Components](../../reference/styling/custom-components/).
 
 ---
 

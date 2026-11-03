@@ -16,4 +16,4 @@ After successfully logging in, let's get familiar with the workspace. Below is a
 6.  **Help**: If you need assistance, a Help tab offers various support resources, including documentation, examples & demos, and contact options for technical support.
 7. **Report a Bug Button**: Located at the bottom-center, this button allows you to report any issues or bugs you encounter while using the app. Your feedback helps us improve the system.
 
-To start building your first app, click on the [<mark style="color:red;">`"Build your first app"`</mark>](first-app/README.md) button located in the Quick Access section.
+To start building your first app, click on the [<mark style="color:red;">`"Build your first app"`</mark>](first-app/) button located in the Quick Access section.

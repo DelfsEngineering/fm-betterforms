@@ -136,7 +136,7 @@ Generic action + options (second parameter is a JSON **string** for `options`, o
 Set Variable [ $$BF_Actions ; Value: BF_SetAction ( "runUtilityHook" ; "{ \"type\": \"save\" }" ) ]
 ```
 
-For other globals built by FileMaker (`$$BF_Model`, `$$BF_App`, etc.), see [Global Variables for Hooks](../../hooksoverview/filemaker-globals/README.md). Only `$$BF_Actions` is an ordered action queue built this way.
+For other globals built by FileMaker (`$$BF_Model`, `$$BF_App`, etc.), see [Global Variables for Hooks](../../hooksoverview/filemaker-globals/). Only `$$BF_Actions` is an ordered action queue built this way.
 
 ### Other places you can use actions
 

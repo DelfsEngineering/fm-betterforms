@@ -4,6 +4,9 @@ description: pause the actions queue for an amount of time specified
 
 # wait
 
+pause the actions queue for an amount of time specified
+
+
 Wait for time or event
 
 ## Function Action Object

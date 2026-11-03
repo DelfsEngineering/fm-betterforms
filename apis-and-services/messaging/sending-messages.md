@@ -6,6 +6,9 @@ description: >-
 
 # Sending messages
 
+Once your users are subscribed to a channel or two, you can send messages to them!
+
+
 Think of a message as a standard [**Klai Action**](../../reference/actions-processor/actions_overview/) that is triggered externally. It can even contain data to populate the page, but you don't have to wait for a user to click a button, run a utility hook, or even poll your server for updates on a set interval.
 
 ## Klai Action

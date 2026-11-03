@@ -4,6 +4,9 @@ description: Ver +bf-0.01.4
 
 # throttle
 
+Ver +bf-0.01.4
+
+
 `throttle` controls the _rate_ of execution of actions based on a time, the frequency of invocation does not affect how frequent  It makes the actions wait until nothing is happening.
 
 This action is based on [https://lodash.com/docs/4.17.15\#throttle](https://lodash.com/docs/4.17.15#throttle)

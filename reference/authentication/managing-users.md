@@ -10,7 +10,7 @@ Use this page when you need to manage BetterForms web users from the helper file
 
 - Users are stored in the helper file.
 - This page is helper-file / FileMaker oriented.
-- Authentication page flows are documented in the main [Authentication](./README.md) section.
+- Authentication page flows are documented in the main [Authentication](./) section.
 
 ## User Object
 
@@ -59,7 +59,7 @@ Use the `Error.isError` custom function to check the returned result and confirm
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Basic Authentication](./basic-auth.md)
 - [User Registration & Verification](./user-registration.md)
 - [Password Management](./password-management.md)

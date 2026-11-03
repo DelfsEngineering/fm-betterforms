@@ -4,7 +4,7 @@ This is the canonical reference for building custom authentication pages in Bett
 
 Use this page together with:
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Authentication Actions](../actions-processor/authentication-actions.md)
 - [Basic Authentication](./basic-auth.md)
 - [OAuth](./oauth.md)
@@ -135,7 +135,7 @@ Security notes:
 
 ## Related Pages
 
-- [Authentication](./README.md)
+- [Authentication](./)
 - [Authentication Actions](../actions-processor/authentication-actions.md)
 - [User Registration & Verification](./user-registration.md)
 - [Password Management](./password-management.md)

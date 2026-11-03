@@ -4,6 +4,9 @@ description: Legacy pointer to the canonical OAuth documentation.
 
 # OAuth
 
+Legacy pointer to the canonical OAuth documentation.
+
+
 This page has moved.
 
 Use the canonical page instead:

@@ -6,6 +6,9 @@ description: >-
 
 # Adding users to channels
 
+You can add users to channels either by calling a FileMaker script in the Helper File, or by calling a REST API endpoint of your BetterForms domain.
+
+
 ## The Channel Object
 
 | key  | description                                                     |

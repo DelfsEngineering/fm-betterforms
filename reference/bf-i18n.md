@@ -7,6 +7,9 @@ description: >-
 
 # Localization (i18n)
 
+Set up multi-language apps with app.i18n, BF.i18n(), schema *_calc fields, and a language picker. Includes IDE placement, persistence, and limits of the runtime helper.
+
+
 BetterForms i18n is a **dictionary on the App Model** plus a **lookup helper**. There is no separate translation service, plural engine, or ICU formatter.
 
 `BF.i18n(key)` (in `BF.js`) reads `app.i18n.dict[key][langSelected]`, then `app.i18n.dict[key][langDefault]`. An empty or missing `key` returns `''`. If both languages are missing, the helper returns `No default lang value or invalid key`.
@@ -105,7 +108,7 @@ Changing `app.i18n.langSelected` re-runs lookups on the next Vue render. Templat
 
 App Model Caching (`site.content.appCaching`) watches `app[path]` — a **top-level** property. Cache `currentLang`, not `i18n.langSelected`.
 
-In **Site settings → App Model**, enable caching for `currentLang` (localStorage to keep the choice across visits). See [App Model](site-settings/app-model.md#app-model-caching-bf-v0104).
+In **Site settings → App Model**, enable caching for `currentLang` (localStorage to keep the choice across visits). See [App Model](site-settings/app-model.md#app-model-caching-bf-v0-10-4).
 
 In the global `onAppLoad` named action:
 

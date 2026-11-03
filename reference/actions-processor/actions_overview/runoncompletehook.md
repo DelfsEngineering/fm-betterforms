@@ -4,6 +4,9 @@ description: Runs the form completion hook and waits for it to finish before con
 
 # runOnCompleteHook
 
+Runs the form completion hook and waits for it to finish before continuing the action queue.
+
+
 `runOnCompleteHook` triggers the form-completion hook flow and does not continue the action queue until that hook finishes.
 
 ## Action Object

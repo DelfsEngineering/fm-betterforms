@@ -4,6 +4,9 @@ description: Requests that an active BetterForms LLM query stream stop gracefull
 
 # llmQueryStop
 
+Requests that an active BetterForms LLM query stream stop gracefully.
+
+
 `llmQueryStop` requests that an active `/llm/query` stream stop.
 
 ## Expected Options

@@ -4,6 +4,9 @@ description: The state object holds various data related to the browser environm
 
 # \$$BF\_State
 
+The state object holds various data related to the browser environment.
+
+
 ### Controlling Data Merge Mode
 
 To reduce data transfer and increase performance and flexibility you can control the merge mode of the data in utility hooks. 
