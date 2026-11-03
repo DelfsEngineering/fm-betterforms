@@ -5,11 +5,11 @@ The API endpoint `/message/channels` will return all current active channels.
 A channel is considered active if there is at least one client connected to it.
 
 
-### `POST /message/channels`
+### Return active channels
 
-API: Return active channels
+<span class="api-method api-post">POST</span> `https://portal.yourdomain.com/message/channels`
 
-**Base URL:** `https://portal.yourdomain.com`
+**Parameters**
 
 | In | Name | Type | Required | Description |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ API: Return active channels
 | header | `accept` | string |  | application/json |
 | body | `apiKey` | string |  | the API key for your Klai app |
 
-**Response 201:** Returns an object with two keys authenticated and anonymous. Each will have an array of current active channels.
+**Response <code>201</code>** — Returns an object with two keys authenticated and anonymous. Each will have an array of current active channels.
 
 ```
 {

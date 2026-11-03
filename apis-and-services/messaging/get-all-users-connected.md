@@ -5,11 +5,11 @@ The API endpoint `/message/users` returns the currently connected listeners for 
 A channel is considered active if there is at least one client connected to it.
 
 
-### `POST /message/users`
+### Return connected users
 
-API: Return connected users
+<span class="api-method api-post">POST</span> `https://portal.yourdomain.com/message/users`
 
-**Base URL:** `https://portal.yourdomain.com`
+**Parameters**
 
 | In | Name | Type | Required | Description |
 |---|---|---|---|---|

@@ -77,10 +77,13 @@ Let's walk through creating a simple page.
 
     _(Note: The exact structure of default elements can vary. The key is adding the `Data Model Inspector` object correctly into the `fields` array.)_
 
-    \{% hint style="info" %\} The schema editor might seem overwhelming at first, but it's very well organized.
+    ::: info
+    The schema editor might seem overwhelming at first, but it's very well organized.
 
     * To help you understand the structure, try clicking the small triangles or arrows often found near the line numbers. This allows you to collapse and expand JSON objects or arrays, making it easier to see the hierarchy.
-    * Alternatively, while you're learning, you might find it useful to copy your page schema JSON and paste it into an external JSON editor like [jsoneditoronline.org](https://jsoneditoronline.org/) to view and edit it in a different visual format. \{% endhint %\}
+    * Alternatively, while you're learning, you might find it useful to copy your page schema JSON and paste it into an external JSON editor like [jsoneditoronline.org](https://jsoneditoronline.org/) to view and edit it in a different visual format.
+    :::
+
 4.  **Populating Initial Data (Data Model Tab):**
 
     * Now, switch to the **"Data Model"** tab for your page. This is where you can define some initial data that your page will have when it loads.

@@ -61,10 +61,8 @@ The **`API - Join Channel`** script accepts an object with two keys **users** an
 
 #### Example Script Parameters
 
-
-
-::: details Data shape
-
+:::tabs
+== Data shape
 ```yaml
 {
     "channels": [
@@ -103,10 +101,8 @@ You can use this method to join users to one or more channels. This is an authen
 | users\[0].id       | string | Klai user id from helper file                           |
 | users\[0].channels | array  | an array of channel objects                           |
 
-
-
-::: details 201
-
+:::tabs
+== 201
 ```
 {
     "users": [

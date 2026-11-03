@@ -156,10 +156,8 @@ The script is available in Helper file and is called **API - Send Message**. Thi
 | message.model   | object | JSON object with data to be merged to model data     |
 | message.app     | object | JSON object with data to be merged to app model data |
 
-
-
-::: details 201 This request will return the data that was sent as body of the request.
-
+:::tabs
+== 201 This request will return the data that was sent as body of the request.
 ```
 {
   "message": {

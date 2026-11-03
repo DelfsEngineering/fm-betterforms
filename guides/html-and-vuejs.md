@@ -30,10 +30,8 @@ The \{{\}} syntax is _only_ for injecting JavaScript into **HTML** code. Everyth
 
 ### Examples
 
-
-
-::: details Merge Data
-
+:::tabs
+== Merge Data
 ```yaml
 // the data model
 {
@@ -51,12 +49,7 @@ The \{{\}} syntax is _only_ for injecting JavaScript into **HTML** code. Everyth
 }
 ```
 
-:::
-
-
-
-::: details Repeating Data
-
+== Repeating Data
 Example Data Model:
 
 ```yaml

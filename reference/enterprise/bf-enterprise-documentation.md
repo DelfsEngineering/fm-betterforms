@@ -15,7 +15,9 @@ Klai Studio Enterprise is an extension of the Klai Studio Cloud service allowing
 #### Overview Diagram
 
 
-[🔗 https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x](https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x)
+<iframe src="https://whimsical.com/embed/Ew1asCqpaCGiZsBZzgEy9x" width="100%" height="520" style="border:1px solid var(--vp-c-divider);border-radius:8px" loading="lazy" title="Enterprise deployment and architecture"></iframe>
+
+[Open the diagram in Whimsical](https://whimsical.com/enterprise-deployment-and-architecture-Ew1asCqpaCGiZsBZzgEy9x)
 
 
 ### Requirements

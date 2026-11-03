@@ -1,7 +1,7 @@
 // Copy every non-markdown repo asset into dist at its original path so old GitBook asset URLs keep working.
 import fs from 'node:fs'; import path from 'node:path'
 const root = process.cwd(), dist = path.join(root, '.vitepress/dist')
-const skip = new Set(['node_modules', '.git', '.vitepress', '.github', 'scripts', 'docs-audit'])
+const skip = new Set(['node_modules', '.git', '.vitepress', '.github', 'scripts', 'docs-audit', 'public'])
 let n = 0
 ;(function walk(d) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
