@@ -37,6 +37,7 @@ jobs:
           name: dist
           path: .vitepress/dist
           retention-days: 3
+          include-hidden-files: true   # keep .gitbook/assets (legacy image URLs)
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
