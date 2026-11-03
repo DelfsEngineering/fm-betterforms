@@ -61,3 +61,31 @@ jobs:
         run: aws s3 sync dist "s3://$S3_BUCKET" --delete --exclude "assets/*" --cache-control "public,max-age=300"
       - name: Invalidate CloudFront
         run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths "/*"
+
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Notify Klai Engineer of docs deploy
+        env:
+          URL: ${{ secrets.DOCS_NOTIFY_WEBHOOK_URL }}
+          KEY: ${{ secrets.DOCS_NOTIFY_WEBHOOK_KEY }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          [ -z "$URL" ] && { echo "No webhook URL set, skipping"; exit 0; }
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=$(git rev-parse "$AFTER~1"); fi
+          FILES=$(git diff --name-status "$BEFORE" "$AFTER" | jq -R 'split("\t") | {status: .[0], path: .[-1]}' | jq -s .)
+          COMMITS=$(git log --format='%H%x09%s' "$BEFORE..$AFTER" | jq -R 'split("\t") | {sha: .[0], message: .[1]}' | jq -s .)
+          jq -n --arg repo "$GITHUB_REPOSITORY" --arg ref "$GITHUB_REF" --arg before "$BEFORE" --arg after "$AFTER" \
+            --arg compare "https://github.com/$GITHUB_REPOSITORY/compare/$BEFORE...$AFTER" \
+            --argjson commits "$COMMITS" --argjson files "$FILES" \
+            '{repo:$repo, ref:$ref, before:$before, after:$after, compare_url:$compare, commits:$commits, changed_files:$files}' > payload.json
+          curl -sS --max-time 15 -X POST "$URL" -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $KEY" -H "X-Webhook-Key: $KEY" --data @payload.json
