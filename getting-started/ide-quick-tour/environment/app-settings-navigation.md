@@ -1,4 +1,4 @@
-# Navigation
+# App Settings & Navigation
 
 ### **Slug Names**&#x20;
 

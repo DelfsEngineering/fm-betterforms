@@ -119,7 +119,7 @@ Now we're ready to go back to BetterForms! Feel free to navigate back to S3 and 
 
 ## Configuring your Site Settings
 
-Since this method requires external libraries not provided by BetterForms, you'll need to inject them into your site using a [DOM Header Insertion](../../site-settings/slots-code-injection.md#dom-header-insertion).
+Since this method requires external libraries not provided by BetterForms, you'll need to inject them into your site using a [DOM Header Insertion](../../site-settings/dom-header-insertions.md).
 
 ```markup
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.543.0/aws-sdk.min.js"></script>

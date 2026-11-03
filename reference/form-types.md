@@ -12,7 +12,7 @@
 | Key | Description |
 | :--- | :--- |
 | form.color | HTML color Color of form |
-| form.shape | Shape of wizard tabs see [Form Wizard Git](https://www.gitbook.com/book/delfsengineering/fm-betterforms/edit#) |
+| form.shape | Shape of wizard tabs see [Form Wizard Git](https://github.com/cristijora/vue-form-wizard) |
 | form.validateOnBack | Applies to wizard only |
 | form.errorColor |  |
 | form.backButtonText |  |
