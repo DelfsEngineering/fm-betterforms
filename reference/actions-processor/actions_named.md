@@ -101,6 +101,7 @@ These app-level named actions are triggered when BetterForms detects an online/o
 - Define them in app-level named actions
 - Use them for reconnect UX, retry messaging, or online/offline banners
 - They are browser-state workflows, not FileMaker hooks
+- `appIsOffline` fires after the connection to the server has been lost for about 5 seconds (or immediately if the browser also reports it is offline). Brief reconnects do not fire it. `appIsOnline` fires when the connection is restored after `appIsOffline` fired. Server calls made during a brief reconnect wait for the reconnect instead of failing.
 
 ### onDeployPost
 
