@@ -19,4 +19,4 @@ If your FileMaker Server is configured to **Filter databases...**, you will not 
 ### Troubleshooting
 
 * For FileMaker Server 17+, the XML gateway must be enabled from the command line. See [this guide](http://docs.360works.com/index.php/Enable_XML_FileMaker_17) for instructions.
-* If you have a firewall protecting your server, you may need to whitelist the Klai Studio IP addresses. See the [Firewalls & Security](../../../security/security.md) page for details.
+* If a firewall protects your server, allow the Klai Studio egress addresses. See [Firewalls](../../../security/security.md). The Klai Server Proxy is deprecated and will be removed on January 10, 2027.

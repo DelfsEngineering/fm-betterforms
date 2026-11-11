@@ -78,4 +78,4 @@ Incoming traffic from the Klai server only enters the Helper File. The helper fi
 * Re-login when calling legacy file plug scripts.
 * Change privileges in legacy file to not allow XML.
 * Have legacy file not allow any layouts with XML access.
-* Only allow CWP inbound calls to come from better forms Web server IP via an API Proxy.
+* Only allow CWP inbound calls from the Klai Studio egress addresses on the [Firewalls](security.md) page.

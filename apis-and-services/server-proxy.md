@@ -1,85 +1,27 @@
 # Klai Server Proxy
 
-### Overview
+::: warning
+The Klai Server Proxy is deprecated and will be removed on January 10, 2027. New server connections should use your FileMaker server’s own host and the egress addresses on the [Firewalls](../security/security.md) page.
+:::
 
-The Klai Proxy can be used to provide a single known IP address to access a given database server. This allows IT professionals to tightly configure access control to their internal network. The current proxy IP is located in North America.
+## What to use instead
 
-#### PROS
+Klai Studio connects to FileMaker from a fixed address in each data center. Allow those addresses on your firewall, and point **Host Address** at the FileMaker server’s own IP address or domain name. Leave **Use Klai Proxy** unchecked.
 
-Dev Ops technicians can whitelist only one IP address from the Klai Studio Cloud servers.
+## Servers that still use the proxy
 
-#### CONS
+Until January 10, 2027, a server with **Use Klai Proxy** checked is still reached through the proxy. Inbound HTTPS to that FileMaker server comes from `54.215.158.200` on port `443`.
 
-Some latency is added depending on your geographic location, this is generally small.
+That address is not one of the egress addresses. Keep it allowed only while the proxy is still turned on for that server.
 
-#### Specifications
+Before the removal date:
 
-Fixed IP Address is: <mark style="color:blue;">**`54.215.158.200`**</mark>
+1. Allow all six addresses on the [Firewalls](../security/security.md) page.
+2. Open the server in the Klai editor.
+3. Set **Host Address** to the FileMaker server’s own IP address or domain name. The field already includes the `https://` prefix.
+4. Uncheck **Use Klai Proxy**.
+5. Test the connection.
 
-Port: <mark style="color:blue;">**`443`**</mark>
+<figure><img src="../.gitbook/assets/add-server-use-klai-proxy.png" alt="Add Server dialog with the Use Klai Proxy checkbox"><figcaption>Uncheck Use Klai Proxy, and keep the FileMaker server’s own host in Host Address.</figcaption></figure>
 
-Proxy location: **AWS Data Center in Northern California. `US-WEST-1`**
-
-#### Configuring
-
-In the Klai editor, add a server and check **Use Klai Proxy**. **Host Address** is the FileMaker server’s own IP address or domain name.
-
-The checkbox routes that server through the Klai proxy. Traffic to your FileMaker server then comes from the fixed proxy IP above, so the firewall only needs to allow that address.
-
-1. Open **Add Server**.
-2. Enter a **Server Name**.
-3. Enter the FileMaker server’s IP address or domain name in **Host Address**. The field already includes the `https://` prefix.
-4. Choose the gateway: **XML** or **DAPI**.
-5. Check **Use Klai Proxy**.
-6. Click **Create Connection**.
-
-Ask your network team to allow inbound HTTPS from `54.215.158.200` on port `443`.
-
-<figure><img src="../.gitbook/assets/add-server-use-klai-proxy.png" alt="Add Server dialog with the Use Klai Proxy checkbox"><figcaption>Check Use Klai Proxy, and enter the FileMaker server’s own host.</figcaption></figure>
-
-Servers that were pointed at the proxy by pasting the proxy URL into **Host Address** can be switched over the same way: use the FileMaker server’s own host, and check **Use Klai Proxy**.
-
-#### Testing Connection
-
-To confirm the proxy can reach your FileMaker server, open this URL in a browser. Replace `YOUR.SERVER.DOMAIN` with the server’s domain name:
-
-`https://4yt4c3i6n7tndqe6732fsbgxhq0gsaim.lambda-url.us-west-1.on.aws/YOUR.SERVER.DOMAIN`
-
-This URL is only for that check. In the editor, keep the real host in **Host Address** and use the **Use Klai Proxy** checkbox.
-
-If the proxy is working, you should reach the same kind of response page your FileMaker server would normally return for a direct browser request.
-
-If it does not work, check:
-
-- the server domain name is correct
-- your FileMaker server is reachable on the expected web endpoint
-- your network rules allow the published proxy IP
-- the domain is included at the end of the proxy URL
-
-Example response:
-
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title>FileMaker Website</title>
-        <style type="text/css">
-        .centered {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             text-align: center;
-             vertical-align: middle;
-        }
-        </style>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-
-<body>
-    <h1  class="centered" >FileMaker Database Server Website</h1>
-    
-    <img class="centered" src="TestPage.png" alt="Claris International Inc." />
-</body>
-
-</html>
-```
+If **Host Address** was set by pasting the proxy URL, replace that URL with the FileMaker server’s own host and uncheck **Use Klai Proxy**.

@@ -175,7 +175,7 @@
     * [Get connected users](apis-and-services/messaging/get-all-users-connected.md)
     * [Get active channels](apis-and-services/messaging/get-active-channels.md)
   * [Core APIs](apis-and-services/core-apis/README.md)
-    * [Klai Server Proxy](apis-and-services/server-proxy.md)
+    * [Klai Server Proxy (deprecated)](apis-and-services/server-proxy.md)
     * [Klai Error Pages API](apis-and-services/error-pages-api.md)
   * [Klai Streaming Proxy](apis-and-services/streaming-proxy.md)
     * [Klai Streaming API (Chat)](apis-and-services/bf-streaming-api-chat.md)
