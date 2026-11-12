@@ -216,6 +216,7 @@
 ## Cookbook Backlog
 
 * [Cookbook Backlog](cookbook-coming-soon/read-me.md)
+* [Sign in with a 6-digit code](cookbook-coming-soon/sign-in-with-a-6-digit-code.md)
 * [AI Assistant - Tips & Tricks](cookbook-coming-soon/ai-assistant-tips-and-tricks.md)
 * [Using Development Data](cookbook-coming-soon/using-development-data.md)
 * [Passing Data Between Pages](cookbook-coming-soon/passing-data-between-pages.md)

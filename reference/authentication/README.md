@@ -69,6 +69,7 @@ Attach the appropriate Actions to the relevant pages:
 - `authInviteComplete` is available for developer-issued invite/reset tokens stored in user helper fields (`resetToken`, `resetExpires`).
 - In practice, the magic-link flow is usually split into two pages or steps: `authMagicRequest` to send the email, then `authLogin` to consume the token after the user opens the link.
 - Once redeemed, tokens are cleared from the helper file.
+- A typed one-time code uses the same grant as a magic link. The recipe is [Sign in with a 6-digit code](../../cookbook-coming-soon/sign-in-with-a-6-digit-code.md). `authLogin` reads the code from `model.token`.
 
 ## Error Handling
 

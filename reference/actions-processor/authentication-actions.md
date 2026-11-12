@@ -69,6 +69,8 @@ The **authLogin** action can now work in two modes:
 For magic-link pages, it is common to run `authLogin` in `onFormLoad` after the user lands on a page with `?token=...`.
 When a `token` is present, `authLogin` redeems that magic link token instead of attempting a normal email/password login.
 
+The same redeem signs in a typed code. Store the code on the helper user as `resetToken`, put it in `model.token`, and run `authLogin`. See [Sign in with a 6-digit code](../../cookbook-coming-soon/sign-in-with-a-6-digit-code.md).
+
 ## Auth Feedback
 
 Authentication pages can read feedback from:
