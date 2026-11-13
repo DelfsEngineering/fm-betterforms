@@ -16,7 +16,7 @@ For Microsoft Entra, the main provider-specific pieces are:
 - Add the Klai Studio callback URL to the registration
 - Copy the Entra credentials into Klai Studio
 - Put the **Directory (tenant) ID** (or `common`) in the Klai Studio **Subdomain** field — the same vault shape used by Auth0, Okta, and Google
-- Optionally add the `email` claim on ID tokens so Klai Studio can match users reliably
+- Add the `email` and `xms_edov` values on the ID token, so Klai Studio can tell the email is verified
 
 ## Create the Entra App Registration
 
@@ -65,9 +65,9 @@ Use `common` in Subdomain only when the Entra app is configured for multi-tenant
 In the Entra app registration:
 
 1. **API permissions** — add Microsoft Graph delegated permissions `openid`, `profile`, and `email` (and grant admin consent if your tenant requires it).
-2. **Token configuration** — optional claims → ID → add **email** so the ID token includes an email address when available.
+2. **Token configuration** — optional claims → ID → add **email** and **xms_edov**.
 
-Klai Studio looks up users by email. If `email` is missing from the ID token, Klai Studio falls back to `preferred_username` when that value looks like an email.
+Klai Studio matches people by the email, and only when Microsoft says that email is verified. `xms_edov` must be true. Klai Studio does not use the Microsoft username.
 
 ## Start Microsoft Login
 
@@ -85,9 +85,9 @@ Start the flow with a `path` action:
 
 ## Allowing New Users
 
-If OAuth users should be allowed to create Klai Studio users automatically, your FileMaker integration must support the `onBeforeRegistration` hook and return `model.createUser = true` when registration should proceed.
+New people can get an account without any extra hook. To stop a signup, add `onBeforeRegistration` and set `model.createUser` to `false`.
 
-If that hook is missing, or if it does not allow the user, Klai Studio will not create the new account.
+A person who already has a password is not created again. They are asked to sign in with that password once. See [OAuth](../../reference/authentication/oauth.md).
 
 ## Optional: Force a Full Microsoft Logout
 
@@ -114,6 +114,6 @@ Replace `YOUR_TENANT_ID` with your Directory (tenant) ID (or `common` if that ma
 ## Troubleshooting
 
 - **Redirect URI mismatch** — the URI in Entra must match exactly, including `https` and `/oauth/microsoft/callback`.
-- **User not found / no email** — add the ID token `email` optional claim, or confirm `preferred_username` is an email UPN.
+- **Email was not confirmed** — add the ID token values `email` and `xms_edov`. Both are needed before a new person can sign up, or before a password account can be connected. Someone who is already connected can still sign in.
 - **Wrong tenant** — single-tenant apps need the Directory (tenant) ID in Klai Studio Subdomain, not another org's ID.
 - **Personal Microsoft accounts fail** — check the app registration's supported account types; work/school-only apps reject personal MSA accounts.

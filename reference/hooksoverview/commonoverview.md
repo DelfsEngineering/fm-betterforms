@@ -149,7 +149,7 @@ If password signup is blocked, the Klai Sign Up page shows this error after **Cr
 
 `User not authorized to register.`
 
-That message appears when `authRegister` calls `onBeforeRegistration` and the hook does not allow the signup. `model.createUser` must be `true`. Any other result, including `false` or a missing value, blocks account creation and shows that error. A missing hook does not show it; password signup still continues for older apps.
+That message appears when the hook sets `model.createUser` to `false`. If the hook is missing, signup still continues.
 
 Typical uses:
 
@@ -157,16 +157,16 @@ Typical uses:
 * require an invite or matching FileMaker record before signup
 * inspect query parameters passed into the registration or OAuth start URL
 
-### Password Signup vs OAuth
+### Password signup and new OAuth users
 
-The same hook is used, but the default when the hook is missing differs:
+Set `createUser` to `false` to stop a new account. If the hook is missing, the account is still created. This is the same for password signup and for a new OAuth user.
 
-| Flow | If hook returns `createUser: true` | If hook returns `createUser: false` | If hook is missing / older helper |
-| --- | --- | --- | --- |
-| Password (`authRegister`) | Allow | Block | Allow (backward compatible) |
-| OAuth new user | Allow | Block | Block |
+| Flow | `createUser` false | Hook missing |
+| --- | --- | --- |
+| Password signup | Blocked | Account is still created |
+| New OAuth user | Blocked | Account is still created |
 
-So for OAuth, you must implement this hook and return `createUser: true` when automatic account creation should proceed. For password signup, an older app without the hook keeps working; add the hook when you want an explicit deny path.
+An existing person who already has a password is not created again. They are asked to sign in with that password once so the provider login can be connected. See [OAuth](../authentication/oauth.md).
 
 Blocking registration is separate from **Auto Enable User Accounts** in the helper file. Auto Enable controls whether a newly created user can sign in (`isEnabled`). This hook controls whether the user is created at all.
 

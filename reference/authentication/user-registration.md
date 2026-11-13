@@ -50,15 +50,14 @@ Examples:
 
 For password registration (`authRegister`):
 
-- `model.createUser = true` → registration continues
-- `model.createUser` is not `true` → registration is rejected
-- hook missing (older helpers) → registration still continues, so existing apps are not broken
+- `model.createUser = false` stops registration
+- any other value, or a missing hook, still lets registration continue
 
 When the hook rejects the signup, the Klai Sign Up page shows this error after **Create Account**:
 
 `User not authorized to register.`
 
-OAuth new-user creation uses the same hook but is stricter: missing hook or no explicit allow blocks account creation. See [onBeforeRegistration](../hooksoverview/commonoverview.md#onbeforeregistration) and [OAuth](./oauth.md).
+A new OAuth user follows the same rule: set `createUser` to `false` to stop the account. If the hook is missing, the account is still created. Connecting an existing password account is separate. See [OAuth](./oauth.md).
 
 After a user is created, helper **Auto Enable User Accounts** still controls whether they can sign in (`isEnabled`). Use Auto Enable for “create but inactive”; use `onBeforeRegistration` when the account should not be created at all.
 

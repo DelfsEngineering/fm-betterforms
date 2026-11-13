@@ -65,15 +65,21 @@ Auth0 can present different login methods depending on what you enable in Auth0:
 
 Those choices are managed in Auth0. BetterForms still completes the sign-in through the same OAuth callback flow.
 
+## Verified email
+
+Auth0 must tell BetterForms that the email is verified. In the ID token, `email_verified` must be true.
+
+If it is missing or not true, a new person cannot sign up, and an existing password account cannot be connected. Someone who is already connected can still sign in.
+
 ## Allowing New Users
 
-If OAuth users should be allowed to create BetterForms users automatically, your FileMaker integration must support the `onBeforeRegistration` hook and return `model.createUser = true` when registration should proceed.
+New people can get an account without any extra hook. To stop a signup, add `onBeforeRegistration` and set `model.createUser` to `false`.
 
 This is the FileMaker-side hook location commonly used for that setup:
 
 <figure><img src="../../.gitbook/assets/oauth-redirect-uri.png" alt="FileMaker onBeforeRegistration hook"><figcaption></figcaption></figure>
 
-If that hook is missing, or if it does not allow the user, BetterForms will not create the new account.
+A person who already has a password is not created again. They are asked to sign in with that password once. See [OAuth](../../reference/authentication/oauth.md).
 
 ## Optional: Force a Full Auth0 Logout
 
